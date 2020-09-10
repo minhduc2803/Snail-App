@@ -46,12 +46,12 @@ public class RegisterHandler extends BaseHandler {
         Future<BaseResponse> future = Future.future();
         RegisterRequest registerRequest = JsonProtoUtils.parseGson(baseRequest.getPostData(), RegisterRequest.class);
 
-        log.info(" Username: "+registerRequest.getUsername());
+        log.info(" Username: " + registerRequest.getUsername());
 
         BaseResponse.BaseResponseBuilder response = BaseResponse.builder();
 
 
-        if(registerRequest.getUsername() == null || registerRequest.getPassword() == null || registerRequest.getFullname() == null){
+        if (registerRequest.getUsername() == null || registerRequest.getPassword() == null || registerRequest.getFullname() == null) {
             response.message("Lack of information")
                     .status(HttpResponseStatus.BAD_REQUEST.code());
 
@@ -60,10 +60,10 @@ public class RegisterHandler extends BaseHandler {
         }
 
         User user = User.builder()
-                        .Username(registerRequest.getUsername())
-                        .Fullname(registerRequest.getFullname())
-                        .Password(BCrypt.hashpw(registerRequest.getPassword(),BCrypt.gensalt(4)))
-                        .build();
+                .Username(registerRequest.getUsername())
+                .Fullname(registerRequest.getFullname())
+                .Password(BCrypt.hashpw(registerRequest.getPassword(), BCrypt.gensalt(4)))
+                .build();
 
 
         Transaction transaction = transactionProvider.newTransaction();

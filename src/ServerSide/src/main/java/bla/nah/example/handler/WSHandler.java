@@ -50,18 +50,18 @@ public class WSHandler {
     }
 
     public void handle(Buffer buffer, int UserID) {
-        log.info("Send chat from UserID: {}",UserID);
+        log.info("Send chat from UserID: {}", UserID);
         JsonObject json = new JsonObject(buffer.toString());
 
         log.info(buffer.toString());
         Date date = new Date();
         Chat chat = Chat.builder()
-                        .Mode(json.getInteger("Mode"))
-                        .UserSendID(UserID)
-                        .UserReceiveID(json.getInteger("UserReceiveID"))
-                        .Content(json.getString("Content"))
-                        .SentTime(Instant.now().getEpochSecond())
-                        .build();
+                .Mode(json.getInteger("Mode"))
+                .UserSendID(UserID)
+                .UserReceiveID(json.getInteger("UserReceiveID"))
+                .Content(json.getString("Content"))
+                .SentTime(Instant.now().getEpochSecond())
+                .build();
 
         log.info(chat.getSentTime());
         Future<Chat> future = Future.future();
@@ -69,9 +69,9 @@ public class WSHandler {
         Transaction transaction = transactionProvider.newTransaction();
 
         transaction
-            .begin()
-            .compose(next -> transaction.execute(chatListDA.insert(chat)))
-            .setHandler(result -> {
+                .begin()
+                .compose(next -> transaction.execute(chatListDA.insert(chat)))
+                .setHandler(result -> {
                     if (result.succeeded()) {
 
                         Timestamp formatTime = new Timestamp(chat.getSentTime());
@@ -91,7 +91,7 @@ public class WSHandler {
     }
 
     private void SendChat(Chat chat, int UserReceiveID) {
-        log.info("Send chat to UserID: {}",UserReceiveID);
+        log.info("Send chat to UserID: {}", UserReceiveID);
         Set<ServerWebSocket> receiveWS = clients.get(UserReceiveID);
         receiveWS.forEach(
                 conn -> {

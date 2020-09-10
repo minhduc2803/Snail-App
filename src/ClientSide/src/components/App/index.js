@@ -16,12 +16,12 @@ class App extends React.Component {
   }
   
   // App "actions" (functions that modify state)
-  signIn(UserId, Username,Fullname, Token) {
+  signIn(UserID, Username,Fullname, Token) {
     // This is where you would call Firebase, an API etc...
     // calling setState will re-render the entire app (efficiently!)
     this.setState({
       user: {
-        UserID: UserId,
+        UserID: UserID,
         Username: Username,
         Fullname: Fullname,
         Token: Token,

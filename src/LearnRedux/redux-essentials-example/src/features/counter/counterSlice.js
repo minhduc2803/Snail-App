@@ -1,5 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+const  axios = require('axios');
+
 export const counterSlice = createSlice({
   name: 'counter',
   initialState: {
@@ -29,9 +31,31 @@ export const { increment, decrement, incrementByAmount } = counterSlice.actions;
 // will call the thunk with the `dispatch` function as the first argument. Async
 // code can then be executed and other actions can be dispatched
 export const incrementAsync = amount => dispatch => {
-  setTimeout(() => {
-    dispatch(incrementByAmount(amount));
-  }, 1000);
+  let content = {
+    UserID: 0,
+    Username: "",
+    Fullname: "",
+  }
+  try{
+    axios('http://localhost:8055/api/public/login',{
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      Username: "",
+      Fullname: ""
+    })
+
+  }).then(content => {
+    content = content.data.data;
+    console.log(content)
+  })
+  
+  }catch(e){
+    console.log(e);
+  }
 };
 
 // The function below is called a selector and allows us to select a value from

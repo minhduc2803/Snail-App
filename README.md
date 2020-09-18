@@ -1,8 +1,8 @@
-# Snail App
+# Snail Project
 
 ## 1. Tổng quan
 
-*Snail App* là một training project thuộc chương trình ZaloPay Fresher 2020 sử dụng React JS, Vert.x để xây dụng một ứng dụng chat real-time đơn giản bao gồm các chức năng cơ bản:
+*Snail Project* là một training project thuộc chương trình ZaloPay Fresher 2020 sử dụng React JS, Vert.x để xây dụng một ứng dụng chat real-time đơn giản bao gồm các chức năng cơ bản:
 
 - Đặng nhập / Đăng xuất (có sử dụng JWT)
 - Đăng ký tài khoản

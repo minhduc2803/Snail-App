@@ -1,0 +1,11 @@
+@startuml chat
+    skinparam backgroundColor #EEEBDC
+    skinparam handwritten true
+    actor User1
+    actor User2
+    User1 -> "backend" : send a chat to User 2
+    "backend" -> "MySQL" : insert a chat
+    "MySQL" -> "backend" : OK
+    "backend" -> User1 : send a chat to User 1
+    "backend" -> User2 : send a chat to User 2
+@enduml

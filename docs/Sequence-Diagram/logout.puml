@@ -1,0 +1,12 @@
+@startuml logout
+    skinparam backgroundColor #EEEBDC
+    skinparam handwritten true
+    actor User
+    User -> "backend" : logout
+    "backend" -> "backend" : confirm JWT token
+    alt (token is invalid)
+    "backend" -> User: Unauthorized
+    else (token is valid)
+    "backend" -> User : logout successfully
+    end
+@enduml

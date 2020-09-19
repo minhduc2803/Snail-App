@@ -1,0 +1,14 @@
+@startuml getUserList
+    skinparam backgroundColor #EEEBDC
+    skinparam handwritten true
+    actor User
+    User -> "backend" : get user list
+    "backend" -> "backend" : confirm JWT token
+    alt (token is invalid)
+    "backend" -> User : Unauthorized
+    else (token is valid)
+    "backend" -> "MySQL" : get user list information
+    "MySQL" -> "backend" : return user list
+    "backend" -> User : return user list
+    end
+@enduml

@@ -1,0 +1,15 @@
+@startuml getChatList
+    skinparam backgroundColor #EEEBDC
+    skinparam handwritten true
+    actor User
+    User -> "backend" : get user list between two user
+    "backend" -> "backend" : confirm JWT token
+    alt (token is invalid)
+    "backend" -> User : Unauthorized
+    else (token is valid)
+    "backend" -> "MySQL" : get chat list between two user
+    "MySQL" -> "backend" : return chat list
+    "backend" -> User : return chat list
+    end
+@enduml
+

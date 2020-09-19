@@ -13,4 +13,17 @@
 
 ## 3. Demo
 
+### 3.1 Login
+
+### 3.2 Register
+
+### 3.3 View User List
+
+### 3.4 Chat 1 - 1
+
 ## 4. Refernces
+
+- [Sequence diagrams](docs/Sequence-Diagram.md)
+- [Database design](docs/Database-Design.md)
+- [Redis cache Specifications](docs/Redis-Cache-Specifications.md)
+- [API and Websocket Specifications](https://app.swaggerhub.com/apis/minhduc2803/Snail-Project/1.0.0)

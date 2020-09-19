@@ -1,0 +1,15 @@
+@startuml register
+    skinparam backgroundColor #EEEBDC
+    skinparam handwritten true
+    actor User
+    User -> "backend" : register(username, fullname, password)
+    "backend" -> "MySQL" : get user by username
+    alt (username already existed)
+    "MySQL" -> "backend" : username already existed
+    "backend" -> User : register failed, username already existed
+    else (username is available)
+    "backend" -> "MySQL" : insert new user
+    "MySQL" -> "backend" : OK
+    "backend" -> User : register successfully
+    end
+@enduml

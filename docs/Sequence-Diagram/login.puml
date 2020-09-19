@@ -1,0 +1,19 @@
+@startuml login
+    skinparam backgroundColor #EEEBDC
+    skinparam handwritten true
+    actor User
+    User -> "backend" : login(username, password)
+    "backend" -> "MySQL" : get user by username
+    alt (user does not exist)
+    "MySQL" -> "backend" : user does not exist
+    "backend" -> User : login failed, user does not exist
+    else (user exists)
+    "MySQL" -> "backend" : return user's password
+    "backend" -> "backend" : confirm password
+    alt (wrong password)
+    "backend" -> User : login failed, wrong password
+    else (correct password)
+    "backend" -> User : login successfully, return user info and JWT token
+    end
+    end
+@enduml

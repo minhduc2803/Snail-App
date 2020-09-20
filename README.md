@@ -9,8 +9,43 @@
 - Xem danh sách tất cả người dùng trong hệ thống
 - Chat 1 - 1
 
+Các công nghệ sử dụng:
+
+- `React`, `Redux` cho client
+- `Java Vert.x` xây dựng API cho server
+- `WebSocket` gửi nhận tin nhắn real time
+- Database dùng `MySQL`, cache dùng `Redis`
+
 ## 2. Hướng dẫn chạy
 
+- Client chạy trên port 3000. Có dùng `yarn` để build
+  
+```shell script
+    yarn install
+ ```
+  và khởi động
+
+```shell script
+    yarn start
+```
+
+- Vert.x server có API chạy trên port 8055 và WebSocket chạy trên port 9009. Dùng `maven` để build và run.
+
+- Build server
+  
+```shell script
+mvn clean install
+```
+
+- Run server
+  
+```shell script
+java -Dservice.conf=./conf/development.yaml
+-Dlog4j.configurationFile=./conf/log4j.xml
+-Dredis.conf=./conf/redis.yaml
+-cp *.jar bla.nah.example.Runner
+
+```
 ## 3. Demo
 
 ### 3.1 Login

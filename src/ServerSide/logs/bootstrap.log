@@ -7170,3 +7170,534 @@ Caused by: com.google.gson.stream.MalformedJsonException: Use JsonReader.setLeni
 2020-09-22 01:11:11,437 INFO  bla.nah.example.server.RestfulAPI API Server start successfully !, port:8055
 2020-09-22 01:11:11,437 INFO  bla.nah.example.server.RestfulAPI API Server start successfully !, port:8055
 2020-09-22 01:11:11,437 INFO  bla.nah.example.server.RestfulAPI API Server start successfully !, port:8055
+2020-09-22 13:31:22,527 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-09-22 13:31:22,705 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-1 - Start completed.
+2020-09-22 13:31:22,706 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-2 - Starting...
+2020-09-22 13:31:22,713 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-2 - Start completed.
+2020-09-22 13:31:23,125 INFO  org.redisson.Version Redisson 3.11.6
+2020-09-22 13:31:23,285 INFO  org.redisson.connection.pool.MasterConnectionPool 24 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-09-22 13:31:23,287 INFO  org.redisson.connection.pool.MasterPubSubConnectionPool 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-09-22 13:31:23,345 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-3 - Starting...
+2020-09-22 13:31:23,361 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-3 - Start completed.
+2020-09-22 13:31:23,364 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-4 - Starting...
+2020-09-22 13:31:23,371 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-4 - Start completed.
+2020-09-22 13:31:23,382 INFO  bla.nah.example.server.RestfulAPI Starting RestfulAPI Server ...
+2020-09-22 13:31:23,382 INFO  bla.nah.example.server.RestfulAPI Starting RestfulAPI Server ...
+2020-09-22 13:31:23,387 INFO  bla.nah.example.server.RestfulAPI Starting RestfulAPI Server ...
+2020-09-22 13:31:23,395 INFO  bla.nah.example.server.RestfulAPI Starting RestfulAPI Server ...
+2020-09-22 13:31:23,398 INFO  bla.nah.example.server.RestfulAPI Starting RestfulAPI Server ...
+2020-09-22 13:31:23,403 INFO  bla.nah.example.server.RestfulAPI Starting RestfulAPI Server ...
+2020-09-22 13:31:23,405 INFO  bla.nah.example.server.RestfulAPI Starting RestfulAPI Server ...
+2020-09-22 13:31:23,411 INFO  bla.nah.example.server.RestfulAPI Starting RestfulAPI Server ...
+2020-09-22 13:31:23,440 INFO  bla.nah.example.server.RestfulAPI API Server start successfully !, port:8055
+2020-09-22 13:31:23,441 INFO  bla.nah.example.server.RestfulAPI API Server start successfully !, port:8055
+2020-09-22 13:31:23,441 INFO  bla.nah.example.server.RestfulAPI API Server start successfully !, port:8055
+2020-09-22 13:31:23,441 INFO  bla.nah.example.server.RestfulAPI API Server start successfully !, port:8055
+2020-09-22 13:31:23,441 INFO  bla.nah.example.server.RestfulAPI API Server start successfully !, port:8055
+2020-09-22 13:31:23,442 INFO  bla.nah.example.server.RestfulAPI API Server start successfully !, port:8055
+2020-09-22 13:31:23,442 INFO  bla.nah.example.server.RestfulAPI API Server start successfully !, port:8055
+2020-09-22 13:31:23,442 INFO  bla.nah.example.server.RestfulAPI API Server start successfully !, port:8055
+2020-09-22 14:02:29,101 INFO  bla.nah.example.handler.LoginHandler  Username: xeko
+2020-09-22 14:02:29,120 INFO  bla.nah.example.da.UserDAImpl MYSQL: SELECTING A USER BY USERNAME
+2020-09-22 14:02:29,172 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 14:02:29,173 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 14:02:29,174 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 14:02:29,174 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 14:05:40,949 ERROR bla.nah.example.handler.LoginHandler java.lang.NullPointerException
+2020-09-22 14:08:18,059 ERROR bla.nah.example.handler.LoginHandler java.lang.NullPointerException
+2020-09-22 14:08:43,453 ERROR bla.nah.example.handler.LoginHandler java.lang.NullPointerException
+2020-09-22 14:09:34,473 ERROR bla.nah.example.handler.LoginHandler java.lang.NullPointerException
+2020-09-22 14:24:33,101 ERROR bla.nah.example.handler.LoginHandler java.lang.NullPointerException
+2020-09-22 14:24:53,586 ERROR bla.nah.example.handler.LoginHandler java.lang.NullPointerException
+2020-09-22 14:26:25,237 ERROR bla.nah.example.handler.LoginHandler java.lang.NullPointerException
+2020-09-22 14:26:43,610 ERROR bla.nah.example.handler.LoginHandler java.lang.NullPointerException
+2020-09-22 14:28:18,013 ERROR bla.nah.example.handler.LoginHandler java.lang.NullPointerException
+2020-09-22 14:30:30,584 ERROR bla.nah.example.handler.LoginHandler java.lang.NullPointerException
+2020-09-22 14:30:30,658 ERROR bla.nah.example.handler.LoginHandler java.lang.NullPointerException
+2020-09-22 14:31:21,567 ERROR bla.nah.example.handler.LoginHandler java.lang.NullPointerException
+2020-09-22 14:41:46,825 ERROR bla.nah.example.handler.LoginHandler java.lang.NullPointerException
+2020-09-22 14:42:13,104 ERROR bla.nah.example.handler.LoginHandler java.lang.NullPointerException
+2020-09-22 14:43:21,482 ERROR bla.nah.example.handler.LoginHandler java.lang.NullPointerException
+2020-09-22 14:45:07,321 ERROR bla.nah.example.handler.LoginHandler java.lang.NullPointerException
+2020-09-22 14:47:40,469 ERROR bla.nah.example.handler.LoginHandler java.lang.NullPointerException
+2020-09-22 14:50:46,817 ERROR bla.nah.example.handler.LoginHandler java.lang.NullPointerException
+2020-09-22 14:51:12,530 ERROR bla.nah.example.handler.LoginHandler java.lang.NullPointerException
+2020-09-22 14:52:17,089 ERROR bla.nah.example.handler.LoginHandler java.lang.NullPointerException
+2020-09-22 15:30:13,594 ERROR bla.nah.example.handler.LoginHandler java.lang.NullPointerException
+2020-09-22 15:30:35,904 ERROR bla.nah.example.handler.LoginHandler java.lang.NullPointerException
+2020-09-22 15:32:40,288 ERROR bla.nah.example.handler.LoginHandler java.lang.NullPointerException
+2020-09-22 15:35:03,952 ERROR bla.nah.example.handler.LoginHandler java.lang.NullPointerException
+2020-09-22 15:35:55,238 ERROR bla.nah.example.handler.LoginHandler java.lang.NullPointerException
+2020-09-22 15:36:28,265 ERROR bla.nah.example.handler.LoginHandler java.lang.NullPointerException
+2020-09-22 15:36:44,404 INFO  bla.nah.example.handler.LoginHandler  Username: xeko
+2020-09-22 15:36:44,408 INFO  bla.nah.example.da.UserDAImpl MYSQL: SELECTING A USER BY USERNAME
+2020-09-22 15:36:44,416 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 15:36:44,416 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 15:36:44,416 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 15:36:44,417 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 15:42:53,384 INFO  bla.nah.example.handler.LoginHandler  Username: xeko
+2020-09-22 15:42:53,389 INFO  bla.nah.example.da.UserDAImpl MYSQL: SELECTING A USER BY USERNAME
+2020-09-22 15:42:53,394 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 15:42:53,395 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 15:42:53,395 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 15:42:53,395 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 15:43:53,359 INFO  bla.nah.example.handler.LoginHandler  Username: xeko
+2020-09-22 15:43:53,362 INFO  bla.nah.example.da.UserDAImpl MYSQL: SELECTING A USER BY USERNAME
+2020-09-22 15:43:53,364 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 15:43:53,364 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 15:43:53,365 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 15:43:53,365 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 15:48:41,022 INFO  bla.nah.example.handler.LoginHandler  Username: xeko
+2020-09-22 15:48:41,025 INFO  bla.nah.example.da.UserDAImpl MYSQL: SELECTING A USER BY USERNAME
+2020-09-22 15:48:41,028 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 15:48:41,029 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 15:48:41,029 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 15:48:41,030 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 15:49:22,273 INFO  bla.nah.example.handler.LoginHandler  Username: xeko
+2020-09-22 15:49:22,275 INFO  bla.nah.example.da.UserDAImpl MYSQL: SELECTING A USER BY USERNAME
+2020-09-22 15:49:22,278 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 15:49:22,278 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 15:49:22,279 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 15:49:22,279 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 15:52:31,491 INFO  bla.nah.example.handler.LoginHandler  Username: xeko
+2020-09-22 15:52:31,493 INFO  bla.nah.example.da.UserDAImpl MYSQL: SELECTING A USER BY USERNAME
+2020-09-22 15:52:31,494 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 15:52:31,495 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 15:52:31,495 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 15:52:31,495 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 15:55:56,148 INFO  bla.nah.example.handler.LoginHandler  Username: xeko
+2020-09-22 15:55:56,157 INFO  bla.nah.example.da.UserDAImpl MYSQL: SELECTING A USER BY USERNAME
+2020-09-22 15:55:56,159 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 15:55:56,159 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 15:55:56,159 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 15:55:56,159 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 15:56:34,581 INFO  bla.nah.example.handler.LoginHandler  Username: xeko
+2020-09-22 15:56:34,583 INFO  bla.nah.example.da.UserDAImpl MYSQL: SELECTING A USER BY USERNAME
+2020-09-22 15:56:34,584 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 15:56:34,585 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 15:56:34,585 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 15:56:34,585 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 15:57:03,332 INFO  bla.nah.example.handler.LoginHandler  Username: xeko
+2020-09-22 15:57:03,334 INFO  bla.nah.example.da.UserDAImpl MYSQL: SELECTING A USER BY USERNAME
+2020-09-22 15:57:03,335 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 15:57:03,336 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 15:57:03,336 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 15:57:03,336 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 15:57:48,341 INFO  bla.nah.example.handler.LoginHandler  Username: xeko
+2020-09-22 15:57:48,343 INFO  bla.nah.example.da.UserDAImpl MYSQL: SELECTING A USER BY USERNAME
+2020-09-22 15:57:48,344 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 15:57:48,344 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 15:57:48,344 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 15:57:48,345 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:05:11,377 INFO  bla.nah.example.handler.RegisterHandler  Username: naruto
+2020-09-22 16:05:11,389 INFO  bla.nah.example.da.UserDAImpl MYSQL: INSERTING A USER
+2020-09-22 16:05:11,393 INFO  bla.nah.example.da.BaseTransactionDA Successful
+2020-09-22 16:05:11,393 INFO  bla.nah.example.handler.RegisterHandler Register successful
+2020-09-22 16:05:20,416 INFO  bla.nah.example.handler.LoginHandler  Username: naruto
+2020-09-22 16:05:20,418 INFO  bla.nah.example.da.UserDAImpl MYSQL: SELECTING A USER BY USERNAME
+2020-09-22 16:05:20,420 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 16:05:20,420 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:05:20,421 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:05:20,421 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:18:31,671 INFO  bla.nah.example.handler.LoginHandler  Username: naruto
+2020-09-22 16:18:31,673 INFO  bla.nah.example.da.UserDAImpl MYSQL: SELECTING A USER BY USERNAME
+2020-09-22 16:18:31,677 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 16:18:31,678 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:18:31,678 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:18:31,678 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:20:04,853 INFO  bla.nah.example.handler.LoginHandler  Username: naruto
+2020-09-22 16:20:04,855 INFO  bla.nah.example.da.UserDAImpl MYSQL: SELECTING A USER BY USERNAME
+2020-09-22 16:20:04,856 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 16:20:04,857 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:20:04,857 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:20:04,857 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:20:04,917 INFO  bla.nah.example.handler.JWTAuthHandler 
+2020-09-22 16:20:04,919 INFO  bla.nah.example.handler.JWTAuthHandler Authorization successful
+2020-09-22 16:20:39,972 INFO  bla.nah.example.handler.LoginHandler  Username: naruto
+2020-09-22 16:20:39,974 INFO  bla.nah.example.da.UserDAImpl MYSQL: SELECTING A USER BY USERNAME
+2020-09-22 16:20:39,976 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 16:20:39,976 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:20:39,976 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:20:39,976 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:20:40,023 INFO  bla.nah.example.handler.JWTAuthHandler 
+2020-09-22 16:20:40,023 INFO  bla.nah.example.handler.JWTAuthHandler Authorization successful
+2020-09-22 16:20:40,024 INFO  bla.nah.example.handler.UserListHandler 
+2020-09-22 16:20:40,029 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 16:20:40,029 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:20:40,029 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:20:40,029 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:20:40,029 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 16:20:40,030 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:20:40,030 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:20:40,030 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:20:40,030 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 16:20:40,030 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:20:40,030 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:20:40,030 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:20:40,030 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 16:20:40,030 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:20:40,030 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:20:40,031 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:20:40,031 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 16:20:40,031 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:20:40,031 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:20:40,031 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:20:40,031 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 16:20:40,031 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:20:40,031 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:20:40,031 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:20:40,031 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 16:20:40,031 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:20:40,032 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:20:40,032 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:20:40,032 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 16:20:40,032 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:20:40,032 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:20:40,032 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:20:40,032 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 16:20:40,032 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:20:40,032 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:20:40,032 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:35:08,044 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-09-22 16:35:08,220 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-1 - Start completed.
+2020-09-22 16:35:08,221 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-2 - Starting...
+2020-09-22 16:35:08,229 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-2 - Start completed.
+2020-09-22 16:35:08,656 INFO  org.redisson.Version Redisson 3.11.6
+2020-09-22 16:35:08,832 INFO  org.redisson.connection.pool.MasterPubSubConnectionPool 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-09-22 16:35:08,842 INFO  org.redisson.connection.pool.MasterConnectionPool 24 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-09-22 16:35:08,897 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-3 - Starting...
+2020-09-22 16:35:08,908 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-3 - Start completed.
+2020-09-22 16:35:08,910 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-4 - Starting...
+2020-09-22 16:35:08,920 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-4 - Start completed.
+2020-09-22 16:35:08,933 INFO  bla.nah.example.server.RestfulAPI Starting RestfulAPI Server ...
+2020-09-22 16:35:08,933 INFO  bla.nah.example.server.RestfulAPI Starting RestfulAPI Server ...
+2020-09-22 16:35:08,939 INFO  bla.nah.example.server.RestfulAPI Starting RestfulAPI Server ...
+2020-09-22 16:35:08,943 INFO  bla.nah.example.server.RestfulAPI Starting RestfulAPI Server ...
+2020-09-22 16:35:08,953 INFO  bla.nah.example.server.RestfulAPI Starting RestfulAPI Server ...
+2020-09-22 16:35:08,963 INFO  bla.nah.example.server.RestfulAPI Starting RestfulAPI Server ...
+2020-09-22 16:35:08,966 INFO  bla.nah.example.server.RestfulAPI Starting RestfulAPI Server ...
+2020-09-22 16:35:08,971 INFO  bla.nah.example.server.RestfulAPI Starting RestfulAPI Server ...
+2020-09-22 16:35:08,986 INFO  bla.nah.example.server.RestfulAPI API Server start successfully !, port:8055
+2020-09-22 16:35:08,986 INFO  bla.nah.example.server.RestfulAPI API Server start successfully !, port:8055
+2020-09-22 16:35:08,987 INFO  bla.nah.example.server.RestfulAPI API Server start successfully !, port:8055
+2020-09-22 16:35:08,987 INFO  bla.nah.example.server.RestfulAPI API Server start successfully !, port:8055
+2020-09-22 16:35:08,987 INFO  bla.nah.example.server.RestfulAPI API Server start successfully !, port:8055
+2020-09-22 16:35:08,987 INFO  bla.nah.example.server.RestfulAPI API Server start successfully !, port:8055
+2020-09-22 16:35:08,987 INFO  bla.nah.example.server.RestfulAPI API Server start successfully !, port:8055
+2020-09-22 16:35:08,988 INFO  bla.nah.example.server.RestfulAPI API Server start successfully !, port:8055
+2020-09-22 16:35:21,475 INFO  bla.nah.example.handler.LoginHandler  Username: xeko
+2020-09-22 16:35:21,490 INFO  bla.nah.example.da.UserDAImpl MYSQL: SELECTING A USER BY USERNAME
+2020-09-22 16:35:21,525 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 16:35:21,526 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:35:21,526 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:35:21,526 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:35:21,614 INFO  bla.nah.example.handler.JWTAuthHandler 
+2020-09-22 16:35:21,616 INFO  bla.nah.example.handler.JWTAuthHandler Authorization successful
+2020-09-22 16:35:21,616 INFO  bla.nah.example.handler.UserListHandler 
+2020-09-22 16:35:21,622 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 16:35:21,622 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:35:21,622 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:35:21,622 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:35:21,625 WARN  bla.nah.example.da.BaseTransactionDA Failed execute cause=Code=0, 
+sqlState=S0022
+,  message: Column 'Password' not found.
+, stackTrace: java.sql.SQLException: Column 'Password' not found.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:127)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:87)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:61)
+	at com.mysql.cj.jdbc.result.ResultSetImpl.findColumn(ResultSetImpl.java:572)
+	at com.mysql.cj.jdbc.result.ResultSetImpl.getObject(ResultSetImpl.java:1389)
+	at com.zaxxer.hikari.pool.HikariProxyResultSet.getObject(HikariProxyResultSet.java)
+	at bla.nah.example.common.mapper.EntityMapper.loadResultSetIntoObject(EntityMapper.java:67)
+	at bla.nah.example.da.UserDAImpl.mapRs2EntityUserList(UserDAImpl.java:132)
+	at bla.nah.example.da.BaseTransactionDA.queryEntity(BaseTransactionDA.java:168)
+	at bla.nah.example.da.UserDAImpl.lambda$selectUserList$4(UserDAImpl.java:104)
+	at bla.nah.example.utils.AsyncHandler.lambda$run$0(AsyncHandler.java:21)
+	at io.vertx.core.impl.ContextImpl.lambda$executeBlocking$2(ContextImpl.java:272)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+
+2020-09-22 16:42:29,505 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-09-22 16:42:29,662 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-1 - Start completed.
+2020-09-22 16:42:29,663 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-2 - Starting...
+2020-09-22 16:42:29,670 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-2 - Start completed.
+2020-09-22 16:42:30,073 INFO  org.redisson.Version Redisson 3.11.6
+2020-09-22 16:42:30,184 INFO  org.redisson.connection.pool.MasterConnectionPool 24 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-09-22 16:42:30,184 INFO  org.redisson.connection.pool.MasterPubSubConnectionPool 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-09-22 16:42:30,219 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-3 - Starting...
+2020-09-22 16:42:30,229 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-3 - Start completed.
+2020-09-22 16:42:30,231 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-4 - Starting...
+2020-09-22 16:42:30,239 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-4 - Start completed.
+2020-09-22 16:42:30,248 INFO  bla.nah.example.server.RestfulAPI Starting RestfulAPI Server ...
+2020-09-22 16:42:30,251 INFO  bla.nah.example.server.RestfulAPI Starting RestfulAPI Server ...
+2020-09-22 16:42:30,255 INFO  bla.nah.example.server.RestfulAPI Starting RestfulAPI Server ...
+2020-09-22 16:42:30,255 INFO  bla.nah.example.server.RestfulAPI Starting RestfulAPI Server ...
+2020-09-22 16:42:30,255 INFO  bla.nah.example.server.RestfulAPI Starting RestfulAPI Server ...
+2020-09-22 16:42:30,266 INFO  bla.nah.example.server.RestfulAPI Starting RestfulAPI Server ...
+2020-09-22 16:42:30,266 INFO  bla.nah.example.server.RestfulAPI Starting RestfulAPI Server ...
+2020-09-22 16:42:30,267 INFO  bla.nah.example.server.RestfulAPI Starting RestfulAPI Server ...
+2020-09-22 16:42:30,292 INFO  bla.nah.example.server.RestfulAPI API Server start successfully !, port:8055
+2020-09-22 16:42:30,292 INFO  bla.nah.example.server.RestfulAPI API Server start successfully !, port:8055
+2020-09-22 16:42:30,293 INFO  bla.nah.example.server.RestfulAPI API Server start successfully !, port:8055
+2020-09-22 16:42:30,293 INFO  bla.nah.example.server.RestfulAPI API Server start successfully !, port:8055
+2020-09-22 16:42:30,293 INFO  bla.nah.example.server.RestfulAPI API Server start successfully !, port:8055
+2020-09-22 16:42:30,292 INFO  bla.nah.example.server.RestfulAPI API Server start successfully !, port:8055
+2020-09-22 16:42:30,292 INFO  bla.nah.example.server.RestfulAPI API Server start successfully !, port:8055
+2020-09-22 16:42:30,293 INFO  bla.nah.example.server.RestfulAPI API Server start successfully !, port:8055
+2020-09-22 16:42:42,010 INFO  bla.nah.example.handler.LoginHandler  Username: xek
+2020-09-22 16:42:42,027 INFO  bla.nah.example.da.UserDAImpl MYSQL: SELECTING A USER BY USERNAME
+2020-09-22 16:42:51,751 INFO  bla.nah.example.handler.LoginHandler  Username: xeko
+2020-09-22 16:42:51,754 INFO  bla.nah.example.da.UserDAImpl MYSQL: SELECTING A USER BY USERNAME
+2020-09-22 16:42:51,760 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 16:42:51,762 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:42:51,762 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:42:51,762 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:42:51,867 INFO  bla.nah.example.handler.JWTAuthHandler 
+2020-09-22 16:42:51,868 INFO  bla.nah.example.handler.JWTAuthHandler Authorization successful
+2020-09-22 16:42:51,869 INFO  bla.nah.example.handler.UserListHandler 
+2020-09-22 16:42:51,879 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 16:42:51,879 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:42:51,880 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:42:51,880 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 16:42:51,880 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:42:51,880 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:42:51,880 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 16:42:51,880 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:42:51,880 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:42:51,880 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 16:42:51,881 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:42:51,881 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:42:51,881 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 16:42:51,881 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:42:51,881 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:42:51,881 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 16:42:51,881 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:42:51,881 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:42:51,881 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 16:42:51,882 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:42:51,882 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:42:51,882 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 16:42:51,882 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:42:51,882 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:42:51,882 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 16:42:51,882 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 16:42:51,882 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:18:40,829 INFO  bla.nah.example.handler.LoginHandler  Username: xeko
+2020-09-22 17:18:40,832 INFO  bla.nah.example.da.UserDAImpl MYSQL: SELECTING A USER BY USERNAME
+2020-09-22 17:18:40,840 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:18:40,841 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:18:40,841 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:18:40,842 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:18:40,878 INFO  bla.nah.example.handler.JWTAuthHandler 
+2020-09-22 17:18:40,879 INFO  bla.nah.example.handler.JWTAuthHandler Authorization successful
+2020-09-22 17:18:40,879 INFO  bla.nah.example.handler.UserListHandler 
+2020-09-22 17:18:40,883 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:18:40,884 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:18:40,885 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:18:40,885 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:18:40,885 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:18:40,886 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:18:40,886 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:18:40,886 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:18:40,886 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:18:40,886 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:18:40,886 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:18:40,887 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:18:40,887 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:18:40,887 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:18:40,887 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:18:40,887 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:18:40,887 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:18:40,887 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:18:40,888 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:18:40,888 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:18:40,888 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:18:40,888 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:18:40,888 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:18:40,888 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:18:40,888 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:18:40,888 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:18:40,888 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:20:41,424 INFO  bla.nah.example.handler.LoginHandler  Username: xeko
+2020-09-22 17:20:41,426 INFO  bla.nah.example.da.UserDAImpl MYSQL: SELECTING A USER BY USERNAME
+2020-09-22 17:20:41,429 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:20:41,429 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:20:41,429 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:20:41,429 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:20:41,478 INFO  bla.nah.example.handler.JWTAuthHandler 
+2020-09-22 17:20:41,479 INFO  bla.nah.example.handler.JWTAuthHandler Authorization successful
+2020-09-22 17:20:41,480 INFO  bla.nah.example.handler.UserListHandler 
+2020-09-22 17:20:41,484 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:20:41,485 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:20:41,485 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:20:41,485 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:20:41,485 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:20:41,485 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:20:41,485 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:20:41,486 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:20:41,486 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:20:41,486 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:20:41,486 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:20:41,486 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:20:41,486 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:20:41,486 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:20:41,486 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:20:41,486 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:20:41,487 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:20:41,487 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:20:41,487 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:20:41,487 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:20:41,487 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:20:41,487 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:20:41,487 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:20:41,487 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:20:41,487 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:20:41,488 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:20:41,488 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:23:01,409 INFO  bla.nah.example.handler.LoginHandler  Username: xeko
+2020-09-22 17:23:01,412 INFO  bla.nah.example.da.UserDAImpl MYSQL: SELECTING A USER BY USERNAME
+2020-09-22 17:23:01,418 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:23:01,419 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:23:01,419 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:23:01,419 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:23:01,456 INFO  bla.nah.example.handler.JWTAuthHandler 
+2020-09-22 17:23:01,457 INFO  bla.nah.example.handler.JWTAuthHandler Authorization successful
+2020-09-22 17:23:01,457 INFO  bla.nah.example.handler.UserListHandler 
+2020-09-22 17:23:01,462 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:23:01,463 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:23:01,463 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:23:01,463 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:23:01,463 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:23:01,463 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:23:01,464 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:23:01,464 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:23:01,464 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:23:01,465 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:23:01,465 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:23:01,465 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:23:01,465 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:23:01,465 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:23:01,465 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:23:01,465 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:23:01,466 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:23:01,467 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:23:01,467 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:23:01,467 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:23:01,468 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:23:01,468 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:23:01,468 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:23:01,469 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:23:01,469 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:23:01,470 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:23:01,471 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:25:30,106 INFO  bla.nah.example.handler.LoginHandler  Username: xeko
+2020-09-22 17:25:30,112 INFO  bla.nah.example.da.UserDAImpl MYSQL: SELECTING A USER BY USERNAME
+2020-09-22 17:25:30,113 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:25:30,114 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:25:30,114 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:25:30,114 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:25:30,149 INFO  bla.nah.example.handler.JWTAuthHandler 
+2020-09-22 17:25:30,149 INFO  bla.nah.example.handler.JWTAuthHandler Authorization successful
+2020-09-22 17:25:30,149 INFO  bla.nah.example.handler.UserListHandler 
+2020-09-22 17:25:30,151 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:25:30,151 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:25:30,151 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:25:30,152 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:25:30,152 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:25:30,152 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:25:30,152 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:25:30,152 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:25:30,152 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:25:30,152 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:25:30,152 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:25:30,152 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:25:30,153 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:25:30,153 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:25:30,153 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:25:30,153 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:25:30,153 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:25:30,153 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:25:30,153 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:25:30,153 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:25:30,153 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:25:30,153 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:25:30,153 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:25:30,154 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:25:30,154 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:25:30,154 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:25:30,154 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:26:11,347 INFO  bla.nah.example.handler.LoginHandler  Username: xeko
+2020-09-22 17:26:11,350 INFO  bla.nah.example.da.UserDAImpl MYSQL: SELECTING A USER BY USERNAME
+2020-09-22 17:26:11,352 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:26:11,352 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:26:11,352 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:26:11,352 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:26:11,381 INFO  bla.nah.example.handler.JWTAuthHandler 
+2020-09-22 17:26:11,382 INFO  bla.nah.example.handler.JWTAuthHandler Authorization successful
+2020-09-22 17:26:11,382 INFO  bla.nah.example.handler.UserListHandler 
+2020-09-22 17:26:11,384 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:26:11,384 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:26:11,384 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:26:11,384 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:26:11,384 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:26:11,384 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:26:11,384 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:26:11,385 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:26:11,385 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:26:11,385 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:26:11,385 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:26:11,385 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:26:11,385 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:26:11,385 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:26:11,385 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:26:11,385 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:26:11,385 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:26:11,385 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:26:11,386 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:26:11,386 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:26:11,386 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:26:11,386 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:26:11,386 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:26:11,386 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:26:11,386 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:26:11,386 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:26:11,386 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:26:38,052 INFO  bla.nah.example.handler.LoginHandler  Username: xeko
+2020-09-22 17:26:38,054 INFO  bla.nah.example.da.UserDAImpl MYSQL: SELECTING A USER BY USERNAME
+2020-09-22 17:26:38,056 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:26:38,056 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:26:38,056 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:26:38,056 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:26:38,082 INFO  bla.nah.example.handler.JWTAuthHandler 
+2020-09-22 17:26:38,082 INFO  bla.nah.example.handler.JWTAuthHandler Authorization successful
+2020-09-22 17:26:38,083 INFO  bla.nah.example.handler.UserListHandler 
+2020-09-22 17:26:38,084 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:26:38,084 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:26:38,085 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:26:38,085 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:26:38,085 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:26:38,085 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:26:38,085 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:26:38,085 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:26:38,085 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:26:38,085 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:26:38,086 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:26:38,086 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:26:38,086 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:26:38,089 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:26:38,089 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:26:38,089 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:26:38,089 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:26:38,089 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:26:38,089 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:26:38,090 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:26:38,090 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:26:38,090 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:26:38,090 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:26:38,090 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:26:38,090 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-22 17:26:38,090 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-22 17:26:38,090 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String

@@ -7,9 +7,10 @@ import Register from '../Register'
 
 export default function App() {
   const loginState = useSelector(state => state.loginState);
-  let child = <Login />;
-  if(loginState === "REGISTER")
-    child = <Register />;
+ 
+  let child = <Register />;
+  if(loginState === "LOGIN")
+    child = <Login />;
   else if(loginState === "ALREADY_LOGIN")
     child = <Messenger />;
 

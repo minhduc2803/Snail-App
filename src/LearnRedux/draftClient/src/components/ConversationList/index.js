@@ -3,29 +3,29 @@ import ConversationSearch from '../ConversationSearch';
 import ConversationListItem from '../ConversationListItem';
 import Toolbar from '../Toolbar';
 import ToolbarButton from '../ToolbarButton';
-import axios from 'axios';
+
+import { useSelector, useDispatch } from 'react-redux';
 
 import './ConversationList.css';
 
 export default function ConversationList(props) {
-  const [conversations, setConversations] = useState([]);
-  useEffect(() => {
-    getConversations()
-  },[])
 
- const getConversations = () => {
-    axios.get('https://randomuser.me/api/?results=20').then(response => {
-        let newConversations = response.data.results.map(result => {
-          return {
-            photo: result.picture.large,
-            name: `${result.name.first} ${result.name.last}`,
-            text: 'Hello world! This is a long message that needs to be truncated.'
-          };
-        });
-        setConversations([...conversations, ...newConversations])
+  const listUsers = useSelector(state => state.listUsers);
+  
+//   useEffect(() => {
+//     dispatch(asyncLoadUsers());
+//     getConversations()
+//   },[])
+
+  
+    let conversations = listUsers.map(result => {
+      return {
+        photo: "#",
+        name: `${result.Fullname}`,
+        text: 'Hello world! This is a long message that needs to be truncated.'
+      };
     });
-  }
-
+    
     return (
       <div className="conversation-list">
         <Toolbar

@@ -3,7 +3,12 @@ import ConversationList from '../ConversationList';
 import MessageList from '../MessageList';
 import './Messenger.css';
 
+import { useDispatch } from 'react-redux';
+import { asyncLoadUsers } from '../../redux/actions';
+
 export default function Messenger(props) {
+  const dispatch = useDispatch();
+  dispatch(asyncLoadUsers());
     return (
       <div className="messenger">
         {/* <Toolbar

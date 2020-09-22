@@ -1,6 +1,12 @@
+import { bindActionCreators } from "redux"
 
-
-const rootReducer = (state = {loginState: "LOGIN"}, action) => {
+const initialState = {
+    loginState: "LOGIN",
+    user: {},
+    listUsers: [],
+    chats: []
+}
+const rootReducer = (state = initialState, action) => {
     switch(action.type){
         case "ALREADY_LOGIN":
             return {
@@ -19,7 +25,20 @@ const rootReducer = (state = {loginState: "LOGIN"}, action) => {
                 ...state,
                 loginState: "REGISTER"
             }
-
+        
+        case "START_LOGIN":
+            return {
+                ...state,
+                user : {
+                    username: action.username
+                }
+            }
+        
+        case "LOAD_USERS":
+            return {
+                ...state,
+                listUsers: action.listUsers
+            }
         default:
             return state;
     }

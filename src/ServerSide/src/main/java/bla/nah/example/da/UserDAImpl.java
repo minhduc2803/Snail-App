@@ -2,6 +2,7 @@ package bla.nah.example.da;
 
 import bla.nah.example.common.mapper.EntityMapper;
 import bla.nah.example.model.User;
+import bla.nah.example.model.UserWithoutPassword;
 import bla.nah.example.utils.AsyncHandler;
 import io.vertx.core.Future;
 
@@ -96,8 +97,8 @@ public class UserDAImpl extends BaseTransactionDA implements UserDA {
   }
 
     @Override
-    public Future<ArrayList<User>> selectUserList(int id) {
-        Future<ArrayList<User>> future = Future.future();
+    public Future<ArrayList<UserWithoutPassword>> selectUserList(int id) {
+        Future<ArrayList<UserWithoutPassword>> future = Future.future();
         asyncHandler.run(
                 () -> {
                     Object[] params = {id};
@@ -124,11 +125,11 @@ public class UserDAImpl extends BaseTransactionDA implements UserDA {
 
     return user;
   }
-    private ArrayList<User> mapRs2EntityUserList(ResultSet resultSet) throws Exception {
-        User user = null;
-        ArrayList<User> userList = new ArrayList<>();
+    private ArrayList<UserWithoutPassword> mapRs2EntityUserList(ResultSet resultSet) throws Exception {
+        UserWithoutPassword user = null;
+        ArrayList<UserWithoutPassword> userList = new ArrayList<>();
         while (resultSet.next()) {
-            user = new User();
+            user = new UserWithoutPassword();
             EntityMapper.getInstance().loadResultSetIntoObject(resultSet, user);
             userList.add(user);
         }

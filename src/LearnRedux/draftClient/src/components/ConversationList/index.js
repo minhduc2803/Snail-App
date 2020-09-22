@@ -18,8 +18,9 @@ export default function ConversationList(props) {
 //   },[])
 
   
-    let conversations = listUsers.map(result => {
+    let conversations = listUsers.map((result, index) => {
       return {
+        index: index,
         photo: "#",
         name: `${result.Fullname}`,
         text: 'Hello world! This is a long message that needs to be truncated.'
@@ -41,7 +42,7 @@ export default function ConversationList(props) {
         {
           conversations.map(conversation =>
             <ConversationListItem
-              key={conversation.name}
+              key={conversation.index}
               data={conversation}
             />
           )

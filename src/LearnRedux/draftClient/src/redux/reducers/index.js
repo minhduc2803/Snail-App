@@ -4,7 +4,7 @@ const initialState = {
     loginState: "LOGIN",
     user: {},
     listUsers: [],
-    chats: []
+    chosenIndex: 0
 }
 const rootReducer = (state = initialState, action) => {
     switch(action.type){
@@ -38,6 +38,15 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 listUsers: action.listUsers
+            }
+
+        case "LOAD_CHAT":
+            return {
+                ...state,
+                listUsers: state.listUsers.map((content, i) => {
+                    return i === action.index ? {...content, chat: action.chat}
+                                        : content
+                })
             }
         default:
             return state;

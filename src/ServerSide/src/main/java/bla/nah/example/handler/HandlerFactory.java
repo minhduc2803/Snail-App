@@ -29,6 +29,7 @@ public class HandlerFactory {
           .put(APIPath.EXAMPLE, exampleHandler)
           .put(APIPath.LOGIN, loginHandler)
           .put(APIPath.REGISTER, registerHandler)
+          .put(APIPath.LIST_CHAT,chatListHandler)
           .build();
 
     postHandler
@@ -45,7 +46,6 @@ public class HandlerFactory {
       ImmutableMap.<String, BaseHandler>builder()
         .put(APIPath.LIST_CONVERSATION, conversationListHandler)
         .put(APIPath.LIST_USER, userListHandler)
-        .put(APIPath.LIST_CHAT,chatListHandler)
         .build();
 
     getHandler

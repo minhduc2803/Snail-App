@@ -47,7 +47,7 @@ public class ChatListHandler extends BaseHandler{
         try {
             ChatListRequest request = JsonProtoUtils.parseGson(baseRequest.getPostData(), ChatListRequest.class);
             log.info("Hello ChatList Handler");
-            log.info(baseRequest.getRequestPath());
+            log.info(baseRequest.getPostData());
             log.info("UserReceiveID: {}",request.getUserReceiveID());
 
             String token = baseRequest.getHeaders().get(HttpHeaders.AUTHORIZATION).substring("Bearer ".length()).trim();

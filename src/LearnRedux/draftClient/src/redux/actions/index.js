@@ -92,11 +92,43 @@ export function asyncLoadUsers() {
             },
             validateStatus: () => true
         }).then(result => {
+            if(result.status !== 200) {
+                alert(result.data.message)
+
+                return []
+            }
+            else{
+                
+                dispatch({type: "LOAD_USERS", listUsers: result.data.data})
+                return result.data.data;
+            }
+            
+        })
+    }
+}
+
+export function asyncLoadChat(chosenIndex, content){
+    return (dispatch, getState) => {
+        let data = {
+            UserReceiveID: content.UserID,
+        }
+        data = JSON.stringify(data)
+        console.log(data)
+        return axios({
+            method: 'post',
+            url: 'http://localhost:8055/api/protected/list-chat',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${getState().user.token}`,
+            },
+            data: data,
+            validateStatus: () => true
+        }).then(result => {
             if(result.status !== 200)
                 alert(result.data.message)
             else{
-                alert(result.data.data.length);
-                dispatch({type: "LOAD_USERS", listUsers: result.data.data})
+               
+                dispatch({type: "LOAD_CHAT", chat: result.data.data, index: chosenIndex})
                 
             }
             

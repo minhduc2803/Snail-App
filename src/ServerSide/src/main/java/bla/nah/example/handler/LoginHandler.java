@@ -93,6 +93,7 @@ public class LoginHandler extends BaseHandler{
                     });
 
         } catch (Exception e) {
+            log.error(e);
             response.message("Server has an error")
                     .status(HttpResponseStatus.INTERNAL_SERVER_ERROR.code());
             future.complete(response.build());

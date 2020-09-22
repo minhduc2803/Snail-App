@@ -22,7 +22,48 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="15b808f2-8377-4da4-93c6-844e525a0731" name="Default Changelist" comment="" />
+    <list default="true" id="15b808f2-8377-4da4-93c6-844e525a0731" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../ClientSide/node_modules/deep-diff/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ClientSide/node_modules/deep-diff/Readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ClientSide/node_modules/deep-diff/index.es.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ClientSide/node_modules/deep-diff/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ClientSide/node_modules/deep-diff/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ClientSide/node_modules/deep-diff/releases/deep-diff-0.1.3.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ClientSide/node_modules/deep-diff/releases/deep-diff-0.1.4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ClientSide/node_modules/deep-diff/releases/deep-diff-0.1.5.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ClientSide/node_modules/deep-diff/releases/deep-diff-0.1.6.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ClientSide/node_modules/deep-diff/releases/deep-diff-0.1.7.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ClientSide/node_modules/deep-diff/releases/deep-diff-0.2.0.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ClientSide/node_modules/deep-diff/releases/deep-diff-0.3.0.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ClientSide/node_modules/deep-diff/releases/deep-diff-0.3.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ClientSide/node_modules/deep-diff/releases/deep-diff-0.3.2.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ClientSide/node_modules/deep-diff/releases/deep-diff-0.3.3.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ClientSide/node_modules/deep-diff/releases/deep-diff-0.3.4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ClientSide/node_modules/deep-diff/releases/deep-diff-0.3.5.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ClientSide/node_modules/deep-diff/releases/deep-diff-0.3.6.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ClientSide/node_modules/deep-diff/releases/deep-diff-0.3.7.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ClientSide/node_modules/deep-diff/releases/deep-diff-0.3.8.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ClientSide/node_modules/deep-diff/releases/deep-diff-debug.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ClientSide/node_modules/redux-logger/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ClientSide/node_modules/redux-logger/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ClientSide/node_modules/redux-logger/dist/redux-logger.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ClientSide/node_modules/redux-logger/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ClientSide/node_modules/redux-logger/src/core.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ClientSide/node_modules/redux-logger/src/defaults.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ClientSide/node_modules/redux-logger/src/diff.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ClientSide/node_modules/redux-logger/src/helpers.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ClientSide/node_modules/redux-logger/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ClientSide/src/reducers/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnRedux/draftClient" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientSide/node_modules/.yarn-integrity" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientSide/node_modules/.yarn-integrity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientSide/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientSide/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientSide/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientSide/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientSide/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientSide/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/bootstrap.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/bootstrap.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bla/nah/example/handler/LoginHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bla/nah/example/handler/LoginHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bla/nah/example/handler/HandlerFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bla/nah/example/handler/HandlerFactory.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -136,26 +177,26 @@
     </state>
     <state x="1129" y="311" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1599111150000" />
     <state x="1131" y="312" width="424" height="491" key="FileChooserDialogImpl/72.29.1848.1051@72.29.1848.1051" timestamp="1600445786758" />
-    <state width="878" height="274" key="GridCell.Tab.0.bottom" timestamp="1600498272270">
+    <state width="868" height="274" key="GridCell.Tab.0.bottom" timestamp="1600717223057">
       <screen x="72" y="29" width="1848" height="1051" />
     </state>
     <state width="1091" height="204" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1598869751984" />
-    <state width="878" height="274" key="GridCell.Tab.0.bottom/72.29.1848.1051@72.29.1848.1051" timestamp="1600498272270" />
-    <state width="878" height="274" key="GridCell.Tab.0.center" timestamp="1600498272270">
+    <state width="868" height="274" key="GridCell.Tab.0.bottom/72.29.1848.1051@72.29.1848.1051" timestamp="1600717223057" />
+    <state width="868" height="274" key="GridCell.Tab.0.center" timestamp="1600717223057">
       <screen x="72" y="29" width="1848" height="1051" />
     </state>
     <state width="1091" height="204" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1598869751983" />
-    <state width="878" height="274" key="GridCell.Tab.0.center/72.29.1848.1051@72.29.1848.1051" timestamp="1600498272270" />
-    <state width="878" height="274" key="GridCell.Tab.0.left" timestamp="1600498272270">
+    <state width="868" height="274" key="GridCell.Tab.0.center/72.29.1848.1051@72.29.1848.1051" timestamp="1600717223057" />
+    <state width="868" height="274" key="GridCell.Tab.0.left" timestamp="1600717223057">
       <screen x="72" y="29" width="1848" height="1051" />
     </state>
     <state width="1091" height="204" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1598869751983" />
-    <state width="878" height="274" key="GridCell.Tab.0.left/72.29.1848.1051@72.29.1848.1051" timestamp="1600498272270" />
-    <state width="878" height="274" key="GridCell.Tab.0.right" timestamp="1600498272270">
+    <state width="868" height="274" key="GridCell.Tab.0.left/72.29.1848.1051@72.29.1848.1051" timestamp="1600717223057" />
+    <state width="868" height="274" key="GridCell.Tab.0.right" timestamp="1600717223057">
       <screen x="72" y="29" width="1848" height="1051" />
     </state>
     <state width="1091" height="204" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1598869751983" />
-    <state width="878" height="274" key="GridCell.Tab.0.right/72.29.1848.1051@72.29.1848.1051" timestamp="1600498272270" />
+    <state width="868" height="274" key="GridCell.Tab.0.right/72.29.1848.1051@72.29.1848.1051" timestamp="1600717223057" />
     <state width="957" height="344" key="GridCell.Tab.1.bottom" timestamp="1599527204250">
       <screen x="72" y="29" width="1848" height="1051" />
     </state>

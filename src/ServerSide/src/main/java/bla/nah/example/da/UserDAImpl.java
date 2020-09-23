@@ -18,10 +18,10 @@ public class UserDAImpl extends BaseTransactionDA implements UserDA {
   private final DataSource dataSource;
   private final AsyncHandler asyncHandler;
   private static final String INSERT_USER_STATEMENT =
-      "INSERT INTO chatapp.User (`Username`,`Fullname`,`Password`) VALUES (?, ?, ?)";
-  private static final String SELECT_USER_BY_ID = "SELECT * FROM chatapp.User WHERE UserID = ?";
-  private static final String SELECT_USER_BY_USERNAME = "SELECT * FROM chatapp.User WHERE Username = ?";
-  private static final String SELECT_USER_LIST = "SELECT * FROM chatapp.User WHERE UserID != ?";
+      "INSERT INTO user (`user_name`,`full_name`,`password`) VALUES (?, ?, ?)";
+  private static final String SELECT_USER_BY_ID = "SELECT * FROM user WHERE id = ?";
+  private static final String SELECT_USER_BY_USERNAME = "SELECT * FROM user WHERE user_name = ?";
+  private static final String SELECT_USER_LIST = "SELECT * FROM user WHERE id != ?";
 
   public UserDAImpl(DataSource dataSource, AsyncHandler asyncHandler) {
     super();

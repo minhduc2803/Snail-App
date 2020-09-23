@@ -23,7 +23,7 @@ export default function MessageList(props) {
     let messages = content.chat.map((message, index) => {
         return {
           id: index+1,
-          author: message.UserSendID === user.userID ? content.Fullname:user.fullname,
+          author: message.UserSendID === user.userID ? user.fullname:content.Fullname,
           message: message.Content,
           timestamp: message.SentTime
         }
@@ -92,7 +92,7 @@ export default function MessageList(props) {
     return(
       <div className="message-list">
         <Toolbar
-          title="Conversation Title"
+          title={`${content.Fullname}`}
           rightItems={[
             <ToolbarButton key="info" icon="ion-ios-information-circle-outline" />,
             <ToolbarButton key="video" icon="ion-ios-videocam" />,

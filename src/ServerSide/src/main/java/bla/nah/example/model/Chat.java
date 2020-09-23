@@ -11,22 +11,22 @@ import java.sql.Timestamp;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Chat {
-    @DBTable(columnName = "ChatID")
+    @DBTable(columnName = "id")
     int ChatID;
 
-    @DBTable(columnName = "Mode")
+    @DBTable(columnName = "mode")
     int Mode;
 
-    @DBTable(columnName = "UserSendID")
+    @DBTable(columnName = "user_send_id")
     int UserSendID;
 
-    @DBTable(columnName = "UserReceiveID")
+    @DBTable(columnName = "user_receive_id")
     int UserReceiveID;
 
-    @DBTable(columnName =  "Content")
+    @DBTable(columnName =  "content")
     String Content;
 
-    @DBTable(columnName = "SentTime")
+    @DBTable(columnName = "sent_time")
     Long SentTime;
 
     String FormatTime;

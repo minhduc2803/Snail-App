@@ -8,6 +8,28 @@ export function alreadyLogin(user) {
     }
 }
 
+export function asyncSetupWebSocket(user){
+    return (dispatch) => {
+        const url = `ws://localhost:9009/chat?token=${user.token}`;
+        var ws = new WebSocket(url);
+        ws.onopen = function(){
+            console.log("WebSocket is connected");
+        }
+
+        ws.onmessage = function(evt){
+            console.log("Receive a mess");
+            console.log(JSON.parse(evt.data));
+            dispatch({type: "CHAT", chat: JSON.parse(evt.data)})
+        }
+
+        ws.onclose = function() {
+            console.log("webSocket is closed");
+        }
+        
+        dispatch({type: "SETUP_WEBSOCKET",websocket: ws})
+
+    }
+}
 
 export function asyncLogin(username, password) {
     return (dispatch, getState) => {
@@ -39,7 +61,7 @@ export function asyncLogin(username, password) {
                 }
                 console.log(result.data)
                 dispatch(alreadyLogin(user));
-
+                dispatch(asyncSetupWebSocket(user));
             }
             
         }).catch(error => {

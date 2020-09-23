@@ -4,7 +4,7 @@ import ConversationListItem from '../ConversationListItem';
 import Toolbar from '../Toolbar';
 import ToolbarButton from '../ToolbarButton';
 
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector} from 'react-redux';
 
 import './ConversationList.css';
 
@@ -23,7 +23,7 @@ export default function ConversationList(props) {
         index: index,
         photo: "#",
         name: `${result.Fullname}`,
-        text: 'Hello world! This is a long message that needs to be truncated.'
+        text: result.chat !== undefined && result.chat[result.chat.length-1] !== undefined ? `${result.chat[result.chat.length-1].Content}` : `Say hello to ${result.Fullname}`,
       };
     });
     

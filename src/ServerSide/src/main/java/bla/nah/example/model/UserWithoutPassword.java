@@ -9,13 +9,13 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserWithoutPassword {
-    @DBTable(columnName = "UserID")
+    @DBTable(columnName = "id")
     int UserID;
 
-    @DBTable(columnName = "Username")
+    @DBTable(columnName = "user_name")
     String Username;
 
-    @DBTable(columnName = "Fullname")
+    @DBTable(columnName = "full_name")
     String Fullname;
 
 }

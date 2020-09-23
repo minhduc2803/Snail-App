@@ -48,7 +48,33 @@ const rootReducer = (state = initialState, action) => {
                                         : content
                 })
             }
+
+        case "SETUP_WEBSOCKET":
+            return {
+                ...state,
+                websocket: action.websocket
+            }
+
+        case "CHAT":
+            return {
+                ...state,
+                listUsers: state.listUsers.map((content, i) => {
+                    if (content.UserID === action.chat.UserSendID || content.UserID === action.chat.UserReceiveID){
+                        content.chat.push(action.chat)
+                        return {...content, chat: content.chat}
+                    }else
+                        return content
+                })
+            }
+
+        case "CHOOSE_CONVERSATION":
+            return {
+                ...state,
+                chosenIndex: action.chosenIndex
+            }
+            
         default:
+
             return state;
     }
 }

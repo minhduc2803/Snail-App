@@ -53,15 +53,16 @@ public class WSHandler {
         log.info("Send chat from UserID: {}", UserID);
         JsonObject json = new JsonObject(buffer.toString());
 
-        log.info(buffer.toString());
+        log.info(json);
         Date date = new Date();
-        Chat chat = Chat.builder()
-                .Mode(json.getInteger("Mode"))
-                .UserSendID(UserID)
-                .UserReceiveID(json.getInteger("UserReceiveID"))
-                .Content(json.getString("Content"))
-                .SentTime(Instant.now().getEpochSecond())
-                .build();
+        try {
+            Chat chat = Chat.builder()
+                    .Mode(json.getInteger("Mode"))
+                    .UserSendID(UserID)
+                    .UserReceiveID(json.getInteger("UserReceiveID"))
+                    .Content(json.getString("Content"))
+                    .SentTime(Instant.now().getEpochSecond())
+                    .build();
 
         log.info(chat.getSentTime());
         Future<Chat> future = Future.future();
@@ -73,7 +74,7 @@ public class WSHandler {
                 .compose(next -> transaction.execute(chatListDA.insert(chat)))
                 .setHandler(result -> {
                     if (result.succeeded()) {
-
+                        log.info("insert a new chat");
                         Timestamp formatTime = new Timestamp(chat.getSentTime());
                         chat.setFormatTime(String.valueOf(formatTime));
                         SendChat(chat, UserID);
@@ -88,11 +89,16 @@ public class WSHandler {
                     }
 
                 });
+        }catch(Exception e){
+            log.error(e);
+        }
     }
 
     private void SendChat(Chat chat, int UserReceiveID) {
         log.info("Send chat to UserID: {}", UserReceiveID);
         Set<ServerWebSocket> receiveWS = clients.get(UserReceiveID);
+        if (receiveWS == null)
+            return;
         receiveWS.forEach(
                 conn -> {
                     conn.writeTextMessage(JsonProtoUtils.printGson(chat));

@@ -50,11 +50,19 @@ java -Dservice.conf=./conf/development.yaml
 
 ### 3.1 Login
 
+![](images/demo/login.png)
+
 ### 3.2 Register
+
+![](images/demo/register.png)
 
 ### 3.3 View User List
 
+![](images/demo/viewuser.png)
+
 ### 3.4 Chat 1 - 1
+
+![](images/demo/chat.png)
 
 ## 4. Refernces
 

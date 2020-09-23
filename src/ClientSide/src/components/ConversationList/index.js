@@ -4,26 +4,31 @@ import ConversationListItem from '../ConversationListItem';
 import Toolbar from '../Toolbar';
 import ToolbarButton from '../ToolbarButton';
 
+import { useSelector} from 'react-redux';
+
 import './ConversationList.css';
 
 export default function ConversationList(props) {
-  const [conversations, setConversations] = useState([]);
-  useEffect(() => {
-    getConversations()
-  },[])
 
- const getConversations = () => {
-      
-      setConversations([...conversations, ...props.conversationList])
-      console.log(props.ConversationList);
-  };
+  const listUsers = useSelector(state => state.listUsers);
+  
+//   useEffect(() => {
+//     dispatch(asyncLoadUsers());
+//     getConversations()
+//   },[])
 
- 
-
+  
+    let conversations = listUsers.map((result, index) => {
+      return {
+        index: index,
+        photo: "#",
+        name: `${result.Fullname}`,
+        text: result.chat !== undefined && result.chat[result.chat.length-1] !== undefined ? `${result.chat[result.chat.length-1].Content}` : `Say hello to ${result.Fullname}`,
+      };
+    });
+    
     return (
-      
       <div className="conversation-list">
-       
         <Toolbar
           title="Messenger"
           leftItems={[
@@ -37,9 +42,8 @@ export default function ConversationList(props) {
         {
           conversations.map(conversation =>
             <ConversationListItem
-              key={conversation.UserID}
+              key={conversation.index}
               data={conversation}
-              chosen={(id) => this.props.chosen(id)}
             />
           )
         }

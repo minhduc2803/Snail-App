@@ -8,7 +8,9 @@
   background: #eeeef1;
   cursor: pointer;
 }
-
+.chosen-conversation{
+  background-color: #cbd6eb;
+}
 .conversation-photo {
   width: 50px;
   height: 50px;
@@ -28,8 +30,4 @@
   font-size: 14px;
   color: #888;
   margin: 0;
-}
-
-.conversation-background-chosen{
-  background-color: burlywood;
 }

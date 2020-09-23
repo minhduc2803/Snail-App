@@ -17313,3 +17313,475 @@ Caused by: com.mysql.cj.exceptions.CJException: Unknown database 'chatapp'
 2020-09-23 17:09:48,105 INFO  bla.nah.example.common.mapper.EntityMapper int
 2020-09-23 17:09:48,105 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
 2020-09-23 17:09:48,106 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-24 04:00:46,721 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-09-24 04:00:46,884 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-1 - Start completed.
+2020-09-24 04:00:46,886 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-2 - Starting...
+2020-09-24 04:00:46,894 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-2 - Start completed.
+2020-09-24 04:00:47,296 INFO  org.redisson.Version Redisson 3.11.6
+2020-09-24 04:00:47,384 INFO  org.redisson.connection.pool.MasterPubSubConnectionPool 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-09-24 04:00:47,394 INFO  org.redisson.connection.pool.MasterConnectionPool 24 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-09-24 04:00:47,437 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-3 - Starting...
+2020-09-24 04:00:47,444 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-3 - Start completed.
+2020-09-24 04:00:47,446 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-4 - Starting...
+2020-09-24 04:00:47,453 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-4 - Start completed.
+2020-09-24 04:00:47,461 INFO  bla.nah.example.server.RestfulAPI Starting RestfulAPI Server ...
+2020-09-24 04:00:47,462 INFO  bla.nah.example.server.RestfulAPI Starting RestfulAPI Server ...
+2020-09-24 04:00:47,462 INFO  bla.nah.example.server.RestfulAPI Starting RestfulAPI Server ...
+2020-09-24 04:00:47,462 INFO  bla.nah.example.server.RestfulAPI Starting RestfulAPI Server ...
+2020-09-24 04:00:47,463 INFO  bla.nah.example.server.RestfulAPI Starting RestfulAPI Server ...
+2020-09-24 04:00:47,463 INFO  bla.nah.example.server.RestfulAPI Starting RestfulAPI Server ...
+2020-09-24 04:00:47,464 INFO  bla.nah.example.server.RestfulAPI Starting RestfulAPI Server ...
+2020-09-24 04:00:47,464 INFO  bla.nah.example.server.RestfulAPI Starting RestfulAPI Server ...
+2020-09-24 04:00:47,495 INFO  bla.nah.example.server.RestfulAPI API Server start successfully !, port:8055
+2020-09-24 04:00:47,495 INFO  bla.nah.example.server.RestfulAPI API Server start successfully !, port:8055
+2020-09-24 04:00:47,495 INFO  bla.nah.example.server.RestfulAPI API Server start successfully !, port:8055
+2020-09-24 04:00:47,496 INFO  bla.nah.example.server.RestfulAPI API Server start successfully !, port:8055
+2020-09-24 04:00:47,496 INFO  bla.nah.example.server.RestfulAPI API Server start successfully !, port:8055
+2020-09-24 04:00:47,496 INFO  bla.nah.example.server.RestfulAPI API Server start successfully !, port:8055
+2020-09-24 04:00:47,495 INFO  bla.nah.example.server.RestfulAPI API Server start successfully !, port:8055
+2020-09-24 04:00:47,495 INFO  bla.nah.example.server.RestfulAPI API Server start successfully !, port:8055
+2020-09-24 04:05:13,944 INFO  bla.nah.example.handler.RegisterHandler  Username: minhduc
+2020-09-24 04:05:13,959 INFO  bla.nah.example.da.UserDAImpl MYSQL: INSERTING A USER
+2020-09-24 04:05:13,976 INFO  bla.nah.example.da.BaseTransactionDA Successful
+2020-09-24 04:05:13,977 INFO  bla.nah.example.handler.RegisterHandler Register successful
+2020-09-24 04:05:24,182 INFO  bla.nah.example.handler.LoginHandler  Username: xeko
+2020-09-24 04:05:24,184 INFO  bla.nah.example.da.UserDAImpl MYSQL: SELECTING A USER BY USERNAME
+2020-09-24 04:05:44,798 INFO  bla.nah.example.handler.LoginHandler  Username: nobita
+2020-09-24 04:05:44,800 INFO  bla.nah.example.da.UserDAImpl MYSQL: SELECTING A USER BY USERNAME
+2020-09-24 04:05:44,803 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-24 04:05:44,803 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-24 04:05:44,804 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-24 04:05:44,804 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-24 04:05:44,843 INFO  bla.nah.example.handler.JWTAuthHandler 
+2020-09-24 04:05:44,844 INFO  bla.nah.example.handler.JWTAuthHandler Authorization successful
+2020-09-24 04:05:44,844 INFO  bla.nah.example.handler.UserListHandler 
+2020-09-24 04:05:44,850 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-24 04:05:44,850 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-24 04:05:44,850 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-24 04:05:44,851 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-24 04:05:44,851 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-24 04:05:44,851 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-24 04:05:44,851 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-24 04:05:44,851 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-24 04:05:44,851 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-24 04:05:44,863 INFO  bla.nah.example.server.WebSocketServer websocket connected from UserID: 1
+2020-09-24 04:05:44,901 INFO  bla.nah.example.handler.JWTAuthHandler 
+2020-09-24 04:05:44,901 INFO  bla.nah.example.handler.JWTAuthHandler Authorization successful
+2020-09-24 04:05:44,902 INFO  bla.nah.example.handler.ChatListHandler Hello ChatList Handler
+2020-09-24 04:05:44,903 INFO  bla.nah.example.handler.ChatListHandler {"UserReceiveID":2}
+2020-09-24 04:05:44,903 INFO  bla.nah.example.handler.JWTAuthHandler 
+2020-09-24 04:05:44,903 INFO  bla.nah.example.handler.ChatListHandler UserReceiveID: 2
+2020-09-24 04:05:44,903 INFO  bla.nah.example.handler.JWTAuthHandler 
+2020-09-24 04:05:44,903 INFO  bla.nah.example.handler.JWTAuthHandler Authorization successful
+2020-09-24 04:05:44,903 INFO  bla.nah.example.handler.JWTAuthHandler Authorization successful
+2020-09-24 04:05:44,903 INFO  bla.nah.example.handler.ChatListHandler Hello ChatList Handler
+2020-09-24 04:05:44,904 INFO  bla.nah.example.handler.ChatListHandler Hello ChatList Handler
+2020-09-24 04:05:44,904 INFO  bla.nah.example.handler.ChatListHandler {"UserReceiveID":4}
+2020-09-24 04:05:44,904 INFO  bla.nah.example.handler.ChatListHandler {"UserReceiveID":3}
+2020-09-24 04:05:44,904 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: SELECT LIST CHAT WITH ANOTHER USER
+2020-09-24 04:05:44,904 INFO  bla.nah.example.handler.ChatListHandler UserReceiveID: 4
+2020-09-24 04:05:44,904 INFO  bla.nah.example.handler.ChatListHandler UserReceiveID: 3
+2020-09-24 04:05:44,904 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: SELECT LIST CHAT WITH ANOTHER USER
+2020-09-24 04:05:44,904 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: SELECT LIST CHAT WITH ANOTHER USER
+2020-09-24 04:05:44,911 INFO  bla.nah.example.da.ChatListDAImpl HikariProxyResultSet@755853318 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@680ff3c3
+2020-09-24 04:05:44,912 INFO  bla.nah.example.da.ChatListDAImpl HikariProxyResultSet@1914371042 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@7cdd0bd1
+2020-09-24 04:05:44,912 INFO  bla.nah.example.da.ChatListDAImpl HikariProxyResultSet@730274522 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@2ae68a7d
+2020-09-24 04:05:44,914 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-24 04:05:44,914 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-24 04:05:44,914 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-24 04:05:44,914 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-24 04:05:44,914 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-24 04:05:44,914 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-24 04:05:44,915 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-24 04:05:44,915 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-24 04:05:44,915 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-24 04:05:44,915 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-24 04:05:44,915 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-24 04:05:44,915 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-24 04:05:44,920 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-24 04:05:44,920 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-24 04:05:44,920 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-24 04:05:44,921 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-24 04:05:44,921 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-24 04:05:44,921 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-24 04:05:44,921 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-24 04:05:44,921 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-24 04:05:44,921 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-24 04:05:44,921 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-24 04:05:44,922 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-24 04:05:44,922 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-24 04:05:44,922 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-24 04:05:44,922 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-24 04:05:44,922 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-24 04:05:44,922 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-24 04:05:44,922 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-24 04:05:44,922 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-24 04:05:44,923 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-24 04:05:44,923 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-24 04:05:44,923 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-24 04:05:44,923 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-24 04:05:44,923 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-24 04:05:44,923 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-24 04:05:44,923 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-24 04:05:44,923 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-24 04:05:44,923 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-24 04:05:44,924 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-24 04:05:44,924 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-24 04:05:44,924 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-24 04:05:44,924 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-24 04:05:44,924 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-24 04:05:44,924 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-24 04:05:44,924 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-24 04:05:44,924 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-24 04:05:44,924 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-24 04:06:57,187 INFO  bla.nah.example.handler.LoginHandler  Username: doraemon
+2020-09-24 04:06:57,189 INFO  bla.nah.example.da.UserDAImpl MYSQL: SELECTING A USER BY USERNAME
+2020-09-24 04:06:57,190 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-24 04:06:57,191 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-24 04:06:57,191 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-24 04:06:57,191 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-24 04:06:57,208 INFO  bla.nah.example.server.WebSocketServer websocket connected from UserID: 3
+2020-09-24 04:06:57,214 INFO  bla.nah.example.handler.JWTAuthHandler 
+2020-09-24 04:06:57,218 INFO  bla.nah.example.handler.JWTAuthHandler Authorization successful
+2020-09-24 04:06:57,218 INFO  bla.nah.example.handler.UserListHandler 
+2020-09-24 04:06:57,228 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-24 04:06:57,229 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-24 04:06:57,229 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-24 04:06:57,229 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-24 04:06:57,229 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-24 04:06:57,229 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-24 04:06:57,230 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-24 04:06:57,230 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-24 04:06:57,230 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-24 04:06:57,257 INFO  bla.nah.example.handler.JWTAuthHandler 
+2020-09-24 04:06:57,258 INFO  bla.nah.example.handler.JWTAuthHandler Authorization successful
+2020-09-24 04:06:57,259 INFO  bla.nah.example.handler.JWTAuthHandler 
+2020-09-24 04:06:57,259 INFO  bla.nah.example.handler.JWTAuthHandler 
+2020-09-24 04:06:57,259 INFO  bla.nah.example.handler.ChatListHandler Hello ChatList Handler
+2020-09-24 04:06:57,259 INFO  bla.nah.example.handler.JWTAuthHandler Authorization successful
+2020-09-24 04:06:57,259 INFO  bla.nah.example.handler.JWTAuthHandler Authorization successful
+2020-09-24 04:06:57,259 INFO  bla.nah.example.handler.ChatListHandler Hello ChatList Handler
+2020-09-24 04:06:57,259 INFO  bla.nah.example.handler.ChatListHandler Hello ChatList Handler
+2020-09-24 04:06:57,259 INFO  bla.nah.example.handler.ChatListHandler {"UserReceiveID":2}
+2020-09-24 04:06:57,260 INFO  bla.nah.example.handler.ChatListHandler {"UserReceiveID":4}
+2020-09-24 04:06:57,260 INFO  bla.nah.example.handler.ChatListHandler UserReceiveID: 2
+2020-09-24 04:06:57,260 INFO  bla.nah.example.handler.ChatListHandler UserReceiveID: 4
+2020-09-24 04:06:57,260 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: SELECT LIST CHAT WITH ANOTHER USER
+2020-09-24 04:06:57,260 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: SELECT LIST CHAT WITH ANOTHER USER
+2020-09-24 04:06:57,260 INFO  bla.nah.example.handler.ChatListHandler {"UserReceiveID":1}
+2020-09-24 04:06:57,260 INFO  bla.nah.example.handler.ChatListHandler UserReceiveID: 1
+2020-09-24 04:06:57,261 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: SELECT LIST CHAT WITH ANOTHER USER
+2020-09-24 04:06:57,263 INFO  bla.nah.example.da.ChatListDAImpl HikariProxyResultSet@703475800 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@2729cb15
+2020-09-24 04:06:57,264 INFO  bla.nah.example.da.ChatListDAImpl HikariProxyResultSet@565801483 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@2f7e984c
+2020-09-24 04:06:57,264 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-24 04:06:57,264 INFO  bla.nah.example.da.ChatListDAImpl HikariProxyResultSet@676609249 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@2693c79b
+2020-09-24 04:06:57,264 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-24 04:06:57,265 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-24 04:06:57,265 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-24 04:06:57,265 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-24 04:06:57,265 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-24 04:06:57,265 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-24 04:06:57,265 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-24 04:06:57,265 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-24 04:06:57,265 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-24 04:06:57,265 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-24 04:06:57,266 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-24 04:07:04,116 INFO  bla.nah.example.handler.WSHandler Send chat from UserID: 3
+2020-09-24 04:07:04,117 INFO  bla.nah.example.handler.WSHandler {"Mode":1,"UserSendID":3,"UserReceiveID":1,"Content":"Ok, nghe r"}
+2020-09-24 04:07:04,118 INFO  bla.nah.example.handler.WSHandler 1600895224
+2020-09-24 04:07:04,121 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: INSERTING A NEW CHAT
+2020-09-24 04:07:04,121 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-24 04:07:04,122 INFO  bla.nah.example.da.ChatListDAImpl 3
+2020-09-24 04:07:04,122 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-24 04:07:04,122 INFO  bla.nah.example.da.ChatListDAImpl Ok, nghe r
+2020-09-24 04:07:04,122 INFO  bla.nah.example.da.ChatListDAImpl 1600895224
+2020-09-24 04:07:04,124 INFO  bla.nah.example.da.BaseTransactionDA Successful
+2020-09-24 04:07:04,124 INFO  bla.nah.example.handler.WSHandler insert a new chat
+2020-09-24 04:07:04,124 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 3
+2020-09-24 04:07:04,125 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 1
+2020-09-24 04:07:10,110 INFO  bla.nah.example.handler.WSHandler Send chat from UserID: 1
+2020-09-24 04:07:10,111 INFO  bla.nah.example.handler.WSHandler {"Mode":1,"UserSendID":1,"UserReceiveID":3,"Content":"8h nghe"}
+2020-09-24 04:07:10,111 INFO  bla.nah.example.handler.WSHandler 1600895230
+2020-09-24 04:07:10,112 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: INSERTING A NEW CHAT
+2020-09-24 04:07:10,113 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-24 04:07:10,113 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-24 04:07:10,113 INFO  bla.nah.example.da.ChatListDAImpl 3
+2020-09-24 04:07:10,113 INFO  bla.nah.example.da.ChatListDAImpl 8h nghe
+2020-09-24 04:07:10,113 INFO  bla.nah.example.da.ChatListDAImpl 1600895230
+2020-09-24 04:07:10,118 INFO  bla.nah.example.da.BaseTransactionDA Successful
+2020-09-24 04:07:10,119 INFO  bla.nah.example.handler.WSHandler insert a new chat
+2020-09-24 04:07:10,119 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 1
+2020-09-24 04:07:10,120 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 3
+2020-09-24 04:09:06,189 INFO  bla.nah.example.handler.WSHandler Send chat from UserID: 1
+2020-09-24 04:09:06,190 INFO  bla.nah.example.handler.WSHandler {"Mode":1,"UserSendID":1,"UserReceiveID":2,"Content":"alo"}
+2020-09-24 04:09:06,190 INFO  bla.nah.example.handler.WSHandler 1600895346
+2020-09-24 04:09:06,192 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: INSERTING A NEW CHAT
+2020-09-24 04:09:06,192 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-24 04:09:06,192 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-24 04:09:06,192 INFO  bla.nah.example.da.ChatListDAImpl 2
+2020-09-24 04:09:06,192 INFO  bla.nah.example.da.ChatListDAImpl alo
+2020-09-24 04:09:06,192 INFO  bla.nah.example.da.ChatListDAImpl 1600895346
+2020-09-24 04:09:06,197 INFO  bla.nah.example.da.BaseTransactionDA Successful
+2020-09-24 04:09:06,198 INFO  bla.nah.example.handler.WSHandler insert a new chat
+2020-09-24 04:09:06,199 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 1
+2020-09-24 04:09:06,200 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 2
+2020-09-24 04:09:07,179 INFO  bla.nah.example.handler.WSHandler Send chat from UserID: 1
+2020-09-24 04:09:07,180 INFO  bla.nah.example.handler.WSHandler {"Mode":1,"UserSendID":1,"UserReceiveID":2,"Content":"1"}
+2020-09-24 04:09:07,180 INFO  bla.nah.example.handler.WSHandler 1600895347
+2020-09-24 04:09:07,182 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: INSERTING A NEW CHAT
+2020-09-24 04:09:07,182 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-24 04:09:07,182 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-24 04:09:07,182 INFO  bla.nah.example.da.ChatListDAImpl 2
+2020-09-24 04:09:07,182 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-24 04:09:07,182 INFO  bla.nah.example.da.ChatListDAImpl 1600895347
+2020-09-24 04:09:07,187 INFO  bla.nah.example.da.BaseTransactionDA Successful
+2020-09-24 04:09:07,188 INFO  bla.nah.example.handler.WSHandler insert a new chat
+2020-09-24 04:09:07,188 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 1
+2020-09-24 04:09:07,189 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 2
+2020-09-24 04:09:07,740 INFO  bla.nah.example.handler.WSHandler Send chat from UserID: 1
+2020-09-24 04:09:07,741 INFO  bla.nah.example.handler.WSHandler {"Mode":1,"UserSendID":1,"UserReceiveID":2,"Content":"2"}
+2020-09-24 04:09:07,741 INFO  bla.nah.example.handler.WSHandler 1600895347
+2020-09-24 04:09:07,747 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: INSERTING A NEW CHAT
+2020-09-24 04:09:07,748 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-24 04:09:07,748 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-24 04:09:07,749 INFO  bla.nah.example.da.ChatListDAImpl 2
+2020-09-24 04:09:07,749 INFO  bla.nah.example.da.ChatListDAImpl 2
+2020-09-24 04:09:07,749 INFO  bla.nah.example.da.ChatListDAImpl 1600895347
+2020-09-24 04:09:07,756 INFO  bla.nah.example.da.BaseTransactionDA Successful
+2020-09-24 04:09:07,757 INFO  bla.nah.example.handler.WSHandler insert a new chat
+2020-09-24 04:09:07,758 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 1
+2020-09-24 04:09:07,759 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 2
+2020-09-24 04:09:08,475 INFO  bla.nah.example.handler.WSHandler Send chat from UserID: 1
+2020-09-24 04:09:08,476 INFO  bla.nah.example.handler.WSHandler {"Mode":1,"UserSendID":1,"UserReceiveID":2,"Content":"3"}
+2020-09-24 04:09:08,477 INFO  bla.nah.example.handler.WSHandler 1600895348
+2020-09-24 04:09:08,481 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: INSERTING A NEW CHAT
+2020-09-24 04:09:08,482 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-24 04:09:08,482 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-24 04:09:08,482 INFO  bla.nah.example.da.ChatListDAImpl 2
+2020-09-24 04:09:08,482 INFO  bla.nah.example.da.ChatListDAImpl 3
+2020-09-24 04:09:08,483 INFO  bla.nah.example.da.ChatListDAImpl 1600895348
+2020-09-24 04:09:08,485 INFO  bla.nah.example.da.BaseTransactionDA Successful
+2020-09-24 04:09:08,487 INFO  bla.nah.example.handler.WSHandler insert a new chat
+2020-09-24 04:09:08,487 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 1
+2020-09-24 04:09:08,488 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 2
+2020-09-24 04:09:09,340 INFO  bla.nah.example.handler.WSHandler Send chat from UserID: 1
+2020-09-24 04:09:09,341 INFO  bla.nah.example.handler.WSHandler {"Mode":1,"UserSendID":1,"UserReceiveID":2,"Content":"4"}
+2020-09-24 04:09:09,341 INFO  bla.nah.example.handler.WSHandler 1600895349
+2020-09-24 04:09:09,345 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: INSERTING A NEW CHAT
+2020-09-24 04:09:09,346 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-24 04:09:09,346 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-24 04:09:09,347 INFO  bla.nah.example.da.ChatListDAImpl 2
+2020-09-24 04:09:09,348 INFO  bla.nah.example.da.ChatListDAImpl 4
+2020-09-24 04:09:09,348 INFO  bla.nah.example.da.ChatListDAImpl 1600895349
+2020-09-24 04:09:09,350 INFO  bla.nah.example.da.BaseTransactionDA Successful
+2020-09-24 04:09:09,352 INFO  bla.nah.example.handler.WSHandler insert a new chat
+2020-09-24 04:09:09,352 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 1
+2020-09-24 04:09:09,354 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 2
+2020-09-24 04:09:22,457 INFO  bla.nah.example.handler.WSHandler Send chat from UserID: 1
+2020-09-24 04:09:22,458 INFO  bla.nah.example.handler.WSHandler {"Mode":1,"UserSendID":1,"UserReceiveID":2,"Content":"testing "}
+2020-09-24 04:09:22,459 INFO  bla.nah.example.handler.WSHandler 1600895362
+2020-09-24 04:09:22,461 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: INSERTING A NEW CHAT
+2020-09-24 04:09:22,461 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-24 04:09:22,461 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-24 04:09:22,461 INFO  bla.nah.example.da.ChatListDAImpl 2
+2020-09-24 04:09:22,461 INFO  bla.nah.example.da.ChatListDAImpl testing 
+2020-09-24 04:09:22,461 INFO  bla.nah.example.da.ChatListDAImpl 1600895362
+2020-09-24 04:09:22,467 INFO  bla.nah.example.da.BaseTransactionDA Successful
+2020-09-24 04:09:22,467 INFO  bla.nah.example.handler.WSHandler insert a new chat
+2020-09-24 04:09:22,467 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 1
+2020-09-24 04:09:22,467 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 2
+2020-09-24 04:09:44,150 INFO  bla.nah.example.handler.WSHandler Send chat from UserID: 3
+2020-09-24 04:09:44,151 INFO  bla.nah.example.handler.WSHandler {"Mode":1,"UserSendID":3,"UserReceiveID":1,"Content":"Nay đi chơi vui không"}
+2020-09-24 04:09:44,152 INFO  bla.nah.example.handler.WSHandler 1600895384
+2020-09-24 04:09:44,155 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: INSERTING A NEW CHAT
+2020-09-24 04:09:44,155 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-24 04:09:44,156 INFO  bla.nah.example.da.ChatListDAImpl 3
+2020-09-24 04:09:44,156 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-24 04:09:44,156 INFO  bla.nah.example.da.ChatListDAImpl Nay đi chơi vui không
+2020-09-24 04:09:44,156 INFO  bla.nah.example.da.ChatListDAImpl 1600895384
+2020-09-24 04:09:44,163 INFO  bla.nah.example.da.BaseTransactionDA Successful
+2020-09-24 04:09:44,164 INFO  bla.nah.example.handler.WSHandler insert a new chat
+2020-09-24 04:09:44,164 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 3
+2020-09-24 04:09:44,165 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 1
+2020-09-24 04:09:55,332 INFO  bla.nah.example.handler.WSHandler Send chat from UserID: 1
+2020-09-24 04:09:55,333 INFO  bla.nah.example.handler.WSHandler {"Mode":1,"UserSendID":1,"UserReceiveID":3,"Content":"Không, chán lắm"}
+2020-09-24 04:09:55,334 INFO  bla.nah.example.handler.WSHandler 1600895395
+2020-09-24 04:09:55,337 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: INSERTING A NEW CHAT
+2020-09-24 04:09:55,337 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-24 04:09:55,338 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-24 04:09:55,338 INFO  bla.nah.example.da.ChatListDAImpl 3
+2020-09-24 04:09:55,338 INFO  bla.nah.example.da.ChatListDAImpl Không, chán lắm
+2020-09-24 04:09:55,338 INFO  bla.nah.example.da.ChatListDAImpl 1600895395
+2020-09-24 04:09:55,346 INFO  bla.nah.example.da.BaseTransactionDA Successful
+2020-09-24 04:09:55,346 INFO  bla.nah.example.handler.WSHandler insert a new chat
+2020-09-24 04:09:55,347 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 1
+2020-09-24 04:09:55,348 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 3
+2020-09-24 04:10:02,077 INFO  bla.nah.example.handler.WSHandler Send chat from UserID: 1
+2020-09-24 04:10:02,078 INFO  bla.nah.example.handler.WSHandler {"Mode":1,"UserSendID":1,"UserReceiveID":3,"Content":"Có j đâu zui"}
+2020-09-24 04:10:02,079 INFO  bla.nah.example.handler.WSHandler 1600895402
+2020-09-24 04:10:02,082 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: INSERTING A NEW CHAT
+2020-09-24 04:10:02,083 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-24 04:10:02,083 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-24 04:10:02,083 INFO  bla.nah.example.da.ChatListDAImpl 3
+2020-09-24 04:10:02,083 INFO  bla.nah.example.da.ChatListDAImpl Có j đâu zui
+2020-09-24 04:10:02,084 INFO  bla.nah.example.da.ChatListDAImpl 1600895402
+2020-09-24 04:10:02,090 INFO  bla.nah.example.da.BaseTransactionDA Successful
+2020-09-24 04:10:02,090 INFO  bla.nah.example.handler.WSHandler insert a new chat
+2020-09-24 04:10:02,091 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 1
+2020-09-24 04:10:02,092 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 3
+2020-09-24 04:10:11,387 INFO  bla.nah.example.handler.WSHandler Send chat from UserID: 3
+2020-09-24 04:10:11,388 INFO  bla.nah.example.handler.WSHandler {"Mode":1,"UserSendID":3,"UserReceiveID":1,"Content":"Thấy m cười quá trời mak"}
+2020-09-24 04:10:11,388 INFO  bla.nah.example.handler.WSHandler 1600895411
+2020-09-24 04:10:11,389 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: INSERTING A NEW CHAT
+2020-09-24 04:10:11,389 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-24 04:10:11,390 INFO  bla.nah.example.da.ChatListDAImpl 3
+2020-09-24 04:10:11,390 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-24 04:10:11,390 INFO  bla.nah.example.da.ChatListDAImpl Thấy m cười quá trời mak
+2020-09-24 04:10:11,390 INFO  bla.nah.example.da.ChatListDAImpl 1600895411
+2020-09-24 04:10:11,390 INFO  bla.nah.example.da.BaseTransactionDA Successful
+2020-09-24 04:10:11,391 INFO  bla.nah.example.handler.WSHandler insert a new chat
+2020-09-24 04:10:11,391 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 3
+2020-09-24 04:10:11,391 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 1
+2020-09-24 04:10:26,263 INFO  bla.nah.example.handler.WSHandler Send chat from UserID: 1
+2020-09-24 04:10:26,263 INFO  bla.nah.example.handler.WSHandler {"Mode":1,"UserSendID":1,"UserReceiveID":3,"Content":"Ngoài miệng cười thế thôi"}
+2020-09-24 04:10:26,264 INFO  bla.nah.example.handler.WSHandler 1600895426
+2020-09-24 04:10:26,265 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: INSERTING A NEW CHAT
+2020-09-24 04:10:26,265 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-24 04:10:26,265 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-24 04:10:26,265 INFO  bla.nah.example.da.ChatListDAImpl 3
+2020-09-24 04:10:26,265 INFO  bla.nah.example.da.ChatListDAImpl Ngoài miệng cười thế thôi
+2020-09-24 04:10:26,265 INFO  bla.nah.example.da.ChatListDAImpl 1600895426
+2020-09-24 04:10:26,270 INFO  bla.nah.example.da.BaseTransactionDA Successful
+2020-09-24 04:10:26,270 INFO  bla.nah.example.handler.WSHandler insert a new chat
+2020-09-24 04:10:26,270 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 1
+2020-09-24 04:10:26,271 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 3
+2020-09-24 04:10:37,127 INFO  bla.nah.example.handler.WSHandler Send chat from UserID: 1
+2020-09-24 04:10:37,128 INFO  bla.nah.example.handler.WSHandler {"Mode":1,"UserSendID":1,"UserReceiveID":3,"Content":"Nhưng sâu bên trong"}
+2020-09-24 04:10:37,128 INFO  bla.nah.example.handler.WSHandler 1600895437
+2020-09-24 04:10:37,131 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: INSERTING A NEW CHAT
+2020-09-24 04:10:37,131 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-24 04:10:37,131 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-24 04:10:37,131 INFO  bla.nah.example.da.ChatListDAImpl 3
+2020-09-24 04:10:37,132 INFO  bla.nah.example.da.ChatListDAImpl Nhưng sâu bên trong
+2020-09-24 04:10:37,132 INFO  bla.nah.example.da.ChatListDAImpl 1600895437
+2020-09-24 04:10:37,138 INFO  bla.nah.example.da.BaseTransactionDA Successful
+2020-09-24 04:10:37,138 INFO  bla.nah.example.handler.WSHandler insert a new chat
+2020-09-24 04:10:37,139 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 1
+2020-09-24 04:10:37,140 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 3
+2020-09-24 04:10:45,069 INFO  bla.nah.example.handler.WSHandler Send chat from UserID: 3
+2020-09-24 04:10:45,070 INFO  bla.nah.example.handler.WSHandler {"Mode":1,"UserSendID":3,"UserReceiveID":1,"Content":"Nước mắt là biển rộng"}
+2020-09-24 04:10:45,071 INFO  bla.nah.example.handler.WSHandler 1600895445
+2020-09-24 04:10:45,074 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: INSERTING A NEW CHAT
+2020-09-24 04:10:45,074 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-24 04:10:45,075 INFO  bla.nah.example.da.ChatListDAImpl 3
+2020-09-24 04:10:45,075 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-24 04:10:45,075 INFO  bla.nah.example.da.ChatListDAImpl Nước mắt là biển rộng
+2020-09-24 04:10:45,076 INFO  bla.nah.example.da.ChatListDAImpl 1600895445
+2020-09-24 04:10:45,082 INFO  bla.nah.example.da.BaseTransactionDA Successful
+2020-09-24 04:10:45,082 INFO  bla.nah.example.handler.WSHandler insert a new chat
+2020-09-24 04:10:45,083 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 3
+2020-09-24 04:10:45,083 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 1
+2020-09-24 04:10:46,436 INFO  bla.nah.example.handler.WSHandler Send chat from UserID: 3
+2020-09-24 04:10:46,436 INFO  bla.nah.example.handler.WSHandler {"Mode":1,"UserSendID":3,"UserReceiveID":1,"Content":"ok ok"}
+2020-09-24 04:10:46,437 INFO  bla.nah.example.handler.WSHandler 1600895446
+2020-09-24 04:10:46,438 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: INSERTING A NEW CHAT
+2020-09-24 04:10:46,438 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-24 04:10:46,438 INFO  bla.nah.example.da.ChatListDAImpl 3
+2020-09-24 04:10:46,438 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-24 04:10:46,438 INFO  bla.nah.example.da.ChatListDAImpl ok ok
+2020-09-24 04:10:46,439 INFO  bla.nah.example.da.ChatListDAImpl 1600895446
+2020-09-24 04:10:46,440 INFO  bla.nah.example.da.BaseTransactionDA Successful
+2020-09-24 04:10:46,440 INFO  bla.nah.example.handler.WSHandler insert a new chat
+2020-09-24 04:10:46,440 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 3
+2020-09-24 04:10:46,440 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 1
+2020-09-24 04:11:33,695 INFO  bla.nah.example.handler.WSHandler Send chat from UserID: 1
+2020-09-24 04:11:33,696 INFO  bla.nah.example.handler.WSHandler {"Mode":1,"UserSendID":1,"UserReceiveID":3,"Content":"S m không trả lời ẻm"}
+2020-09-24 04:11:33,696 INFO  bla.nah.example.handler.WSHandler 1600895493
+2020-09-24 04:11:33,697 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: INSERTING A NEW CHAT
+2020-09-24 04:11:33,697 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-24 04:11:33,697 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-24 04:11:33,698 INFO  bla.nah.example.da.ChatListDAImpl 3
+2020-09-24 04:11:33,698 INFO  bla.nah.example.da.ChatListDAImpl S m không trả lời ẻm
+2020-09-24 04:11:33,698 INFO  bla.nah.example.da.ChatListDAImpl 1600895493
+2020-09-24 04:11:33,703 INFO  bla.nah.example.da.BaseTransactionDA Successful
+2020-09-24 04:11:33,703 INFO  bla.nah.example.handler.WSHandler insert a new chat
+2020-09-24 04:11:33,703 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 1
+2020-09-24 04:11:33,703 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 3
+2020-09-24 04:11:39,091 INFO  bla.nah.example.handler.WSHandler Send chat from UserID: 3
+2020-09-24 04:11:39,091 INFO  bla.nah.example.handler.WSHandler {"Mode":1,"UserSendID":3,"UserReceiveID":1,"Content":"ẻm nào"}
+2020-09-24 04:11:39,091 INFO  bla.nah.example.handler.WSHandler 1600895499
+2020-09-24 04:11:39,092 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: INSERTING A NEW CHAT
+2020-09-24 04:11:39,093 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-24 04:11:39,093 INFO  bla.nah.example.da.ChatListDAImpl 3
+2020-09-24 04:11:39,093 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-24 04:11:39,093 INFO  bla.nah.example.da.ChatListDAImpl ẻm nào
+2020-09-24 04:11:39,093 INFO  bla.nah.example.da.ChatListDAImpl 1600895499
+2020-09-24 04:11:39,098 INFO  bla.nah.example.da.BaseTransactionDA Successful
+2020-09-24 04:11:39,098 INFO  bla.nah.example.handler.WSHandler insert a new chat
+2020-09-24 04:11:39,098 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 3
+2020-09-24 04:11:39,098 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 1
+2020-09-24 04:11:40,251 INFO  bla.nah.example.handler.WSHandler Send chat from UserID: 3
+2020-09-24 04:11:40,252 INFO  bla.nah.example.handler.WSHandler {"Mode":1,"UserSendID":3,"UserReceiveID":1,"Content":"???"}
+2020-09-24 04:11:40,252 INFO  bla.nah.example.handler.WSHandler 1600895500
+2020-09-24 04:11:40,255 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: INSERTING A NEW CHAT
+2020-09-24 04:11:40,256 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-24 04:11:40,256 INFO  bla.nah.example.da.ChatListDAImpl 3
+2020-09-24 04:11:40,256 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-24 04:11:40,256 INFO  bla.nah.example.da.ChatListDAImpl ???
+2020-09-24 04:11:40,256 INFO  bla.nah.example.da.ChatListDAImpl 1600895500
+2020-09-24 04:11:40,263 INFO  bla.nah.example.da.BaseTransactionDA Successful
+2020-09-24 04:11:40,264 INFO  bla.nah.example.handler.WSHandler insert a new chat
+2020-09-24 04:11:40,264 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 3
+2020-09-24 04:11:40,265 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 1
+2020-09-24 04:11:51,395 INFO  bla.nah.example.handler.WSHandler Send chat from UserID: 1
+2020-09-24 04:11:51,396 INFO  bla.nah.example.handler.WSHandler {"Mode":1,"UserSendID":1,"UserReceiveID":3,"Content":"Ai biết ẻm nào"}
+2020-09-24 04:11:51,397 INFO  bla.nah.example.handler.WSHandler 1600895511
+2020-09-24 04:11:51,400 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: INSERTING A NEW CHAT
+2020-09-24 04:11:51,400 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-24 04:11:51,401 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-24 04:11:51,401 INFO  bla.nah.example.da.ChatListDAImpl 3
+2020-09-24 04:11:51,401 INFO  bla.nah.example.da.ChatListDAImpl Ai biết ẻm nào
+2020-09-24 04:11:51,401 INFO  bla.nah.example.da.ChatListDAImpl 1600895511
+2020-09-24 04:11:51,408 INFO  bla.nah.example.da.BaseTransactionDA Successful
+2020-09-24 04:11:51,408 INFO  bla.nah.example.handler.WSHandler insert a new chat
+2020-09-24 04:11:51,408 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 1
+2020-09-24 04:11:51,409 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 3
+2020-09-24 04:11:59,392 INFO  bla.nah.example.handler.WSHandler Send chat from UserID: 3
+2020-09-24 04:11:59,392 INFO  bla.nah.example.handler.WSHandler {"Mode":1,"UserSendID":3,"UserReceiveID":1,"Content":"T bê đê mak"}
+2020-09-24 04:11:59,392 INFO  bla.nah.example.handler.WSHandler 1600895519
+2020-09-24 04:11:59,394 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: INSERTING A NEW CHAT
+2020-09-24 04:11:59,394 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-24 04:11:59,394 INFO  bla.nah.example.da.ChatListDAImpl 3
+2020-09-24 04:11:59,394 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-24 04:11:59,394 INFO  bla.nah.example.da.ChatListDAImpl T bê đê mak
+2020-09-24 04:11:59,394 INFO  bla.nah.example.da.ChatListDAImpl 1600895519
+2020-09-24 04:11:59,395 INFO  bla.nah.example.da.BaseTransactionDA Successful
+2020-09-24 04:11:59,396 INFO  bla.nah.example.handler.WSHandler insert a new chat
+2020-09-24 04:11:59,396 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 3
+2020-09-24 04:11:59,396 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 1
+2020-09-24 04:12:02,508 INFO  bla.nah.example.handler.WSHandler Send chat from UserID: 3
+2020-09-24 04:12:02,510 INFO  bla.nah.example.handler.WSHandler {"Mode":1,"UserSendID":3,"UserReceiveID":1,"Content":"m ko biết à"}
+2020-09-24 04:12:02,510 INFO  bla.nah.example.handler.WSHandler 1600895522
+2020-09-24 04:12:02,514 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: INSERTING A NEW CHAT
+2020-09-24 04:12:02,515 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-24 04:12:02,515 INFO  bla.nah.example.da.ChatListDAImpl 3
+2020-09-24 04:12:02,516 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-24 04:12:02,516 INFO  bla.nah.example.da.ChatListDAImpl m ko biết à
+2020-09-24 04:12:02,516 INFO  bla.nah.example.da.ChatListDAImpl 1600895522
+2020-09-24 04:12:02,520 INFO  bla.nah.example.da.BaseTransactionDA Successful
+2020-09-24 04:12:02,521 INFO  bla.nah.example.handler.WSHandler insert a new chat
+2020-09-24 04:12:02,521 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 3
+2020-09-24 04:12:02,522 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 1
+2020-09-24 04:12:14,261 INFO  bla.nah.example.handler.WSHandler Send chat from UserID: 3
+2020-09-24 04:12:14,262 INFO  bla.nah.example.handler.WSHandler {"Mode":1,"UserSendID":3,"UserReceiveID":1,"Content":"có tl anh thì tl"}
+2020-09-24 04:12:14,262 INFO  bla.nah.example.handler.WSHandler 1600895534
+2020-09-24 04:12:14,263 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: INSERTING A NEW CHAT
+2020-09-24 04:12:14,263 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-24 04:12:14,263 INFO  bla.nah.example.da.ChatListDAImpl 3
+2020-09-24 04:12:14,263 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-24 04:12:14,263 INFO  bla.nah.example.da.ChatListDAImpl có tl anh thì tl
+2020-09-24 04:12:14,263 INFO  bla.nah.example.da.ChatListDAImpl 1600895534
+2020-09-24 04:12:14,269 INFO  bla.nah.example.da.BaseTransactionDA Successful
+2020-09-24 04:12:14,269 INFO  bla.nah.example.handler.WSHandler insert a new chat
+2020-09-24 04:12:14,269 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 3
+2020-09-24 04:12:14,269 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 1

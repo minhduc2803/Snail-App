@@ -4,40 +4,31 @@ import Toolbar from '../Toolbar';
 import ToolbarButton from '../ToolbarButton';
 import Message from '../Message';
 import moment from 'moment';
+import { useSelector } from 'react-redux';
 
 import './MessageList.css';
 
 
 
 export default function MessageList(props) {
-  const [messages, setMessages] = useState([])
 
-  useEffect(() => {
-    getMessages();
-  },[])
-  const MY_USER_ID = props.user.UserID;
-  
-  const getMessages = () => {
-    var ChatListKey = [];
-    for(var i=0;i<props.conversationList.length;i++) {
-      let element = props.conversationList[i];
-        if(element.UserID === props.key){
-          ChatListKey = element.ChatList;
-          break;
+  let content = useSelector(state => state.listUsers[state.chosenIndex]);
+  if(content === undefined)
+    content = {chat: []}
+  if(content.chat === undefined)
+    content = {...content, chat: []}
+  const user = useSelector(state => state.user);
+  const MY_USER_ID = user.fullname;
+  console.log(content)
+    let messages = content.chat.map((message, index) => {
+        return {
+          id: index+1,
+          author: message.UserSendID === user.userID ? user.fullname:content.Fullname,
+          message: message.Content,
+          timestamp: message.SentTime
         }
-    }
-
-    var tempMessages = ChatListKey.map(oneChat => {
-      return{
-        id: 1,
-          author: oneChat.UserSendID,
-          message: oneChat.Content,
-          timestamp: oneChat.formatTime
-      }
     })
-     
-      setMessages([...messages, ...tempMessages])
-  }
+  console.log(messages)
 
   const renderMessages = () => {
     let i = 0;
@@ -101,7 +92,7 @@ export default function MessageList(props) {
     return(
       <div className="message-list">
         <Toolbar
-          title="Conversation Title"
+          title={`${content.Fullname}`}
           rightItems={[
             <ToolbarButton key="info" icon="ion-ios-information-circle-outline" />,
             <ToolbarButton key="video" icon="ion-ios-videocam" />,

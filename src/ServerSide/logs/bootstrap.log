@@ -18077,3 +18077,608 @@ Caused by: com.mysql.cj.exceptions.CJException: Unknown database 'chatapp'
 2020-09-24 22:52:32,584 INFO  bla.nah.example.handler.WSHandler insert a new chat
 2020-09-24 22:52:32,584 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 1
 2020-09-24 22:52:32,585 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 3
+2020-09-28 02:29:06,803 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-09-28 02:29:06,981 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-1 - Start completed.
+2020-09-28 02:29:06,982 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-2 - Starting...
+2020-09-28 02:29:06,989 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-2 - Start completed.
+2020-09-28 02:29:07,386 INFO  org.redisson.Version Redisson 3.11.6
+2020-09-28 02:29:07,465 INFO  org.redisson.connection.pool.MasterConnectionPool 24 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-09-28 02:29:07,468 INFO  org.redisson.connection.pool.MasterPubSubConnectionPool 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-09-28 02:29:07,515 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-3 - Starting...
+2020-09-28 02:29:07,520 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-3 - Start completed.
+2020-09-28 02:29:07,521 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-4 - Starting...
+2020-09-28 02:29:07,525 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-4 - Start completed.
+2020-09-28 02:29:07,533 INFO  bla.nah.example.server.RestfulAPI Starting RestfulAPI Server ...
+2020-09-28 02:29:07,533 INFO  bla.nah.example.server.RestfulAPI Starting RestfulAPI Server ...
+2020-09-28 02:29:07,533 INFO  bla.nah.example.server.RestfulAPI Starting RestfulAPI Server ...
+2020-09-28 02:29:07,533 INFO  bla.nah.example.server.RestfulAPI Starting RestfulAPI Server ...
+2020-09-28 02:29:07,533 INFO  bla.nah.example.server.RestfulAPI Starting RestfulAPI Server ...
+2020-09-28 02:29:07,533 INFO  bla.nah.example.server.RestfulAPI Starting RestfulAPI Server ...
+2020-09-28 02:29:07,534 INFO  bla.nah.example.server.RestfulAPI Starting RestfulAPI Server ...
+2020-09-28 02:29:07,534 INFO  bla.nah.example.server.RestfulAPI Starting RestfulAPI Server ...
+2020-09-28 02:29:07,566 INFO  bla.nah.example.server.RestfulAPI API Server start successfully !, port:8055
+2020-09-28 02:29:07,566 INFO  bla.nah.example.server.RestfulAPI API Server start successfully !, port:8055
+2020-09-28 02:29:07,566 INFO  bla.nah.example.server.RestfulAPI API Server start successfully !, port:8055
+2020-09-28 02:29:07,566 INFO  bla.nah.example.server.RestfulAPI API Server start successfully !, port:8055
+2020-09-28 02:29:07,566 INFO  bla.nah.example.server.RestfulAPI API Server start successfully !, port:8055
+2020-09-28 02:29:07,566 INFO  bla.nah.example.server.RestfulAPI API Server start successfully !, port:8055
+2020-09-28 02:29:07,566 INFO  bla.nah.example.server.RestfulAPI API Server start successfully !, port:8055
+2020-09-28 02:29:07,566 INFO  bla.nah.example.server.RestfulAPI API Server start successfully !, port:8055
+2020-09-28 02:37:07,498 INFO  bla.nah.example.handler.LoginHandler  Username: xeko
+2020-09-28 02:37:07,509 INFO  bla.nah.example.da.UserDAImpl MYSQL: SELECTING A USER BY USERNAME
+2020-09-28 02:37:25,814 INFO  bla.nah.example.handler.LoginHandler  Username: nobita
+2020-09-28 02:37:25,818 INFO  bla.nah.example.da.UserDAImpl MYSQL: SELECTING A USER BY USERNAME
+2020-09-28 02:37:25,822 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,823 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:25,824 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:25,824 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:25,877 INFO  bla.nah.example.handler.JWTAuthHandler 
+2020-09-28 02:37:25,878 INFO  bla.nah.example.handler.JWTAuthHandler Authorization successful
+2020-09-28 02:37:25,878 INFO  bla.nah.example.handler.UserListHandler 
+2020-09-28 02:37:25,883 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,883 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:25,883 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:25,883 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,884 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:25,884 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:25,884 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,884 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:25,884 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:25,896 INFO  bla.nah.example.server.WebSocketServer websocket connected from UserID: 1
+2020-09-28 02:37:25,917 INFO  bla.nah.example.handler.JWTAuthHandler 
+2020-09-28 02:37:25,917 INFO  bla.nah.example.handler.JWTAuthHandler Authorization successful
+2020-09-28 02:37:25,918 INFO  bla.nah.example.handler.ChatListHandler Hello ChatList Handler
+2020-09-28 02:37:25,918 INFO  bla.nah.example.handler.ChatListHandler {"UserReceiveID":2}
+2020-09-28 02:37:25,919 INFO  bla.nah.example.handler.ChatListHandler UserReceiveID: 2
+2020-09-28 02:37:25,919 INFO  bla.nah.example.handler.JWTAuthHandler 
+2020-09-28 02:37:25,919 INFO  bla.nah.example.handler.JWTAuthHandler 
+2020-09-28 02:37:25,920 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: SELECT LIST CHAT WITH ANOTHER USER
+2020-09-28 02:37:25,920 INFO  bla.nah.example.handler.JWTAuthHandler Authorization successful
+2020-09-28 02:37:25,920 INFO  bla.nah.example.handler.JWTAuthHandler Authorization successful
+2020-09-28 02:37:25,920 INFO  bla.nah.example.handler.ChatListHandler Hello ChatList Handler
+2020-09-28 02:37:25,920 INFO  bla.nah.example.handler.ChatListHandler Hello ChatList Handler
+2020-09-28 02:37:25,920 INFO  bla.nah.example.handler.ChatListHandler {"UserReceiveID":3}
+2020-09-28 02:37:25,920 INFO  bla.nah.example.handler.ChatListHandler {"UserReceiveID":4}
+2020-09-28 02:37:25,920 INFO  bla.nah.example.handler.ChatListHandler UserReceiveID: 3
+2020-09-28 02:37:25,920 INFO  bla.nah.example.handler.ChatListHandler UserReceiveID: 4
+2020-09-28 02:37:25,921 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: SELECT LIST CHAT WITH ANOTHER USER
+2020-09-28 02:37:25,921 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: SELECT LIST CHAT WITH ANOTHER USER
+2020-09-28 02:37:25,924 INFO  bla.nah.example.da.ChatListDAImpl HikariProxyResultSet@1694597212 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@6bc6628c
+2020-09-28 02:37:25,925 INFO  bla.nah.example.da.ChatListDAImpl HikariProxyResultSet@768144376 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@3ae6515b
+2020-09-28 02:37:25,925 INFO  bla.nah.example.da.ChatListDAImpl HikariProxyResultSet@557383144 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@643a77ab
+2020-09-28 02:37:25,927 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,927 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,927 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,927 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,928 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,928 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,928 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,928 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,928 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:25,928 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:25,928 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-28 02:37:25,928 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-28 02:37:25,932 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,932 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,933 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,933 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,933 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,933 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,933 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,933 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:25,933 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,933 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-28 02:37:25,933 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:25,933 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,933 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-28 02:37:25,933 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,933 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,933 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,933 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,933 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,933 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,933 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:25,934 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,934 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-28 02:37:25,934 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:25,934 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,934 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,934 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-28 02:37:25,934 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,934 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,934 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,934 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,934 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:25,934 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,934 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-28 02:37:25,934 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,934 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,935 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,935 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:25,935 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,935 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-28 02:37:25,935 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,935 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,935 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:25,935 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,935 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-28 02:37:25,935 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,935 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,935 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,935 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,935 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:25,935 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,935 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-28 02:37:25,935 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,936 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:25,936 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,936 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-28 02:37:25,936 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,936 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,936 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,936 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,936 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,936 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,936 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:25,936 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,936 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-28 02:37:25,936 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:25,936 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,936 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-28 02:37:25,936 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,937 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,937 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,937 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,937 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,937 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,937 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:25,937 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,937 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-28 02:37:25,937 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:25,937 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-28 02:37:25,937 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,937 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,937 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,937 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,937 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,937 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,937 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,937 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,937 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:25,938 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:25,938 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-28 02:37:25,938 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-28 02:37:25,938 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,938 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,938 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,938 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,938 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,938 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,938 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,938 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,938 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:25,938 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:25,938 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-28 02:37:25,938 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-28 02:37:25,938 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,938 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,938 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,939 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,939 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,939 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,939 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,939 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,939 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:25,939 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:25,939 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-28 02:37:25,939 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,939 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-28 02:37:25,939 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,939 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,939 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,939 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,939 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,939 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:25,939 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,939 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-28 02:37:25,939 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,939 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,940 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,940 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:25,940 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,940 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-28 02:37:25,940 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,940 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:25,940 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,940 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-28 02:37:25,940 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,940 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,940 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,940 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,940 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,940 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,940 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,940 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:25,940 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:25,940 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-28 02:37:25,940 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-28 02:37:25,941 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,941 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,941 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,941 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,941 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,941 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,941 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,941 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,941 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:25,941 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:25,941 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-28 02:37:25,941 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-28 02:37:25,941 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,942 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,942 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,942 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,942 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:25,942 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-28 02:37:25,942 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,942 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,942 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,943 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,943 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:25,943 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-28 02:37:25,943 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,943 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,943 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,943 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,943 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:25,943 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-28 02:37:25,944 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,944 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,944 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,944 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,944 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:25,944 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-28 02:37:25,944 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,945 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,945 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,945 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,945 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:25,945 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-28 02:37:25,945 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,946 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,946 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,946 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:25,946 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:25,946 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-28 02:37:37,872 INFO  bla.nah.example.handler.LoginHandler  Username: xuka
+2020-09-28 02:37:37,877 INFO  bla.nah.example.da.UserDAImpl MYSQL: SELECTING A USER BY USERNAME
+2020-09-28 02:37:37,880 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,882 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:37,882 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:37,882 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:37,928 INFO  bla.nah.example.server.WebSocketServer websocket connected from UserID: 2
+2020-09-28 02:37:37,934 INFO  bla.nah.example.handler.JWTAuthHandler 
+2020-09-28 02:37:37,934 INFO  bla.nah.example.handler.JWTAuthHandler Authorization successful
+2020-09-28 02:37:37,935 INFO  bla.nah.example.handler.UserListHandler 
+2020-09-28 02:37:37,937 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,937 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:37,937 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:37,938 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,938 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:37,938 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:37,938 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,938 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:37,938 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:37,982 INFO  bla.nah.example.handler.JWTAuthHandler 
+2020-09-28 02:37:37,982 INFO  bla.nah.example.handler.JWTAuthHandler 
+2020-09-28 02:37:37,982 INFO  bla.nah.example.handler.JWTAuthHandler 
+2020-09-28 02:37:37,982 INFO  bla.nah.example.handler.JWTAuthHandler Authorization successful
+2020-09-28 02:37:37,983 INFO  bla.nah.example.handler.ChatListHandler Hello ChatList Handler
+2020-09-28 02:37:37,983 INFO  bla.nah.example.handler.JWTAuthHandler Authorization successful
+2020-09-28 02:37:37,983 INFO  bla.nah.example.handler.JWTAuthHandler Authorization successful
+2020-09-28 02:37:37,983 INFO  bla.nah.example.handler.ChatListHandler {"UserReceiveID":4}
+2020-09-28 02:37:37,983 INFO  bla.nah.example.handler.ChatListHandler Hello ChatList Handler
+2020-09-28 02:37:37,983 INFO  bla.nah.example.handler.ChatListHandler UserReceiveID: 4
+2020-09-28 02:37:37,983 INFO  bla.nah.example.handler.ChatListHandler {"UserReceiveID":3}
+2020-09-28 02:37:37,983 INFO  bla.nah.example.handler.ChatListHandler Hello ChatList Handler
+2020-09-28 02:37:37,983 INFO  bla.nah.example.handler.ChatListHandler UserReceiveID: 3
+2020-09-28 02:37:37,983 INFO  bla.nah.example.handler.ChatListHandler {"UserReceiveID":1}
+2020-09-28 02:37:37,983 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: SELECT LIST CHAT WITH ANOTHER USER
+2020-09-28 02:37:37,983 INFO  bla.nah.example.handler.ChatListHandler UserReceiveID: 1
+2020-09-28 02:37:37,983 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: SELECT LIST CHAT WITH ANOTHER USER
+2020-09-28 02:37:37,984 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: SELECT LIST CHAT WITH ANOTHER USER
+2020-09-28 02:37:37,987 INFO  bla.nah.example.da.ChatListDAImpl HikariProxyResultSet@1220967530 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@46018b02
+2020-09-28 02:37:37,988 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,987 INFO  bla.nah.example.da.ChatListDAImpl HikariProxyResultSet@1289903887 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@4225b8e3
+2020-09-28 02:37:37,988 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,988 INFO  bla.nah.example.da.ChatListDAImpl HikariProxyResultSet@1147713578 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@4aaf5ed7
+2020-09-28 02:37:37,988 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,988 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,988 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,988 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,989 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:37,989 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,989 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-28 02:37:37,989 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,989 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:37,989 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-28 02:37:37,989 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,990 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,990 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,990 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,990 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:37,990 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-28 02:37:37,990 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,990 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,990 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,990 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,990 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:37,990 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-28 02:37:37,991 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,991 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,991 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,991 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,991 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:37,991 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-28 02:37:37,991 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,991 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,991 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,991 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,991 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:37,991 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-28 02:37:37,991 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,992 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,992 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,992 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,992 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:37,992 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-28 02:37:37,992 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,992 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,992 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,992 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,992 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:37,992 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-28 02:37:37,992 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,993 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,993 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,993 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,993 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:37,993 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-28 02:37:37,993 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,993 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,993 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,993 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,993 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:37,993 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-28 02:37:37,994 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,994 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,994 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,994 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,994 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:37,994 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-28 02:37:37,994 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,994 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,994 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,994 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,994 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:37,994 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-28 02:37:37,996 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,997 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,997 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,997 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,998 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:37,998 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-28 02:37:37,998 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,998 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,999 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,999 INFO  bla.nah.example.common.mapper.EntityMapper int
+2020-09-28 02:37:37,999 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.String
+2020-09-28 02:37:37,999 INFO  bla.nah.example.common.mapper.EntityMapper class java.lang.Long
+2020-09-28 02:37:51,213 INFO  bla.nah.example.handler.WSHandler Send chat from UserID: 1
+2020-09-28 02:37:51,214 INFO  bla.nah.example.handler.WSHandler {"Mode":1,"UserSendID":1,"UserReceiveID":3,"Content":"testing "}
+2020-09-28 02:37:51,214 INFO  bla.nah.example.handler.WSHandler 1601235471
+2020-09-28 02:37:51,217 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: INSERTING A NEW CHAT
+2020-09-28 02:37:51,217 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-28 02:37:51,218 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-28 02:37:51,218 INFO  bla.nah.example.da.ChatListDAImpl 3
+2020-09-28 02:37:51,218 INFO  bla.nah.example.da.ChatListDAImpl testing 
+2020-09-28 02:37:51,218 INFO  bla.nah.example.da.ChatListDAImpl 1601235471
+2020-09-28 02:37:51,222 INFO  bla.nah.example.da.BaseTransactionDA Successful
+2020-09-28 02:37:51,222 INFO  bla.nah.example.handler.WSHandler insert a new chat
+2020-09-28 02:37:51,223 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 1
+2020-09-28 02:37:51,224 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 3
+2020-09-28 02:38:02,291 INFO  bla.nah.example.handler.WSHandler Send chat from UserID: 1
+2020-09-28 02:38:02,292 INFO  bla.nah.example.handler.WSHandler {"Mode":1,"UserSendID":1,"UserReceiveID":3,"Content":"kiểm tra tiếng việt"}
+2020-09-28 02:38:02,293 INFO  bla.nah.example.handler.WSHandler 1601235482
+2020-09-28 02:38:02,297 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: INSERTING A NEW CHAT
+2020-09-28 02:38:02,298 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-28 02:38:02,298 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-28 02:38:02,298 INFO  bla.nah.example.da.ChatListDAImpl 3
+2020-09-28 02:38:02,299 INFO  bla.nah.example.da.ChatListDAImpl kiểm tra tiếng việt
+2020-09-28 02:38:02,299 INFO  bla.nah.example.da.ChatListDAImpl 1601235482
+2020-09-28 02:38:02,306 INFO  bla.nah.example.da.BaseTransactionDA Successful
+2020-09-28 02:38:02,307 INFO  bla.nah.example.handler.WSHandler insert a new chat
+2020-09-28 02:38:02,307 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 1
+2020-09-28 02:38:02,308 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 3
+2020-09-28 02:38:25,217 INFO  bla.nah.example.handler.WSHandler Send chat from UserID: 2
+2020-09-28 02:38:25,218 INFO  bla.nah.example.handler.WSHandler {"Mode":1,"UserSendID":2,"UserReceiveID":1,"Content":"Chào bạn"}
+2020-09-28 02:38:25,218 INFO  bla.nah.example.handler.WSHandler 1601235505
+2020-09-28 02:38:25,219 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: INSERTING A NEW CHAT
+2020-09-28 02:38:25,219 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-28 02:38:25,219 INFO  bla.nah.example.da.ChatListDAImpl 2
+2020-09-28 02:38:25,219 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-28 02:38:25,219 INFO  bla.nah.example.da.ChatListDAImpl Chào bạn
+2020-09-28 02:38:25,219 INFO  bla.nah.example.da.ChatListDAImpl 1601235505
+2020-09-28 02:38:25,220 INFO  bla.nah.example.da.BaseTransactionDA Successful
+2020-09-28 02:38:25,220 INFO  bla.nah.example.handler.WSHandler insert a new chat
+2020-09-28 02:38:25,220 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 2
+2020-09-28 02:38:25,221 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 1
+2020-09-28 02:38:32,034 INFO  bla.nah.example.handler.WSHandler Send chat from UserID: 1
+2020-09-28 02:38:32,035 INFO  bla.nah.example.handler.WSHandler {"Mode":1,"UserSendID":1,"UserReceiveID":2,"Content":"Xin chào"}
+2020-09-28 02:38:32,035 INFO  bla.nah.example.handler.WSHandler 1601235512
+2020-09-28 02:38:32,039 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: INSERTING A NEW CHAT
+2020-09-28 02:38:32,039 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-28 02:38:32,039 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-28 02:38:32,040 INFO  bla.nah.example.da.ChatListDAImpl 2
+2020-09-28 02:38:32,040 INFO  bla.nah.example.da.ChatListDAImpl Xin chào
+2020-09-28 02:38:32,040 INFO  bla.nah.example.da.ChatListDAImpl 1601235512
+2020-09-28 02:38:32,042 INFO  bla.nah.example.da.BaseTransactionDA Successful
+2020-09-28 02:38:32,043 INFO  bla.nah.example.handler.WSHandler insert a new chat
+2020-09-28 02:38:32,044 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 1
+2020-09-28 02:38:32,044 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 2
+2020-09-28 02:38:47,505 INFO  bla.nah.example.handler.WSHandler Send chat from UserID: 1
+2020-09-28 02:38:47,506 INFO  bla.nah.example.handler.WSHandler {"Mode":1,"UserSendID":1,"UserReceiveID":2,"Content":"Bạn tên gì"}
+2020-09-28 02:38:47,506 INFO  bla.nah.example.handler.WSHandler 1601235527
+2020-09-28 02:38:47,509 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: INSERTING A NEW CHAT
+2020-09-28 02:38:47,510 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-28 02:38:47,510 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-28 02:38:47,510 INFO  bla.nah.example.da.ChatListDAImpl 2
+2020-09-28 02:38:47,511 INFO  bla.nah.example.da.ChatListDAImpl Bạn tên gì
+2020-09-28 02:38:47,511 INFO  bla.nah.example.da.ChatListDAImpl 1601235527
+2020-09-28 02:38:47,513 INFO  bla.nah.example.da.BaseTransactionDA Successful
+2020-09-28 02:38:47,513 INFO  bla.nah.example.handler.WSHandler insert a new chat
+2020-09-28 02:38:47,513 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 1
+2020-09-28 02:38:47,514 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 2
+2020-09-28 02:38:58,980 INFO  bla.nah.example.handler.WSHandler Send chat from UserID: 2
+2020-09-28 02:38:58,980 INFO  bla.nah.example.handler.WSHandler {"Mode":1,"UserSendID":2,"UserReceiveID":1,"Content":"Mình là Shizuka"}
+2020-09-28 02:38:58,981 INFO  bla.nah.example.handler.WSHandler 1601235538
+2020-09-28 02:38:58,982 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: INSERTING A NEW CHAT
+2020-09-28 02:38:58,982 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-28 02:38:58,982 INFO  bla.nah.example.da.ChatListDAImpl 2
+2020-09-28 02:38:58,982 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-28 02:38:58,982 INFO  bla.nah.example.da.ChatListDAImpl Mình là Shizuka
+2020-09-28 02:38:58,982 INFO  bla.nah.example.da.ChatListDAImpl 1601235538
+2020-09-28 02:38:58,983 INFO  bla.nah.example.da.BaseTransactionDA Successful
+2020-09-28 02:38:58,983 INFO  bla.nah.example.handler.WSHandler insert a new chat
+2020-09-28 02:38:58,983 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 2
+2020-09-28 02:38:58,984 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 1
+2020-09-28 02:39:09,902 INFO  bla.nah.example.handler.WSHandler Send chat from UserID: 2
+2020-09-28 02:39:09,903 INFO  bla.nah.example.handler.WSHandler {"Mode":1,"UserSendID":2,"UserReceiveID":1,"Content":"Còn bạn tên gì ?"}
+2020-09-28 02:39:09,903 INFO  bla.nah.example.handler.WSHandler 1601235549
+2020-09-28 02:39:09,907 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: INSERTING A NEW CHAT
+2020-09-28 02:39:09,908 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-28 02:39:09,908 INFO  bla.nah.example.da.ChatListDAImpl 2
+2020-09-28 02:39:09,908 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-28 02:39:09,908 INFO  bla.nah.example.da.ChatListDAImpl Còn bạn tên gì ?
+2020-09-28 02:39:09,908 INFO  bla.nah.example.da.ChatListDAImpl 1601235549
+2020-09-28 02:39:09,910 INFO  bla.nah.example.da.BaseTransactionDA Successful
+2020-09-28 02:39:09,910 INFO  bla.nah.example.handler.WSHandler insert a new chat
+2020-09-28 02:39:09,911 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 2
+2020-09-28 02:39:09,911 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 1
+2020-09-28 02:39:24,164 INFO  bla.nah.example.handler.WSHandler Send chat from UserID: 1
+2020-09-28 02:39:24,165 INFO  bla.nah.example.handler.WSHandler {"Mode":1,"UserSendID":1,"UserReceiveID":2,"Content":"Rất vui được làm quen với Shizuka, mình là Nobita"}
+2020-09-28 02:39:24,166 INFO  bla.nah.example.handler.WSHandler 1601235564
+2020-09-28 02:39:24,169 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: INSERTING A NEW CHAT
+2020-09-28 02:39:24,169 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-28 02:39:24,170 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-28 02:39:24,170 INFO  bla.nah.example.da.ChatListDAImpl 2
+2020-09-28 02:39:24,170 INFO  bla.nah.example.da.ChatListDAImpl Rất vui được làm quen với Shizuka, mình là Nobita
+2020-09-28 02:39:24,171 INFO  bla.nah.example.da.ChatListDAImpl 1601235564
+2020-09-28 02:39:24,173 INFO  bla.nah.example.da.BaseTransactionDA Successful
+2020-09-28 02:39:24,173 INFO  bla.nah.example.handler.WSHandler insert a new chat
+2020-09-28 02:39:24,174 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 1
+2020-09-28 02:39:24,174 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 2
+2020-09-28 02:40:05,485 INFO  bla.nah.example.handler.WSHandler Send chat from UserID: 1
+2020-09-28 02:40:05,486 INFO  bla.nah.example.handler.WSHandler {"Mode":1,"UserSendID":1,"UserReceiveID":2,"Content":"Nhà bạn ở đâu ?"}
+2020-09-28 02:40:05,487 INFO  bla.nah.example.handler.WSHandler 1601235605
+2020-09-28 02:40:05,490 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: INSERTING A NEW CHAT
+2020-09-28 02:40:05,490 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-28 02:40:05,491 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-28 02:40:05,491 INFO  bla.nah.example.da.ChatListDAImpl 2
+2020-09-28 02:40:05,491 INFO  bla.nah.example.da.ChatListDAImpl Nhà bạn ở đâu ?
+2020-09-28 02:40:05,491 INFO  bla.nah.example.da.ChatListDAImpl 1601235605
+2020-09-28 02:40:05,493 INFO  bla.nah.example.da.BaseTransactionDA Successful
+2020-09-28 02:40:05,493 INFO  bla.nah.example.handler.WSHandler insert a new chat
+2020-09-28 02:40:05,494 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 1
+2020-09-28 02:40:05,495 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 2
+2020-09-28 02:41:36,974 INFO  bla.nah.example.handler.WSHandler Send chat from UserID: 2
+2020-09-28 02:41:36,975 INFO  bla.nah.example.handler.WSHandler {"Mode":1,"UserSendID":2,"UserReceiveID":1,"Content":"Nhà mình ở quận Nerima, Tokyo"}
+2020-09-28 02:41:36,976 INFO  bla.nah.example.handler.WSHandler 1601235696
+2020-09-28 02:41:36,979 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: INSERTING A NEW CHAT
+2020-09-28 02:41:36,980 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-28 02:41:36,980 INFO  bla.nah.example.da.ChatListDAImpl 2
+2020-09-28 02:41:36,980 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-28 02:41:36,981 INFO  bla.nah.example.da.ChatListDAImpl Nhà mình ở quận Nerima, Tokyo
+2020-09-28 02:41:36,981 INFO  bla.nah.example.da.ChatListDAImpl 1601235696
+2020-09-28 02:41:36,983 INFO  bla.nah.example.da.BaseTransactionDA Successful
+2020-09-28 02:41:36,984 INFO  bla.nah.example.handler.WSHandler insert a new chat
+2020-09-28 02:41:36,984 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 2
+2020-09-28 02:41:36,985 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 1
+2020-09-28 02:43:05,593 INFO  bla.nah.example.handler.WSHandler Send chat from UserID: 1
+2020-09-28 02:43:05,595 INFO  bla.nah.example.handler.WSHandler {"Mode":1,"UserSendID":1,"UserReceiveID":2,"Content":"Hay quá, có thể mình sống gần nhau đó. Nhà mình ở khu phố Susukigahara, phường Kutsukimi"}
+2020-09-28 02:43:05,595 INFO  bla.nah.example.handler.WSHandler 1601235785
+2020-09-28 02:43:05,599 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: INSERTING A NEW CHAT
+2020-09-28 02:43:05,599 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-28 02:43:05,599 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-28 02:43:05,599 INFO  bla.nah.example.da.ChatListDAImpl 2
+2020-09-28 02:43:05,600 INFO  bla.nah.example.da.ChatListDAImpl Hay quá, có thể mình sống gần nhau đó. Nhà mình ở khu phố Susukigahara, phường Kutsukimi
+2020-09-28 02:43:05,600 INFO  bla.nah.example.da.ChatListDAImpl 1601235785
+2020-09-28 02:43:05,602 INFO  bla.nah.example.da.BaseTransactionDA Successful
+2020-09-28 02:43:05,603 INFO  bla.nah.example.handler.WSHandler insert a new chat
+2020-09-28 02:43:05,603 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 1
+2020-09-28 02:43:05,604 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 2
+2020-09-28 02:43:24,926 INFO  bla.nah.example.handler.WSHandler Send chat from UserID: 1
+2020-09-28 02:43:24,927 INFO  bla.nah.example.handler.WSHandler {"Mode":1,"UserSendID":1,"UserReceiveID":2,"Content":"Quận Nerima luôn"}
+2020-09-28 02:43:24,928 INFO  bla.nah.example.handler.WSHandler 1601235804
+2020-09-28 02:43:24,931 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: INSERTING A NEW CHAT
+2020-09-28 02:43:24,932 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-28 02:43:24,932 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-28 02:43:24,932 INFO  bla.nah.example.da.ChatListDAImpl 2
+2020-09-28 02:43:24,933 INFO  bla.nah.example.da.ChatListDAImpl Quận Nerima luôn
+2020-09-28 02:43:24,933 INFO  bla.nah.example.da.ChatListDAImpl 1601235804
+2020-09-28 02:43:24,935 INFO  bla.nah.example.da.BaseTransactionDA Successful
+2020-09-28 02:43:24,936 INFO  bla.nah.example.handler.WSHandler insert a new chat
+2020-09-28 02:43:24,936 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 1
+2020-09-28 02:43:24,936 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 2
+2020-09-28 02:44:32,371 INFO  bla.nah.example.handler.WSHandler Send chat from UserID: 2
+2020-09-28 02:44:32,372 INFO  bla.nah.example.handler.WSHandler {"Mode":1,"UserSendID":2,"UserReceiveID":1,"Content":"ở Susukigahara mà mình không biết nhau nhỉ"}
+2020-09-28 02:44:32,372 INFO  bla.nah.example.handler.WSHandler 1601235872
+2020-09-28 02:44:32,375 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: INSERTING A NEW CHAT
+2020-09-28 02:44:32,375 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-28 02:44:32,375 INFO  bla.nah.example.da.ChatListDAImpl 2
+2020-09-28 02:44:32,375 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-28 02:44:32,375 INFO  bla.nah.example.da.ChatListDAImpl ở Susukigahara mà mình không biết nhau nhỉ
+2020-09-28 02:44:32,375 INFO  bla.nah.example.da.ChatListDAImpl 1601235872
+2020-09-28 02:44:32,376 INFO  bla.nah.example.da.BaseTransactionDA Successful
+2020-09-28 02:44:32,376 INFO  bla.nah.example.handler.WSHandler insert a new chat
+2020-09-28 02:44:32,377 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 2
+2020-09-28 02:44:32,377 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 1
+2020-09-28 02:45:19,882 INFO  bla.nah.example.handler.WSHandler Send chat from UserID: 1
+2020-09-28 02:45:19,882 INFO  bla.nah.example.handler.WSHandler {"Mode":1,"UserSendID":1,"UserReceiveID":2,"Content":"Cũng lạ thật đấy"}
+2020-09-28 02:45:19,883 INFO  bla.nah.example.handler.WSHandler 1601235919
+2020-09-28 02:45:19,885 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: INSERTING A NEW CHAT
+2020-09-28 02:45:19,886 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-28 02:45:19,886 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-28 02:45:19,886 INFO  bla.nah.example.da.ChatListDAImpl 2
+2020-09-28 02:45:19,886 INFO  bla.nah.example.da.ChatListDAImpl Cũng lạ thật đấy
+2020-09-28 02:45:19,886 INFO  bla.nah.example.da.ChatListDAImpl 1601235919
+2020-09-28 02:45:19,888 INFO  bla.nah.example.da.BaseTransactionDA Successful
+2020-09-28 02:45:19,888 INFO  bla.nah.example.handler.WSHandler insert a new chat
+2020-09-28 02:45:19,889 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 1
+2020-09-28 02:45:19,890 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 2
+2020-09-28 02:46:00,342 INFO  bla.nah.example.handler.WSHandler Send chat from UserID: 1
+2020-09-28 02:46:00,342 INFO  bla.nah.example.handler.WSHandler {"Mode":1,"UserSendID":1,"UserReceiveID":2,"Content":"Mà sao Shizuka biết messenger của mình ?"}
+2020-09-28 02:46:00,342 INFO  bla.nah.example.handler.WSHandler 1601235960
+2020-09-28 02:46:00,343 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: INSERTING A NEW CHAT
+2020-09-28 02:46:00,343 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-28 02:46:00,343 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-28 02:46:00,343 INFO  bla.nah.example.da.ChatListDAImpl 2
+2020-09-28 02:46:00,343 INFO  bla.nah.example.da.ChatListDAImpl Mà sao Shizuka biết messenger của mình ?
+2020-09-28 02:46:00,343 INFO  bla.nah.example.da.ChatListDAImpl 1601235960
+2020-09-28 02:46:00,344 INFO  bla.nah.example.da.BaseTransactionDA Successful
+2020-09-28 02:46:00,344 INFO  bla.nah.example.handler.WSHandler insert a new chat
+2020-09-28 02:46:00,344 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 1
+2020-09-28 02:46:00,344 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 2
+2020-09-28 02:50:16,756 INFO  bla.nah.example.handler.WSHandler Send chat from UserID: 1
+2020-09-28 02:50:16,757 INFO  bla.nah.example.handler.WSHandler {"Mode":1,"UserSendID":1,"UserReceiveID":4,"Content":"Hello"}
+2020-09-28 02:50:16,757 INFO  bla.nah.example.handler.WSHandler 1601236216
+2020-09-28 02:50:16,760 INFO  bla.nah.example.da.ChatListDAImpl MYSQL: INSERTING A NEW CHAT
+2020-09-28 02:50:16,760 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-28 02:50:16,760 INFO  bla.nah.example.da.ChatListDAImpl 1
+2020-09-28 02:50:16,760 INFO  bla.nah.example.da.ChatListDAImpl 4
+2020-09-28 02:50:16,761 INFO  bla.nah.example.da.ChatListDAImpl Hello
+2020-09-28 02:50:16,761 INFO  bla.nah.example.da.ChatListDAImpl 1601236216
+2020-09-28 02:50:16,765 INFO  bla.nah.example.da.BaseTransactionDA Successful
+2020-09-28 02:50:16,765 INFO  bla.nah.example.handler.WSHandler insert a new chat
+2020-09-28 02:50:16,765 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 1
+2020-09-28 02:50:16,766 INFO  bla.nah.example.handler.WSHandler Send chat to UserID: 4

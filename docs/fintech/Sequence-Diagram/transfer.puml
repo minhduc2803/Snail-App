@@ -29,4 +29,5 @@
     "backend" -> User1 : return OK + history
     "backend" -> User2 : return notification
     end
+    end
 @enduml

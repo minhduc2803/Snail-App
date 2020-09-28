@@ -1,0 +1,42 @@
+syntax = "proto3";
+option java_multiple_files = true;
+
+package migrator.proto;
+option java_package = "vn.zalopay.migrator.ping";
+
+import "google/api/annotations.proto";
+import "common/error.proto";
+
+enum Code {
+  SUCCESS = 0;
+}
+
+message Error {
+  // code = 0 means success
+  Code code = 1;
+  string message = 2;
+  map<string, string> extra = 3;
+}
+
+message PingRequest {  }
+
+message PingResponse{
+  message Data {
+    int64 timestamp = 1;
+    // Information about current ZAS instance
+    // No need any authentication to call
+    string system_name = 2; // ZaloPay migrator
+    string system_version = 3; // v0.1.0
+  }
+
+  Error error = 1;
+  Data data = 2;
+}
+
+service Ping{
+  rpc ping(PingRequest) returns(PingResponse){
+    option (google.api.http) = {
+      get: "/api/ping"
+    };
+  }
+}

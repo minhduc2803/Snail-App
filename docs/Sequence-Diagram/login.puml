@@ -1,6 +1,4 @@
 @startuml login
-    skinparam backgroundColor #EEEBDC
-    skinparam handwritten true
     actor User
     User -> "backend" : login(username, password)
     "backend" -> "MySQL" : get user by username

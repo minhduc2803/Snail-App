@@ -1,0 +1,12 @@
+@startuml getBalance
+    actor User
+    User -> "backend" : getBalance(user_id, token)
+     "backend" -> "backend" : confirm JWT token
+    alt (token is invalid)
+    "backend" -> User : Unauthorized
+    else (token is valid)
+    "backend" -> "MySQL" : getBalance(user_id)
+    "MySQL" -> "backend" : return balance
+    "backend" -> User : return balance
+    end
+@enduml

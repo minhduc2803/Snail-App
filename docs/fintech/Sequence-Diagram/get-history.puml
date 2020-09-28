@@ -1,0 +1,12 @@
+@startuml getHistory
+    actor User
+    User -> "backend" : getHistory(user_id, token)
+    "backend" -> "backend" : confirm JWT token
+    alt (token is invalid)
+    "backend" -> User : Unauthorized
+    else (token is valid)
+    "backend" -> "MySQL" : getHistory(user_id)
+    "MySQL" -> "backend" : return Transfer history
+    "backend" -> User : return Transfer history
+    end
+@enduml

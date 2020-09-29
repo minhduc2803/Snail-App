@@ -23,9 +23,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15b808f2-8377-4da4-93c6-844e525a0731" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../docs/fintech/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../docs/fintech/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LearnGRPC/GRPC-WEB" beforeDir="false" afterPath="$PROJECT_DIR$/../LearnGRPC/GRPC-WEB" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../LearnRedux/loginExample" beforeDir="false" afterPath="$PROJECT_DIR$/../LearnRedux/loginExample" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/bootstrap.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/bootstrap.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +59,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../GRPCJava/grpc-java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />

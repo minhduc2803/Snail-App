@@ -1,7 +1,7 @@
 @startuml getBalance
     actor User
-    User -> "backend" : getBalance(user_id, token)
-     "backend" -> "backend" : confirm JWT token
+    User -> "backend" : getBalance(token)
+    "backend" -> "backend" : confirm JWT token
     alt (token is invalid)
     "backend" -> User : Unauthorized
     else (token is valid)

@@ -1,8 +1,8 @@
 @startuml getHistory
     actor User
-    User -> "backend" : getHistory(user_id, token)
+    User -> "backend" : getHistory(token)
     "backend" -> "backend" : confirm JWT token
-    alt (token is invalid)
+    alt (token is not invalid)
     "backend" -> User : Unauthorized
     else (token is valid)
     "backend" -> "MySQL" : getHistory(user_id)

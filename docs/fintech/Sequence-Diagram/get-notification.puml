@@ -1,0 +1,12 @@
+@startuml getNotification
+    actor User
+    User -> "backend" : getNotification(token)
+    "backend" -> "backend" : confirm JWT token
+    alt (token is invalid)
+    "backend" -> User : Unauthorized
+    else (token is valid)
+    "backend" -> "MySQL" : getNotification(user_id)
+    "MySQL" -> "backend" : return Notification
+    "backend" -> User : return Notification
+    end
+@enduml

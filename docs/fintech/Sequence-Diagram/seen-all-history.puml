@@ -1,7 +1,0 @@
-@startuml seenAllHistory
-    actor User
-    User -> "backend" : seenHistory(list_history_id)
-    "backend" -> "MySQL" : clearUnreadHisotry (list_history_id)
-    "MySQL" -> "backend" : OK
-    "backend" -> User : OK
-@enduml

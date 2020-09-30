@@ -9,11 +9,10 @@ import "common/error.proto";
 
 enum Code {
   SUCCESS = 0;
-  FAILED = 1;
-  INCORRECT_PASSWORD = 2;
-  UNAUTHORIZED = 3;
-  NOT_ENOUGH_MONEY = 4;
-  INTERNAL_SERVER_ERROR = 5;
+  INCORRECT_PASSWORD = 1;
+  UNAUTHORIZED = 2;
+  NOT_ENOUGH_MONEY = 3;
+  INTERNAL_SERVER_ERROR = 4;
 }
 
 message Error {
@@ -24,15 +23,17 @@ message Error {
 }
 
 message BalanceRequest { 
-    message Data {
-        int64 user_id = 1;
-        string token = 2;
-    }
- }
+  // A request from a user to get current balance of this own user
+  // Contain jwt token from header for authentication
+}
 
-message BalanceResponse{
+message BalanceResponse {
   message Data {
+    // Information about user's balance
+    // Need jwt token authentication to call
+    // user_id is taken from jwt token
     int64 balance = 1;
+    int64 last_time_update_balance = 2; // the last time when balance changed
   }
 
   Error error = 1;
@@ -40,78 +41,113 @@ message BalanceResponse{
 }
 
 message HistoryRequest { 
-    message Data {
-        int64 user_id = 1;
-        string token = 2;
-    }
- }
+  // A request from a user to get current transfer history of this own user
+  // Contain jwt token from header for authentication
+}
 
-message HistoryResponse{
+message HistoryResponse {
   message Data {
-    repeated Item items = 1;
+    // Contain a list of transfer history of a user
+    // Need jwt token authentication to call
+    // user_id is taken from jwt token
+    repeated HistoryItem history_items = 1;
   }
 
   Error error = 1;
   Data data = 2;
 }
 
-message Item {
-    int64 history_id = 1;
-    int64 user_transfer_id = 2;
-    int64 amount = 3;
-    string message = 4;
-    int64 timestamp = 5;
-    int64 balance = 6;
-    enum TransferType {
-        SEND = 0;
-        RECEIVE = 1;
-    }
-    TransferType transfer_type = 7;
+message HistoryItem {
+  // Information of a user transfer money with it's partner
+  // This hisotry has an enum TransferType
+  // If TransferType = SEND => user send money to partner
+  // If TransferType = RECEIVE => user receive money from partner
+  int64 history_id = 1; // Every transfer history has a id
+  int64 partner_id = 2; 
+  string partner_username = 3;
+  string partner_fullname = 4; 
+  int64 amount = 5; 
+  string message = 6; // The message goes with a transfer
+  int64 timestamp = 7; // The time when the transfer executed
+  int64 balance = 8; // The balance of user after transfer
+  enum TransferType {
+    SEND = 0;
+    RECEIVE = 1;
+  }
+  TransferType transfer_type = 9;
 }
 
 message TransferRequest { 
-    message Data {
-        int64 sender_id = 1;
-        int64 receiver_id = 2;
-        int64 amount = 3;
-        string password = 4;
-    }
- }
+  // A transfer request from user
+  // Contain password in header for authorization
+  int64 sender_id = 1;
+  int64 receiver_id = 2;
+  int64 amount = 3;
+}
 
-message TransferResponse{
+message TransferResponse {
   message Data {
-    Item item = 1;
+    // After transfer succeed, return a history of that transfer
+    // Need password from request header for authorization
+    HistoryItem history_item = 1;
   }
 
   Error error = 1;
   Data data = 2;
 }
 
-message seenHistoryRequest{
-    message Data{
-        int64 history_id = 1;
-    }
+message NotificationRequest {
+  // A request from a user to get current transfer notifications of this own user
+  // Contain jwt token from header for authentication
 }
 
-message seenHistoryResponse{
-    Error error = 1;
+message NotificationResponse {
+  message Data {
+    // Contain a list of transfer notifications of a user
+    // Need jwt token authentication to call
+    // user_id is taken from jwt token
+    repeated NotificationItem notification_items = 1;
+  }
+
+  Error error = 1;
+  Data data = 2;
 }
 
-service fintech{
-  rpc getBalance(BalanceRequest) returns(BalanceResponse){
+message NotificationItem {
+  // A Notification of a user
+  // Has a mode variable
+  // if mode = 1 => A Notification about A partner sent money to this user
+  // if mode = 2 => A partner reminded this user about transfering money
+  int64 notification_id = 1; // Every notification has a id
+  int32 mode = 2; 
+  int64 partner_id = 3;
+  int64 amount = 4;
+  string message = 5; // A message goes with a notification
+  enum UnRead {
+    // A notification can be read already or not
+    // if UnRead = TRUE => notification is not read yet
+    // if UnRead = FALSE => notification is read already
+    TRUE = 0;
+    FALSE = 1;
+  }
+
+  UnRead unread = 6 [default = FALSE]; // default: a notification is read already
+}
+
+service FintechService {
+  rpc getBalance(BalanceRequest) returns(BalanceResponse) {
     
   }
 
-  rpc getHitory(HistoryRequest) returns(HistoryResponse){
+  rpc getHitory(HistoryRequest) returns(HistoryResponse) {
     
-    }
+  }
 
-    rpc transfer(TransferRequest) returns(TransferResponse){
+  rpc transfer(TransferRequest) returns(TransferResponse) {
 
-    }
+  }
 
-    rpc seenHistory(seenHistoryRequest) returns(seenHistoryResponse){
+  rpc getNotification(NotificationRequest) returns(NotificationResponse) {
 
-    }
-
+  }
 }

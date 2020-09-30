@@ -14,23 +14,28 @@
 
 #### 1. Get balance
 
-![](../../images/sequence-diagram/fintech/getBalance.png)
+![balance-image](../../images/sequence-diagram/fintech/getBalance.png)
 
 #### 2. Transfer
 
-![](../../images/sequence-diagram/fintech/transfer.png)
+![transfer-image](../../images/sequence-diagram/fintech/transfer.png)
 
 #### 3. Get transfer history
 
-![](../../images/sequence-diagram/fintech/getHistory.png)
+![history-image](../../images/sequence-diagram/fintech/getHistory.png)
 
-#### 4. Seen history
+#### 4. Get notifications
 
-![](../../images/sequence-diagram/fintech/seenHistory.png)
+![get-noti-image](../../images/sequence-diagram/fintech/getNotification.png)
 
-#### 5. Seen all history
+#### 5. Seen a notification
 
-![](../../images/sequence-diagram/fintech/seenAllHistory.png)
+![seen-noti](../../images/sequence-diagram/fintech/seenNotification.png)
+
+#### 5. Seen all notifications
+
+![seen-all-noti-image](../../images/sequence-diagram/fintech/seenAllNotification.png)
+
 
 ## 3. Database schema
 

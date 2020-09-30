@@ -1,0 +1,12 @@
+@startuml seenAllNotification
+    actor User
+    User -> "backend" : seenNotification(list_notification_id, token)
+    "backend" -> "backend" : confirm JWT token
+    alt (token is invalid)
+    "backend" -> User : Unauthorized
+    else (token is valid)
+    "backend" -> "MySQL" : clearUnreadHisotry (list_notification_id)
+    "MySQL" -> "backend" : OK
+    "backend" -> User : OK
+    end
+@enduml

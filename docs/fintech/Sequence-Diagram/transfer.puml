@@ -9,25 +9,34 @@
     "backend" -> User1 : Transfer failed, wrong password
     else (password is correct)
 
+    
+    "backend" -> "MySQL": start Transaction
+    activate "MySQL" #005500
     "backend" -> "MySQL" : getBalance(sender_id)
     "MySQL" -> "backend" : return balance
-    "backend" -> "backend" : check if balance > amount
+    "backend" -> "backend" : check if balance >= amount
     alt (balance < amount)
     "backend" -> User1 : does not save enough money
    
     else (balance >= amount)
     "backend" -> "MySQL" : minusBalance(sender_id, amount)
-    "MySQL" -> "backend" : OK
+   
     "backend" -> "MySQL" : plusBalance(receiver_id, amount)
-    "MySQL" -> "backend" : OK
+   
     "backend" -> "MySQL" : create transfer certificate
-    "MySQL" -> "backend" : OK
+    
     "backend" -> "MySQL" : create history for sender
-    "MySQL" -> "backend" : OK
+    
     "backend" -> "MySQL" : create history for receiver
-    "MySQL" -> "backend" : OK
-    "backend" -> User1 : return OK + history
-    "backend" -> User2 : return notification
+
+    "backend" -> "MySQL" : create notification for receiver
+    
+    "backend" -> "MySQL" : getBalance(sender_id)
+    "MySQL" -> "backend" : return balance
+    "backend" -> "MySQL" : commit
+    deactivate "MySQL"
+    "backend" -> User1 : return OK + balance + history
+    "backend" -> User2 : send notification
     end
     end
 @enduml

@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>bla.nah.javpet</groupId>
-    <artifactId>jav-pet</artifactId>
+    <groupId>vn.zalopay.ducnm8</groupId>
+    <artifactId>ServerSide</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -29,6 +29,14 @@
 
         <hikariCP.version>3.3.1</hikariCP.version>
         <mysql.version>8.0.11</mysql.version>
+
+        <vertx.grpc.version>1.25.0</vertx.grpc.version>
+        <protoc.version>3.5.1</protoc.version>
+        <protoc.plugin.version>4.0.0.Beta1</protoc.plugin.version>
+
+        <jetty.alpnAgent.version>2.0.7</jetty.alpnAgent.version>
+        <jetty.alpnAgent.path>${settings.localRepository}/org/mortbay/jetty/alpn/jetty-alpn-agent/${jetty.alpnAgent.version}/jetty-alpn-agent-${jetty.alpnAgent.version}.jar</jetty.alpnAgent.path>
+
     </properties>
 
     <dependencies>
@@ -182,6 +190,60 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>${mysql.version}</version>
         </dependency>
+
+        <!--GRPC-->
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-netty</artifactId>
+            <version>${vertx.grpc.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.google.guava</groupId>
+                    <artifactId>guava</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.netty</groupId>
+                    <artifactId>netty-codec-http2</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.netty</groupId>
+                    <artifactId>netty-handler-proxy</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.netty</groupId>
+                    <artifactId>netty-tcnative-boringssl-static</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-protobuf</artifactId>
+            <version>${vertx.grpc.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.google.guava</groupId>
+                    <artifactId>guava</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-stub</artifactId>
+            <version>${vertx.grpc.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>25.1-jre</version>
+        </dependency>
+
+        <!-- Required for forcing build order -->
+        <dependency>
+            <groupId>io.vertx</groupId>
+            <artifactId>vertx-grpc-protoc-plugin</artifactId>
+            <version>${protoc.plugin.version}</version>
+            <optional>true</optional>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -206,7 +268,62 @@
                     </annotationProcessorPaths>
                 </configuration>
             </plugin>
+
+
+            <plugin>
+            <groupId>org.xolstice.maven.plugins</groupId>
+            <artifactId>protobuf-maven-plugin</artifactId>
+            <version>0.5.0</version>
+            <configuration>
+                <!--
+                  The version of protoc must match protobuf-java. If you don't depend on
+                  protobuf-java directly, you will be transitively depending on the
+                  protobuf-java version that grpc depends on.
+                -->
+                <protocArtifact>com.google.protobuf:protoc:${protoc.version}:exe:${os.detected.classifier}</protocArtifact>
+                <pluginId>grpc-java</pluginId>
+                <pluginArtifact>io.grpc:protoc-gen-grpc-java:${vertx.grpc.version}:exe:${os.detected.classifier}</pluginArtifact>
+                <protocPlugins>
+                    <protocPlugin>
+                        <id>vertx-grpc-protoc-plugin</id>
+                        <groupId>io.vertx</groupId>
+                        <artifactId>vertx-grpc-protoc-plugin</artifactId>
+                        <version>${protoc.plugin.version}</version>
+                        <mainClass>io.vertx.grpc.protoc.plugin.VertxGrpcGenerator</mainClass>
+                    </protocPlugin>
+                </protocPlugins>
+            </configuration>
+            <executions>
+                <execution>
+                    <id>compile</id>
+                    <goals>
+                        <goal>compile</goal>
+                        <goal>compile-custom</goal>
+                    </goals>
+                    <configuration>
+                        <outputDirectory>${project.basedir}/src/main/java</outputDirectory>
+                        <clearOutputDirectory>false</clearOutputDirectory>
+                    </configuration>
+                </execution>
+                <execution>
+                    <id>test-compile</id>
+                    <goals>
+                        <goal>test-compile</goal>
+                        <goal>test-compile-custom</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
         </plugins>
+
+        <extensions>
+            <extension>
+                <groupId>kr.motd.maven</groupId>
+                <artifactId>os-maven-plugin</artifactId>
+                <version>1.4.1.Final</version>
+            </extension>
+        </extensions>
+
     </build>
 
 </project>

@@ -11,7 +11,7 @@ mvn clean install
 java -Dservice.conf=./conf/development.yaml
 -Dlog4j.configurationFile=./conf/log4j.xml
 -Dredis.conf=./conf/redis.yaml
--cp *.jar bla.nah.example.Runner
+-cp *.jar vn.zalopay.ducnm8.Runner
 ```
 
 ```shell script

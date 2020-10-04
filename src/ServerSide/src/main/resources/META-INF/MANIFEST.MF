@@ -1,3 +1,3 @@
 Manifest-Version: 1.0
-Main-Class: bla.nah.example.Runner
+Main-Class: vn.zalopay.ducnm8.Runner
 

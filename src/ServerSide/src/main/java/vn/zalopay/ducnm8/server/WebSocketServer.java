@@ -16,7 +16,7 @@ public class WebSocketServer {
     private final WSHandler wsHandler;
     private final Vertx vertx;
     private final int port;
-    private HttpServer listen;
+    private HttpServer httpServer;
     private final JWTAuth jwtAuth;
 
 
@@ -41,7 +41,7 @@ public class WebSocketServer {
     }
 
     public void start() {
-        HttpServer listen =
+        httpServer =
             vertx
                 .createHttpServer()
                 .websocketHandler(ws -> {
@@ -70,6 +70,6 @@ public class WebSocketServer {
     }
 
     public void close() {
-        listen.close();
+        httpServer.close();
     }
 }

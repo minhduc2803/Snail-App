@@ -8,6 +8,8 @@ import lombok.Setter;
 public class ServiceConfig {
     private VertxConfig vertxConfig;
     private MySQLConfig mySQLConfig;
+    private GRPCConfig gRPCConfig;
     int port;
     int wsPort;
+    int grpcPort;
 }

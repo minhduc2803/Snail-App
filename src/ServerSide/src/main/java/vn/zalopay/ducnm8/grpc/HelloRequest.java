@@ -4,10 +4,6 @@
 package vn.zalopay.ducnm8.grpc;
 
 /**
- * <pre>
- * The request message containing the user's name.
- * </pre>
- *
  * Protobuf type {@code helloworld.HelloRequest}
  */
 public  final class HelloRequest extends
@@ -21,6 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private HelloRequest() {
     name_ = "";
+    hobbies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
@@ -33,9 +30,6 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
-    if (extensionRegistry == null) {
-      throw new java.lang.NullPointerException();
-    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -60,6 +54,15 @@ private static final long serialVersionUID = 0L;
             name_ = s;
             break;
           }
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+              hobbies_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            hobbies_.add(s);
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -68,6 +71,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+        hobbies_ = hobbies_.getUnmodifiableView();
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -84,9 +90,16 @@ private static final long serialVersionUID = 0L;
             vn.zalopay.ducnm8.grpc.HelloRequest.class, vn.zalopay.ducnm8.grpc.HelloRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
+   * <pre>
+   * Each message attribute is strongly typed.
+   * You also must assign a "tag" number.
+   * Each tag number is unique within the message.
+   * </pre>
+   *
    * <code>string name = 1;</code>
    */
   public java.lang.String getName() {
@@ -102,6 +115,12 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * Each message attribute is strongly typed.
+   * You also must assign a "tag" number.
+   * Each tag number is unique within the message.
+   * </pre>
+   *
    * <code>string name = 1;</code>
    */
   public com.google.protobuf.ByteString
@@ -116,6 +135,51 @@ private static final long serialVersionUID = 0L;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int HOBBIES_FIELD_NUMBER = 2;
+  private com.google.protobuf.LazyStringList hobbies_;
+  /**
+   * <pre>
+   * This defines a strongly typed list of String
+   * </pre>
+   *
+   * <code>repeated string hobbies = 2;</code>
+   */
+  public com.google.protobuf.ProtocolStringList
+      getHobbiesList() {
+    return hobbies_;
+  }
+  /**
+   * <pre>
+   * This defines a strongly typed list of String
+   * </pre>
+   *
+   * <code>repeated string hobbies = 2;</code>
+   */
+  public int getHobbiesCount() {
+    return hobbies_.size();
+  }
+  /**
+   * <pre>
+   * This defines a strongly typed list of String
+   * </pre>
+   *
+   * <code>repeated string hobbies = 2;</code>
+   */
+  public java.lang.String getHobbies(int index) {
+    return hobbies_.get(index);
+  }
+  /**
+   * <pre>
+   * This defines a strongly typed list of String
+   * </pre>
+   *
+   * <code>repeated string hobbies = 2;</code>
+   */
+  public com.google.protobuf.ByteString
+      getHobbiesBytes(int index) {
+    return hobbies_.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -133,6 +197,9 @@ private static final long serialVersionUID = 0L;
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
+    for (int i = 0; i < hobbies_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, hobbies_.getRaw(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -143,6 +210,14 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < hobbies_.size(); i++) {
+        dataSize += computeStringSizeNoTag(hobbies_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getHobbiesList().size();
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -162,6 +237,8 @@ private static final long serialVersionUID = 0L;
     boolean result = true;
     result = result && getName()
         .equals(other.getName());
+    result = result && getHobbiesList()
+        .equals(other.getHobbiesList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -175,6 +252,10 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    if (getHobbiesCount() > 0) {
+      hash = (37 * hash) + HOBBIES_FIELD_NUMBER;
+      hash = (53 * hash) + getHobbiesList().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -269,10 +350,6 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * <pre>
-   * The request message containing the user's name.
-   * </pre>
-   *
    * Protobuf type {@code helloworld.HelloRequest}
    */
   public static final class Builder extends
@@ -310,6 +387,8 @@ private static final long serialVersionUID = 0L;
       super.clear();
       name_ = "";
 
+      hobbies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -332,7 +411,15 @@ private static final long serialVersionUID = 0L;
 
     public vn.zalopay.ducnm8.grpc.HelloRequest buildPartial() {
       vn.zalopay.ducnm8.grpc.HelloRequest result = new vn.zalopay.ducnm8.grpc.HelloRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.name_ = name_;
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        hobbies_ = hobbies_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.hobbies_ = hobbies_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -378,6 +465,16 @@ private static final long serialVersionUID = 0L;
         name_ = other.name_;
         onChanged();
       }
+      if (!other.hobbies_.isEmpty()) {
+        if (hobbies_.isEmpty()) {
+          hobbies_ = other.hobbies_;
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          ensureHobbiesIsMutable();
+          hobbies_.addAll(other.hobbies_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -404,9 +501,16 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
+     * <pre>
+     * Each message attribute is strongly typed.
+     * You also must assign a "tag" number.
+     * Each tag number is unique within the message.
+     * </pre>
+     *
      * <code>string name = 1;</code>
      */
     public java.lang.String getName() {
@@ -422,6 +526,12 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Each message attribute is strongly typed.
+     * You also must assign a "tag" number.
+     * Each tag number is unique within the message.
+     * </pre>
+     *
      * <code>string name = 1;</code>
      */
     public com.google.protobuf.ByteString
@@ -438,6 +548,12 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * Each message attribute is strongly typed.
+     * You also must assign a "tag" number.
+     * Each tag number is unique within the message.
+     * </pre>
+     *
      * <code>string name = 1;</code>
      */
     public Builder setName(
@@ -451,6 +567,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Each message attribute is strongly typed.
+     * You also must assign a "tag" number.
+     * Each tag number is unique within the message.
+     * </pre>
+     *
      * <code>string name = 1;</code>
      */
     public Builder clearName() {
@@ -460,6 +582,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * Each message attribute is strongly typed.
+     * You also must assign a "tag" number.
+     * Each tag number is unique within the message.
+     * </pre>
+     *
      * <code>string name = 1;</code>
      */
     public Builder setNameBytes(
@@ -470,6 +598,136 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       name_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList hobbies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureHobbiesIsMutable() {
+      if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+        hobbies_ = new com.google.protobuf.LazyStringArrayList(hobbies_);
+        bitField0_ |= 0x00000002;
+       }
+    }
+    /**
+     * <pre>
+     * This defines a strongly typed list of String
+     * </pre>
+     *
+     * <code>repeated string hobbies = 2;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getHobbiesList() {
+      return hobbies_.getUnmodifiableView();
+    }
+    /**
+     * <pre>
+     * This defines a strongly typed list of String
+     * </pre>
+     *
+     * <code>repeated string hobbies = 2;</code>
+     */
+    public int getHobbiesCount() {
+      return hobbies_.size();
+    }
+    /**
+     * <pre>
+     * This defines a strongly typed list of String
+     * </pre>
+     *
+     * <code>repeated string hobbies = 2;</code>
+     */
+    public java.lang.String getHobbies(int index) {
+      return hobbies_.get(index);
+    }
+    /**
+     * <pre>
+     * This defines a strongly typed list of String
+     * </pre>
+     *
+     * <code>repeated string hobbies = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getHobbiesBytes(int index) {
+      return hobbies_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * This defines a strongly typed list of String
+     * </pre>
+     *
+     * <code>repeated string hobbies = 2;</code>
+     */
+    public Builder setHobbies(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureHobbiesIsMutable();
+      hobbies_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * This defines a strongly typed list of String
+     * </pre>
+     *
+     * <code>repeated string hobbies = 2;</code>
+     */
+    public Builder addHobbies(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureHobbiesIsMutable();
+      hobbies_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * This defines a strongly typed list of String
+     * </pre>
+     *
+     * <code>repeated string hobbies = 2;</code>
+     */
+    public Builder addAllHobbies(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureHobbiesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, hobbies_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * This defines a strongly typed list of String
+     * </pre>
+     *
+     * <code>repeated string hobbies = 2;</code>
+     */
+    public Builder clearHobbies() {
+      hobbies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * This defines a strongly typed list of String
+     * </pre>
+     *
+     * <code>repeated string hobbies = 2;</code>
+     */
+    public Builder addHobbiesBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureHobbiesIsMutable();
+      hobbies_.add(value);
       onChanged();
       return this;
     }
@@ -503,7 +761,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new HelloRequest(input, extensionRegistry);
+        return new HelloRequest(input, extensionRegistry);
     }
   };
 

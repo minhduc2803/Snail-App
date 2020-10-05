@@ -5,6 +5,7 @@ import vn.zalopay.ducnm8.config.ServiceConfig;
 import vn.zalopay.ducnm8.dagger.DaggerServiceComponent;
 import vn.zalopay.ducnm8.dagger.ServiceComponent;
 import vn.zalopay.ducnm8.dagger.ServiceModule;
+import vn.zalopay.ducnm8.server.GRPCServer;
 import vn.zalopay.ducnm8.server.RestfulAPI;
 import vn.zalopay.ducnm8.server.WebSocketServer;
 import vn.zalopay.ducnm8.utils.Tracker;
@@ -31,6 +32,8 @@ public class Runner {
       RestfulAPI restfulAPI = component.getRestfulAPI();
       WebSocketServer webSocketServer = component.getWebSocketServer();
 
+      GRPCServer grpcServer = new GRPCServer();
+
       component
           .getVertx()
           .deployVerticle(
@@ -41,6 +44,7 @@ public class Runner {
                     public void start() {
                       restfulAPI.start();
                       webSocketServer.start();
+                      grpcServer.start();
                     }
 
                     @Override

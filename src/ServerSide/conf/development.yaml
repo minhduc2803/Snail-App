@@ -1,5 +1,6 @@
 port: 8055
 wsPort: 9009
+grpcPort: 8080
 vertxConfig:
   prometheusPort: 8054
 

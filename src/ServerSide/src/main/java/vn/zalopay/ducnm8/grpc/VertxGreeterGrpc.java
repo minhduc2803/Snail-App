@@ -1,6 +1,6 @@
-package examples;
+package vn.zalopay.ducnm8.grpc;
 
-import static examples.GreeterGrpc.getServiceDescriptor;
+import static vn.zalopay.ducnm8.grpc.GreeterGrpc.getServiceDescriptor;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
@@ -45,7 +45,7 @@ public final class VertxGreeterGrpc {
          *  Sends a greeting
          * </pre>
          */
-        public io.vertx.core.Future<examples.HelloReply> sayHello(examples.HelloRequest request) {
+        public io.vertx.core.Future<vn.zalopay.ducnm8.grpc.HelloReply> sayHello(vn.zalopay.ducnm8.grpc.HelloRequest request) {
             return io.vertx.grpc.stub.ClientCalls.oneToOne(request, delegateStub::sayHello);
         }
 
@@ -75,18 +75,18 @@ public final class VertxGreeterGrpc {
          *  Sends a greeting
          * </pre>
          */
-        public io.vertx.core.Future<examples.HelloReply> sayHello(examples.HelloRequest request) {
+        public io.vertx.core.Future<vn.zalopay.ducnm8.grpc.HelloReply> sayHello(vn.zalopay.ducnm8.grpc.HelloRequest request) {
             throw new io.grpc.StatusRuntimeException(io.grpc.Status.UNIMPLEMENTED);
         }
 
         @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
             return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
                     .addMethod(
-                            examples.GreeterGrpc.getSayHelloMethod(),
+                            vn.zalopay.ducnm8.grpc.GreeterGrpc.getSayHelloMethod(),
                             asyncUnaryCall(
                                     new MethodHandlers<
-                                            examples.HelloRequest,
-                                            examples.HelloReply>(
+                                            vn.zalopay.ducnm8.grpc.HelloRequest,
+                                            vn.zalopay.ducnm8.grpc.HelloReply>(
                                             this, METHODID_SAY_HELLO, compression)))
                     .build();
         }
@@ -115,8 +115,8 @@ public final class VertxGreeterGrpc {
         public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
             switch (methodId) {
                 case METHODID_SAY_HELLO:
-                    io.vertx.grpc.stub.ServerCalls.oneToOne((examples.HelloRequest) request,
-                            (io.grpc.stub.StreamObserver<examples.HelloReply>) responseObserver,
+                    io.vertx.grpc.stub.ServerCalls.oneToOne((vn.zalopay.ducnm8.grpc.HelloRequest) request,
+                            (io.grpc.stub.StreamObserver<vn.zalopay.ducnm8.grpc.HelloReply>) responseObserver,
                             compression,
                             serviceImpl::sayHello);
                     break;

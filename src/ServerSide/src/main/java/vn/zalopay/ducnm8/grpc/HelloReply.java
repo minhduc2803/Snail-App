@@ -4,19 +4,23 @@
 package vn.zalopay.ducnm8.grpc;
 
 /**
- * Protobuf type {@code helloworld.HelloResponse}
+ * <pre>
+ * The response message containing the greetings
+ * </pre>
+ *
+ * Protobuf type {@code helloworld.HelloReply}
  */
-public  final class HelloResponse extends
+public  final class HelloReply extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:helloworld.HelloResponse)
-    HelloResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:helloworld.HelloReply)
+    HelloReplyOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use HelloResponse.newBuilder() to construct.
-  private HelloResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use HelloReply.newBuilder() to construct.
+  private HelloReply(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private HelloResponse() {
-    greeting_ = "";
+  private HelloReply() {
+    message_ = "";
   }
 
   @java.lang.Override
@@ -24,7 +28,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private HelloResponse(
+  private HelloReply(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -50,7 +54,7 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            greeting_ = s;
+            message_ = s;
             break;
           }
         }
@@ -67,44 +71,44 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return vn.zalopay.ducnm8.grpc.HelloWorldProto.internal_static_helloworld_HelloResponse_descriptor;
+    return vn.zalopay.ducnm8.grpc.HelloWorldProto.internal_static_helloworld_HelloReply_descriptor;
   }
 
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return vn.zalopay.ducnm8.grpc.HelloWorldProto.internal_static_helloworld_HelloResponse_fieldAccessorTable
+    return vn.zalopay.ducnm8.grpc.HelloWorldProto.internal_static_helloworld_HelloReply_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            vn.zalopay.ducnm8.grpc.HelloResponse.class, vn.zalopay.ducnm8.grpc.HelloResponse.Builder.class);
+            vn.zalopay.ducnm8.grpc.HelloReply.class, vn.zalopay.ducnm8.grpc.HelloReply.Builder.class);
   }
 
-  public static final int GREETING_FIELD_NUMBER = 1;
-  private volatile java.lang.Object greeting_;
+  public static final int MESSAGE_FIELD_NUMBER = 1;
+  private volatile java.lang.Object message_;
   /**
-   * <code>string greeting = 1;</code>
+   * <code>string message = 1;</code>
    */
-  public java.lang.String getGreeting() {
-    java.lang.Object ref = greeting_;
+  public java.lang.String getMessage() {
+    java.lang.Object ref = message_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      greeting_ = s;
+      message_ = s;
       return s;
     }
   }
   /**
-   * <code>string greeting = 1;</code>
+   * <code>string message = 1;</code>
    */
   public com.google.protobuf.ByteString
-      getGreetingBytes() {
-    java.lang.Object ref = greeting_;
+      getMessageBytes() {
+    java.lang.Object ref = message_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      greeting_ = b;
+      message_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -123,8 +127,8 @@ private static final long serialVersionUID = 0L;
 
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getGreetingBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, greeting_);
+    if (!getMessageBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, message_);
     }
     unknownFields.writeTo(output);
   }
@@ -134,8 +138,8 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getGreetingBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, greeting_);
+    if (!getMessageBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, message_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -147,14 +151,14 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof vn.zalopay.ducnm8.grpc.HelloResponse)) {
+    if (!(obj instanceof vn.zalopay.ducnm8.grpc.HelloReply)) {
       return super.equals(obj);
     }
-    vn.zalopay.ducnm8.grpc.HelloResponse other = (vn.zalopay.ducnm8.grpc.HelloResponse) obj;
+    vn.zalopay.ducnm8.grpc.HelloReply other = (vn.zalopay.ducnm8.grpc.HelloReply) obj;
 
     boolean result = true;
-    result = result && getGreeting()
-        .equals(other.getGreeting());
+    result = result && getMessage()
+        .equals(other.getMessage());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -166,76 +170,76 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + GREETING_FIELD_NUMBER;
-    hash = (53 * hash) + getGreeting().hashCode();
+    hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+    hash = (53 * hash) + getMessage().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static vn.zalopay.ducnm8.grpc.HelloResponse parseFrom(
+  public static vn.zalopay.ducnm8.grpc.HelloReply parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static vn.zalopay.ducnm8.grpc.HelloResponse parseFrom(
+  public static vn.zalopay.ducnm8.grpc.HelloReply parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static vn.zalopay.ducnm8.grpc.HelloResponse parseFrom(
+  public static vn.zalopay.ducnm8.grpc.HelloReply parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static vn.zalopay.ducnm8.grpc.HelloResponse parseFrom(
+  public static vn.zalopay.ducnm8.grpc.HelloReply parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static vn.zalopay.ducnm8.grpc.HelloResponse parseFrom(byte[] data)
+  public static vn.zalopay.ducnm8.grpc.HelloReply parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static vn.zalopay.ducnm8.grpc.HelloResponse parseFrom(
+  public static vn.zalopay.ducnm8.grpc.HelloReply parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static vn.zalopay.ducnm8.grpc.HelloResponse parseFrom(java.io.InputStream input)
+  public static vn.zalopay.ducnm8.grpc.HelloReply parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static vn.zalopay.ducnm8.grpc.HelloResponse parseFrom(
+  public static vn.zalopay.ducnm8.grpc.HelloReply parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static vn.zalopay.ducnm8.grpc.HelloResponse parseDelimitedFrom(java.io.InputStream input)
+  public static vn.zalopay.ducnm8.grpc.HelloReply parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static vn.zalopay.ducnm8.grpc.HelloResponse parseDelimitedFrom(
+  public static vn.zalopay.ducnm8.grpc.HelloReply parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static vn.zalopay.ducnm8.grpc.HelloResponse parseFrom(
+  public static vn.zalopay.ducnm8.grpc.HelloReply parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static vn.zalopay.ducnm8.grpc.HelloResponse parseFrom(
+  public static vn.zalopay.ducnm8.grpc.HelloReply parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -247,7 +251,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(vn.zalopay.ducnm8.grpc.HelloResponse prototype) {
+  public static Builder newBuilder(vn.zalopay.ducnm8.grpc.HelloReply prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   public Builder toBuilder() {
@@ -262,25 +266,29 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code helloworld.HelloResponse}
+   * <pre>
+   * The response message containing the greetings
+   * </pre>
+   *
+   * Protobuf type {@code helloworld.HelloReply}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:helloworld.HelloResponse)
-      vn.zalopay.ducnm8.grpc.HelloResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:helloworld.HelloReply)
+      vn.zalopay.ducnm8.grpc.HelloReplyOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return vn.zalopay.ducnm8.grpc.HelloWorldProto.internal_static_helloworld_HelloResponse_descriptor;
+      return vn.zalopay.ducnm8.grpc.HelloWorldProto.internal_static_helloworld_HelloReply_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return vn.zalopay.ducnm8.grpc.HelloWorldProto.internal_static_helloworld_HelloResponse_fieldAccessorTable
+      return vn.zalopay.ducnm8.grpc.HelloWorldProto.internal_static_helloworld_HelloReply_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              vn.zalopay.ducnm8.grpc.HelloResponse.class, vn.zalopay.ducnm8.grpc.HelloResponse.Builder.class);
+              vn.zalopay.ducnm8.grpc.HelloReply.class, vn.zalopay.ducnm8.grpc.HelloReply.Builder.class);
     }
 
-    // Construct using vn.zalopay.ducnm8.grpc.HelloResponse.newBuilder()
+    // Construct using vn.zalopay.ducnm8.grpc.HelloReply.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -297,31 +305,31 @@ private static final long serialVersionUID = 0L;
     }
     public Builder clear() {
       super.clear();
-      greeting_ = "";
+      message_ = "";
 
       return this;
     }
 
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return vn.zalopay.ducnm8.grpc.HelloWorldProto.internal_static_helloworld_HelloResponse_descriptor;
+      return vn.zalopay.ducnm8.grpc.HelloWorldProto.internal_static_helloworld_HelloReply_descriptor;
     }
 
-    public vn.zalopay.ducnm8.grpc.HelloResponse getDefaultInstanceForType() {
-      return vn.zalopay.ducnm8.grpc.HelloResponse.getDefaultInstance();
+    public vn.zalopay.ducnm8.grpc.HelloReply getDefaultInstanceForType() {
+      return vn.zalopay.ducnm8.grpc.HelloReply.getDefaultInstance();
     }
 
-    public vn.zalopay.ducnm8.grpc.HelloResponse build() {
-      vn.zalopay.ducnm8.grpc.HelloResponse result = buildPartial();
+    public vn.zalopay.ducnm8.grpc.HelloReply build() {
+      vn.zalopay.ducnm8.grpc.HelloReply result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    public vn.zalopay.ducnm8.grpc.HelloResponse buildPartial() {
-      vn.zalopay.ducnm8.grpc.HelloResponse result = new vn.zalopay.ducnm8.grpc.HelloResponse(this);
-      result.greeting_ = greeting_;
+    public vn.zalopay.ducnm8.grpc.HelloReply buildPartial() {
+      vn.zalopay.ducnm8.grpc.HelloReply result = new vn.zalopay.ducnm8.grpc.HelloReply(this);
+      result.message_ = message_;
       onBuilt();
       return result;
     }
@@ -353,18 +361,18 @@ private static final long serialVersionUID = 0L;
       return (Builder) super.addRepeatedField(field, value);
     }
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof vn.zalopay.ducnm8.grpc.HelloResponse) {
-        return mergeFrom((vn.zalopay.ducnm8.grpc.HelloResponse)other);
+      if (other instanceof vn.zalopay.ducnm8.grpc.HelloReply) {
+        return mergeFrom((vn.zalopay.ducnm8.grpc.HelloReply)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(vn.zalopay.ducnm8.grpc.HelloResponse other) {
-      if (other == vn.zalopay.ducnm8.grpc.HelloResponse.getDefaultInstance()) return this;
-      if (!other.getGreeting().isEmpty()) {
-        greeting_ = other.greeting_;
+    public Builder mergeFrom(vn.zalopay.ducnm8.grpc.HelloReply other) {
+      if (other == vn.zalopay.ducnm8.grpc.HelloReply.getDefaultInstance()) return this;
+      if (!other.getMessage().isEmpty()) {
+        message_ = other.message_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -380,11 +388,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      vn.zalopay.ducnm8.grpc.HelloResponse parsedMessage = null;
+      vn.zalopay.ducnm8.grpc.HelloReply parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (vn.zalopay.ducnm8.grpc.HelloResponse) e.getUnfinishedMessage();
+        parsedMessage = (vn.zalopay.ducnm8.grpc.HelloReply) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -394,71 +402,71 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object greeting_ = "";
+    private java.lang.Object message_ = "";
     /**
-     * <code>string greeting = 1;</code>
+     * <code>string message = 1;</code>
      */
-    public java.lang.String getGreeting() {
-      java.lang.Object ref = greeting_;
+    public java.lang.String getMessage() {
+      java.lang.Object ref = message_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        greeting_ = s;
+        message_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string greeting = 1;</code>
+     * <code>string message = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getGreetingBytes() {
-      java.lang.Object ref = greeting_;
+        getMessageBytes() {
+      java.lang.Object ref = message_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        greeting_ = b;
+        message_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string greeting = 1;</code>
+     * <code>string message = 1;</code>
      */
-    public Builder setGreeting(
+    public Builder setMessage(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      greeting_ = value;
+      message_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string greeting = 1;</code>
+     * <code>string message = 1;</code>
      */
-    public Builder clearGreeting() {
+    public Builder clearMessage() {
       
-      greeting_ = getDefaultInstance().getGreeting();
+      message_ = getDefaultInstance().getMessage();
       onChanged();
       return this;
     }
     /**
-     * <code>string greeting = 1;</code>
+     * <code>string message = 1;</code>
      */
-    public Builder setGreetingBytes(
+    public Builder setMessageBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      greeting_ = value;
+      message_ = value;
       onChanged();
       return this;
     }
@@ -473,39 +481,39 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:helloworld.HelloResponse)
+    // @@protoc_insertion_point(builder_scope:helloworld.HelloReply)
   }
 
-  // @@protoc_insertion_point(class_scope:helloworld.HelloResponse)
-  private static final vn.zalopay.ducnm8.grpc.HelloResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:helloworld.HelloReply)
+  private static final vn.zalopay.ducnm8.grpc.HelloReply DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new vn.zalopay.ducnm8.grpc.HelloResponse();
+    DEFAULT_INSTANCE = new vn.zalopay.ducnm8.grpc.HelloReply();
   }
 
-  public static vn.zalopay.ducnm8.grpc.HelloResponse getDefaultInstance() {
+  public static vn.zalopay.ducnm8.grpc.HelloReply getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<HelloResponse>
-      PARSER = new com.google.protobuf.AbstractParser<HelloResponse>() {
-    public HelloResponse parsePartialFrom(
+  private static final com.google.protobuf.Parser<HelloReply>
+      PARSER = new com.google.protobuf.AbstractParser<HelloReply>() {
+    public HelloReply parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new HelloResponse(input, extensionRegistry);
+        return new HelloReply(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<HelloResponse> parser() {
+  public static com.google.protobuf.Parser<HelloReply> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<HelloResponse> getParserForType() {
+  public com.google.protobuf.Parser<HelloReply> getParserForType() {
     return PARSER;
   }
 
-  public vn.zalopay.ducnm8.grpc.HelloResponse getDefaultInstanceForType() {
+  public vn.zalopay.ducnm8.grpc.HelloReply getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

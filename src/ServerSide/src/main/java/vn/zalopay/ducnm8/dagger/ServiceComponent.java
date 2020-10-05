@@ -1,5 +1,6 @@
 package vn.zalopay.ducnm8.dagger;
 
+import vn.zalopay.ducnm8.server.GRPCServer;
 import vn.zalopay.ducnm8.server.RestfulAPI;
 import vn.zalopay.ducnm8.server.WebSocketServer;
 import dagger.Component;
@@ -15,4 +16,6 @@ public interface ServiceComponent {
   WebSocketServer getWebSocketServer();
 
   Vertx getVertx();
+
+  GRPCServer getGRPCServer();
 }

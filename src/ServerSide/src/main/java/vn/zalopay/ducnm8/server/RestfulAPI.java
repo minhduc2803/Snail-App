@@ -46,10 +46,10 @@ public class RestfulAPI {
                                 port,
                                 ar -> {
                                     if (ar.succeeded()) {
-                                        LOGGER.info("GRPC Server start successfully !, port:{}", port);
+                                        LOGGER.info("API Server start successfully !, port:{}", port);
                                         future.complete();
                                     } else {
-                                        LOGGER.error("GRPC Server start fail. Reason: {}", ar.cause().getMessage());
+                                        LOGGER.error("API Server start fail. Reason: {}", ar.cause().getMessage());
                                         future.fail(ar.cause());
                                     }
                                 });

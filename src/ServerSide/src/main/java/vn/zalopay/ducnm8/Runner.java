@@ -32,7 +32,7 @@ public class Runner {
       RestfulAPI restfulAPI = component.getRestfulAPI();
       WebSocketServer webSocketServer = component.getWebSocketServer();
 
-      GRPCServer grpcServer = new GRPCServer();
+      GRPCServer grpcServer = component.getGRPCServer();
 
       component
           .getVertx()

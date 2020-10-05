@@ -1,13 +1,20 @@
 package vn.zalopay.ducnm8.server;
 
 import io.grpc.*;
-import vn.zalopay.ducnm8.grpc.GreetingServiceImpl;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import vn.zalopay.ducnm8.grpc.GreeterImpl;
+
+import java.lang.invoke.MethodHandles;
 
 public class GRPCServer {
+    private static final Logger LOGGER =
+            LogManager.getLogger(MethodHandles.lookup().lookupClass().getCanonicalName());
     public void start() {
+        LOGGER.info("Starting RestfulAPI Server ...");
         // Create a new server to listen on port 8080
         Server server = ServerBuilder.forPort(8080)
-                .addService(new GreetingServiceImpl())
+                .addService(new GreeterImpl())
                 .build();
 
         try {
@@ -15,9 +22,9 @@ public class GRPCServer {
             server.start();
 
             // Server threads are running in the background.
-            System.out.println("Server started");
+            LOGGER.info("GRPC Server start successfully !, port:{}", 8080);
             // Don't exit the main thread. Wait until server is terminated.
-            server.awaitTermination();
+
         }catch(Exception e){}
     }
 }

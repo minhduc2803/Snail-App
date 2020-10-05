@@ -14,6 +14,19 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: com.google.errorprone:error_prone_annotations:2.3.2" level="project" />
+    <orderEntry type="library" name="Maven: io.grpc:grpc-netty:1.7.0" level="project" />
+    <orderEntry type="library" name="Maven: io.grpc:grpc-core:1.7.0" level="project" />
+    <orderEntry type="library" name="Maven: io.grpc:grpc-context:1.7.0" level="project" />
+    <orderEntry type="library" name="Maven: com.google.code.findbugs:jsr305:3.0.0" level="project" />
+    <orderEntry type="library" name="Maven: com.google.instrumentation:instrumentation-api:0.4.3" level="project" />
+    <orderEntry type="library" name="Maven: io.opencensus:opencensus-api:0.6.0" level="project" />
+    <orderEntry type="library" name="Maven: io.netty:netty-codec-http2:4.1.16.Final" level="project" />
+    <orderEntry type="library" name="Maven: io.grpc:grpc-protobuf:1.7.0" level="project" />
+    <orderEntry type="library" name="Maven: com.google.guava:guava:19.0" level="project" />
+    <orderEntry type="library" name="Maven: com.google.api.grpc:proto-google-common-protos:0.1.9" level="project" />
+    <orderEntry type="library" name="Maven: io.grpc:grpc-protobuf-lite:1.7.0" level="project" />
+    <orderEntry type="library" name="Maven: io.grpc:grpc-stub:1.7.0" level="project" />
     <orderEntry type="library" name="Maven: io.vertx:vertx-web:3.7.0" level="project" />
     <orderEntry type="library" name="Maven: io.vertx:vertx-web-common:3.7.0" level="project" />
     <orderEntry type="library" name="Maven: io.vertx:vertx-auth-common:3.7.0" level="project" />

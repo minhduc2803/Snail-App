@@ -4,6 +4,7 @@ import vn.zalopay.ducnm8.cache.*;
 import vn.zalopay.ducnm8.config.ServiceConfig;
 import vn.zalopay.ducnm8.da.*;
 import vn.zalopay.ducnm8.handler.*;
+import vn.zalopay.ducnm8.server.GRPCServer;
 import vn.zalopay.ducnm8.server.RestfulAPI;
 import vn.zalopay.ducnm8.server.WebSocketServer;
 import vn.zalopay.ducnm8.utils.AsyncHandler;
@@ -237,7 +238,6 @@ public class ServiceModule {
             .build();
   }
 
-
   @Provides
   @Singleton
   WebSocketServer provideWebSocketServer(
@@ -248,6 +248,13 @@ public class ServiceModule {
             .port(serviceConfig.getWsPort())
             .jwtAuth(jwtAuth)
             .build();
+  }
+
+  @Provides
+  @Singleton
+  GRPCServer provideGRPCServer(){
+    return new GRPCServer();
+
   }
 
 }

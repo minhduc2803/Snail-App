@@ -26,6 +26,7 @@ import vn.zalopay.ducnm8.handler.LoginHandler;
 import vn.zalopay.ducnm8.handler.RegisterHandler;
 import vn.zalopay.ducnm8.handler.UserListHandler;
 import vn.zalopay.ducnm8.handler.WSHandler;
+import vn.zalopay.ducnm8.server.GRPCServer;
 import vn.zalopay.ducnm8.server.RestfulAPI;
 import vn.zalopay.ducnm8.server.WebSocketServer;
 import vn.zalopay.ducnm8.utils.AsyncHandler;
@@ -89,6 +90,8 @@ public final class DaggerServiceComponent implements ServiceComponent {
 
   private Provider<WebSocketServer> provideWebSocketServerProvider;
 
+  private Provider<GRPCServer> provideGRPCServerProvider;
+
   private DaggerServiceComponent(ServiceModule serviceModuleParam) {
 
     initialize(serviceModuleParam);
@@ -125,6 +128,7 @@ public final class DaggerServiceComponent implements ServiceComponent {
     this.provideRestfulAPIProvider = DoubleCheck.provider(ServiceModule_ProvideRestfulAPIFactory.create(serviceModuleParam, provideHandlerProvider, provideVertxProvider, provideAuthProvider));
     this.provideWSHandlerProvider = DoubleCheck.provider(ServiceModule_ProvideWSHandlerFactory.create(serviceModuleParam, provideChatListDAProvider, provideChatListCacheProvider, provideTransactionProvider));
     this.provideWebSocketServerProvider = DoubleCheck.provider(ServiceModule_ProvideWebSocketServerFactory.create(serviceModuleParam, provideWSHandlerProvider, provideVertxProvider, provideAuthProvider));
+    this.provideGRPCServerProvider = DoubleCheck.provider(ServiceModule_ProvideGRPCServerFactory.create(serviceModuleParam));
   }
 
   @Override
@@ -138,6 +142,10 @@ public final class DaggerServiceComponent implements ServiceComponent {
   @Override
   public Vertx getVertx() {
     return provideVertxProvider.get();}
+
+  @Override
+  public GRPCServer getGRPCServer() {
+    return provideGRPCServerProvider.get();}
 
   public static final class Builder {
     private ServiceModule serviceModule;

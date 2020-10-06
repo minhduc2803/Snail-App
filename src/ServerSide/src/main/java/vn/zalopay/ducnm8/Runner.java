@@ -51,9 +51,12 @@ public class Runner {
                     public void stop() throws Exception {
                       restfulAPI.close();
                       webSocketServer.close();
+                      grpcServer.close();
                     }
                   },
               new DeploymentOptions().setInstances(8));
+
+
     } catch (Exception e) {
       System.exit(1);
     }

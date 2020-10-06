@@ -16,6 +16,7 @@ import vn.zalopay.ducnm8.da.ConversationMemberDA;
 import vn.zalopay.ducnm8.da.DataSourceProvider;
 import vn.zalopay.ducnm8.da.TransactionProvider;
 import vn.zalopay.ducnm8.da.UserDA;
+import vn.zalopay.ducnm8.grpc.GreeterImpl;
 import vn.zalopay.ducnm8.handler.ChatListHandler;
 import vn.zalopay.ducnm8.handler.ConversationListHandler;
 import vn.zalopay.ducnm8.handler.EchoHandler;
@@ -90,6 +91,8 @@ public final class DaggerServiceComponent implements ServiceComponent {
 
   private Provider<WebSocketServer> provideWebSocketServerProvider;
 
+  private Provider<GreeterImpl> provideGreeterImplProvider;
+
   private Provider<GRPCServer> provideGRPCServerProvider;
 
   private DaggerServiceComponent(ServiceModule serviceModuleParam) {
@@ -128,7 +131,8 @@ public final class DaggerServiceComponent implements ServiceComponent {
     this.provideRestfulAPIProvider = DoubleCheck.provider(ServiceModule_ProvideRestfulAPIFactory.create(serviceModuleParam, provideHandlerProvider, provideVertxProvider, provideAuthProvider));
     this.provideWSHandlerProvider = DoubleCheck.provider(ServiceModule_ProvideWSHandlerFactory.create(serviceModuleParam, provideChatListDAProvider, provideChatListCacheProvider, provideTransactionProvider));
     this.provideWebSocketServerProvider = DoubleCheck.provider(ServiceModule_ProvideWebSocketServerFactory.create(serviceModuleParam, provideWSHandlerProvider, provideVertxProvider, provideAuthProvider));
-    this.provideGRPCServerProvider = DoubleCheck.provider(ServiceModule_ProvideGRPCServerFactory.create(serviceModuleParam));
+    this.provideGreeterImplProvider = DoubleCheck.provider(ServiceModule_ProvideGreeterImplFactory.create(serviceModuleParam));
+    this.provideGRPCServerProvider = DoubleCheck.provider(ServiceModule_ProvideGRPCServerFactory.create(serviceModuleParam, provideVertxProvider, provideGreeterImplProvider));
   }
 
   @Override

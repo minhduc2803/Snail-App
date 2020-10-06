@@ -41,6 +41,7 @@ public class WebSocketServer {
     }
 
     public void start() {
+        log.info("Starting WebSocket Server ...");
         httpServer =
             vertx
                 .createHttpServer()
@@ -66,7 +67,13 @@ public class WebSocketServer {
                                 }
                             });
                     })
-                .listen(port);
+                .listen(port,
+                        ar -> {
+                            if (ar.succeeded()) {
+                                log.info("WebSocket Server start successfully !, port:{}", port);
+                            } else {
+                                log.error("WebSocket Server start fail. Reason: {}", ar.cause().getMessage());
+                        }});
     }
 
     public void close() {

@@ -1,8 +1,10 @@
 package vn.zalopay.ducnm8.dagger;
 
+import io.grpc.Server;
 import vn.zalopay.ducnm8.cache.*;
 import vn.zalopay.ducnm8.config.ServiceConfig;
 import vn.zalopay.ducnm8.da.*;
+import vn.zalopay.ducnm8.grpc.GreeterImpl;
 import vn.zalopay.ducnm8.handler.*;
 import vn.zalopay.ducnm8.server.GRPCServer;
 import vn.zalopay.ducnm8.server.RestfulAPI;
@@ -252,9 +254,17 @@ public class ServiceModule {
 
   @Provides
   @Singleton
-  GRPCServer provideGRPCServer(){
-    return new GRPCServer();
-
+  GreeterImpl provideGreeterImpl(){
+    return GreeterImpl.builder().build();
+  }
+  @Provides
+  @Singleton
+  GRPCServer provideGRPCServer(Vertx vertx, GreeterImpl greeterService){
+    return GRPCServer.builder()
+            .vertx(vertx)
+            .greeterSevice(greeterService)
+            .port(serviceConfig.getGrpcPort())
+            .build();
   }
 
 }

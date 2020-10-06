@@ -1,20 +1,31 @@
 package vn.zalopay.ducnm8.server;
 
-import io.grpc.*;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import io.vertx.core.Vertx;
+import io.vertx.grpc.VertxServer;
+import io.vertx.grpc.VertxServerBuilder;
+import lombok.extern.log4j.Log4j2;
+import lombok.Builder;
 import vn.zalopay.ducnm8.grpc.GreeterImpl;
 
-import java.lang.invoke.MethodHandles;
 
+@Log4j2
 public class GRPCServer {
-    private static final Logger LOGGER =
-            LogManager.getLogger(MethodHandles.lookup().lookupClass().getCanonicalName());
+    private VertxServer server;
+    private Vertx vertx;
+    private GreeterImpl greeterSevice;
+    private int port;
+
+    @Builder
+    public GRPCServer(Vertx vertx, GreeterImpl greeterSevice, int port){
+        this.vertx = vertx;
+        this.greeterSevice = greeterSevice;
+        this.port = port;
+    }
     public void start() {
-        LOGGER.info("Starting RestfulAPI Server ...");
+        log.info("Starting GRPC Server on port {}", port);
         // Create a new server to listen on port 8080
-        Server server = ServerBuilder.forPort(8080)
-                .addService(new GreeterImpl())
+        server = VertxServerBuilder.forAddress(vertx, "0.0.0.0",port)
+                .addService(greeterSevice)
                 .build();
 
         try {
@@ -22,9 +33,15 @@ public class GRPCServer {
             server.start();
 
             // Server threads are running in the background.
-            LOGGER.info("GRPC Server start successfully !, port:{}", 8080);
-            // Don't exit the main thread. Wait until server is terminated.
 
-        }catch(Exception e){}
+            log.info("GRPC Server start successfully !, port:{}", port);
+
+        }catch(Exception e){
+            log.error("GRPC Server start fail. Reason: {}", e.getMessage());
+        }
+    }
+
+    public void close(){
+        server.shutdown();
     }
 }

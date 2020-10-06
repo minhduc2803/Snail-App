@@ -53,6 +53,7 @@
 /home/ubuntu/MinhDuc/module-10/SnailProject/src/ServerSide/src/main/java/vn/zalopay/ducnm8/grpc/HelloWorldProto.java
 /home/ubuntu/MinhDuc/module-10/SnailProject/src/ServerSide/src/main/java/vn/zalopay/ducnm8/handler/EchoHandler.java
 /home/ubuntu/MinhDuc/module-10/SnailProject/src/ServerSide/src/main/java/vn/zalopay/ducnm8/handler/LoginHandler.java
+/home/ubuntu/MinhDuc/module-10/SnailProject/src/ServerSide/src/main/java/vn/zalopay/ducnm8/handler/GRPCHandler.java
 /home/ubuntu/MinhDuc/module-10/SnailProject/src/ServerSide/src/main/java/vn/zalopay/ducnm8/entity/response/BaseResponse.java
 /home/ubuntu/MinhDuc/module-10/SnailProject/src/ServerSide/src/main/java/vn/zalopay/ducnm8/config/MySQLConfig.java
 /home/ubuntu/MinhDuc/module-10/SnailProject/src/ServerSide/src/main/java/vn/zalopay/ducnm8/cache/ChatListCache.java

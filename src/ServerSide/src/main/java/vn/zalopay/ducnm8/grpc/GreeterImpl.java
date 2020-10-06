@@ -1,13 +1,17 @@
 package vn.zalopay.ducnm8.grpc;
 
-import io.grpc.stub.StreamObserver;
+import io.vertx.core.Future;
+import lombok.Builder;
 
-public class GreeterImpl extends GreeterGrpc.GreeterImplBase {
+@Builder
+public class GreeterImpl extends GreeterGrpc.GreeterVertxImplBase{
 
+    public GreeterImpl(){
+
+    }
     @Override
-    public void sayHello(HelloRequest req, StreamObserver<HelloReply> responseObserver) {
-        HelloReply reply = HelloReply.newBuilder().setMessage("Hello " + req.getName()).build();
-        responseObserver.onNext(reply);
-        responseObserver.onCompleted();
+    public void sayHello(HelloRequest helloRequest, Future<HelloReply> helloReplyFuture){
+        HelloReply helloReply = HelloReply.newBuilder().setMessage("Hello "+helloRequest.getName()).build();
+        helloReplyFuture.complete(helloReply);
     }
 }

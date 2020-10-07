@@ -8,13 +8,33 @@ import * as serviceWorker from './serviceWorker';
 import {Provider} from 'react-redux'
 import store from './redux/store'
 
+import greeter from './grpc/greeterTest';
+
 ReactDOM.render(
     <Provider store={store}>
     <App />
     </Provider>, 
 document.getElementById('root'));
 
-//asyncLogin('xeko','xeko');
+greeter.getBalance("duc", (err, response) => {
+    console.log("GRPC: "+response.getMessage());
+});
+
+greeter.getHistory("duc", (err, response) => {
+    console.log("GRPC: "+response.getMessage());
+});
+
+greeter.transfer("duc", (err, response) => {
+    console.log("GRPC: "+response.getMessage());
+});
+
+greeter.getNotification("duc", (err, response) => {
+    console.log("GRPC: "+response.getMessage());
+});
+
+greeter.getBalance("duc", (err, response) => {
+    console.log("GRPC: "+response.getMessage());
+});
 
 
 // If you want your app to work offline and load faster, you can change

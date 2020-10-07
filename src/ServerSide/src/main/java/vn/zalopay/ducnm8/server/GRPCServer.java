@@ -6,6 +6,7 @@ import io.vertx.grpc.VertxServerBuilder;
 import lombok.extern.log4j.Log4j2;
 import lombok.Builder;
 import vn.zalopay.ducnm8.grpc.GreeterImpl;
+import vn.zalopay.ducnm8.handler.grpc.InterceptorHandler;
 
 
 @Log4j2
@@ -24,8 +25,10 @@ public class GRPCServer {
     public void start() {
         log.info("Starting GRPC Server on port {}", port);
         // Create a new server to listen on port 8080
-        server = VertxServerBuilder.forAddress(vertx, "0.0.0.0",port)
+        server = VertxServerBuilder
+                .forAddress(vertx, "0.0.0.0",port)
                 .addService(greeterSevice)
+                .intercept(new InterceptorHandler())
                 .build();
 
         try {

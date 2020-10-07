@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "vn.zalopay.ducnm8.grpc";
+option java_outer_classname = "HelloWorldProto";
+package helloworld;
+
+service FintechService {
+    rpc getBalance(HelloRequest) returns(HelloReply) {
+      
+    }
+  
+    rpc getHistory(HelloRequest) returns(HelloReply) {
+      
+    }
+  
+    rpc transfer(HelloRequest) returns(HelloReply) {
+  
+    }
+  
+    rpc getNotification(HelloRequest) returns(HelloReply) {
+  
+    }
+  }
+  
+
+// The request message containing the user's name.
+message HelloRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings
+message HelloReply {
+  string message = 1;
+}

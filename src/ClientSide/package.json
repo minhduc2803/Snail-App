@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "axios": "^0.20.0",
+    "google-protobuf": "^3.13.0",
+    "grpc-web": "^1.2.1",
     "moment": "^2.23.0",
     "react": "^16.10.1",
     "react-avatar": "^3.9.7",

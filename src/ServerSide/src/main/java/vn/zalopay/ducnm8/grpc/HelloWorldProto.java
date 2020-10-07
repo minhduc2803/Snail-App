@@ -35,10 +35,15 @@ public final class HelloWorldProto {
     java.lang.String[] descriptorData = {
       "\n\013hello.proto\022\nhelloworld\"\034\n\014HelloReques" +
       "t\022\014\n\004name\030\001 \001(\t\"\035\n\nHelloReply\022\017\n\007message" +
-      "\030\001 \001(\t2I\n\007Greeter\022>\n\010SayHello\022\030.hellowor" +
-      "ld.HelloRequest\032\026.helloworld.HelloReply\"" +
-      "\000B+\n\026vn.zalopay.ducnm8.grpcB\017HelloWorldP" +
-      "rotoP\001b\006proto3"
+      "\030\001 \001(\t2\233\002\n\016FintechService\022@\n\ngetBalance\022" +
+      "\030.helloworld.HelloRequest\032\026.helloworld.H" +
+      "elloReply\"\000\022@\n\ngetHistory\022\030.helloworld.H" +
+      "elloRequest\032\026.helloworld.HelloReply\"\000\022>\n" +
+      "\010transfer\022\030.helloworld.HelloRequest\032\026.he" +
+      "lloworld.HelloReply\"\000\022E\n\017getNotification" +
+      "\022\030.helloworld.HelloRequest\032\026.helloworld." +
+      "HelloReply\"\000B+\n\026vn.zalopay.ducnm8.grpcB\017",
+      "HelloWorldProtoP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

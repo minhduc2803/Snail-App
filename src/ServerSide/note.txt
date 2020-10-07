@@ -1,3 +1,5 @@
 Dbeaver database
 
 https://github.com/pmlopes/react-native-grpc-vertx-example
+
+https://groups.google.com/g/vertx/c/ob4VrXTrqlU

@@ -21,11 +21,10 @@ public class JWTUtils {
     }
 
     public static String buildJWTToken(JWTAuth jwtAuth, int UserID){
-        String token = jwtAuth.generateToken(
+        return jwtAuth.generateToken(
                 new JsonObject()
                         .put("UserID", UserID),
                 new JWTOptions()
                         .setExpiresInSeconds(3600));
-        return token;
     }
 }

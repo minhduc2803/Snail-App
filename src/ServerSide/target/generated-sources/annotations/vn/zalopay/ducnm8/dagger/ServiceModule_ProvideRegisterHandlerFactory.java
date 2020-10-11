@@ -6,8 +6,8 @@ import io.vertx.ext.auth.jwt.JWTAuth;
 import javax.annotation.Generated;
 import javax.inject.Provider;
 import vn.zalopay.ducnm8.cache.UserCache;
+import vn.zalopay.ducnm8.da.AccountDA;
 import vn.zalopay.ducnm8.da.TransactionProvider;
-import vn.zalopay.ducnm8.da.UserDA;
 import vn.zalopay.ducnm8.handler.RegisterHandler;
 
 @Generated(
@@ -21,7 +21,7 @@ import vn.zalopay.ducnm8.handler.RegisterHandler;
 public final class ServiceModule_ProvideRegisterHandlerFactory implements Factory<RegisterHandler> {
   private final ServiceModule module;
 
-  private final Provider<UserDA> userDAProvider;
+  private final Provider<AccountDA> accountDAProvider;
 
   private final Provider<TransactionProvider> transactionProvider;
 
@@ -30,10 +30,10 @@ public final class ServiceModule_ProvideRegisterHandlerFactory implements Factor
   private final Provider<JWTAuth> jwtAuthProvider;
 
   public ServiceModule_ProvideRegisterHandlerFactory(ServiceModule module,
-      Provider<UserDA> userDAProvider, Provider<TransactionProvider> transactionProvider,
+      Provider<AccountDA> accountDAProvider, Provider<TransactionProvider> transactionProvider,
       Provider<UserCache> userCacheProvider, Provider<JWTAuth> jwtAuthProvider) {
     this.module = module;
-    this.userDAProvider = userDAProvider;
+    this.accountDAProvider = accountDAProvider;
     this.transactionProvider = transactionProvider;
     this.userCacheProvider = userCacheProvider;
     this.jwtAuthProvider = jwtAuthProvider;
@@ -41,17 +41,17 @@ public final class ServiceModule_ProvideRegisterHandlerFactory implements Factor
 
   @Override
   public RegisterHandler get() {
-    return provideRegisterHandler(module, userDAProvider.get(), transactionProvider.get(), userCacheProvider.get(), jwtAuthProvider.get());
+    return provideRegisterHandler(module, accountDAProvider.get(), transactionProvider.get(), userCacheProvider.get(), jwtAuthProvider.get());
   }
 
   public static ServiceModule_ProvideRegisterHandlerFactory create(ServiceModule module,
-      Provider<UserDA> userDAProvider, Provider<TransactionProvider> transactionProvider,
+      Provider<AccountDA> accountDAProvider, Provider<TransactionProvider> transactionProvider,
       Provider<UserCache> userCacheProvider, Provider<JWTAuth> jwtAuthProvider) {
-    return new ServiceModule_ProvideRegisterHandlerFactory(module, userDAProvider, transactionProvider, userCacheProvider, jwtAuthProvider);
+    return new ServiceModule_ProvideRegisterHandlerFactory(module, accountDAProvider, transactionProvider, userCacheProvider, jwtAuthProvider);
   }
 
-  public static RegisterHandler provideRegisterHandler(ServiceModule instance, UserDA userDA,
+  public static RegisterHandler provideRegisterHandler(ServiceModule instance, AccountDA accountDA,
       TransactionProvider transactionProvider, UserCache userCache, JWTAuth jwtAuth) {
-    return Preconditions.checkNotNull(instance.provideRegisterHandler(userDA, transactionProvider, userCache, jwtAuth), "Cannot return null from a non-@Nullable @Provides method");
+    return Preconditions.checkNotNull(instance.provideRegisterHandler(accountDA, transactionProvider, userCache, jwtAuth), "Cannot return null from a non-@Nullable @Provides method");
   }
 }

@@ -1,11 +1,11 @@
 package vn.zalopay.ducnm8.da;
 
-import vn.zalopay.ducnm8.utils.ExceptionUtil;
-import vn.zalopay.ducnm8.utils.JsonProtoUtils;
 import io.vertx.core.Future;
 import io.vertx.core.json.JsonArray;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import vn.zalopay.ducnm8.utils.ExceptionUtil;
+import vn.zalopay.ducnm8.utils.JsonProtoUtils;
 
 import java.lang.invoke.MethodHandles;
 import java.sql.Connection;
@@ -13,15 +13,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import lombok.extern.log4j.Log4j2;
-
-@Log4j2
 public class BaseTransactionDA extends BaseDA {
   private static final Logger LOGGER =
       LogManager.getLogger(MethodHandles.lookup().lookupClass().getCanonicalName());
   protected static final Object[] EMPTY_PARAMS = {};
   protected static final SQLException EXCEPTION_CONNECTION_NULL =
       new SQLException("provide connection is NULL");
+  private static final Logger log = LogManager.getLogger(BaseTransactionDA.class);
 
   public BaseTransactionDA() {
     super();
@@ -165,7 +163,6 @@ public class BaseTransactionDA extends BaseDA {
       resultSet = preparedStatement.executeQuery();
 
       T data = mapper.apply(resultSet);
-
       result.complete(data);
     } catch (Exception e) {
       LOGGER.warn("Failed execute cause={}", ExceptionUtil.getDetail(e));

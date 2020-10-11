@@ -1,15 +1,15 @@
 package vn.zalopay.ducnm8.da;
 
+import io.vertx.core.Future;
+import org.apache.logging.log4j.Logger;
 import vn.zalopay.ducnm8.model.Conversation;
 import vn.zalopay.ducnm8.utils.AsyncHandler;
-import io.vertx.core.Future;
 
 import javax.sql.DataSource;
 import java.sql.SQLException;
-import lombok.extern.log4j.Log4j2;
 
-@Log4j2
 public class ConversationDAImpl extends BaseTransactionDA implements ConversationDA{
+    private static final Logger log = org.apache.logging.log4j.LogManager.getLogger(ConversationDAImpl.class);
     private final DataSource dataSource;
     private final AsyncHandler asyncHandler;
 

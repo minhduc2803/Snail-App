@@ -10,16 +10,16 @@ import lombok.*;
 @AllArgsConstructor
 public class Chat {
     @DBTable(columnName = "id")
-    int ChatID;
+    long ChatID;
 
     @DBTable(columnName = "mode")
     int Mode;
 
     @DBTable(columnName = "user_send_id")
-    int UserSendID;
+    long UserSendID;
 
     @DBTable(columnName = "user_receive_id")
-    int UserReceiveID;
+    long UserReceiveID;
 
     @DBTable(columnName =  "content")
     String Content;

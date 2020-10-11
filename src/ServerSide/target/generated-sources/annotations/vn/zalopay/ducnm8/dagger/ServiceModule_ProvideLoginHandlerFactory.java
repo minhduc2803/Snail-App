@@ -6,8 +6,8 @@ import io.vertx.ext.auth.jwt.JWTAuth;
 import javax.annotation.Generated;
 import javax.inject.Provider;
 import vn.zalopay.ducnm8.cache.UserCache;
+import vn.zalopay.ducnm8.da.AccountDA;
 import vn.zalopay.ducnm8.da.TransactionProvider;
-import vn.zalopay.ducnm8.da.UserDA;
 import vn.zalopay.ducnm8.handler.LoginHandler;
 
 @Generated(
@@ -21,7 +21,7 @@ import vn.zalopay.ducnm8.handler.LoginHandler;
 public final class ServiceModule_ProvideLoginHandlerFactory implements Factory<LoginHandler> {
   private final ServiceModule module;
 
-  private final Provider<UserDA> userDAProvider;
+  private final Provider<AccountDA> accountDAProvider;
 
   private final Provider<TransactionProvider> transactionProvider;
 
@@ -30,10 +30,10 @@ public final class ServiceModule_ProvideLoginHandlerFactory implements Factory<L
   private final Provider<JWTAuth> jwtAuthProvider;
 
   public ServiceModule_ProvideLoginHandlerFactory(ServiceModule module,
-      Provider<UserDA> userDAProvider, Provider<TransactionProvider> transactionProvider,
+      Provider<AccountDA> accountDAProvider, Provider<TransactionProvider> transactionProvider,
       Provider<UserCache> userCacheProvider, Provider<JWTAuth> jwtAuthProvider) {
     this.module = module;
-    this.userDAProvider = userDAProvider;
+    this.accountDAProvider = accountDAProvider;
     this.transactionProvider = transactionProvider;
     this.userCacheProvider = userCacheProvider;
     this.jwtAuthProvider = jwtAuthProvider;
@@ -41,17 +41,17 @@ public final class ServiceModule_ProvideLoginHandlerFactory implements Factory<L
 
   @Override
   public LoginHandler get() {
-    return provideLoginHandler(module, userDAProvider.get(), transactionProvider.get(), userCacheProvider.get(), jwtAuthProvider.get());
+    return provideLoginHandler(module, accountDAProvider.get(), transactionProvider.get(), userCacheProvider.get(), jwtAuthProvider.get());
   }
 
   public static ServiceModule_ProvideLoginHandlerFactory create(ServiceModule module,
-      Provider<UserDA> userDAProvider, Provider<TransactionProvider> transactionProvider,
+      Provider<AccountDA> accountDAProvider, Provider<TransactionProvider> transactionProvider,
       Provider<UserCache> userCacheProvider, Provider<JWTAuth> jwtAuthProvider) {
-    return new ServiceModule_ProvideLoginHandlerFactory(module, userDAProvider, transactionProvider, userCacheProvider, jwtAuthProvider);
+    return new ServiceModule_ProvideLoginHandlerFactory(module, accountDAProvider, transactionProvider, userCacheProvider, jwtAuthProvider);
   }
 
-  public static LoginHandler provideLoginHandler(ServiceModule instance, UserDA userDA,
+  public static LoginHandler provideLoginHandler(ServiceModule instance, AccountDA accountDA,
       TransactionProvider transactionProvider, UserCache userCache, JWTAuth jwtAuth) {
-    return Preconditions.checkNotNull(instance.provideLoginHandler(userDA, transactionProvider, userCache, jwtAuth), "Cannot return null from a non-@Nullable @Provides method");
+    return Preconditions.checkNotNull(instance.provideLoginHandler(accountDA, transactionProvider, userCache, jwtAuth), "Cannot return null from a non-@Nullable @Provides method");
   }
 }

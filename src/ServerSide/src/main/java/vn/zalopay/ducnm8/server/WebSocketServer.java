@@ -20,8 +20,8 @@ public class WebSocketServer {
     private final JWTAuth jwtAuth;
 
 
-    private Future<Integer> authenticate(ServerWebSocket ws) {
-        Future<Integer> future = Future.future();
+    private Future<Long> authenticate(ServerWebSocket ws) {
+        Future<Long> future = Future.future();
 
         String query = ws.query();
         if (query != null &&  !query.isEmpty()) {
@@ -50,7 +50,7 @@ public class WebSocketServer {
                         .setHandler(
                             UserIDDecode -> {
                                 if (UserIDDecode.succeeded()) {
-                                    int UserID = UserIDDecode.result();
+                                    long UserID = UserIDDecode.result();
                                     ws.accept();
 
                                     log.info("websocket connected from UserID: {}",UserID);

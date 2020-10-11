@@ -1,19 +1,19 @@
 package vn.zalopay.ducnm8.da;
 
+import io.vertx.core.Future;
+import org.apache.logging.log4j.Logger;
 import vn.zalopay.ducnm8.common.mapper.EntityMapper;
 import vn.zalopay.ducnm8.model.ConversationMember;
 import vn.zalopay.ducnm8.utils.AsyncHandler;
-import io.vertx.core.Future;
 
 import javax.sql.DataSource;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import lombok.extern.log4j.Log4j2;
 
-@Log4j2
 public class ConversationMemberDAImpl extends BaseTransactionDA implements ConversationMemberDA{
+    private static final Logger log = org.apache.logging.log4j.LogManager.getLogger(ConversationMemberDAImpl.class);
     private final DataSource dataSource;
     private final AsyncHandler asyncHandler;
 

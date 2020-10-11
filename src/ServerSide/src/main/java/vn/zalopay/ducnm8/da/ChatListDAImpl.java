@@ -1,19 +1,19 @@
 package vn.zalopay.ducnm8.da;
 
+import io.vertx.core.Future;
+import org.apache.logging.log4j.Logger;
 import vn.zalopay.ducnm8.common.mapper.EntityMapper;
 import vn.zalopay.ducnm8.model.Chat;
 import vn.zalopay.ducnm8.utils.AsyncHandler;
-import io.vertx.core.Future;
 
 import javax.sql.DataSource;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import lombok.extern.log4j.Log4j2;
 
-@Log4j2
 public class ChatListDAImpl extends BaseTransactionDA implements ChatListDA{
+    private static final Logger log = org.apache.logging.log4j.LogManager.getLogger(ChatListDAImpl.class);
     private final DataSource dataSource;
     private final AsyncHandler asyncHandler;
 
@@ -59,7 +59,7 @@ public class ChatListDAImpl extends BaseTransactionDA implements ChatListDA{
     }
 
     @Override
-    public Future<List<Chat>> listChatByMember(int UserSendID, int UserReceiveID) {
+    public Future<List<Chat>> listChatByMember(long UserSendID, long UserReceiveID) {
         log.info("MYSQL: SELECT LIST CHAT WITH ANOTHER USER");
         Future<List<Chat>> future = Future.future();
         asyncHandler.run(

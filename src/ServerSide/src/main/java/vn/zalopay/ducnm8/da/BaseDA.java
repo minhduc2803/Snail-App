@@ -1,8 +1,8 @@
 package vn.zalopay.ducnm8.da;
 
-import vn.zalopay.ducnm8.utils.ExceptionUtil;
 import io.vertx.core.json.JsonArray;
 import org.apache.logging.log4j.Logger;
+import vn.zalopay.ducnm8.utils.ExceptionUtil;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

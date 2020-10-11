@@ -8,9 +8,9 @@ import lombok.*;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
+public class Account {
   @DBTable(columnName = "id")
-  int UserID;
+  long UserID;
 
   @DBTable(columnName = "user_name")
   String Username;
@@ -20,5 +20,8 @@ public class User {
 
   @DBTable(columnName = "password")
   String Password;
+
+  @DBTable(columnName = "balance")
+  long Balance;
 
 }

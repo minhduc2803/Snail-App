@@ -13,10 +13,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.lang.invoke.MethodHandles;
+import lombok.extern.log4j.Log4j2;
 
+@Log4j2
 public abstract class BaseHandler {
-  private static final Logger LOGGER =
-      LogManager.getLogger(MethodHandles.lookup().lookupClass().getCanonicalName());
 
   public void handle(RoutingContext rc) {
     HttpServerRequest request = rc.request();
@@ -35,6 +35,7 @@ public abstract class BaseHandler {
         .setHandler(
             rs -> {
               if (rs.succeeded()) {
+
                 response
                     .setStatusCode(rs.result().getStatus())
                     .putHeader("content-type", "application/json; charset=utf-8")
@@ -44,7 +45,7 @@ public abstract class BaseHandler {
                     .putHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers")
                     .end(JsonProtoUtils.printGson(rs.result()));
               } else {
-                LOGGER.error(
+                log.error(
                     "Handle request exception request={}",
                     JsonProtoUtils.printGson(baseRequest),
                     ExceptionUtil.getDetail(rs.cause()));

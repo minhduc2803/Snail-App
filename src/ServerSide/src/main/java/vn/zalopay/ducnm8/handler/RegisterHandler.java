@@ -3,11 +3,11 @@ package vn.zalopay.ducnm8.handler;
 import vn.zalopay.ducnm8.cache.UserCache;
 import vn.zalopay.ducnm8.da.Transaction;
 import vn.zalopay.ducnm8.da.TransactionProvider;
-import vn.zalopay.ducnm8.da.UserDA;
+import vn.zalopay.ducnm8.da.AccountDA;
 import vn.zalopay.ducnm8.entity.request.BaseRequest;
 import vn.zalopay.ducnm8.entity.request.RegisterRequest;
 import vn.zalopay.ducnm8.entity.response.BaseResponse;
-import vn.zalopay.ducnm8.model.User;
+import vn.zalopay.ducnm8.model.Account;
 import vn.zalopay.ducnm8.utils.JsonProtoUtils;
 import vn.zalopay.ducnm8.utils.Tracker;
 import io.netty.handler.codec.http.HttpResponseStatus;
@@ -20,14 +20,14 @@ import lombok.extern.log4j.Log4j2;
 public class RegisterHandler extends BaseHandler {
     private static final String METRIC = "RegisterHandler";
     private final UserCache userCache;
-    private final UserDA userDA;
+    private final AccountDA accountDA;
     private final TransactionProvider transactionProvider;
     private final JWTAuth jwtAuth;
 
     public RegisterHandler(
-            UserDA userDA, UserCache userCache, TransactionProvider transactionProvider, JWTAuth jwtAuth) {
+            AccountDA accountDA, UserCache userCache, TransactionProvider transactionProvider, JWTAuth jwtAuth) {
         this.userCache = userCache;
-        this.userDA = userDA;
+        this.accountDA = accountDA;
         this.transactionProvider = transactionProvider;
         this.jwtAuth = jwtAuth;
     }
@@ -54,10 +54,11 @@ public class RegisterHandler extends BaseHandler {
             return future;
         }
 
-        User user = User.builder()
+        Account account = Account.builder()
                 .Username(registerRequest.getUsername())
                 .Fullname(registerRequest.getFullname())
                 .Password(BCrypt.hashpw(registerRequest.getPassword(), BCrypt.gensalt(4)))
+                .Balance(1000000)
                 .build();
 
 
@@ -65,7 +66,7 @@ public class RegisterHandler extends BaseHandler {
 
         transaction
                 .begin()
-                .compose(next -> transaction.execute(userDA.insert(user)))
+                .compose(next -> transaction.execute(accountDA.insert(account)))
                 .setHandler(
                         rs -> {
 

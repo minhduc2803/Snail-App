@@ -1,5 +1,15 @@
+
+// nice GUI tool for mysql
 Dbeaver database
 
 https://github.com/pmlopes/react-native-grpc-vertx-example
 
-https://groups.google.com/g/vertx/c/ob4VrXTrqlU
+// vertx grpc, handle jwt in server interceptor
+https://github.com/grpc/grpc-java/blob/master/examples/example-jwt-auth/src/main/java/io/grpc/examples/jwtauth/JwtServerInterceptor.java
+
+// vertx example code
+https://datacadamia.com/lang/java/vertx/blocking
+
+// free server
+https://www.heroku.com/
+

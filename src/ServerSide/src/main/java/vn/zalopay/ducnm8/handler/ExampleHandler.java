@@ -3,23 +3,23 @@ package vn.zalopay.ducnm8.handler;
 import vn.zalopay.ducnm8.cache.UserCache;
 import vn.zalopay.ducnm8.da.Transaction;
 import vn.zalopay.ducnm8.da.TransactionProvider;
-import vn.zalopay.ducnm8.da.UserDA;
+import vn.zalopay.ducnm8.da.AccountDA;
 import vn.zalopay.ducnm8.entity.request.BaseRequest;
 import vn.zalopay.ducnm8.entity.response.BaseResponse;
-import vn.zalopay.ducnm8.model.User;
+import vn.zalopay.ducnm8.model.Account;
 import vn.zalopay.ducnm8.utils.Tracker;
 import io.vertx.core.Future;
 
 public class ExampleHandler extends BaseHandler {
   private static final String METRIC = "ExampleHandler";
   private final UserCache userCache;
-  private final UserDA userDA;
+  private final AccountDA accountDA;
   private final TransactionProvider transactionProvider;
 
   public ExampleHandler(
-      UserDA userDA, UserCache userCache, TransactionProvider transactionProvider) {
+          AccountDA accountDA, UserCache userCache, TransactionProvider transactionProvider) {
     this.userCache = userCache;
-    this.userDA = userDA;
+    this.accountDA = accountDA;
     this.transactionProvider = transactionProvider;
   }
 
@@ -28,12 +28,12 @@ public class ExampleHandler extends BaseHandler {
 
     Tracker.TrackerBuilder tracker =
         Tracker.builder().metricName(METRIC).startTime(System.currentTimeMillis());
-    Future<User> future = Future.future();
-    User user = User.builder().Username("username").Fullname("Minh Duc").Password("123").build();
+    Future<Account> future = Future.future();
+    Account account = Account.builder().Username("username").Fullname("Minh Duc").Password("123").build();
     Transaction transaction = transactionProvider.newTransaction();
     transaction
         .begin()
-        .compose(next -> transaction.execute(userDA.insert(user)))
+        .compose(next -> transaction.execute(accountDA.insert(account)))
         .setHandler(
             rs -> {
               if (rs.succeeded()) {

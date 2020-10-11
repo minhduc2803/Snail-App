@@ -24,12 +24,12 @@ import java.util.Set;
 @Log4j2
 @Builder
 public class WSHandler {
-    private Map<Integer, Set<ServerWebSocket>> clients;
+    private Map<Long, Set<ServerWebSocket>> clients;
     private final ChatListDA chatListDA;
     private final ChatListCache chatListCache;
     private final TransactionProvider transactionProvider;
 
-    public void addClient(ServerWebSocket webSocket, int UserID) {
+    public void addClient(ServerWebSocket webSocket, long UserID) {
         if (clients.containsKey(UserID)) {
             clients.get(UserID).add(webSocket);
         } else {
@@ -39,7 +39,7 @@ public class WSHandler {
         }
     }
 
-    public void removeClient(ServerWebSocket webSocket, int userId) {
+    public void removeClient(ServerWebSocket webSocket, long userId) {
         if (clients.containsKey(userId)) {
             Set<ServerWebSocket> removedClient = clients.get(userId);
             removedClient.remove(webSocket);
@@ -47,7 +47,7 @@ public class WSHandler {
         }
     }
 
-    public void handle(Buffer buffer, int UserID) {
+    public void handle(Buffer buffer, long UserID) {
         log.info("Send chat from UserID: {}", UserID);
         JsonObject json = new JsonObject(buffer.toString());
 
@@ -92,7 +92,7 @@ public class WSHandler {
         }
     }
 
-    private void SendChat(Chat chat, int UserReceiveID) {
+    private void SendChat(Chat chat, long UserReceiveID) {
         log.info("Send chat to UserID: {}", UserReceiveID);
         Set<ServerWebSocket> receiveWS = clients.get(UserReceiveID);
         if (receiveWS == null)

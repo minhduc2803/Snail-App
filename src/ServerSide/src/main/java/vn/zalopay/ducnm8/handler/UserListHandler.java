@@ -2,7 +2,7 @@ package vn.zalopay.ducnm8.handler;
 
 import vn.zalopay.ducnm8.cache.UserCache;
 import vn.zalopay.ducnm8.da.TransactionProvider;
-import vn.zalopay.ducnm8.da.UserDA;
+import vn.zalopay.ducnm8.da.AccountDA;
 import vn.zalopay.ducnm8.entity.request.BaseRequest;
 import vn.zalopay.ducnm8.entity.response.BaseResponse;
 import vn.zalopay.ducnm8.utils.JWTUtils;
@@ -18,14 +18,14 @@ public class UserListHandler extends BaseHandler{
 
     private static final String METRIC = "UserListHandler";
     private final UserCache userCache;
-    private final UserDA userDA;
+    private final AccountDA accountDA;
     private final TransactionProvider transactionProvider;
     private final JWTAuth jwtAuth;
 
     public UserListHandler(
-            UserDA userDA, UserCache userCache, TransactionProvider transactionProvider, JWTAuth jwtAuth) {
+            AccountDA accountDA, UserCache userCache, TransactionProvider transactionProvider, JWTAuth jwtAuth) {
         this.userCache = userCache;
-        this.userDA = userDA;
+        this.accountDA = accountDA;
         this.transactionProvider = transactionProvider;
         this.jwtAuth = jwtAuth;
     }
@@ -53,12 +53,12 @@ public class UserListHandler extends BaseHandler{
                 return future;
             }
 
-            Future<Integer> UserIDAuth = JWTUtils.authenticate(jwtAuth, token);
+            Future<Long> UserIDAuth = JWTUtils.authenticate(jwtAuth, token);
 
             UserIDAuth.setHandler(UserIDRes -> {
                 if(UserIDRes.succeeded()){
 
-                    userDA.selectUserList(UserIDRes.result())
+                    accountDA.selectUserList(UserIDRes.result())
                             .setHandler(userListRes -> {
                                 if(userListRes.succeeded()){
                                     response.data(userListRes.result())

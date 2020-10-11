@@ -53,7 +53,7 @@ public class ChatListHandler extends BaseHandler{
                 return future;
             }
 
-            Future<Integer> UserIDAuth = JWTUtils.authenticate(jwtAuth, token);
+            Future<Long> UserIDAuth = JWTUtils.authenticate(jwtAuth, token);
 
             UserIDAuth.setHandler(UserIDRes -> {
 

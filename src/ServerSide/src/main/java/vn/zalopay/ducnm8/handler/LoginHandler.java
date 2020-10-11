@@ -1,14 +1,14 @@
 package vn.zalopay.ducnm8.handler;
 
 import vn.zalopay.ducnm8.cache.UserCache;
+import vn.zalopay.ducnm8.da.AccountDA;
 import vn.zalopay.ducnm8.da.Transaction;
 import vn.zalopay.ducnm8.da.TransactionProvider;
-import vn.zalopay.ducnm8.da.UserDA;
 import vn.zalopay.ducnm8.entity.request.BaseRequest;
 import vn.zalopay.ducnm8.entity.request.LoginRequest;
 import vn.zalopay.ducnm8.entity.response.BaseResponse;
 import vn.zalopay.ducnm8.entity.response.LoginResponse;
-import vn.zalopay.ducnm8.model.User;
+import vn.zalopay.ducnm8.model.Account;
 import vn.zalopay.ducnm8.utils.JWTUtils;
 import vn.zalopay.ducnm8.utils.JsonProtoUtils;
 import vn.zalopay.ducnm8.utils.Tracker;
@@ -23,14 +23,14 @@ public class LoginHandler extends BaseHandler{
 
     private static final String METRIC = "LoginHandler";
     private final UserCache userCache;
-    private final UserDA userDA;
+    private final AccountDA accountDA;
     private final TransactionProvider transactionProvider;
     private final JWTAuth jwtAuth;
 
     public LoginHandler(
-            UserDA userDA, UserCache userCache, TransactionProvider transactionProvider, JWTAuth jwtAuth) {
+            AccountDA accountDA, UserCache userCache, TransactionProvider transactionProvider, JWTAuth jwtAuth) {
         this.userCache = userCache;
-        this.userDA = userDA;
+        this.accountDA = accountDA;
         this.transactionProvider = transactionProvider;
         this.jwtAuth = jwtAuth;
     }
@@ -46,54 +46,56 @@ public class LoginHandler extends BaseHandler{
         try {
             LoginRequest request = JsonProtoUtils.parseGson(baseRequest.getPostData(), LoginRequest.class);
 
-            log.info(" Username: "+request.getUsername());
+            log.info("Login request from : "+request.getUsername());
 
             if(request.getUsername() == null || request.getPassword() == null){
+
                 response.message("Lack of information")
                         .status(HttpResponseStatus.BAD_REQUEST.code());
                 future.complete(response.build());
+
+                log.info("Login failed ~ Lack of information");
                 return future;
             }
-
-            Transaction transaction = transactionProvider.newTransaction();
-            transaction
-                .begin()
-                .compose(next -> {
-                    return userDA.selectUserByUsername(request.getUsername());
-                })
+            accountDA.selectUserByUsername(request.getUsername())
                 .setHandler(
                     rs -> {
-                        if (rs.succeeded()) {
-                            User user = rs.result();
-                            if(user != null) {
-                                if (BCrypt.checkpw(request.getPassword(), user.getPassword())) {
 
-                                    response.data(LoginResponse.builder()
-                                            .token(JWTUtils.buildJWTToken(jwtAuth, user.getUserID()))
-                                            .UserID(user.getUserID())
-                                            .Fullname(user.getFullname())
-                                            .build());
-                                    response.status(HttpResponseStatus.OK.code());
+                        if (rs.succeeded()) {
+                            Account account = rs.result();
+                            if(account != null) {
+                                if (BCrypt.checkpw(request.getPassword(), account.getPassword())) {
+                                    String token = JWTUtils.buildJWTToken(account.getUserID());
+                                    log.info("token len: {}",token.length());
+                                    response.response(LoginResponse.builder()
+                                            .token(token)
+                                            .UserID(account.getUserID())
+                                            .Fullname(account.getFullname())
+                                            .build())
+                                            .status(HttpResponseStatus.OK.code());
+                                    log.info("Login successfully");
                                 } else {
                                     response.message("Wrong password")
                                             .status(HttpResponseStatus.BAD_REQUEST.code());
+                                    log.info("Login failed from: {} ~ wrong password",account.getUsername());
                                 }
                             }else{
                                 response.message("User does not exist")
                                         .status(HttpResponseStatus.BAD_REQUEST.code());
+                                log.warn("Login failed from: {} ~ cannot find user with username",request.getUsername());
                             }
 
                         } else {
-                            response.message("User is not exist")
+                            response.message("User does not exist")
                                     .status(HttpResponseStatus.BAD_REQUEST.code());
+                            log.warn("Login failed from: {} ~ SQL query did not succeed",request.getUsername());
                         }
-                        future.complete(response.build());
-                        transaction.close();
-                        tracker.step("handle").code("SUCCESS").build().record();
-                    });
 
+                        future.complete(response.build());
+
+                    });
         } catch (Exception e) {
-            log.error(e);
+            log.error("Login failed ~ cause is: {}",e);
             response.message("Server has an error")
                     .status(HttpResponseStatus.INTERNAL_SERVER_ERROR.code());
             future.complete(response.build());

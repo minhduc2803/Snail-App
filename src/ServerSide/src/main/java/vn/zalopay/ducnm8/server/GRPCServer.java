@@ -24,11 +24,9 @@ public class GRPCServer {
     }
     public void start() {
         log.info("Starting GRPC Server on port {}", port);
-        // Create a new server to listen on port 8080
         server = VertxServerBuilder
                 .forAddress(vertx, "0.0.0.0",port)
                 .addService(greeterSevice)
-                .intercept(new InterceptorHandler())
                 .build();
 
         try {

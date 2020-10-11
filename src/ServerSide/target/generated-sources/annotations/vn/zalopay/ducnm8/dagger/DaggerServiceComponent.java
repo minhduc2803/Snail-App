@@ -11,11 +11,11 @@ import vn.zalopay.ducnm8.cache.ChatListCache;
 import vn.zalopay.ducnm8.cache.ConversationListCache;
 import vn.zalopay.ducnm8.cache.RedisCache;
 import vn.zalopay.ducnm8.cache.UserCache;
+import vn.zalopay.ducnm8.da.AccountDA;
 import vn.zalopay.ducnm8.da.ChatListDA;
 import vn.zalopay.ducnm8.da.ConversationMemberDA;
 import vn.zalopay.ducnm8.da.DataSourceProvider;
 import vn.zalopay.ducnm8.da.TransactionProvider;
-import vn.zalopay.ducnm8.da.UserDA;
 import vn.zalopay.ducnm8.grpc.GreeterImpl;
 import vn.zalopay.ducnm8.handler.ChatListHandler;
 import vn.zalopay.ducnm8.handler.ConversationListHandler;
@@ -49,7 +49,7 @@ public final class DaggerServiceComponent implements ServiceComponent {
 
   private Provider<AsyncHandler> ProvideAsyncHandlerProvider;
 
-  private Provider<UserDA> provideUserDAProvider;
+  private Provider<AccountDA> provideUserDAProvider;
 
   private Provider<TransactionProvider> provideTransactionProvider;
 

@@ -1,11 +1,11 @@
 package vn.zalopay.ducnm8.da;
 
-import vn.zalopay.ducnm8.config.MySQLConfig;
-import vn.zalopay.ducnm8.utils.Tracker;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import io.vertx.core.Vertx;
 import io.vertx.ext.jdbc.JDBCClient;
+import vn.zalopay.ducnm8.config.MySQLConfig;
+import vn.zalopay.ducnm8.utils.Tracker;
 
 import javax.sql.DataSource;
 

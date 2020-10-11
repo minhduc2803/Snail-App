@@ -4,8 +4,8 @@ import dagger.internal.Factory;
 import dagger.internal.Preconditions;
 import javax.annotation.Generated;
 import javax.inject.Provider;
+import vn.zalopay.ducnm8.da.AccountDA;
 import vn.zalopay.ducnm8.da.DataSourceProvider;
-import vn.zalopay.ducnm8.da.UserDA;
 import vn.zalopay.ducnm8.utils.AsyncHandler;
 
 @Generated(
@@ -16,7 +16,7 @@ import vn.zalopay.ducnm8.utils.AsyncHandler;
     "unchecked",
     "rawtypes"
 })
-public final class ServiceModule_ProvideUserDAFactory implements Factory<UserDA> {
+public final class ServiceModule_ProvideUserDAFactory implements Factory<AccountDA> {
   private final ServiceModule module;
 
   private final Provider<DataSourceProvider> dataSourceProvider;
@@ -32,7 +32,7 @@ public final class ServiceModule_ProvideUserDAFactory implements Factory<UserDA>
   }
 
   @Override
-  public UserDA get() {
+  public AccountDA get() {
     return provideUserDA(module, dataSourceProvider.get(), asyncHandlerProvider.get());
   }
 
@@ -42,8 +42,8 @@ public final class ServiceModule_ProvideUserDAFactory implements Factory<UserDA>
     return new ServiceModule_ProvideUserDAFactory(module, dataSourceProvider, asyncHandlerProvider);
   }
 
-  public static UserDA provideUserDA(ServiceModule instance, DataSourceProvider dataSourceProvider,
-      AsyncHandler asyncHandler) {
+  public static AccountDA provideUserDA(ServiceModule instance,
+      DataSourceProvider dataSourceProvider, AsyncHandler asyncHandler) {
     return Preconditions.checkNotNull(instance.provideUserDA(dataSourceProvider, asyncHandler), "Cannot return null from a non-@Nullable @Provides method");
   }
 }

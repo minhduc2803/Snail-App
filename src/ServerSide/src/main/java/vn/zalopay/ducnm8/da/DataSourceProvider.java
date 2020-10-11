@@ -1,7 +1,7 @@
 package vn.zalopay.ducnm8.da;
 
-import vn.zalopay.ducnm8.config.MySQLConfig;
 import io.vertx.ext.jdbc.JDBCClient;
+import vn.zalopay.ducnm8.config.MySQLConfig;
 
 import javax.sql.DataSource;
 

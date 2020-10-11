@@ -1,6 +1,5 @@
 package vn.zalopay.ducnm8.dagger;
 
-import io.grpc.Server;
 import vn.zalopay.ducnm8.cache.*;
 import vn.zalopay.ducnm8.config.ServiceConfig;
 import vn.zalopay.ducnm8.da.*;
@@ -92,8 +91,8 @@ public class ServiceModule {
 
   @Provides
   @Singleton
-  UserDA provideUserDA(DataSourceProvider dataSourceProvider, AsyncHandler asyncHandler) {
-    return new UserDAImpl(
+  AccountDA provideUserDA(DataSourceProvider dataSourceProvider, AsyncHandler asyncHandler) {
+    return new AccountDAImpl(
         dataSourceProvider.getDataSource(serviceConfig.getMySQLConfig()), asyncHandler);
   }
 
@@ -121,22 +120,22 @@ public class ServiceModule {
   @Provides
   @Singleton
   ExampleHandler provideExampleHandler(
-      UserDA userDA, TransactionProvider transactionProvider, UserCache userCache) {
-    return new ExampleHandler(userDA, userCache, transactionProvider);
+          AccountDA accountDA, TransactionProvider transactionProvider, UserCache userCache) {
+    return new ExampleHandler(accountDA, userCache, transactionProvider);
   }
 
   @Provides
   @Singleton
   LoginHandler provideLoginHandler(
-          UserDA userDA, TransactionProvider transactionProvider, UserCache userCache, JWTAuth jwtAuth) {
-    return new LoginHandler(userDA, userCache, transactionProvider, jwtAuth);
+          AccountDA accountDA, TransactionProvider transactionProvider, UserCache userCache, JWTAuth jwtAuth) {
+    return new LoginHandler(accountDA, userCache, transactionProvider, jwtAuth);
   }
 
   @Provides
   @Singleton
   UserListHandler provideUserListHandler(
-          UserDA userDA, TransactionProvider transactionProvider, UserCache userCache, JWTAuth jwtAuth) {
-    return new UserListHandler(userDA, userCache, transactionProvider, jwtAuth);
+          AccountDA accountDA, TransactionProvider transactionProvider, UserCache userCache, JWTAuth jwtAuth) {
+    return new UserListHandler(accountDA, userCache, transactionProvider, jwtAuth);
   }
 
   @Provides
@@ -156,8 +155,8 @@ public class ServiceModule {
   @Provides
   @Singleton
   RegisterHandler provideRegisterHandler(
-          UserDA userDA, TransactionProvider transactionProvider, UserCache userCache, JWTAuth jwtAuth) {
-    return new RegisterHandler(userDA, userCache, transactionProvider, jwtAuth);
+          AccountDA accountDA, TransactionProvider transactionProvider, UserCache userCache, JWTAuth jwtAuth) {
+    return new RegisterHandler(accountDA, userCache, transactionProvider, jwtAuth);
   }
 
 

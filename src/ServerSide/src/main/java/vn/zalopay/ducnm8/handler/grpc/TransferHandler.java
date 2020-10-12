@@ -1,7 +1,7 @@
 package vn.zalopay.ducnm8.handler.grpc;
 
-import vn.zalopay.ducnm8.grpc.HelloReply;
-import vn.zalopay.ducnm8.grpc.HelloRequest;
+import hello.HelloReply;
+import hello.HelloRequest;
 
 public class TransferHandler {
     public HelloReply transfer(HelloRequest helloRequest){

@@ -16,25 +16,11 @@ ReactDOM.render(
     </Provider>, 
 document.getElementById('root'));
 
+//jwt
 greeter.getBalance("duc", (err, response) => {
     console.log("GRPC: "+response.getMessage());
 });
 
-greeter.getHistory("duc", (err, response) => {
-    console.log("GRPC: "+response.getMessage());
-});
-
-greeter.transfer("duc", (err, response) => {
-    console.log("GRPC: "+response.getMessage());
-});
-
-greeter.getNotification("duc", (err, response) => {
-    console.log("GRPC: "+response.getMessage());
-});
-
-greeter.getBalance("duc", (err, response) => {
-    console.log("GRPC: "+response.getMessage());
-});
 
 
 // If you want your app to work offline and load faster, you can change

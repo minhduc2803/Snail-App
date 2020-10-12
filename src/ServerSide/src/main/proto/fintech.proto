@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 option java_multiple_files = true;
-option java_package = "vn.zalopay.ducnm8.grpc";
+option java_package = "fintech";
 option java_outer_classname = "FinTechProto";
 package fintech;
 
@@ -132,7 +132,7 @@ message NotificationItem {
   UnRead unread = 6; // default: a notification is read already
 }
 
-service FintechServiceTemp {
+service FintechService {
   rpc getBalance(BalanceRequest) returns(BalanceResponse) {
 
   }

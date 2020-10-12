@@ -1,7 +1,7 @@
 package vn.zalopay.ducnm8.handler;
 
 import vn.zalopay.ducnm8.cache.ChatListCache;
-import vn.zalopay.ducnm8.da.ChatListDA;
+import vn.zalopay.ducnm8.da.interact.ChatListDA;
 import vn.zalopay.ducnm8.da.Transaction;
 import vn.zalopay.ducnm8.da.TransactionProvider;
 import vn.zalopay.ducnm8.model.Chat;
@@ -15,7 +15,6 @@ import lombok.Builder;
 import lombok.extern.log4j.Log4j2;
 
 
-import java.sql.Timestamp;
 import java.util.Date;
 import java.util.Map;
 import java.time.Instant;

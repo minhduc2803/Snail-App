@@ -3,11 +3,12 @@ package vn.zalopay.ducnm8.handler;
 import vn.zalopay.ducnm8.cache.UserCache;
 import vn.zalopay.ducnm8.da.Transaction;
 import vn.zalopay.ducnm8.da.TransactionProvider;
-import vn.zalopay.ducnm8.da.AccountDA;
+import vn.zalopay.ducnm8.da.interact.AccountDA;
 import vn.zalopay.ducnm8.entity.request.BaseRequest;
 import vn.zalopay.ducnm8.entity.request.RegisterRequest;
 import vn.zalopay.ducnm8.entity.response.BaseResponse;
 import vn.zalopay.ducnm8.model.Account;
+import vn.zalopay.ducnm8.model.Balance;
 import vn.zalopay.ducnm8.utils.JsonProtoUtils;
 import vn.zalopay.ducnm8.utils.Tracker;
 import io.netty.handler.codec.http.HttpResponseStatus;
@@ -15,6 +16,8 @@ import io.vertx.core.Future;
 import io.vertx.ext.auth.jwt.JWTAuth;
 import org.mindrot.jbcrypt.BCrypt;
 import lombok.extern.log4j.Log4j2;
+
+import java.time.Instant;
 
 @Log4j2
 public class RegisterHandler extends BaseHandler {
@@ -41,7 +44,6 @@ public class RegisterHandler extends BaseHandler {
         Future<BaseResponse> future = Future.future();
         RegisterRequest registerRequest = JsonProtoUtils.parseGson(baseRequest.getPostData(), RegisterRequest.class);
 
-        log.info(" Username: " + registerRequest.getUsername());
 
         BaseResponse.BaseResponseBuilder response = BaseResponse.builder();
 
@@ -51,6 +53,8 @@ public class RegisterHandler extends BaseHandler {
                     .status(HttpResponseStatus.BAD_REQUEST.code());
 
             future.complete(response.build());
+
+            log.info("Register failed ~ Lack of information");
             return future;
         }
 
@@ -58,31 +62,33 @@ public class RegisterHandler extends BaseHandler {
                 .username(registerRequest.getUsername())
                 .fullName(registerRequest.getFullname())
                 .password(BCrypt.hashpw(registerRequest.getPassword(), BCrypt.gensalt(4)))
-                .balance(1000000)
+                .balance(10000000)
+                .lastTimeUpdate(Instant.now().getEpochSecond())
+                .numberNotification(0)
                 .build();
-
 
         Transaction transaction = transactionProvider.newTransaction();
 
         transaction
-                .begin()
-                .compose(next -> transaction.execute(accountDA.insert(account)))
-                .setHandler(
-                        rs -> {
+            .begin()
+            .compose(next -> transaction.execute(accountDA.insert(account)))
+            .setHandler(
+                rs -> {
 
-                            if (rs.succeeded()) {
-                                response.status(HttpResponseStatus.OK.code());
-                                log.info("Register successful");
-                            } else {
-                                response.message("Username is not available")
-                                        .status(HttpResponseStatus.BAD_REQUEST.code());
-                            }
-                            future.complete(response.build());
-                            transaction.commit();
-                            transaction.close();
+                    if (rs.succeeded()) {
+                        response.status(HttpResponseStatus.OK.code());
+                        log.info("Register successful");
+                    } else {
+                        response.message("Username is not available")
+                                .status(HttpResponseStatus.BAD_REQUEST.code());
+                        log.warn("Register fail ~ Cannot insert a user");
+                    }
+                    future.complete(response.build());
+                    transaction.commit();
+                    transaction.close();
 
-                            tracker.step("handle").code("SUCCESS").build().record();
-                        });
+                    tracker.step("handle").code("SUCCESS").build().record();
+                });
 
         return future;
     }

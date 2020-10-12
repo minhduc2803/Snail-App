@@ -4,8 +4,8 @@ import dagger.internal.Factory;
 import dagger.internal.Preconditions;
 import javax.annotation.Generated;
 import javax.inject.Provider;
-import vn.zalopay.ducnm8.da.AccountDA;
 import vn.zalopay.ducnm8.da.DataSourceProvider;
+import vn.zalopay.ducnm8.da.interact.AccountDA;
 import vn.zalopay.ducnm8.utils.AsyncHandler;
 
 @Generated(

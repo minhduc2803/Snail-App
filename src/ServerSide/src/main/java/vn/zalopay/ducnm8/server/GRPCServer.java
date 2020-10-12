@@ -14,10 +14,11 @@ public class GRPCServer {
     private VertxServer server;
     private Vertx vertx;
     private FintechServiceImpl fintechService;
+    private InterceptorHandler interceptorHandler;
     private int port;
 
     @Builder
-    public GRPCServer(Vertx vertx, FintechServiceImpl fintechService, int port){
+    public GRPCServer(Vertx vertx, FintechServiceImpl fintechService, InterceptorHandler interceptorHandler, int port){
         this.vertx = vertx;
         this.fintechService = fintechService;
         this.port = port;
@@ -27,13 +28,12 @@ public class GRPCServer {
         server = VertxServerBuilder
                 .forAddress(vertx, "0.0.0.0",port)
                 .addService(fintechService)
+                .intercept(interceptorHandler)
                 .build();
 
         try {
             // Start the server
             server.start();
-
-            // Server threads are running in the background.
 
             log.info("GRPC Server start successfully !, port:{}", port);
 

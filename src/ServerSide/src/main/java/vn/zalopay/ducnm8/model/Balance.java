@@ -15,6 +15,6 @@ public class Balance {
     @DBTable(columnName = "last_time_update_balance")
     long lastTimeUpdate;
 
-    @DBTable(columnName = "unread_notification")
-    int unReadNotification;
+    @DBTable(columnName = "number_notification")
+    int numberNotification;
 }

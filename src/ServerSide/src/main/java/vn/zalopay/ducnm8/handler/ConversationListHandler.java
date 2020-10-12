@@ -1,7 +1,7 @@
 package vn.zalopay.ducnm8.handler;
 
 import vn.zalopay.ducnm8.cache.ConversationListCache;
-import vn.zalopay.ducnm8.da.ConversationMemberDA;
+import vn.zalopay.ducnm8.da.interact.ConversationMemberDA;
 import vn.zalopay.ducnm8.da.Transaction;
 import vn.zalopay.ducnm8.da.TransactionProvider;
 import vn.zalopay.ducnm8.entity.request.BaseRequest;

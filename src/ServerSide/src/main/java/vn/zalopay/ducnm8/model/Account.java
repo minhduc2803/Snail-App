@@ -24,4 +24,9 @@ public class Account {
   @DBTable(columnName = "balance")
   long balance;
 
+  @DBTable(columnName = "last_time_update_balance")
+  long lastTimeUpdate;
+
+  @DBTable(columnName = "number_notification")
+  int numberNotification;
 }

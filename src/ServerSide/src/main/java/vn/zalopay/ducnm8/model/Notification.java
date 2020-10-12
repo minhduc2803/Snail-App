@@ -27,7 +27,13 @@ public class Notification {
     @DBTable(columnName = "message")
     String message;
 
-    @DBTable(columnName = "unread")
-    boolean unread;
+    @DBTable(columnName = "seen")
+    boolean seen;
+
+    @DBTable(columnName = "user_name")
+    String userName;
+
+    @DBTable(columnName = "full_name")
+    String fullName;
 
 }

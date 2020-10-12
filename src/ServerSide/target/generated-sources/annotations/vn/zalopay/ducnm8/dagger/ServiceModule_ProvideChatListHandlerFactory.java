@@ -6,8 +6,8 @@ import io.vertx.ext.auth.jwt.JWTAuth;
 import javax.annotation.Generated;
 import javax.inject.Provider;
 import vn.zalopay.ducnm8.cache.ChatListCache;
-import vn.zalopay.ducnm8.da.ChatListDA;
 import vn.zalopay.ducnm8.da.TransactionProvider;
+import vn.zalopay.ducnm8.da.interact.ChatListDA;
 import vn.zalopay.ducnm8.handler.ChatListHandler;
 
 @Generated(

@@ -3,8 +3,11 @@ package vn.zalopay.ducnm8.dagger;
 import vn.zalopay.ducnm8.cache.*;
 import vn.zalopay.ducnm8.config.ServiceConfig;
 import vn.zalopay.ducnm8.da.*;
+import vn.zalopay.ducnm8.da.interact.*;
 import vn.zalopay.ducnm8.grpc.FintechServiceImpl;
 import vn.zalopay.ducnm8.handler.*;
+import vn.zalopay.ducnm8.handler.grpc.GetBalanceHandler;
+import vn.zalopay.ducnm8.handler.grpc.InterceptorHandler;
 import vn.zalopay.ducnm8.server.GRPCServer;
 import vn.zalopay.ducnm8.server.RestfulAPI;
 import vn.zalopay.ducnm8.server.WebSocketServer;
@@ -241,6 +244,12 @@ public class ServiceModule {
 
   @Provides
   @Singleton
+  GetBalanceHandler provideGetBalanceHandler(AccountDA accountDA){
+    return new GetBalanceHandler(accountDA);
+  }
+
+  @Provides
+  @Singleton
   WebSocketServer provideWebSocketServer(
           WSHandler wsHandler, Vertx vertx, JWTAuth jwtAuth) {
     return WebSocketServer.builder()
@@ -253,15 +262,22 @@ public class ServiceModule {
 
   @Provides
   @Singleton
-  FintechServiceImpl provideGreeterImpl(){
+  FintechServiceImpl provideFintechServiceImpl(){
     return FintechServiceImpl.builder().build();
+  }
+
+  @Provides
+  @Singleton
+  InterceptorHandler provideInterceptorHandler(){
+    return InterceptorHandler.builder().build();
   }
   @Provides
   @Singleton
-  GRPCServer provideGRPCServer(Vertx vertx, FintechServiceImpl fintechService){
+  GRPCServer provideGRPCServer(Vertx vertx, FintechServiceImpl fintechService, InterceptorHandler interceptorHandler){
     return GRPCServer.builder()
             .vertx(vertx)
             .fintechService(fintechService)
+            .interceptorHandler(interceptorHandler)
             .port(serviceConfig.getGrpcPort())
             .build();
   }

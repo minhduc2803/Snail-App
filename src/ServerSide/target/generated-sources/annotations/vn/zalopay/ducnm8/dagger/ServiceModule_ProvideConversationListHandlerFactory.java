@@ -5,8 +5,8 @@ import dagger.internal.Preconditions;
 import javax.annotation.Generated;
 import javax.inject.Provider;
 import vn.zalopay.ducnm8.cache.ConversationListCache;
-import vn.zalopay.ducnm8.da.ConversationMemberDA;
 import vn.zalopay.ducnm8.da.TransactionProvider;
+import vn.zalopay.ducnm8.da.interact.ConversationMemberDA;
 import vn.zalopay.ducnm8.handler.ConversationListHandler;
 
 @Generated(

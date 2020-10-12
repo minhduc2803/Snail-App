@@ -1,5 +1,8 @@
 package vn.zalopay.ducnm8.grpc;
 
+import fintech.*;
+import hello.HelloReply;
+import hello.HelloRequest;
 import io.vertx.core.Future;
 import lombok.Builder;
 import lombok.extern.log4j.Log4j2;
@@ -16,35 +19,24 @@ public class FintechServiceImpl extends FintechServiceGrpc.FintechServiceVertxIm
     public FintechServiceImpl(){
 
     }
+
     @Override
-    public void getBalance(HelloRequest helloRequest, Future<HelloReply> helloReplyFuture){
-        log.info("GRPC Request from: "+helloRequest.getName());
-        GetBalanceHandler getBalanceHandler = new GetBalanceHandler();
-        HelloReply helloReply = getBalanceHandler.getBalance(helloRequest);
-        helloReplyFuture.complete(helloReply);
+    public void getBalance(BalanceRequest request, Future<BalanceResponse> response) {
+        super.getBalance(request, response);
     }
 
     @Override
-    public void getHistory(HelloRequest helloRequest, Future<HelloReply> helloReplyFuture){
-        log.info("GRPC Request from: "+helloRequest.getName());
-        GetHistoryHandler getHistoryHandler = new GetHistoryHandler();
-        HelloReply helloReply = getHistoryHandler.getHistory(helloRequest);
-        helloReplyFuture.complete(helloReply);
+    public void getHistory(HistoryRequest request, Future<HistoryResponse> response) {
+        super.getHistory(request, response);
     }
 
     @Override
-    public void transfer(HelloRequest helloRequest, Future<HelloReply> helloReplyFuture){
-        log.info("GRPC Request from: "+helloRequest.getName());
-        TransferHandler transferHandler = new TransferHandler();
-        HelloReply helloReply = transferHandler.transfer(helloRequest);
-        helloReplyFuture.complete(helloReply);
+    public void transfer(TransferRequest request, Future<TransferResponse> response) {
+        super.transfer(request, response);
     }
 
     @Override
-    public void getNotification(HelloRequest helloRequest, Future<HelloReply> helloReplyFuture){
-        log.info("GRPC Request from: "+helloRequest.getName());
-        GetNotificationHandler getNotificationHandler = new GetNotificationHandler();
-        HelloReply helloReply = getNotificationHandler.getNotification(helloRequest);
-        helloReplyFuture.complete(helloReply);
+    public void getNotification(NotificationRequest request, Future<NotificationResponse> response) {
+        super.getNotification(request, response);
     }
 }

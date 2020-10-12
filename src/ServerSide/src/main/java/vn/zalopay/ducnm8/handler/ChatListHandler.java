@@ -2,6 +2,7 @@ package vn.zalopay.ducnm8.handler;
 
 import vn.zalopay.ducnm8.cache.ChatListCache;
 import vn.zalopay.ducnm8.da.*;
+import vn.zalopay.ducnm8.da.interact.ChatListDA;
 import vn.zalopay.ducnm8.entity.request.*;
 import vn.zalopay.ducnm8.entity.response.BaseResponse;
 import vn.zalopay.ducnm8.utils.JWTUtils;
@@ -40,9 +41,6 @@ public class ChatListHandler extends BaseHandler{
         BaseResponse.BaseResponseBuilder response = BaseResponse.builder();
         try {
             ChatListRequest request = JsonProtoUtils.parseGson(baseRequest.getPostData(), ChatListRequest.class);
-            log.info("Hello ChatList Handler");
-            log.info(baseRequest.getPostData());
-            log.info("UserReceiveID: {}",request.getUserReceiveID());
 
             String token = baseRequest.getHeaders().get(HttpHeaders.AUTHORIZATION).substring("Bearer ".length()).trim();
 
@@ -50,39 +48,41 @@ public class ChatListHandler extends BaseHandler{
                 response.message("JWT token is missing")
                         .status(HttpResponseStatus.UNAUTHORIZED.code());
                 future.complete(response.build());
+                log.warn("get chat list failed ~ JWT token is missing");
                 return future;
             }
 
             Future<Long> UserIDAuth = JWTUtils.authenticate(jwtAuth, token);
 
             UserIDAuth.setHandler(UserIDRes -> {
-
                 if(UserIDRes.succeeded()){
-
+                    log.info("get chat list between {} and {}",UserIDRes.result(), request.getUserReceiveID());
                     chatListDA.listChatByMember(UserIDRes.result(), request.getUserReceiveID())
-                            .setHandler(chatListRes -> {
+                        .setHandler(chatListRes -> {
+                            if(chatListRes.succeeded()){
+                                response.data(chatListRes.result())
+                                        .status(HttpResponseStatus.OK.code());
 
-                                if(chatListRes.succeeded()){
-                                    response.data(chatListRes.result())
-                                            .status(HttpResponseStatus.OK.code());
-
-                                }else{
-                                    response.message("Cannot get a chat list")
-                                            .status(HttpResponseStatus.BAD_REQUEST.code());
-                                }
-                                future.complete(response.build());
-                            });
+                            }else{
+                                response.message("Cannot get a chat list")
+                                        .status(HttpResponseStatus.BAD_REQUEST.code());
+                                log.warn("cannot get a chat list between {} and  {} ~ fail to do a SQL select",UserIDRes.result(), request.getUserReceiveID());
+                            }
+                            future.complete(response.build());
+                        });
 
                 }else{
                     response.message("JWT token is invalid")
                             .status(HttpResponseStatus.UNAUTHORIZED.code());
                     future.complete(response.build());
+
+                    log.info("get a chat list failed ~ JWT token is invalid");
                 }
 
 
             });
         } catch (Exception e) {
-            log.error(e);
+            log.error("internal server error, cause: {}",e.getMessage());
             response.message("Server has an error")
                     .status(HttpResponseStatus.INTERNAL_SERVER_ERROR.code());
             future.complete(response.build());

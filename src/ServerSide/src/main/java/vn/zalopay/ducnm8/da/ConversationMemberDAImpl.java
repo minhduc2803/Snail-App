@@ -18,7 +18,8 @@ public class ConversationMemberDAImpl extends BaseTransactionDA implements Conve
     private final AsyncHandler asyncHandler;
 
     private static final String INSERT_CONVERSATION_MEMBER = "INSERT INTO `chatapp`.`ConversationMember` (`ConversationID`, `MemberID`) VALUES (?, ?);";
-    private static final String LIST_CONVERSATION_BY_MEMBER = "SELECT C2.ConversationMemberID, C2.ConversationID, C2.MemberID, C2.NotSeenChat, U.Fullname\n" +
+    private static final String LIST_CONVERSATION_BY_MEMBER =
+            "SELECT C2.ConversationMemberID, C2.ConversationID, C2.MemberID, C2.NotSeenChat, U.Fullname\n" +
             "FROM \n" +
             "(chatapp.ConversationMember as C1\n" +
             "INNER JOIN chatapp.ConversationMember as C2\n" +

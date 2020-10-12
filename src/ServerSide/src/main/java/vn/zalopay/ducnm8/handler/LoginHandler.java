@@ -2,7 +2,6 @@ package vn.zalopay.ducnm8.handler;
 
 import vn.zalopay.ducnm8.cache.UserCache;
 import vn.zalopay.ducnm8.da.AccountDA;
-import vn.zalopay.ducnm8.da.Transaction;
 import vn.zalopay.ducnm8.da.TransactionProvider;
 import vn.zalopay.ducnm8.entity.request.BaseRequest;
 import vn.zalopay.ducnm8.entity.request.LoginRequest;
@@ -65,12 +64,12 @@ public class LoginHandler extends BaseHandler{
                             Account account = rs.result();
                             if(account != null) {
                                 if (BCrypt.checkpw(request.getPassword(), account.getPassword())) {
-                                    String token = JWTUtils.buildJWTToken(account.getUserID());
+                                    String token = JWTUtils.buildJWTToken(account.getId());
                                     log.info("token len: {}",token.length());
                                     response.response(LoginResponse.builder()
                                             .token(token)
-                                            .UserID(account.getUserID())
-                                            .Fullname(account.getFullname())
+                                            .UserID(account.getId())
+                                            .Fullname(account.getFullName())
                                             .build())
                                             .status(HttpResponseStatus.OK.code());
                                     log.info("Login successfully");

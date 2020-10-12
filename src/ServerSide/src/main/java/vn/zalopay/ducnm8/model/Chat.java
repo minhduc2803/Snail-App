@@ -10,22 +10,21 @@ import lombok.*;
 @AllArgsConstructor
 public class Chat {
     @DBTable(columnName = "id")
-    long ChatID;
+    long id;
 
-    @DBTable(columnName = "mode")
-    int Mode;
+    @DBTable(columnName = "chat_type")
+    int chatType;
 
     @DBTable(columnName = "user_send_id")
-    long UserSendID;
+    long senderId;
 
     @DBTable(columnName = "user_receive_id")
-    long UserReceiveID;
+    long receiverId;
 
     @DBTable(columnName =  "content")
-    String Content;
+    String content;
 
     @DBTable(columnName = "sent_time")
-    Long SentTime;
+    Long sentTime;
 
-    String FormatTime;
 }

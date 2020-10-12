@@ -55,11 +55,11 @@ public class WSHandler {
         Date date = new Date();
         try {
             Chat chat = Chat.builder()
-                    .Mode(json.getInteger("Mode"))
-                    .UserSendID(UserID)
-                    .UserReceiveID(json.getInteger("UserReceiveID"))
-                    .Content(json.getString("Content"))
-                    .SentTime(Instant.now().getEpochSecond())
+                    .chatType(json.getInteger("Mode"))
+                    .senderId(UserID)
+                    .receiverId(json.getInteger("UserReceiveID"))
+                    .content(json.getString("Content"))
+                    .sentTime(Instant.now().getEpochSecond())
                     .build();
 
         log.info(chat.getSentTime());
@@ -73,10 +73,8 @@ public class WSHandler {
                 .setHandler(result -> {
                     if (result.succeeded()) {
                         log.info("insert a new chat");
-                        Timestamp formatTime = new Timestamp(chat.getSentTime());
-                        chat.setFormatTime(String.valueOf(formatTime));
                         SendChat(chat, UserID);
-                        SendChat(chat, chat.getUserReceiveID());
+                        SendChat(chat, chat.getReceiverId());
                         transaction
                                 .commit()
                                 .compose(next -> transaction.close())

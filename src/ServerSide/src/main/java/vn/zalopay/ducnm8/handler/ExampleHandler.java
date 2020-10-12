@@ -29,7 +29,7 @@ public class ExampleHandler extends BaseHandler {
     Tracker.TrackerBuilder tracker =
         Tracker.builder().metricName(METRIC).startTime(System.currentTimeMillis());
     Future<Account> future = Future.future();
-    Account account = Account.builder().Username("username").Fullname("Minh Duc").Password("123").build();
+    Account account = Account.builder().username("username").fullName("Minh Duc").password("123").build();
     Transaction transaction = transactionProvider.newTransaction();
     transaction
         .begin()

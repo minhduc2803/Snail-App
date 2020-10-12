@@ -55,10 +55,10 @@ public class RegisterHandler extends BaseHandler {
         }
 
         Account account = Account.builder()
-                .Username(registerRequest.getUsername())
-                .Fullname(registerRequest.getFullname())
-                .Password(BCrypt.hashpw(registerRequest.getPassword(), BCrypt.gensalt(4)))
-                .Balance(1000000)
+                .username(registerRequest.getUsername())
+                .fullName(registerRequest.getFullname())
+                .password(BCrypt.hashpw(registerRequest.getPassword(), BCrypt.gensalt(4)))
+                .balance(1000000)
                 .build();
 
 

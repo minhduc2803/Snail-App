@@ -1,0 +1,76 @@
+package vn.zalopay.ducnm8.da;
+
+import io.vertx.core.Future;
+import org.apache.logging.log4j.Logger;
+import vn.zalopay.ducnm8.common.mapper.EntityMapper;
+import vn.zalopay.ducnm8.entity.response.BaseResponse;
+import vn.zalopay.ducnm8.model.Account;
+import vn.zalopay.ducnm8.model.Transfer;
+import vn.zalopay.ducnm8.utils.AsyncHandler;
+
+import javax.sql.DataSource;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class TransferDAImpl extends BaseTransactionDA implements TransferDA{
+    private static final Logger log = org.apache.logging.log4j.LogManager.getLogger(AccountDAImpl.class);
+    private final DataSource dataSource;
+    private final AsyncHandler asyncHandler;
+    private static final String INSERT_TRANSFER_STATEMENT =
+            "INSERT INTO transfer (`sender_id`,`receiver_id`,`amount`,`message`,`transfer_time`) VALUES (?, ?, ?, ?, ?);";
+    private static final String SELECT_TRANSFER_BY_ID =
+            "SELECT * FROM transfer WHERE id = ?";
+    public TransferDAImpl(DataSource dataSource, AsyncHandler asyncHandler) {
+        super();
+        this.dataSource = dataSource;
+        this.asyncHandler = asyncHandler;
+    }
+
+    @Override
+    public Executable<Transfer> insert(Transfer transfer) {
+        log.info("insert a transfer");
+        return connection -> {
+            Future<Transfer> future = Future.future();
+            asyncHandler.run(
+                    () -> {
+                        Object[] params = {transfer.getSenderId(), transfer.getReceiverId(), transfer.getAmount(), transfer.getMessage(), transfer.getTransferTime()};
+                        try {
+                            executeWithParams(future, connection.unwrap(), INSERT_TRANSFER_STATEMENT, params, "insertTransfer");
+                        } catch (SQLException e) {
+                            future.fail(e);
+                        }
+                    });
+            return future;
+        };
+    }
+
+    @Override
+    public Future<Transfer> selectTransferById(long id) {
+        Future<Transfer> future = Future.future();
+        asyncHandler.run(
+                () -> {
+                    Object[] params = {id};
+                    queryEntity(
+                            "queryTransfer",
+                            future,
+                            SELECT_TRANSFER_BY_ID,
+                            params,
+                            this::mapRs2EntityTransfer,
+                            dataSource::getConnection,
+                            false);
+                });
+
+        return future;
+    }
+
+    private Transfer mapRs2EntityTransfer(ResultSet resultSet) throws Exception {
+        Transfer transfer = null;
+
+        while (resultSet.next()) {
+            transfer = new Transfer();
+            EntityMapper.getInstance().loadResultSetIntoObject(resultSet, transfer);
+        }
+
+        return transfer;
+    }
+}

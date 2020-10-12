@@ -18,5 +18,7 @@ public interface AccountDA {
 
   Future<Balance> selectBalanceById(long id);
 
-  Future<Balance> setBalanceByAmount(long id, long amount);
+  Executable<Balance> updateBalanceByAmount(long id, long amount);
+
+
 }

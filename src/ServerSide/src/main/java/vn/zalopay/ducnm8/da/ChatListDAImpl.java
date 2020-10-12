@@ -17,7 +17,8 @@ public class ChatListDAImpl extends BaseTransactionDA implements ChatListDA{
     private final DataSource dataSource;
     private final AsyncHandler asyncHandler;
 
-    private static final String INSERT_CHAT_STATEMENT = "INSERT INTO chat (`mode`, `user_send_id`, `user_receive_id`, `content`, `sent_time`) VALUES (?, ?, ?, ?, ?);";
+    private static final String INSERT_CHAT_STATEMENT =
+            "INSERT INTO chat (`mode`, `user_send_id`, `user_receive_id`, `content`, `sent_time`) VALUES (?, ?, ?, ?, ?);";
     private static final String LIST_CHAT_BY_MEMBER = "SELECT * FROM chat\n" +
             "WHERE (user_send_id = ? and user_receive_id = ?) or (user_send_id = ? and user_receive_id = ?);";
 
@@ -29,9 +30,9 @@ public class ChatListDAImpl extends BaseTransactionDA implements ChatListDA{
     @Override
     public Executable<Chat> insert(Chat chat) {
         log.info("MYSQL: INSERTING A NEW CHAT");
-        log.info(chat.getMode());
-        log.info(chat.getUserSendID());
-        log.info(chat.getUserReceiveID());
+        log.info(chat.getChatType());
+        log.info(chat.getSenderId());
+        log.info(chat.getReceiverId());
         log.info(chat.getContent());
         log.info(chat.getSentTime());
         return connection -> {
@@ -39,7 +40,7 @@ public class ChatListDAImpl extends BaseTransactionDA implements ChatListDA{
             Future<Void> temp = Future.future();
             asyncHandler.run(
                     () -> {
-                        Object[] params = {chat.getMode(), chat.getUserSendID(), chat.getUserReceiveID(), chat.getContent(), chat.getSentTime()};
+                        Object[] params = {chat.getChatType(), chat.getSenderId(), chat.getReceiverId(), chat.getContent(), chat.getSentTime()};
                         try {
                             boolean isSuccess = executeWithParams(
                                     temp, connection.unwrap(), INSERT_CHAT_STATEMENT, params, "insertChat");

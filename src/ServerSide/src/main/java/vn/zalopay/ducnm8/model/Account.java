@@ -10,18 +10,18 @@ import lombok.*;
 @AllArgsConstructor
 public class Account {
   @DBTable(columnName = "id")
-  long UserID;
+  long id;
 
   @DBTable(columnName = "user_name")
-  String Username;
+  String username;
 
   @DBTable(columnName = "full_name")
-  String Fullname;
+  String fullName;
 
   @DBTable(columnName = "password")
-  String Password;
+  String password;
 
   @DBTable(columnName = "balance")
-  long Balance;
+  long balance;
 
 }

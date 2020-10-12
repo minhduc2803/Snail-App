@@ -5,7 +5,7 @@ import dagger.internal.Preconditions;
 import io.vertx.core.Vertx;
 import javax.annotation.Generated;
 import javax.inject.Provider;
-import vn.zalopay.ducnm8.grpc.GreeterImpl;
+import vn.zalopay.ducnm8.grpc.FintechServiceImpl;
 import vn.zalopay.ducnm8.server.GRPCServer;
 
 @Generated(
@@ -21,27 +21,27 @@ public final class ServiceModule_ProvideGRPCServerFactory implements Factory<GRP
 
   private final Provider<Vertx> vertxProvider;
 
-  private final Provider<GreeterImpl> greeterServiceProvider;
+  private final Provider<FintechServiceImpl> fintechServiceProvider;
 
   public ServiceModule_ProvideGRPCServerFactory(ServiceModule module, Provider<Vertx> vertxProvider,
-      Provider<GreeterImpl> greeterServiceProvider) {
+      Provider<FintechServiceImpl> fintechServiceProvider) {
     this.module = module;
     this.vertxProvider = vertxProvider;
-    this.greeterServiceProvider = greeterServiceProvider;
+    this.fintechServiceProvider = fintechServiceProvider;
   }
 
   @Override
   public GRPCServer get() {
-    return provideGRPCServer(module, vertxProvider.get(), greeterServiceProvider.get());
+    return provideGRPCServer(module, vertxProvider.get(), fintechServiceProvider.get());
   }
 
   public static ServiceModule_ProvideGRPCServerFactory create(ServiceModule module,
-      Provider<Vertx> vertxProvider, Provider<GreeterImpl> greeterServiceProvider) {
-    return new ServiceModule_ProvideGRPCServerFactory(module, vertxProvider, greeterServiceProvider);
+      Provider<Vertx> vertxProvider, Provider<FintechServiceImpl> fintechServiceProvider) {
+    return new ServiceModule_ProvideGRPCServerFactory(module, vertxProvider, fintechServiceProvider);
   }
 
   public static GRPCServer provideGRPCServer(ServiceModule instance, Vertx vertx,
-      GreeterImpl greeterService) {
-    return Preconditions.checkNotNull(instance.provideGRPCServer(vertx, greeterService), "Cannot return null from a non-@Nullable @Provides method");
+      FintechServiceImpl fintechService) {
+    return Preconditions.checkNotNull(instance.provideGRPCServer(vertx, fintechService), "Cannot return null from a non-@Nullable @Provides method");
   }
 }

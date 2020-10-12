@@ -2,6 +2,7 @@ package vn.zalopay.ducnm8.da;
 
 import io.vertx.core.Future;
 import vn.zalopay.ducnm8.model.Account;
+import vn.zalopay.ducnm8.model.Balance;
 import vn.zalopay.ducnm8.model.UserWithoutPassword;
 
 import java.util.ArrayList;
@@ -14,4 +15,8 @@ public interface AccountDA {
   Future<Account> selectUserByUsername(String Username);
 
   Future<ArrayList<UserWithoutPassword>> selectUserList(long id);
+
+  Future<Balance> selectBalanceById(long id);
+
+  Future<Balance> setBalanceByAmount(long id, long amount);
 }

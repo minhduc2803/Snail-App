@@ -62,11 +62,11 @@
             <artifactId>vertx-sync</artifactId>
             <version>${vertx.version}</version>
         </dependency>
-        <dependency>
-            <groupId>io.vertx</groupId>
-            <artifactId>vertx-core</artifactId>
-            <version>${vertx.version}</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>io.vertx</groupId>-->
+<!--            <artifactId>vertx-core</artifactId>-->
+<!--            <version>${vertx.version}</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>io.vertx</groupId>
             <artifactId>vertx-grpc</artifactId>
@@ -299,7 +299,7 @@
                             <goal>compile-custom</goal>
                         </goals>
                         <configuration>
-                            <outputDirectory>${project.basedir}/src/main/java</outputDirectory>
+                            <outputDirectory>${project.basedir}/target/generated-sources/grpc</outputDirectory>
                             <clearOutputDirectory>false</clearOutputDirectory>
                         </configuration>
                     </execution>

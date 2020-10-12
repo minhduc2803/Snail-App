@@ -16,7 +16,7 @@ import vn.zalopay.ducnm8.da.ChatListDA;
 import vn.zalopay.ducnm8.da.ConversationMemberDA;
 import vn.zalopay.ducnm8.da.DataSourceProvider;
 import vn.zalopay.ducnm8.da.TransactionProvider;
-import vn.zalopay.ducnm8.grpc.GreeterImpl;
+import vn.zalopay.ducnm8.grpc.FintechServiceImpl;
 import vn.zalopay.ducnm8.handler.ChatListHandler;
 import vn.zalopay.ducnm8.handler.ConversationListHandler;
 import vn.zalopay.ducnm8.handler.EchoHandler;
@@ -91,7 +91,7 @@ public final class DaggerServiceComponent implements ServiceComponent {
 
   private Provider<WebSocketServer> provideWebSocketServerProvider;
 
-  private Provider<GreeterImpl> provideGreeterImplProvider;
+  private Provider<FintechServiceImpl> provideGreeterImplProvider;
 
   private Provider<GRPCServer> provideGRPCServerProvider;
 

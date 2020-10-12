@@ -5,7 +5,7 @@ import io.vertx.grpc.VertxServer;
 import io.vertx.grpc.VertxServerBuilder;
 import lombok.extern.log4j.Log4j2;
 import lombok.Builder;
-import vn.zalopay.ducnm8.grpc.GreeterImpl;
+import vn.zalopay.ducnm8.grpc.FintechServiceImpl;
 import vn.zalopay.ducnm8.handler.grpc.InterceptorHandler;
 
 
@@ -13,20 +13,20 @@ import vn.zalopay.ducnm8.handler.grpc.InterceptorHandler;
 public class GRPCServer {
     private VertxServer server;
     private Vertx vertx;
-    private GreeterImpl greeterSevice;
+    private FintechServiceImpl fintechService;
     private int port;
 
     @Builder
-    public GRPCServer(Vertx vertx, GreeterImpl greeterSevice, int port){
+    public GRPCServer(Vertx vertx, FintechServiceImpl fintechService, int port){
         this.vertx = vertx;
-        this.greeterSevice = greeterSevice;
+        this.fintechService = fintechService;
         this.port = port;
     }
     public void start() {
         log.info("Starting GRPC Server on port {}", port);
         server = VertxServerBuilder
                 .forAddress(vertx, "0.0.0.0",port)
-                .addService(greeterSevice)
+                .addService(fintechService)
                 .build();
 
         try {

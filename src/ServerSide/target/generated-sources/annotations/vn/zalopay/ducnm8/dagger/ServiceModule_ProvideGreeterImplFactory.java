@@ -3,7 +3,7 @@ package vn.zalopay.ducnm8.dagger;
 import dagger.internal.Factory;
 import dagger.internal.Preconditions;
 import javax.annotation.Generated;
-import vn.zalopay.ducnm8.grpc.GreeterImpl;
+import vn.zalopay.ducnm8.grpc.FintechServiceImpl;
 
 @Generated(
     value = "dagger.internal.codegen.ComponentProcessor",
@@ -13,7 +13,7 @@ import vn.zalopay.ducnm8.grpc.GreeterImpl;
     "unchecked",
     "rawtypes"
 })
-public final class ServiceModule_ProvideGreeterImplFactory implements Factory<GreeterImpl> {
+public final class ServiceModule_ProvideGreeterImplFactory implements Factory<FintechServiceImpl> {
   private final ServiceModule module;
 
   public ServiceModule_ProvideGreeterImplFactory(ServiceModule module) {
@@ -21,7 +21,7 @@ public final class ServiceModule_ProvideGreeterImplFactory implements Factory<Gr
   }
 
   @Override
-  public GreeterImpl get() {
+  public FintechServiceImpl get() {
     return provideGreeterImpl(module);
   }
 
@@ -29,7 +29,7 @@ public final class ServiceModule_ProvideGreeterImplFactory implements Factory<Gr
     return new ServiceModule_ProvideGreeterImplFactory(module);
   }
 
-  public static GreeterImpl provideGreeterImpl(ServiceModule instance) {
+  public static FintechServiceImpl provideGreeterImpl(ServiceModule instance) {
     return Preconditions.checkNotNull(instance.provideGreeterImpl(), "Cannot return null from a non-@Nullable @Provides method");
   }
 }

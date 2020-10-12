@@ -29,8 +29,8 @@ public class BaseTransactionDA extends BaseDA {
     super(statementTimeoutSec);
   }
 
-  protected boolean executeWithParams(
-          Future<Void> result, Connection connection, String stm, Object[] params, String method)
+  protected <T> boolean executeWithParams(
+          Future<T> result, Connection connection, String stm, Object[] params, String method)
           throws SQLException {
 
     PreparedStatement preparedStatement = null;
@@ -42,7 +42,7 @@ public class BaseTransactionDA extends BaseDA {
       int affectedRow = preparedStatement.executeUpdate();
 
       if (1 != affectedRow) {
-        log.info("Failed");
+
         String reason =
                 String.format(
                         "%s wrong effected row expected=1, actual=%d, query=%s, params=%s",
@@ -50,7 +50,7 @@ public class BaseTransactionDA extends BaseDA {
         result.fail("Invalid statement");
         return false;
       } else {
-        log.info("Successful");
+
         result.complete();
         return true;
       }
@@ -165,7 +165,7 @@ public class BaseTransactionDA extends BaseDA {
       T data = mapper.apply(resultSet);
       result.complete(data);
     } catch (Exception e) {
-      LOGGER.warn("Failed execute cause={}", ExceptionUtil.getDetail(e));
+      LOGGER.error("Failed execute cause={}", ExceptionUtil.getDetail(e));
       result.fail(e);
     } finally {
       if (!isTransaction) {

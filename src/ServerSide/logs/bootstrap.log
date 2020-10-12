@@ -26468,3 +26468,404 @@ Caused by: com.mysql.cj.exceptions.CJException: Unknown database 'chatapp'
 2020-10-12 03:05:42,115 INFO  vn.zalopay.ducnm8.utils.JWTUtils Create a new JWT token for id 10
 2020-10-12 03:05:42,135 INFO  vn.zalopay.ducnm8.handler.LoginHandler token len: 100
 2020-10-12 03:05:42,136 INFO  vn.zalopay.ducnm8.handler.LoginHandler Login successfully
+2020-10-12 09:23:09,607 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-10-12 09:23:09,792 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-1 - Start completed.
+2020-10-12 09:23:09,793 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-2 - Starting...
+2020-10-12 09:23:09,805 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-2 - Start completed.
+2020-10-12 09:23:10,267 INFO  org.redisson.Version Redisson 3.11.6
+2020-10-12 09:23:10,366 INFO  org.redisson.connection.pool.MasterConnectionPool 24 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-10-12 09:23:10,369 INFO  org.redisson.connection.pool.MasterPubSubConnectionPool 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-10-12 09:23:10,410 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-3 - Starting...
+2020-10-12 09:23:10,419 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-3 - Start completed.
+2020-10-12 09:23:10,421 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-4 - Starting...
+2020-10-12 09:23:10,428 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-4 - Start completed.
+2020-10-12 09:23:10,438 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-12 09:23:10,439 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-12 09:23:10,439 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-12 09:23:10,439 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-12 09:23:10,439 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-12 09:23:10,440 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-12 09:23:10,440 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-12 09:23:10,439 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-12 09:23:10,475 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-12 09:23:10,478 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-12 09:23:10,478 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-12 09:23:10,478 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-12 09:23:10,479 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-12 09:23:10,479 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-12 09:23:10,480 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-12 09:23:10,480 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-12 09:23:10,480 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-12 09:23:10,480 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-12 09:23:10,481 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-12 09:23:10,481 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-12 09:23:10,481 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-12 09:23:10,481 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-12 09:23:10,481 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-12 09:23:10,481 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-12 09:23:10,603 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-12 09:23:10,604 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-12 09:23:10,604 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-12 09:23:10,604 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-12 09:23:10,603 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-12 09:23:10,606 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-12 09:23:10,604 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-12 09:23:10,611 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-12 09:23:10,711 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-12 09:23:10,711 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-12 09:23:10,712 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-12 09:23:10,712 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-12 09:23:10,712 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-12 09:23:10,712 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-12 09:23:10,712 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-12 09:23:10,712 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-12 09:23:10,712 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-12 09:23:10,712 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-12 09:23:10,713 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-12 09:23:10,714 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-12 09:23:10,714 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-12 09:23:10,714 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-12 09:23:10,714 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-12 09:23:10,722 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-12 09:23:36,076 INFO  vn.zalopay.ducnm8.handler.LoginHandler Login request from : duc
+2020-10-12 09:23:36,076 INFO  vn.zalopay.ducnm8.da.AccountDAImpl select a user by username: duc
+2020-10-12 09:23:36,126 WARN  vn.zalopay.ducnm8.handler.LoginHandler Login failed from: duc ~ cannot find user with username
+2020-10-12 09:24:18,667 INFO  vn.zalopay.ducnm8.handler.LoginHandler Login request from : xeko
+2020-10-12 09:24:18,669 INFO  vn.zalopay.ducnm8.da.AccountDAImpl select a user by username: xeko
+2020-10-12 09:24:18,672 WARN  vn.zalopay.ducnm8.handler.LoginHandler Login failed from: xeko ~ cannot find user with username
+2020-10-12 09:24:31,265 INFO  vn.zalopay.ducnm8.handler.LoginHandler Login request from : xuka
+2020-10-12 09:24:31,265 INFO  vn.zalopay.ducnm8.da.AccountDAImpl select a user by username: xuka
+2020-10-12 09:24:31,275 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-12 09:24:31,276 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-12 09:24:31,276 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-12 09:24:31,277 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-12 09:24:31,277 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-12 09:24:31,283 INFO  vn.zalopay.ducnm8.utils.JWTUtils Create a new JWT token for id 2
+2020-10-12 09:24:31,313 INFO  vn.zalopay.ducnm8.handler.LoginHandler token len: 99
+2020-10-12 09:24:31,314 INFO  vn.zalopay.ducnm8.handler.LoginHandler Login successfully
+2020-10-12 10:05:03,539 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-10-12 10:05:07,649 ERROR com.zaxxer.hikari.pool.HikariPool HikariPool-1 - Exception during pool initialization.
+java.sql.SQLNonTransientConnectionException: Could not create connection to database server. Attempted reconnect 3 times. Giving up.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:108) ~[mysql-connector-java-8.0.11.jar:8.0.11]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:95) ~[mysql-connector-java-8.0.11.jar:8.0.11]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:87) ~[mysql-connector-java-8.0.11.jar:8.0.11]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:61) ~[mysql-connector-java-8.0.11.jar:8.0.11]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:71) ~[mysql-connector-java-8.0.11.jar:8.0.11]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:932) ~[mysql-connector-java-8.0.11.jar:8.0.11]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:857) ~[mysql-connector-java-8.0.11.jar:8.0.11]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:444) ~[mysql-connector-java-8.0.11.jar:8.0.11]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:230) ~[mysql-connector-java-8.0.11.jar:8.0.11]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:226) ~[mysql-connector-java-8.0.11.jar:8.0.11]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.3.1.jar:?]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353) ~[HikariCP-3.3.1.jar:?]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-3.3.1.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473) [HikariCP-3.3.1.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562) [HikariCP-3.3.1.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) [HikariCP-3.3.1.jar:?]
+	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:81) [HikariCP-3.3.1.jar:?]
+	at vn.zalopay.ducnm8.da.DataSourceProviderImpl.getDataSource(DataSourceProviderImpl.java:41) [classes/:?]
+	at vn.zalopay.ducnm8.dagger.ServiceModule.provideUserDA(ServiceModule.java:96) [classes/:?]
+	at vn.zalopay.ducnm8.dagger.ServiceModule_ProvideUserDAFactory.provideUserDA(ServiceModule_ProvideUserDAFactory.java:47) [classes/:?]
+	at vn.zalopay.ducnm8.dagger.ServiceModule_ProvideUserDAFactory.get(ServiceModule_ProvideUserDAFactory.java:36) [classes/:?]
+	at vn.zalopay.ducnm8.dagger.ServiceModule_ProvideUserDAFactory.get(ServiceModule_ProvideUserDAFactory.java:11) [classes/:?]
+	at dagger.internal.DoubleCheck.get(DoubleCheck.java:47) [dagger-2.23.2.jar:?]
+	at vn.zalopay.ducnm8.dagger.ServiceModule_ProvideExampleHandlerFactory.get(ServiceModule_ProvideExampleHandlerFactory.java:40) [classes/:?]
+	at vn.zalopay.ducnm8.dagger.ServiceModule_ProvideExampleHandlerFactory.get(ServiceModule_ProvideExampleHandlerFactory.java:12) [classes/:?]
+	at dagger.internal.DoubleCheck.get(DoubleCheck.java:47) [dagger-2.23.2.jar:?]
+	at vn.zalopay.ducnm8.dagger.ServiceModule_ProvideHandlerFactory.get(ServiceModule_ProvideHandlerFactory.java:65) [classes/:?]
+	at vn.zalopay.ducnm8.dagger.ServiceModule_ProvideHandlerFactory.get(ServiceModule_ProvideHandlerFactory.java:17) [classes/:?]
+	at dagger.internal.DoubleCheck.get(DoubleCheck.java:47) [dagger-2.23.2.jar:?]
+	at vn.zalopay.ducnm8.dagger.ServiceModule_ProvideRestfulAPIFactory.get(ServiceModule_ProvideRestfulAPIFactory.java:40) [classes/:?]
+	at vn.zalopay.ducnm8.dagger.ServiceModule_ProvideRestfulAPIFactory.get(ServiceModule_ProvideRestfulAPIFactory.java:12) [classes/:?]
+	at dagger.internal.DoubleCheck.get(DoubleCheck.java:47) [dagger-2.23.2.jar:?]
+	at vn.zalopay.ducnm8.dagger.DaggerServiceComponent.getRestfulAPI(DaggerServiceComponent.java:140) [classes/:?]
+	at vn.zalopay.ducnm8.Runner.main(Runner.java:32) [classes/:?]
+Caused by: com.mysql.cj.exceptions.CJException: Data source rejected establishment of connection,  message from server: "Too many connections"
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_265]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_265]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_265]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[?:1.8.0_265]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:59) ~[mysql-connector-java-8.0.11.jar:8.0.11]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:103) ~[mysql-connector-java-8.0.11.jar:8.0.11]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:149) ~[mysql-connector-java-8.0.11.jar:8.0.11]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:127) ~[mysql-connector-java-8.0.11.jar:8.0.11]
+	at com.mysql.cj.protocol.a.NativeProtocol.rejectProtocol(NativeProtocol.java:389) ~[mysql-connector-java-8.0.11.jar:8.0.11]
+	at com.mysql.cj.protocol.a.NativeProtocol.readServerCapabilities(NativeProtocol.java:518) ~[mysql-connector-java-8.0.11.jar:8.0.11]
+	at com.mysql.cj.protocol.a.NativeProtocol.beforeHandshake(NativeProtocol.java:401) ~[mysql-connector-java-8.0.11.jar:8.0.11]
+	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1409) ~[mysql-connector-java-8.0.11.jar:8.0.11]
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:165) ~[mysql-connector-java-8.0.11.jar:8.0.11]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:876) ~[mysql-connector-java-8.0.11.jar:8.0.11]
+	... 28 more
+2020-10-12 10:05:22,151 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-10-12 10:05:22,304 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-1 - Start completed.
+2020-10-12 10:05:22,305 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-2 - Starting...
+2020-10-12 10:05:22,313 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-2 - Start completed.
+2020-10-12 10:05:22,682 INFO  org.redisson.Version Redisson 3.11.6
+2020-10-12 10:05:22,823 INFO  org.redisson.connection.pool.MasterPubSubConnectionPool 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-10-12 10:05:22,824 INFO  org.redisson.connection.pool.MasterConnectionPool 24 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-10-12 10:05:22,865 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-3 - Starting...
+2020-10-12 10:05:22,874 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-3 - Start completed.
+2020-10-12 10:05:22,876 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-4 - Starting...
+2020-10-12 10:05:22,887 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-4 - Start completed.
+2020-10-12 10:05:22,902 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-12 10:05:22,906 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-12 10:05:22,907 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-12 10:05:22,913 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-12 10:05:22,915 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-12 10:05:22,918 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-12 10:05:22,919 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-12 10:05:22,924 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-12 10:05:22,934 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-12 10:05:22,937 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-12 10:05:22,937 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-12 10:05:22,938 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-12 10:05:22,939 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-12 10:05:22,941 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-12 10:05:22,941 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-12 10:05:22,941 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-12 10:05:22,942 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-12 10:05:22,942 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-12 10:05:22,942 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-12 10:05:22,942 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-12 10:05:22,942 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-12 10:05:22,943 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-12 10:05:22,943 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-12 10:05:22,943 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-12 10:05:23,046 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-12 10:05:23,046 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-12 10:05:23,046 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-12 10:05:23,046 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-12 10:05:23,047 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-12 10:05:23,048 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-12 10:05:23,048 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-12 10:05:23,048 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-12 10:05:23,050 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-12 10:05:23,050 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-12 10:05:23,051 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-12 10:05:23,051 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-12 10:05:23,051 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-12 10:05:23,052 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-12 10:05:23,052 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-12 10:05:23,052 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-12 10:05:23,052 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-12 10:05:23,053 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-12 10:05:23,053 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-12 10:05:23,053 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-12 10:05:23,053 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-12 10:05:23,054 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-12 10:05:23,054 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-12 10:05:23,054 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-12 10:05:25,933 INFO  vn.zalopay.ducnm8.handler.LoginHandler Login request from : xuka
+2020-10-12 10:05:25,933 INFO  vn.zalopay.ducnm8.da.AccountDAImpl select a user by username: xuka
+2020-10-12 10:05:25,974 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-12 10:05:25,975 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-12 10:05:25,975 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-12 10:05:25,976 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-12 10:05:25,976 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-12 10:05:25,982 INFO  vn.zalopay.ducnm8.utils.JWTUtils Create a new JWT token for id 2
+2020-10-12 10:05:26,011 INFO  vn.zalopay.ducnm8.handler.LoginHandler token len: 99
+2020-10-12 10:05:26,011 INFO  vn.zalopay.ducnm8.handler.LoginHandler Login successfully
+2020-10-12 10:06:25,691 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-10-12 10:06:25,890 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-1 - Start completed.
+2020-10-12 10:06:25,891 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-2 - Starting...
+2020-10-12 10:06:25,901 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-2 - Start completed.
+2020-10-12 10:06:26,436 INFO  org.redisson.Version Redisson 3.11.6
+2020-10-12 10:06:26,553 INFO  org.redisson.connection.pool.MasterConnectionPool 24 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-10-12 10:06:26,554 INFO  org.redisson.connection.pool.MasterPubSubConnectionPool 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-10-12 10:06:26,621 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-3 - Starting...
+2020-10-12 10:06:26,629 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-3 - Start completed.
+2020-10-12 10:06:26,631 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-4 - Starting...
+2020-10-12 10:06:26,639 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-4 - Start completed.
+2020-10-12 10:06:26,653 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-12 10:06:26,656 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-12 10:06:26,657 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-12 10:06:26,658 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-12 10:06:26,663 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-12 10:06:26,664 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-12 10:06:26,664 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-12 10:06:26,664 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-12 10:06:26,697 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-12 10:06:26,698 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-12 10:06:26,698 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-12 10:06:26,699 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-12 10:06:26,699 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-12 10:06:26,699 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-12 10:06:26,699 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-12 10:06:26,699 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-12 10:06:26,699 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-12 10:06:26,699 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-12 10:06:26,699 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-12 10:06:26,700 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-12 10:06:26,700 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-12 10:06:26,699 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-12 10:06:26,701 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-12 10:06:26,701 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-12 10:06:26,874 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-12 10:06:26,874 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-12 10:06:26,875 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-12 10:06:26,874 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-12 10:06:26,874 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-12 10:06:26,876 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-12 10:06:26,877 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-12 10:06:26,879 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-12 10:06:26,882 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-12 10:06:26,884 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-12 10:06:26,885 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-12 10:06:26,886 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-12 10:06:26,886 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-12 10:06:26,886 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-12 10:06:26,886 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-12 10:06:26,887 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-12 10:06:26,887 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-12 10:06:26,887 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-12 10:06:26,887 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-12 10:06:26,887 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-12 10:06:26,887 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-12 10:06:26,888 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-12 10:06:26,888 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-12 10:06:26,888 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-12 10:06:31,007 INFO  vn.zalopay.ducnm8.handler.LoginHandler Login request from : xuka
+2020-10-12 10:06:31,008 INFO  vn.zalopay.ducnm8.da.AccountDAImpl select a user by username: xuka
+2020-10-12 10:06:31,051 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-12 10:06:31,052 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-12 10:06:31,052 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-12 10:06:31,053 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-12 10:06:31,053 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-12 10:06:31,059 INFO  vn.zalopay.ducnm8.utils.JWTUtils Create a new JWT token for id 2
+2020-10-12 10:06:31,092 INFO  vn.zalopay.ducnm8.handler.LoginHandler token len: 99
+2020-10-12 10:06:31,094 INFO  vn.zalopay.ducnm8.handler.LoginHandler Login successfully
+2020-10-12 10:10:40,696 INFO  vn.zalopay.ducnm8.handler.LoginHandler Login request from : xuka
+2020-10-12 10:10:40,696 INFO  vn.zalopay.ducnm8.da.AccountDAImpl select a user by username: xuka
+2020-10-12 10:10:40,705 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-12 10:10:40,706 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-12 10:10:40,706 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-12 10:10:40,706 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-12 10:10:40,706 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-12 10:10:53,975 INFO  vn.zalopay.ducnm8.utils.JWTUtils Create a new JWT token for id 2
+2020-10-12 10:15:10,720 WARN  com.zaxxer.hikari.pool.HikariPool HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=4m31s865ms669µs295ns).
+2020-10-12 10:15:10,723 WARN  com.zaxxer.hikari.pool.HikariPool HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m16s745ms575µs775ns).
+2020-10-12 10:15:10,726 WARN  com.zaxxer.hikari.pool.HikariPool HikariPool-3 - Thread starvation or clock leap detected (housekeeper delta=4m31s864ms100µs753ns).
+2020-10-12 10:15:10,722 WARN  com.zaxxer.hikari.pool.HikariPool HikariPool-4 - Thread starvation or clock leap detected (housekeeper delta=4m31s869ms137µs311ns).
+2020-10-12 10:15:10,743 INFO  vn.zalopay.ducnm8.handler.LoginHandler token len: 99
+2020-10-12 10:15:14,412 INFO  vn.zalopay.ducnm8.handler.LoginHandler Login request from : xuka
+2020-10-12 10:15:14,413 INFO  vn.zalopay.ducnm8.da.AccountDAImpl select a user by username: xuka
+2020-10-12 10:15:16,058 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-12 10:15:16,529 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-12 10:15:16,529 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-12 10:15:16,530 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-12 10:15:16,530 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-12 10:15:17,947 INFO  vn.zalopay.ducnm8.handler.LoginHandler Login successfully
+2020-10-12 10:15:17,950 INFO  vn.zalopay.ducnm8.utils.JWTUtils Create a new JWT token for id 2
+2020-10-12 10:15:17,951 INFO  vn.zalopay.ducnm8.handler.LoginHandler token len: 99
+2020-10-12 10:15:17,952 INFO  vn.zalopay.ducnm8.handler.LoginHandler Login successfully
+2020-10-12 10:15:51,359 WARN  vn.zalopay.ducnm8.da.BaseTransactionDA Failed execute cause= message: Response is closed
+, stackTrace: java.lang.IllegalStateException: Response is closed
+	at io.vertx.core.http.impl.HttpServerResponseImpl.checkValid(HttpServerResponseImpl.java:575)
+	at io.vertx.core.http.impl.HttpServerResponseImpl.putHeader(HttpServerResponseImpl.java:157)
+	at io.vertx.core.http.impl.HttpServerResponseImpl.putHeader(HttpServerResponseImpl.java:54)
+	at vn.zalopay.ducnm8.handler.BaseHandler.lambda$handle$0(BaseHandler.java:41)
+	at io.vertx.core.impl.FutureImpl.tryComplete(FutureImpl.java:125)
+	at io.vertx.core.impl.FutureImpl.complete(FutureImpl.java:86)
+	at vn.zalopay.ducnm8.handler.LoginHandler.lambda$handle$0(LoginHandler.java:94)
+	at io.vertx.core.impl.FutureImpl.tryComplete(FutureImpl.java:125)
+	at io.vertx.core.impl.FutureImpl.complete(FutureImpl.java:86)
+	at vn.zalopay.ducnm8.da.BaseTransactionDA.queryEntity(BaseTransactionDA.java:166)
+	at vn.zalopay.ducnm8.da.AccountDAImpl.lambda$selectUserByUsername$3(AccountDAImpl.java:85)
+	at vn.zalopay.ducnm8.utils.AsyncHandler.lambda$run$0(AsyncHandler.java:21)
+	at io.vertx.core.impl.ContextImpl.lambda$executeBlocking$2(ContextImpl.java:272)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+
+2020-10-12 10:16:13,835 ERROR vn.zalopay.ducnm8.utils.AsyncHandler Failed executeBlocking cause= message: Result is already complete: succeeded
+, stackTrace: java.lang.IllegalStateException: Result is already complete: succeeded
+	at io.vertx.core.impl.FutureImpl.fail(FutureImpl.java:101)
+	at vn.zalopay.ducnm8.da.BaseTransactionDA.queryEntity(BaseTransactionDA.java:169)
+	at vn.zalopay.ducnm8.da.AccountDAImpl.lambda$selectUserByUsername$3(AccountDAImpl.java:85)
+	at vn.zalopay.ducnm8.utils.AsyncHandler.lambda$run$0(AsyncHandler.java:21)
+	at io.vertx.core.impl.ContextImpl.lambda$executeBlocking$2(ContextImpl.java:272)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+
+2020-10-12 10:16:23,105 INFO  vn.zalopay.ducnm8.handler.LoginHandler Login request from : xuka
+2020-10-12 10:16:23,105 INFO  vn.zalopay.ducnm8.da.AccountDAImpl select a user by username: xuka
+2020-10-12 10:16:23,107 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-12 10:16:23,108 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-12 10:16:23,108 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-12 10:16:23,108 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-12 10:16:23,108 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-12 10:16:28,473 INFO  vn.zalopay.ducnm8.utils.JWTUtils Create a new JWT token for id 2
+2020-10-12 10:16:28,618 INFO  vn.zalopay.ducnm8.handler.LoginHandler token len: 99
+2020-10-12 10:16:32,650 INFO  vn.zalopay.ducnm8.handler.LoginHandler Login successfully
+2020-10-12 10:56:49,223 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-10-12 10:56:49,381 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-1 - Start completed.
+2020-10-12 10:56:49,382 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-2 - Starting...
+2020-10-12 10:56:49,391 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-2 - Start completed.
+2020-10-12 10:56:49,778 INFO  org.redisson.Version Redisson 3.11.6
+2020-10-12 10:56:49,882 INFO  org.redisson.connection.pool.MasterPubSubConnectionPool 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-10-12 10:56:49,891 INFO  org.redisson.connection.pool.MasterConnectionPool 24 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-10-12 10:56:49,932 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-3 - Starting...
+2020-10-12 10:56:49,943 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-3 - Start completed.
+2020-10-12 10:56:49,945 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-4 - Starting...
+2020-10-12 10:56:49,952 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-4 - Start completed.
+2020-10-12 10:56:49,964 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-12 10:56:49,964 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-12 10:56:49,964 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-12 10:56:49,964 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-12 10:56:49,965 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-12 10:56:49,965 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-12 10:56:49,966 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-12 10:56:49,970 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-12 10:56:49,995 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-12 10:56:49,997 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-12 10:56:49,997 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-12 10:56:49,997 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-12 10:56:49,997 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-12 10:56:49,997 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-12 10:56:49,998 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-12 10:56:49,998 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-12 10:56:49,998 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-12 10:56:49,997 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-12 10:56:49,997 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-12 10:56:49,999 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-12 10:56:49,999 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-12 10:56:49,999 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-12 10:56:50,000 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-12 10:56:50,000 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-12 10:56:50,206 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-12 10:56:50,208 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-12 10:56:50,209 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-12 10:56:50,210 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-12 10:56:50,210 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-12 10:56:50,210 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-12 10:56:50,213 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-12 10:56:50,216 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-12 10:56:50,218 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-12 10:56:50,218 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-12 10:56:50,218 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-12 10:56:50,218 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-12 10:56:50,218 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-12 10:56:50,219 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-12 10:56:50,219 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-12 10:56:50,221 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-12 10:56:50,224 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-12 10:56:50,224 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-12 10:56:50,224 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-12 10:56:50,224 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-12 10:56:50,224 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-12 10:56:50,224 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-12 10:56:50,224 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-12 10:56:50,228 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-12 10:56:56,195 INFO  vn.zalopay.ducnm8.handler.LoginHandler Login request from : xuka
+2020-10-12 10:56:56,195 INFO  vn.zalopay.ducnm8.da.AccountDAImpl select a user by username: xuka
+2020-10-12 10:56:56,236 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-12 10:56:56,237 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-12 10:56:56,237 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-12 10:56:56,237 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-12 10:56:56,237 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-12 10:56:56,243 INFO  vn.zalopay.ducnm8.utils.JWTUtils Create a new JWT token for id 2
+2020-10-12 10:56:56,274 INFO  vn.zalopay.ducnm8.handler.LoginHandler token len: 99
+2020-10-12 10:56:56,275 INFO  vn.zalopay.ducnm8.handler.LoginHandler Login successfully

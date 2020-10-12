@@ -8,11 +8,12 @@ import vn.zalopay.ducnm8.handler.grpc.GetHistoryHandler;
 import vn.zalopay.ducnm8.handler.grpc.GetNotificationHandler;
 import vn.zalopay.ducnm8.handler.grpc.TransferHandler;
 
+
 @Log4j2
 @Builder
-public class GreeterImpl extends FintechServiceGrpc.FintechServiceVertxImplBase{
+public class FintechServiceImpl extends FintechServiceGrpc.FintechServiceVertxImplBase{
 
-    public GreeterImpl(){
+    public FintechServiceImpl(){
 
     }
     @Override

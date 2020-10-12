@@ -3,7 +3,7 @@ package vn.zalopay.ducnm8.dagger;
 import vn.zalopay.ducnm8.cache.*;
 import vn.zalopay.ducnm8.config.ServiceConfig;
 import vn.zalopay.ducnm8.da.*;
-import vn.zalopay.ducnm8.grpc.GreeterImpl;
+import vn.zalopay.ducnm8.grpc.FintechServiceImpl;
 import vn.zalopay.ducnm8.handler.*;
 import vn.zalopay.ducnm8.server.GRPCServer;
 import vn.zalopay.ducnm8.server.RestfulAPI;
@@ -253,15 +253,15 @@ public class ServiceModule {
 
   @Provides
   @Singleton
-  GreeterImpl provideGreeterImpl(){
-    return GreeterImpl.builder().build();
+  FintechServiceImpl provideGreeterImpl(){
+    return FintechServiceImpl.builder().build();
   }
   @Provides
   @Singleton
-  GRPCServer provideGRPCServer(Vertx vertx, GreeterImpl greeterService){
+  GRPCServer provideGRPCServer(Vertx vertx, FintechServiceImpl fintechService){
     return GRPCServer.builder()
             .vertx(vertx)
-            .greeterSevice(greeterService)
+            .fintechService(fintechService)
             .port(serviceConfig.getGrpcPort())
             .build();
   }

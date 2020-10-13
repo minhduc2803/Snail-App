@@ -18,9 +18,9 @@ public class TransferHistoryDAImpl extends BaseTransactionDA implements Transfer
     private final DataSource dataSource;
     private final AsyncHandler asyncHandler;
     private static final String INSERT_TRANSFER_HISTORY_STATEMENT =
-            "INSERT INTO transfer_history (`transfer_id`,`user_id`,`partner_id`,`transfer_type`,`balance`) VALUES (?, ?, ?, ?, ?)";
+            "INSERT INTO transfer_history (`transfer_id`,`user_id`,`partner_id`,`transfer_type`) VALUES (?, ?, ?, ?)";
     private static final String SELECT_TRANSFER_HISTORY_BY_ACCOUNT_ID =
-            "SELECT H.transfer_id, H.user_id, H.partner_id, H.transfer_type, H.balance,\n" +
+            "SELECT H.transfer_id, H.user_id, H.partner_id, H.transfer_type,\n" +
             "T.amount, T.amount, T.message, T.transfer_time,\n" +
             "C.user_name, C.full_name\n" +
             "FROM transfer_history as H\n" +
@@ -35,13 +35,13 @@ public class TransferHistoryDAImpl extends BaseTransactionDA implements Transfer
     }
 
     @Override
-    public Executable<TransferHistory> insert(TransferHistory transferHistory) {
+    public Executable<Long> insert(TransferHistory transferHistory) {
         log.info("insert a new transfer history");
         return connection -> {
-            Future<TransferHistory> future = Future.future();
+            Future<Long> future = Future.future();
             asyncHandler.run(
                     () -> {
-                        Object[] params = {transferHistory.getTransferId(), transferHistory.getUserId(), transferHistory.getPartnerId(), transferHistory.getTransferType(), transferHistory.getBalance()};
+                        Object[] params = {transferHistory.getTransferId(), transferHistory.getUserId(), transferHistory.getPartnerId(), transferHistory.getTransferType()};
                         try {
                             executeWithParams(future, connection.unwrap(), INSERT_TRANSFER_HISTORY_STATEMENT, params, "insertTransferHistory");
                         } catch (SQLException e) {

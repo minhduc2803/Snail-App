@@ -8,10 +8,7 @@ import vn.zalopay.ducnm8.utils.ExceptionUtil;
 import vn.zalopay.ducnm8.utils.JsonProtoUtils;
 
 import java.lang.invoke.MethodHandles;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class BaseTransactionDA extends BaseDA {
   private static final Logger LOGGER =
@@ -29,13 +26,13 @@ public class BaseTransactionDA extends BaseDA {
     super(statementTimeoutSec);
   }
 
-  protected <T> void executeWithParams(
-          Future<T> result, Connection connection, String stm, Object[] params, String method)
+  protected void executeWithParams(
+          Future<Long> result, Connection connection, String stm, Object[] params, String method)
           throws SQLException {
 
     PreparedStatement preparedStatement = null;
     try {
-      preparedStatement = connection.prepareStatement(stm);
+      preparedStatement = connection.prepareStatement(stm, Statement.RETURN_GENERATED_KEYS);
       preparedStatement.setQueryTimeout(statementTimeoutSec);
 
       setParamsFromArray(preparedStatement, params);
@@ -49,8 +46,14 @@ public class BaseTransactionDA extends BaseDA {
                         method, affectedRow, stm, JsonProtoUtils.printGson(params));
         result.fail("Invalid statement");
       } else {
-
-        result.complete();
+        try (ResultSet generatedKeys = preparedStatement.getGeneratedKeys()) {
+          if (generatedKeys.next()) {
+            result.complete(generatedKeys.getLong(1));
+          }
+          else {
+            result.complete(Long.valueOf(-1));
+          }
+        }
       }
     } finally {
       closeResource(LOGGER, preparedStatement);

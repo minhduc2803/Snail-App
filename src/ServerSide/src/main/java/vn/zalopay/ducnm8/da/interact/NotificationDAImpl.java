@@ -34,10 +34,10 @@ public class NotificationDAImpl extends BaseTransactionDA implements Notificatio
         this.asyncHandler = asyncHandler;
     }
     @Override
-    public Executable<Notification> insert(Notification notification) {
+    public Executable<Long> insert(Notification notification) {
         log.info("insert a new notification for user_id {}",notification.getUserId());
         return connection -> {
-            Future<Notification> future = Future.future();
+            Future<Long> future = Future.future();
             asyncHandler.run(
                     () -> {
                         Object[] params = {notification.getNotificationType(), notification.getUserId(), notification.getPartnerId(), notification.getAmount(), notification.getMessage(), notification.isSeen()};
@@ -52,10 +52,10 @@ public class NotificationDAImpl extends BaseTransactionDA implements Notificatio
     }
 
     @Override
-    public Executable<Notification> updateSeenNotificationById(long id) {
+    public Executable<Long> updateSeenNotificationById(long id) {
         log.info("update seen a notification: id={}", id);
         return connection -> {
-            Future<Notification> future = Future.future();
+            Future<Long> future = Future.future();
             asyncHandler.run(
                     () -> {
                         Object[] params = {id};

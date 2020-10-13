@@ -12,7 +12,9 @@ import vn.zalopay.ducnm8.da.DataSourceProvider;
 import vn.zalopay.ducnm8.da.TransactionProvider;
 import vn.zalopay.ducnm8.da.interact.AccountDA;
 import vn.zalopay.ducnm8.da.interact.ChatListDA;
+import vn.zalopay.ducnm8.da.interact.NotificationDA;
 import vn.zalopay.ducnm8.da.interact.TransferDA;
+import vn.zalopay.ducnm8.da.interact.TransferHistoryDA;
 import vn.zalopay.ducnm8.grpc.FintechServiceImpl;
 import vn.zalopay.ducnm8.handler.ChatListHandler;
 import vn.zalopay.ducnm8.handler.EchoHandler;
@@ -88,6 +90,10 @@ public final class DaggerServiceComponent implements ServiceComponent {
 
   private Provider<TransferDA> provideTransferDAProvider;
 
+  private Provider<TransferHistoryDA> provideTransferHistoryDAProvider;
+
+  private Provider<NotificationDA> provideNotificationDAProvider;
+
   private Provider<TransferHandler> provideTransferHandlerProvider;
 
   private Provider<GetNotificationHandler> provideGetNotificationHandlerProvider;
@@ -132,7 +138,9 @@ public final class DaggerServiceComponent implements ServiceComponent {
     this.provideGetBalanceHandlerProvider = DoubleCheck.provider(ServiceModule_ProvideGetBalanceHandlerFactory.create(serviceModuleParam, provideAccountDAProvider));
     this.provideGetHistoryHandlerProvider = DoubleCheck.provider(ServiceModule_ProvideGetHistoryHandlerFactory.create(serviceModuleParam));
     this.provideTransferDAProvider = DoubleCheck.provider(ServiceModule_ProvideTransferDAFactory.create(serviceModuleParam, provideDataSourceProvider, ProvideAsyncHandlerProvider));
-    this.provideTransferHandlerProvider = DoubleCheck.provider(ServiceModule_ProvideTransferHandlerFactory.create(serviceModuleParam, provideTransferDAProvider));
+    this.provideTransferHistoryDAProvider = DoubleCheck.provider(ServiceModule_ProvideTransferHistoryDAFactory.create(serviceModuleParam, provideDataSourceProvider, ProvideAsyncHandlerProvider));
+    this.provideNotificationDAProvider = DoubleCheck.provider(ServiceModule_ProvideNotificationDAFactory.create(serviceModuleParam, provideDataSourceProvider, ProvideAsyncHandlerProvider));
+    this.provideTransferHandlerProvider = DoubleCheck.provider(ServiceModule_ProvideTransferHandlerFactory.create(serviceModuleParam, provideTransferDAProvider, provideAccountDAProvider, provideTransferHistoryDAProvider, provideNotificationDAProvider, provideTransactionProvider));
     this.provideGetNotificationHandlerProvider = DoubleCheck.provider(ServiceModule_ProvideGetNotificationHandlerFactory.create(serviceModuleParam));
     this.provideFintechServiceImplProvider = DoubleCheck.provider(ServiceModule_ProvideFintechServiceImplFactory.create(serviceModuleParam, provideGetBalanceHandlerProvider, provideGetHistoryHandlerProvider, provideTransferHandlerProvider, provideGetNotificationHandlerProvider));
     this.provideInterceptorHandlerProvider = DoubleCheck.provider(ServiceModule_ProvideInterceptorHandlerFactory.create(serviceModuleParam));

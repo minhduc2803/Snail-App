@@ -30,10 +30,10 @@ public class ConversationMemberDAImpl extends BaseTransactionDA implements Conve
         this.asyncHandler = asyncHandler;
     }
     @Override
-    public Executable<ConversationMember> insert(ConversationMember conversationMember) {
+    public Executable<Long> insert(ConversationMember conversationMember) {
         log.info("MYSQL: INSERTING A NEW CHAT MEMBER");
         return connection -> {
-            Future<ConversationMember> future = Future.future();
+            Future<Long> future = Future.future();
             asyncHandler.run(
                     () -> {
                         Object[] params = {conversationMember.getConversationId()};

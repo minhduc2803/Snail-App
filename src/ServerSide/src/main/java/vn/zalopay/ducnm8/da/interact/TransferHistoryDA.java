@@ -7,7 +7,7 @@ import vn.zalopay.ducnm8.model.TransferHistory;
 import java.util.ArrayList;
 
 public interface TransferHistoryDA {
-    Executable<TransferHistory> insert(TransferHistory transferHistory);
+    Executable<Long> insert(TransferHistory transferHistory);
 
     Future<ArrayList<TransferHistory>> selectTransferHistoryByAccountId(long id);
 }

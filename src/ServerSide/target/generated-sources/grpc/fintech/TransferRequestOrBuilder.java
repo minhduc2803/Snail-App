@@ -26,4 +26,14 @@ public interface TransferRequestOrBuilder extends
    * <code>int64 amount = 3;</code>
    */
   long getAmount();
+
+  /**
+   * <code>string message = 4;</code>
+   */
+  java.lang.String getMessage();
+  /**
+   * <code>string message = 4;</code>
+   */
+  com.google.protobuf.ByteString
+      getMessageBytes();
 }

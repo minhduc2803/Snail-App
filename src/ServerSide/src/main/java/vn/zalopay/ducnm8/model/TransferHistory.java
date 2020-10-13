@@ -24,9 +24,6 @@ public class TransferHistory {
     @DBTable(columnName = "transfer_type")
     long transferType;
 
-    @DBTable(columnName = "balance")
-    long balance;
-
     @DBTable(columnName = "amount")
     long amount;
 

@@ -13,7 +13,9 @@ import vn.zalopay.ducnm8.da.interact.AccountDA;
 import vn.zalopay.ducnm8.da.interact.NotificationDA;
 import vn.zalopay.ducnm8.da.interact.TransferDA;
 import vn.zalopay.ducnm8.da.interact.TransferHistoryDA;
+import vn.zalopay.ducnm8.model.Notification;
 import vn.zalopay.ducnm8.model.Transfer;
+import vn.zalopay.ducnm8.model.TransferHistory;
 
 import java.time.Instant;
 
@@ -28,14 +30,15 @@ public class TransferHandler {
     long receiver;
     long amount;
     String message;
+    long transferTime = Instant.now().getEpochSecond();
+    TransferHistory transferHistory;
 
     public TransferHandler(
          TransferDA transferDA,
          AccountDA accountDA,
          TransferHistoryDA transferHistoryDA,
          NotificationDA notificationDA,
-         TransactionProvider transactionProvider
-    ) {
+         TransactionProvider transactionProvider) {
         this.transferDA = transferDA;
         this.accountDA = accountDA;
         this.transferHistoryDA = transferHistoryDA;
@@ -57,9 +60,10 @@ public class TransferHandler {
             .compose(next -> transaction.execute(accountDA.plusBalanceByAmount(sender, - amount)))
             .compose(next -> transaction.execute(accountDA.plusBalanceByAmount(receiver, amount)))
             .compose(next -> transaction.execute(transferDA.insert(createTransferCertificate())))
-            .compose(next -> transaction.execute(transferHistoryDA.insert(sender)))
-            .compose(next -> transaction.execute(transferHistoryDA.insert(receiver)))
-            .compose(next -> transaction.execute(notificationDA.insert(receiver)))
+            .compose(transfer -> transaction.execute(transferHistoryDA.insert(createTransferHistory(true,transfer.getId()))))
+            .compose(transferHistory -> transaction.execute(transferHistoryDA.insert(createTransferHistory(false,transferHistory.getTransferId()))))
+            .compose(next -> transaction.execute(notificationDA.insert(createNotification())))
+            .compose(next -> accountDA.selectBalanceById(sender))
             .setHandler(rs -> {
 
             });
@@ -90,7 +94,33 @@ public class TransferHandler {
                 .receiverId(receiver)
                 .amount(amount)
                 .message(message)
-                .transferTime(Instant.now().getEpochSecond())
+                .transferTime(transferTime)
+                .build();
+    }
+
+    private TransferHistory createTransferHistory(boolean isSender, long transfer_id){
+        return isSender ?
+                TransferHistory.builder()
+                .transferId(transfer_id)
+                .userId(sender)
+                .partnerId(receiver)
+                .build()
+                :
+                TransferHistory.builder()
+                .transferId(transfer_id)
+                .userId(receiver)
+                .partnerId(sender)
+                .build();
+    }
+
+    private Notification createNotification() {
+        return Notification.builder()
+                .notificationType(1)
+                .userId(receiver)
+                .partnerId(sender)
+                .amount(amount)
+                .message(message)
+                .seen(false)
                 .build();
     }
 }

@@ -122,34 +122,34 @@ public final class FinTechProto {
       "age\030\006 \001(\t\022\021\n\ttimestamp\030\007 \001(\003\022\017\n\007balance\030" +
       "\010 \001(\003\0228\n\rtransfer_type\030\t \001(\0162!.fintech.H" +
       "istoryItem.TransferType\"%\n\014TransferType\022" +
-      "\010\n\004SEND\020\000\022\013\n\007RECEIVE\020\001\"I\n\017TransferReques",
+      "\010\n\004SEND\020\000\022\013\n\007RECEIVE\020\001\"Z\n\017TransferReques",
       "t\022\021\n\tsender_id\030\001 \001(\003\022\023\n\013receiver_id\030\002 \001(" +
-      "\003\022\016\n\006amount\030\003 \001(\003\"\223\001\n\020TransferResponse\022\035" +
-      "\n\005error\030\001 \001(\0132\016.fintech.Error\022,\n\004data\030\002 " +
-      "\001(\0132\036.fintech.TransferResponse.Data\0322\n\004D" +
-      "ata\022*\n\014history_item\030\001 \001(\0132\024.fintech.Hist" +
-      "oryItem\"\025\n\023NotificationRequest\"\246\001\n\024Notif" +
-      "icationResponse\022\035\n\005error\030\001 \001(\0132\016.fintech" +
-      ".Error\0220\n\004data\030\002 \001(\0132\".fintech.Notificat" +
-      "ionResponse.Data\032=\n\004Data\0225\n\022notification" +
-      "_items\030\001 \003(\0132\031.fintech.NotificationItem\"",
-      "\277\001\n\020NotificationItem\022\027\n\017notification_id\030" +
-      "\001 \001(\003\022\014\n\004mode\030\002 \001(\005\022\022\n\npartner_id\030\003 \001(\003\022" +
-      "\016\n\006amount\030\004 \001(\003\022\017\n\007message\030\005 \001(\t\0220\n\006unre" +
-      "ad\030\006 \001(\0162 .fintech.NotificationItem.UnRe" +
-      "ad\"\035\n\006UnRead\022\010\n\004TRUE\020\000\022\t\n\005FALSE\020\001*n\n\004Cod" +
-      "e\022\013\n\007SUCCESS\020\000\022\026\n\022INCORRECT_PASSWORD\020\001\022\020" +
-      "\n\014UNAUTHORIZED\020\002\022\024\n\020NOT_ENOUGH_MONEY\020\003\022\031" +
-      "\n\025INTERNAL_SERVER_ERROR\020\0042\253\002\n\016FintechSer" +
-      "vice\022A\n\ngetBalance\022\027.fintech.BalanceRequ" +
-      "est\032\030.fintech.BalanceResponse\"\000\022A\n\ngetHi",
-      "story\022\027.fintech.HistoryRequest\032\030.fintech" +
-      ".HistoryResponse\"\000\022A\n\010transfer\022\030.fintech" +
-      ".TransferRequest\032\031.fintech.TransferRespo" +
-      "nse\"\000\022P\n\017getNotification\022\034.fintech.Notif" +
-      "icationRequest\032\035.fintech.NotificationRes" +
-      "ponse\"\000B\031\n\007fintechB\014FinTechProtoP\001b\006prot" +
-      "o3"
+      "\003\022\016\n\006amount\030\003 \001(\003\022\017\n\007message\030\004 \001(\t\"\223\001\n\020T" +
+      "ransferResponse\022\035\n\005error\030\001 \001(\0132\016.fintech" +
+      ".Error\022,\n\004data\030\002 \001(\0132\036.fintech.TransferR" +
+      "esponse.Data\0322\n\004Data\022*\n\014history_item\030\001 \001" +
+      "(\0132\024.fintech.HistoryItem\"\025\n\023Notification" +
+      "Request\"\246\001\n\024NotificationResponse\022\035\n\005erro" +
+      "r\030\001 \001(\0132\016.fintech.Error\0220\n\004data\030\002 \001(\0132\"." +
+      "fintech.NotificationResponse.Data\032=\n\004Dat" +
+      "a\0225\n\022notification_items\030\001 \003(\0132\031.fintech.",
+      "NotificationItem\"\277\001\n\020NotificationItem\022\027\n" +
+      "\017notification_id\030\001 \001(\003\022\014\n\004mode\030\002 \001(\005\022\022\n\n" +
+      "partner_id\030\003 \001(\003\022\016\n\006amount\030\004 \001(\003\022\017\n\007mess" +
+      "age\030\005 \001(\t\0220\n\006unread\030\006 \001(\0162 .fintech.Noti" +
+      "ficationItem.UnRead\"\035\n\006UnRead\022\010\n\004TRUE\020\000\022" +
+      "\t\n\005FALSE\020\001*n\n\004Code\022\013\n\007SUCCESS\020\000\022\026\n\022INCOR" +
+      "RECT_PASSWORD\020\001\022\020\n\014UNAUTHORIZED\020\002\022\024\n\020NOT" +
+      "_ENOUGH_MONEY\020\003\022\031\n\025INTERNAL_SERVER_ERROR" +
+      "\020\0042\253\002\n\016FintechService\022A\n\ngetBalance\022\027.fi" +
+      "ntech.BalanceRequest\032\030.fintech.BalanceRe",
+      "sponse\"\000\022A\n\ngetHistory\022\027.fintech.History" +
+      "Request\032\030.fintech.HistoryResponse\"\000\022A\n\010t" +
+      "ransfer\022\030.fintech.TransferRequest\032\031.fint" +
+      "ech.TransferResponse\"\000\022P\n\017getNotificatio" +
+      "n\022\034.fintech.NotificationRequest\032\035.fintec" +
+      "h.NotificationResponse\"\000B\031\n\007fintechB\014Fin" +
+      "TechProtoP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -222,7 +222,7 @@ public final class FinTechProto {
     internal_static_fintech_TransferRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fintech_TransferRequest_descriptor,
-        new java.lang.String[] { "SenderId", "ReceiverId", "Amount", });
+        new java.lang.String[] { "SenderId", "ReceiverId", "Amount", "Message", });
     internal_static_fintech_TransferResponse_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_fintech_TransferResponse_fieldAccessorTable = new

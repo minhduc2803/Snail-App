@@ -10,7 +10,7 @@ import vn.zalopay.ducnm8.model.UserWithoutPassword;
 import java.util.ArrayList;
 
 public interface AccountDA {
-  Executable<Account> insert(Account account);
+  Executable<Long> insert(Account account);
 
   Future<User> selectUserById(long id);
 
@@ -20,7 +20,7 @@ public interface AccountDA {
 
   Future<Balance> selectBalanceById(long id);
 
-  Executable<Balance> plusBalanceByAmount(long id, long amount);
+  Executable<Long> plusBalanceByAmount(long id, long amount);
 
-  Executable<Balance> updateNumberNotification(long id, int number);
+  Executable<Long> updateNumberNotification(long id, int number);
 }

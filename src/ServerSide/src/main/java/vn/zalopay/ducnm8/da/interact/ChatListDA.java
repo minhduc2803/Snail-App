@@ -8,7 +8,7 @@ import vn.zalopay.ducnm8.model.FullChat;
 import java.util.List;
 
 public interface ChatListDA {
-    Executable<Chat> insert(Chat chat);
+    Executable<Long> insert(Chat chat);
 
     Future<List<Chat>> listChatByMember(long senderId, long receiverId);
 }

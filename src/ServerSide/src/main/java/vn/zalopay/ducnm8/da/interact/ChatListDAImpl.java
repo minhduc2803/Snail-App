@@ -32,11 +32,11 @@ public class ChatListDAImpl extends BaseTransactionDA implements ChatListDA{
         this.asyncHandler = asyncHandler;
     }
     @Override
-    public Executable<Chat> insert(Chat chat) {
+    public Executable<Long> insert(Chat chat) {
         log.info("insert a new chat");
 
         return connection -> {
-            Future<Chat> future = Future.future();
+            Future<Long> future = Future.future();
             asyncHandler.run(
                     () -> {
                         Object[] params = {chat.getSenderId(), chat.getReceiverId(), chat.getChatType(), chat.getContent(), chat.getSentTime()};

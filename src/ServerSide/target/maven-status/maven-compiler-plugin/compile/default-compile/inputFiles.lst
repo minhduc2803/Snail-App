@@ -5,7 +5,6 @@
 /home/minhduc/Pro/vng/module-10/Snail-App/src/ServerSide/src/main/java/vn/zalopay/ducnm8/handler/grpc/InterceptorHandler.java
 /home/minhduc/Pro/vng/module-10/Snail-App/src/ServerSide/src/main/java/vn/zalopay/ducnm8/entity/request/BaseRequest.java
 /home/minhduc/Pro/vng/module-10/Snail-App/src/ServerSide/src/main/java/vn/zalopay/ducnm8/handler/grpc/TransferHandler.java
-/home/minhduc/Pro/vng/module-10/Snail-App/src/ServerSide/src/main/java/vn/zalopay/ducnm8/handler/GRPCHandler.java
 /home/minhduc/Pro/vng/module-10/Snail-App/src/ServerSide/src/main/java/vn/zalopay/ducnm8/model/Account.java
 /home/minhduc/Pro/vng/module-10/Snail-App/src/ServerSide/src/main/java/vn/zalopay/ducnm8/handler/EchoHandler.java
 /home/minhduc/Pro/vng/module-10/Snail-App/src/ServerSide/src/main/java/vn/zalopay/ducnm8/cache/ConversationListCacheImpl.java
@@ -29,6 +28,8 @@
 /home/minhduc/Pro/vng/module-10/Snail-App/src/ServerSide/src/main/java/vn/zalopay/ducnm8/handler/grpc/GetHistoryHandler.java
 /home/minhduc/Pro/vng/module-10/Snail-App/src/ServerSide/src/main/java/vn/zalopay/ducnm8/utils/JsonProtoUtils.java
 /home/minhduc/Pro/vng/module-10/Snail-App/src/ServerSide/target/generated-sources/grpc/fintech/HistoryItemOrBuilder.java
+/home/minhduc/Pro/vng/module-10/Snail-App/src/ServerSide/src/main/java/vn/zalopay/ducnm8/model/FullChat.java
+/home/minhduc/Pro/vng/module-10/Snail-App/src/ServerSide/src/main/java/vn/zalopay/ducnm8/model/User.java
 /home/minhduc/Pro/vng/module-10/Snail-App/src/ServerSide/src/main/java/vn/zalopay/ducnm8/model/TransferHistory.java
 /home/minhduc/Pro/vng/module-10/Snail-App/src/ServerSide/target/generated-sources/grpc/fintech/FinTechProto.java
 /home/minhduc/Pro/vng/module-10/Snail-App/src/ServerSide/src/main/java/vn/zalopay/ducnm8/cache/CacheKey.java
@@ -45,7 +46,6 @@
 /home/minhduc/Pro/vng/module-10/Snail-App/src/ServerSide/src/main/java/vn/zalopay/ducnm8/entity/response/LoginResponse.java
 /home/minhduc/Pro/vng/module-10/Snail-App/src/ServerSide/target/generated-sources/grpc/fintech/FintechServiceGrpc.java
 /home/minhduc/Pro/vng/module-10/Snail-App/src/ServerSide/target/generated-sources/grpc/fintech/TransferResponse.java
-/home/minhduc/Pro/vng/module-10/Snail-App/src/ServerSide/src/main/java/vn/zalopay/ducnm8/handler/ConversationListHandler.java
 /home/minhduc/Pro/vng/module-10/Snail-App/src/ServerSide/target/generated-sources/grpc/fintech/NotificationResponseOrBuilder.java
 /home/minhduc/Pro/vng/module-10/Snail-App/src/ServerSide/target/generated-sources/grpc/fintech/TransferRequest.java
 /home/minhduc/Pro/vng/module-10/Snail-App/src/ServerSide/src/main/java/vn/zalopay/ducnm8/cache/UserCacheImpl.java

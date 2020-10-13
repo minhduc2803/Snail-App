@@ -47,10 +47,10 @@ public class AccountDAImpl extends BaseTransactionDA implements AccountDA {
 
 
     @Override
-    public Executable<Account> insert(Account account) {
+    public Executable<Long> insert(Account account) {
         log.info("insert a user");
         return connection -> {
-            Future<Account> future = Future.future();
+            Future<Long> future = Future.future();
             asyncHandler.run(
                     () -> {
                         Object[] params = {account.getUsername(), account.getFullName(), account.getPassword(),
@@ -126,10 +126,10 @@ public class AccountDAImpl extends BaseTransactionDA implements AccountDA {
     }
 
     @Override
-    public Executable<Balance> plusBalanceByAmount(long id, long amount) {
+    public Executable<Long> plusBalanceByAmount(long id, long amount) {
         log.info("update balance: (id={},amount={})", id, amount);
         return connection -> {
-            Future<Balance> future = Future.future();
+            Future<Long> future = Future.future();
             asyncHandler.run(
                     () -> {
                         Object[] params = {amount, id};
@@ -144,10 +144,10 @@ public class AccountDAImpl extends BaseTransactionDA implements AccountDA {
     }
 
     @Override
-    public Executable<Balance> updateNumberNotification(long id, int number) {
+    public Executable<Long> updateNumberNotification(long id, int number) {
         log.info("update number notifications: account_id={}, number={}", id, number);
         return connection -> {
-            Future<Balance> future = Future.future();
+            Future<Long> future = Future.future();
             asyncHandler.run(
                     () -> {
                         Object[] params = {number, id};

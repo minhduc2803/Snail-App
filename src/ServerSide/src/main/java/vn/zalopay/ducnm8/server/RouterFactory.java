@@ -4,11 +4,9 @@ import vn.zalopay.ducnm8.handler.HandlerFactory;
 import io.vertx.core.Vertx;
 import io.vertx.core.http.HttpMethod;
 import io.vertx.core.http.HttpServerResponse;
-import io.vertx.ext.auth.jwt.JWTAuth;
 import io.vertx.ext.web.Router;
 import io.vertx.ext.web.handler.BodyHandler;
 import io.vertx.ext.web.handler.CorsHandler;
-import io.vertx.ext.web.handler.JWTAuthHandler;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -16,13 +14,12 @@ import java.util.Set;
 public class RouterFactory {
   private RouterFactory() {}
 
-  public static Router route(Vertx vertx, JWTAuth authProvider, HandlerFactory handlerFactory) {
+  public static Router route(Vertx vertx, HandlerFactory handlerFactory) {
     Router router = Router.router(vertx);
     setWelcomePage(router);
     setHeaderAllowances(router);
 
     router.route().handler(BodyHandler.create());
-    router.route("/api/protected/*").handler(JWTAuthHandler.create(authProvider));
 
     handlerFactory.initialize(router);
     return router;

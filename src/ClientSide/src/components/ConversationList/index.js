@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import ConversationSearch from '../ConversationSearch';
 import ConversationListItem from '../ConversationListItem';
 import Toolbar from '../Toolbar';
@@ -22,8 +22,8 @@ export default function ConversationList(props) {
       return {
         index: index,
         photo: "#",
-        name: `${result.Fullname}`,
-        text: result.chat !== undefined && result.chat[result.chat.length-1] !== undefined ? `${result.chat[result.chat.length-1].Content}` : `Say hello to ${result.Fullname}`,
+        name: `${result.fullName}`,
+        text: result.chat !== undefined && result.chat[result.chat.length-1] !== undefined ? `${result.chat[result.chat.length-1].content}` : `Say hello to ${result.fullName}`,
       };
     });
     

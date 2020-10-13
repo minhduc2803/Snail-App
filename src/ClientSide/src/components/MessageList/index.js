@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import Compose from '../Compose';
 import Toolbar from '../Toolbar';
 import ToolbarButton from '../ToolbarButton';
@@ -18,14 +18,14 @@ export default function MessageList(props) {
   if(content.chat === undefined)
     content = {...content, chat: []}
   const user = useSelector(state => state.user);
-  const MY_USER_ID = user.fullname;
+  const MY_USER_ID = user.fullName;
   console.log(content)
     let messages = content.chat.map((message, index) => {
         return {
           id: index+1,
-          author: message.UserSendID === user.userID ? user.fullname:content.Fullname,
-          message: message.Content,
-          timestamp: message.SentTime
+          author: message.senderId === user.userId ? user.fullName:content.fullName,
+          message: message.content,
+          timestamp: message.sentTime
         }
     })
   console.log(messages)
@@ -92,7 +92,7 @@ export default function MessageList(props) {
     return(
       <div className="message-list">
         <Toolbar
-          title={`${content.Fullname}`}
+          title={`${content.fullName}`}
           rightItems={[
             <ToolbarButton key="info" icon="ion-ios-information-circle-outline" />,
             <ToolbarButton key="video" icon="ion-ios-videocam" />,

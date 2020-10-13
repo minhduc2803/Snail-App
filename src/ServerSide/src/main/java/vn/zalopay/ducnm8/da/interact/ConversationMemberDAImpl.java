@@ -19,15 +19,10 @@ public class ConversationMemberDAImpl extends BaseTransactionDA implements Conve
     private final DataSource dataSource;
     private final AsyncHandler asyncHandler;
 
-    private static final String INSERT_CONVERSATION_MEMBER = "INSERT INTO `chatapp`.`ConversationMember` (`ConversationID`, `MemberID`) VALUES (?, ?);";
-    private static final String LIST_CONVERSATION_BY_MEMBER =
-            "SELECT C2.ConversationMemberID, C2.ConversationID, C2.MemberID, C2.NotSeenChat, U.Fullname\n" +
-            "FROM \n" +
-            "(chatapp.ConversationMember as C1\n" +
-            "INNER JOIN chatapp.ConversationMember as C2\n" +
-            "On C1.ConversationID = C2.ConversationID and C1.MemberID = ? and C2.MemberID != ? )\n" +
-            "INNER JOIN chatapp.User as U\n" +
-            "On C2.MemberID = U.UserID;";
+    private static final String INSERT_CONVERSATION_MEMBER =
+            "INSERT INTO conversation_member(`conversationId`, `member_id`,`number_unseen_chat`,`conversation_title`) VALUES (?, ?, ?, ?);";
+    private static final String LIST_MEMBER_OF_A_CONVERSATION =
+            "SELECT * FROM conversation_member WHERE conversation_id = ?";
 
     public ConversationMemberDAImpl(DataSource dataSource, AsyncHandler asyncHandler) {
         super();
@@ -39,18 +34,12 @@ public class ConversationMemberDAImpl extends BaseTransactionDA implements Conve
         log.info("MYSQL: INSERTING A NEW CHAT MEMBER");
         return connection -> {
             Future<ConversationMember> future = Future.future();
-            Future<Void> temp = Future.future();
             asyncHandler.run(
                     () -> {
-                        Object[] params = {conversationMember.getConversationID(), conversationMember.getMemberID()};
+                        Object[] params = {conversationMember.getConversationId()};
                         try {
-                            boolean isSuccess = executeWithParams(
-                                    temp, connection.unwrap(), INSERT_CONVERSATION_MEMBER, params, "insertConversationMember");
-                            if(isSuccess){
-                                future.complete(conversationMember);
-                            }else{
-                                future.fail("Wrong Insert Statement");
-                            }
+                            executeWithParams(
+                                    future, connection.unwrap(), INSERT_CONVERSATION_MEMBER, params, "insertConversationMember");
                         } catch (SQLException e) {
                             future.fail(e);
                         }
@@ -60,25 +49,25 @@ public class ConversationMemberDAImpl extends BaseTransactionDA implements Conve
     }
 
     @Override
-    public Future<List<ConversationMember>> listConversationByMember(int MemberID) {
-        log.info("MYSQL: SELECTING ALL CONVERSATION OF " + String.valueOf(MemberID));
+    public Future<List<ConversationMember>> listMember(long conversation_id) {
+        log.info("select list member of a conversation: {}",conversation_id);
         Future<List<ConversationMember>> future = Future.future();
         asyncHandler.run(
                 () -> {
-                    Object[] params = {MemberID, MemberID};
+                    Object[] params = {conversation_id};
                     queryEntity(
                             "queryListConversation",
                             future,
-                            LIST_CONVERSATION_BY_MEMBER,
+                            LIST_MEMBER_OF_A_CONVERSATION,
                             params,
-                            this::mapListConversations,
+                            this::mapListMembers,
                             dataSource::getConnection,
                             false);
                 });
 
         return future;
     }
-    private List<ConversationMember> mapListConversations(ResultSet resultSet) throws Exception {
+    private List<ConversationMember> mapListMembers(ResultSet resultSet) throws Exception {
         List<ConversationMember> conversationMembers = new ArrayList<>() ;
 
         while (resultSet.next()) {

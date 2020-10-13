@@ -5,16 +5,16 @@ import './Register.css';
 
 export default function Register(props) {
     const usernameInput = React.useRef(null);
-    const fullnameInput = React.useRef(null);
+    const fullNameInput = React.useRef(null);
     const passwordInput = React.useRef(null);
     const dispatch = useDispatch();
 
     function handleSubmit(event){
         event.preventDefault();
         const username = usernameInput.current.value;
-        const fullname = fullnameInput.current.value;
+        const fullName = fullNameInput.current.value;
         const password = passwordInput.current.value
-        dispatch(asyncRegister(username,fullname,password));
+        dispatch(asyncRegister(username,fullName,password));
     }
    
     return (
@@ -26,7 +26,7 @@ export default function Register(props) {
                 <input type="text" ref={usernameInput} placeholder="Username" required="" id="username" />
             </div>
             <div>
-                <input type="text" ref={fullnameInput} placeholder="Fullname" required="" id="fullname" />
+                <input type="text" ref={fullNameInput} placeholder="Fullname" required="" id="fullname" />
             </div>
             <div>
                 <input type="password" ref={passwordInput} placeholder="Password" required="" id="password" />

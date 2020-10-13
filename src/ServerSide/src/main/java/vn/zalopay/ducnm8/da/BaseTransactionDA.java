@@ -29,7 +29,7 @@ public class BaseTransactionDA extends BaseDA {
     super(statementTimeoutSec);
   }
 
-  protected <T> boolean executeWithParams(
+  protected <T> void executeWithParams(
           Future<T> result, Connection connection, String stm, Object[] params, String method)
           throws SQLException {
 
@@ -48,11 +48,9 @@ public class BaseTransactionDA extends BaseDA {
                         "%s wrong effected row expected=1, actual=%d, query=%s, params=%s",
                         method, affectedRow, stm, JsonProtoUtils.printGson(params));
         result.fail("Invalid statement");
-        return false;
       } else {
 
         result.complete();
-        return true;
       }
     } finally {
       closeResource(LOGGER, preparedStatement);

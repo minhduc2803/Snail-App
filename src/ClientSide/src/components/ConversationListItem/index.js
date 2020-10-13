@@ -12,7 +12,7 @@ export default function ConversationListItem(props) {
   })
     const chosenIndex = useSelector(state => state.chosenIndex);
     const dispatch = useDispatch();
-    const { index, photo, name, text } = props.data;
+    const { index, name, text } = props.data;
     const style = "conversation-list-item "+((index===chosenIndex) ? "chosen-conversation":"");
     console.log(style)
     return (

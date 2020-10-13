@@ -5,7 +5,6 @@ import dagger.internal.Preconditions;
 import javax.annotation.Generated;
 import javax.inject.Provider;
 import vn.zalopay.ducnm8.handler.ChatListHandler;
-import vn.zalopay.ducnm8.handler.ConversationListHandler;
 import vn.zalopay.ducnm8.handler.EchoHandler;
 import vn.zalopay.ducnm8.handler.ExampleHandler;
 import vn.zalopay.ducnm8.handler.HandlerFactory;
@@ -33,8 +32,6 @@ public final class ServiceModule_ProvideHandlerFactory implements Factory<Handle
 
   private final Provider<RegisterHandler> registerHandlerProvider;
 
-  private final Provider<ConversationListHandler> conversationListHandlerProvider;
-
   private final Provider<ChatListHandler> chatListHandlerProvider;
 
   private final Provider<JWTAuthHandler> jwtAuthHandlerProvider;
@@ -45,7 +42,6 @@ public final class ServiceModule_ProvideHandlerFactory implements Factory<Handle
       Provider<EchoHandler> echoHandlerProvider, Provider<ExampleHandler> exampleHandlerProvider,
       Provider<LoginHandler> loginHandlerProvider,
       Provider<RegisterHandler> registerHandlerProvider,
-      Provider<ConversationListHandler> conversationListHandlerProvider,
       Provider<ChatListHandler> chatListHandlerProvider,
       Provider<JWTAuthHandler> jwtAuthHandlerProvider,
       Provider<UserListHandler> userListHandlerProvider) {
@@ -54,7 +50,6 @@ public final class ServiceModule_ProvideHandlerFactory implements Factory<Handle
     this.exampleHandlerProvider = exampleHandlerProvider;
     this.loginHandlerProvider = loginHandlerProvider;
     this.registerHandlerProvider = registerHandlerProvider;
-    this.conversationListHandlerProvider = conversationListHandlerProvider;
     this.chatListHandlerProvider = chatListHandlerProvider;
     this.jwtAuthHandlerProvider = jwtAuthHandlerProvider;
     this.userListHandlerProvider = userListHandlerProvider;
@@ -62,24 +57,23 @@ public final class ServiceModule_ProvideHandlerFactory implements Factory<Handle
 
   @Override
   public HandlerFactory get() {
-    return provideHandler(module, echoHandlerProvider.get(), exampleHandlerProvider.get(), loginHandlerProvider.get(), registerHandlerProvider.get(), conversationListHandlerProvider.get(), chatListHandlerProvider.get(), jwtAuthHandlerProvider.get(), userListHandlerProvider.get());
+    return provideHandler(module, echoHandlerProvider.get(), exampleHandlerProvider.get(), loginHandlerProvider.get(), registerHandlerProvider.get(), chatListHandlerProvider.get(), jwtAuthHandlerProvider.get(), userListHandlerProvider.get());
   }
 
   public static ServiceModule_ProvideHandlerFactory create(ServiceModule module,
       Provider<EchoHandler> echoHandlerProvider, Provider<ExampleHandler> exampleHandlerProvider,
       Provider<LoginHandler> loginHandlerProvider,
       Provider<RegisterHandler> registerHandlerProvider,
-      Provider<ConversationListHandler> conversationListHandlerProvider,
       Provider<ChatListHandler> chatListHandlerProvider,
       Provider<JWTAuthHandler> jwtAuthHandlerProvider,
       Provider<UserListHandler> userListHandlerProvider) {
-    return new ServiceModule_ProvideHandlerFactory(module, echoHandlerProvider, exampleHandlerProvider, loginHandlerProvider, registerHandlerProvider, conversationListHandlerProvider, chatListHandlerProvider, jwtAuthHandlerProvider, userListHandlerProvider);
+    return new ServiceModule_ProvideHandlerFactory(module, echoHandlerProvider, exampleHandlerProvider, loginHandlerProvider, registerHandlerProvider, chatListHandlerProvider, jwtAuthHandlerProvider, userListHandlerProvider);
   }
 
   public static HandlerFactory provideHandler(ServiceModule instance, EchoHandler echoHandler,
       ExampleHandler exampleHandler, LoginHandler loginHandler, RegisterHandler registerHandler,
-      ConversationListHandler conversationListHandler, ChatListHandler chatListHandler,
-      JWTAuthHandler jwtAuthHandler, UserListHandler userListHandler) {
-    return Preconditions.checkNotNull(instance.provideHandler(echoHandler, exampleHandler, loginHandler, registerHandler, conversationListHandler, chatListHandler, jwtAuthHandler, userListHandler), "Cannot return null from a non-@Nullable @Provides method");
+      ChatListHandler chatListHandler, JWTAuthHandler jwtAuthHandler,
+      UserListHandler userListHandler) {
+    return Preconditions.checkNotNull(instance.provideHandler(echoHandler, exampleHandler, loginHandler, registerHandler, chatListHandler, jwtAuthHandler, userListHandler), "Cannot return null from a non-@Nullable @Provides method");
   }
 }

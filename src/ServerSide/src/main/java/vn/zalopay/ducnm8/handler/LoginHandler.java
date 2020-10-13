@@ -7,13 +7,12 @@ import vn.zalopay.ducnm8.entity.request.BaseRequest;
 import vn.zalopay.ducnm8.entity.request.LoginRequest;
 import vn.zalopay.ducnm8.entity.response.BaseResponse;
 import vn.zalopay.ducnm8.entity.response.LoginResponse;
-import vn.zalopay.ducnm8.model.Account;
+import vn.zalopay.ducnm8.model.User;
 import vn.zalopay.ducnm8.utils.JWTUtils;
 import vn.zalopay.ducnm8.utils.JsonProtoUtils;
 import vn.zalopay.ducnm8.utils.Tracker;
 import io.netty.handler.codec.http.HttpResponseStatus;
 import io.vertx.core.Future;
-import io.vertx.ext.auth.jwt.JWTAuth;
 import org.mindrot.jbcrypt.BCrypt;
 import lombok.extern.log4j.Log4j2;
 
@@ -21,24 +20,15 @@ import lombok.extern.log4j.Log4j2;
 public class LoginHandler extends BaseHandler{
 
     private static final String METRIC = "LoginHandler";
-    private final UserCache userCache;
     private final AccountDA accountDA;
-    private final TransactionProvider transactionProvider;
-    private final JWTAuth jwtAuth;
 
-    public LoginHandler(
-            AccountDA accountDA, UserCache userCache, TransactionProvider transactionProvider, JWTAuth jwtAuth) {
-        this.userCache = userCache;
+    public LoginHandler(AccountDA accountDA, UserCache userCache, TransactionProvider transactionProvider) {
         this.accountDA = accountDA;
-        this.transactionProvider = transactionProvider;
-        this.jwtAuth = jwtAuth;
     }
 
     @Override
     public Future<BaseResponse> handle(BaseRequest baseRequest) {
 
-        Tracker.TrackerBuilder tracker =
-                Tracker.builder().metricName(METRIC).startTime(System.currentTimeMillis());
         Future<BaseResponse> future = Future.future();
 
         BaseResponse.BaseResponseBuilder response = BaseResponse.builder();
@@ -59,24 +49,23 @@ public class LoginHandler extends BaseHandler{
             accountDA.selectUserByUsername(request.getUsername())
                 .setHandler(
                     rs -> {
-
                         if (rs.succeeded()) {
-                            Account account = rs.result();
-                            if(account != null) {
-                                if (BCrypt.checkpw(request.getPassword(), account.getPassword())) {
-                                    String token = JWTUtils.buildJWTToken(account.getId());
+                            User user = rs.result();
+                            if(user != null) {
+                                if (BCrypt.checkpw(request.getPassword(), user.getPassword())) {
+                                    String token = JWTUtils.buildJWTToken(user.getId());
                                     log.info("token len: {}",token.length());
-                                    response.response(LoginResponse.builder()
+                                    response.data(LoginResponse.builder()
                                             .token(token)
-                                            .UserID(account.getId())
-                                            .Fullname(account.getFullName())
+                                            .userId(user.getId())
+                                            .fullName(user.getFullName())
                                             .build())
                                             .status(HttpResponseStatus.OK.code());
                                     log.info("Login successfully");
                                 } else {
                                     response.message("Wrong password")
                                             .status(HttpResponseStatus.BAD_REQUEST.code());
-                                    log.info("Login failed from: {} ~ wrong password",account.getUsername());
+                                    log.info("Login failed from: {} ~ wrong password",user.getUsername());
                                 }
                             }else{
                                 response.message("User does not exist")
@@ -94,7 +83,7 @@ public class LoginHandler extends BaseHandler{
 
                     });
         } catch (Exception e) {
-            log.error("Login failed ~ cause is: {}",e);
+            log.error("Login failed ~ cause is: {}",e.getMessage());
             response.message("Server has an error")
                     .status(HttpResponseStatus.INTERNAL_SERVER_ERROR.code());
             future.complete(response.build());

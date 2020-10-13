@@ -15,8 +15,7 @@ public class ConversationDAImpl extends BaseTransactionDA implements Conversatio
     private final DataSource dataSource;
     private final AsyncHandler asyncHandler;
 
-    private static final String INSERT_CONVERSATION_STATEMENT = "INSERT INTO `chatapp`.`Conversation` (`UserStartID`, `Mode`) VALUES (?, ?);";
-    private static final String SELECT_CONVERSATION_BY_START_USER = "";
+    private static final String INSERT_CONVERSATION_STATEMENT = "INSERT INTO Conversation(`id`, `last_time_chat`) VALUES (?, ?);";
 
     public ConversationDAImpl(DataSource dataSource, AsyncHandler asyncHandler) {
         super();
@@ -29,18 +28,13 @@ public class ConversationDAImpl extends BaseTransactionDA implements Conversatio
         log.info("MYSQL: INSERTING A NEW CONVERSATION");
         return connection -> {
             Future<Conversation> future = Future.future();
-            Future<Void> temp = Future.future();
             asyncHandler.run(
                     () -> {
-                        Object[] params = {conversation.getUserStartID(), conversation.getMode()};
+                        Object[] params = {conversation.getId(), conversation.getLastTimeChat()};
                         try {
-                            boolean isSuccess = executeWithParams(
-                                    temp, connection.unwrap(), INSERT_CONVERSATION_STATEMENT, params, "insertChat");
-                            if(isSuccess){
-                                future.complete(conversation);
-                            }else{
-                                future.fail("Wrong Insert Statement");
-                            }
+                            executeWithParams(
+                                    future, connection.unwrap(), INSERT_CONVERSATION_STATEMENT, params, "insertChat");
+
                         } catch (SQLException e) {
                             future.fail(e);
                         }
@@ -49,8 +43,4 @@ public class ConversationDAImpl extends BaseTransactionDA implements Conversatio
         };
     }
 
-    @Override
-    public Future<Conversation> selectUserByUserStartId(int id) {
-        return null;
-    }
 }

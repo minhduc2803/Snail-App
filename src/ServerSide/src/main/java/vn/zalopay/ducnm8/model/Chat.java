@@ -12,14 +12,14 @@ public class Chat {
     @DBTable(columnName = "id")
     long id;
 
-    @DBTable(columnName = "chat_type")
-    int chatType;
-
-    @DBTable(columnName = "user_send_id")
+    @DBTable(columnName = "sender_id")
     long senderId;
 
-    @DBTable(columnName = "user_receive_id")
+    @DBTable(columnName = "receiver_id")
     long receiverId;
+
+    @DBTable(columnName = "chat_type")
+    int chatType;
 
     @DBTable(columnName =  "content")
     String content;

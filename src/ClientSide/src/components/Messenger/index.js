@@ -3,11 +3,13 @@ import ConversationList from '../ConversationList';
 import MessageList from '../MessageList';
 import './Messenger.css';
 
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { asyncLoadUsers, asyncLoadChat } from '../../redux/actions';
 
+
+
 export default function Messenger(props) {
-  
+ 
   const dispatch = useDispatch();
   dispatch(asyncLoadUsers()).then(result => {
       for( let i=0;i<result.length;i++){

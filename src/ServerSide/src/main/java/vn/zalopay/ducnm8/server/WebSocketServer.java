@@ -1,12 +1,13 @@
 package vn.zalopay.ducnm8.server;
 
+import io.grpc.Status;
+import io.jsonwebtoken.JwtException;
 import vn.zalopay.ducnm8.handler.WSHandler;
 import vn.zalopay.ducnm8.utils.JWTUtils;
 import io.vertx.core.Future;
 import io.vertx.core.Vertx;
 import io.vertx.core.http.HttpServer;
 import io.vertx.core.http.ServerWebSocket;
-import io.vertx.ext.auth.jwt.JWTAuth;
 import lombok.Builder;
 import lombok.extern.log4j.Log4j2;
 
@@ -17,27 +18,13 @@ public class WebSocketServer {
     private final Vertx vertx;
     private final int port;
     private HttpServer httpServer;
-    private final JWTAuth jwtAuth;
 
 
-    private Future<Long> authenticate(ServerWebSocket ws) {
-        Future<Long> future = Future.future();
-
+    private String getToken(ServerWebSocket ws) throws Exception{
         String query = ws.query();
         if (query != null &&  !query.isEmpty()) {
-            String token = query.substring(query.indexOf('=') + 1);
-            if (token != null &&  !token.isEmpty()) {
-                JWTUtils
-                        .authenticate(jwtAuth, token)
-                        .setHandler(UserID -> {
-                                    if (UserID.succeeded()) future.complete(UserID.result());
-                                });
-            } else{
-                log.error("JWT token is invalid");
-                future.fail("JWT token is not given");
-            }
-        } else future.fail("URL query is not given");
-        return future;
+            return query.substring(query.indexOf('=') + 1);
+        } else throw new Exception("URL query is not given");
     }
 
     public void start() {
@@ -46,27 +33,23 @@ public class WebSocketServer {
             vertx
                 .createHttpServer()
                 .websocketHandler(ws -> {
-                    authenticate(ws)
-                        .setHandler(
-                            UserIDDecode -> {
-                                if (UserIDDecode.succeeded()) {
-                                    long UserID = UserIDDecode.result();
-                                    ws.accept();
+                    try {
+                        long id = JWTUtils.authenticate(getToken(ws));
+                        ws.accept();
 
-                                    log.info("websocket connected from UserID: {}",UserID);
-                                    wsHandler.addClient(ws, UserID);
+                        log.info("web socket connected from UserID: {}",id);
+                        wsHandler.addClient(ws, id);
 
-                                    ws.closeHandler(event -> {
-                                            wsHandler.removeClient(ws, UserID);
-                                        });
-                                    ws.handler(buffer -> wsHandler.handle(buffer, UserID));
+                        ws.closeHandler(event -> {
+                            wsHandler.removeClient(ws, id);
+                        });
+                        ws.handler(buffer -> wsHandler.handle(buffer, id));
 
-                                } else {
-                                    log.info("websocket reject");
-                                    ws.reject();
-                                }
-                            });
-                    })
+                    } catch (Exception e) {
+                        ws.reject();
+                        log.info("web socket reject, cause: {}",e.getMessage());
+                    }
+                })
                 .listen(port,
                         ar -> {
                             if (ar.succeeded()) {

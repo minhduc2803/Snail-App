@@ -6,6 +6,7 @@ import vn.zalopay.ducnm8.common.mapper.EntityMapper;
 import vn.zalopay.ducnm8.da.BaseTransactionDA;
 import vn.zalopay.ducnm8.da.Executable;
 import vn.zalopay.ducnm8.model.Chat;
+import vn.zalopay.ducnm8.model.FullChat;
 import vn.zalopay.ducnm8.utils.AsyncHandler;
 
 import javax.sql.DataSource;
@@ -20,9 +21,10 @@ public class ChatListDAImpl extends BaseTransactionDA implements ChatListDA{
     private final AsyncHandler asyncHandler;
 
     private static final String INSERT_CHAT_STATEMENT =
-            "INSERT INTO chat (`mode`, `user_send_id`, `user_receive_id`, `content`, `sent_time`) VALUES (?, ?, ?, ?, ?);";
-    private static final String LIST_CHAT_BY_MEMBER = "SELECT * FROM chat\n" +
-            "WHERE (user_send_id = ? and user_receive_id = ?) or (user_send_id = ? and user_receive_id = ?);";
+            "INSERT INTO chat (`sender_id`, `receiver_id`, `chat_type`, `content`, `sent_time`) VALUES (?, ?, ?, ?, ?);";
+    private static final String LIST_CHAT_BETWEEN_TWO_USERS =
+            "SELECT * FROM chat\n" +
+            "WHERE (sender_id = ? and receiver_id = ?) or (receiver_id = ? and sender_id = ?);";
 
     public ChatListDAImpl(DataSource dataSource, AsyncHandler asyncHandler) {
         super();
@@ -31,30 +33,19 @@ public class ChatListDAImpl extends BaseTransactionDA implements ChatListDA{
     }
     @Override
     public Executable<Chat> insert(Chat chat) {
-        log.info("MYSQL: INSERTING A NEW CHAT");
-        log.info(chat.getChatType());
-        log.info(chat.getSenderId());
-        log.info(chat.getReceiverId());
-        log.info(chat.getContent());
-        log.info(chat.getSentTime());
+        log.info("insert a new chat");
+
         return connection -> {
             Future<Chat> future = Future.future();
-            Future<Void> temp = Future.future();
             asyncHandler.run(
                     () -> {
-                        Object[] params = {chat.getChatType(), chat.getSenderId(), chat.getReceiverId(), chat.getContent(), chat.getSentTime()};
+                        Object[] params = {chat.getSenderId(), chat.getReceiverId(), chat.getChatType(), chat.getContent(), chat.getSentTime()};
                         try {
-                            boolean isSuccess = executeWithParams(
-                                    temp, connection.unwrap(), INSERT_CHAT_STATEMENT, params, "insertChat");
-                            if(isSuccess){
-
-                                future.complete(chat);
-                            }else{
-                                future.fail("Wrong Insert Statement");
-                            }
+                            executeWithParams(
+                                    future, connection.unwrap(), INSERT_CHAT_STATEMENT, params, "insertChat");
                         } catch (SQLException e) {
-                            log.error(e);
-                            future.fail(e);
+                            log.error("insert new chat failed ~ cause: {}",e.getMessage());
+                            future.fail("insert new chat failed");
                         }
                     });
             return future;
@@ -62,16 +53,16 @@ public class ChatListDAImpl extends BaseTransactionDA implements ChatListDA{
     }
 
     @Override
-    public Future<List<Chat>> listChatByMember(long UserSendID, long UserReceiveID) {
-        log.info("MYSQL: SELECT LIST CHAT WITH ANOTHER USER");
+    public Future<List<Chat>> listChatByMember(long senderId, long receiverId) {
+        log.info("select list chat between {} and {}",senderId,receiverId);
         Future<List<Chat>> future = Future.future();
         asyncHandler.run(
                 () -> {
-                    Object[] params = {UserSendID, UserReceiveID, UserReceiveID, UserSendID};
+                    Object[] params = {senderId, receiverId, senderId, receiverId};
                     queryEntity(
                             "queryListChat",
                             future,
-                            LIST_CHAT_BY_MEMBER,
+                            LIST_CHAT_BETWEEN_TWO_USERS,
                             params,
                             this::mapListChat,
                             dataSource::getConnection,

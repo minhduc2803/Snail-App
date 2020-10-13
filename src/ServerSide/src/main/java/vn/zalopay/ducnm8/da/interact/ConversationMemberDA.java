@@ -9,5 +9,5 @@ import java.util.List;
 public interface ConversationMemberDA {
     Executable<ConversationMember> insert(ConversationMember conversationMember);
 
-    Future<List<ConversationMember>> listConversationByMember(int MemberID);
+    Future<List<ConversationMember>> listMember(long conversationId);
 }

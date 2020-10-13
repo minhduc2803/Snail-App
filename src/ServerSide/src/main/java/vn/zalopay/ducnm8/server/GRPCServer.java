@@ -12,15 +12,16 @@ import vn.zalopay.ducnm8.handler.grpc.InterceptorHandler;
 @Log4j2
 public class GRPCServer {
     private VertxServer server;
-    private Vertx vertx;
-    private FintechServiceImpl fintechService;
-    private InterceptorHandler interceptorHandler;
-    private int port;
+    private final Vertx vertx;
+    private final FintechServiceImpl fintechService;
+    private final InterceptorHandler interceptorHandler;
+    private final int port;
 
     @Builder
     public GRPCServer(Vertx vertx, FintechServiceImpl fintechService, InterceptorHandler interceptorHandler, int port){
         this.vertx = vertx;
         this.fintechService = fintechService;
+        this.interceptorHandler = interceptorHandler;
         this.port = port;
     }
     public void start() {

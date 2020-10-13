@@ -32,11 +32,12 @@ export function asyncSetupWebSocket(user){
 }
 
 export function asyncLogin(username, password) {
+
     return (dispatch, getState) => {
         dispatch({type: "START_LOGIN", username: username})
         let data = {
-            Username: username,
-            Password: password
+            username: username,
+            password: password
         }
         data = JSON.stringify(data)
     
@@ -49,23 +50,27 @@ export function asyncLogin(username, password) {
             data: data,
             validateStatus: () => true
         }).then(result => {
-            if(result.status !== 200)
+            if(result.status !== 200){
+                console.log(result)
                 alert(result.data.message)
+
+            }
             else{
-                
+                console.log("data login");
+                console.log(result);
                 let user = {
-                    userID: result.data.data.UserID,
+                    userId: result.data.data.userId,
                     username: getState().user.username,
-                    fullname: result.data.data.Fullname,
+                    fullName: result.data.data.fullName,
                     token: result.data.data.token
                 }
-                console.log(result.data)
+               
                 dispatch(alreadyLogin(user));
                 dispatch(asyncSetupWebSocket(user));
             }
             
         }).catch(error => {
-            //alert(error.data.message)
+            alert(error)
         })
     }
 }
@@ -73,9 +78,9 @@ export function asyncLogin(username, password) {
 export function asyncRegister(username, fullname, password) {
     return (dispatch) => {
         let data = {
-            Username: username,
-            Fullname: fullname,
-            Password: password
+            username: username,
+            fullName: fullname,
+            password: password
         }
         data = JSON.stringify(data)
     
@@ -132,7 +137,7 @@ export function asyncLoadUsers() {
 export function asyncLoadChat(chosenIndex, content){
     return (dispatch, getState) => {
         let data = {
-            UserReceiveID: content.UserID,
+            partnerId: content.userId,
         }
         data = JSON.stringify(data)
         console.log(data)

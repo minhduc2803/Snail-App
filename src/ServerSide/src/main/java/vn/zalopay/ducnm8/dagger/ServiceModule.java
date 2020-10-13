@@ -6,8 +6,7 @@ import vn.zalopay.ducnm8.da.*;
 import vn.zalopay.ducnm8.da.interact.*;
 import vn.zalopay.ducnm8.grpc.FintechServiceImpl;
 import vn.zalopay.ducnm8.handler.*;
-import vn.zalopay.ducnm8.handler.grpc.GetBalanceHandler;
-import vn.zalopay.ducnm8.handler.grpc.InterceptorHandler;
+import vn.zalopay.ducnm8.handler.grpc.*;
 import vn.zalopay.ducnm8.server.GRPCServer;
 import vn.zalopay.ducnm8.server.RestfulAPI;
 import vn.zalopay.ducnm8.server.WebSocketServer;
@@ -18,9 +17,6 @@ import dagger.Provides;
 import io.vertx.core.Vertx;
 import io.vertx.core.VertxOptions;
 import io.vertx.core.http.HttpServerOptions;
-import io.vertx.ext.auth.PubSecKeyOptions;
-import io.vertx.ext.auth.jwt.JWTAuth;
-import io.vertx.ext.auth.jwt.JWTAuthOptions;
 import io.vertx.micrometer.MicrometerMetricsOptions;
 import io.vertx.micrometer.VertxPrometheusOptions;
 import lombok.Builder;
@@ -38,14 +34,13 @@ public class ServiceModule {
   @Singleton
   HandlerFactory provideHandler(EchoHandler echoHandler, ExampleHandler exampleHandler,
                                 LoginHandler loginHandler, RegisterHandler registerHandler,
-                                ConversationListHandler conversationListHandler, ChatListHandler chatListHandler,
+                                ChatListHandler chatListHandler,
                                 JWTAuthHandler jwtAuthHandler, UserListHandler userListHandler) {
     return HandlerFactory.builder()
             .echoHandler(echoHandler)
             .exampleHandler(exampleHandler)
             .loginHandler(loginHandler)
             .registerHandler(registerHandler)
-            .conversationListHandler(conversationListHandler)
             .chatListHandler(chatListHandler)
             .jwtAuthHandler(jwtAuthHandler)
             .userListHandler(userListHandler)
@@ -76,12 +71,6 @@ public class ServiceModule {
 
   @Provides
   @Singleton
-  ConversationListCache provideConversationListCache(RedisCache redisCache, AsyncHandler asyncHandler) {
-    return ConversationListCacheImpl.builder().redisCache(redisCache).asyncHandler(asyncHandler).build();
-  }
-
-  @Provides
-  @Singleton
   ChatListCache provideChatListCache(RedisCache redisCache, AsyncHandler asyncHandler) {
     return ChatListCacheImpl.builder().redisCache(redisCache).asyncHandler(asyncHandler).build();
   }
@@ -94,7 +83,7 @@ public class ServiceModule {
 
   @Provides
   @Singleton
-  AccountDA provideUserDA(DataSourceProvider dataSourceProvider, AsyncHandler asyncHandler) {
+  AccountDA provideAccountDA(DataSourceProvider dataSourceProvider, AsyncHandler asyncHandler) {
     return new AccountDAImpl(
         dataSourceProvider.getDataSource(serviceConfig.getMySQLConfig()), asyncHandler);
   }
@@ -122,6 +111,27 @@ public class ServiceModule {
 
   @Provides
   @Singleton
+  NotificationDA provideNotificationDA(DataSourceProvider dataSourceProvider, AsyncHandler asyncHandler) {
+    return new NotificationDAImpl(
+            dataSourceProvider.getDataSource(serviceConfig.getMySQLConfig()), asyncHandler);
+  }
+
+  @Provides
+  @Singleton
+  TransferDA provideTransferDA(DataSourceProvider dataSourceProvider, AsyncHandler asyncHandler) {
+    return new TransferDAImpl(
+            dataSourceProvider.getDataSource(serviceConfig.getMySQLConfig()), asyncHandler);
+  }
+
+  @Provides
+  @Singleton
+  TransferHistoryDA provideTransferHistoryDA(DataSourceProvider dataSourceProvider, AsyncHandler asyncHandler) {
+    return new TransferHistoryDAImpl(
+            dataSourceProvider.getDataSource(serviceConfig.getMySQLConfig()), asyncHandler);
+  }
+
+  @Provides
+  @Singleton
   ExampleHandler provideExampleHandler(
           AccountDA accountDA, TransactionProvider transactionProvider, UserCache userCache) {
     return new ExampleHandler(accountDA, userCache, transactionProvider);
@@ -130,43 +140,36 @@ public class ServiceModule {
   @Provides
   @Singleton
   LoginHandler provideLoginHandler(
-          AccountDA accountDA, TransactionProvider transactionProvider, UserCache userCache, JWTAuth jwtAuth) {
-    return new LoginHandler(accountDA, userCache, transactionProvider, jwtAuth);
+          AccountDA accountDA, TransactionProvider transactionProvider, UserCache userCache) {
+    return new LoginHandler(accountDA, userCache, transactionProvider);
   }
 
   @Provides
   @Singleton
   UserListHandler provideUserListHandler(
-          AccountDA accountDA, TransactionProvider transactionProvider, UserCache userCache, JWTAuth jwtAuth) {
-    return new UserListHandler(accountDA, userCache, transactionProvider, jwtAuth);
-  }
-
-  @Provides
-  @Singleton
-  ConversationListHandler provideConversationListHandler(
-          ConversationMemberDA conversationMemberDA, TransactionProvider transactionProvider, ConversationListCache conversationListCache) {
-    return new ConversationListHandler(conversationMemberDA, conversationListCache, transactionProvider);
+          AccountDA accountDA, TransactionProvider transactionProvider, UserCache userCache) {
+    return new UserListHandler(accountDA, userCache, transactionProvider);
   }
 
   @Provides
   @Singleton
   ChatListHandler provideChatListHandler(
-          ChatListDA chatListDA, TransactionProvider transactionProvider, ChatListCache chatListCache, JWTAuth jwtAuth) {
-    return new ChatListHandler(chatListDA, chatListCache, transactionProvider, jwtAuth);
+          ChatListDA chatListDA, TransactionProvider transactionProvider, ChatListCache chatListCache) {
+    return new ChatListHandler(chatListDA, chatListCache, transactionProvider);
   }
 
   @Provides
   @Singleton
   RegisterHandler provideRegisterHandler(
-          AccountDA accountDA, TransactionProvider transactionProvider, UserCache userCache, JWTAuth jwtAuth) {
-    return new RegisterHandler(accountDA, userCache, transactionProvider, jwtAuth);
+          AccountDA accountDA, TransactionProvider transactionProvider, UserCache userCache) {
+    return new RegisterHandler(accountDA, userCache, transactionProvider);
   }
 
 
   @Provides
   @Singleton
-  JWTAuthHandler provideJWTAuthHandler(JWTAuth authProvider) {
-    return JWTAuthHandler.builder().authProvider(authProvider).build();
+  JWTAuthHandler provideJWTAuthHandler() {
+    return JWTAuthHandler.builder().build();
   }
 
   @Singleton
@@ -204,27 +207,12 @@ public class ServiceModule {
                     .setEnabled(true)));
   }
 
-  @Provides
-  @Singleton
-  JWTAuthOptions provideJWTAuthOptions() {
-    // TODO: add key store
-    return new JWTAuthOptions()
-            .addPubSecKey(
-                    new PubSecKeyOptions().setAlgorithm("HS256").setPublicKey("2002").setSymmetric(true));
-  }
 
   @Provides
   @Singleton
-  JWTAuth provideAuthProvider(Vertx vertx, JWTAuthOptions authConfig) {
-    return JWTAuth.create(vertx, authConfig);
-  }
-
-  @Provides
-  @Singleton
-  RestfulAPI provideRestfulAPI(HandlerFactory handlerFactory, Vertx vertx, JWTAuth authProvider) {
+  RestfulAPI provideRestfulAPI(HandlerFactory handlerFactory, Vertx vertx) {
     return RestfulAPI.builder()
         .vertx(vertx)
-        .authProvider(authProvider)
         .handlerFactory(handlerFactory)
         .port(serviceConfig.getPort())
         .build();
@@ -244,33 +232,68 @@ public class ServiceModule {
 
   @Provides
   @Singleton
+  WebSocketServer provideWebSocketServer(
+          WSHandler wsHandler, Vertx vertx) {
+    return WebSocketServer.builder()
+            .wsHandler(wsHandler)
+            .vertx(vertx)
+            .port(serviceConfig.getWsPort())
+            .build();
+  }
+
+  @Provides
+  @Singleton
+  FintechServiceImpl provideFintechServiceImpl(
+          GetBalanceHandler getBalanceHandler,
+          GetHistoryHandler getHistoryHandler,
+          TransferHandler transferHandler,
+          GetNotificationHandler getNotificationHandler
+  ){
+    return FintechServiceImpl.builder()
+            .getBalanceHandler(getBalanceHandler)
+            .getHistoryHandler(getHistoryHandler)
+            .transferHandler(transferHandler)
+            .getNotificationHandler(getNotificationHandler)
+            .build();
+  }
+
+  @Provides
+  @Singleton
   GetBalanceHandler provideGetBalanceHandler(AccountDA accountDA){
     return new GetBalanceHandler(accountDA);
   }
 
   @Provides
   @Singleton
-  WebSocketServer provideWebSocketServer(
-          WSHandler wsHandler, Vertx vertx, JWTAuth jwtAuth) {
-    return WebSocketServer.builder()
-            .wsHandler(wsHandler)
-            .vertx(vertx)
-            .port(serviceConfig.getWsPort())
-            .jwtAuth(jwtAuth)
-            .build();
+  GetHistoryHandler provideGetHistoryHandler(){
+    return new GetHistoryHandler();
   }
 
   @Provides
   @Singleton
-  FintechServiceImpl provideFintechServiceImpl(){
-    return FintechServiceImpl.builder().build();
+  TransferHandler provideTransferHandler(
+           TransferDA transferDA,
+           AccountDA accountDA,
+           TransferHistoryDA transferHistoryDA,
+           NotificationDA notificationDA,
+           TransactionProvider transactionProvider
+  ){
+    return new TransferHandler(transferDA, accountDA, transferHistoryDA, notificationDA, transactionProvider);
   }
+
+  @Provides
+  @Singleton
+  GetNotificationHandler provideGetNotificationHandler(){
+    return new GetNotificationHandler();
+  }
+
 
   @Provides
   @Singleton
   InterceptorHandler provideInterceptorHandler(){
     return InterceptorHandler.builder().build();
   }
+
   @Provides
   @Singleton
   GRPCServer provideGRPCServer(Vertx vertx, FintechServiceImpl fintechService, InterceptorHandler interceptorHandler){

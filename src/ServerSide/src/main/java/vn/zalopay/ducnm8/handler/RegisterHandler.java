@@ -8,12 +8,10 @@ import vn.zalopay.ducnm8.entity.request.BaseRequest;
 import vn.zalopay.ducnm8.entity.request.RegisterRequest;
 import vn.zalopay.ducnm8.entity.response.BaseResponse;
 import vn.zalopay.ducnm8.model.Account;
-import vn.zalopay.ducnm8.model.Balance;
 import vn.zalopay.ducnm8.utils.JsonProtoUtils;
 import vn.zalopay.ducnm8.utils.Tracker;
 import io.netty.handler.codec.http.HttpResponseStatus;
 import io.vertx.core.Future;
-import io.vertx.ext.auth.jwt.JWTAuth;
 import org.mindrot.jbcrypt.BCrypt;
 import lombok.extern.log4j.Log4j2;
 
@@ -25,14 +23,12 @@ public class RegisterHandler extends BaseHandler {
     private final UserCache userCache;
     private final AccountDA accountDA;
     private final TransactionProvider transactionProvider;
-    private final JWTAuth jwtAuth;
 
     public RegisterHandler(
-            AccountDA accountDA, UserCache userCache, TransactionProvider transactionProvider, JWTAuth jwtAuth) {
+            AccountDA accountDA, UserCache userCache, TransactionProvider transactionProvider) {
         this.userCache = userCache;
         this.accountDA = accountDA;
         this.transactionProvider = transactionProvider;
-        this.jwtAuth = jwtAuth;
     }
 
     @Override
@@ -48,7 +44,7 @@ public class RegisterHandler extends BaseHandler {
         BaseResponse.BaseResponseBuilder response = BaseResponse.builder();
 
 
-        if (registerRequest.getUsername() == null || registerRequest.getPassword() == null || registerRequest.getFullname() == null) {
+        if (registerRequest.getUsername() == null || registerRequest.getPassword() == null || registerRequest.getFullName() == null) {
             response.message("Lack of information")
                     .status(HttpResponseStatus.BAD_REQUEST.code());
 
@@ -60,10 +56,10 @@ public class RegisterHandler extends BaseHandler {
 
         Account account = Account.builder()
                 .username(registerRequest.getUsername())
-                .fullName(registerRequest.getFullname())
+                .fullName(registerRequest.getFullName())
                 .password(BCrypt.hashpw(registerRequest.getPassword(), BCrypt.gensalt(4)))
                 .balance(10000000)
-                .lastTimeUpdate(Instant.now().getEpochSecond())
+                .lastTimeUpdateBalance(Instant.now().getEpochSecond())
                 .numberNotification(0)
                 .build();
 

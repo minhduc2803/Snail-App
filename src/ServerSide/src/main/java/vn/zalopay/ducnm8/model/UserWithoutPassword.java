@@ -10,12 +10,12 @@ import lombok.*;
 @AllArgsConstructor
 public class UserWithoutPassword {
     @DBTable(columnName = "id")
-    int UserID;
+    int userId;
 
     @DBTable(columnName = "user_name")
-    String Username;
+    String username;
 
     @DBTable(columnName = "full_name")
-    String Fullname;
+    String fullName;
 
 }

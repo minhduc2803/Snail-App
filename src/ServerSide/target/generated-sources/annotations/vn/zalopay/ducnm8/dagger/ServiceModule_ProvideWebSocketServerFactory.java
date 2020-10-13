@@ -3,7 +3,6 @@ package vn.zalopay.ducnm8.dagger;
 import dagger.internal.Factory;
 import dagger.internal.Preconditions;
 import io.vertx.core.Vertx;
-import io.vertx.ext.auth.jwt.JWTAuth;
 import javax.annotation.Generated;
 import javax.inject.Provider;
 import vn.zalopay.ducnm8.handler.WSHandler;
@@ -24,30 +23,25 @@ public final class ServiceModule_ProvideWebSocketServerFactory implements Factor
 
   private final Provider<Vertx> vertxProvider;
 
-  private final Provider<JWTAuth> jwtAuthProvider;
-
   public ServiceModule_ProvideWebSocketServerFactory(ServiceModule module,
-      Provider<WSHandler> wsHandlerProvider, Provider<Vertx> vertxProvider,
-      Provider<JWTAuth> jwtAuthProvider) {
+      Provider<WSHandler> wsHandlerProvider, Provider<Vertx> vertxProvider) {
     this.module = module;
     this.wsHandlerProvider = wsHandlerProvider;
     this.vertxProvider = vertxProvider;
-    this.jwtAuthProvider = jwtAuthProvider;
   }
 
   @Override
   public WebSocketServer get() {
-    return provideWebSocketServer(module, wsHandlerProvider.get(), vertxProvider.get(), jwtAuthProvider.get());
+    return provideWebSocketServer(module, wsHandlerProvider.get(), vertxProvider.get());
   }
 
   public static ServiceModule_ProvideWebSocketServerFactory create(ServiceModule module,
-      Provider<WSHandler> wsHandlerProvider, Provider<Vertx> vertxProvider,
-      Provider<JWTAuth> jwtAuthProvider) {
-    return new ServiceModule_ProvideWebSocketServerFactory(module, wsHandlerProvider, vertxProvider, jwtAuthProvider);
+      Provider<WSHandler> wsHandlerProvider, Provider<Vertx> vertxProvider) {
+    return new ServiceModule_ProvideWebSocketServerFactory(module, wsHandlerProvider, vertxProvider);
   }
 
   public static WebSocketServer provideWebSocketServer(ServiceModule instance, WSHandler wsHandler,
-      Vertx vertx, JWTAuth jwtAuth) {
-    return Preconditions.checkNotNull(instance.provideWebSocketServer(wsHandler, vertx, jwtAuth), "Cannot return null from a non-@Nullable @Provides method");
+      Vertx vertx) {
+    return Preconditions.checkNotNull(instance.provideWebSocketServer(wsHandler, vertx), "Cannot return null from a non-@Nullable @Provides method");
   }
 }

@@ -9,16 +9,10 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Conversation {
-    @DBTable(columnName = "ConversationID")
-    int ConversationID;
+    @DBTable(columnName = "id")
+    long id;
 
-    @DBTable(columnName = "UserStartID")
-    int UserStartID;
-
-    @DBTable(columnName = "Mode")
-    int Mode;
-
-    @DBTable(columnName = "Name")
-    String Name;
+    @DBTable(columnName = "last_time_chat")
+    long lastTimeChat;
 
 }

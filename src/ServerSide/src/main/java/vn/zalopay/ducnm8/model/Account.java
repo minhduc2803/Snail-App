@@ -25,7 +25,7 @@ public class Account {
   long balance;
 
   @DBTable(columnName = "last_time_update_balance")
-  long lastTimeUpdate;
+  long lastTimeUpdateBalance;
 
   @DBTable(columnName = "number_notification")
   int numberNotification;

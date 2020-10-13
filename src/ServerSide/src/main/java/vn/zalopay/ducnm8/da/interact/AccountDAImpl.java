@@ -7,6 +7,7 @@ import vn.zalopay.ducnm8.da.BaseTransactionDA;
 import vn.zalopay.ducnm8.da.Executable;
 import vn.zalopay.ducnm8.model.Account;
 import vn.zalopay.ducnm8.model.Balance;
+import vn.zalopay.ducnm8.model.User;
 import vn.zalopay.ducnm8.model.UserWithoutPassword;
 import vn.zalopay.ducnm8.utils.AsyncHandler;
 
@@ -26,13 +27,15 @@ public class AccountDAImpl extends BaseTransactionDA implements AccountDA {
     private static final String SELECT_USER_BY_ID =
             "SELECT * FROM account WHERE id = ?";
     private static final String SELECT_USER_BY_USERNAME =
-            "SELECT id, user_name, full_name, password, balance FROM account WHERE user_name = ?";
+            "SELECT id, user_name, full_name, password FROM account WHERE user_name = ?";
     private static final String SELECT_USER_LIST =
             "SELECT * FROM account WHERE id != ?";
     private static final String SELECT_BALANCE_BY_ID =
             "SELECT balance, last_time_update_balance, number_notification FROM account WHERE id = ?";
     private static final String UPDATE_BALANCE_BY_AMOUNT =
-            "UPDATE account SET balance = ?, last_time_update_balance = ? WHERE id = ?";
+            "UPDATE account \n" +
+            "SET balance = balance + ?\n" +
+            "WHERE id = ?;";
     private static final String UPDATE_NUMBER_NOTIFICATION =
             "UPDATE account SET number_notification = ? WHERE id = ?";
 
@@ -51,7 +54,7 @@ public class AccountDAImpl extends BaseTransactionDA implements AccountDA {
             asyncHandler.run(
                     () -> {
                         Object[] params = {account.getUsername(), account.getFullName(), account.getPassword(),
-                                account.getBalance(), account.getLastTimeUpdate(), account.getNumberNotification()};
+                                account.getBalance(), account.getLastTimeUpdateBalance(), account.getNumberNotification()};
                         try {
                             executeWithParams(future, connection.unwrap(), INSERT_USER_STATEMENT, params, "insertUser");
                         } catch (SQLException e) {
@@ -63,8 +66,8 @@ public class AccountDAImpl extends BaseTransactionDA implements AccountDA {
     }
 
     @Override
-    public Future<Account> selectUserById(long id) {
-        Future<Account> future = Future.future();
+    public Future<User> selectUserById(long id) {
+        Future<User> future = Future.future();
         asyncHandler.run(
                 () -> {
                     Object[] params = {id};
@@ -83,9 +86,9 @@ public class AccountDAImpl extends BaseTransactionDA implements AccountDA {
 
 
     @Override
-    public Future<Account> selectUserByUsername(String Username) {
+    public Future<User> selectUserByUsername(String Username) {
         log.info("select a user by username: {}", Username);
-        Future<Account> future = Future.future();
+        Future<User> future = Future.future();
         asyncHandler.run(
                 () -> {
                     Object[] params = {Username};
@@ -123,7 +126,7 @@ public class AccountDAImpl extends BaseTransactionDA implements AccountDA {
     }
 
     @Override
-    public Executable<Balance> updateBalanceByAmount(long id, long amount) {
+    public Executable<Balance> plusBalanceByAmount(long id, long amount) {
         log.info("update balance: (id={},amount={})", id, amount);
         return connection -> {
             Future<Balance> future = Future.future();
@@ -178,15 +181,15 @@ public class AccountDAImpl extends BaseTransactionDA implements AccountDA {
         return future;
     }
 
-    private Account mapRs2EntityUser(ResultSet resultSet) throws Exception {
-        Account account = null;
+    private User mapRs2EntityUser(ResultSet resultSet) throws Exception {
+        User user = null;
 
         while (resultSet.next()) {
-            account = new Account();
-            EntityMapper.getInstance().loadResultSetIntoObject(resultSet, account);
+            user = new User();
+            EntityMapper.getInstance().loadResultSetIntoObject(resultSet, user);
         }
 
-        return account;
+        return user;
     }
 
     private ArrayList<UserWithoutPassword> mapRs2EntityUserList(ResultSet resultSet) throws Exception {

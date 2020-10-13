@@ -9,5 +9,4 @@ public class BaseResponse {
     int status;
     String message;
     Object data;
-    LoginResponse response;
 }

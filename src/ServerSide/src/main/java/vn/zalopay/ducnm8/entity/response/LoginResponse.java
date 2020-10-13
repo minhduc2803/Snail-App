@@ -9,6 +9,6 @@ import lombok.Setter;
 @Getter
 public class LoginResponse {
     String token;
-    long UserID;
-    String Fullname;
+    long userId;
+    String fullName;
 }

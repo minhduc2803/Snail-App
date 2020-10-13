@@ -14,8 +14,6 @@ import io.vertx.core.json.JsonObject;
 import lombok.Builder;
 import lombok.extern.log4j.Log4j2;
 
-
-import java.util.Date;
 import java.util.Map;
 import java.time.Instant;
 import java.util.Set;
@@ -23,7 +21,7 @@ import java.util.Set;
 @Log4j2
 @Builder
 public class WSHandler {
-    private Map<Long, Set<ServerWebSocket>> clients;
+    private final Map<Long, Set<ServerWebSocket>> clients;
     private final ChatListDA chatListDA;
     private final ChatListCache chatListCache;
     private final TransactionProvider transactionProvider;
@@ -46,18 +44,18 @@ public class WSHandler {
         }
     }
 
-    public void handle(Buffer buffer, long UserID) {
-        log.info("Send chat from UserID: {}", UserID);
+    public void handle(Buffer buffer, long senderId) {
+        log.info("Send chat from userId: {}", senderId);
         JsonObject json = new JsonObject(buffer.toString());
 
-        log.info(json);
-        Date date = new Date();
+        log.info("a json chat {}",json);
+
         try {
             Chat chat = Chat.builder()
-                    .chatType(json.getInteger("Mode"))
-                    .senderId(UserID)
-                    .receiverId(json.getInteger("UserReceiveID"))
-                    .content(json.getString("Content"))
+                    .chatType(json.getInteger("chatType"))
+                    .senderId(senderId)
+                    .receiverId(json.getInteger("receiverId"))
+                    .content(json.getString("content"))
                     .sentTime(Instant.now().getEpochSecond())
                     .build();
 
@@ -72,7 +70,7 @@ public class WSHandler {
                 .setHandler(result -> {
                     if (result.succeeded()) {
                         log.info("insert a new chat");
-                        SendChat(chat, UserID);
+                        SendChat(chat, senderId);
                         SendChat(chat, chat.getReceiverId());
                         transaction
                                 .commit()
@@ -95,8 +93,6 @@ public class WSHandler {
         if (receiveWS == null)
             return;
         receiveWS.forEach(
-                conn -> {
-                    conn.writeTextMessage(JsonProtoUtils.printGson(chat));
-                });
+                conn -> conn.writeTextMessage(JsonProtoUtils.printGson(chat)));
     }
 }

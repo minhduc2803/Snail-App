@@ -1,13 +1,11 @@
 package vn.zalopay.ducnm8.handler.grpc;
 
-import hello.HelloReply;
-import hello.HelloRequest;
+import fintech.HistoryRequest;
+import fintech.HistoryResponse;
+import io.vertx.core.Future;
 
 public class GetHistoryHandler {
-    public HelloReply getHistory(HelloRequest helloRequest){
-        String message = "getHistory service say Hello to "+helloRequest.getName();
-
-
-        return HelloReply.newBuilder().setMessage(message).build();
+    public void getHistory(HistoryRequest helloRequest, Future<HistoryResponse> responseFuture){
+        responseFuture.complete();
     }
 }

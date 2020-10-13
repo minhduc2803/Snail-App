@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux';
-import { asyncLogin, alreadyLogin } from '../../redux/actions'
+import { asyncLogin } from '../../redux/actions'
 
 import './Login.css';
 

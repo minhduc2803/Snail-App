@@ -8,7 +8,7 @@ import * as serviceWorker from './serviceWorker';
 import {Provider} from 'react-redux'
 import store from './redux/store'
 
-import greeter from './grpc/greeterTest';
+
 
 ReactDOM.render(
     <Provider store={store}>
@@ -16,10 +16,7 @@ ReactDOM.render(
     </Provider>, 
 document.getElementById('root'));
 
-//jwt
-greeter.getBalance("duc", (err, response) => {
-    console.log("GRPC: "+response.getMessage());
-});
+
 
 
 

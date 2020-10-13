@@ -2,12 +2,11 @@ package vn.zalopay.ducnm8.utils;
 
 import io.grpc.Context;
 import io.grpc.Metadata;
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.impl.TextCodec;
-import io.vertx.core.Future;
-import io.vertx.core.json.JsonObject;
-import io.vertx.ext.auth.jwt.JWTAuth;
-import io.vertx.ext.jwt.JWTOptions;
+
 import io.jsonwebtoken.Jwts;
 
 import lombok.extern.log4j.Log4j2;
@@ -25,17 +24,13 @@ public class JWTUtils {
     public static final Metadata.Key<String> AUTHORIZATION_METADATA_KEY = Metadata.Key.of("Authorization", ASCII_STRING_MARSHALLER);
     public static final Context.Key<Long> CLIENT_ID_CONTEXT_KEY = Context.key("id");
 
-    public static Future<Long> authenticate(JWTAuth jwtAuth, String token) {
-        Future<Long> future = Future.future();
-        jwtAuth.authenticate(new JsonObject().put("jwt", token), event -> {
-            if (event.succeeded()) {
-                long UserID = event.result().principal().getLong("UserID");
-                future.complete(UserID);
-            } else {
-                future.fail(event.cause());
-            }
-        });
-        return future;
+    public static Long authenticate(String token) throws JwtException {
+        String id = Jwts.parser()
+                .setSigningKey(JWT_SIGNING_KEY)
+                .parseClaimsJws(token)
+                .getBody()
+                .getSubject();
+        return Long.valueOf(id);
     }
 
     public static String buildJWTToken(long account_id){

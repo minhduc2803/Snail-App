@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for helloworld
+ * @fileoverview gRPC-Web generated client stub for fintech
  * @enhanceable
  * @public
  */
@@ -16,7 +16,7 @@ const grpc = {};
 grpc.web = require('grpc-web');
 
 const proto = {};
-proto.helloworld = require('./hello_pb.js');
+proto.fintech = require('./fintech_pb.js');
 
 /**
  * @param {string} hostname
@@ -26,7 +26,7 @@ proto.helloworld = require('./hello_pb.js');
  * @struct
  * @final
  */
-proto.helloworld.FintechServiceClient =
+proto.fintech.FintechServiceClient =
     function(hostname, credentials, options) {
   if (!options) options = {};
   options['format'] = 'text';
@@ -52,7 +52,7 @@ proto.helloworld.FintechServiceClient =
  * @struct
  * @final
  */
-proto.helloworld.FintechServicePromiseClient =
+proto.fintech.FintechServicePromiseClient =
     function(hostname, credentials, options) {
   if (!options) options = {};
   options['format'] = 'text';
@@ -73,58 +73,58 @@ proto.helloworld.FintechServicePromiseClient =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.helloworld.HelloRequest,
- *   !proto.helloworld.HelloReply>}
+ *   !proto.fintech.BalanceRequest,
+ *   !proto.fintech.BalanceResponse>}
  */
 const methodDescriptor_FintechService_getBalance = new grpc.web.MethodDescriptor(
-  '/helloworld.FintechService/getBalance',
+  '/fintech.FintechService/getBalance',
   grpc.web.MethodType.UNARY,
-  proto.helloworld.HelloRequest,
-  proto.helloworld.HelloReply,
+  proto.fintech.BalanceRequest,
+  proto.fintech.BalanceResponse,
   /**
-   * @param {!proto.helloworld.HelloRequest} request
+   * @param {!proto.fintech.BalanceRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.helloworld.HelloReply.deserializeBinary
+  proto.fintech.BalanceResponse.deserializeBinary
 );
 
 
 /**
  * @const
  * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.helloworld.HelloRequest,
- *   !proto.helloworld.HelloReply>}
+ *   !proto.fintech.BalanceRequest,
+ *   !proto.fintech.BalanceResponse>}
  */
 const methodInfo_FintechService_getBalance = new grpc.web.AbstractClientBase.MethodInfo(
-  proto.helloworld.HelloReply,
+  proto.fintech.BalanceResponse,
   /**
-   * @param {!proto.helloworld.HelloRequest} request
+   * @param {!proto.fintech.BalanceRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.helloworld.HelloReply.deserializeBinary
+  proto.fintech.BalanceResponse.deserializeBinary
 );
 
 
 /**
- * @param {!proto.helloworld.HelloRequest} request The
+ * @param {!proto.fintech.BalanceRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.Error, ?proto.helloworld.HelloReply)}
+ * @param {function(?grpc.web.Error, ?proto.fintech.BalanceResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.helloworld.HelloReply>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.fintech.BalanceResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.helloworld.FintechServiceClient.prototype.getBalance =
+proto.fintech.FintechServiceClient.prototype.getBalance =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/helloworld.FintechService/getBalance',
+      '/fintech.FintechService/getBalance',
       request,
       metadata || {},
       methodDescriptor_FintechService_getBalance,
@@ -133,17 +133,17 @@ proto.helloworld.FintechServiceClient.prototype.getBalance =
 
 
 /**
- * @param {!proto.helloworld.HelloRequest} request The
+ * @param {!proto.fintech.BalanceRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.helloworld.HelloReply>}
+ * @return {!Promise<!proto.fintech.BalanceResponse>}
  *     Promise that resolves to the response
  */
-proto.helloworld.FintechServicePromiseClient.prototype.getBalance =
+proto.fintech.FintechServicePromiseClient.prototype.getBalance =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/helloworld.FintechService/getBalance',
+      '/fintech.FintechService/getBalance',
       request,
       metadata || {},
       methodDescriptor_FintechService_getBalance);
@@ -153,58 +153,58 @@ proto.helloworld.FintechServicePromiseClient.prototype.getBalance =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.helloworld.HelloRequest,
- *   !proto.helloworld.HelloReply>}
+ *   !proto.fintech.HistoryRequest,
+ *   !proto.fintech.HistoryResponse>}
  */
 const methodDescriptor_FintechService_getHistory = new grpc.web.MethodDescriptor(
-  '/helloworld.FintechService/getHistory',
+  '/fintech.FintechService/getHistory',
   grpc.web.MethodType.UNARY,
-  proto.helloworld.HelloRequest,
-  proto.helloworld.HelloReply,
+  proto.fintech.HistoryRequest,
+  proto.fintech.HistoryResponse,
   /**
-   * @param {!proto.helloworld.HelloRequest} request
+   * @param {!proto.fintech.HistoryRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.helloworld.HelloReply.deserializeBinary
+  proto.fintech.HistoryResponse.deserializeBinary
 );
 
 
 /**
  * @const
  * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.helloworld.HelloRequest,
- *   !proto.helloworld.HelloReply>}
+ *   !proto.fintech.HistoryRequest,
+ *   !proto.fintech.HistoryResponse>}
  */
 const methodInfo_FintechService_getHistory = new grpc.web.AbstractClientBase.MethodInfo(
-  proto.helloworld.HelloReply,
+  proto.fintech.HistoryResponse,
   /**
-   * @param {!proto.helloworld.HelloRequest} request
+   * @param {!proto.fintech.HistoryRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.helloworld.HelloReply.deserializeBinary
+  proto.fintech.HistoryResponse.deserializeBinary
 );
 
 
 /**
- * @param {!proto.helloworld.HelloRequest} request The
+ * @param {!proto.fintech.HistoryRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.Error, ?proto.helloworld.HelloReply)}
+ * @param {function(?grpc.web.Error, ?proto.fintech.HistoryResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.helloworld.HelloReply>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.fintech.HistoryResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.helloworld.FintechServiceClient.prototype.getHistory =
+proto.fintech.FintechServiceClient.prototype.getHistory =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/helloworld.FintechService/getHistory',
+      '/fintech.FintechService/getHistory',
       request,
       metadata || {},
       methodDescriptor_FintechService_getHistory,
@@ -213,17 +213,17 @@ proto.helloworld.FintechServiceClient.prototype.getHistory =
 
 
 /**
- * @param {!proto.helloworld.HelloRequest} request The
+ * @param {!proto.fintech.HistoryRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.helloworld.HelloReply>}
+ * @return {!Promise<!proto.fintech.HistoryResponse>}
  *     Promise that resolves to the response
  */
-proto.helloworld.FintechServicePromiseClient.prototype.getHistory =
+proto.fintech.FintechServicePromiseClient.prototype.getHistory =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/helloworld.FintechService/getHistory',
+      '/fintech.FintechService/getHistory',
       request,
       metadata || {},
       methodDescriptor_FintechService_getHistory);
@@ -233,58 +233,58 @@ proto.helloworld.FintechServicePromiseClient.prototype.getHistory =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.helloworld.HelloRequest,
- *   !proto.helloworld.HelloReply>}
+ *   !proto.fintech.TransferRequest,
+ *   !proto.fintech.TransferResponse>}
  */
 const methodDescriptor_FintechService_transfer = new grpc.web.MethodDescriptor(
-  '/helloworld.FintechService/transfer',
+  '/fintech.FintechService/transfer',
   grpc.web.MethodType.UNARY,
-  proto.helloworld.HelloRequest,
-  proto.helloworld.HelloReply,
+  proto.fintech.TransferRequest,
+  proto.fintech.TransferResponse,
   /**
-   * @param {!proto.helloworld.HelloRequest} request
+   * @param {!proto.fintech.TransferRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.helloworld.HelloReply.deserializeBinary
+  proto.fintech.TransferResponse.deserializeBinary
 );
 
 
 /**
  * @const
  * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.helloworld.HelloRequest,
- *   !proto.helloworld.HelloReply>}
+ *   !proto.fintech.TransferRequest,
+ *   !proto.fintech.TransferResponse>}
  */
 const methodInfo_FintechService_transfer = new grpc.web.AbstractClientBase.MethodInfo(
-  proto.helloworld.HelloReply,
+  proto.fintech.TransferResponse,
   /**
-   * @param {!proto.helloworld.HelloRequest} request
+   * @param {!proto.fintech.TransferRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.helloworld.HelloReply.deserializeBinary
+  proto.fintech.TransferResponse.deserializeBinary
 );
 
 
 /**
- * @param {!proto.helloworld.HelloRequest} request The
+ * @param {!proto.fintech.TransferRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.Error, ?proto.helloworld.HelloReply)}
+ * @param {function(?grpc.web.Error, ?proto.fintech.TransferResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.helloworld.HelloReply>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.fintech.TransferResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.helloworld.FintechServiceClient.prototype.transfer =
+proto.fintech.FintechServiceClient.prototype.transfer =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/helloworld.FintechService/transfer',
+      '/fintech.FintechService/transfer',
       request,
       metadata || {},
       methodDescriptor_FintechService_transfer,
@@ -293,17 +293,17 @@ proto.helloworld.FintechServiceClient.prototype.transfer =
 
 
 /**
- * @param {!proto.helloworld.HelloRequest} request The
+ * @param {!proto.fintech.TransferRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.helloworld.HelloReply>}
+ * @return {!Promise<!proto.fintech.TransferResponse>}
  *     Promise that resolves to the response
  */
-proto.helloworld.FintechServicePromiseClient.prototype.transfer =
+proto.fintech.FintechServicePromiseClient.prototype.transfer =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/helloworld.FintechService/transfer',
+      '/fintech.FintechService/transfer',
       request,
       metadata || {},
       methodDescriptor_FintechService_transfer);
@@ -313,58 +313,58 @@ proto.helloworld.FintechServicePromiseClient.prototype.transfer =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.helloworld.HelloRequest,
- *   !proto.helloworld.HelloReply>}
+ *   !proto.fintech.NotificationRequest,
+ *   !proto.fintech.NotificationResponse>}
  */
 const methodDescriptor_FintechService_getNotification = new grpc.web.MethodDescriptor(
-  '/helloworld.FintechService/getNotification',
+  '/fintech.FintechService/getNotification',
   grpc.web.MethodType.UNARY,
-  proto.helloworld.HelloRequest,
-  proto.helloworld.HelloReply,
+  proto.fintech.NotificationRequest,
+  proto.fintech.NotificationResponse,
   /**
-   * @param {!proto.helloworld.HelloRequest} request
+   * @param {!proto.fintech.NotificationRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.helloworld.HelloReply.deserializeBinary
+  proto.fintech.NotificationResponse.deserializeBinary
 );
 
 
 /**
  * @const
  * @type {!grpc.web.AbstractClientBase.MethodInfo<
- *   !proto.helloworld.HelloRequest,
- *   !proto.helloworld.HelloReply>}
+ *   !proto.fintech.NotificationRequest,
+ *   !proto.fintech.NotificationResponse>}
  */
 const methodInfo_FintechService_getNotification = new grpc.web.AbstractClientBase.MethodInfo(
-  proto.helloworld.HelloReply,
+  proto.fintech.NotificationResponse,
   /**
-   * @param {!proto.helloworld.HelloRequest} request
+   * @param {!proto.fintech.NotificationRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
     return request.serializeBinary();
   },
-  proto.helloworld.HelloReply.deserializeBinary
+  proto.fintech.NotificationResponse.deserializeBinary
 );
 
 
 /**
- * @param {!proto.helloworld.HelloRequest} request The
+ * @param {!proto.fintech.NotificationRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.Error, ?proto.helloworld.HelloReply)}
+ * @param {function(?grpc.web.Error, ?proto.fintech.NotificationResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.helloworld.HelloReply>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.fintech.NotificationResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.helloworld.FintechServiceClient.prototype.getNotification =
+proto.fintech.FintechServiceClient.prototype.getNotification =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/helloworld.FintechService/getNotification',
+      '/fintech.FintechService/getNotification',
       request,
       metadata || {},
       methodDescriptor_FintechService_getNotification,
@@ -373,22 +373,22 @@ proto.helloworld.FintechServiceClient.prototype.getNotification =
 
 
 /**
- * @param {!proto.helloworld.HelloRequest} request The
+ * @param {!proto.fintech.NotificationRequest} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.helloworld.HelloReply>}
+ * @return {!Promise<!proto.fintech.NotificationResponse>}
  *     Promise that resolves to the response
  */
-proto.helloworld.FintechServicePromiseClient.prototype.getNotification =
+proto.fintech.FintechServicePromiseClient.prototype.getNotification =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/helloworld.FintechService/getNotification',
+      '/fintech.FintechService/getNotification',
       request,
       metadata || {},
       methodDescriptor_FintechService_getNotification);
 };
 
 
-module.exports = proto.helloworld;
+module.exports = proto.fintech;
 

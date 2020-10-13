@@ -9,14 +9,13 @@ import lombok.Builder;
 
 @Builder
 public class HandlerFactory {
-  private BaseHandler echoHandler;
-  private BaseHandler exampleHandler;
-  private BaseHandler loginHandler;
-  private BaseHandler registerHandler;
-  private BaseHandler conversationListHandler;
-  private BaseHandler chatListHandler;
-  private JWTAuthHandler jwtAuthHandler;
-  private UserListHandler userListHandler;
+  private final BaseHandler echoHandler;
+  private final BaseHandler exampleHandler;
+  private final BaseHandler loginHandler;
+  private final BaseHandler registerHandler;
+  private final BaseHandler chatListHandler;
+  private final JWTAuthHandler jwtAuthHandler;
+  private final UserListHandler userListHandler;
 
   public void initialize(Router router) {
 
@@ -32,29 +31,22 @@ public class HandlerFactory {
           .build();
 
     postHandler
-        .entrySet()
-        .forEach(
-            entry ->
-                router
-                  .route()
-                  .method(HttpMethod.POST)
-                  .path(entry.getKey())
-                  .handler(entry.getValue()::handle));
+        .forEach((key, value) -> router
+            .route()
+            .method(HttpMethod.POST)
+            .path(key)
+            .handler(value::handle));
 
     ImmutableMap<String, BaseHandler> getHandler =
       ImmutableMap.<String, BaseHandler>builder()
-        .put(APIPath.LIST_CONVERSATION, conversationListHandler)
         .put(APIPath.LIST_USER, userListHandler)
         .build();
 
     getHandler
-        .entrySet()
-        .forEach(
-            entry ->
-                router
-                  .route()
-                  .method(HttpMethod.GET)
-                  .path(entry.getKey())
-                  .handler(entry.getValue()::handle));
+        .forEach((key, value) -> router
+            .route()
+            .method(HttpMethod.GET)
+            .path(key)
+            .handler(value::handle));
   }
 }

@@ -3,22 +3,18 @@ package vn.zalopay.ducnm8.dagger;
 import dagger.internal.DoubleCheck;
 import dagger.internal.Preconditions;
 import io.vertx.core.Vertx;
-import io.vertx.ext.auth.jwt.JWTAuth;
-import io.vertx.ext.auth.jwt.JWTAuthOptions;
 import javax.annotation.Generated;
 import javax.inject.Provider;
 import vn.zalopay.ducnm8.cache.ChatListCache;
-import vn.zalopay.ducnm8.cache.ConversationListCache;
 import vn.zalopay.ducnm8.cache.RedisCache;
 import vn.zalopay.ducnm8.cache.UserCache;
 import vn.zalopay.ducnm8.da.DataSourceProvider;
 import vn.zalopay.ducnm8.da.TransactionProvider;
 import vn.zalopay.ducnm8.da.interact.AccountDA;
 import vn.zalopay.ducnm8.da.interact.ChatListDA;
-import vn.zalopay.ducnm8.da.interact.ConversationMemberDA;
+import vn.zalopay.ducnm8.da.interact.TransferDA;
 import vn.zalopay.ducnm8.grpc.FintechServiceImpl;
 import vn.zalopay.ducnm8.handler.ChatListHandler;
-import vn.zalopay.ducnm8.handler.ConversationListHandler;
 import vn.zalopay.ducnm8.handler.EchoHandler;
 import vn.zalopay.ducnm8.handler.ExampleHandler;
 import vn.zalopay.ducnm8.handler.HandlerFactory;
@@ -27,7 +23,11 @@ import vn.zalopay.ducnm8.handler.LoginHandler;
 import vn.zalopay.ducnm8.handler.RegisterHandler;
 import vn.zalopay.ducnm8.handler.UserListHandler;
 import vn.zalopay.ducnm8.handler.WSHandler;
+import vn.zalopay.ducnm8.handler.grpc.GetBalanceHandler;
+import vn.zalopay.ducnm8.handler.grpc.GetHistoryHandler;
+import vn.zalopay.ducnm8.handler.grpc.GetNotificationHandler;
 import vn.zalopay.ducnm8.handler.grpc.InterceptorHandler;
+import vn.zalopay.ducnm8.handler.grpc.TransferHandler;
 import vn.zalopay.ducnm8.server.GRPCServer;
 import vn.zalopay.ducnm8.server.RestfulAPI;
 import vn.zalopay.ducnm8.server.WebSocketServer;
@@ -50,7 +50,7 @@ public final class DaggerServiceComponent implements ServiceComponent {
 
   private Provider<AsyncHandler> ProvideAsyncHandlerProvider;
 
-  private Provider<AccountDA> provideUserDAProvider;
+  private Provider<AccountDA> provideAccountDAProvider;
 
   private Provider<TransactionProvider> provideTransactionProvider;
 
@@ -60,19 +60,9 @@ public final class DaggerServiceComponent implements ServiceComponent {
 
   private Provider<ExampleHandler> provideExampleHandlerProvider;
 
-  private Provider<JWTAuthOptions> provideJWTAuthOptionsProvider;
-
-  private Provider<JWTAuth> provideAuthProvider;
-
   private Provider<LoginHandler> provideLoginHandlerProvider;
 
   private Provider<RegisterHandler> provideRegisterHandlerProvider;
-
-  private Provider<ConversationMemberDA> provideConversationMemberDAProvider;
-
-  private Provider<ConversationListCache> provideConversationListCacheProvider;
-
-  private Provider<ConversationListHandler> provideConversationListHandlerProvider;
 
   private Provider<ChatListDA> provideChatListDAProvider;
 
@@ -91,6 +81,16 @@ public final class DaggerServiceComponent implements ServiceComponent {
   private Provider<WSHandler> provideWSHandlerProvider;
 
   private Provider<WebSocketServer> provideWebSocketServerProvider;
+
+  private Provider<GetBalanceHandler> provideGetBalanceHandlerProvider;
+
+  private Provider<GetHistoryHandler> provideGetHistoryHandlerProvider;
+
+  private Provider<TransferDA> provideTransferDAProvider;
+
+  private Provider<TransferHandler> provideTransferHandlerProvider;
+
+  private Provider<GetNotificationHandler> provideGetNotificationHandlerProvider;
 
   private Provider<FintechServiceImpl> provideFintechServiceImplProvider;
 
@@ -113,28 +113,28 @@ public final class DaggerServiceComponent implements ServiceComponent {
     this.provideVertxProvider = DoubleCheck.provider(ServiceModule_ProvideVertxFactory.create(serviceModuleParam));
     this.provideDataSourceProvider = DoubleCheck.provider(ServiceModule_ProvideDataSourceProviderFactory.create(serviceModuleParam, provideVertxProvider));
     this.ProvideAsyncHandlerProvider = DoubleCheck.provider(ServiceModule_ProvideAsyncHandlerFactory.create(serviceModuleParam, provideVertxProvider));
-    this.provideUserDAProvider = DoubleCheck.provider(ServiceModule_ProvideUserDAFactory.create(serviceModuleParam, provideDataSourceProvider, ProvideAsyncHandlerProvider));
+    this.provideAccountDAProvider = DoubleCheck.provider(ServiceModule_ProvideAccountDAFactory.create(serviceModuleParam, provideDataSourceProvider, ProvideAsyncHandlerProvider));
     this.provideTransactionProvider = DoubleCheck.provider(ServiceModule_ProvideTransactionProviderFactory.create(serviceModuleParam, provideDataSourceProvider));
     this.provideRedisCacheProvider = DoubleCheck.provider(ServiceModule_ProvideRedisCacheFactory.create(serviceModuleParam));
     this.provideUserCacheProvider = DoubleCheck.provider(ServiceModule_ProvideUserCacheFactory.create(serviceModuleParam, provideRedisCacheProvider, ProvideAsyncHandlerProvider));
-    this.provideExampleHandlerProvider = DoubleCheck.provider(ServiceModule_ProvideExampleHandlerFactory.create(serviceModuleParam, provideUserDAProvider, provideTransactionProvider, provideUserCacheProvider));
-    this.provideJWTAuthOptionsProvider = DoubleCheck.provider(ServiceModule_ProvideJWTAuthOptionsFactory.create(serviceModuleParam));
-    this.provideAuthProvider = DoubleCheck.provider(ServiceModule_ProvideAuthProviderFactory.create(serviceModuleParam, provideVertxProvider, provideJWTAuthOptionsProvider));
-    this.provideLoginHandlerProvider = DoubleCheck.provider(ServiceModule_ProvideLoginHandlerFactory.create(serviceModuleParam, provideUserDAProvider, provideTransactionProvider, provideUserCacheProvider, provideAuthProvider));
-    this.provideRegisterHandlerProvider = DoubleCheck.provider(ServiceModule_ProvideRegisterHandlerFactory.create(serviceModuleParam, provideUserDAProvider, provideTransactionProvider, provideUserCacheProvider, provideAuthProvider));
-    this.provideConversationMemberDAProvider = DoubleCheck.provider(ServiceModule_ProvideConversationMemberDAFactory.create(serviceModuleParam, provideDataSourceProvider, ProvideAsyncHandlerProvider));
-    this.provideConversationListCacheProvider = DoubleCheck.provider(ServiceModule_ProvideConversationListCacheFactory.create(serviceModuleParam, provideRedisCacheProvider, ProvideAsyncHandlerProvider));
-    this.provideConversationListHandlerProvider = DoubleCheck.provider(ServiceModule_ProvideConversationListHandlerFactory.create(serviceModuleParam, provideConversationMemberDAProvider, provideTransactionProvider, provideConversationListCacheProvider));
+    this.provideExampleHandlerProvider = DoubleCheck.provider(ServiceModule_ProvideExampleHandlerFactory.create(serviceModuleParam, provideAccountDAProvider, provideTransactionProvider, provideUserCacheProvider));
+    this.provideLoginHandlerProvider = DoubleCheck.provider(ServiceModule_ProvideLoginHandlerFactory.create(serviceModuleParam, provideAccountDAProvider, provideTransactionProvider, provideUserCacheProvider));
+    this.provideRegisterHandlerProvider = DoubleCheck.provider(ServiceModule_ProvideRegisterHandlerFactory.create(serviceModuleParam, provideAccountDAProvider, provideTransactionProvider, provideUserCacheProvider));
     this.provideChatListDAProvider = DoubleCheck.provider(ServiceModule_ProvideChatListDAFactory.create(serviceModuleParam, provideDataSourceProvider, ProvideAsyncHandlerProvider));
     this.provideChatListCacheProvider = DoubleCheck.provider(ServiceModule_ProvideChatListCacheFactory.create(serviceModuleParam, provideRedisCacheProvider, ProvideAsyncHandlerProvider));
-    this.provideChatListHandlerProvider = DoubleCheck.provider(ServiceModule_ProvideChatListHandlerFactory.create(serviceModuleParam, provideChatListDAProvider, provideTransactionProvider, provideChatListCacheProvider, provideAuthProvider));
-    this.provideJWTAuthHandlerProvider = DoubleCheck.provider(ServiceModule_ProvideJWTAuthHandlerFactory.create(serviceModuleParam, provideAuthProvider));
-    this.provideUserListHandlerProvider = DoubleCheck.provider(ServiceModule_ProvideUserListHandlerFactory.create(serviceModuleParam, provideUserDAProvider, provideTransactionProvider, provideUserCacheProvider, provideAuthProvider));
-    this.provideHandlerProvider = DoubleCheck.provider(ServiceModule_ProvideHandlerFactory.create(serviceModuleParam, provideEchoHandlerProvider, provideExampleHandlerProvider, provideLoginHandlerProvider, provideRegisterHandlerProvider, provideConversationListHandlerProvider, provideChatListHandlerProvider, provideJWTAuthHandlerProvider, provideUserListHandlerProvider));
-    this.provideRestfulAPIProvider = DoubleCheck.provider(ServiceModule_ProvideRestfulAPIFactory.create(serviceModuleParam, provideHandlerProvider, provideVertxProvider, provideAuthProvider));
+    this.provideChatListHandlerProvider = DoubleCheck.provider(ServiceModule_ProvideChatListHandlerFactory.create(serviceModuleParam, provideChatListDAProvider, provideTransactionProvider, provideChatListCacheProvider));
+    this.provideJWTAuthHandlerProvider = DoubleCheck.provider(ServiceModule_ProvideJWTAuthHandlerFactory.create(serviceModuleParam));
+    this.provideUserListHandlerProvider = DoubleCheck.provider(ServiceModule_ProvideUserListHandlerFactory.create(serviceModuleParam, provideAccountDAProvider, provideTransactionProvider, provideUserCacheProvider));
+    this.provideHandlerProvider = DoubleCheck.provider(ServiceModule_ProvideHandlerFactory.create(serviceModuleParam, provideEchoHandlerProvider, provideExampleHandlerProvider, provideLoginHandlerProvider, provideRegisterHandlerProvider, provideChatListHandlerProvider, provideJWTAuthHandlerProvider, provideUserListHandlerProvider));
+    this.provideRestfulAPIProvider = DoubleCheck.provider(ServiceModule_ProvideRestfulAPIFactory.create(serviceModuleParam, provideHandlerProvider, provideVertxProvider));
     this.provideWSHandlerProvider = DoubleCheck.provider(ServiceModule_ProvideWSHandlerFactory.create(serviceModuleParam, provideChatListDAProvider, provideChatListCacheProvider, provideTransactionProvider));
-    this.provideWebSocketServerProvider = DoubleCheck.provider(ServiceModule_ProvideWebSocketServerFactory.create(serviceModuleParam, provideWSHandlerProvider, provideVertxProvider, provideAuthProvider));
-    this.provideFintechServiceImplProvider = DoubleCheck.provider(ServiceModule_ProvideFintechServiceImplFactory.create(serviceModuleParam));
+    this.provideWebSocketServerProvider = DoubleCheck.provider(ServiceModule_ProvideWebSocketServerFactory.create(serviceModuleParam, provideWSHandlerProvider, provideVertxProvider));
+    this.provideGetBalanceHandlerProvider = DoubleCheck.provider(ServiceModule_ProvideGetBalanceHandlerFactory.create(serviceModuleParam, provideAccountDAProvider));
+    this.provideGetHistoryHandlerProvider = DoubleCheck.provider(ServiceModule_ProvideGetHistoryHandlerFactory.create(serviceModuleParam));
+    this.provideTransferDAProvider = DoubleCheck.provider(ServiceModule_ProvideTransferDAFactory.create(serviceModuleParam, provideDataSourceProvider, ProvideAsyncHandlerProvider));
+    this.provideTransferHandlerProvider = DoubleCheck.provider(ServiceModule_ProvideTransferHandlerFactory.create(serviceModuleParam, provideTransferDAProvider));
+    this.provideGetNotificationHandlerProvider = DoubleCheck.provider(ServiceModule_ProvideGetNotificationHandlerFactory.create(serviceModuleParam));
+    this.provideFintechServiceImplProvider = DoubleCheck.provider(ServiceModule_ProvideFintechServiceImplFactory.create(serviceModuleParam, provideGetBalanceHandlerProvider, provideGetHistoryHandlerProvider, provideTransferHandlerProvider, provideGetNotificationHandlerProvider));
     this.provideInterceptorHandlerProvider = DoubleCheck.provider(ServiceModule_ProvideInterceptorHandlerFactory.create(serviceModuleParam));
     this.provideGRPCServerProvider = DoubleCheck.provider(ServiceModule_ProvideGRPCServerFactory.create(serviceModuleParam, provideVertxProvider, provideFintechServiceImplProvider, provideInterceptorHandlerProvider));
   }

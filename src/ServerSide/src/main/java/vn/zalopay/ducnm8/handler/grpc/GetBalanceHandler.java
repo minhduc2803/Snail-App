@@ -22,7 +22,7 @@ public class GetBalanceHandler {
     public void getBalance(BalanceRequest request, Future<BalanceResponse> balanceResponseFuture) {
 
         long id = JWTUtils.CLIENT_ID_CONTEXT_KEY.get();
-
+        log.info("GRPC get balance request from: {}",id);
         accountDA.selectBalanceById(id)
             .setHandler(rs -> {
                 BalanceResponse response = null;

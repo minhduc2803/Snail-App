@@ -35844,3 +35844,675 @@ sqlState=42S22
 2020-10-14 17:35:53,513 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
 2020-10-14 17:35:53,513 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
 2020-10-14 17:35:53,513 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:40:10,111 INFO  vn.zalopay.ducnm8.handler.LoginHandler Login request from : minhduc
+2020-10-14 17:40:10,111 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select a user by username: minhduc
+2020-10-14 17:40:10,112 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,112 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:40:10,112 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:40:10,112 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:40:10,114 INFO  vn.zalopay.ducnm8.utils.JWTUtils Create a new JWT token for id 5
+2020-10-14 17:40:10,114 INFO  vn.zalopay.ducnm8.handler.LoginHandler token len: 103
+2020-10-14 17:40:10,114 INFO  vn.zalopay.ducnm8.handler.LoginHandler Login successfully
+2020-10-14 17:40:10,153 INFO  vn.zalopay.ducnm8.server.WebSocketServer web socket connected from UserID: 5
+2020-10-14 17:40:10,157 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-14 17:40:10,157 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-14 17:40:10,158 INFO  vn.zalopay.ducnm8.handler.UserListHandler get a user list
+2020-10-14 17:40:10,158 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select list user except one user by id: 5
+2020-10-14 17:40:10,159 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:40:10,159 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:40:10,159 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:40:10,159 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:40:10,159 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:40:10,159 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:40:10,159 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:40:10,159 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:40:10,159 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:40:10,232 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-14 17:40:10,233 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-14 17:40:10,233 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-14 17:40:10,233 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-14 17:40:10,233 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 5 and 4
+2020-10-14 17:40:10,233 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 5 and 4
+2020-10-14 17:40:10,233 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-14 17:40:10,234 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 5 and 8
+2020-10-14 17:40:10,234 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 5 and 8
+2020-10-14 17:40:10,234 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-14 17:40:10,235 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@1294553591 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@557ebab0
+2020-10-14 17:40:10,236 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@1959222693 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@7a21990d
+2020-10-14 17:40:10,236 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,236 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,236 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,236 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:40:10,236 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:40:10,236 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:40:10,237 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,237 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 5 and 7
+2020-10-14 17:40:10,237 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,237 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,237 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 5 and 7
+2020-10-14 17:40:10,237 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:40:10,237 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:40:10,237 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:40:10,237 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,237 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,237 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,237 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:40:10,237 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:40:10,237 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:40:10,237 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,237 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,237 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,237 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:40:10,237 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:40:10,237 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:40:10,237 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,237 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,237 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,237 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:40:10,237 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:40:10,237 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:40:10,237 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,237 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@894733897 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@398b25fb
+2020-10-14 17:40:10,237 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,238 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,238 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:40:10,238 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:40:10,238 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:40:10,238 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,238 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,238 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,238 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:40:10,238 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:40:10,238 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:40:10,238 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,238 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,238 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,238 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:40:10,238 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:40:10,238 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:40:10,238 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,238 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,238 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,238 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:40:10,238 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:40:10,238 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:40:10,238 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,238 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,238 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,238 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:40:10,238 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:40:10,239 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:40:10,239 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,239 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,239 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,239 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:40:10,239 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:40:10,239 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:40:10,239 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,239 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,239 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,239 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:40:10,239 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:40:10,239 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:40:10,239 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,239 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,239 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,239 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:40:10,239 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:40:10,239 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:40:10,239 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,239 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,239 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,239 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:40:10,239 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:40:10,239 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:40:10,240 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,240 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,240 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,240 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:40:10,240 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:40:10,240 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:40:10,240 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,240 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,240 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,240 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:40:10,240 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:40:10,240 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:40:10,240 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,240 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,240 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,240 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:40:10,240 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:40:10,240 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:40:10,240 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,240 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,240 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,240 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:40:10,240 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:40:10,240 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:40:10,240 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,240 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,240 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,241 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:40:10,241 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:40:10,241 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:40:10,241 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,241 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,241 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,241 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:40:10,241 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:40:10,241 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:40:10,241 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,241 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,241 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,241 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:40:10,241 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:40:10,241 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:40:10,241 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,241 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,241 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,241 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:40:10,241 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:40:10,241 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:40:10,241 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,241 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,241 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,241 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:40:10,241 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:40:10,241 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:40:10,242 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,242 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,242 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,242 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:40:10,242 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:40:10,242 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:40:10,242 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,242 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,242 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,242 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:40:10,242 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:40:10,242 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:40:10,242 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,242 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,242 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,242 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:40:10,242 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:40:10,242 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:40:10,242 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,242 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,242 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,242 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:40:10,242 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:40:10,242 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:40:10,242 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,242 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,243 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,243 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:40:10,243 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:40:10,243 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:40:10,243 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,243 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,243 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,243 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:40:10,243 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:40:10,243 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:40:10,243 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,243 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,243 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,251 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:40:10,251 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:40:10,251 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:40:10,251 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,251 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,252 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:40:10,252 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:40:10,252 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:40:10,252 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:41:15,935 INFO  vn.zalopay.ducnm8.handler.LoginHandler Login request from : minhduc
+2020-10-14 17:41:15,936 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select a user by username: minhduc
+2020-10-14 17:41:15,937 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:15,937 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:41:15,937 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:41:15,937 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:41:15,940 INFO  vn.zalopay.ducnm8.utils.JWTUtils Create a new JWT token for id 5
+2020-10-14 17:41:15,940 INFO  vn.zalopay.ducnm8.handler.LoginHandler token len: 103
+2020-10-14 17:41:15,940 INFO  vn.zalopay.ducnm8.handler.LoginHandler Login successfully
+2020-10-14 17:41:15,976 INFO  vn.zalopay.ducnm8.server.WebSocketServer web socket connected from UserID: 5
+2020-10-14 17:41:15,982 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-14 17:41:15,983 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-14 17:41:15,983 INFO  vn.zalopay.ducnm8.handler.UserListHandler get a user list
+2020-10-14 17:41:15,983 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select list user except one user by id: 5
+2020-10-14 17:41:15,984 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:41:15,984 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:41:15,984 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:41:15,984 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:41:15,984 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:41:15,984 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:41:15,984 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:41:15,984 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:41:15,984 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:41:16,045 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-14 17:41:16,045 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-14 17:41:16,046 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-14 17:41:16,047 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 5 and 4
+2020-10-14 17:41:16,047 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 5 and 4
+2020-10-14 17:41:16,052 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-14 17:41:16,052 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-14 17:41:16,053 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@1264596390 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@2b75cbfb
+2020-10-14 17:41:16,053 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,053 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,053 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,053 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 5 and 8
+2020-10-14 17:41:16,053 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:41:16,053 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:41:16,053 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:41:16,053 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,053 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,053 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,053 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:41:16,053 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:41:16,053 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:41:16,053 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,053 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,053 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,053 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:41:16,053 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:41:16,053 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:41:16,054 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,054 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,054 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,054 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:41:16,054 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:41:16,054 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:41:16,054 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,054 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,054 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,054 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:41:16,054 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:41:16,054 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:41:16,053 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-14 17:41:16,054 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,054 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,054 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,054 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:41:16,054 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:41:16,054 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:41:16,054 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,054 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,054 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,054 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:41:16,054 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:41:16,054 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:41:16,055 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,055 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,055 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,055 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:41:16,055 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:41:16,055 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 5 and 7
+2020-10-14 17:41:16,055 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:41:16,055 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,055 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 5 and 7
+2020-10-14 17:41:16,055 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,055 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,055 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:41:16,055 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:41:16,055 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:41:16,055 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,055 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,055 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,055 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:41:16,055 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:41:16,055 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:41:16,055 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,055 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,055 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,055 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:41:16,055 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:41:16,055 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:41:16,056 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,056 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,056 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@1931476025 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@57e182fc
+2020-10-14 17:41:16,056 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,056 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:41:16,056 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:41:16,056 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:41:16,056 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,056 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,056 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,056 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:41:16,056 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:41:16,056 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:41:16,056 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,057 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 5 and 8
+2020-10-14 17:41:16,058 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@1744883323 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@363c2f3c
+2020-10-14 17:41:16,058 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,058 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,058 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:41:16,058 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:41:16,058 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:41:16,059 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,059 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,059 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,059 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:41:16,059 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:41:16,059 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:41:16,059 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,059 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,059 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,059 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:41:16,059 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:41:16,059 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:41:16,059 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,059 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,059 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,059 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:41:16,059 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:41:16,059 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:41:16,059 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,059 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,059 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,059 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:41:16,059 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:41:16,059 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:41:16,060 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,060 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,060 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,060 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:41:16,060 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:41:16,060 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:41:16,060 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,060 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,060 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,060 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:41:16,060 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:41:16,060 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:41:16,060 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,060 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,060 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,060 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:41:16,060 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:41:16,060 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:41:16,060 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,060 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,060 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,060 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:41:16,060 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:41:16,060 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:41:16,061 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,061 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,061 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,061 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:41:16,061 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:41:16,061 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:41:16,061 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,061 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,061 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,061 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:41:16,061 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:41:16,061 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:41:16,061 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,061 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,061 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,061 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:41:16,061 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:41:16,061 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:41:16,061 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,061 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,061 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,061 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:41:16,061 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:41:16,061 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:41:16,061 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,061 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,062 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,062 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:41:16,062 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:41:16,062 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:41:16,062 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,062 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,062 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,062 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:41:16,062 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:41:16,062 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:41:16,062 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,062 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,062 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,062 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:41:16,062 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:41:16,062 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:41:16,062 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,062 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,062 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,062 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:41:16,062 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:41:16,062 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:41:16,062 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,062 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,062 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:41:16,062 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:41:16,063 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:41:16,063 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:44:34,786 INFO  vn.zalopay.ducnm8.handler.LoginHandler Login request from : minhduc
+2020-10-14 17:44:34,786 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select a user by username: minhduc
+2020-10-14 17:44:34,788 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,788 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:44:34,788 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:44:34,788 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:44:34,791 INFO  vn.zalopay.ducnm8.utils.JWTUtils Create a new JWT token for id 5
+2020-10-14 17:44:34,791 INFO  vn.zalopay.ducnm8.handler.LoginHandler token len: 103
+2020-10-14 17:44:34,791 INFO  vn.zalopay.ducnm8.handler.LoginHandler Login successfully
+2020-10-14 17:44:34,825 INFO  vn.zalopay.ducnm8.server.WebSocketServer web socket connected from UserID: 5
+2020-10-14 17:44:34,832 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-14 17:44:34,833 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-14 17:44:34,833 INFO  vn.zalopay.ducnm8.handler.UserListHandler get a user list
+2020-10-14 17:44:34,833 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select list user except one user by id: 5
+2020-10-14 17:44:34,834 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:44:34,834 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:44:34,834 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:44:34,834 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:44:34,834 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:44:34,834 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:44:34,834 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:44:34,834 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:44:34,834 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:44:34,900 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-14 17:44:34,901 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-14 17:44:34,901 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 5 and 4
+2020-10-14 17:44:34,902 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 5 and 4
+2020-10-14 17:44:34,903 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@2024460095 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@27773576
+2020-10-14 17:44:34,903 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,903 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,903 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,903 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:44:34,903 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:44:34,903 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:44:34,903 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,903 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,903 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,903 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:44:34,903 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:44:34,903 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:44:34,903 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,903 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,903 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,903 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:44:34,903 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:44:34,903 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:44:34,903 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,903 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,904 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,904 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:44:34,904 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:44:34,904 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:44:34,904 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,904 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,904 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,904 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:44:34,904 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:44:34,904 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:44:34,904 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,904 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,904 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,904 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:44:34,904 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:44:34,904 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:44:34,904 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,904 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,904 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,904 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:44:34,904 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:44:34,904 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:44:34,904 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,904 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,904 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,904 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:44:34,905 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:44:34,905 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:44:34,905 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,905 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,905 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,905 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:44:34,905 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:44:34,905 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:44:34,905 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,905 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,905 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,905 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:44:34,905 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:44:34,905 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:44:34,905 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,905 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,905 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,905 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:44:34,905 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:44:34,905 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:44:34,905 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,905 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,905 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,905 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:44:34,906 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:44:34,906 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:44:34,906 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,906 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,906 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,906 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:44:34,906 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:44:34,906 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:44:34,906 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,906 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,906 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,906 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:44:34,906 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:44:34,906 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:44:34,906 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,906 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,906 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,907 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:44:34,907 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:44:34,907 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:44:34,907 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,907 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,907 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,907 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:44:34,907 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:44:34,907 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:44:34,907 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,907 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,907 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,907 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:44:34,907 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:44:34,907 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:44:34,907 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,907 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,907 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,907 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:44:34,908 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:44:34,908 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:44:34,908 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,908 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,908 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,908 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-14 17:44:34,908 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:44:34,908 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:44:34,908 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:44:34,908 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,908 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,908 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,908 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:44:34,908 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:44:34,908 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:44:34,908 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,908 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,908 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,908 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:44:34,908 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-14 17:44:34,908 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:44:34,908 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:44:34,908 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,908 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,908 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,908 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-14 17:44:34,908 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:44:34,908 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:44:34,909 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:44:34,909 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,909 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-14 17:44:34,909 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,909 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,909 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:44:34,909 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:44:34,909 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:44:34,909 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,909 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 5 and 7
+2020-10-14 17:44:34,909 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,909 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,909 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 5 and 7
+2020-10-14 17:44:34,909 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:44:34,909 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 5 and 8
+2020-10-14 17:44:34,909 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 5 and 8
+2020-10-14 17:44:34,910 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@1831901433 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@3cfbf596
+2020-10-14 17:44:34,910 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:44:34,910 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@1080868303 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@6dc4e6fb
+2020-10-14 17:44:34,910 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:44:34,910 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,911 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,911 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,911 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:44:34,911 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:44:34,911 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:44:34,911 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,911 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,911 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,911 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:44:34,911 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:44:34,911 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:44:34,911 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,911 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,919 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,920 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:44:34,920 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:44:34,920 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:44:34,920 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,920 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,920 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,920 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:44:34,920 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:44:34,921 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:44:34,927 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,927 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,927 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,927 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:44:34,928 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:44:34,928 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:44:34,928 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,928 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,928 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,928 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:44:34,928 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:44:34,928 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long
+2020-10-14 17:44:34,928 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,928 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,928 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper long
+2020-10-14 17:44:34,928 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper int
+2020-10-14 17:44:34,928 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.String
+2020-10-14 17:44:34,928 INFO  vn.zalopay.ducnm8.common.mapper.EntityMapper class java.lang.Long

@@ -102,7 +102,8 @@ export default function MessageList(props) {
 
         <div className="message-list-container">{renderMessages()}</div>
 
-        <Compose rightItems={[
+          <div>
+          <Compose rightItems={[
           <ToolbarButton key="photo" icon="ion-ios-camera" />,
           <ToolbarButton key="image" icon="ion-ios-image" />,
           <ToolbarButton key="audio" icon="ion-ios-mic" />,
@@ -110,6 +111,8 @@ export default function MessageList(props) {
           <ToolbarButton key="games" icon="ion-logo-game-controller-b" />,
           <ToolbarButton key="emoji" icon="ion-ios-happy" />
         ]}/>
+          </div>
+        
       </div>
     );
 }

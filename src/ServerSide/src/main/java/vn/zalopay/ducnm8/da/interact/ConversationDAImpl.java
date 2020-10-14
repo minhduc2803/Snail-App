@@ -24,17 +24,17 @@ public class ConversationDAImpl extends BaseTransactionDA implements Conversatio
     }
 
     @Override
-    public Executable<Long> insert(Conversation conversation) {
+    public Executable<Conversation> insert(Conversation conversation) {
         log.info("MYSQL: INSERTING A NEW CONVERSATION");
         return connection -> {
-            Future<Long> future = Future.future();
+            Future<Conversation> future = Future.future();
             asyncHandler.run(
                     () -> {
                         Object[] params = {conversation.getId(), conversation.getLastTimeChat()};
                         try {
-                            executeWithParams(
-                                    future, connection.unwrap(), INSERT_CONVERSATION_STATEMENT, params, "insertChat");
-
+                            long id = executeWithParamsAndGetId(connection.unwrap(), INSERT_CONVERSATION_STATEMENT, params, "insertChat");
+                            conversation.setId(id);
+                            future.complete(conversation);
                         } catch (SQLException e) {
                             future.fail(e);
                         }

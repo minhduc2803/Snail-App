@@ -34,17 +34,21 @@ public class NotificationDAImpl extends BaseTransactionDA implements Notificatio
         this.asyncHandler = asyncHandler;
     }
     @Override
-    public Executable<Long> insert(Notification notification) {
+    public Executable<Notification> insert(Notification notification) {
         log.info("insert a new notification for user_id {}",notification.getUserId());
         return connection -> {
-            Future<Long> future = Future.future();
+            Future<Notification> future = Future.future();
             asyncHandler.run(
                     () -> {
                         Object[] params = {notification.getNotificationType(), notification.getUserId(), notification.getPartnerId(), notification.getAmount(), notification.getMessage(), notification.isSeen()};
                         try {
-                            executeWithParams(future, connection.unwrap(), INSERT_NOTIFICATION_STATEMENT, params, "insertNotification");
+                            long id = executeWithParamsAndGetId(connection.unwrap(), INSERT_NOTIFICATION_STATEMENT, params, "insertNotification");
+                            notification.setId(id);
+                            future.complete(notification);
                         } catch (SQLException e) {
                             future.fail(e);
+                            String reason = String.format("cannot insert a notification ~ cause: %s", e.getMessage());
+                            log.error(reason);
                         }
                     });
             return future;
@@ -52,15 +56,17 @@ public class NotificationDAImpl extends BaseTransactionDA implements Notificatio
     }
 
     @Override
-    public Executable<Long> updateSeenNotificationById(long id) {
+    public Executable<Notification> updateSeenNotificationById(long id) {
         log.info("update seen a notification: id={}", id);
         return connection -> {
-            Future<Long> future = Future.future();
+            Future<Notification> future = Future.future();
             asyncHandler.run(
                     () -> {
                         Object[] params = {id};
                         try {
-                            executeWithParams(future, connection.unwrap(), UPDATE_SEEN_A_NOTIFICATION, params, "updateNotification");
+                            executeWithParamsAndGetId(connection.unwrap(), UPDATE_SEEN_A_NOTIFICATION, params, "updateNotification");
+                            Notification notification = Notification.builder().id(id).build();
+                            future.complete(notification);
                         } catch (SQLException e) {
                             future.fail(e);
                         }

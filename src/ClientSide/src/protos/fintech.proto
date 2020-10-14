@@ -81,13 +81,18 @@ message TransferRequest {
   int64 sender_id = 1;
   int64 receiver_id = 2;
   int64 amount = 3;
+  string message = 4;
 }
 
 message TransferResponse {
   message Data {
     // After transfer succeed, return a history of that transfer
     // Need password from request header for authorization
-    HistoryItem history_item = 1;
+    enum IsSuccessful {
+      TRUE = 0;
+      FALSE = 1;
+    }
+    IsSuccessful isSuccessful = 1;
   }
 
   Error error = 1;

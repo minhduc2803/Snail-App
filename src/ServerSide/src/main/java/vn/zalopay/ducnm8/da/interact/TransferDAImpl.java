@@ -27,15 +27,17 @@ public class TransferDAImpl extends BaseTransactionDA implements TransferDA{
     }
 
     @Override
-    public Executable<Long> insert(Transfer transfer) {
+    public Executable<Transfer> insert(Transfer transfer) {
         log.info("insert a transfer");
         return connection -> {
-            Future<Long> future = Future.future();
+            Future<Transfer> future = Future.future();
             asyncHandler.run(
                     () -> {
                         Object[] params = {transfer.getSenderId(), transfer.getReceiverId(), transfer.getAmount(), transfer.getMessage(), transfer.getTransferTime()};
                         try {
-                            executeWithParams(future, connection.unwrap(), INSERT_TRANSFER_STATEMENT, params, "insertTransfer");
+                            long id = executeWithParamsAndGetId(connection.unwrap(), INSERT_TRANSFER_STATEMENT, params, "insertTransfer");
+                            transfer.setId(id);
+                            future.complete(transfer);
                         } catch (SQLException e) {
                             future.fail(e);
                         }

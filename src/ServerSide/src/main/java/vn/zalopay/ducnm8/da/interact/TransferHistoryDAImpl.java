@@ -7,6 +7,7 @@ import vn.zalopay.ducnm8.da.BaseTransactionDA;
 import vn.zalopay.ducnm8.da.Executable;
 import vn.zalopay.ducnm8.model.TransferHistory;
 import vn.zalopay.ducnm8.utils.AsyncHandler;
+import vn.zalopay.ducnm8.utils.JsonProtoUtils;
 
 import javax.sql.DataSource;
 import java.sql.ResultSet;
@@ -35,17 +36,22 @@ public class TransferHistoryDAImpl extends BaseTransactionDA implements Transfer
     }
 
     @Override
-    public Executable<Long> insert(TransferHistory transferHistory) {
+    public Executable<TransferHistory> insert(TransferHistory transferHistory) {
         log.info("insert a new transfer history");
         return connection -> {
-            Future<Long> future = Future.future();
+            Future<TransferHistory> future = Future.future();
             asyncHandler.run(
                     () -> {
                         Object[] params = {transferHistory.getTransferId(), transferHistory.getUserId(), transferHistory.getPartnerId(), transferHistory.getTransferType()};
                         try {
-                            executeWithParams(future, connection.unwrap(), INSERT_TRANSFER_HISTORY_STATEMENT, params, "insertTransferHistory");
+                            long id = executeWithParamsAndGetId(connection.unwrap(), INSERT_TRANSFER_HISTORY_STATEMENT, params, "insertTransferHistory");
+                            transferHistory.setId(id);
+                            future.complete(transferHistory);
+
                         } catch (SQLException e) {
                             future.fail(e);
+                            String reason = String.format("cannot insert a transfer history ~ cause: %s", e.getMessage());
+                            log.error(reason);
                         }
                     });
             return future;

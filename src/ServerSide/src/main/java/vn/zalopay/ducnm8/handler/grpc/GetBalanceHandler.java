@@ -38,7 +38,7 @@ public class GetBalanceHandler {
                             .newBuilder()
                             .setData(data)
                             .build();
-
+                    log.info("GRPC: getBalance succeed");
                 }else{
                     Code code = Code.INTERNAL_SERVER_ERROR;
                     Error error = Error
@@ -50,6 +50,7 @@ public class GetBalanceHandler {
                             .newBuilder()
                             .setError(error)
                             .build();
+                    log.error("GRPC: getBalance failed");
                 }
                 balanceResponseFuture.complete(response);
             });

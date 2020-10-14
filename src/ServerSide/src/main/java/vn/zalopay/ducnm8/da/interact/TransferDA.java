@@ -5,7 +5,7 @@ import vn.zalopay.ducnm8.da.Executable;
 import vn.zalopay.ducnm8.model.Transfer;
 
 public interface TransferDA {
-    Executable<Long> insert(Transfer transfer);
+    Executable<Transfer> insert(Transfer transfer);
 
     Future<Transfer> selectTransferById(long id);
 }

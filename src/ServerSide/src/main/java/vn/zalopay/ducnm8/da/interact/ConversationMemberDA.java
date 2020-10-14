@@ -7,7 +7,7 @@ import vn.zalopay.ducnm8.model.ConversationMember;
 import java.util.List;
 
 public interface ConversationMemberDA {
-    Executable<Long> insert(ConversationMember conversationMember);
+    Executable<ConversationMember> insert(ConversationMember conversationMember);
 
     Future<List<ConversationMember>> listMember(long conversationId);
 }

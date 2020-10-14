@@ -26,8 +26,8 @@ public class BaseTransactionDA extends BaseDA {
     super(statementTimeoutSec);
   }
 
-  protected void executeWithParams(
-          Future<Long> result, Connection connection, String stm, Object[] params, String method)
+  protected Long executeWithParamsAndGetId(
+          Connection connection, String stm, Object[] params, String method)
           throws SQLException {
 
     PreparedStatement preparedStatement = null;
@@ -44,15 +44,12 @@ public class BaseTransactionDA extends BaseDA {
                 String.format(
                         "%s wrong effected row expected=1, actual=%d, query=%s, params=%s",
                         method, affectedRow, stm, JsonProtoUtils.printGson(params));
-        result.fail("Invalid statement");
+        throw new SQLException(reason);
       } else {
         try (ResultSet generatedKeys = preparedStatement.getGeneratedKeys()) {
-          if (generatedKeys.next()) {
-            result.complete(generatedKeys.getLong(1));
-          }
-          else {
-            result.complete(Long.valueOf(-1));
-          }
+
+          return generatedKeys.next() ? generatedKeys.getLong(1) : 0L;
+
         }
       }
     } finally {

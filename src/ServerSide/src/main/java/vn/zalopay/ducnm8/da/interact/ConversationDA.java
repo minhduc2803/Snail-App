@@ -5,6 +5,6 @@ import vn.zalopay.ducnm8.da.Executable;
 import vn.zalopay.ducnm8.model.Conversation;
 
 public interface ConversationDA {
-    Executable<Long> insert(Conversation conversation);
+    Executable<Conversation> insert(Conversation conversation);
 
 }

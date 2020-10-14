@@ -1,11 +1,7 @@
 package vn.zalopay.ducnm8.handler.grpc;
 
-import fintech.NotificationRequest;
-import fintech.NotificationResponse;
-import fintech.TransferRequest;
-import fintech.TransferResponse;
-import hello.HelloReply;
-import hello.HelloRequest;
+import fintech.*;
+import fintech.Error;
 import io.vertx.core.Future;
 import vn.zalopay.ducnm8.da.Transaction;
 import vn.zalopay.ducnm8.da.TransactionProvider;
@@ -16,14 +12,16 @@ import vn.zalopay.ducnm8.da.interact.TransferHistoryDA;
 import vn.zalopay.ducnm8.model.Notification;
 import vn.zalopay.ducnm8.model.Transfer;
 import vn.zalopay.ducnm8.model.TransferHistory;
+import lombok.extern.log4j.Log4j2;
 
 import java.time.Instant;
 
+@Log4j2
 public class TransferHandler {
-    private TransferDA transferDA;
-    private AccountDA accountDA;
-    private TransferHistoryDA transferHistoryDA;
-    private NotificationDA notificationDA;
+    private final TransferDA transferDA;
+    private final AccountDA accountDA;
+    private final TransferHistoryDA transferHistoryDA;
+    private final NotificationDA notificationDA;
     private final TransactionProvider transactionProvider;
 
     long sender;
@@ -31,7 +29,6 @@ public class TransferHandler {
     long amount;
     String message;
     long transferTime = Instant.now().getEpochSecond();
-    TransferHistory transferHistory;
 
     public TransferHandler(
          TransferDA transferDA,
@@ -63,13 +60,26 @@ public class TransferHandler {
             .compose(transfer -> transaction.execute(transferHistoryDA.insert(createTransferHistory(true,transfer.getId()))))
             .compose(transferHistory -> transaction.execute(transferHistoryDA.insert(createTransferHistory(false,transferHistory.getTransferId()))))
             .compose(next -> transaction.execute(notificationDA.insert(createNotification())))
-            .compose(next -> accountDA.selectBalanceById(sender))
-            .setHandler(rs -> {
+            .setHandler(u -> {
 
-            });
+                TransferResponse response = null;
 
+                if (u.succeeded()) {
+                    transaction
+                            .commit()
+                            .compose(next -> transaction.close());
+                    response = createTransferResponse(true);
+                    log.info("GRPC: transfer succeed");
+                } else {
+                    transaction
+                            .rollback()
+                            .compose(next -> transaction.close());
+                    response = createTransferResponse(false);
+                    log.error("GRPC: transfer failed");
+                }
 
-        responseFuture.complete();
+                responseFuture.complete(response);
+                });
     }
 
     private Future<Void> isEnoughMoney(){
@@ -101,16 +111,19 @@ public class TransferHandler {
     private TransferHistory createTransferHistory(boolean isSender, long transfer_id){
         return isSender ?
                 TransferHistory.builder()
-                .transferId(transfer_id)
-                .userId(sender)
-                .partnerId(receiver)
-                .build()
+                    .transferId(transfer_id)
+                    .userId(sender)
+                    .partnerId(receiver)
+                    .transferType(1)
+                    .build()
                 :
                 TransferHistory.builder()
-                .transferId(transfer_id)
-                .userId(receiver)
-                .partnerId(sender)
-                .build();
+
+                    .transferId(transfer_id)
+                    .userId(receiver)
+                    .partnerId(sender)
+                    .transferType(2)
+                    .build();
     }
 
     private Notification createNotification() {
@@ -121,6 +134,31 @@ public class TransferHandler {
                 .amount(amount)
                 .message(message)
                 .seen(false)
+                .build();
+    }
+
+    private TransferResponse createTransferResponse(boolean isSuccessful){
+        TransferResponse.Data.IsSuccessful successful= TransferResponse.Data.IsSuccessful.TRUE;
+        String errorMessage = "grpc: transfer succeeded";
+        Code code = Code.SUCCESS;
+        if (!isSuccessful){
+            successful= TransferResponse.Data.IsSuccessful.FALSE;
+            errorMessage = "grpc: transfer failed";
+            code = Code.INTERNAL_SERVER_ERROR;
+        }
+        TransferResponse.Data data = TransferResponse.Data
+                .newBuilder()
+                .setIsSuccessful(successful)
+                .build();
+        Error error = Error
+                .newBuilder()
+                .setCode(code)
+                .setMessage(errorMessage)
+                .build();
+        return TransferResponse
+                .newBuilder()
+                .setData(data)
+                .setError(error)
                 .build();
     }
 }

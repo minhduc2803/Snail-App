@@ -47,16 +47,18 @@ public class AccountDAImpl extends BaseTransactionDA implements AccountDA {
 
 
     @Override
-    public Executable<Long> insert(Account account) {
+    public Executable<Account> insert(Account account) {
         log.info("insert a user");
         return connection -> {
-            Future<Long> future = Future.future();
+            Future<Account> future = Future.future();
             asyncHandler.run(
                     () -> {
                         Object[] params = {account.getUsername(), account.getFullName(), account.getPassword(),
                                 account.getBalance(), account.getLastTimeUpdateBalance(), account.getNumberNotification()};
                         try {
-                            executeWithParams(future, connection.unwrap(), INSERT_USER_STATEMENT, params, "insertUser");
+                            long id = executeWithParamsAndGetId(connection.unwrap(), INSERT_USER_STATEMENT, params, "insertUser");
+                            account.setId(id);
+                            future.complete(account);
                         } catch (SQLException e) {
                             future.fail(e);
                         }
@@ -126,15 +128,17 @@ public class AccountDAImpl extends BaseTransactionDA implements AccountDA {
     }
 
     @Override
-    public Executable<Long> plusBalanceByAmount(long id, long amount) {
+    public Executable<Account> plusBalanceByAmount(long id, long amount) {
         log.info("update balance: (id={},amount={})", id, amount);
         return connection -> {
-            Future<Long> future = Future.future();
+            Future<Account> future = Future.future();
             asyncHandler.run(
                     () -> {
                         Object[] params = {amount, id};
                         try {
-                            executeWithParams(future, connection.unwrap(), UPDATE_BALANCE_BY_AMOUNT, params, "updateBalance");
+                            executeWithParamsAndGetId(connection.unwrap(), UPDATE_BALANCE_BY_AMOUNT, params, "updateBalance");
+                            Account account = Account.builder().id(id).build();
+                            future.complete(account);
                         } catch (SQLException e) {
                             future.fail(e);
                         }
@@ -144,15 +148,17 @@ public class AccountDAImpl extends BaseTransactionDA implements AccountDA {
     }
 
     @Override
-    public Executable<Long> updateNumberNotification(long id, int number) {
+    public Executable<Account> updateNumberNotification(long id, int number) {
         log.info("update number notifications: account_id={}, number={}", id, number);
         return connection -> {
-            Future<Long> future = Future.future();
+            Future<Account> future = Future.future();
             asyncHandler.run(
                     () -> {
                         Object[] params = {number, id};
                         try {
-                            executeWithParams(future, connection.unwrap(), UPDATE_NUMBER_NOTIFICATION, params, "updateNumberNotification");
+                            executeWithParamsAndGetId(connection.unwrap(), UPDATE_NUMBER_NOTIFICATION, params, "updateNumberNotification");
+                            Account account = Account.builder().id(id).build();
+                            future.complete(account);
                         } catch (SQLException e) {
                             future.fail(e);
                         }

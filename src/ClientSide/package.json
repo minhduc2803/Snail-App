@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@ant-design/icons": "^4.2.2",
+    "antd": "^4.7.0",
     "axios": "^0.20.0",
     "google-protobuf": "^3.13.0",
     "grpc-web": "^1.2.1",

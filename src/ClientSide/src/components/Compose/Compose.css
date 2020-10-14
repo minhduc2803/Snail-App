@@ -5,7 +5,7 @@
   background: white;
   border-top: 1px solid #eeeef1;
   position: fixed;
-  width: calc(100% - 20px);
+  width: calc(80%);
   bottom: 0px;
 }
 
@@ -30,10 +30,10 @@
 }
 
 .compose .toolbar-button {
-  color: #bbbbbf;
+  /* color: #bbbbbf; */
   margin-left: 15px;
 }
 
 .compose .toolbar-button:hover {
-  color: #99999c;
+  /* color: #99999c; */
 }

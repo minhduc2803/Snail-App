@@ -88,7 +88,11 @@ message TransferResponse {
   message Data {
     // After transfer succeed, return a history of that transfer
     // Need password from request header for authorization
-    HistoryItem history_item = 1;
+    enum IsSuccessful {
+      TRUE = 0;
+      FALSE = 1;
+    }
+    IsSuccessful isSuccessful = 1;
   }
 
   Error error = 1;

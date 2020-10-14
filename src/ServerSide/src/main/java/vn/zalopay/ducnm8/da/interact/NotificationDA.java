@@ -7,9 +7,9 @@ import vn.zalopay.ducnm8.model.Notification;
 import java.util.ArrayList;
 
 public interface NotificationDA {
-    Executable<Long> insert(Notification notification);
+    Executable<Notification> insert(Notification notification);
 
-    Executable<Long> updateSeenNotificationById(long id);
+    Executable<Notification> updateSeenNotificationById(long id);
 
     Future<ArrayList<Notification>> selectNotificationByAccountId(long id);
 }

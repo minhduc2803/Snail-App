@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux'
 import Messenger from '../Messenger';
 import Login from '../Login'
 import Register from '../Register'
+import Design from '../Design'
+import './App.css'
 
 
 export default function App() {

@@ -23,6 +23,7 @@ export default {
         request.setSenderId(transfer_info.sender_id);
         request.setReceiverId(transfer_info.receiver_id);
         request.setAmount(transfer_info.amount);
+        request.setMessage(transfer_info.message);
         client.transfer(request, metadata, callback);
     },
 

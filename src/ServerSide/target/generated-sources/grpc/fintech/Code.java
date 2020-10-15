@@ -13,21 +13,25 @@ public enum Code
    */
   SUCCESS(0),
   /**
-   * <code>INCORRECT_PASSWORD = 1;</code>
+   * <code>UNAUTHORIZED = 1;</code>
    */
-  INCORRECT_PASSWORD(1),
+  UNAUTHORIZED(1),
   /**
-   * <code>UNAUTHORIZED = 2;</code>
+   * <code>BAD_REQUEST = 2;</code>
    */
-  UNAUTHORIZED(2),
+  BAD_REQUEST(2),
   /**
-   * <code>NOT_ENOUGH_MONEY = 3;</code>
+   * <code>INCORRECT_PASSWORD = 3;</code>
    */
-  NOT_ENOUGH_MONEY(3),
+  INCORRECT_PASSWORD(3),
   /**
-   * <code>INTERNAL_SERVER_ERROR = 4;</code>
+   * <code>NOT_ENOUGH_MONEY = 4;</code>
    */
-  INTERNAL_SERVER_ERROR(4),
+  NOT_ENOUGH_MONEY(4),
+  /**
+   * <code>INTERNAL_SERVER_ERROR = 5;</code>
+   */
+  INTERNAL_SERVER_ERROR(5),
   UNRECOGNIZED(-1),
   ;
 
@@ -36,21 +40,25 @@ public enum Code
    */
   public static final int SUCCESS_VALUE = 0;
   /**
-   * <code>INCORRECT_PASSWORD = 1;</code>
+   * <code>UNAUTHORIZED = 1;</code>
    */
-  public static final int INCORRECT_PASSWORD_VALUE = 1;
+  public static final int UNAUTHORIZED_VALUE = 1;
   /**
-   * <code>UNAUTHORIZED = 2;</code>
+   * <code>BAD_REQUEST = 2;</code>
    */
-  public static final int UNAUTHORIZED_VALUE = 2;
+  public static final int BAD_REQUEST_VALUE = 2;
   /**
-   * <code>NOT_ENOUGH_MONEY = 3;</code>
+   * <code>INCORRECT_PASSWORD = 3;</code>
    */
-  public static final int NOT_ENOUGH_MONEY_VALUE = 3;
+  public static final int INCORRECT_PASSWORD_VALUE = 3;
   /**
-   * <code>INTERNAL_SERVER_ERROR = 4;</code>
+   * <code>NOT_ENOUGH_MONEY = 4;</code>
    */
-  public static final int INTERNAL_SERVER_ERROR_VALUE = 4;
+  public static final int NOT_ENOUGH_MONEY_VALUE = 4;
+  /**
+   * <code>INTERNAL_SERVER_ERROR = 5;</code>
+   */
+  public static final int INTERNAL_SERVER_ERROR_VALUE = 5;
 
 
   public final int getNumber() {
@@ -72,10 +80,11 @@ public enum Code
   public static Code forNumber(int value) {
     switch (value) {
       case 0: return SUCCESS;
-      case 1: return INCORRECT_PASSWORD;
-      case 2: return UNAUTHORIZED;
-      case 3: return NOT_ENOUGH_MONEY;
-      case 4: return INTERNAL_SERVER_ERROR;
+      case 1: return UNAUTHORIZED;
+      case 2: return BAD_REQUEST;
+      case 3: return INCORRECT_PASSWORD;
+      case 4: return NOT_ENOUGH_MONEY;
+      case 5: return INTERNAL_SERVER_ERROR;
       default: return null;
     }
   }

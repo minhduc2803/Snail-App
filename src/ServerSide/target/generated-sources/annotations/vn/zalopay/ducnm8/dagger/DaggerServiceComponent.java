@@ -86,11 +86,11 @@ public final class DaggerServiceComponent implements ServiceComponent {
 
   private Provider<GetBalanceHandler> provideGetBalanceHandlerProvider;
 
+  private Provider<TransferHistoryDA> provideTransferHistoryDAProvider;
+
   private Provider<GetHistoryHandler> provideGetHistoryHandlerProvider;
 
   private Provider<TransferDA> provideTransferDAProvider;
-
-  private Provider<TransferHistoryDA> provideTransferHistoryDAProvider;
 
   private Provider<NotificationDA> provideNotificationDAProvider;
 
@@ -136,9 +136,9 @@ public final class DaggerServiceComponent implements ServiceComponent {
     this.provideWSHandlerProvider = DoubleCheck.provider(ServiceModule_ProvideWSHandlerFactory.create(serviceModuleParam, provideChatListDAProvider, provideChatListCacheProvider, provideTransactionProvider));
     this.provideWebSocketServerProvider = DoubleCheck.provider(ServiceModule_ProvideWebSocketServerFactory.create(serviceModuleParam, provideWSHandlerProvider, provideVertxProvider));
     this.provideGetBalanceHandlerProvider = DoubleCheck.provider(ServiceModule_ProvideGetBalanceHandlerFactory.create(serviceModuleParam, provideAccountDAProvider));
-    this.provideGetHistoryHandlerProvider = DoubleCheck.provider(ServiceModule_ProvideGetHistoryHandlerFactory.create(serviceModuleParam));
-    this.provideTransferDAProvider = DoubleCheck.provider(ServiceModule_ProvideTransferDAFactory.create(serviceModuleParam, provideDataSourceProvider, ProvideAsyncHandlerProvider));
     this.provideTransferHistoryDAProvider = DoubleCheck.provider(ServiceModule_ProvideTransferHistoryDAFactory.create(serviceModuleParam, provideDataSourceProvider, ProvideAsyncHandlerProvider));
+    this.provideGetHistoryHandlerProvider = DoubleCheck.provider(ServiceModule_ProvideGetHistoryHandlerFactory.create(serviceModuleParam, provideTransferHistoryDAProvider));
+    this.provideTransferDAProvider = DoubleCheck.provider(ServiceModule_ProvideTransferDAFactory.create(serviceModuleParam, provideDataSourceProvider, ProvideAsyncHandlerProvider));
     this.provideNotificationDAProvider = DoubleCheck.provider(ServiceModule_ProvideNotificationDAFactory.create(serviceModuleParam, provideDataSourceProvider, ProvideAsyncHandlerProvider));
     this.provideTransferHandlerProvider = DoubleCheck.provider(ServiceModule_ProvideTransferHandlerFactory.create(serviceModuleParam, provideTransferDAProvider, provideAccountDAProvider, provideTransferHistoryDAProvider, provideNotificationDAProvider, provideTransactionProvider));
     this.provideGetNotificationHandlerProvider = DoubleCheck.provider(ServiceModule_ProvideGetNotificationHandlerFactory.create(serviceModuleParam));

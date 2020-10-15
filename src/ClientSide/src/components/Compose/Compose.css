@@ -3,9 +3,9 @@
   display: flex;
   align-items: center;
   background: white;
-  border-top: 1px solid #eeeef1;
+  border-top: 1px solid #7d7d83;
   position: fixed;
-  width: calc(80%);
+  
   bottom: 0px;
 }
 
@@ -18,22 +18,22 @@
 }
 
 .compose-input {
+ 
   flex: 1;
   border: none;
   font-size: 14px;
   height: 40px;
   background: none;
+  border-radius: 18px;
+  margin-right: 20px;
+  background-color: rgba(238, 238, 237, 0.8);
 }
 
 .compose-input::placeholder {
   opacity: 0.3;
 }
 
-.compose .toolbar-button {
-  /* color: #bbbbbf; */
-  margin-left: 15px;
-}
-
-.compose .toolbar-button:hover {
-  /* color: #99999c; */
+.rightItem {
+  
+  margin-left:15px;
 }

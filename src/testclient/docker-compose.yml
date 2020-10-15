@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  envoy:
+    container_name: envoy-proxy
+    image: envoyproxy/envoy:v1.15.0
+    ports:
+      - 8080:8080
+      - 9901:9901
+    volumes:
+      - ./envoy.yaml:/etc/envoy/envoy.yaml:ro
+    network_mode: host

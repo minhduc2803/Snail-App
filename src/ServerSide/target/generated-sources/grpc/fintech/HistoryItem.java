@@ -23,7 +23,6 @@ private static final long serialVersionUID = 0L;
     amount_ = 0L;
     message_ = "";
     timestamp_ = 0L;
-    balance_ = 0L;
     transferType_ = 0;
   }
 
@@ -91,11 +90,6 @@ private static final long serialVersionUID = 0L;
           case 56: {
 
             timestamp_ = input.readInt64();
-            break;
-          }
-          case 64: {
-
-            balance_ = input.readInt64();
             break;
           }
           case 72: {
@@ -231,7 +225,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Information of a user transfer money with it's partner
-   * This hisotry has an enum TransferType
+   * This history has an enum TransferType
    * If TransferType = SEND =&gt; user send money to partner
    * If TransferType = RECEIVE =&gt; user receive money from partner
    * </pre>
@@ -383,19 +377,6 @@ private static final long serialVersionUID = 0L;
     return timestamp_;
   }
 
-  public static final int BALANCE_FIELD_NUMBER = 8;
-  private long balance_;
-  /**
-   * <pre>
-   * The balance of user after transfer
-   * </pre>
-   *
-   * <code>int64 balance = 8;</code>
-   */
-  public long getBalance() {
-    return balance_;
-  }
-
   public static final int TRANSFER_TYPE_FIELD_NUMBER = 9;
   private int transferType_;
   /**
@@ -445,9 +426,6 @@ private static final long serialVersionUID = 0L;
     if (timestamp_ != 0L) {
       output.writeInt64(7, timestamp_);
     }
-    if (balance_ != 0L) {
-      output.writeInt64(8, balance_);
-    }
     if (transferType_ != fintech.HistoryItem.TransferType.SEND.getNumber()) {
       output.writeEnum(9, transferType_);
     }
@@ -484,10 +462,6 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(7, timestamp_);
     }
-    if (balance_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(8, balance_);
-    }
     if (transferType_ != fintech.HistoryItem.TransferType.SEND.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(9, transferType_);
@@ -522,8 +496,6 @@ private static final long serialVersionUID = 0L;
         .equals(other.getMessage());
     result = result && (getTimestamp()
         == other.getTimestamp());
-    result = result && (getBalance()
-        == other.getBalance());
     result = result && transferType_ == other.transferType_;
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -554,9 +526,6 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getTimestamp());
-    hash = (37 * hash) + BALANCE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getBalance());
     hash = (37 * hash) + TRANSFER_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + transferType_;
     hash = (29 * hash) + unknownFields.hashCode();
@@ -702,8 +671,6 @@ private static final long serialVersionUID = 0L;
 
       timestamp_ = 0L;
 
-      balance_ = 0L;
-
       transferType_ = 0;
 
       return this;
@@ -735,7 +702,6 @@ private static final long serialVersionUID = 0L;
       result.amount_ = amount_;
       result.message_ = message_;
       result.timestamp_ = timestamp_;
-      result.balance_ = balance_;
       result.transferType_ = transferType_;
       onBuilt();
       return result;
@@ -802,9 +768,6 @@ private static final long serialVersionUID = 0L;
       if (other.getTimestamp() != 0L) {
         setTimestamp(other.getTimestamp());
       }
-      if (other.getBalance() != 0L) {
-        setBalance(other.getBalance());
-      }
       if (other.transferType_ != 0) {
         setTransferTypeValue(other.getTransferTypeValue());
       }
@@ -839,7 +802,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Information of a user transfer money with it's partner
-     * This hisotry has an enum TransferType
+     * This history has an enum TransferType
      * If TransferType = SEND =&gt; user send money to partner
      * If TransferType = RECEIVE =&gt; user receive money from partner
      * </pre>
@@ -852,7 +815,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Information of a user transfer money with it's partner
-     * This hisotry has an enum TransferType
+     * This history has an enum TransferType
      * If TransferType = SEND =&gt; user send money to partner
      * If TransferType = RECEIVE =&gt; user receive money from partner
      * </pre>
@@ -868,7 +831,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Information of a user transfer money with it's partner
-     * This hisotry has an enum TransferType
+     * This history has an enum TransferType
      * If TransferType = SEND =&gt; user send money to partner
      * If TransferType = RECEIVE =&gt; user receive money from partner
      * </pre>
@@ -1195,44 +1158,6 @@ private static final long serialVersionUID = 0L;
     public Builder clearTimestamp() {
       
       timestamp_ = 0L;
-      onChanged();
-      return this;
-    }
-
-    private long balance_ ;
-    /**
-     * <pre>
-     * The balance of user after transfer
-     * </pre>
-     *
-     * <code>int64 balance = 8;</code>
-     */
-    public long getBalance() {
-      return balance_;
-    }
-    /**
-     * <pre>
-     * The balance of user after transfer
-     * </pre>
-     *
-     * <code>int64 balance = 8;</code>
-     */
-    public Builder setBalance(long value) {
-      
-      balance_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The balance of user after transfer
-     * </pre>
-     *
-     * <code>int64 balance = 8;</code>
-     */
-    public Builder clearBalance() {
-      
-      balance_ = 0L;
       onChanged();
       return this;
     }

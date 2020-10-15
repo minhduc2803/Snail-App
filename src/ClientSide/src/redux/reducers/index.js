@@ -1,6 +1,7 @@
 
 const initialState = {
     loginState: "LOGIN",
+    page: "MESSENGER",
     user: {},
     listUsers: [],
     chosenIndex: 0
@@ -32,7 +33,19 @@ const rootReducer = (state = initialState, action) => {
                     username: action.username
                 }
             }
-        
+
+        case "GOTO_WALLET":
+            return {
+                ...state,
+                page: "WALLET"
+            }
+
+        case "GOTO_MESSENGER":
+            return {
+                ...state,
+                page: "MESSENGER"
+            }
+
         case "LOAD_USERS":
             return {
                 ...state,
@@ -58,7 +71,7 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 listUsers: state.listUsers.map((content, i) => {
-                    if (content.UserID === action.chat.UserSendID || content.UserID === action.chat.UserReceiveID){
+                    if (content.userId === action.chat.senderId || content.userId === action.chat.receiverId){
                         content.chat.push(action.chat)
                         return {...content, chat: content.chat}
                     }else

@@ -7,10 +7,11 @@ package fintech;
 
 enum Code {
   SUCCESS = 0;
-  INCORRECT_PASSWORD = 1;
-  UNAUTHORIZED = 2;
-  NOT_ENOUGH_MONEY = 3;
-  INTERNAL_SERVER_ERROR = 4;
+  UNAUTHORIZED = 1;
+  BAD_REQUEST = 2;
+  INCORRECT_PASSWORD = 3;
+  NOT_ENOUGH_MONEY = 4;
+  INTERNAL_SERVER_ERROR = 5;
 }
 
 message Error {
@@ -57,7 +58,7 @@ message HistoryResponse {
 
 message HistoryItem {
   // Information of a user transfer money with it's partner
-  // This hisotry has an enum TransferType
+  // This history has an enum TransferType
   // If TransferType = SEND => user send money to partner
   // If TransferType = RECEIVE => user receive money from partner
   int64 history_id = 1; // Every transfer history has a id
@@ -67,7 +68,6 @@ message HistoryItem {
   int64 amount = 5;
   string message = 6; // The message goes with a transfer
   int64 timestamp = 7; // The time when the transfer executed
-  int64 balance = 8; // The balance of user after transfer
   enum TransferType {
     SEND = 0;
     RECEIVE = 1;
@@ -122,11 +122,11 @@ message NotificationItem {
   // if mode = 1 => A Notification about A partner sent money to this user
   // if mode = 2 => A partner reminded this user about transfering money
   int64 notification_id = 1; // Every notification has a id
-  int32 mode = 2;
+  int32 notification_type = 2;
   int64 partner_id = 3;
   int64 amount = 4;
   string message = 5; // A message goes with a notification
-  enum UnRead {
+  enum Seen {
     // A notification can be read already or not
     // if UnRead = TRUE => notification is not read yet
     // if UnRead = FALSE => notification is read already
@@ -134,7 +134,7 @@ message NotificationItem {
     FALSE = 1;
   }
 
-  UnRead unread = 6; // default: a notification is read already
+  Seen seen = 6; // default: a notification is read already
 }
 
 service FintechService {

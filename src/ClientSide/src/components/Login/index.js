@@ -22,15 +22,15 @@ export default function Login(props) {
         <form  onSubmit={(event) => { handleSubmit(event) }}>
             <h1>Snail Project</h1>
             <div>
-                <input type="text" ref={usernameInput} placeholder="Username" required={true} id="username"/>
+                <input type="text" ref={usernameInput} placeholder="Tên tài khoản" required={true} id="username"/>
             </div>
             <div>
-                <input type="password" ref={passwordInput} placeholder="Password" required={true} id="password" />
+                <input type="password" ref={passwordInput} placeholder="Mật khẩu" required={true} id="password" />
             </div>
             <div>
-                <input type="submit" value="Log in" />
+                <input type="submit" value="Đăng nhập" />
                 
-                <button className="example_a" onClick={() => dispatch({type: "REGISTER"})}>Register</button>
+                <button className="example_a" onClick={() => dispatch({type: "REGISTER"})}>Đăng ký</button>
             
             </div>
         </form>

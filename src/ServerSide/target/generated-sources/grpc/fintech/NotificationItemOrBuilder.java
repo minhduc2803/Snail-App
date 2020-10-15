@@ -20,9 +20,9 @@ public interface NotificationItemOrBuilder extends
   long getNotificationId();
 
   /**
-   * <code>int32 mode = 2;</code>
+   * <code>int32 notification_type = 2;</code>
    */
-  int getMode();
+  int getNotificationType();
 
   /**
    * <code>int64 partner_id = 3;</code>
@@ -57,15 +57,15 @@ public interface NotificationItemOrBuilder extends
    * default: a notification is read already
    * </pre>
    *
-   * <code>.fintech.NotificationItem.UnRead unread = 6;</code>
+   * <code>.fintech.NotificationItem.Seen seen = 6;</code>
    */
-  int getUnreadValue();
+  int getSeenValue();
   /**
    * <pre>
    * default: a notification is read already
    * </pre>
    *
-   * <code>.fintech.NotificationItem.UnRead unread = 6;</code>
+   * <code>.fintech.NotificationItem.Seen seen = 6;</code>
    */
-  fintech.NotificationItem.UnRead getUnread();
+  fintech.NotificationItem.Seen getSeen();
 }

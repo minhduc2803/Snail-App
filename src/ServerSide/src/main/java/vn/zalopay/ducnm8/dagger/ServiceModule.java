@@ -265,8 +265,8 @@ public class ServiceModule {
 
   @Provides
   @Singleton
-  GetHistoryHandler provideGetHistoryHandler(){
-    return new GetHistoryHandler();
+  GetHistoryHandler provideGetHistoryHandler(TransferHistoryDA transferHistoryDA){
+    return new GetHistoryHandler(transferHistoryDA);
   }
 
   @Provides

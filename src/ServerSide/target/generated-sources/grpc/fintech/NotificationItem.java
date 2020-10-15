@@ -17,11 +17,11 @@ private static final long serialVersionUID = 0L;
   }
   private NotificationItem() {
     notificationId_ = 0L;
-    mode_ = 0;
+    notificationType_ = 0;
     partnerId_ = 0L;
     amount_ = 0L;
     message_ = "";
-    unread_ = 0;
+    seen_ = 0;
   }
 
   @java.lang.Override
@@ -59,7 +59,7 @@ private static final long serialVersionUID = 0L;
           }
           case 16: {
 
-            mode_ = input.readInt32();
+            notificationType_ = input.readInt32();
             break;
           }
           case 24: {
@@ -81,7 +81,7 @@ private static final long serialVersionUID = 0L;
           case 48: {
             int rawValue = input.readEnum();
 
-            unread_ = rawValue;
+            seen_ = rawValue;
             break;
           }
         }
@@ -109,9 +109,9 @@ private static final long serialVersionUID = 0L;
   }
 
   /**
-   * Protobuf enum {@code fintech.NotificationItem.UnRead}
+   * Protobuf enum {@code fintech.NotificationItem.Seen}
    */
-  public enum UnRead
+  public enum Seen
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
      * <pre>
@@ -158,11 +158,11 @@ private static final long serialVersionUID = 0L;
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
-    public static UnRead valueOf(int value) {
+    public static Seen valueOf(int value) {
       return forNumber(value);
     }
 
-    public static UnRead forNumber(int value) {
+    public static Seen forNumber(int value) {
       switch (value) {
         case 0: return TRUE;
         case 1: return FALSE;
@@ -170,15 +170,15 @@ private static final long serialVersionUID = 0L;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<UnRead>
+    public static com.google.protobuf.Internal.EnumLiteMap<Seen>
         internalGetValueMap() {
       return internalValueMap;
     }
     private static final com.google.protobuf.Internal.EnumLiteMap<
-        UnRead> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<UnRead>() {
-            public UnRead findValueByNumber(int number) {
-              return UnRead.forNumber(number);
+        Seen> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Seen>() {
+            public Seen findValueByNumber(int number) {
+              return Seen.forNumber(number);
             }
           };
 
@@ -195,9 +195,9 @@ private static final long serialVersionUID = 0L;
       return fintech.NotificationItem.getDescriptor().getEnumTypes().get(0);
     }
 
-    private static final UnRead[] VALUES = values();
+    private static final Seen[] VALUES = values();
 
-    public static UnRead valueOf(
+    public static Seen valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
         throw new java.lang.IllegalArgumentException(
@@ -211,11 +211,11 @@ private static final long serialVersionUID = 0L;
 
     private final int value;
 
-    private UnRead(int value) {
+    private Seen(int value) {
       this.value = value;
     }
 
-    // @@protoc_insertion_point(enum_scope:fintech.NotificationItem.UnRead)
+    // @@protoc_insertion_point(enum_scope:fintech.NotificationItem.Seen)
   }
 
   public static final int NOTIFICATION_ID_FIELD_NUMBER = 1;
@@ -234,13 +234,13 @@ private static final long serialVersionUID = 0L;
     return notificationId_;
   }
 
-  public static final int MODE_FIELD_NUMBER = 2;
-  private int mode_;
+  public static final int NOTIFICATION_TYPE_FIELD_NUMBER = 2;
+  private int notificationType_;
   /**
-   * <code>int32 mode = 2;</code>
+   * <code>int32 notification_type = 2;</code>
    */
-  public int getMode() {
-    return mode_;
+  public int getNotificationType() {
+    return notificationType_;
   }
 
   public static final int PARTNER_ID_FIELD_NUMBER = 3;
@@ -303,28 +303,28 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int UNREAD_FIELD_NUMBER = 6;
-  private int unread_;
+  public static final int SEEN_FIELD_NUMBER = 6;
+  private int seen_;
   /**
    * <pre>
    * default: a notification is read already
    * </pre>
    *
-   * <code>.fintech.NotificationItem.UnRead unread = 6;</code>
+   * <code>.fintech.NotificationItem.Seen seen = 6;</code>
    */
-  public int getUnreadValue() {
-    return unread_;
+  public int getSeenValue() {
+    return seen_;
   }
   /**
    * <pre>
    * default: a notification is read already
    * </pre>
    *
-   * <code>.fintech.NotificationItem.UnRead unread = 6;</code>
+   * <code>.fintech.NotificationItem.Seen seen = 6;</code>
    */
-  public fintech.NotificationItem.UnRead getUnread() {
-    fintech.NotificationItem.UnRead result = fintech.NotificationItem.UnRead.valueOf(unread_);
-    return result == null ? fintech.NotificationItem.UnRead.UNRECOGNIZED : result;
+  public fintech.NotificationItem.Seen getSeen() {
+    fintech.NotificationItem.Seen result = fintech.NotificationItem.Seen.valueOf(seen_);
+    return result == null ? fintech.NotificationItem.Seen.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -342,8 +342,8 @@ private static final long serialVersionUID = 0L;
     if (notificationId_ != 0L) {
       output.writeInt64(1, notificationId_);
     }
-    if (mode_ != 0) {
-      output.writeInt32(2, mode_);
+    if (notificationType_ != 0) {
+      output.writeInt32(2, notificationType_);
     }
     if (partnerId_ != 0L) {
       output.writeInt64(3, partnerId_);
@@ -354,8 +354,8 @@ private static final long serialVersionUID = 0L;
     if (!getMessageBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, message_);
     }
-    if (unread_ != fintech.NotificationItem.UnRead.TRUE.getNumber()) {
-      output.writeEnum(6, unread_);
+    if (seen_ != fintech.NotificationItem.Seen.TRUE.getNumber()) {
+      output.writeEnum(6, seen_);
     }
     unknownFields.writeTo(output);
   }
@@ -369,9 +369,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(1, notificationId_);
     }
-    if (mode_ != 0) {
+    if (notificationType_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, mode_);
+        .computeInt32Size(2, notificationType_);
     }
     if (partnerId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
@@ -384,9 +384,9 @@ private static final long serialVersionUID = 0L;
     if (!getMessageBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, message_);
     }
-    if (unread_ != fintech.NotificationItem.UnRead.TRUE.getNumber()) {
+    if (seen_ != fintech.NotificationItem.Seen.TRUE.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(6, unread_);
+        .computeEnumSize(6, seen_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -406,15 +406,15 @@ private static final long serialVersionUID = 0L;
     boolean result = true;
     result = result && (getNotificationId()
         == other.getNotificationId());
-    result = result && (getMode()
-        == other.getMode());
+    result = result && (getNotificationType()
+        == other.getNotificationType());
     result = result && (getPartnerId()
         == other.getPartnerId());
     result = result && (getAmount()
         == other.getAmount());
     result = result && getMessage()
         .equals(other.getMessage());
-    result = result && unread_ == other.unread_;
+    result = result && seen_ == other.seen_;
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -429,8 +429,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + NOTIFICATION_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getNotificationId());
-    hash = (37 * hash) + MODE_FIELD_NUMBER;
-    hash = (53 * hash) + getMode();
+    hash = (37 * hash) + NOTIFICATION_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getNotificationType();
     hash = (37 * hash) + PARTNER_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getPartnerId());
@@ -439,8 +439,8 @@ private static final long serialVersionUID = 0L;
         getAmount());
     hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
     hash = (53 * hash) + getMessage().hashCode();
-    hash = (37 * hash) + UNREAD_FIELD_NUMBER;
-    hash = (53 * hash) + unread_;
+    hash = (37 * hash) + SEEN_FIELD_NUMBER;
+    hash = (53 * hash) + seen_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -572,7 +572,7 @@ private static final long serialVersionUID = 0L;
       super.clear();
       notificationId_ = 0L;
 
-      mode_ = 0;
+      notificationType_ = 0;
 
       partnerId_ = 0L;
 
@@ -580,7 +580,7 @@ private static final long serialVersionUID = 0L;
 
       message_ = "";
 
-      unread_ = 0;
+      seen_ = 0;
 
       return this;
     }
@@ -605,11 +605,11 @@ private static final long serialVersionUID = 0L;
     public fintech.NotificationItem buildPartial() {
       fintech.NotificationItem result = new fintech.NotificationItem(this);
       result.notificationId_ = notificationId_;
-      result.mode_ = mode_;
+      result.notificationType_ = notificationType_;
       result.partnerId_ = partnerId_;
       result.amount_ = amount_;
       result.message_ = message_;
-      result.unread_ = unread_;
+      result.seen_ = seen_;
       onBuilt();
       return result;
     }
@@ -654,8 +654,8 @@ private static final long serialVersionUID = 0L;
       if (other.getNotificationId() != 0L) {
         setNotificationId(other.getNotificationId());
       }
-      if (other.getMode() != 0) {
-        setMode(other.getMode());
+      if (other.getNotificationType() != 0) {
+        setNotificationType(other.getNotificationType());
       }
       if (other.getPartnerId() != 0L) {
         setPartnerId(other.getPartnerId());
@@ -667,8 +667,8 @@ private static final long serialVersionUID = 0L;
         message_ = other.message_;
         onChanged();
       }
-      if (other.unread_ != 0) {
-        setUnreadValue(other.getUnreadValue());
+      if (other.seen_ != 0) {
+        setSeenValue(other.getSeenValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -744,28 +744,28 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int mode_ ;
+    private int notificationType_ ;
     /**
-     * <code>int32 mode = 2;</code>
+     * <code>int32 notification_type = 2;</code>
      */
-    public int getMode() {
-      return mode_;
+    public int getNotificationType() {
+      return notificationType_;
     }
     /**
-     * <code>int32 mode = 2;</code>
+     * <code>int32 notification_type = 2;</code>
      */
-    public Builder setMode(int value) {
+    public Builder setNotificationType(int value) {
       
-      mode_ = value;
+      notificationType_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 mode = 2;</code>
+     * <code>int32 notification_type = 2;</code>
      */
-    public Builder clearMode() {
+    public Builder clearNotificationType() {
       
-      mode_ = 0;
+      notificationType_ = 0;
       onChanged();
       return this;
     }
@@ -911,26 +911,26 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int unread_ = 0;
+    private int seen_ = 0;
     /**
      * <pre>
      * default: a notification is read already
      * </pre>
      *
-     * <code>.fintech.NotificationItem.UnRead unread = 6;</code>
+     * <code>.fintech.NotificationItem.Seen seen = 6;</code>
      */
-    public int getUnreadValue() {
-      return unread_;
+    public int getSeenValue() {
+      return seen_;
     }
     /**
      * <pre>
      * default: a notification is read already
      * </pre>
      *
-     * <code>.fintech.NotificationItem.UnRead unread = 6;</code>
+     * <code>.fintech.NotificationItem.Seen seen = 6;</code>
      */
-    public Builder setUnreadValue(int value) {
-      unread_ = value;
+    public Builder setSeenValue(int value) {
+      seen_ = value;
       onChanged();
       return this;
     }
@@ -939,25 +939,25 @@ private static final long serialVersionUID = 0L;
      * default: a notification is read already
      * </pre>
      *
-     * <code>.fintech.NotificationItem.UnRead unread = 6;</code>
+     * <code>.fintech.NotificationItem.Seen seen = 6;</code>
      */
-    public fintech.NotificationItem.UnRead getUnread() {
-      fintech.NotificationItem.UnRead result = fintech.NotificationItem.UnRead.valueOf(unread_);
-      return result == null ? fintech.NotificationItem.UnRead.UNRECOGNIZED : result;
+    public fintech.NotificationItem.Seen getSeen() {
+      fintech.NotificationItem.Seen result = fintech.NotificationItem.Seen.valueOf(seen_);
+      return result == null ? fintech.NotificationItem.Seen.UNRECOGNIZED : result;
     }
     /**
      * <pre>
      * default: a notification is read already
      * </pre>
      *
-     * <code>.fintech.NotificationItem.UnRead unread = 6;</code>
+     * <code>.fintech.NotificationItem.Seen seen = 6;</code>
      */
-    public Builder setUnread(fintech.NotificationItem.UnRead value) {
+    public Builder setSeen(fintech.NotificationItem.Seen value) {
       if (value == null) {
         throw new NullPointerException();
       }
       
-      unread_ = value.getNumber();
+      seen_ = value.getNumber();
       onChanged();
       return this;
     }
@@ -966,11 +966,11 @@ private static final long serialVersionUID = 0L;
      * default: a notification is read already
      * </pre>
      *
-     * <code>.fintech.NotificationItem.UnRead unread = 6;</code>
+     * <code>.fintech.NotificationItem.Seen seen = 6;</code>
      */
-    public Builder clearUnread() {
+    public Builder clearSeen() {
       
-      unread_ = 0;
+      seen_ = 0;
       onChanged();
       return this;
     }

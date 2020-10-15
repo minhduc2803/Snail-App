@@ -23,17 +23,17 @@ export default function Register(props) {
         <form  onSubmit={(event) => { handleSubmit(event) }}>
         <h1>Snail Project</h1>
             <div>
-                <input type="text" ref={usernameInput} placeholder="Username" required="" id="username" />
+                <input type="text" ref={usernameInput} placeholder="Tên tài khoản" required="" id="username" />
             </div>
             <div>
-                <input type="text" ref={fullNameInput} placeholder="Fullname" required="" id="fullname" />
+                <input type="text" ref={fullNameInput} placeholder="Tên đầy đủ" required="" id="fullname" />
             </div>
             <div>
-                <input type="password" ref={passwordInput} placeholder="Password" required="" id="password" />
+                <input type="password" ref={passwordInput} placeholder="Mật khẩu" required="" id="password" />
             </div>
             <div>
-                <input type="submit" value="Register" />
-                <button className="example_a" onClick={() => dispatch({type: "LOGIN"})}>Login</button>
+                <input type="submit" value="Đăng ký" />
+                <button className="example_a" onClick={() => dispatch({type: "LOGIN"})}>Đăng nhập</button>
             
             </div>
         </form>

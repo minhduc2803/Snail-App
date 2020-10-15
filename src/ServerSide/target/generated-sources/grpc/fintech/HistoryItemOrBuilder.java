@@ -10,7 +10,7 @@ public interface HistoryItemOrBuilder extends
   /**
    * <pre>
    * Information of a user transfer money with it's partner
-   * This hisotry has an enum TransferType
+   * This history has an enum TransferType
    * If TransferType = SEND =&gt; user send money to partner
    * If TransferType = RECEIVE =&gt; user receive money from partner
    * </pre>
@@ -75,15 +75,6 @@ public interface HistoryItemOrBuilder extends
    * <code>int64 timestamp = 7;</code>
    */
   long getTimestamp();
-
-  /**
-   * <pre>
-   * The balance of user after transfer
-   * </pre>
-   *
-   * <code>int64 balance = 8;</code>
-   */
-  long getBalance();
 
   /**
    * <code>.fintech.HistoryItem.TransferType transfer_type = 9;</code>

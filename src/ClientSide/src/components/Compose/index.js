@@ -5,6 +5,7 @@ import {DollarCircleOutlined} from '@ant-design/icons';
 import './Compose.css';
 import { useSelector } from 'react-redux';
 import fintechService from '../../grpc/fintechService';
+import Modal from '../Modal';
 
 export default function Compose(props) {
   const ws = useSelector(state => state.websocket);
@@ -34,19 +35,20 @@ export default function Compose(props) {
           type="text"
           ref={message}
           className="compose-input"
-          placeholder="Type a message, @name"
+          placeholder="&nbsp;Type a message, @name"
           onKeyPress={(event) => { handleSubmit(event) }}
         />
 
-        <div className="right-items">
-          {/* {props.rightItems} */}
-          <Popover content={Demo} trigger="click">
-            <Button type="primary">
-              <DollarCircleOutlined />
-            </Button>
-          </Popover>
+        <div className="rightItem">
+          <Modal />
+          {/* <Popover content={Demo} trigger="click">
+              <Button type="primary">
+                <DollarCircleOutlined />
+              </Button>
+            </Popover> */}
+        </div>
           
-          </div>
+        
         
       </div>
     );

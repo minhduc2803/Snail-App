@@ -176,14 +176,49 @@ export function transfer(transfer_info){
         
         grpc.transfer(metadata, transfer_info, (err, response) => {
             console.log(response.getData().getIssuccessful());
-            dispatch({type: "POP_UP_TRANSFER_COMPLETE"});
+            response.getData().getIssuccessful() == 0
+            ? 
+            dispatch({type: "POP_UP_TRANSFER_COMPLETE_SUCCESS"})
+            :
+            dispatch({type: "POP_UP_TRANSFER_COMPLETE_FAILED"});
         })
 
-        dispatch({type: "TRANSFER"});
+        dispatch({type: "TRANSFERING"});
     }
 }
 
-export function transferComplete(){
-    
+export function getBalance(){
+    return (dispatch, getState) => {
+        const metadata = { 'Authorization': 'Bearer '+getState().user.token};
+        
+        grpc.getBalance(metadata, (err, response) => {
+            console.log(response.getData().getBalance());
+            const balance = {
+                balance: response.getData().getBalance(),
+                lastTimeUpdate: response.getData().getLastTimeUpdateBalance()
+            }
+            dispatch({type: "GET_BALANCE",payload:balance})
+        })
+    }
+}
+
+export function getHistory(){
+    return (dispatch, getState) => {
+        const metadata = { 'Authorization': 'Bearer '+getState().user.token};
+        
+        grpc.getHistory(metadata, (err, response) => {
+            console.log(response.getData());
+            const history = {
+                partnerId: response.getData.getPartnerId(),
+                transferType: response.getData.getTransferType(),
+                amount: response.getData.getAmount(),
+                message: response.getData.getMessage(),
+                transferTime: response.getData.getTransferTime(),
+                username: response.getData.getUsername(),
+                fullName: response.getData.getFullName()
+            };
+            dispatch({type: "GET_TRANSFER_HISTORY", payload: history});
+        })
+    }
 }
 

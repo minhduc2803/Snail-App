@@ -61,18 +61,18 @@ message HistoryItem {
   // This history has an enum TransferType
   // If TransferType = SEND => user send money to partner
   // If TransferType = RECEIVE => user receive money from partner
-  int64 history_id = 1; // Every transfer history has a id
-  int64 partner_id = 2;
-  string partner_username = 3;
-  string partner_fullname = 4;
-  int64 amount = 5;
-  string message = 6; // The message goes with a transfer
-  int64 timestamp = 7; // The time when the transfer executed
+  int64 partner_id = 1;
   enum TransferType {
     SEND = 0;
     RECEIVE = 1;
   }
-  TransferType transfer_type = 9;
+  TransferType transfer_type = 2;
+
+  int64 amount = 3;
+  string message = 4; // The message goes with a transaction
+  int64 transfer_time = 5; // The time when the transfer executed
+  string username = 6;
+  string full_name = 7;
 }
 
 message TransferRequest {

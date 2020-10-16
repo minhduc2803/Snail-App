@@ -3,14 +3,18 @@ const initialState = {
     loginState: "LOGIN",
     page: "MESSENGER",
     user: {},
+    balance: {},
     listUsers: [],
     chosenIndex: 0,
     
-    tranfer: {
+    transfer: {
         transferPopUp: false,
         transferComplete: false,
         transferLoding: false,
-    }
+        transferSuccess: true
+    },
+
+    transferHistory: {}
 }
 const rootReducer = (state = initialState, action) => {
     switch(action.type){
@@ -91,37 +95,74 @@ const rootReducer = (state = initialState, action) => {
                 chosenIndex: action.chosenIndex
             }
 
-        case "POP_UP_TRANSFER_COMPLETE":
+        case "POP_UP_TRANSFER":
             return {
                 ...state,
-                tranfer: {
+                transfer: {
                     transferPopUp: true,
-                    transferComplete: true,
+                    transferComplete: false,
                     transferLoding: false,
+                    transferSuccess: true
                 }
             }
 
-        case "POP_DOWN_TRANSFER_COMPLETE":
+        case "POP_UP_TRANSFER_COMPLETE_SUCCESS":
             return {
                 ...state,
-                tranfer: {
+                transfer: {
+                    transferPopUp: true,
+                    transferComplete: true,
+                    transferLoding: false,
+                    transferSuccess: true
+                }
+            }
+
+        case "POP_UP_TRANSFER_COMPLETE_FAILED":
+            return {
+                ...state,
+                transfer: {
+                    transferPopUp: true,
+                    transferComplete: true,
+                    transferLoding: false,
+                    transferSuccess: false
+                }
+            }
+
+        case "POP_DOWN_TRANSFER":
+            return {
+                ...state,
+                transfer: {
                     transferPopUp: false,
                     transferComplete: false,
                     transferLoding: false,
+                    transferSuccess: true
                 }
                 
             }
 
-        case "TRANSFER":
+        case "TRANSFERING":
             return {
                 ...state,
-                tranfer: {
+                transfer: {
                     transferPopUp: true,
                     transferComplete: false,
                     transferLoding: true,
+                    transferSuccess: true
                 }
             }
-            
+        
+        case "GET_BALANCE":
+            return {
+                ...state,
+                balance: action.payload
+            }
+
+        case "GET_TRANSFER_HISTORY":
+            return {
+                ...state,
+                history: action.history
+            }
+
         default:
 
             return state;

@@ -24,6 +24,7 @@ export default {
         request.setReceiverId(transfer_info.receiver_id);
         request.setAmount(transfer_info.amount);
         request.setMessage(transfer_info.message);
+        request.setPassword(transfer_info.password);
         client.transfer(request, metadata, callback);
     },
 

@@ -34,9 +34,9 @@ public class TransferHistory {
     long transferTime;
 
     @DBTable(columnName = "user_name")
-    long userName;
+    String username;
 
     @DBTable(columnName = "full_name")
-    long fullName;
+    String fullName;
 
 }

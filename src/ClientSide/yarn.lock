@@ -8078,6 +8078,11 @@ react-scripts@2.1.3:
   optionalDependencies:
     fsevents "1.2.4"
 
+react-shave@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-shave/-/react-shave-1.0.1.tgz#a7ef7162e11cd42a52778c93e57a3398df60ce8e"
+  integrity sha1-p+9xYuEc1CpSd4yT5XozmN9gzo4=
+
 react-virtualized@^9.22.2:
   version "9.22.2"
   resolved "https://registry.yarnpkg.com/react-virtualized/-/react-virtualized-9.22.2.tgz#217a870bad91e5438f46f01a009e1d8ce1060a5a"

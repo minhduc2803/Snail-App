@@ -15,54 +15,38 @@ public interface HistoryItemOrBuilder extends
    * If TransferType = RECEIVE =&gt; user receive money from partner
    * </pre>
    *
-   * <code>int64 history_id = 1;</code>
-   */
-  long getHistoryId();
-
-  /**
-   * <code>int64 partner_id = 2;</code>
+   * <code>int64 partner_id = 1;</code>
    */
   long getPartnerId();
 
   /**
-   * <code>string partner_username = 3;</code>
+   * <code>.fintech.HistoryItem.TransferType transfer_type = 2;</code>
    */
-  java.lang.String getPartnerUsername();
+  int getTransferTypeValue();
   /**
-   * <code>string partner_username = 3;</code>
+   * <code>.fintech.HistoryItem.TransferType transfer_type = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getPartnerUsernameBytes();
+  fintech.HistoryItem.TransferType getTransferType();
 
   /**
-   * <code>string partner_fullname = 4;</code>
-   */
-  java.lang.String getPartnerFullname();
-  /**
-   * <code>string partner_fullname = 4;</code>
-   */
-  com.google.protobuf.ByteString
-      getPartnerFullnameBytes();
-
-  /**
-   * <code>int64 amount = 5;</code>
+   * <code>int64 amount = 3;</code>
    */
   long getAmount();
 
   /**
    * <pre>
-   * The message goes with a transfer
+   * The message goes with a transaction
    * </pre>
    *
-   * <code>string message = 6;</code>
+   * <code>string message = 4;</code>
    */
   java.lang.String getMessage();
   /**
    * <pre>
-   * The message goes with a transfer
+   * The message goes with a transaction
    * </pre>
    *
-   * <code>string message = 6;</code>
+   * <code>string message = 4;</code>
    */
   com.google.protobuf.ByteString
       getMessageBytes();
@@ -72,16 +56,27 @@ public interface HistoryItemOrBuilder extends
    * The time when the transfer executed
    * </pre>
    *
-   * <code>int64 timestamp = 7;</code>
+   * <code>int64 transfer_time = 5;</code>
    */
-  long getTimestamp();
+  long getTransferTime();
 
   /**
-   * <code>.fintech.HistoryItem.TransferType transfer_type = 9;</code>
+   * <code>string username = 6;</code>
    */
-  int getTransferTypeValue();
+  java.lang.String getUsername();
   /**
-   * <code>.fintech.HistoryItem.TransferType transfer_type = 9;</code>
+   * <code>string username = 6;</code>
    */
-  fintech.HistoryItem.TransferType getTransferType();
+  com.google.protobuf.ByteString
+      getUsernameBytes();
+
+  /**
+   * <code>string full_name = 7;</code>
+   */
+  java.lang.String getFullName();
+  /**
+   * <code>string full_name = 7;</code>
+   */
+  com.google.protobuf.ByteString
+      getFullNameBytes();
 }

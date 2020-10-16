@@ -115,43 +115,42 @@ public final class FinTechProto {
       "\222\001\n\017HistoryResponse\022\035\n\005error\030\001 \001(\0132\016.fin",
       "tech.Error\022+\n\004data\030\002 \001(\0132\035.fintech.Histo" +
       "ryResponse.Data\0323\n\004Data\022+\n\rhistory_items" +
-      "\030\001 \003(\0132\024.fintech.HistoryItem\"\376\001\n\013History" +
-      "Item\022\022\n\nhistory_id\030\001 \001(\003\022\022\n\npartner_id\030\002" +
-      " \001(\003\022\030\n\020partner_username\030\003 \001(\t\022\030\n\020partne" +
-      "r_fullname\030\004 \001(\t\022\016\n\006amount\030\005 \001(\003\022\017\n\007mess" +
-      "age\030\006 \001(\t\022\021\n\ttimestamp\030\007 \001(\003\0228\n\rtransfer" +
-      "_type\030\t \001(\0162!.fintech.HistoryItem.Transf" +
-      "erType\"%\n\014TransferType\022\010\n\004SEND\020\000\022\013\n\007RECE" +
-      "IVE\020\001\"l\n\017TransferRequest\022\021\n\tsender_id\030\001 ",
-      "\001(\003\022\023\n\013receiver_id\030\002 \001(\003\022\016\n\006amount\030\003 \001(\003" +
-      "\022\017\n\007message\030\004 \001(\t\022\020\n\010password\030\005 \001(\t\"\317\001\n\020" +
-      "TransferResponse\022\035\n\005error\030\001 \001(\0132\016.fintec" +
-      "h.Error\022,\n\004data\030\002 \001(\0132\036.fintech.Transfer" +
-      "Response.Data\032n\n\004Data\022A\n\014isSuccessful\030\001 " +
-      "\001(\0162+.fintech.TransferResponse.Data.IsSu" +
-      "ccessful\"#\n\014IsSuccessful\022\010\n\004TRUE\020\000\022\t\n\005FA" +
-      "LSE\020\001\"\025\n\023NotificationRequest\"\246\001\n\024Notific" +
-      "ationResponse\022\035\n\005error\030\001 \001(\0132\016.fintech.E" +
-      "rror\0220\n\004data\030\002 \001(\0132\".fintech.Notificatio",
-      "nResponse.Data\032=\n\004Data\0225\n\022notification_i" +
-      "tems\030\001 \003(\0132\031.fintech.NotificationItem\"\306\001" +
-      "\n\020NotificationItem\022\027\n\017notification_id\030\001 " +
-      "\001(\003\022\031\n\021notification_type\030\002 \001(\005\022\022\n\npartne" +
-      "r_id\030\003 \001(\003\022\016\n\006amount\030\004 \001(\003\022\017\n\007message\030\005 " +
-      "\001(\t\022,\n\004seen\030\006 \001(\0162\036.fintech.Notification" +
-      "Item.Seen\"\033\n\004Seen\022\010\n\004TRUE\020\000\022\t\n\005FALSE\020\001*\177" +
-      "\n\004Code\022\013\n\007SUCCESS\020\000\022\020\n\014UNAUTHORIZED\020\001\022\017\n" +
-      "\013BAD_REQUEST\020\002\022\026\n\022INCORRECT_PASSWORD\020\003\022\024" +
-      "\n\020NOT_ENOUGH_MONEY\020\004\022\031\n\025INTERNAL_SERVER_",
-      "ERROR\020\0052\253\002\n\016FintechService\022A\n\ngetBalance" +
-      "\022\027.fintech.BalanceRequest\032\030.fintech.Bala" +
-      "nceResponse\"\000\022A\n\ngetHistory\022\027.fintech.Hi" +
-      "storyRequest\032\030.fintech.HistoryResponse\"\000" +
-      "\022A\n\010transfer\022\030.fintech.TransferRequest\032\031" +
-      ".fintech.TransferResponse\"\000\022P\n\017getNotifi" +
-      "cation\022\034.fintech.NotificationRequest\032\035.f" +
-      "intech.NotificationResponse\"\000B\031\n\007fintech" +
-      "B\014FinTechProtoP\001b\006proto3"
+      "\030\001 \003(\0132\024.fintech.HistoryItem\"\337\001\n\013History" +
+      "Item\022\022\n\npartner_id\030\001 \001(\003\0228\n\rtransfer_typ" +
+      "e\030\002 \001(\0162!.fintech.HistoryItem.TransferTy" +
+      "pe\022\016\n\006amount\030\003 \001(\003\022\017\n\007message\030\004 \001(\t\022\025\n\rt" +
+      "ransfer_time\030\005 \001(\003\022\020\n\010username\030\006 \001(\t\022\021\n\t" +
+      "full_name\030\007 \001(\t\"%\n\014TransferType\022\010\n\004SEND\020" +
+      "\000\022\013\n\007RECEIVE\020\001\"l\n\017TransferRequest\022\021\n\tsen" +
+      "der_id\030\001 \001(\003\022\023\n\013receiver_id\030\002 \001(\003\022\016\n\006amo",
+      "unt\030\003 \001(\003\022\017\n\007message\030\004 \001(\t\022\020\n\010password\030\005" +
+      " \001(\t\"\317\001\n\020TransferResponse\022\035\n\005error\030\001 \001(\013" +
+      "2\016.fintech.Error\022,\n\004data\030\002 \001(\0132\036.fintech" +
+      ".TransferResponse.Data\032n\n\004Data\022A\n\014isSucc" +
+      "essful\030\001 \001(\0162+.fintech.TransferResponse." +
+      "Data.IsSuccessful\"#\n\014IsSuccessful\022\010\n\004TRU" +
+      "E\020\000\022\t\n\005FALSE\020\001\"\025\n\023NotificationRequest\"\246\001" +
+      "\n\024NotificationResponse\022\035\n\005error\030\001 \001(\0132\016." +
+      "fintech.Error\0220\n\004data\030\002 \001(\0132\".fintech.No" +
+      "tificationResponse.Data\032=\n\004Data\0225\n\022notif",
+      "ication_items\030\001 \003(\0132\031.fintech.Notificati" +
+      "onItem\"\306\001\n\020NotificationItem\022\027\n\017notificat" +
+      "ion_id\030\001 \001(\003\022\031\n\021notification_type\030\002 \001(\005\022" +
+      "\022\n\npartner_id\030\003 \001(\003\022\016\n\006amount\030\004 \001(\003\022\017\n\007m" +
+      "essage\030\005 \001(\t\022,\n\004seen\030\006 \001(\0162\036.fintech.Not" +
+      "ificationItem.Seen\"\033\n\004Seen\022\010\n\004TRUE\020\000\022\t\n\005" +
+      "FALSE\020\001*\177\n\004Code\022\013\n\007SUCCESS\020\000\022\020\n\014UNAUTHOR" +
+      "IZED\020\001\022\017\n\013BAD_REQUEST\020\002\022\026\n\022INCORRECT_PAS" +
+      "SWORD\020\003\022\024\n\020NOT_ENOUGH_MONEY\020\004\022\031\n\025INTERNA" +
+      "L_SERVER_ERROR\020\0052\253\002\n\016FintechService\022A\n\ng",
+      "etBalance\022\027.fintech.BalanceRequest\032\030.fin" +
+      "tech.BalanceResponse\"\000\022A\n\ngetHistory\022\027.f" +
+      "intech.HistoryRequest\032\030.fintech.HistoryR" +
+      "esponse\"\000\022A\n\010transfer\022\030.fintech.Transfer" +
+      "Request\032\031.fintech.TransferResponse\"\000\022P\n\017" +
+      "getNotification\022\034.fintech.NotificationRe" +
+      "quest\032\035.fintech.NotificationResponse\"\000B\031" +
+      "\n\007fintechB\014FinTechProtoP\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -218,7 +217,7 @@ public final class FinTechProto {
     internal_static_fintech_HistoryItem_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fintech_HistoryItem_descriptor,
-        new java.lang.String[] { "HistoryId", "PartnerId", "PartnerUsername", "PartnerFullname", "Amount", "Message", "Timestamp", "TransferType", });
+        new java.lang.String[] { "PartnerId", "TransferType", "Amount", "Message", "TransferTime", "Username", "FullName", });
     internal_static_fintech_TransferRequest_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_fintech_TransferRequest_fieldAccessorTable = new

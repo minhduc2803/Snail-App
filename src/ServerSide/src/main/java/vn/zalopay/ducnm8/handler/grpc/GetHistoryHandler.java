@@ -41,8 +41,21 @@ public class GetHistoryHandler {
     private HistoryResponse createSuccessHistory(ArrayList<TransferHistory> history) {
 
         ArrayList<HistoryItem> historyItems = new ArrayList<HistoryItem>();
-        for (TransferHistory item : history)
-            history.add(item);
+        for (TransferHistory item : history) {
+            HistoryItem historyItem =
+                    HistoryItem
+                            .newBuilder()
+                            .setTransferType(item.getTransferType() == 1 ? HistoryItem.TransferType.SEND : HistoryItem.TransferType.RECEIVE)
+                            .setPartnerId(item.getPartnerId())
+                            .setAmount(item.getAmount())
+                            .setMessage(item.getMessage())
+                            .setTransferTime(item.getTransferTime())
+                            .setUsername(item.getUsername())
+                            .setFullName(item.getFullName())
+                            .build();
+
+            historyItems.add(historyItem);
+        }
         HistoryResponse.Data data = HistoryResponse.Data
                 .newBuilder()
                 .addAllHistoryItems(historyItems)

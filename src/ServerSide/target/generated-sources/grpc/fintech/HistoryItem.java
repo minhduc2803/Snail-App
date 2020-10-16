@@ -16,14 +16,13 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private HistoryItem() {
-    historyId_ = 0L;
     partnerId_ = 0L;
-    partnerUsername_ = "";
-    partnerFullname_ = "";
+    transferType_ = 0;
     amount_ = 0L;
     message_ = "";
-    timestamp_ = 0L;
-    transferType_ = 0;
+    transferTime_ = 0L;
+    username_ = "";
+    fullName_ = "";
   }
 
   @java.lang.Override
@@ -56,46 +55,41 @@ private static final long serialVersionUID = 0L;
           }
           case 8: {
 
-            historyId_ = input.readInt64();
-            break;
-          }
-          case 16: {
-
             partnerId_ = input.readInt64();
             break;
           }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 16: {
+            int rawValue = input.readEnum();
 
-            partnerUsername_ = s;
+            transferType_ = rawValue;
+            break;
+          }
+          case 24: {
+
+            amount_ = input.readInt64();
             break;
           }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            partnerFullname_ = s;
+            message_ = s;
             break;
           }
           case 40: {
 
-            amount_ = input.readInt64();
+            transferTime_ = input.readInt64();
             break;
           }
           case 50: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            message_ = s;
+            username_ = s;
             break;
           }
-          case 56: {
+          case 58: {
+            java.lang.String s = input.readStringRequireUtf8();
 
-            timestamp_ = input.readInt64();
-            break;
-          }
-          case 72: {
-            int rawValue = input.readEnum();
-
-            transferType_ = rawValue;
+            fullName_ = s;
             break;
           }
         }
@@ -220,8 +214,8 @@ private static final long serialVersionUID = 0L;
     // @@protoc_insertion_point(enum_scope:fintech.HistoryItem.TransferType)
   }
 
-  public static final int HISTORY_ID_FIELD_NUMBER = 1;
-  private long historyId_;
+  public static final int PARTNER_ID_FIELD_NUMBER = 1;
+  private long partnerId_;
   /**
    * <pre>
    * Information of a user transfer money with it's partner
@@ -230,106 +224,45 @@ private static final long serialVersionUID = 0L;
    * If TransferType = RECEIVE =&gt; user receive money from partner
    * </pre>
    *
-   * <code>int64 history_id = 1;</code>
-   */
-  public long getHistoryId() {
-    return historyId_;
-  }
-
-  public static final int PARTNER_ID_FIELD_NUMBER = 2;
-  private long partnerId_;
-  /**
-   * <code>int64 partner_id = 2;</code>
+   * <code>int64 partner_id = 1;</code>
    */
   public long getPartnerId() {
     return partnerId_;
   }
 
-  public static final int PARTNER_USERNAME_FIELD_NUMBER = 3;
-  private volatile java.lang.Object partnerUsername_;
+  public static final int TRANSFER_TYPE_FIELD_NUMBER = 2;
+  private int transferType_;
   /**
-   * <code>string partner_username = 3;</code>
+   * <code>.fintech.HistoryItem.TransferType transfer_type = 2;</code>
    */
-  public java.lang.String getPartnerUsername() {
-    java.lang.Object ref = partnerUsername_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      partnerUsername_ = s;
-      return s;
-    }
+  public int getTransferTypeValue() {
+    return transferType_;
   }
   /**
-   * <code>string partner_username = 3;</code>
+   * <code>.fintech.HistoryItem.TransferType transfer_type = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getPartnerUsernameBytes() {
-    java.lang.Object ref = partnerUsername_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      partnerUsername_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public fintech.HistoryItem.TransferType getTransferType() {
+    fintech.HistoryItem.TransferType result = fintech.HistoryItem.TransferType.valueOf(transferType_);
+    return result == null ? fintech.HistoryItem.TransferType.UNRECOGNIZED : result;
   }
 
-  public static final int PARTNER_FULLNAME_FIELD_NUMBER = 4;
-  private volatile java.lang.Object partnerFullname_;
-  /**
-   * <code>string partner_fullname = 4;</code>
-   */
-  public java.lang.String getPartnerFullname() {
-    java.lang.Object ref = partnerFullname_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      partnerFullname_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string partner_fullname = 4;</code>
-   */
-  public com.google.protobuf.ByteString
-      getPartnerFullnameBytes() {
-    java.lang.Object ref = partnerFullname_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      partnerFullname_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int AMOUNT_FIELD_NUMBER = 5;
+  public static final int AMOUNT_FIELD_NUMBER = 3;
   private long amount_;
   /**
-   * <code>int64 amount = 5;</code>
+   * <code>int64 amount = 3;</code>
    */
   public long getAmount() {
     return amount_;
   }
 
-  public static final int MESSAGE_FIELD_NUMBER = 6;
+  public static final int MESSAGE_FIELD_NUMBER = 4;
   private volatile java.lang.Object message_;
   /**
    * <pre>
-   * The message goes with a transfer
+   * The message goes with a transaction
    * </pre>
    *
-   * <code>string message = 6;</code>
+   * <code>string message = 4;</code>
    */
   public java.lang.String getMessage() {
     java.lang.Object ref = message_;
@@ -345,10 +278,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The message goes with a transfer
+   * The message goes with a transaction
    * </pre>
    *
-   * <code>string message = 6;</code>
+   * <code>string message = 4;</code>
    */
   public com.google.protobuf.ByteString
       getMessageBytes() {
@@ -364,33 +297,85 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int TIMESTAMP_FIELD_NUMBER = 7;
-  private long timestamp_;
+  public static final int TRANSFER_TIME_FIELD_NUMBER = 5;
+  private long transferTime_;
   /**
    * <pre>
    * The time when the transfer executed
    * </pre>
    *
-   * <code>int64 timestamp = 7;</code>
+   * <code>int64 transfer_time = 5;</code>
    */
-  public long getTimestamp() {
-    return timestamp_;
+  public long getTransferTime() {
+    return transferTime_;
   }
 
-  public static final int TRANSFER_TYPE_FIELD_NUMBER = 9;
-  private int transferType_;
+  public static final int USERNAME_FIELD_NUMBER = 6;
+  private volatile java.lang.Object username_;
   /**
-   * <code>.fintech.HistoryItem.TransferType transfer_type = 9;</code>
+   * <code>string username = 6;</code>
    */
-  public int getTransferTypeValue() {
-    return transferType_;
+  public java.lang.String getUsername() {
+    java.lang.Object ref = username_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      username_ = s;
+      return s;
+    }
   }
   /**
-   * <code>.fintech.HistoryItem.TransferType transfer_type = 9;</code>
+   * <code>string username = 6;</code>
    */
-  public fintech.HistoryItem.TransferType getTransferType() {
-    fintech.HistoryItem.TransferType result = fintech.HistoryItem.TransferType.valueOf(transferType_);
-    return result == null ? fintech.HistoryItem.TransferType.UNRECOGNIZED : result;
+  public com.google.protobuf.ByteString
+      getUsernameBytes() {
+    java.lang.Object ref = username_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      username_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int FULL_NAME_FIELD_NUMBER = 7;
+  private volatile java.lang.Object fullName_;
+  /**
+   * <code>string full_name = 7;</code>
+   */
+  public java.lang.String getFullName() {
+    java.lang.Object ref = fullName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      fullName_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string full_name = 7;</code>
+   */
+  public com.google.protobuf.ByteString
+      getFullNameBytes() {
+    java.lang.Object ref = fullName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      fullName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -405,29 +390,26 @@ private static final long serialVersionUID = 0L;
 
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (historyId_ != 0L) {
-      output.writeInt64(1, historyId_);
-    }
     if (partnerId_ != 0L) {
-      output.writeInt64(2, partnerId_);
-    }
-    if (!getPartnerUsernameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, partnerUsername_);
-    }
-    if (!getPartnerFullnameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, partnerFullname_);
-    }
-    if (amount_ != 0L) {
-      output.writeInt64(5, amount_);
-    }
-    if (!getMessageBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, message_);
-    }
-    if (timestamp_ != 0L) {
-      output.writeInt64(7, timestamp_);
+      output.writeInt64(1, partnerId_);
     }
     if (transferType_ != fintech.HistoryItem.TransferType.SEND.getNumber()) {
-      output.writeEnum(9, transferType_);
+      output.writeEnum(2, transferType_);
+    }
+    if (amount_ != 0L) {
+      output.writeInt64(3, amount_);
+    }
+    if (!getMessageBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, message_);
+    }
+    if (transferTime_ != 0L) {
+      output.writeInt64(5, transferTime_);
+    }
+    if (!getUsernameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, username_);
+    }
+    if (!getFullNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, fullName_);
     }
     unknownFields.writeTo(output);
   }
@@ -437,34 +419,30 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (historyId_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(1, historyId_);
-    }
     if (partnerId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(2, partnerId_);
-    }
-    if (!getPartnerUsernameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, partnerUsername_);
-    }
-    if (!getPartnerFullnameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, partnerFullname_);
-    }
-    if (amount_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(5, amount_);
-    }
-    if (!getMessageBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, message_);
-    }
-    if (timestamp_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(7, timestamp_);
+        .computeInt64Size(1, partnerId_);
     }
     if (transferType_ != fintech.HistoryItem.TransferType.SEND.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(9, transferType_);
+        .computeEnumSize(2, transferType_);
+    }
+    if (amount_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(3, amount_);
+    }
+    if (!getMessageBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, message_);
+    }
+    if (transferTime_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(5, transferTime_);
+    }
+    if (!getUsernameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, username_);
+    }
+    if (!getFullNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, fullName_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -482,21 +460,19 @@ private static final long serialVersionUID = 0L;
     fintech.HistoryItem other = (fintech.HistoryItem) obj;
 
     boolean result = true;
-    result = result && (getHistoryId()
-        == other.getHistoryId());
     result = result && (getPartnerId()
         == other.getPartnerId());
-    result = result && getPartnerUsername()
-        .equals(other.getPartnerUsername());
-    result = result && getPartnerFullname()
-        .equals(other.getPartnerFullname());
+    result = result && transferType_ == other.transferType_;
     result = result && (getAmount()
         == other.getAmount());
     result = result && getMessage()
         .equals(other.getMessage());
-    result = result && (getTimestamp()
-        == other.getTimestamp());
-    result = result && transferType_ == other.transferType_;
+    result = result && (getTransferTime()
+        == other.getTransferTime());
+    result = result && getUsername()
+        .equals(other.getUsername());
+    result = result && getFullName()
+        .equals(other.getFullName());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -508,26 +484,23 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + HISTORY_ID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getHistoryId());
     hash = (37 * hash) + PARTNER_ID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getPartnerId());
-    hash = (37 * hash) + PARTNER_USERNAME_FIELD_NUMBER;
-    hash = (53 * hash) + getPartnerUsername().hashCode();
-    hash = (37 * hash) + PARTNER_FULLNAME_FIELD_NUMBER;
-    hash = (53 * hash) + getPartnerFullname().hashCode();
+    hash = (37 * hash) + TRANSFER_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + transferType_;
     hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getAmount());
     hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
     hash = (53 * hash) + getMessage().hashCode();
-    hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
+    hash = (37 * hash) + TRANSFER_TIME_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getTimestamp());
-    hash = (37 * hash) + TRANSFER_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + transferType_;
+        getTransferTime());
+    hash = (37 * hash) + USERNAME_FIELD_NUMBER;
+    hash = (53 * hash) + getUsername().hashCode();
+    hash = (37 * hash) + FULL_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getFullName().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -657,21 +630,19 @@ private static final long serialVersionUID = 0L;
     }
     public Builder clear() {
       super.clear();
-      historyId_ = 0L;
-
       partnerId_ = 0L;
 
-      partnerUsername_ = "";
-
-      partnerFullname_ = "";
+      transferType_ = 0;
 
       amount_ = 0L;
 
       message_ = "";
 
-      timestamp_ = 0L;
+      transferTime_ = 0L;
 
-      transferType_ = 0;
+      username_ = "";
+
+      fullName_ = "";
 
       return this;
     }
@@ -695,14 +666,13 @@ private static final long serialVersionUID = 0L;
 
     public fintech.HistoryItem buildPartial() {
       fintech.HistoryItem result = new fintech.HistoryItem(this);
-      result.historyId_ = historyId_;
       result.partnerId_ = partnerId_;
-      result.partnerUsername_ = partnerUsername_;
-      result.partnerFullname_ = partnerFullname_;
+      result.transferType_ = transferType_;
       result.amount_ = amount_;
       result.message_ = message_;
-      result.timestamp_ = timestamp_;
-      result.transferType_ = transferType_;
+      result.transferTime_ = transferTime_;
+      result.username_ = username_;
+      result.fullName_ = fullName_;
       onBuilt();
       return result;
     }
@@ -744,19 +714,11 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(fintech.HistoryItem other) {
       if (other == fintech.HistoryItem.getDefaultInstance()) return this;
-      if (other.getHistoryId() != 0L) {
-        setHistoryId(other.getHistoryId());
-      }
       if (other.getPartnerId() != 0L) {
         setPartnerId(other.getPartnerId());
       }
-      if (!other.getPartnerUsername().isEmpty()) {
-        partnerUsername_ = other.partnerUsername_;
-        onChanged();
-      }
-      if (!other.getPartnerFullname().isEmpty()) {
-        partnerFullname_ = other.partnerFullname_;
-        onChanged();
+      if (other.transferType_ != 0) {
+        setTransferTypeValue(other.getTransferTypeValue());
       }
       if (other.getAmount() != 0L) {
         setAmount(other.getAmount());
@@ -765,11 +727,16 @@ private static final long serialVersionUID = 0L;
         message_ = other.message_;
         onChanged();
       }
-      if (other.getTimestamp() != 0L) {
-        setTimestamp(other.getTimestamp());
+      if (other.getTransferTime() != 0L) {
+        setTransferTime(other.getTransferTime());
       }
-      if (other.transferType_ != 0) {
-        setTransferTypeValue(other.getTransferTypeValue());
+      if (!other.getUsername().isEmpty()) {
+        username_ = other.username_;
+        onChanged();
+      }
+      if (!other.getFullName().isEmpty()) {
+        fullName_ = other.fullName_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -798,62 +765,29 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long historyId_ ;
-    /**
-     * <pre>
-     * Information of a user transfer money with it's partner
-     * This history has an enum TransferType
-     * If TransferType = SEND =&gt; user send money to partner
-     * If TransferType = RECEIVE =&gt; user receive money from partner
-     * </pre>
-     *
-     * <code>int64 history_id = 1;</code>
-     */
-    public long getHistoryId() {
-      return historyId_;
-    }
-    /**
-     * <pre>
-     * Information of a user transfer money with it's partner
-     * This history has an enum TransferType
-     * If TransferType = SEND =&gt; user send money to partner
-     * If TransferType = RECEIVE =&gt; user receive money from partner
-     * </pre>
-     *
-     * <code>int64 history_id = 1;</code>
-     */
-    public Builder setHistoryId(long value) {
-      
-      historyId_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Information of a user transfer money with it's partner
-     * This history has an enum TransferType
-     * If TransferType = SEND =&gt; user send money to partner
-     * If TransferType = RECEIVE =&gt; user receive money from partner
-     * </pre>
-     *
-     * <code>int64 history_id = 1;</code>
-     */
-    public Builder clearHistoryId() {
-      
-      historyId_ = 0L;
-      onChanged();
-      return this;
-    }
-
     private long partnerId_ ;
     /**
-     * <code>int64 partner_id = 2;</code>
+     * <pre>
+     * Information of a user transfer money with it's partner
+     * This history has an enum TransferType
+     * If TransferType = SEND =&gt; user send money to partner
+     * If TransferType = RECEIVE =&gt; user receive money from partner
+     * </pre>
+     *
+     * <code>int64 partner_id = 1;</code>
      */
     public long getPartnerId() {
       return partnerId_;
     }
     /**
-     * <code>int64 partner_id = 2;</code>
+     * <pre>
+     * Information of a user transfer money with it's partner
+     * This history has an enum TransferType
+     * If TransferType = SEND =&gt; user send money to partner
+     * If TransferType = RECEIVE =&gt; user receive money from partner
+     * </pre>
+     *
+     * <code>int64 partner_id = 1;</code>
      */
     public Builder setPartnerId(long value) {
       
@@ -862,7 +796,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 partner_id = 2;</code>
+     * <pre>
+     * Information of a user transfer money with it's partner
+     * This history has an enum TransferType
+     * If TransferType = SEND =&gt; user send money to partner
+     * If TransferType = RECEIVE =&gt; user receive money from partner
+     * </pre>
+     *
+     * <code>int64 partner_id = 1;</code>
      */
     public Builder clearPartnerId() {
       
@@ -871,153 +812,59 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object partnerUsername_ = "";
+    private int transferType_ = 0;
     /**
-     * <code>string partner_username = 3;</code>
+     * <code>.fintech.HistoryItem.TransferType transfer_type = 2;</code>
      */
-    public java.lang.String getPartnerUsername() {
-      java.lang.Object ref = partnerUsername_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        partnerUsername_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    public int getTransferTypeValue() {
+      return transferType_;
     }
     /**
-     * <code>string partner_username = 3;</code>
+     * <code>.fintech.HistoryItem.TransferType transfer_type = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getPartnerUsernameBytes() {
-      java.lang.Object ref = partnerUsername_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        partnerUsername_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public Builder setTransferTypeValue(int value) {
+      transferType_ = value;
+      onChanged();
+      return this;
     }
     /**
-     * <code>string partner_username = 3;</code>
+     * <code>.fintech.HistoryItem.TransferType transfer_type = 2;</code>
      */
-    public Builder setPartnerUsername(
-        java.lang.String value) {
+    public fintech.HistoryItem.TransferType getTransferType() {
+      fintech.HistoryItem.TransferType result = fintech.HistoryItem.TransferType.valueOf(transferType_);
+      return result == null ? fintech.HistoryItem.TransferType.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.fintech.HistoryItem.TransferType transfer_type = 2;</code>
+     */
+    public Builder setTransferType(fintech.HistoryItem.TransferType value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      partnerUsername_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string partner_username = 3;</code>
-     */
-    public Builder clearPartnerUsername() {
-      
-      partnerUsername_ = getDefaultInstance().getPartnerUsername();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string partner_username = 3;</code>
-     */
-    public Builder setPartnerUsernameBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      partnerUsername_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object partnerFullname_ = "";
-    /**
-     * <code>string partner_fullname = 4;</code>
-     */
-    public java.lang.String getPartnerFullname() {
-      java.lang.Object ref = partnerFullname_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        partnerFullname_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
+        throw new NullPointerException();
       }
-    }
-    /**
-     * <code>string partner_fullname = 4;</code>
-     */
-    public com.google.protobuf.ByteString
-        getPartnerFullnameBytes() {
-      java.lang.Object ref = partnerFullname_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        partnerFullname_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string partner_fullname = 4;</code>
-     */
-    public Builder setPartnerFullname(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      partnerFullname_ = value;
+      
+      transferType_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
-     * <code>string partner_fullname = 4;</code>
+     * <code>.fintech.HistoryItem.TransferType transfer_type = 2;</code>
      */
-    public Builder clearPartnerFullname() {
+    public Builder clearTransferType() {
       
-      partnerFullname_ = getDefaultInstance().getPartnerFullname();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string partner_fullname = 4;</code>
-     */
-    public Builder setPartnerFullnameBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      partnerFullname_ = value;
+      transferType_ = 0;
       onChanged();
       return this;
     }
 
     private long amount_ ;
     /**
-     * <code>int64 amount = 5;</code>
+     * <code>int64 amount = 3;</code>
      */
     public long getAmount() {
       return amount_;
     }
     /**
-     * <code>int64 amount = 5;</code>
+     * <code>int64 amount = 3;</code>
      */
     public Builder setAmount(long value) {
       
@@ -1026,7 +873,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>int64 amount = 5;</code>
+     * <code>int64 amount = 3;</code>
      */
     public Builder clearAmount() {
       
@@ -1038,10 +885,10 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object message_ = "";
     /**
      * <pre>
-     * The message goes with a transfer
+     * The message goes with a transaction
      * </pre>
      *
-     * <code>string message = 6;</code>
+     * <code>string message = 4;</code>
      */
     public java.lang.String getMessage() {
       java.lang.Object ref = message_;
@@ -1057,10 +904,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The message goes with a transfer
+     * The message goes with a transaction
      * </pre>
      *
-     * <code>string message = 6;</code>
+     * <code>string message = 4;</code>
      */
     public com.google.protobuf.ByteString
         getMessageBytes() {
@@ -1077,10 +924,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The message goes with a transfer
+     * The message goes with a transaction
      * </pre>
      *
-     * <code>string message = 6;</code>
+     * <code>string message = 4;</code>
      */
     public Builder setMessage(
         java.lang.String value) {
@@ -1094,10 +941,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The message goes with a transfer
+     * The message goes with a transaction
      * </pre>
      *
-     * <code>string message = 6;</code>
+     * <code>string message = 4;</code>
      */
     public Builder clearMessage() {
       
@@ -1107,10 +954,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The message goes with a transfer
+     * The message goes with a transaction
      * </pre>
      *
-     * <code>string message = 6;</code>
+     * <code>string message = 4;</code>
      */
     public Builder setMessageBytes(
         com.google.protobuf.ByteString value) {
@@ -1124,27 +971,27 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long timestamp_ ;
+    private long transferTime_ ;
     /**
      * <pre>
      * The time when the transfer executed
      * </pre>
      *
-     * <code>int64 timestamp = 7;</code>
+     * <code>int64 transfer_time = 5;</code>
      */
-    public long getTimestamp() {
-      return timestamp_;
+    public long getTransferTime() {
+      return transferTime_;
     }
     /**
      * <pre>
      * The time when the transfer executed
      * </pre>
      *
-     * <code>int64 timestamp = 7;</code>
+     * <code>int64 transfer_time = 5;</code>
      */
-    public Builder setTimestamp(long value) {
+    public Builder setTransferTime(long value) {
       
-      timestamp_ = value;
+      transferTime_ = value;
       onChanged();
       return this;
     }
@@ -1153,55 +1000,149 @@ private static final long serialVersionUID = 0L;
      * The time when the transfer executed
      * </pre>
      *
-     * <code>int64 timestamp = 7;</code>
+     * <code>int64 transfer_time = 5;</code>
      */
-    public Builder clearTimestamp() {
+    public Builder clearTransferTime() {
       
-      timestamp_ = 0L;
+      transferTime_ = 0L;
       onChanged();
       return this;
     }
 
-    private int transferType_ = 0;
+    private java.lang.Object username_ = "";
     /**
-     * <code>.fintech.HistoryItem.TransferType transfer_type = 9;</code>
+     * <code>string username = 6;</code>
      */
-    public int getTransferTypeValue() {
-      return transferType_;
-    }
-    /**
-     * <code>.fintech.HistoryItem.TransferType transfer_type = 9;</code>
-     */
-    public Builder setTransferTypeValue(int value) {
-      transferType_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.fintech.HistoryItem.TransferType transfer_type = 9;</code>
-     */
-    public fintech.HistoryItem.TransferType getTransferType() {
-      fintech.HistoryItem.TransferType result = fintech.HistoryItem.TransferType.valueOf(transferType_);
-      return result == null ? fintech.HistoryItem.TransferType.UNRECOGNIZED : result;
-    }
-    /**
-     * <code>.fintech.HistoryItem.TransferType transfer_type = 9;</code>
-     */
-    public Builder setTransferType(fintech.HistoryItem.TransferType value) {
-      if (value == null) {
-        throw new NullPointerException();
+    public java.lang.String getUsername() {
+      java.lang.Object ref = username_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        username_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
       }
-      
-      transferType_ = value.getNumber();
+    }
+    /**
+     * <code>string username = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getUsernameBytes() {
+      java.lang.Object ref = username_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        username_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string username = 6;</code>
+     */
+    public Builder setUsername(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      username_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>.fintech.HistoryItem.TransferType transfer_type = 9;</code>
+     * <code>string username = 6;</code>
      */
-    public Builder clearTransferType() {
+    public Builder clearUsername() {
       
-      transferType_ = 0;
+      username_ = getDefaultInstance().getUsername();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string username = 6;</code>
+     */
+    public Builder setUsernameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      username_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object fullName_ = "";
+    /**
+     * <code>string full_name = 7;</code>
+     */
+    public java.lang.String getFullName() {
+      java.lang.Object ref = fullName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        fullName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string full_name = 7;</code>
+     */
+    public com.google.protobuf.ByteString
+        getFullNameBytes() {
+      java.lang.Object ref = fullName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        fullName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string full_name = 7;</code>
+     */
+    public Builder setFullName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      fullName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string full_name = 7;</code>
+     */
+    public Builder clearFullName() {
+      
+      fullName_ = getDefaultInstance().getFullName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string full_name = 7;</code>
+     */
+    public Builder setFullNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      fullName_ = value;
       onChanged();
       return this;
     }

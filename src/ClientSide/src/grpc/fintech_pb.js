@@ -24,7 +24,7 @@ goog.exportSymbol('proto.fintech.HistoryRequest', null, global);
 goog.exportSymbol('proto.fintech.HistoryResponse', null, global);
 goog.exportSymbol('proto.fintech.HistoryResponse.Data', null, global);
 goog.exportSymbol('proto.fintech.NotificationItem', null, global);
-goog.exportSymbol('proto.fintech.NotificationItem.UnRead', null, global);
+goog.exportSymbol('proto.fintech.NotificationItem.Seen', null, global);
 goog.exportSymbol('proto.fintech.NotificationRequest', null, global);
 goog.exportSymbol('proto.fintech.NotificationResponse', null, global);
 goog.exportSymbol('proto.fintech.NotificationResponse.Data', null, global);
@@ -1498,15 +1498,13 @@ proto.fintech.HistoryItem.prototype.toObject = function(opt_includeInstance) {
  */
 proto.fintech.HistoryItem.toObject = function(includeInstance, msg) {
   var f, obj = {
-    historyId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    partnerId: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    partnerUsername: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    partnerFullname: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    amount: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    message: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    timestamp: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    balance: jspb.Message.getFieldWithDefault(msg, 8, 0),
-    transferType: jspb.Message.getFieldWithDefault(msg, 9, 0)
+    partnerId: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    transferType: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    amount: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    message: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    transferTime: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    username: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    fullName: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -1545,39 +1543,31 @@ proto.fintech.HistoryItem.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {number} */ (reader.readInt64());
-      msg.setHistoryId(value);
-      break;
-    case 2:
-      var value = /** @type {number} */ (reader.readInt64());
       msg.setPartnerId(value);
       break;
+    case 2:
+      var value = /** @type {!proto.fintech.HistoryItem.TransferType} */ (reader.readEnum());
+      msg.setTransferType(value);
+      break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPartnerUsername(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPartnerFullname(value);
-      break;
-    case 5:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setAmount(value);
       break;
-    case 6:
+    case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setMessage(value);
       break;
+    case 5:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setTransferTime(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUsername(value);
+      break;
     case 7:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setTimestamp(value);
-      break;
-    case 8:
-      var value = /** @type {number} */ (reader.readInt64());
-      msg.setBalance(value);
-      break;
-    case 9:
-      var value = /** @type {!proto.fintech.HistoryItem.TransferType} */ (reader.readEnum());
-      msg.setTransferType(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFullName(value);
       break;
     default:
       reader.skipField();
@@ -1608,66 +1598,52 @@ proto.fintech.HistoryItem.prototype.serializeBinary = function() {
  */
 proto.fintech.HistoryItem.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getHistoryId();
+  f = message.getPartnerId();
   if (f !== 0) {
     writer.writeInt64(
       1,
       f
     );
   }
-  f = message.getPartnerId();
-  if (f !== 0) {
-    writer.writeInt64(
+  f = message.getTransferType();
+  if (f !== 0.0) {
+    writer.writeEnum(
       2,
-      f
-    );
-  }
-  f = message.getPartnerUsername();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
-    );
-  }
-  f = message.getPartnerFullname();
-  if (f.length > 0) {
-    writer.writeString(
-      4,
       f
     );
   }
   f = message.getAmount();
   if (f !== 0) {
     writer.writeInt64(
-      5,
+      3,
       f
     );
   }
   f = message.getMessage();
   if (f.length > 0) {
     writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getTransferTime();
+  if (f !== 0) {
+    writer.writeInt64(
+      5,
+      f
+    );
+  }
+  f = message.getUsername();
+  if (f.length > 0) {
+    writer.writeString(
       6,
       f
     );
   }
-  f = message.getTimestamp();
-  if (f !== 0) {
-    writer.writeInt64(
+  f = message.getFullName();
+  if (f.length > 0) {
+    writer.writeString(
       7,
-      f
-    );
-  }
-  f = message.getBalance();
-  if (f !== 0) {
-    writer.writeInt64(
-      8,
-      f
-    );
-  }
-  f = message.getTransferType();
-  if (f !== 0.0) {
-    writer.writeEnum(
-      9,
       f
     );
   }
@@ -1683,10 +1659,10 @@ proto.fintech.HistoryItem.TransferType = {
 };
 
 /**
- * optional int64 history_id = 1;
+ * optional int64 partner_id = 1;
  * @return {number}
  */
-proto.fintech.HistoryItem.prototype.getHistoryId = function() {
+proto.fintech.HistoryItem.prototype.getPartnerId = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
@@ -1695,143 +1671,17 @@ proto.fintech.HistoryItem.prototype.getHistoryId = function() {
  * @param {number} value
  * @return {!proto.fintech.HistoryItem} returns this
  */
-proto.fintech.HistoryItem.prototype.setHistoryId = function(value) {
+proto.fintech.HistoryItem.prototype.setPartnerId = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
 /**
- * optional int64 partner_id = 2;
- * @return {number}
- */
-proto.fintech.HistoryItem.prototype.getPartnerId = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.fintech.HistoryItem} returns this
- */
-proto.fintech.HistoryItem.prototype.setPartnerId = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
-};
-
-
-/**
- * optional string partner_username = 3;
- * @return {string}
- */
-proto.fintech.HistoryItem.prototype.getPartnerUsername = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.fintech.HistoryItem} returns this
- */
-proto.fintech.HistoryItem.prototype.setPartnerUsername = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
- * optional string partner_fullname = 4;
- * @return {string}
- */
-proto.fintech.HistoryItem.prototype.getPartnerFullname = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.fintech.HistoryItem} returns this
- */
-proto.fintech.HistoryItem.prototype.setPartnerFullname = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
-};
-
-
-/**
- * optional int64 amount = 5;
- * @return {number}
- */
-proto.fintech.HistoryItem.prototype.getAmount = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.fintech.HistoryItem} returns this
- */
-proto.fintech.HistoryItem.prototype.setAmount = function(value) {
-  return jspb.Message.setProto3IntField(this, 5, value);
-};
-
-
-/**
- * optional string message = 6;
- * @return {string}
- */
-proto.fintech.HistoryItem.prototype.getMessage = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.fintech.HistoryItem} returns this
- */
-proto.fintech.HistoryItem.prototype.setMessage = function(value) {
-  return jspb.Message.setProto3StringField(this, 6, value);
-};
-
-
-/**
- * optional int64 timestamp = 7;
- * @return {number}
- */
-proto.fintech.HistoryItem.prototype.getTimestamp = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.fintech.HistoryItem} returns this
- */
-proto.fintech.HistoryItem.prototype.setTimestamp = function(value) {
-  return jspb.Message.setProto3IntField(this, 7, value);
-};
-
-
-/**
- * optional int64 balance = 8;
- * @return {number}
- */
-proto.fintech.HistoryItem.prototype.getBalance = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.fintech.HistoryItem} returns this
- */
-proto.fintech.HistoryItem.prototype.setBalance = function(value) {
-  return jspb.Message.setProto3IntField(this, 8, value);
-};
-
-
-/**
- * optional TransferType transfer_type = 9;
+ * optional TransferType transfer_type = 2;
  * @return {!proto.fintech.HistoryItem.TransferType}
  */
 proto.fintech.HistoryItem.prototype.getTransferType = function() {
-  return /** @type {!proto.fintech.HistoryItem.TransferType} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
+  return /** @type {!proto.fintech.HistoryItem.TransferType} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
@@ -1840,7 +1690,97 @@ proto.fintech.HistoryItem.prototype.getTransferType = function() {
  * @return {!proto.fintech.HistoryItem} returns this
  */
 proto.fintech.HistoryItem.prototype.setTransferType = function(value) {
-  return jspb.Message.setProto3EnumField(this, 9, value);
+  return jspb.Message.setProto3EnumField(this, 2, value);
+};
+
+
+/**
+ * optional int64 amount = 3;
+ * @return {number}
+ */
+proto.fintech.HistoryItem.prototype.getAmount = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.fintech.HistoryItem} returns this
+ */
+proto.fintech.HistoryItem.prototype.setAmount = function(value) {
+  return jspb.Message.setProto3IntField(this, 3, value);
+};
+
+
+/**
+ * optional string message = 4;
+ * @return {string}
+ */
+proto.fintech.HistoryItem.prototype.getMessage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.fintech.HistoryItem} returns this
+ */
+proto.fintech.HistoryItem.prototype.setMessage = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional int64 transfer_time = 5;
+ * @return {number}
+ */
+proto.fintech.HistoryItem.prototype.getTransferTime = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.fintech.HistoryItem} returns this
+ */
+proto.fintech.HistoryItem.prototype.setTransferTime = function(value) {
+  return jspb.Message.setProto3IntField(this, 5, value);
+};
+
+
+/**
+ * optional string username = 6;
+ * @return {string}
+ */
+proto.fintech.HistoryItem.prototype.getUsername = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.fintech.HistoryItem} returns this
+ */
+proto.fintech.HistoryItem.prototype.setUsername = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * optional string full_name = 7;
+ * @return {string}
+ */
+proto.fintech.HistoryItem.prototype.getFullName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.fintech.HistoryItem} returns this
+ */
+proto.fintech.HistoryItem.prototype.setFullName = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
@@ -1879,7 +1819,8 @@ proto.fintech.TransferRequest.toObject = function(includeInstance, msg) {
     senderId: jspb.Message.getFieldWithDefault(msg, 1, 0),
     receiverId: jspb.Message.getFieldWithDefault(msg, 2, 0),
     amount: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    message: jspb.Message.getFieldWithDefault(msg, 4, "")
+    message: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    password: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -1931,6 +1872,10 @@ proto.fintech.TransferRequest.deserializeBinaryFromReader = function(msg, reader
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setMessage(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPassword(value);
       break;
     default:
       reader.skipField();
@@ -1986,6 +1931,13 @@ proto.fintech.TransferRequest.serializeBinaryToWriter = function(message, writer
   if (f.length > 0) {
     writer.writeString(
       4,
+      f
+    );
+  }
+  f = message.getPassword();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
       f
     );
   }
@@ -2061,6 +2013,24 @@ proto.fintech.TransferRequest.prototype.getMessage = function() {
  */
 proto.fintech.TransferRequest.prototype.setMessage = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string password = 5;
+ * @return {string}
+ */
+proto.fintech.TransferRequest.prototype.getPassword = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.fintech.TransferRequest} returns this
+ */
+proto.fintech.TransferRequest.prototype.setPassword = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
@@ -2900,11 +2870,11 @@ proto.fintech.NotificationItem.prototype.toObject = function(opt_includeInstance
 proto.fintech.NotificationItem.toObject = function(includeInstance, msg) {
   var f, obj = {
     notificationId: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    mode: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    notificationType: jspb.Message.getFieldWithDefault(msg, 2, 0),
     partnerId: jspb.Message.getFieldWithDefault(msg, 3, 0),
     amount: jspb.Message.getFieldWithDefault(msg, 4, 0),
     message: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    unread: jspb.Message.getFieldWithDefault(msg, 6, 0)
+    seen: jspb.Message.getFieldWithDefault(msg, 6, 0)
   };
 
   if (includeInstance) {
@@ -2947,7 +2917,7 @@ proto.fintech.NotificationItem.deserializeBinaryFromReader = function(msg, reade
       break;
     case 2:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setMode(value);
+      msg.setNotificationType(value);
       break;
     case 3:
       var value = /** @type {number} */ (reader.readInt64());
@@ -2962,8 +2932,8 @@ proto.fintech.NotificationItem.deserializeBinaryFromReader = function(msg, reade
       msg.setMessage(value);
       break;
     case 6:
-      var value = /** @type {!proto.fintech.NotificationItem.UnRead} */ (reader.readEnum());
-      msg.setUnread(value);
+      var value = /** @type {!proto.fintech.NotificationItem.Seen} */ (reader.readEnum());
+      msg.setSeen(value);
       break;
     default:
       reader.skipField();
@@ -3001,7 +2971,7 @@ proto.fintech.NotificationItem.serializeBinaryToWriter = function(message, write
       f
     );
   }
-  f = message.getMode();
+  f = message.getNotificationType();
   if (f !== 0) {
     writer.writeInt32(
       2,
@@ -3029,7 +2999,7 @@ proto.fintech.NotificationItem.serializeBinaryToWriter = function(message, write
       f
     );
   }
-  f = message.getUnread();
+  f = message.getSeen();
   if (f !== 0.0) {
     writer.writeEnum(
       6,
@@ -3042,7 +3012,7 @@ proto.fintech.NotificationItem.serializeBinaryToWriter = function(message, write
 /**
  * @enum {number}
  */
-proto.fintech.NotificationItem.UnRead = {
+proto.fintech.NotificationItem.Seen = {
   TRUE: 0,
   FALSE: 1
 };
@@ -3066,10 +3036,10 @@ proto.fintech.NotificationItem.prototype.setNotificationId = function(value) {
 
 
 /**
- * optional int32 mode = 2;
+ * optional int32 notification_type = 2;
  * @return {number}
  */
-proto.fintech.NotificationItem.prototype.getMode = function() {
+proto.fintech.NotificationItem.prototype.getNotificationType = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
@@ -3078,7 +3048,7 @@ proto.fintech.NotificationItem.prototype.getMode = function() {
  * @param {number} value
  * @return {!proto.fintech.NotificationItem} returns this
  */
-proto.fintech.NotificationItem.prototype.setMode = function(value) {
+proto.fintech.NotificationItem.prototype.setNotificationType = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
 };
 
@@ -3138,19 +3108,19 @@ proto.fintech.NotificationItem.prototype.setMessage = function(value) {
 
 
 /**
- * optional UnRead unread = 6;
- * @return {!proto.fintech.NotificationItem.UnRead}
+ * optional Seen seen = 6;
+ * @return {!proto.fintech.NotificationItem.Seen}
  */
-proto.fintech.NotificationItem.prototype.getUnread = function() {
-  return /** @type {!proto.fintech.NotificationItem.UnRead} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+proto.fintech.NotificationItem.prototype.getSeen = function() {
+  return /** @type {!proto.fintech.NotificationItem.Seen} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
 };
 
 
 /**
- * @param {!proto.fintech.NotificationItem.UnRead} value
+ * @param {!proto.fintech.NotificationItem.Seen} value
  * @return {!proto.fintech.NotificationItem} returns this
  */
-proto.fintech.NotificationItem.prototype.setUnread = function(value) {
+proto.fintech.NotificationItem.prototype.setSeen = function(value) {
   return jspb.Message.setProto3EnumField(this, 6, value);
 };
 
@@ -3160,10 +3130,11 @@ proto.fintech.NotificationItem.prototype.setUnread = function(value) {
  */
 proto.fintech.Code = {
   SUCCESS: 0,
-  INCORRECT_PASSWORD: 1,
-  UNAUTHORIZED: 2,
-  NOT_ENOUGH_MONEY: 3,
-  INTERNAL_SERVER_ERROR: 4
+  UNAUTHORIZED: 1,
+  BAD_REQUEST: 2,
+  INCORRECT_PASSWORD: 3,
+  NOT_ENOUGH_MONEY: 4,
+  INTERNAL_SERVER_ERROR: 5
 };
 
 goog.object.extend(exports, proto.fintech);

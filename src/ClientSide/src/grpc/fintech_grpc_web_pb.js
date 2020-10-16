@@ -138,7 +138,7 @@ proto.fintech.FintechServiceClient.prototype.getBalance =
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.fintech.BalanceResponse>}
- *     Promise that resolves to the response
+ *     A native promise that resolves to the response
  */
 proto.fintech.FintechServicePromiseClient.prototype.getBalance =
     function(request, metadata) {
@@ -218,7 +218,7 @@ proto.fintech.FintechServiceClient.prototype.getHistory =
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.fintech.HistoryResponse>}
- *     Promise that resolves to the response
+ *     A native promise that resolves to the response
  */
 proto.fintech.FintechServicePromiseClient.prototype.getHistory =
     function(request, metadata) {
@@ -298,7 +298,7 @@ proto.fintech.FintechServiceClient.prototype.transfer =
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.fintech.TransferResponse>}
- *     Promise that resolves to the response
+ *     A native promise that resolves to the response
  */
 proto.fintech.FintechServicePromiseClient.prototype.transfer =
     function(request, metadata) {
@@ -378,7 +378,7 @@ proto.fintech.FintechServiceClient.prototype.getNotification =
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.fintech.NotificationResponse>}
- *     Promise that resolves to the response
+ *     A native promise that resolves to the response
  */
 proto.fintech.FintechServicePromiseClient.prototype.getNotification =
     function(request, metadata) {

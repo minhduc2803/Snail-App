@@ -29,10 +29,10 @@ public class GetHistoryHandler {
                     if (rs.succeeded()) {
                         ArrayList<TransferHistory> history = rs.result();
                         response = createSuccessHistory(history);
-                        log.info("GRPC: getBalance succeed");
+                        log.info("GRPC: get transfer history succeed");
                     } else {
                         response = createFailedHistory();
-                        log.error("GRPC: getBalance failed");
+                        log.error("GRPC: get transfer history failed");
                     }
                     responseFuture.complete(response);
                 });
@@ -68,6 +68,7 @@ public class GetHistoryHandler {
                 .build();
         return HistoryResponse
                 .newBuilder()
+                .setData(data)
                 .setError(error)
                 .build();
     }

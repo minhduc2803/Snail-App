@@ -14,7 +14,6 @@ export default function ConversationListItem(props) {
     const { index, name, text } = props.data;
     
     const style = "conversation-list-item "+((index===chosenIndex) ? "chosen-conversation":"");
-    console.log(text)
     return (
       <div className={`${style}`} onClick={() => dispatch({type: "CHOOSE_CONVERSATION", chosenIndex: index})}>
         <Avatar name={`${name}`} size="40" round={true}/>

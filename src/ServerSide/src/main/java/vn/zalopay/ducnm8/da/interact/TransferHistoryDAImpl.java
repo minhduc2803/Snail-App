@@ -21,14 +21,14 @@ public class TransferHistoryDAImpl extends BaseTransactionDA implements Transfer
     private static final String INSERT_TRANSFER_HISTORY_STATEMENT =
             "INSERT INTO transfer_history (`transfer_id`,`user_id`,`partner_id`,`transfer_type`) VALUES (?, ?, ?, ?)";
     private static final String SELECT_TRANSFER_HISTORY_BY_ACCOUNT_ID =
-            "SELECT H.transfer_id, H.user_id, H.partner_id, H.transfer_type,\n" +
+            "SELECT H.id, H.transfer_id, H.user_id, H.partner_id, H.transfer_type,\n" +
             "T.amount, T.amount, T.message, T.transfer_time,\n" +
             "C.user_name, C.full_name\n" +
             "FROM transfer_history as H\n" +
             "INNER JOIN transfer as T\n" +
             "ON H.transfer_id = T.id\n" +
             "INNER JOIN account as C\n" +
-            "ON H.user_id = C.id\n" +
+            "ON H.partner_id = C.id\n" +
             "WHERE H.user_id = ?";
     public TransferHistoryDAImpl(DataSource dataSource, AsyncHandler asyncHandler) {
         this.dataSource = dataSource;

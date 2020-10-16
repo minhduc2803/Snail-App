@@ -14,7 +14,7 @@ const initialState = {
         transferSuccess: true
     },
 
-    transferHistory: {}
+    transferHistory: []
 }
 const rootReducer = (state = initialState, action) => {
     switch(action.type){
@@ -160,7 +160,7 @@ const rootReducer = (state = initialState, action) => {
         case "GET_TRANSFER_HISTORY":
             return {
                 ...state,
-                history: action.history
+                transferHistory: action.payload
             }
 
         default:

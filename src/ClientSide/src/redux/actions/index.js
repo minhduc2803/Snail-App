@@ -141,7 +141,6 @@ export function asyncLoadChat(chosenIndex, content){
             partnerId: content.userId,
         }
         data = JSON.stringify(data)
-        console.log(data)
         return axios({
             method: 'post',
             url: 'http://localhost:8055/api/protected/list-chat',
@@ -192,7 +191,7 @@ export function getBalance(){
         const metadata = { 'Authorization': 'Bearer '+getState().user.token};
         
         grpc.getBalance(metadata, (err, response) => {
-            console.log(response.getData().getBalance());
+            
             const balance = {
                 balance: response.getData().getBalance(),
                 lastTimeUpdate: response.getData().getLastTimeUpdateBalance()
@@ -207,17 +206,17 @@ export function getHistory(){
         const metadata = { 'Authorization': 'Bearer '+getState().user.token};
         
         grpc.getHistory(metadata, (err, response) => {
-            console.log(response.getData());
-            const history = {
-                partnerId: response.getData.getPartnerId(),
-                transferType: response.getData.getTransferType(),
-                amount: response.getData.getAmount(),
-                message: response.getData.getMessage(),
-                transferTime: response.getData.getTransferTime(),
-                username: response.getData.getUsername(),
-                fullName: response.getData.getFullName()
-            };
-            dispatch({type: "GET_TRANSFER_HISTORY", payload: history});
+            console.log(response.toObject());
+            // const history = {
+            //     partnerId: response.getData.getPartnerId(),
+            //     transferType: response.getData.getTransferType(),
+            //     amount: response.getData.getAmount(),
+            //     message: response.getData.getMessage(),
+            //     transferTime: response.getData.getTransferTime(),
+            //     username: response.getData.getUsername(),
+            //     fullName: response.getData.getFullName()
+            // };
+            dispatch({type: "GET_TRANSFER_HISTORY", payload: response.toObject().data.historyItemsList.reverse()});
         })
     }
 }

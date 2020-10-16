@@ -19,7 +19,7 @@ export default function MessageList(props) {
     content = {...content, chat: []}
   const user = useSelector(state => state.user);
   const MY_USER_ID = user.fullName;
-  console.log(content)
+
     let messages = content.chat.map((message, index) => {
         return {
           id: index+1,
@@ -28,7 +28,6 @@ export default function MessageList(props) {
           timestamp: message.sentTime
         }
     })
-  console.log(messages)
 
   const renderMessages = () => {
     let i = 0;

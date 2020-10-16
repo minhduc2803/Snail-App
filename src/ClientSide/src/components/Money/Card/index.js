@@ -9,7 +9,8 @@ const { Meta } = Card;
 export default function(){
   const user = useSelector(state => state.user);
   const balance = useSelector(state => state.balance);
-
+  const lastTimeUpdate = new Date(balance.lastTimeUpdate*1000).toLocaleString();
+ 
     return (
         <Card
           hoverable
@@ -19,7 +20,7 @@ export default function(){
           <Avatar name={`${user.fullName}`} size="60" round={true}/>
           <div>{user.fullName}</div>
           <div>Số dư: {balance.balance}</div>
-          <div>Thay đổi lần cuối: {balance.lastTimeUpdate}</div>
+          <div>Thay đổi lần cuối: {lastTimeUpdate}</div>
         </Card>
       );
 }

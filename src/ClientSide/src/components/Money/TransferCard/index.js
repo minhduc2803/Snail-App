@@ -40,7 +40,6 @@ const Demo = () => {
 			message: values.message,
 			password: values.password
 		};
-		console.log('alo', transerInfo);
 		dispatch(transfer(transerInfo));
 	};
 	const [ form ] = Form.useForm();

@@ -11,7 +11,7 @@ export default function Message(props) {
       showTimestamp
     } = props;
 
-    const friendlyTimestamp = moment(data.timestamp).format('LLLL');
+    const friendlyTimestamp = new Date(data.timestamp*1000).toLocaleString();
     return (
       <div className={[
         'message',

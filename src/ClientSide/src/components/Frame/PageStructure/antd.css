@@ -4,3 +4,14 @@
     margin: auto;
     width: 500px;
 }
+
+.list-scrollable {
+    
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    height: 70%;
+  }
+
+.containList{
+    height: 100%;
+  }

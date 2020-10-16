@@ -1,52 +1,58 @@
 
-import React from 'react';
+import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { Modal, Button } from 'antd';
 import Transfer from '../TransferCard';
+import Result from '../Result';
 
-class ModalDemo extends React.Component {
-  state = { visible: false };
+export default function() {
+  const [visible, setState] = useState(true);
+  
+  
 
-  showModal = () => {
+  const showModal = () => {
     this.setState({
       visible: true,
     });
   };
 
-  handleOk = e => {
+  const handleOk = e => {
     console.log(e);
     this.setState({
       visible: false,
     });
   };
 
-  handleCancel = e => {
+  const handleCancel = e => {
     console.log(e);
     this.setState({
       visible: false,
     });
   };
 
-  render() {
+  
+    const transferComplete = useSelector(state => state.transfer.transferComplete);
+    let child = <Transfer />;
+    if(transferComplete){
+      child = <Result />;
+    }
     return (
       <>
-        <Button type="primary" onClick={this.showModal}>
+        <Button type="primary" onClick={(e) => showModal(e)}>
           Chuyển tiền
         </Button>
         <Modal
           title="Chuyển tiền"
-          visible={this.state.visible}
-          onCancel={this.handleCancel}
+          visible={visible}
+          onCancel={(e) => handleCancel(e)}
           footer={[
-            <Button key="back" onClick={this.handleCancel}>
+            <Button key="back" onClick={(e) => handleCancel(e)}>
             Hủy bỏ
           </Button>
           ]}
         >
-          <Transfer />
+          {child}
         </Modal>
       </>
     );
-  }
 }
-
-export default ModalDemo;

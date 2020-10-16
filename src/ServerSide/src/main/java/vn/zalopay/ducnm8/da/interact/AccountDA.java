@@ -20,7 +20,7 @@ public interface AccountDA {
 
   Future<Balance> selectBalanceById(long id);
 
-  Executable<Account> plusBalanceByAmount(long id, long amount);
+  Executable<Account> plusBalanceByAmount(long id, long amount, long lastTimeUpdate);
 
   Executable<Account> updateNumberNotification(long id, int number);
 }

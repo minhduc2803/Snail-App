@@ -54,8 +54,8 @@ public class TransferHandler {
         transaction
             .begin()
             .compose(next -> isEnoughMoney())
-            .compose(next -> transaction.execute(accountDA.plusBalanceByAmount(sender, - amount)))
-            .compose(next -> transaction.execute(accountDA.plusBalanceByAmount(receiver, amount)))
+            .compose(next -> transaction.execute(accountDA.plusBalanceByAmount(sender, - amount, transferTime)))
+            .compose(next -> transaction.execute(accountDA.plusBalanceByAmount(receiver, amount, transferTime)))
             .compose(next -> transaction.execute(transferDA.insert(createTransferCertificate())))
             .compose(transfer -> transaction.execute(transferHistoryDA.insert(createTransferHistory(true,transfer.getId()))))
             .compose(transferHistory -> transaction.execute(transferHistoryDA.insert(createTransferHistory(false,transferHistory.getTransferId()))))

@@ -4,7 +4,13 @@ const initialState = {
     page: "MESSENGER",
     user: {},
     listUsers: [],
-    chosenIndex: 0
+    chosenIndex: 0,
+    
+    tranfer: {
+        transferPopUp: false,
+        transferComplete: false,
+        transferLoding: false,
+    }
 }
 const rootReducer = (state = initialState, action) => {
     switch(action.type){
@@ -83,6 +89,37 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 chosenIndex: action.chosenIndex
+            }
+
+        case "POP_UP_TRANSFER_COMPLETE":
+            return {
+                ...state,
+                tranfer: {
+                    transferPopUp: true,
+                    transferComplete: true,
+                    transferLoding: false,
+                }
+            }
+
+        case "POP_DOWN_TRANSFER_COMPLETE":
+            return {
+                ...state,
+                tranfer: {
+                    transferPopUp: false,
+                    transferComplete: false,
+                    transferLoding: false,
+                }
+                
+            }
+
+        case "TRANSFER":
+            return {
+                ...state,
+                tranfer: {
+                    transferPopUp: true,
+                    transferComplete: false,
+                    transferLoding: true,
+                }
             }
             
         default:

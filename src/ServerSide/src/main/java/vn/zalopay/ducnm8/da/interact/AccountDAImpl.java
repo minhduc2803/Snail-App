@@ -34,7 +34,7 @@ public class AccountDAImpl extends BaseTransactionDA implements AccountDA {
             "SELECT balance, last_time_update_balance, number_notification FROM account WHERE id = ?";
     private static final String UPDATE_BALANCE_BY_AMOUNT =
             "UPDATE account \n" +
-            "SET balance = balance + ?\n" +
+            "SET balance = balance + ?, last_time_update_balance = ?\n" +
             "WHERE id = ?;";
     private static final String UPDATE_NUMBER_NOTIFICATION =
             "UPDATE account SET number_notification = ? WHERE id = ?";
@@ -128,13 +128,13 @@ public class AccountDAImpl extends BaseTransactionDA implements AccountDA {
     }
 
     @Override
-    public Executable<Account> plusBalanceByAmount(long id, long amount) {
+    public Executable<Account> plusBalanceByAmount(long id, long amount, long lastTimeUpdate) {
         log.info("update balance: (id={},amount={})", id, amount);
         return connection -> {
             Future<Account> future = Future.future();
             asyncHandler.run(
                     () -> {
-                        Object[] params = {amount, id};
+                        Object[] params = {amount, lastTimeUpdate, id};
                         try {
                             executeWithParamsAndGetId(connection.unwrap(), UPDATE_BALANCE_BY_AMOUNT, params, "updateBalance");
                             Account account = Account.builder().id(id).build();

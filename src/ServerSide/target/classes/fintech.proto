@@ -82,6 +82,7 @@ message TransferRequest {
   int64 receiver_id = 2;
   int64 amount = 3;
   string message = 4;
+  string password = 5;
 }
 
 message TransferResponse {

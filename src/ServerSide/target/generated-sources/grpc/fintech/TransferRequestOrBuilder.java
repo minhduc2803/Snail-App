@@ -36,4 +36,14 @@ public interface TransferRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getMessageBytes();
+
+  /**
+   * <code>string password = 5;</code>
+   */
+  java.lang.String getPassword();
+  /**
+   * <code>string password = 5;</code>
+   */
+  com.google.protobuf.ByteString
+      getPasswordBytes();
 }

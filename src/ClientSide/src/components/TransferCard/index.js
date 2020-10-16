@@ -1,7 +1,11 @@
 import React from 'react';
+import Avatar from 'react-avatar';
+import { useSelector, useDispatch } from 'react-redux';
 import './TransferCard.css';
 import { Form, Select, InputNumber, Button, Input } from 'antd';
 import { UploadOutlined, InboxOutlined } from '@ant-design/icons';
+import { transfer } from '../../redux/actions';
+
 const { Option } = Select;
 const formItemLayout = {
 	labelCol: {
@@ -15,9 +19,29 @@ const tailLayout = {
   wrapperCol: { offset: 4, span: 16 },
 };
 
+
+
 const Demo = () => {
+	const users = useSelector(state => state.listUsers);
+	const tranferLoading = useSelector(state => state.transfer.transferLoding);
+	const dispatch = useDispatch();
+const listUsers = users.map((u) => <Option key={u.userId} value={u.userId}>
+	@{u.username}<br/>
+	<Avatar name={`${u.fullName}`} size="30" round={true} />
+	{u.fullName}
+	</Option>)
+
 	const onFinish = (values) => {
 		console.log('Received values of form: ', values);
+		const transerInfo = {
+			receiver_id: values.receivers[0],
+			amount: values.amount,
+			message: values.message,
+			password: values.password
+		}
+		console.log("alo",transerInfo)
+		dispatch(transfer(transerInfo))
+
 	};
 	const [ form ] = Form.useForm();
 	return (
@@ -33,7 +57,8 @@ const Demo = () => {
 			}}
 		>
 			<Form.Item
-				name="select-multiple"
+				
+				name="receivers"
 				label="Người nhận"
 				rules={[
 					{
@@ -43,10 +68,8 @@ const Demo = () => {
 					}
 				]}
 			>
-				<Select mode="multiple" placeholder="Nhấp và chọn người nhận">
-					<Option value="red">Red</Option>
-					<Option value="green">Green</Option>
-					<Option value="blue">Blue</Option>
+				<Select mode="multiple" placeholder="Nhấp và chọn người nhận" >
+					{listUsers}
 				</Select>
 			</Form.Item>
 
@@ -59,7 +82,7 @@ const Demo = () => {
         ]}
 			>
 				<Form.Item
-          name="Amount-of-money"
+          name="amount"
 					noStyle
 					rules={[
             {
@@ -76,6 +99,13 @@ const Demo = () => {
 				</Form.Item>
 				<span className="ant-form-text"> VND</span>
 			</Form.Item>
+			<Form.Item
+        label="Lời nhắn"
+        name="message"
+        
+      >
+        <Input />
+      </Form.Item>
       <Form.Item
         label="Mật khẩu"
         name="password"
@@ -84,7 +114,7 @@ const Demo = () => {
         <Input.Password />
       </Form.Item>
       <Form.Item {...tailLayout} style={{textAlign: 'center'}}>
-        <Button type="primary" htmlType="submit" className="login-form-button">
+        <Button loading={tranferLoading} type="primary" htmlType="submit" className="login-form-button">
           Giao dịch
         </Button>
         

@@ -1,4 +1,5 @@
-import axios from 'axios'
+import axios from 'axios';
+import grpc from '../../grpc/fintechService';
 
 
 export function alreadyLogin(user) {
@@ -163,5 +164,26 @@ export function asyncLoadChat(chosenIndex, content){
             //alert(error.data.message)
         })
     }
+}
+
+export function transfer(transfer_info){
+    return (dispatch, getState) => {
+        transfer_info = {
+            ...transfer_info,
+            sender_id: getState().user.userId
+        }
+        const metadata = { 'Authorization': 'Bearer '+getState().user.token};
+        
+        grpc.transfer(metadata, transfer_info, (err, response) => {
+            console.log(response.getData().getIssuccessful());
+            dispatch({type: "POP_UP_TRANSFER_COMPLETE"});
+        })
+
+        dispatch({type: "TRANSFER"});
+    }
+}
+
+export function transferComplete(){
+    
 }
 

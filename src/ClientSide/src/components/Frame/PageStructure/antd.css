@@ -3,6 +3,7 @@
 .content-inside{
     margin: auto;
     width: 500px;
+    align-content: center;
 }
 
 .list-scrollable {
@@ -14,4 +15,7 @@
 
 .containList{
     height: 100%;
+  }
+  .card{
+    margin:auto;
   }

@@ -1,7 +1,7 @@
 import React from 'react';
 import Avatar from 'react-avatar';
 import { useSelector, useDispatch } from 'react-redux';
-import '../../Frame/PageStructure/antd.css'
+import '../../Frame/PageStructure/antd.css';
 import { Form, Select, InputNumber, Button, Input } from 'antd';
 import { UploadOutlined, InboxOutlined } from '@ant-design/icons';
 import { transfer } from '../../../redux/actions';
@@ -24,7 +24,7 @@ const Demo = () => {
 	const transferLoading = useSelector((state) => state.transfer.transferLoding);
 	const dispatch = useDispatch();
 	const listUsers = users.map((u) => (
-		<Option key={u.userId} value={u.userId}>
+		<Option key={u.userId} value={`${u.userId} @${u.username} ${u.fullName}`}>
 			@{u.username}
 			<br />
 			<Avatar name={`${u.fullName}`} size="30" round={true} />
@@ -35,7 +35,7 @@ const Demo = () => {
 	const onFinish = (values) => {
 		console.log('Received values of form: ', values);
 		const transerInfo = {
-			receiver_id: values.receivers[0],
+			receiver_id: parseInt(values.receivers.split(" ")[0]),
 			amount: values.amount,
 			message: values.message,
 			password: values.password
@@ -44,17 +44,7 @@ const Demo = () => {
 	};
 	const [ form ] = Form.useForm();
 	return (
-		<Form
-			name="control-hooks"
-			form={form}
-			{...formItemLayout}
-			onFinish={onFinish}
-			initialValues={{
-				['input-number']: 3,
-				['checkbox-group']: [ 'A', 'B' ],
-				rate: 3.5
-			}}
-		>
+		<Form name="control-hooks" form={form} {...formItemLayout} onFinish={onFinish}>
 			<Form.Item
 				name="receivers"
 				label="Người nhận"
@@ -62,11 +52,16 @@ const Demo = () => {
 					{
 						required: true,
 						message: 'Bạn chưa chọn người nhận',
-						type: 'array'
+						
 					}
 				]}
 			>
-				<Select mode="multiple" placeholder="Nhấp và chọn người nhận">
+				<Select
+					showSearch
+					
+					placeholder="Select a person"
+					
+				>
 					{listUsers}
 				</Select>
 			</Form.Item>

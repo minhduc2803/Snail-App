@@ -5,6 +5,7 @@ import { Modal, Button } from 'antd';
 import Transfer from '../TransferCard';
 import Result from '../Result';
 import '../../Frame/PageStructure/antd.css'
+import { WalletOutlined } from '@ant-design/icons';
 
 export default function() {
   const transferPopUp = useSelector(state => state.transfer.transferPopUp);
@@ -17,7 +18,7 @@ export default function() {
     }
     return (
       <>
-        <Button type="primary" onClick={() => dispatch({type:"POP_UP_TRANSFER"})}>
+        <Button type="primary" icon={<WalletOutlined />} onClick={() => dispatch({type:"POP_UP_TRANSFER"})}>
           Chuyển tiền
         </Button>
         <Modal

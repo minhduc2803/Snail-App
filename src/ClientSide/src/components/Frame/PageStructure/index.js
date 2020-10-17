@@ -59,7 +59,8 @@ const Demo = () => {
 				</div>
 			</Sider>
 			<Layout className="site-layout" style={{  marginRight: 200 }}>
-				<Content  style={{ }}>
+				<Content style={{margin:'0px'}} >
+					
 					{child}
 				</Content>
 				

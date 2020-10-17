@@ -33,6 +33,8 @@ public class TransferHandler {
     long transferTime = Instant.now().getEpochSecond();
 
     String errorString = "";
+    String errorMessageForClient = "Giao dịch thành công";
+    Code errorCodeForClient = Code.SUCCESS;
 
     public TransferHandler(
             TransferDA transferDA,
@@ -81,8 +83,9 @@ public class TransferHandler {
                         transaction
                                 .rollback()
                                 .compose(next -> transaction.close());
+
                         response = createTransferResponse(false);
-                        log.error("GRPC: transfer failed");
+                        log.error("GRPC: transfer failed ~ cause {}",errorString);
                     }
 
                     responseFuture.complete(response);
@@ -99,11 +102,15 @@ public class TransferHandler {
                             future.complete(true);
                         else {
                             future.fail("Wrong password");
+                            errorMessageForClient = String.format("Mật khẩu không đúng !!!");
+                            errorCodeForClient = Code.INCORRECT_PASSWORD;
                             log.warn("grpc checkPassword failed ~ Wrong password id: {}",sender );
                         }
                     } else {
                         String errorString = String.format("grpc checkPassword failed ~  Cannot get password in database of account id: %s. The account may not exist", sender);
                         future.fail(errorString);
+                        errorMessageForClient = String.format("Internal Server Error !!!");
+                        errorCodeForClient = Code.INTERNAL_SERVER_ERROR;
                         log.error(errorString);
                     }
                 });
@@ -117,10 +124,18 @@ public class TransferHandler {
                     if (balance.succeeded()) {
                         if (balance.result().getBalance() >= amount)
                             future.complete();
-                        else
+                        else {
                             future.fail("Not enough money");
+                            errorMessageForClient = String.format("Số dư không đủ để thực hiện giao dịch !");
+                            errorCodeForClient = Code.NOT_ENOUGH_MONEY;
+
+                            log.info("grpc transfer isEnoughMoney failed ~ Not enough money");
+                        }
                     } else {
                         future.fail("Cannot get a balance");
+                        errorMessageForClient = String.format("INTERNAL SERVER ERROR !!!");
+                        errorCodeForClient = Code.INTERNAL_SERVER_ERROR;
+                        log.error("grpc transfer inEnoughMoney failed ~ Cannot get a balance");
                     }
                 });
         return future;
@@ -166,22 +181,24 @@ public class TransferHandler {
     }
 
     private TransferResponse createTransferResponse(boolean isSuccessful) {
-        TransferResponse.Data.IsSuccessful successful = TransferResponse.Data.IsSuccessful.TRUE;
-        String errorMessage = "grpc: transfer succeeded";
-        Code code = Code.SUCCESS;
+
+
+        TransferResponse.Data.IsSuccessful successfulResponse = TransferResponse.Data.IsSuccessful.TRUE;
         if (!isSuccessful) {
-            successful = TransferResponse.Data.IsSuccessful.FALSE;
-            errorMessage = "grpc: transfer failed";
-            code = Code.INTERNAL_SERVER_ERROR;
+            successfulResponse = TransferResponse.Data.IsSuccessful.FALSE;
+            if(errorCodeForClient == Code.SUCCESS){
+                errorMessageForClient = "INTERNAL SERVER ERROR";
+                errorCodeForClient = Code.INTERNAL_SERVER_ERROR;
+            }
         }
         TransferResponse.Data data = TransferResponse.Data
                 .newBuilder()
-                .setIsSuccessful(successful)
+                .setIsSuccessful(successfulResponse)
                 .build();
         Error error = Error
                 .newBuilder()
-                .setCode(code)
-                .setMessage(errorMessage)
+                .setCode(errorCodeForClient)
+                .setMessage(errorMessageForClient)
                 .build();
         return TransferResponse
                 .newBuilder()

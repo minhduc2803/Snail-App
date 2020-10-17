@@ -22,8 +22,8 @@ public class AccountDAImpl extends BaseTransactionDA implements AccountDA {
     private final AsyncHandler asyncHandler;
     private static final String INSERT_USER_STATEMENT =
             "INSERT INTO account (`user_name`,`full_name`,`password`," +
-            "`balance`,`last_time_update_balance`,`number_notification`) " +
-            "VALUES (?, ?, ?, ?, ?, ?)";
+                    "`balance`,`last_time_update_balance`,`number_notification`) " +
+                    "VALUES (?, ?, ?, ?, ?, ?)";
     private static final String SELECT_USER_BY_ID =
             "SELECT * FROM account WHERE id = ?";
     private static final String SELECT_USER_BY_USERNAME =
@@ -34,8 +34,8 @@ public class AccountDAImpl extends BaseTransactionDA implements AccountDA {
             "SELECT balance, last_time_update_balance, number_notification FROM account WHERE id = ?";
     private static final String UPDATE_BALANCE_BY_AMOUNT =
             "UPDATE account \n" +
-            "SET balance = balance + ?, last_time_update_balance = ?\n" +
-            "WHERE id = ?;";
+                    "SET balance = balance + ?, last_time_update_balance = ?\n" +
+                    "WHERE id = ?;";
     private static final String UPDATE_NUMBER_NOTIFICATION =
             "UPDATE account SET number_notification = ? WHERE id = ?";
 

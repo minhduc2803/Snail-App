@@ -6,7 +6,6 @@ import { MessageOutlined, DollarCircleOutlined, ContactsOutlined, LogoutOutlined
 import Avatar from 'react-avatar';
 import Messenger from '../../Mess/Messenger';
 import Wallet from '../../Money/Wallet';
-import { getBalance, getHistory } from '../../../redux/actions';
 
 
 const { Header, Content, Footer, Sider } = Layout;
@@ -15,13 +14,15 @@ const Demo = () => {
 	const pageState = useSelector( state => state.page);
 	const dispatch = useDispatch();
 
-	dispatch(getBalance());
-	dispatch(getHistory());
+	
 
 	let child = <Messenger />;
   if(pageState === "WALLET"){
     child = <Wallet />;
   }
+
+  
+
 	return (
 		<Layout>
 			<Sider
@@ -57,7 +58,7 @@ const Demo = () => {
 					</Menu>
 				</div>
 			</Sider>
-			<Layout className="site-layout" style={{ marginRight: 200 }}>
+			<Layout className="site-layout" style={{  marginRight: 200 }}>
 				<Content  style={{ }}>
 					{child}
 				</Content>

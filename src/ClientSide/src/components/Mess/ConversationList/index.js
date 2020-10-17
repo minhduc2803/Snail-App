@@ -10,14 +10,8 @@ import './ConversationList.css';
 
 export default function ConversationList(props) {
 
-  const listUsers = useSelector(state => state.listUsers);
-    let conversations = listUsers.map((result, index) => {
-      return {
-        index: index,
-        name: `${result.fullName}`,
-        text: (result.chat !== undefined && result.chat[result.chat.length-1] !== undefined) ? `${result.chat[result.chat.length-1].content}` : `Gửi lời chào tới ${result.fullName}`,
-      };
-    });
+  const usersKey = Array.from(Array(useSelector(state => state.listUsers.length)).keys());
+  console.log(usersKey);
     
     return (
       <div className="conversation-list">
@@ -32,10 +26,10 @@ export default function ConversationList(props) {
         />
         <ConversationSearch />
         {
-          conversations.map(conversation =>
+          usersKey.map(index =>
             <ConversationListItem
-              key={conversation.index}
-              data={conversation}
+              key={index}
+              index={index}
             />
           )
         }

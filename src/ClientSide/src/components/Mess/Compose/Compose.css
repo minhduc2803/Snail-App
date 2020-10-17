@@ -1,12 +1,10 @@
-.compose {
-  padding: 10px;
+.compose-container {
+  padding-top:10px;
+  padding-bottom:10px;
   display: flex;
   align-items: center;
   background: white;
-  border-top: 1px solid #7d7d83;
-  position: fixed;
-  
-  bottom: 0px;
+  border-top: 1px solid #fafafc;
 }
 
 @supports (backdrop-filter: blur(20px)) {
@@ -18,7 +16,7 @@
 }
 
 .compose-input {
- 
+  margin-left:10px;
   flex: 1;
   border: none;
   font-size: 14px;
@@ -36,4 +34,5 @@
 .rightItem {
   
   margin-left:15px;
+  margin-right:15px;
 }

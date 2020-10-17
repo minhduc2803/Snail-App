@@ -37,3 +37,12 @@
   grid-column-start: 2;
   background: white;
 }
+
+.compose{
+  position:sticky; bottom:0;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+}

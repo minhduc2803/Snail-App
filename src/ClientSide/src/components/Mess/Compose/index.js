@@ -25,7 +25,7 @@ export default function Compose(props) {
 		ws.send(JSON.stringify(chat));
 	}
 	return (
-		<div className="compose">
+		<div className="compose-container">
 			<input
 				type="text"
 				ref={message}

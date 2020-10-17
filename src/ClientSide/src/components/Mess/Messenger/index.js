@@ -2,20 +2,14 @@ import React from 'react';
 import ConversationList from '../ConversationList';
 import MessageList from '../MessageList';
 import './Messenger.css';
+import Compose from '../Compose';
 
-import { useDispatch } from 'react-redux';
-import { asyncLoadUsers, asyncLoadChat } from '../../../redux/actions';
 
 
 
 export default function Messenger(props) {
  
-  const dispatch = useDispatch();
-  dispatch(asyncLoadUsers()).then(result => {
-      for( let i=0;i<result.length;i++){
-        dispatch(asyncLoadChat(i, result[i]));
-      }
-  });
+ 
     return (
       <div className="messenger">
 
@@ -25,7 +19,11 @@ export default function Messenger(props) {
 
         <div className="scrollable content">
           <MessageList />
+          <div className="compose">
+					<Compose />
+				</div>
         </div>
+        
       </div>
     );
 }

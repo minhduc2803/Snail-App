@@ -1,24 +1,47 @@
 @import '~antd/dist/antd.css';
 
-.ant-layout{
-  background: #ffffff;
+.ant-layout {
+	background: #ffffff;
 }
-.content-inside{
-    margin: auto;
-    width: 50%;
-    align-content: center;
+.content-inside {
+	margin: auto;
+	width: 50%;
+	align-content: center;
 }
 
 .list-scrollable {
-    
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    height: 70%;
-  }
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+  max-height: 600px;
+  position: relative;
+}
 
-.containList{
-    height: 100%;
-  }
-  .card{
-    margin:auto;
-  }
+.containList {
+	height: 100%;
+}
+.card {
+	margin: auto;
+}
+
+.historyContent {
+  display: flex;
+  justify-content: space-between; 
+  flex-grow: 1;
+}
+
+.historyMessage{
+  flex-grow: 1;
+  flex-basis:40%;
+}
+
+.ant-list-item-meta{
+  flex-basis: 300px;
+  flex-grow:0;
+  flex-shrink: 0;
+
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  background: black; /* make scrollbar transparent */
+}

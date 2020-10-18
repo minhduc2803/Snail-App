@@ -95,4 +95,5 @@ public class WSHandler {
         receiveWS.forEach(
                 conn -> conn.writeTextMessage(JsonProtoUtils.printGson(chat)));
     }
+
 }

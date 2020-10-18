@@ -10,6 +10,7 @@ import vn.zalopay.ducnm8.da.interact.AccountDA;
 import vn.zalopay.ducnm8.da.interact.NotificationDA;
 import vn.zalopay.ducnm8.da.interact.TransferDA;
 import vn.zalopay.ducnm8.da.interact.TransferHistoryDA;
+import vn.zalopay.ducnm8.model.Balance;
 import vn.zalopay.ducnm8.model.Notification;
 import vn.zalopay.ducnm8.model.Transfer;
 import vn.zalopay.ducnm8.model.TransferHistory;
@@ -33,6 +34,10 @@ public class TransferHandler {
     long transferTime = Instant.now().getEpochSecond();
 
     String errorString = "";
+    Balance senderBalanceAfter = null;
+    Balance receiverBalanceAfter = null;
+    TransferHistory historyForSender = null;
+    TransferHistory historyForReceiver = null;
     String errorMessageForClient = "Giao dịch thành công";
     Code errorCodeForClient = Code.SUCCESS;
 
@@ -68,18 +73,20 @@ public class TransferHandler {
                 .compose(transfer -> transaction.execute(transferHistoryDA.insert(createTransferHistory(true, transfer.getId()))))
                 .compose(transferHistory -> transaction.execute(transferHistoryDA.insert(createTransferHistory(false, transferHistory.getTransferId()))))
                 .compose(next -> transaction.execute(notificationDA.insert(createNotification())))
-                .setHandler(u -> {
+                .compose(next -> accountDA.selectBalanceById(sender))
+                .setHandler(rs -> {
 
                     TransferResponse response = null;
 
-                    if (u.succeeded()) {
+                    if (rs.succeeded()) {
+                        balanceResponseForClient = rs.result();
                         transaction
                                 .commit()
                                 .compose(next -> transaction.close());
                         response = createTransferResponse(true);
                         log.info("GRPC: transfer succeed");
                     } else {
-                        errorString = u.cause().getMessage();
+                        errorString = rs.cause().getMessage();
                         transaction
                                 .rollback()
                                 .compose(next -> transaction.close());
@@ -140,6 +147,7 @@ public class TransferHandler {
                 });
         return future;
     }
+
 
     private Transfer createTransferCertificate() {
         return Transfer.builder()

@@ -19,9 +19,9 @@ public class TransferHistoryDAImpl extends BaseTransactionDA implements Transfer
     private final DataSource dataSource;
     private final AsyncHandler asyncHandler;
     private static final String INSERT_TRANSFER_HISTORY_STATEMENT =
-            "INSERT INTO transfer_history (`transfer_id`,`user_id`,`partner_id`,`transfer_type`) VALUES (?, ?, ?, ?)";
+            "INSERT INTO transfer_history (`transfer_id`,`user_id`,`partner_id`,`transfer_type`,`balance`) VALUES (?, ?, ?, ?, ?)";
     private static final String SELECT_TRANSFER_HISTORY_BY_ACCOUNT_ID =
-            "SELECT H.id, H.transfer_id, H.user_id, H.partner_id, H.transfer_type,\n" +
+            "SELECT H.id, H.transfer_id, H.user_id, H.partner_id, H.transfer_type, H.balance\n" +
             "T.amount, T.amount, T.message, T.transfer_time,\n" +
             "C.user_name, C.full_name\n" +
             "FROM transfer_history as H\n" +

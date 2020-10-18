@@ -20,10 +20,10 @@ export default function() {
 					}
 					description={dateTime}
 				/>
-				<div>
-					{history.message}
+				<div className="historyContent">
+					<div className="historyMessage">{history.message}</div>
+					<div>{`${history.transferType == 1 ? '-' : '+'} ${`${history.amount.toLocaleString()}`} VND`}</div>
 				</div>
-				<div>{`${history.transferType == 1 ? '-' : '+'} ${`${history.amount.toLocaleString()}`} VND`}</div>
 			</List.Item>
 		);
 	});
@@ -31,9 +31,8 @@ export default function() {
 	return (
 		<div className="containList">
 			<div className="list-scrollable">
-			<List >{renderItem}</List>
+				<List>{renderItem}</List>
 			</div>
-			
 		</div>
 	);
 }

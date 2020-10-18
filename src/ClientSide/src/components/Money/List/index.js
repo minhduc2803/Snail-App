@@ -20,7 +20,10 @@ export default function() {
 					}
 					description={dateTime}
 				/>
-				<div>{`${history.transferType == 1 ? '-' : '+'} ${history.amount} VND`}</div>
+				<div>
+					{history.message}
+				</div>
+				<div>{`${history.transferType == 1 ? '-' : '+'} ${`${history.amount.toLocaleString()}`} VND`}</div>
 			</List.Item>
 		);
 	});

@@ -1,11 +1,12 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Layout, Menu, Popconfirm, Button, AutoComplete } from 'antd';
+import { Layout, Menu, Popconfirm } from 'antd';
 import { MessageOutlined, DollarCircleOutlined, ContactsOutlined, LogoutOutlined } from '@ant-design/icons';
 
 import Avatar from 'react-avatar';
 import Messenger from '../../Mess/Messenger';
 import Wallet from '../../Money/Wallet';
+import { logout } from '../../../redux/actions';
 
 
 const { Header, Content, Footer, Sider } = Layout;
@@ -51,7 +52,10 @@ const Demo = () => {
 						<Menu.Item style={{ color: '#feffe6', fontSize: 17 }}>Minh Đức</Menu.Item>
 
 						<Menu.Item icon={<LogoutOutlined />}>
-							<Popconfirm title="Bạn có chắc chắn muốn đăng xuất？" okText="Có" cancelText="Không">
+							<Popconfirm 
+							title="Bạn có chắc chắn muốn đăng xuất？" okText="Có" cancelText="Không"
+							onConfirm={() => dispatch(logout())}
+							>
 								Đăng xuất
 							</Popconfirm>
 						</Menu.Item>

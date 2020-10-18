@@ -35,7 +35,7 @@ public class ConversationDAImpl extends BaseTransactionDA implements Conversatio
                             long id = executeWithParamsAndGetId(connection.unwrap(), INSERT_CONVERSATION_STATEMENT, params, "insertChat");
                             conversation.setId(id);
                             future.complete(conversation);
-                        } catch (SQLException e) {
+                        } catch (Exception e) {
                             future.fail(e);
                         }
                     });

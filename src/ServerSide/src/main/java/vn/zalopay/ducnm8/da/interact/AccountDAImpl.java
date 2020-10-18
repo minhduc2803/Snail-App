@@ -24,7 +24,7 @@ public class AccountDAImpl extends BaseTransactionDA implements AccountDA {
             "INSERT INTO account (`user_name`,`full_name`,`password`," +
                     "`balance`,`last_time_update_balance`,`number_notification`) " +
                     "VALUES (?, ?, ?, ?, ?, ?)";
-    private static final String SELECT_USER_BY_ID =
+    private static final String SELECT_ACCOUNT_BY_ID =
             "SELECT * FROM account WHERE id = ?";
     private static final String SELECT_USER_BY_USERNAME =
             "SELECT id, user_name, full_name, password FROM account WHERE user_name = ?";
@@ -59,7 +59,7 @@ public class AccountDAImpl extends BaseTransactionDA implements AccountDA {
                             long id = executeWithParamsAndGetId(connection.unwrap(), INSERT_USER_STATEMENT, params, "insertUser");
                             account.setId(id);
                             future.complete(account);
-                        } catch (SQLException e) {
+                        } catch (Exception e) {
                             future.fail(e);
                         }
                     });
@@ -68,17 +68,18 @@ public class AccountDAImpl extends BaseTransactionDA implements AccountDA {
     }
 
     @Override
-    public Future<User> selectUserById(long id) {
-        Future<User> future = Future.future();
+    public Future<Account> selectAccountById(long id) {
+        log.info("select account by id {}", id);
+        Future<Account> future = Future.future();
         asyncHandler.run(
                 () -> {
                     Object[] params = {id};
                     queryEntity(
                             "queryUser",
                             future,
-                            SELECT_USER_BY_ID,
+                            SELECT_ACCOUNT_BY_ID,
                             params,
-                            this::mapRs2EntityUser,
+                            this::mapRs2EntityAccount,
                             dataSource::getConnection,
                             false);
                 });
@@ -139,7 +140,7 @@ public class AccountDAImpl extends BaseTransactionDA implements AccountDA {
                             executeWithParamsAndGetId(connection.unwrap(), UPDATE_BALANCE_BY_AMOUNT, params, "updateBalance");
                             Account account = Account.builder().id(id).build();
                             future.complete(account);
-                        } catch (SQLException e) {
+                        } catch (Exception e) {
                             future.fail(e);
                         }
                     });
@@ -159,7 +160,7 @@ public class AccountDAImpl extends BaseTransactionDA implements AccountDA {
                             executeWithParamsAndGetId(connection.unwrap(), UPDATE_NUMBER_NOTIFICATION, params, "updateNumberNotification");
                             Account account = Account.builder().id(id).build();
                             future.complete(account);
-                        } catch (SQLException e) {
+                        } catch (Exception e) {
                             future.fail(e);
                         }
                     });
@@ -196,6 +197,17 @@ public class AccountDAImpl extends BaseTransactionDA implements AccountDA {
         }
 
         return user;
+    }
+
+    private Account mapRs2EntityAccount(ResultSet resultSet) throws Exception {
+        Account account = null;
+
+        while (resultSet.next()) {
+            account = new Account();
+            EntityMapper.getInstance().loadResultSetIntoObject(resultSet, account);
+        }
+
+        return account;
     }
 
     private ArrayList<UserWithoutPassword> mapRs2EntityUserList(ResultSet resultSet) throws Exception {

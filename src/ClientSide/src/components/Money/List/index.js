@@ -14,7 +14,7 @@ export default function() {
 				<List.Item.Meta
 					avatar={<Avatar name={history.fullName} size="35" round={true} />}
 					title={
-						<div>{`${history.transferType == 1
+						<div>{`${history.transferType == 0
 							? 'Chuyển tiền tới'
 							: 'Nhận tiền từ'} ${history.fullName}`}</div>
 					}
@@ -22,7 +22,7 @@ export default function() {
 				/>
 				<div className="historyContent">
 					<div className="historyMessage">{history.message}</div>
-					<div>{`${history.transferType == 1 ? '-' : '+'} ${`${history.amount.toLocaleString()}`} VND`}</div>
+					<div>{`${history.transferType == 0 ? '-' : '+'} ${`${history.amount.toLocaleString()}`} VND`}</div>
 				</div>
 			</List.Item>
 		);

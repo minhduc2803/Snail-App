@@ -276,9 +276,10 @@ public class ServiceModule {
            AccountDA accountDA,
            TransferHistoryDA transferHistoryDA,
            NotificationDA notificationDA,
-           TransactionProvider transactionProvider
+           TransactionProvider transactionProvider,
+           WSHandler wsHandler
   ){
-    return new TransferHandler(transferDA, accountDA, transferHistoryDA, notificationDA, transactionProvider);
+    return new TransferHandler(transferDA, accountDA, transferHistoryDA, notificationDA, transactionProvider, wsHandler);
   }
 
   @Provides

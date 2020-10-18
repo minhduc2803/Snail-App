@@ -162,6 +162,12 @@ const rootReducer = (state = initialState, action) => {
 				transferHistory: action.payload
 			};
 
+		case 'ADD_TRANSFER_HISTORY':
+			return {
+				...state,
+				transferHistory: [action.payload].concat(state.transferHistory)
+			}
+
 		default:
 			return state;
 	}

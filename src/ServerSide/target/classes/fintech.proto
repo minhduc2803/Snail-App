@@ -70,14 +70,14 @@ message HistoryItem {
 
   int64 amount = 3;
   string message = 4; // The message goes with a transaction
-  int64 transfer_time = 5; // The time when the transfer executed
-  string username = 6;
-  string full_name = 7;
+  int64 balance = 5; // The balance after transfer
+  int64 transfer_time = 6; // The time when the transfer executed
+  string username = 7;
+  string full_name = 8;
 }
 
 message TransferRequest {
   // A transfer request from user
-  // Contain password in header for authorization
   int64 sender_id = 1;
   int64 receiver_id = 2;
   int64 amount = 3;
@@ -88,12 +88,7 @@ message TransferRequest {
 message TransferResponse {
   message Data {
     // After transfer succeed, return a history of that transfer
-    // Need password from request header for authorization
-    enum IsSuccessful {
-      TRUE = 0;
-      FALSE = 1;
-    }
-    IsSuccessful isSuccessful = 1;
+      HistoryItem historyItem = 1;
   }
 
   Error error = 1;

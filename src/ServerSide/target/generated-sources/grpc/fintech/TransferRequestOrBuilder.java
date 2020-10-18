@@ -10,7 +10,6 @@ public interface TransferRequestOrBuilder extends
   /**
    * <pre>
    * A transfer request from user
-   * Contain password in header for authorization
    * </pre>
    *
    * <code>int64 sender_id = 1;</code>

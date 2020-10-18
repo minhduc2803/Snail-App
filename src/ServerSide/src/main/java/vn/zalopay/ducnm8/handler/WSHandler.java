@@ -4,7 +4,9 @@ import vn.zalopay.ducnm8.cache.ChatListCache;
 import vn.zalopay.ducnm8.da.interact.ChatListDA;
 import vn.zalopay.ducnm8.da.Transaction;
 import vn.zalopay.ducnm8.da.TransactionProvider;
+import vn.zalopay.ducnm8.entity.response.WebSocketResponse;
 import vn.zalopay.ducnm8.model.Chat;
+import vn.zalopay.ducnm8.model.TransferHistory;
 import vn.zalopay.ducnm8.utils.JsonProtoUtils;
 import io.vertx.core.Future;
 import io.vertx.core.buffer.Buffer;
@@ -70,8 +72,8 @@ public class WSHandler {
                 .setHandler(result -> {
                     if (result.succeeded()) {
                         log.info("insert a new chat");
-                        SendChat(chat, senderId);
-                        SendChat(chat, chat.getReceiverId());
+                        sendChat(chat, senderId);
+                        sendChat(chat, chat.getReceiverId());
                         transaction
                                 .commit()
                                 .compose(next -> transaction.close())
@@ -87,13 +89,34 @@ public class WSHandler {
         }
     }
 
-    private void SendChat(Chat chat, long UserReceiveID) {
-        log.info("Send chat to UserID: {}", UserReceiveID);
-        Set<ServerWebSocket> receiveWS = clients.get(UserReceiveID);
+    private void sendChat(Chat chat, long receiverId) {
+        log.info("Send chat to accountId: {}", receiverId);
+
+        WebSocketResponse webSocketResponse = WebSocketResponse.builder()
+                .responseType(1)
+                .data(chat)
+                .build();
+
+        Set<ServerWebSocket> receiveWS = clients.get(receiverId);
         if (receiveWS == null)
             return;
         receiveWS.forEach(
-                conn -> conn.writeTextMessage(JsonProtoUtils.printGson(chat)));
+                conn -> conn.writeTextMessage(JsonProtoUtils.printGson(webSocketResponse)));
+    }
+
+    public void sendTransferHistory(TransferHistory transferHistory, long receiverId) {
+        log.info("Send Transfer history to accountId: {}", receiverId);
+
+        WebSocketResponse webSocketResponse = WebSocketResponse.builder()
+                .responseType(2)
+                .data(transferHistory)
+                .build();
+
+        Set<ServerWebSocket> receiveWS = clients.get(receiverId);
+        if (receiveWS == null)
+            return;
+        receiveWS.forEach(
+                conn -> conn.writeTextMessage(JsonProtoUtils.printGson(webSocketResponse)));
     }
 
 }

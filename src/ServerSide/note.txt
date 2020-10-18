@@ -26,3 +26,5 @@ tracker
  // scroll to bottom
  https://stackoverflow.com/questions/37620694/how-to-scroll-to-bottom-in-react
 
+// code format rule
+https://www.jetbrains.com/help/rider/Enforcing_Code_Formatting_Rules.html#pasted

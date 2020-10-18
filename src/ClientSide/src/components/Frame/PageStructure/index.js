@@ -13,6 +13,7 @@ const { Header, Content, Footer, Sider } = Layout;
 
 const Demo = () => {
 	const pageState = useSelector( state => state.page);
+	const user = useSelector(state => state.user);
 	const dispatch = useDispatch();
 
 	
@@ -48,8 +49,8 @@ const Demo = () => {
 
 				<div className="logo" style={{ position: 'fixed', bottom: 0, textAlign: 'center', width: 200 }}>
 					<Menu theme="dark" mode="inline" selectable={false} style={{ textAlign: 'center' }}>
-						<Menu.Item icon={<Avatar name={'Minh Đức'} size="35" round={true} />} />
-						<Menu.Item style={{ color: '#feffe6', fontSize: 17 }}>Minh Đức</Menu.Item>
+						<Menu.Item icon={<Avatar name={user.fullName} size="35" round={true} />} />
+						<Menu.Item style={{ color: '#feffe6', fontSize: 17 }}>{user.fullName}</Menu.Item>
 
 						<Menu.Item icon={<LogoutOutlined />}>
 							<Popconfirm 

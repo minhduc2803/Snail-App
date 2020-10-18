@@ -28,7 +28,7 @@ public class BaseTransactionDA extends BaseDA {
 
   protected Long executeWithParamsAndGetId(
           Connection connection, String stm, Object[] params, String method)
-          throws SQLException {
+          throws Exception {
 
     PreparedStatement preparedStatement = null;
     try {

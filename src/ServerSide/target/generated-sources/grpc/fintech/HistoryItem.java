@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     transferType_ = 0;
     amount_ = 0L;
     message_ = "";
+    balance_ = 0L;
     transferTime_ = 0L;
     username_ = "";
     fullName_ = "";
@@ -77,16 +78,21 @@ private static final long serialVersionUID = 0L;
           }
           case 40: {
 
+            balance_ = input.readInt64();
+            break;
+          }
+          case 48: {
+
             transferTime_ = input.readInt64();
             break;
           }
-          case 50: {
+          case 58: {
             java.lang.String s = input.readStringRequireUtf8();
 
             username_ = s;
             break;
           }
-          case 58: {
+          case 66: {
             java.lang.String s = input.readStringRequireUtf8();
 
             fullName_ = s;
@@ -297,23 +303,36 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int TRANSFER_TIME_FIELD_NUMBER = 5;
+  public static final int BALANCE_FIELD_NUMBER = 5;
+  private long balance_;
+  /**
+   * <pre>
+   * The balance after transfer
+   * </pre>
+   *
+   * <code>int64 balance = 5;</code>
+   */
+  public long getBalance() {
+    return balance_;
+  }
+
+  public static final int TRANSFER_TIME_FIELD_NUMBER = 6;
   private long transferTime_;
   /**
    * <pre>
    * The time when the transfer executed
    * </pre>
    *
-   * <code>int64 transfer_time = 5;</code>
+   * <code>int64 transfer_time = 6;</code>
    */
   public long getTransferTime() {
     return transferTime_;
   }
 
-  public static final int USERNAME_FIELD_NUMBER = 6;
+  public static final int USERNAME_FIELD_NUMBER = 7;
   private volatile java.lang.Object username_;
   /**
-   * <code>string username = 6;</code>
+   * <code>string username = 7;</code>
    */
   public java.lang.String getUsername() {
     java.lang.Object ref = username_;
@@ -328,7 +347,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string username = 6;</code>
+   * <code>string username = 7;</code>
    */
   public com.google.protobuf.ByteString
       getUsernameBytes() {
@@ -344,10 +363,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int FULL_NAME_FIELD_NUMBER = 7;
+  public static final int FULL_NAME_FIELD_NUMBER = 8;
   private volatile java.lang.Object fullName_;
   /**
-   * <code>string full_name = 7;</code>
+   * <code>string full_name = 8;</code>
    */
   public java.lang.String getFullName() {
     java.lang.Object ref = fullName_;
@@ -362,7 +381,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string full_name = 7;</code>
+   * <code>string full_name = 8;</code>
    */
   public com.google.protobuf.ByteString
       getFullNameBytes() {
@@ -402,14 +421,17 @@ private static final long serialVersionUID = 0L;
     if (!getMessageBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, message_);
     }
+    if (balance_ != 0L) {
+      output.writeInt64(5, balance_);
+    }
     if (transferTime_ != 0L) {
-      output.writeInt64(5, transferTime_);
+      output.writeInt64(6, transferTime_);
     }
     if (!getUsernameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, username_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, username_);
     }
     if (!getFullNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, fullName_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, fullName_);
     }
     unknownFields.writeTo(output);
   }
@@ -434,15 +456,19 @@ private static final long serialVersionUID = 0L;
     if (!getMessageBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, message_);
     }
+    if (balance_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(5, balance_);
+    }
     if (transferTime_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(5, transferTime_);
+        .computeInt64Size(6, transferTime_);
     }
     if (!getUsernameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, username_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, username_);
     }
     if (!getFullNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, fullName_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, fullName_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -467,6 +493,8 @@ private static final long serialVersionUID = 0L;
         == other.getAmount());
     result = result && getMessage()
         .equals(other.getMessage());
+    result = result && (getBalance()
+        == other.getBalance());
     result = result && (getTransferTime()
         == other.getTransferTime());
     result = result && getUsername()
@@ -494,6 +522,9 @@ private static final long serialVersionUID = 0L;
         getAmount());
     hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
     hash = (53 * hash) + getMessage().hashCode();
+    hash = (37 * hash) + BALANCE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getBalance());
     hash = (37 * hash) + TRANSFER_TIME_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getTransferTime());
@@ -638,6 +669,8 @@ private static final long serialVersionUID = 0L;
 
       message_ = "";
 
+      balance_ = 0L;
+
       transferTime_ = 0L;
 
       username_ = "";
@@ -670,6 +703,7 @@ private static final long serialVersionUID = 0L;
       result.transferType_ = transferType_;
       result.amount_ = amount_;
       result.message_ = message_;
+      result.balance_ = balance_;
       result.transferTime_ = transferTime_;
       result.username_ = username_;
       result.fullName_ = fullName_;
@@ -726,6 +760,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getMessage().isEmpty()) {
         message_ = other.message_;
         onChanged();
+      }
+      if (other.getBalance() != 0L) {
+        setBalance(other.getBalance());
       }
       if (other.getTransferTime() != 0L) {
         setTransferTime(other.getTransferTime());
@@ -971,13 +1008,51 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private long balance_ ;
+    /**
+     * <pre>
+     * The balance after transfer
+     * </pre>
+     *
+     * <code>int64 balance = 5;</code>
+     */
+    public long getBalance() {
+      return balance_;
+    }
+    /**
+     * <pre>
+     * The balance after transfer
+     * </pre>
+     *
+     * <code>int64 balance = 5;</code>
+     */
+    public Builder setBalance(long value) {
+      
+      balance_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The balance after transfer
+     * </pre>
+     *
+     * <code>int64 balance = 5;</code>
+     */
+    public Builder clearBalance() {
+      
+      balance_ = 0L;
+      onChanged();
+      return this;
+    }
+
     private long transferTime_ ;
     /**
      * <pre>
      * The time when the transfer executed
      * </pre>
      *
-     * <code>int64 transfer_time = 5;</code>
+     * <code>int64 transfer_time = 6;</code>
      */
     public long getTransferTime() {
       return transferTime_;
@@ -987,7 +1062,7 @@ private static final long serialVersionUID = 0L;
      * The time when the transfer executed
      * </pre>
      *
-     * <code>int64 transfer_time = 5;</code>
+     * <code>int64 transfer_time = 6;</code>
      */
     public Builder setTransferTime(long value) {
       
@@ -1000,7 +1075,7 @@ private static final long serialVersionUID = 0L;
      * The time when the transfer executed
      * </pre>
      *
-     * <code>int64 transfer_time = 5;</code>
+     * <code>int64 transfer_time = 6;</code>
      */
     public Builder clearTransferTime() {
       
@@ -1011,7 +1086,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object username_ = "";
     /**
-     * <code>string username = 6;</code>
+     * <code>string username = 7;</code>
      */
     public java.lang.String getUsername() {
       java.lang.Object ref = username_;
@@ -1026,7 +1101,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string username = 6;</code>
+     * <code>string username = 7;</code>
      */
     public com.google.protobuf.ByteString
         getUsernameBytes() {
@@ -1042,7 +1117,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string username = 6;</code>
+     * <code>string username = 7;</code>
      */
     public Builder setUsername(
         java.lang.String value) {
@@ -1055,7 +1130,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string username = 6;</code>
+     * <code>string username = 7;</code>
      */
     public Builder clearUsername() {
       
@@ -1064,7 +1139,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string username = 6;</code>
+     * <code>string username = 7;</code>
      */
     public Builder setUsernameBytes(
         com.google.protobuf.ByteString value) {
@@ -1080,7 +1155,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object fullName_ = "";
     /**
-     * <code>string full_name = 7;</code>
+     * <code>string full_name = 8;</code>
      */
     public java.lang.String getFullName() {
       java.lang.Object ref = fullName_;
@@ -1095,7 +1170,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string full_name = 7;</code>
+     * <code>string full_name = 8;</code>
      */
     public com.google.protobuf.ByteString
         getFullNameBytes() {
@@ -1111,7 +1186,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string full_name = 7;</code>
+     * <code>string full_name = 8;</code>
      */
     public Builder setFullName(
         java.lang.String value) {
@@ -1124,7 +1199,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string full_name = 7;</code>
+     * <code>string full_name = 8;</code>
      */
     public Builder clearFullName() {
       
@@ -1133,7 +1208,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string full_name = 7;</code>
+     * <code>string full_name = 8;</code>
      */
     public Builder setFullNameBytes(
         com.google.protobuf.ByteString value) {

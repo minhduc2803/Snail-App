@@ -52,7 +52,6 @@ vn/zalopay/ducnm8/model/Balance$BalanceBuilder.class
 vn/zalopay/ducnm8/cache/ConversationListCacheImpl$ConversationListCacheImplBuilder.class
 vn/zalopay/ducnm8/handler/JWTAuthHandler$JWTAuthHandlerBuilder.class
 vn/zalopay/ducnm8/handler/LoginHandler.class
-fintech/TransferResponse$Data$IsSuccessful.class
 vn/zalopay/ducnm8/common/mapper/DBTable.class
 vn/zalopay/ducnm8/dagger/ServiceModule_ProvideTransactionProviderFactory.class
 vn/zalopay/ducnm8/Runner.class
@@ -77,6 +76,7 @@ vn/zalopay/ducnm8/da/FunctionEx.class
 fintech/NotificationItem$Seen.class
 fintech/NotificationResponse$Builder.class
 fintech/TransferResponse$Builder.class
+vn/zalopay/ducnm8/entity/response/WebsocketResponse$WebsocketResponseBuilder.class
 vn/zalopay/ducnm8/config/FileConfigLoader.class
 fintech/NotificationResponse$1.class
 vn/zalopay/ducnm8/dagger/ServiceModule_ProvideExampleHandlerFactory.class
@@ -138,7 +138,6 @@ fintech/BalanceResponse$Data.class
 vn/zalopay/ducnm8/dagger/ServiceModule_ProvideConversationDAFactory.class
 vn/zalopay/ducnm8/cache/ConversationListCacheImpl.class
 fintech/HistoryResponse$Data$Builder.class
-fintech/TransferResponse$Data$IsSuccessful$1.class
 vn/zalopay/ducnm8/da/interact/NotificationDAImpl.class
 vn/zalopay/ducnm8/da/interact/ConversationDAImpl.class
 vn/zalopay/ducnm8/utils/Tracker$TrackerBuilder.class
@@ -249,6 +248,7 @@ fintech/HistoryItem$1.class
 fintech/Code$1.class
 hello/HelloWorldProto.class
 fintech/ErrorOrBuilder.class
+vn/zalopay/ducnm8/entity/response/WebsocketResponse.class
 hello/GreeterServiceGrpc$GreeterServiceBlockingStub.class
 vn/zalopay/ducnm8/dagger/ServiceModule_ProvideRegisterHandlerFactory.class
 vn/zalopay/ducnm8/entity/response/LoginResponse.class

@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public interface AccountDA {
   Executable<Account> insert(Account account);
 
-  Future<User> selectUserById(long id);
+  Future<Account> selectAccountById(long id);
 
   Future<User> selectUserByUsername(String Username);
 

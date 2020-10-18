@@ -10,9 +10,13 @@ export function alreadyLogin(user) {
 
 export function init() {
 	return (dispatch, getState) => {
-        let user = window.localStorage.getItem('user');
-        console.log("user");
-        console.log(user);
+		const ws = getState().websocket;
+		if (ws !== undefined) {
+			ws.close();
+		}
+		let user = window.localStorage.getItem('user');
+		console.log('user');
+		console.log(user);
 		if (user !== null) {
 			user = JSON.parse(user);
 			dispatch(setup(user));
@@ -44,8 +48,27 @@ export function asyncSetupWebSocket(user) {
 
 		ws.onmessage = function(evt) {
 			console.log('Receive a mess');
-			console.log(JSON.parse(evt.data));
-			dispatch({ type: 'CHAT', chat: JSON.parse(evt.data) });
+			const data = JSON.parse(evt.data);
+			console.log();
+			if (data.responseType == 1) dispatch({ type: 'CHAT', chat: data.data });
+			else {
+				const balance = {
+					balance: data.data.balance,
+					lastTimeUpdate: data.data.transferTime
+				};
+				const transferHistory = {
+					partnerId: data.data.partnerId,
+					transferType: data.data.transferType - 1,
+					amount: data.data.amount,
+					message: data.data.message,
+					balance: data.data.balance,
+					transferTime: data.data.transferTime,
+					username: data.data.username,
+					fullName: data.data.fullName
+				};
+				dispatch({ type: 'GET_BALANCE', payload: balance });
+				dispatch({ type: 'ADD_TRANSFER_HISTORY', payload: transferHistory });
+			}
 		};
 
 		ws.onclose = function() {
@@ -100,6 +123,7 @@ export function asyncLogin(username, password) {
 
 export function logout() {
 	return (dispatch, getState) => {
+		getState().websocket.close();
 		window.localStorage.clear();
 		dispatch({ type: 'LOGOUT' });
 		dispatch({ type: 'LOGIN' });
@@ -197,10 +221,44 @@ export function transfer(transfer_info) {
 		const metadata = { Authorization: 'Bearer ' + getState().user.token };
 
 		grpc.transfer(metadata, transfer_info, (err, response) => {
-			console.log(response.getData().getIssuccessful());
-			response.getData().getIssuccessful() == 0
-				? dispatch({ type: 'POP_UP_TRANSFER_COMPLETE_SUCCESS' })
-				: dispatch({ type: 'POP_UP_TRANSFER_COMPLETE_FAILED' });
+			if (response == null) {
+				dispatch({ type: 'POP_UP_TRANSFER_COMPLETE_FAILED' });
+			} else {
+				response = response.toObject();
+				console.log(response);
+				switch (response.error.code) {
+					case 0:
+						dispatch({ type: 'POP_UP_TRANSFER_COMPLETE_SUCCESS' });
+						dispatch({
+							type: 'GET_BALANCE',
+							payload: {
+								balance: response.data.historyitem.balance,
+								lastTimeUpdate: response.data.historyitem.transferTime
+							}
+						});
+						dispatch({ type: 'ADD_TRANSFER_HISTORY', payload: response.data.historyitem });
+						break;
+
+					case 1:
+						dispatch({ type: 'POP_UP_TRANSFER_COMPLETE_FAILED' });
+						break;
+					case 2:
+						dispatch({ type: 'POP_UP_TRANSFER_COMPLETE_FAILED' });
+						break;
+					case 3:
+						dispatch({ type: 'POP_UP_TRANSFER_COMPLETE_FAILED' });
+						break;
+					case 4:
+						dispatch({ type: 'POP_UP_TRANSFER_COMPLETE_FAILED' });
+						break;
+					case 5:
+						dispatch({ type: 'POP_UP_TRANSFER_COMPLETE_FAILED' });
+						break;
+					default:
+						dispatch({ type: 'POP_UP_TRANSFER_COMPLETE_FAILED' });
+						break;
+				}
+			}
 		});
 
 		dispatch({ type: 'TRANSFERING' });
@@ -212,10 +270,17 @@ export function getBalance() {
 		const metadata = { Authorization: 'Bearer ' + getState().user.token };
 
 		grpc.getBalance(metadata, (err, response) => {
-			const balance = {
-				balance: response.getData().getBalance(),
-				lastTimeUpdate: response.getData().getLastTimeUpdateBalance()
+			let balance = {
+				balance: 'NETWORK_ERROR',
+				lastTimeUpdate: 'NETWORK_ERROR'
 			};
+			if (response != null) {
+				balance = {
+					balance: response.getData().getBalance(),
+					lastTimeUpdate: response.getData().getLastTimeUpdateBalance()
+				};
+			}
+
 			dispatch({ type: 'GET_BALANCE', payload: balance });
 		});
 	};
@@ -226,7 +291,7 @@ export function getHistory() {
 		const metadata = { Authorization: 'Bearer ' + getState().user.token };
 
 		grpc.getHistory(metadata, (err, response) => {
-			console.log(response.toObject());
+			//console.log(response.toObject());
 			// const history = {
 			//     partnerId: response.getData.getPartnerId(),
 			//     transferType: response.getData.getTransferType(),
@@ -236,7 +301,11 @@ export function getHistory() {
 			//     username: response.getData.getUsername(),
 			//     fullName: response.getData.getFullName()
 			// };
-			dispatch({ type: 'GET_TRANSFER_HISTORY', payload: response.toObject().data.historyItemsList.reverse() });
+			if (response != null)
+				dispatch({
+					type: 'GET_TRANSFER_HISTORY',
+					payload: response.toObject().data.historyItemsList.reverse()
+				});
 		});
 	};
 }

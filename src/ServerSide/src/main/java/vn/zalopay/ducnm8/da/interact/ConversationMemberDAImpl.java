@@ -41,7 +41,7 @@ public class ConversationMemberDAImpl extends BaseTransactionDA implements Conve
                             long id = executeWithParamsAndGetId(connection.unwrap(), INSERT_CONVERSATION_MEMBER, params, "insertConversationMember");
                             conversationMember.setId(id);
                             future.complete(conversationMember);
-                        } catch (SQLException e) {
+                        } catch (Exception e) {
                             future.fail(e);
                         }
                     });

@@ -44,7 +44,7 @@ public class ChatListDAImpl extends BaseTransactionDA implements ChatListDA{
                             long id = executeWithParamsAndGetId(connection.unwrap(), INSERT_CHAT_STATEMENT, params, "insertChat");
                             chat.setId(id);
                             future.complete(chat);
-                        } catch (SQLException e) {
+                        } catch (Exception e) {
                             log.error("insert new chat failed ~ cause: {}",e.getMessage());
                             future.fail("insert new chat failed");
                         }

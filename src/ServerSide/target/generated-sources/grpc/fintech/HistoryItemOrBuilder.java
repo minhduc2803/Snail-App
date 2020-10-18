@@ -53,29 +53,38 @@ public interface HistoryItemOrBuilder extends
 
   /**
    * <pre>
+   * The balance after transfer
+   * </pre>
+   *
+   * <code>int64 balance = 5;</code>
+   */
+  long getBalance();
+
+  /**
+   * <pre>
    * The time when the transfer executed
    * </pre>
    *
-   * <code>int64 transfer_time = 5;</code>
+   * <code>int64 transfer_time = 6;</code>
    */
   long getTransferTime();
 
   /**
-   * <code>string username = 6;</code>
+   * <code>string username = 7;</code>
    */
   java.lang.String getUsername();
   /**
-   * <code>string username = 6;</code>
+   * <code>string username = 7;</code>
    */
   com.google.protobuf.ByteString
       getUsernameBytes();
 
   /**
-   * <code>string full_name = 7;</code>
+   * <code>string full_name = 8;</code>
    */
   java.lang.String getFullName();
   /**
-   * <code>string full_name = 7;</code>
+   * <code>string full_name = 8;</code>
    */
   com.google.protobuf.ByteString
       getFullNameBytes();

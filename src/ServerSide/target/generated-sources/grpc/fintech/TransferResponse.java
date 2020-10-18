@@ -101,13 +101,29 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.fintech.TransferResponse.Data.IsSuccessful isSuccessful = 1;</code>
+     * <pre>
+     * After transfer succeed, return a history of that transfer
+     * </pre>
+     *
+     * <code>.fintech.HistoryItem historyItem = 1;</code>
      */
-    int getIsSuccessfulValue();
+    boolean hasHistoryItem();
     /**
-     * <code>.fintech.TransferResponse.Data.IsSuccessful isSuccessful = 1;</code>
+     * <pre>
+     * After transfer succeed, return a history of that transfer
+     * </pre>
+     *
+     * <code>.fintech.HistoryItem historyItem = 1;</code>
      */
-    fintech.TransferResponse.Data.IsSuccessful getIsSuccessful();
+    fintech.HistoryItem getHistoryItem();
+    /**
+     * <pre>
+     * After transfer succeed, return a history of that transfer
+     * </pre>
+     *
+     * <code>.fintech.HistoryItem historyItem = 1;</code>
+     */
+    fintech.HistoryItemOrBuilder getHistoryItemOrBuilder();
   }
   /**
    * Protobuf type {@code fintech.TransferResponse.Data}
@@ -122,7 +138,6 @@ private static final long serialVersionUID = 0L;
       super(builder);
     }
     private Data() {
-      isSuccessful_ = 0;
     }
 
     @java.lang.Override
@@ -153,10 +168,17 @@ private static final long serialVersionUID = 0L;
               }
               break;
             }
-            case 8: {
-              int rawValue = input.readEnum();
+            case 10: {
+              fintech.HistoryItem.Builder subBuilder = null;
+              if (historyItem_ != null) {
+                subBuilder = historyItem_.toBuilder();
+              }
+              historyItem_ = input.readMessage(fintech.HistoryItem.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(historyItem_);
+                historyItem_ = subBuilder.buildPartial();
+              }
 
-              isSuccessful_ = rawValue;
               break;
             }
           }
@@ -183,123 +205,37 @@ private static final long serialVersionUID = 0L;
               fintech.TransferResponse.Data.class, fintech.TransferResponse.Data.Builder.class);
     }
 
+    public static final int HISTORYITEM_FIELD_NUMBER = 1;
+    private fintech.HistoryItem historyItem_;
     /**
      * <pre>
      * After transfer succeed, return a history of that transfer
-     * Need password from request header for authorization
      * </pre>
      *
-     * Protobuf enum {@code fintech.TransferResponse.Data.IsSuccessful}
+     * <code>.fintech.HistoryItem historyItem = 1;</code>
      */
-    public enum IsSuccessful
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>TRUE = 0;</code>
-       */
-      TRUE(0),
-      /**
-       * <code>FALSE = 1;</code>
-       */
-      FALSE(1),
-      UNRECOGNIZED(-1),
-      ;
-
-      /**
-       * <code>TRUE = 0;</code>
-       */
-      public static final int TRUE_VALUE = 0;
-      /**
-       * <code>FALSE = 1;</code>
-       */
-      public static final int FALSE_VALUE = 1;
-
-
-      public final int getNumber() {
-        if (this == UNRECOGNIZED) {
-          throw new java.lang.IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static IsSuccessful valueOf(int value) {
-        return forNumber(value);
-      }
-
-      public static IsSuccessful forNumber(int value) {
-        switch (value) {
-          case 0: return TRUE;
-          case 1: return FALSE;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<IsSuccessful>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          IsSuccessful> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<IsSuccessful>() {
-              public IsSuccessful findValueByNumber(int number) {
-                return IsSuccessful.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        return getDescriptor().getValues().get(ordinal());
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return fintech.TransferResponse.Data.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final IsSuccessful[] VALUES = values();
-
-      public static IsSuccessful valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int value;
-
-      private IsSuccessful(int value) {
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:fintech.TransferResponse.Data.IsSuccessful)
-    }
-
-    public static final int ISSUCCESSFUL_FIELD_NUMBER = 1;
-    private int isSuccessful_;
-    /**
-     * <code>.fintech.TransferResponse.Data.IsSuccessful isSuccessful = 1;</code>
-     */
-    public int getIsSuccessfulValue() {
-      return isSuccessful_;
+    public boolean hasHistoryItem() {
+      return historyItem_ != null;
     }
     /**
-     * <code>.fintech.TransferResponse.Data.IsSuccessful isSuccessful = 1;</code>
+     * <pre>
+     * After transfer succeed, return a history of that transfer
+     * </pre>
+     *
+     * <code>.fintech.HistoryItem historyItem = 1;</code>
      */
-    public fintech.TransferResponse.Data.IsSuccessful getIsSuccessful() {
-      fintech.TransferResponse.Data.IsSuccessful result = fintech.TransferResponse.Data.IsSuccessful.valueOf(isSuccessful_);
-      return result == null ? fintech.TransferResponse.Data.IsSuccessful.UNRECOGNIZED : result;
+    public fintech.HistoryItem getHistoryItem() {
+      return historyItem_ == null ? fintech.HistoryItem.getDefaultInstance() : historyItem_;
+    }
+    /**
+     * <pre>
+     * After transfer succeed, return a history of that transfer
+     * </pre>
+     *
+     * <code>.fintech.HistoryItem historyItem = 1;</code>
+     */
+    public fintech.HistoryItemOrBuilder getHistoryItemOrBuilder() {
+      return getHistoryItem();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -314,8 +250,8 @@ private static final long serialVersionUID = 0L;
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (isSuccessful_ != fintech.TransferResponse.Data.IsSuccessful.TRUE.getNumber()) {
-        output.writeEnum(1, isSuccessful_);
+      if (historyItem_ != null) {
+        output.writeMessage(1, getHistoryItem());
       }
       unknownFields.writeTo(output);
     }
@@ -325,9 +261,9 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
-      if (isSuccessful_ != fintech.TransferResponse.Data.IsSuccessful.TRUE.getNumber()) {
+      if (historyItem_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(1, isSuccessful_);
+          .computeMessageSize(1, getHistoryItem());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -345,7 +281,11 @@ private static final long serialVersionUID = 0L;
       fintech.TransferResponse.Data other = (fintech.TransferResponse.Data) obj;
 
       boolean result = true;
-      result = result && isSuccessful_ == other.isSuccessful_;
+      result = result && (hasHistoryItem() == other.hasHistoryItem());
+      if (hasHistoryItem()) {
+        result = result && getHistoryItem()
+            .equals(other.getHistoryItem());
+      }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -357,8 +297,10 @@ private static final long serialVersionUID = 0L;
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ISSUCCESSFUL_FIELD_NUMBER;
-      hash = (53 * hash) + isSuccessful_;
+      if (hasHistoryItem()) {
+        hash = (37 * hash) + HISTORYITEM_FIELD_NUMBER;
+        hash = (53 * hash) + getHistoryItem().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -488,8 +430,12 @@ private static final long serialVersionUID = 0L;
       }
       public Builder clear() {
         super.clear();
-        isSuccessful_ = 0;
-
+        if (historyItemBuilder_ == null) {
+          historyItem_ = null;
+        } else {
+          historyItem_ = null;
+          historyItemBuilder_ = null;
+        }
         return this;
       }
 
@@ -512,7 +458,11 @@ private static final long serialVersionUID = 0L;
 
       public fintech.TransferResponse.Data buildPartial() {
         fintech.TransferResponse.Data result = new fintech.TransferResponse.Data(this);
-        result.isSuccessful_ = isSuccessful_;
+        if (historyItemBuilder_ == null) {
+          result.historyItem_ = historyItem_;
+        } else {
+          result.historyItem_ = historyItemBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -554,8 +504,8 @@ private static final long serialVersionUID = 0L;
 
       public Builder mergeFrom(fintech.TransferResponse.Data other) {
         if (other == fintech.TransferResponse.Data.getDefaultInstance()) return this;
-        if (other.isSuccessful_ != 0) {
-          setIsSuccessfulValue(other.getIsSuccessfulValue());
+        if (other.hasHistoryItem()) {
+          mergeHistoryItem(other.getHistoryItem());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -584,48 +534,157 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
-      private int isSuccessful_ = 0;
+      private fintech.HistoryItem historyItem_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          fintech.HistoryItem, fintech.HistoryItem.Builder, fintech.HistoryItemOrBuilder> historyItemBuilder_;
       /**
-       * <code>.fintech.TransferResponse.Data.IsSuccessful isSuccessful = 1;</code>
+       * <pre>
+       * After transfer succeed, return a history of that transfer
+       * </pre>
+       *
+       * <code>.fintech.HistoryItem historyItem = 1;</code>
        */
-      public int getIsSuccessfulValue() {
-        return isSuccessful_;
+      public boolean hasHistoryItem() {
+        return historyItemBuilder_ != null || historyItem_ != null;
       }
       /**
-       * <code>.fintech.TransferResponse.Data.IsSuccessful isSuccessful = 1;</code>
+       * <pre>
+       * After transfer succeed, return a history of that transfer
+       * </pre>
+       *
+       * <code>.fintech.HistoryItem historyItem = 1;</code>
        */
-      public Builder setIsSuccessfulValue(int value) {
-        isSuccessful_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.fintech.TransferResponse.Data.IsSuccessful isSuccessful = 1;</code>
-       */
-      public fintech.TransferResponse.Data.IsSuccessful getIsSuccessful() {
-        fintech.TransferResponse.Data.IsSuccessful result = fintech.TransferResponse.Data.IsSuccessful.valueOf(isSuccessful_);
-        return result == null ? fintech.TransferResponse.Data.IsSuccessful.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.fintech.TransferResponse.Data.IsSuccessful isSuccessful = 1;</code>
-       */
-      public Builder setIsSuccessful(fintech.TransferResponse.Data.IsSuccessful value) {
-        if (value == null) {
-          throw new NullPointerException();
+      public fintech.HistoryItem getHistoryItem() {
+        if (historyItemBuilder_ == null) {
+          return historyItem_ == null ? fintech.HistoryItem.getDefaultInstance() : historyItem_;
+        } else {
+          return historyItemBuilder_.getMessage();
         }
-        
-        isSuccessful_ = value.getNumber();
-        onChanged();
+      }
+      /**
+       * <pre>
+       * After transfer succeed, return a history of that transfer
+       * </pre>
+       *
+       * <code>.fintech.HistoryItem historyItem = 1;</code>
+       */
+      public Builder setHistoryItem(fintech.HistoryItem value) {
+        if (historyItemBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          historyItem_ = value;
+          onChanged();
+        } else {
+          historyItemBuilder_.setMessage(value);
+        }
+
         return this;
       }
       /**
-       * <code>.fintech.TransferResponse.Data.IsSuccessful isSuccessful = 1;</code>
+       * <pre>
+       * After transfer succeed, return a history of that transfer
+       * </pre>
+       *
+       * <code>.fintech.HistoryItem historyItem = 1;</code>
        */
-      public Builder clearIsSuccessful() {
-        
-        isSuccessful_ = 0;
-        onChanged();
+      public Builder setHistoryItem(
+          fintech.HistoryItem.Builder builderForValue) {
+        if (historyItemBuilder_ == null) {
+          historyItem_ = builderForValue.build();
+          onChanged();
+        } else {
+          historyItemBuilder_.setMessage(builderForValue.build());
+        }
+
         return this;
+      }
+      /**
+       * <pre>
+       * After transfer succeed, return a history of that transfer
+       * </pre>
+       *
+       * <code>.fintech.HistoryItem historyItem = 1;</code>
+       */
+      public Builder mergeHistoryItem(fintech.HistoryItem value) {
+        if (historyItemBuilder_ == null) {
+          if (historyItem_ != null) {
+            historyItem_ =
+              fintech.HistoryItem.newBuilder(historyItem_).mergeFrom(value).buildPartial();
+          } else {
+            historyItem_ = value;
+          }
+          onChanged();
+        } else {
+          historyItemBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * After transfer succeed, return a history of that transfer
+       * </pre>
+       *
+       * <code>.fintech.HistoryItem historyItem = 1;</code>
+       */
+      public Builder clearHistoryItem() {
+        if (historyItemBuilder_ == null) {
+          historyItem_ = null;
+          onChanged();
+        } else {
+          historyItem_ = null;
+          historyItemBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * After transfer succeed, return a history of that transfer
+       * </pre>
+       *
+       * <code>.fintech.HistoryItem historyItem = 1;</code>
+       */
+      public fintech.HistoryItem.Builder getHistoryItemBuilder() {
+        
+        onChanged();
+        return getHistoryItemFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * After transfer succeed, return a history of that transfer
+       * </pre>
+       *
+       * <code>.fintech.HistoryItem historyItem = 1;</code>
+       */
+      public fintech.HistoryItemOrBuilder getHistoryItemOrBuilder() {
+        if (historyItemBuilder_ != null) {
+          return historyItemBuilder_.getMessageOrBuilder();
+        } else {
+          return historyItem_ == null ?
+              fintech.HistoryItem.getDefaultInstance() : historyItem_;
+        }
+      }
+      /**
+       * <pre>
+       * After transfer succeed, return a history of that transfer
+       * </pre>
+       *
+       * <code>.fintech.HistoryItem historyItem = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          fintech.HistoryItem, fintech.HistoryItem.Builder, fintech.HistoryItemOrBuilder> 
+          getHistoryItemFieldBuilder() {
+        if (historyItemBuilder_ == null) {
+          historyItemBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              fintech.HistoryItem, fintech.HistoryItem.Builder, fintech.HistoryItemOrBuilder>(
+                  getHistoryItem(),
+                  getParentForChildren(),
+                  isClean());
+          historyItem_ = null;
+        }
+        return historyItemBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {

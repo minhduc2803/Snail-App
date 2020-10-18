@@ -45,7 +45,7 @@ public class NotificationDAImpl extends BaseTransactionDA implements Notificatio
                             long id = executeWithParamsAndGetId(connection.unwrap(), INSERT_NOTIFICATION_STATEMENT, params, "insertNotification");
                             notification.setId(id);
                             future.complete(notification);
-                        } catch (SQLException e) {
+                        } catch (Exception e) {
                             future.fail(e);
                             String reason = String.format("cannot insert a notification ~ cause: %s", e.getMessage());
                             log.error(reason);
@@ -67,7 +67,7 @@ public class NotificationDAImpl extends BaseTransactionDA implements Notificatio
                             executeWithParamsAndGetId(connection.unwrap(), UPDATE_SEEN_A_NOTIFICATION, params, "updateNotification");
                             Notification notification = Notification.builder().id(id).build();
                             future.complete(notification);
-                        } catch (SQLException e) {
+                        } catch (Exception e) {
                             future.fail(e);
                         }
                     });

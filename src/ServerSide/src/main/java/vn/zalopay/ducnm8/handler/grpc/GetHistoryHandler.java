@@ -49,6 +49,7 @@ public class GetHistoryHandler {
                             .setPartnerId(item.getPartnerId())
                             .setAmount(item.getAmount())
                             .setMessage(item.getMessage())
+                            .setBalance(item.getBalance())
                             .setTransferTime(item.getTransferTime())
                             .setUsername(item.getUsername())
                             .setFullName(item.getFullName())

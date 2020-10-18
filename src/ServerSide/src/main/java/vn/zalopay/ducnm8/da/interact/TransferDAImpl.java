@@ -38,8 +38,13 @@ public class TransferDAImpl extends BaseTransactionDA implements TransferDA{
                             long id = executeWithParamsAndGetId(connection.unwrap(), INSERT_TRANSFER_STATEMENT, params, "insertTransfer");
                             transfer.setId(id);
                             future.complete(transfer);
-                        } catch (SQLException e) {
-                            future.fail(e);
+
+                            String str = String.format("%d %d %d %d %s %d",transfer.getId(), transfer.getSenderId(), transfer.getReceiverId(), transfer.getAmount(), transfer.getMessage(), transfer.getTransferTime());
+                            log.info(str);
+                            log.info("insert a transfer successfully");
+                        } catch (Exception e) {
+                            log.error(e.getMessage());
+                            future.fail(e.getMessage());
                         }
                     });
             return future;

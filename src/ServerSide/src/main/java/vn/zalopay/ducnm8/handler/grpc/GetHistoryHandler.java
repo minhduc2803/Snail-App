@@ -45,7 +45,7 @@ public class GetHistoryHandler {
             HistoryItem historyItem =
                     HistoryItem
                             .newBuilder()
-                            .setTransferType(item.getTransferType() == 1 ? HistoryItem.TransferType.SEND : HistoryItem.TransferType.RECEIVE)
+                            .setTransferType(item.getTransferType() == 0 ? HistoryItem.TransferType.SEND : HistoryItem.TransferType.RECEIVE)
                             .setPartnerId(item.getPartnerId())
                             .setAmount(item.getAmount())
                             .setMessage(item.getMessage())

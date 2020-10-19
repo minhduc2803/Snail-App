@@ -4,7 +4,6 @@ import fintech.*;
 import fintech.Error;
 import io.vertx.core.Future;
 import org.mindrot.jbcrypt.BCrypt;
-import sun.net.ftp.FtpClient;
 import vn.zalopay.ducnm8.da.Transaction;
 import vn.zalopay.ducnm8.da.TransactionProvider;
 import vn.zalopay.ducnm8.da.interact.AccountDA;
@@ -15,7 +14,6 @@ import vn.zalopay.ducnm8.handler.WSHandler;
 import vn.zalopay.ducnm8.model.*;
 import lombok.extern.log4j.Log4j2;
 
-import javax.swing.*;
 import java.time.Instant;
 
 @Log4j2
@@ -72,9 +70,9 @@ public class TransferHandler {
                 .compose(next -> transaction.begin())
                 .compose(next -> isEnoughMoney())
                 .compose(next -> transaction.execute(accountDA.plusBalanceByAmount(sender, -amount, transferTime)))
-                .compose(next -> getAccount(sender, true))
+                .compose(next -> getAccount(true))
                 .compose(next -> transaction.execute(accountDA.plusBalanceByAmount(receiver, amount, transferTime)))
-                .compose(next -> getAccount(receiver, false))
+                .compose(next -> getAccount(false))
                 .compose(next -> transaction.execute(transferDA.insert(createTransferCertificate())))
                 .compose(transfer -> transaction.execute(transferHistoryDA.insert(createTransferHistory(true, transfer.getId()))))
                 .compose(transferHistory -> transaction.execute(transferHistoryDA.insert(createTransferHistory(false, transferHistory.getTransferId()))))
@@ -117,14 +115,14 @@ public class TransferHandler {
                             future.complete();
                         else {
                             future.fail("Wrong password");
-                            errorMessageForClient = String.format("Mật khẩu không đúng !!!");
+                            errorMessageForClient = "Mật khẩu không đúng !!!";
                             errorCodeForClient = Code.INCORRECT_PASSWORD;
                             log.warn("grpc checkPassword failed ~ Wrong password id: {}", sender);
                         }
                     } else {
                         String errorString = String.format("grpc checkPassword failed ~  Cannot get password in database of account id: %s. The account may not exist", sender);
                         future.fail(errorString);
-                        errorMessageForClient = String.format("Internal Server Error !!!");
+                        errorMessageForClient = "Internal Server Error !!!";
                         errorCodeForClient = Code.INTERNAL_SERVER_ERROR;
                         log.error(errorString);
                     }
@@ -141,14 +139,14 @@ public class TransferHandler {
                             future.complete();
                         else {
                             future.fail("Not enough money");
-                            errorMessageForClient = String.format("Số dư không đủ để thực hiện giao dịch !");
+                            errorMessageForClient = "Số dư không đủ để thực hiện giao dịch !";
                             errorCodeForClient = Code.NOT_ENOUGH_MONEY;
 
                             log.info("grpc transfer isEnoughMoney failed ~ Not enough money");
                         }
                     } else {
                         future.fail("Cannot get a balance");
-                        errorMessageForClient = String.format("INTERNAL SERVER ERROR !!!");
+                        errorMessageForClient = "INTERNAL SERVER ERROR !!!";
                         errorCodeForClient = Code.INTERNAL_SERVER_ERROR;
                         log.error("grpc transfer inEnoughMoney failed ~ Cannot get a balance");
                     }
@@ -156,21 +154,23 @@ public class TransferHandler {
         return future;
     }
 
-    private Future<Void> getAccount(long id, boolean isSender) {
+    private Future<Void> getAccount(boolean isSender) {
         Future<Void> future = Future.future();
-        accountDA.selectAccountById(id)
+        accountDA.selectAccountById(isSender ? sender : receiver)
                 .setHandler(rs -> {
                     if (rs.succeeded()) {
-                        if (isSender)
+                        if (isSender) {
                             senderAccountAfter = rs.result();
+                            log.info("balance = {}", senderAccountAfter.getBalance());
+                        }
                         else
                             receiverAccountAfter = rs.result();
 
                         future.complete();
 
                     } else {
-                        future.fail("grpc: Cannot getAccount");
-                        log.error("grpc: cannot getAccount");
+                        future.fail("grpc transfer: Cannot getAccount");
+                        log.error("grpc transfer: cannot getAccount");
                     }
                 });
         return future;
@@ -192,7 +192,7 @@ public class TransferHandler {
                     .transferId(transfer_id)
                     .userId(sender)
                     .partnerId(receiver)
-                    .transferType(1)
+                    .transferType(0)
                     .balance(senderAccountAfter.getBalance())
                     .build();
 
@@ -202,7 +202,7 @@ public class TransferHandler {
                     .transferId(transfer_id)
                     .userId(receiver)
                     .partnerId(sender)
-                    .transferType(2)
+                    .transferType(1)
                     .balance(receiverAccountAfter.getBalance())
                     .amount(amount)
                     .message(message)
@@ -228,15 +228,12 @@ public class TransferHandler {
 
     private TransferResponse createTransferResponse(boolean isSuccessful) {
 
-
-        TransferResponse.Data data = (TransferResponse.Data) null;
+        TransferResponse.Data data = null;
         if (!isSuccessful) {
             if (errorCodeForClient == Code.SUCCESS) {
                 errorMessageForClient = "INTERNAL SERVER ERROR";
                 errorCodeForClient = Code.INTERNAL_SERVER_ERROR;
             }
-
-
         } else {
             HistoryItem historyItem = HistoryItem.newBuilder()
                     .setPartnerId(sender)

@@ -58,7 +58,7 @@ export function asyncSetupWebSocket(user) {
 				};
 				const transferHistory = {
 					partnerId: data.data.partnerId,
-					transferType: data.data.transferType - 1,
+					transferType: data.data.transferType,
 					amount: data.data.amount,
 					message: data.data.message,
 					balance: data.data.balance,
@@ -67,7 +67,7 @@ export function asyncSetupWebSocket(user) {
 					fullName: data.data.fullName
 				};
 				dispatch({ type: 'GET_BALANCE', payload: balance });
-				dispatch({ type: 'ADD_TRANSFER_HISTORY', payload: transferHistory });
+				dispatch({ type: 'ADD_TRANSFER_HISTORY', payload: data.data });
 			}
 		};
 

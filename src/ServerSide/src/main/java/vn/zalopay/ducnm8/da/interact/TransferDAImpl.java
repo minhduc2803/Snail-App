@@ -11,9 +11,10 @@ import vn.zalopay.ducnm8.utils.AsyncHandler;
 import javax.sql.DataSource;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import lombok.extern.log4j.Log4j2;
 
+@Log4j2
 public class TransferDAImpl extends BaseTransactionDA implements TransferDA{
-    private static final Logger log = org.apache.logging.log4j.LogManager.getLogger(AccountDAImpl.class);
     private final DataSource dataSource;
     private final AsyncHandler asyncHandler;
     private static final String INSERT_TRANSFER_STATEMENT =
@@ -39,8 +40,6 @@ public class TransferDAImpl extends BaseTransactionDA implements TransferDA{
                             transfer.setId(id);
                             future.complete(transfer);
 
-                            String str = String.format("%d %d %d %d %s %d",transfer.getId(), transfer.getSenderId(), transfer.getReceiverId(), transfer.getAmount(), transfer.getMessage(), transfer.getTransferTime());
-                            log.info(str);
                             log.info("insert a transfer successfully");
                         } catch (Exception e) {
                             log.error(e.getMessage());

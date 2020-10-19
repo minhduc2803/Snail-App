@@ -11,97 +11,97 @@ import java.lang.invoke.MethodHandles;
 import java.sql.*;
 
 public class BaseTransactionDA extends BaseDA {
-  private static final Logger LOGGER =
+    private static final Logger LOGGER =
       LogManager.getLogger(MethodHandles.lookup().lookupClass().getCanonicalName());
-  protected static final Object[] EMPTY_PARAMS = {};
-  protected static final SQLException EXCEPTION_CONNECTION_NULL =
+    protected static final Object[] EMPTY_PARAMS = {};
+    protected static final SQLException EXCEPTION_CONNECTION_NULL =
       new SQLException("provide connection is NULL");
-  private static final Logger log = LogManager.getLogger(BaseTransactionDA.class);
+    private static final Logger log = LogManager.getLogger(BaseTransactionDA.class);
 
-  public BaseTransactionDA() {
-    super();
-  }
-
-  public BaseTransactionDA(int statementTimeoutSec) {
-    super(statementTimeoutSec);
-  }
-
-  protected Long executeWithParamsAndGetId(
-          Connection connection, String stm, Object[] params, String method)
-          throws Exception {
-
-    PreparedStatement preparedStatement = null;
-    try {
-      preparedStatement = connection.prepareStatement(stm, Statement.RETURN_GENERATED_KEYS);
-      preparedStatement.setQueryTimeout(statementTimeoutSec);
-
-      setParamsFromArray(preparedStatement, params);
-      int affectedRow = preparedStatement.executeUpdate();
-
-      if (1 != affectedRow) {
-
-        String reason =
-                String.format(
-                        "%s wrong effected row expected=1, actual=%d, query=%s, params=%s",
-                        method, affectedRow, stm, JsonProtoUtils.printGson(params));
-        throw new SQLException(reason);
-      } else {
-        try (ResultSet generatedKeys = preparedStatement.getGeneratedKeys()) {
-
-          return generatedKeys.next() ? generatedKeys.getLong(1) : 0L;
-
-        }
-      }
-    } finally {
-      closeResource(LOGGER, preparedStatement);
+    public BaseTransactionDA() {
+        super();
     }
-  }
+
+    public BaseTransactionDA(int statementTimeoutSec) {
+        super(statementTimeoutSec);
+    }
+
+    protected Long executeWithParamsAndGetId(
+      Connection connection, String stm, Object[] params, String method)
+      throws Exception {
+
+        PreparedStatement preparedStatement = null;
+        try {
+            preparedStatement = connection.prepareStatement(stm, Statement.RETURN_GENERATED_KEYS);
+            preparedStatement.setQueryTimeout(statementTimeoutSec);
+
+            setParamsFromArray(preparedStatement, params);
+            int affectedRow = preparedStatement.executeUpdate();
+
+            if (1 != affectedRow) {
+
+                String reason =
+                  String.format(
+                    "%s wrong effected row expected=1, actual=%d, query=%s, params=%s",
+                    method, affectedRow, stm, JsonProtoUtils.printGson(params));
+                throw new SQLException(reason);
+            } else {
+                try (ResultSet generatedKeys = preparedStatement.getGeneratedKeys()) {
+
+                    return generatedKeys.next() ? generatedKeys.getLong(1) : 0L;
+
+                }
+            }
+        } finally {
+            closeResource(LOGGER, preparedStatement);
+        }
+    }
 
 
-  protected int executeWithParams(Connection connection, String stm, Object[] params, String method)
+    protected int executeWithParams(Connection connection, String stm, Object[] params, String method)
       throws SQLException {
-    return executeWithParams(connection, stm, params, method, 1);
-  }
+        return executeWithParams(connection, stm, params, method, 1);
+    }
 
-  protected int executeWithParams(
+    protected int executeWithParams(
       Connection connection, String stm, Object[] params, String method, int expectedValue)
       throws SQLException {
-    int affectedRow = executeQueryWithParams(connection, stm, params, method);
+        int affectedRow = executeQueryWithParams(connection, stm, params, method);
 
-    if (-1 != expectedValue && affectedRow != expectedValue) {
-      throw new SQLException(
-          method
-              + " wrong effected row expected="
-              + expectedValue
-              + ", actual="
-              + affectedRow
-              + " query="
-              + stm
-              + " params="
-              + JsonProtoUtils.printGson(params));
+        if (-1 != expectedValue && affectedRow != expectedValue) {
+            throw new SQLException(
+              method
+                + " wrong effected row expected="
+                + expectedValue
+                + ", actual="
+                + affectedRow
+                + " query="
+                + stm
+                + " params="
+                + JsonProtoUtils.printGson(params));
+        }
+
+        return affectedRow;
     }
 
-    return affectedRow;
-  }
-
-  protected int executeQueryWithParams(
+    protected int executeQueryWithParams(
       Connection connection, String stm, Object[] params, String method) throws SQLException {
-    int affectedRow = 0;
-    PreparedStatement preparedStatement = null;
-    try {
-      preparedStatement = connection.prepareStatement(stm);
-      preparedStatement.setQueryTimeout(statementTimeoutSec);
+        int affectedRow = 0;
+        PreparedStatement preparedStatement = null;
+        try {
+            preparedStatement = connection.prepareStatement(stm);
+            preparedStatement.setQueryTimeout(statementTimeoutSec);
 
-      setParamsFromArray(preparedStatement, params);
-      affectedRow = preparedStatement.executeUpdate();
-    } finally {
-      closeResource(LOGGER, preparedStatement);
+            setParamsFromArray(preparedStatement, params);
+            affectedRow = preparedStatement.executeUpdate();
+        } finally {
+            closeResource(LOGGER, preparedStatement);
+        }
+
+        return affectedRow;
     }
 
-    return affectedRow;
-  }
-
-  protected <T> void queryEntity(
+    protected <T> void queryEntity(
       String method,
       Future<T> result,
       String query,
@@ -109,36 +109,36 @@ public class BaseTransactionDA extends BaseDA {
       FunctionEx<ResultSet, T> mapper,
       SupplierEx<Connection> connectionSupplier,
       boolean isTransaction) {
-    Connection connection = null;
-    PreparedStatement preparedStatement = null;
-    ResultSet resultSet = null;
-    try {
-      connection = connectionSupplier.get();
-      if (connection == null) {
-        throw EXCEPTION_CONNECTION_NULL;
-      }
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        try {
+            connection = connectionSupplier.get();
+            if (connection == null) {
+                throw EXCEPTION_CONNECTION_NULL;
+            }
 
-      preparedStatement = connection.prepareStatement(query);
-      preparedStatement.setQueryTimeout(statementTimeoutSec);
-      setParamsFromJsonArray(preparedStatement, params);
-      resultSet = preparedStatement.executeQuery();
+            preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setQueryTimeout(statementTimeoutSec);
+            setParamsFromJsonArray(preparedStatement, params);
+            resultSet = preparedStatement.executeQuery();
 
-      T data = mapper.apply(resultSet);
+            T data = mapper.apply(resultSet);
 
-      result.complete(data);
-    } catch (Exception e) {
-      LOGGER.warn("Failed execute cause={}", ExceptionUtil.getDetail(e));
-      result.fail(e);
-    } finally {
-      if (!isTransaction) {
-        closeResource(LOGGER, resultSet, preparedStatement, connection);
-      } else {
-        closeResource(LOGGER, resultSet, preparedStatement);
-      }
+            result.complete(data);
+        } catch (Exception e) {
+            LOGGER.warn("Failed execute cause={}", ExceptionUtil.getDetail(e));
+            result.fail(e);
+        } finally {
+            if (!isTransaction) {
+                closeResource(LOGGER, resultSet, preparedStatement, connection);
+            } else {
+                closeResource(LOGGER, resultSet, preparedStatement);
+            }
+        }
     }
-  }
 
-  protected <T> void queryEntity(
+    protected <T> void queryEntity(
       String method,
       Future<T> result,
       String query,
@@ -146,35 +146,70 @@ public class BaseTransactionDA extends BaseDA {
       FunctionEx<ResultSet, T> mapper,
       SupplierEx<Connection> connectionSupplier,
       boolean isTransaction) {
-    Connection connection = null;
-    PreparedStatement preparedStatement = null;
-    ResultSet resultSet = null;
-    try {
-      connection = connectionSupplier.get();
-      if (connection == null) {
-        throw EXCEPTION_CONNECTION_NULL;
-      }
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        try {
+            connection = connectionSupplier.get();
+            if (connection == null) {
+                throw EXCEPTION_CONNECTION_NULL;
+            }
 
-      preparedStatement = connection.prepareStatement(query);
-      preparedStatement.setQueryTimeout(statementTimeoutSec);
-      setParamsFromArray(preparedStatement, params);
-      resultSet = preparedStatement.executeQuery();
+            preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setQueryTimeout(statementTimeoutSec);
+            setParamsFromArray(preparedStatement, params);
+            resultSet = preparedStatement.executeQuery();
 
-      T data = mapper.apply(resultSet);
-      result.complete(data);
-    } catch (Exception e) {
-      LOGGER.error("Failed execute cause={}", ExceptionUtil.getDetail(e));
-      result.fail(e);
-    } finally {
-      if (!isTransaction) {
-        closeResource(LOGGER, resultSet, preparedStatement, connection);
-      } else {
-        closeResource(LOGGER, resultSet, preparedStatement);
-      }
+            T data = mapper.apply(resultSet);
+            result.complete(data);
+        } catch (Exception e) {
+            LOGGER.error("Failed execute cause={}", ExceptionUtil.getDetail(e));
+            result.fail(e);
+        } finally {
+            if (!isTransaction) {
+                closeResource(LOGGER, resultSet, preparedStatement, connection);
+            } else {
+                closeResource(LOGGER, resultSet, preparedStatement);
+            }
+        }
     }
-  }
 
-  protected <T> T queryEntity(
+    protected <T> void queryEntity(
+      String method,
+      Future<T> result,
+      String query,
+      Object[] params,
+      FunctionEx<ResultSet, T> mapper,
+      Connection connection,
+      boolean isTransaction) {
+
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        try {
+            if (connection == null) {
+                throw EXCEPTION_CONNECTION_NULL;
+            }
+
+            preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setQueryTimeout(statementTimeoutSec);
+            setParamsFromArray(preparedStatement, params);
+            resultSet = preparedStatement.executeQuery();
+
+            T data = mapper.apply(resultSet);
+            result.complete(data);
+        } catch (Exception e) {
+            LOGGER.error("Failed execute cause={}", ExceptionUtil.getDetail(e));
+            result.fail(e);
+        } finally {
+            if (!isTransaction) {
+                closeResource(LOGGER, resultSet, preparedStatement, connection);
+            } else {
+                closeResource(LOGGER, resultSet, preparedStatement);
+            }
+        }
+    }
+
+    protected <T> T queryEntity(
       String method,
       String query,
       JsonArray params,
@@ -182,11 +217,11 @@ public class BaseTransactionDA extends BaseDA {
       SupplierEx<Connection> connectionSupplier,
       boolean isTransaction)
       throws Exception {
-    return queryEntity(
-        method, query, params.getList().toArray(), mapper, connectionSupplier, isTransaction);
-  }
+        return queryEntity(
+          method, query, params.getList().toArray(), mapper, connectionSupplier, isTransaction);
+    }
 
-  protected <T> T queryEntity(
+    protected <T> T queryEntity(
       String method,
       String query,
       Object[] params,
@@ -194,29 +229,29 @@ public class BaseTransactionDA extends BaseDA {
       SupplierEx<Connection> connectionSupplier,
       boolean isTransaction)
       throws Exception {
-    T result;
-    Connection connection = null;
+        T result;
+        Connection connection = null;
 
-    PreparedStatement preparedStatement = null;
-    ResultSet resultSet = null;
-    try {
-      connection = connectionSupplier.get();
-      if (connection == null) {
-        throw EXCEPTION_CONNECTION_NULL;
-      }
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        try {
+            connection = connectionSupplier.get();
+            if (connection == null) {
+                throw EXCEPTION_CONNECTION_NULL;
+            }
 
-      preparedStatement = connection.prepareStatement(query);
-      preparedStatement.setQueryTimeout(statementTimeoutSec);
-      setParamsFromArray(preparedStatement, params);
-      resultSet = preparedStatement.executeQuery();
-      result = mapper.apply(resultSet);
-    } finally {
-      if (!isTransaction) {
-        closeResource(LOGGER, resultSet, preparedStatement, connection);
-      } else {
-        closeResource(LOGGER, resultSet, preparedStatement);
-      }
+            preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setQueryTimeout(statementTimeoutSec);
+            setParamsFromArray(preparedStatement, params);
+            resultSet = preparedStatement.executeQuery();
+            result = mapper.apply(resultSet);
+        } finally {
+            if (!isTransaction) {
+                closeResource(LOGGER, resultSet, preparedStatement, connection);
+            } else {
+                closeResource(LOGGER, resultSet, preparedStatement);
+            }
+        }
+        return result;
     }
-    return result;
-  }
 }

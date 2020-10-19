@@ -12,6 +12,7 @@ import vn.zalopay.ducnm8.model.UserWithoutPassword;
 import vn.zalopay.ducnm8.utils.AsyncHandler;
 
 import javax.sql.DataSource;
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -21,23 +22,23 @@ public class AccountDAImpl extends BaseTransactionDA implements AccountDA {
     private final DataSource dataSource;
     private final AsyncHandler asyncHandler;
     private static final String INSERT_USER_STATEMENT =
-            "INSERT INTO account (`user_name`,`full_name`,`password`," +
-                    "`balance`,`last_time_update_balance`,`number_notification`) " +
-                    "VALUES (?, ?, ?, ?, ?, ?)";
+      "INSERT INTO account (`user_name`,`full_name`,`password`," +
+        "`balance`,`last_time_update_balance`,`number_notification`) " +
+        "VALUES (?, ?, ?, ?, ?, ?)";
     private static final String SELECT_ACCOUNT_BY_ID =
-            "SELECT * FROM account WHERE id = ?";
+      "SELECT * FROM account WHERE id = ?";
     private static final String SELECT_USER_BY_USERNAME =
-            "SELECT id, user_name, full_name, password FROM account WHERE user_name = ?";
+      "SELECT id, user_name, full_name, password FROM account WHERE user_name = ?";
     private static final String SELECT_USER_LIST =
-            "SELECT * FROM account WHERE id != ?";
+      "SELECT * FROM account WHERE id != ?";
     private static final String SELECT_BALANCE_BY_ID =
-            "SELECT balance, last_time_update_balance, number_notification FROM account WHERE id = ?";
+      "SELECT balance, last_time_update_balance, number_notification FROM account WHERE id = ?";
     private static final String UPDATE_BALANCE_BY_AMOUNT =
-            "UPDATE account \n" +
-                    "SET balance = balance + ?, last_time_update_balance = ?\n" +
-                    "WHERE id = ?;";
+      "UPDATE account \n" +
+        "SET balance = balance + ?, last_time_update_balance = ?\n" +
+        "WHERE id = ?;";
     private static final String UPDATE_NUMBER_NOTIFICATION =
-            "UPDATE account SET number_notification = ? WHERE id = ?";
+      "UPDATE account SET number_notification = ? WHERE id = ?";
 
     public AccountDAImpl(DataSource dataSource, AsyncHandler asyncHandler) {
         super();
@@ -52,17 +53,17 @@ public class AccountDAImpl extends BaseTransactionDA implements AccountDA {
         return connection -> {
             Future<Account> future = Future.future();
             asyncHandler.run(
-                    () -> {
-                        Object[] params = {account.getUsername(), account.getFullName(), account.getPassword(),
-                                account.getBalance(), account.getLastTimeUpdateBalance(), account.getNumberNotification()};
-                        try {
-                            long id = executeWithParamsAndGetId(connection.unwrap(), INSERT_USER_STATEMENT, params, "insertUser");
-                            account.setId(id);
-                            future.complete(account);
-                        } catch (Exception e) {
-                            future.fail(e);
-                        }
-                    });
+              () -> {
+                  Object[] params = {account.getUsername(), account.getFullName(), account.getPassword(),
+                    account.getBalance(), account.getLastTimeUpdateBalance(), account.getNumberNotification()};
+                  try {
+                      long id = executeWithParamsAndGetId(connection.unwrap(), INSERT_USER_STATEMENT, params, "insertUser");
+                      account.setId(id);
+                      future.complete(account);
+                  } catch (Exception e) {
+                      future.fail(e);
+                  }
+              });
             return future;
         };
     }
@@ -72,19 +73,40 @@ public class AccountDAImpl extends BaseTransactionDA implements AccountDA {
         log.info("select account by id {}", id);
         Future<Account> future = Future.future();
         asyncHandler.run(
-                () -> {
-                    Object[] params = {id};
-                    queryEntity(
-                            "queryUser",
-                            future,
-                            SELECT_ACCOUNT_BY_ID,
-                            params,
-                            this::mapRs2EntityAccount,
-                            dataSource::getConnection,
-                            false);
-                });
+          () -> {
+              Object[] params = {id};
+              queryEntity(
+                "queryUser",
+                future,
+                SELECT_ACCOUNT_BY_ID,
+                params,
+                this::mapRs2EntityAccount,
+                dataSource::getConnection,
+                false);
+          });
 
         return future;
+    }
+
+    @Override
+    public Executable<Account> selectAccountInsideTransaction(long id) {
+        log.info("Select account by id inside transaction");
+        return connection -> {
+            Future<Account> future = Future.future();
+            asyncHandler.run(
+              () -> {
+                  Object[] params = {id};
+                  queryEntity(
+                    "queryUser",
+                    future,
+                    SELECT_ACCOUNT_BY_ID,
+                    params,
+                    this::mapRs2EntityAccount,
+                    (Connection) connection.unwrap(),
+                    true);
+              });
+            return future;
+        };
     }
 
 
@@ -93,17 +115,17 @@ public class AccountDAImpl extends BaseTransactionDA implements AccountDA {
         log.info("select a user by username: {}", Username);
         Future<User> future = Future.future();
         asyncHandler.run(
-                () -> {
-                    Object[] params = {Username};
-                    queryEntity(
-                            "queryUser",
-                            future,
-                            SELECT_USER_BY_USERNAME,
-                            params,
-                            this::mapRs2EntityUser,
-                            dataSource::getConnection,
-                            false);
-                });
+          () -> {
+              Object[] params = {Username};
+              queryEntity(
+                "queryUser",
+                future,
+                SELECT_USER_BY_USERNAME,
+                params,
+                this::mapRs2EntityUser,
+                dataSource::getConnection,
+                false);
+          });
 
         return future;
     }
@@ -113,17 +135,17 @@ public class AccountDAImpl extends BaseTransactionDA implements AccountDA {
         log.info("select balance by id: {}", id);
         Future<Balance> future = Future.future();
         asyncHandler.run(
-                () -> {
-                    Object[] params = {id};
-                    queryEntity(
-                            "queryBalance",
-                            future,
-                            SELECT_BALANCE_BY_ID,
-                            params,
-                            this::mapRs2EntityBalance,
-                            dataSource::getConnection,
-                            false);
-                });
+          () -> {
+              Object[] params = {id};
+              queryEntity(
+                "queryBalance",
+                future,
+                SELECT_BALANCE_BY_ID,
+                params,
+                this::mapRs2EntityBalance,
+                dataSource::getConnection,
+                false);
+          });
 
         return future;
     }
@@ -134,16 +156,16 @@ public class AccountDAImpl extends BaseTransactionDA implements AccountDA {
         return connection -> {
             Future<Account> future = Future.future();
             asyncHandler.run(
-                    () -> {
-                        Object[] params = {amount, lastTimeUpdate, id};
-                        try {
-                            executeWithParamsAndGetId(connection.unwrap(), UPDATE_BALANCE_BY_AMOUNT, params, "updateBalance");
-                            Account account = Account.builder().id(id).build();
-                            future.complete(account);
-                        } catch (Exception e) {
-                            future.fail(e);
-                        }
-                    });
+              () -> {
+                  Object[] params = {amount, lastTimeUpdate, id};
+                  try {
+                      executeWithParamsAndGetId(connection.unwrap(), UPDATE_BALANCE_BY_AMOUNT, params, "updateBalance");
+                      Account account = Account.builder().id(id).build();
+                      future.complete(account);
+                  } catch (Exception e) {
+                      future.fail(e);
+                  }
+              });
             return future;
         };
     }
@@ -154,16 +176,16 @@ public class AccountDAImpl extends BaseTransactionDA implements AccountDA {
         return connection -> {
             Future<Account> future = Future.future();
             asyncHandler.run(
-                    () -> {
-                        Object[] params = {number, id};
-                        try {
-                            executeWithParamsAndGetId(connection.unwrap(), UPDATE_NUMBER_NOTIFICATION, params, "updateNumberNotification");
-                            Account account = Account.builder().id(id).build();
-                            future.complete(account);
-                        } catch (Exception e) {
-                            future.fail(e);
-                        }
-                    });
+              () -> {
+                  Object[] params = {number, id};
+                  try {
+                      executeWithParamsAndGetId(connection.unwrap(), UPDATE_NUMBER_NOTIFICATION, params, "updateNumberNotification");
+                      Account account = Account.builder().id(id).build();
+                      future.complete(account);
+                  } catch (Exception e) {
+                      future.fail(e);
+                  }
+              });
             return future;
         };
     }
@@ -173,17 +195,17 @@ public class AccountDAImpl extends BaseTransactionDA implements AccountDA {
         log.info("select list user except one user by id: {}", id);
         Future<ArrayList<UserWithoutPassword>> future = Future.future();
         asyncHandler.run(
-                () -> {
-                    Object[] params = {id};
-                    queryEntity(
-                            "queryUserList",
-                            future,
-                            SELECT_USER_LIST,
-                            params,
-                            this::mapRs2EntityUserList,
-                            dataSource::getConnection,
-                            false);
-                });
+          () -> {
+              Object[] params = {id};
+              queryEntity(
+                "queryUserList",
+                future,
+                SELECT_USER_LIST,
+                params,
+                this::mapRs2EntityUserList,
+                dataSource::getConnection,
+                false);
+          });
 
         return future;
     }

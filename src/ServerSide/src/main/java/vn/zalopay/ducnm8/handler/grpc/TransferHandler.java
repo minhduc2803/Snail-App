@@ -41,12 +41,12 @@ public class TransferHandler {
     Code errorCodeForClient = Code.SUCCESS;
 
     public TransferHandler(
-            TransferDA transferDA,
-            AccountDA accountDA,
-            TransferHistoryDA transferHistoryDA,
-            NotificationDA notificationDA,
-            TransactionProvider transactionProvider,
-            WSHandler wsHandler) {
+      TransferDA transferDA,
+      AccountDA accountDA,
+      TransferHistoryDA transferHistoryDA,
+      NotificationDA notificationDA,
+      TransactionProvider transactionProvider,
+      WSHandler wsHandler) {
         this.transferDA = transferDA;
         this.accountDA = accountDA;
         this.transferHistoryDA = transferHistoryDA;
@@ -67,149 +67,148 @@ public class TransferHandler {
         Transaction transaction = transactionProvider.newTransaction();
 
         checkPassword()
-                .compose(next -> transaction.begin())
-                .compose(next -> isEnoughMoney())
-                .compose(next -> transaction.execute(accountDA.plusBalanceByAmount(sender, -amount, transferTime)))
-                .compose(next -> getAccount(true))
-                .compose(next -> transaction.execute(accountDA.plusBalanceByAmount(receiver, amount, transferTime)))
-                .compose(next -> getAccount(false))
-                .compose(next -> transaction.execute(transferDA.insert(createTransferCertificate())))
-                .compose(transfer -> transaction.execute(transferHistoryDA.insert(createTransferHistory(true, transfer.getId()))))
-                .compose(transferHistory -> transaction.execute(transferHistoryDA.insert(createTransferHistory(false, transferHistory.getTransferId()))))
-                .compose(next -> transaction.execute(notificationDA.insert(createNotification())))
-                .setHandler(rs -> {
+          .compose(next -> transaction.begin())
+          .compose(next -> isEnoughMoney())
+          .compose(next -> transaction.execute(accountDA.plusBalanceByAmount(sender, -amount, transferTime)))
+          .compose(next -> getAccount(transaction, true))
+          .compose(next -> transaction.execute(accountDA.plusBalanceByAmount(receiver, amount, transferTime)))
+          .compose(next -> getAccount(transaction, false))
+          .compose(next -> transaction.execute(transferDA.insert(createTransferCertificate())))
+          .compose(transfer -> transaction.execute(transferHistoryDA.insert(createTransferHistory(true, transfer.getId()))))
+          .compose(transferHistory -> transaction.execute(transferHistoryDA.insert(createTransferHistory(false, transferHistory.getTransferId()))))
+          .compose(next -> transaction.execute(notificationDA.insert(createNotification())))
+          .setHandler(rs -> {
 
-                    TransferResponse response = null;
+              TransferResponse response = null;
 
-                    if (rs.succeeded()) {
-                        transaction
-                                .commit()
-                                .compose(next -> transaction.close());
-                        response = createTransferResponse(true);
+              if (rs.succeeded()) {
+                  transaction
+                    .commit()
+                    .compose(next -> transaction.close());
+                  response = createTransferResponse(true);
 
-                        wsHandler.sendTransferHistory(historyForReceiverClient, receiver);
+                  wsHandler.sendTransferHistory(historyForReceiverClient, receiver);
 
-                        log.info("GRPC: transfer succeed");
-                    } else {
-                        errorString = rs.cause().getMessage();
-                        transaction
-                                .rollback()
-                                .compose(next -> transaction.close());
+                  log.info("GRPC: transfer succeed");
+              } else {
+                  errorString = rs.cause().getMessage();
+                  transaction
+                    .rollback()
+                    .compose(next -> transaction.close());
 
-                        response = createTransferResponse(false);
+                  response = createTransferResponse(false);
 
-                        log.error("GRPC: transfer failed ~ cause {}", errorString);
-                    }
+                  log.error("GRPC: transfer failed ~ cause {}", errorString);
+              }
 
-                    responseFuture.complete(response);
-                });
+              responseFuture.complete(response);
+          });
     }
 
     private Future<Void> checkPassword() {
         Future<Void> future = Future.future();
 
         accountDA.selectAccountById(sender)
-                .setHandler(rs -> {
-                    if (rs.succeeded()) {
-                        if (BCrypt.checkpw(password, rs.result().getPassword()))
-                            future.complete();
-                        else {
-                            future.fail("Wrong password");
-                            errorMessageForClient = "Mật khẩu không đúng !!!";
-                            errorCodeForClient = Code.INCORRECT_PASSWORD;
-                            log.warn("grpc checkPassword failed ~ Wrong password id: {}", sender);
-                        }
-                    } else {
-                        String errorString = String.format("grpc checkPassword failed ~  Cannot get password in database of account id: %s. The account may not exist", sender);
-                        future.fail(errorString);
-                        errorMessageForClient = "Internal Server Error !!!";
-                        errorCodeForClient = Code.INTERNAL_SERVER_ERROR;
-                        log.error(errorString);
-                    }
-                });
+          .setHandler(rs -> {
+              if (rs.succeeded()) {
+                  if (BCrypt.checkpw(password, rs.result().getPassword()))
+                      future.complete();
+                  else {
+                      future.fail("Wrong password");
+                      errorMessageForClient = "Mật khẩu không đúng !!!";
+                      errorCodeForClient = Code.INCORRECT_PASSWORD;
+                      log.warn("grpc checkPassword failed ~ Wrong password id: {}", sender);
+                  }
+              } else {
+                  String errorString = String.format("grpc checkPassword failed ~  Cannot get password in database of account id: %s. The account may not exist", sender);
+                  future.fail(errorString);
+                  errorMessageForClient = "Internal Server Error !!!";
+                  errorCodeForClient = Code.INTERNAL_SERVER_ERROR;
+                  log.error(errorString);
+              }
+          });
         return future;
     }
 
     private Future<Void> isEnoughMoney() {
         Future<Void> future = Future.future();
         accountDA.selectBalanceById(sender)
-                .setHandler(balance -> {
-                    if (balance.succeeded()) {
-                        if (balance.result().getBalance() >= amount)
-                            future.complete();
-                        else {
-                            future.fail("Not enough money");
-                            errorMessageForClient = "Số dư không đủ để thực hiện giao dịch !";
-                            errorCodeForClient = Code.NOT_ENOUGH_MONEY;
+          .setHandler(balance -> {
+              if (balance.succeeded()) {
+                  if (balance.result().getBalance() >= amount)
+                      future.complete();
+                  else {
+                      future.fail("Not enough money");
+                      errorMessageForClient = "Số dư không đủ để thực hiện giao dịch !";
+                      errorCodeForClient = Code.NOT_ENOUGH_MONEY;
 
-                            log.info("grpc transfer isEnoughMoney failed ~ Not enough money");
-                        }
-                    } else {
-                        future.fail("Cannot get a balance");
-                        errorMessageForClient = "INTERNAL SERVER ERROR !!!";
-                        errorCodeForClient = Code.INTERNAL_SERVER_ERROR;
-                        log.error("grpc transfer inEnoughMoney failed ~ Cannot get a balance");
-                    }
-                });
+                      log.info("grpc transfer isEnoughMoney failed ~ Not enough money");
+                  }
+              } else {
+                  future.fail("Cannot get a balance");
+                  errorMessageForClient = "INTERNAL SERVER ERROR !!!";
+                  errorCodeForClient = Code.INTERNAL_SERVER_ERROR;
+                  log.error("grpc transfer inEnoughMoney failed ~ Cannot get a balance");
+              }
+          });
         return future;
     }
 
-    private Future<Void> getAccount(boolean isSender) {
+    private Future<Void> getAccount(Transaction transaction, boolean isSender) {
         Future<Void> future = Future.future();
-        accountDA.selectAccountById(isSender ? sender : receiver)
-                .setHandler(rs -> {
-                    if (rs.succeeded()) {
-                        if (isSender) {
-                            senderAccountAfter = rs.result();
-                            log.info("balance = {}", senderAccountAfter.getBalance());
-                        }
-                        else
-                            receiverAccountAfter = rs.result();
+        transaction.execute(accountDA.selectAccountInsideTransaction(isSender ? sender : receiver))
+          .setHandler(rs -> {
+              if (rs.succeeded()) {
+                  if (isSender) {
+                      senderAccountAfter = rs.result();
+                      log.info("balance = {}", senderAccountAfter.getBalance());
+                  } else
+                      receiverAccountAfter = rs.result();
 
-                        future.complete();
+                  future.complete();
 
-                    } else {
-                        future.fail("grpc transfer: Cannot getAccount");
-                        log.error("grpc transfer: cannot getAccount");
-                    }
-                });
+              } else {
+                  future.fail("grpc transfer: Cannot getAccount inside transaction");
+                  log.error("grpc transfer: cannot getAccount inside transaction");
+              }
+          });
         return future;
     }
 
     private Transfer createTransferCertificate() {
         return Transfer.builder()
-                .senderId(sender)
-                .receiverId(receiver)
-                .amount(amount)
-                .message(message)
-                .transferTime(transferTime)
-                .build();
+          .senderId(sender)
+          .receiverId(receiver)
+          .amount(amount)
+          .message(message)
+          .transferTime(transferTime)
+          .build();
     }
 
     private TransferHistory createTransferHistory(boolean isSender, long transfer_id) {
         if (isSender) {
             historyForSenderDatabase = TransferHistory.builder()
-                    .transferId(transfer_id)
-                    .userId(sender)
-                    .partnerId(receiver)
-                    .transferType(0)
-                    .balance(senderAccountAfter.getBalance())
-                    .build();
+              .transferId(transfer_id)
+              .userId(sender)
+              .partnerId(receiver)
+              .transferType(0)
+              .balance(senderAccountAfter.getBalance())
+              .build();
 
             return historyForSenderDatabase;
         } else {
             historyForReceiverClient = TransferHistory.builder()
-                    .transferId(transfer_id)
-                    .userId(receiver)
-                    .partnerId(sender)
-                    .transferType(1)
-                    .balance(receiverAccountAfter.getBalance())
-                    .amount(amount)
-                    .message(message)
-                    .transferTime(transferTime)
-                    .username(senderAccountAfter.getUsername())
-                    .fullName(senderAccountAfter.getFullName())
-                    .build();
+              .transferId(transfer_id)
+              .userId(receiver)
+              .partnerId(sender)
+              .transferType(1)
+              .balance(receiverAccountAfter.getBalance())
+              .amount(amount)
+              .message(message)
+              .transferTime(transferTime)
+              .username(senderAccountAfter.getUsername())
+              .fullName(senderAccountAfter.getFullName())
+              .build();
             return historyForReceiverClient;
         }
 
@@ -217,13 +216,13 @@ public class TransferHandler {
 
     private Notification createNotification() {
         return Notification.builder()
-                .notificationType(1)
-                .userId(receiver)
-                .partnerId(sender)
-                .amount(amount)
-                .message(message)
-                .seen(false)
-                .build();
+          .notificationType(1)
+          .userId(receiver)
+          .partnerId(sender)
+          .amount(amount)
+          .message(message)
+          .seen(false)
+          .build();
     }
 
     private TransferResponse createTransferResponse(boolean isSuccessful) {
@@ -236,36 +235,36 @@ public class TransferHandler {
             }
         } else {
             HistoryItem historyItem = HistoryItem.newBuilder()
-                    .setPartnerId(sender)
-                    .setTransferType(HistoryItem.TransferType.SEND)
-                    .setAmount(amount)
-                    .setMessage(message)
-                    .setBalance(senderAccountAfter.getBalance())
-                    .setTransferTime(transferTime)
-                    .setUsername(receiverAccountAfter.getUsername())
-                    .setFullName(receiverAccountAfter.getFullName())
-                    .build();
+              .setPartnerId(sender)
+              .setTransferType(HistoryItem.TransferType.SEND)
+              .setAmount(amount)
+              .setMessage(message)
+              .setBalance(senderAccountAfter.getBalance())
+              .setTransferTime(transferTime)
+              .setUsername(receiverAccountAfter.getUsername())
+              .setFullName(receiverAccountAfter.getFullName())
+              .build();
             data = TransferResponse.Data.newBuilder()
-                    .setHistoryItem(historyItem)
-                    .build();
+              .setHistoryItem(historyItem)
+              .build();
         }
 
         Error error = Error
-                .newBuilder()
-                .setCode(errorCodeForClient)
-                .setMessage(errorMessageForClient)
-                .build();
+          .newBuilder()
+          .setCode(errorCodeForClient)
+          .setMessage(errorMessageForClient)
+          .build();
 
         if (isSuccessful)
             return TransferResponse
-                    .newBuilder()
-                    .setData(data)
-                    .setError(error)
-                    .build();
+              .newBuilder()
+              .setData(data)
+              .setError(error)
+              .build();
         else
             return TransferResponse
-                    .newBuilder()
-                    .setError(error)
-                    .build();
+              .newBuilder()
+              .setError(error)
+              .build();
     }
 }

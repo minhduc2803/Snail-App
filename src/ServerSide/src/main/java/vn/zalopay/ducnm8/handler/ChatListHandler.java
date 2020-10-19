@@ -14,7 +14,7 @@ import io.vertx.core.http.HttpHeaders;
 import lombok.extern.log4j.Log4j2;
 
 @Log4j2
-public class ChatListHandler extends BaseHandler{
+public class ChatListHandler extends BaseHandler {
 
     private static final String METRIC = "ChatListHandler";
     private final ChatListCache chatListCache;
@@ -22,7 +22,7 @@ public class ChatListHandler extends BaseHandler{
     private final TransactionProvider transactionProvider;
 
     public ChatListHandler(
-            ChatListDA chatListDA, ChatListCache chatListCache, TransactionProvider transactionProvider) {
+      ChatListDA chatListDA, ChatListCache chatListCache, TransactionProvider transactionProvider) {
         this.chatListCache = chatListCache;
         this.chatListDA = chatListDA;
         this.transactionProvider = transactionProvider;
@@ -31,8 +31,6 @@ public class ChatListHandler extends BaseHandler{
     @Override
     public Future<BaseResponse> handle(BaseRequest baseRequest) {
 
-        Tracker.TrackerBuilder tracker =
-                Tracker.builder().metricName(METRIC).startTime(System.currentTimeMillis());
 
         Future<BaseResponse> future = Future.future();
         BaseResponse.BaseResponseBuilder response = BaseResponse.builder();
@@ -41,9 +39,9 @@ public class ChatListHandler extends BaseHandler{
 
             String token = baseRequest.getHeaders().get(HttpHeaders.AUTHORIZATION).substring("Bearer ".length()).trim();
 
-            if(token == null){
+            if (token == null) {
                 response.message("JWT token is missing")
-                        .status(HttpResponseStatus.UNAUTHORIZED.code());
+                  .status(HttpResponseStatus.UNAUTHORIZED.code());
                 future.complete(response.build());
                 log.warn("get chat list failed ~ JWT token is missing");
                 return future;
@@ -55,31 +53,31 @@ public class ChatListHandler extends BaseHandler{
                 log.info("get chat list between {} and {}", id, request.getPartnerId());
 
                 chatListDA.listChatByMember(id, request.getPartnerId())
-                        .setHandler(chatListRes -> {
-                            if (chatListRes.succeeded()) {
-                                response.data(chatListRes.result())
-                                        .status(HttpResponseStatus.OK.code());
+                  .setHandler(chatListRes -> {
+                      if (chatListRes.succeeded()) {
+                          response.data(chatListRes.result())
+                            .status(HttpResponseStatus.OK.code());
 
-                            } else {
-                                response.message("Cannot get a chat list")
-                                        .status(HttpResponseStatus.BAD_REQUEST.code());
-                                log.warn("cannot get a chat list between {} and  {} ~ fail to do a SQL select", id, request.getPartnerId());
-                            }
-                            future.complete(response.build());
-                        });
-            }catch(Exception e){
+                      } else {
+                          response.message("Cannot get a chat list")
+                            .status(HttpResponseStatus.BAD_REQUEST.code());
+                          log.warn("cannot get a chat list between {} and  {} ~ fail to do a SQL select", id, request.getPartnerId());
+                      }
+                      future.complete(response.build());
+                  });
+            } catch (Exception e) {
                 response.message("JWT token is invalid")
-                        .status(HttpResponseStatus.UNAUTHORIZED.code());
+                  .status(HttpResponseStatus.UNAUTHORIZED.code());
                 future.complete(response.build());
 
                 log.info("get a chat list failed ~ JWT token is invalid");
             }
 
         } catch (Exception e) {
-            log.error("internal server error, cause: {}",e.getMessage());
+            log.error("internal server error, cause: {}", e.getMessage());
 
             response.message("Server has an error")
-                    .status(HttpResponseStatus.INTERNAL_SERVER_ERROR.code());
+              .status(HttpResponseStatus.INTERNAL_SERVER_ERROR.code());
             future.complete(response.build());
         }
         return future;

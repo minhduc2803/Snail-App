@@ -6,45 +6,45 @@ import java.sql.SQLException;
 
 public class ExceptionUtil {
 
-  private ExceptionUtil() {}
+    private ExceptionUtil() {}
 
-  public static String getDetail(Throwable ex) {
-    if (ex == null) {
-      return "";
+    public static String getDetail(Throwable ex) {
+        if (ex == null) {
+            return "";
+        }
+
+        String details = "";
+        if (ex instanceof SQLException) {
+            SQLException sqlException = (SQLException) ex;
+            details =
+              "Code="
+                + sqlException.getErrorCode()
+                + ", \nsqlState="
+                + sqlException.getSQLState()
+                + "\n, ";
+        }
+
+        details += getMessage(ex);
+
+        return details;
     }
 
-    String details = "";
-    if (ex instanceof SQLException) {
-      SQLException sqlException = (SQLException) ex;
-      details =
-          "Code="
-              + sqlException.getErrorCode()
-              + ", \nsqlState="
-              + sqlException.getSQLState()
-              + "\n, ";
+    private static String getMessage(Throwable ex) {
+        return " message: " + ex.getMessage() + "\n, stackTrace: " + ExceptionUtils.getStackTrace(ex);
     }
 
-    details += getMessage(ex);
-
-    return details;
-  }
-
-  private static String getMessage(Throwable ex) {
-    return " message: " + ex.getMessage() + "\n, stackTrace: " + ExceptionUtils.getStackTrace(ex);
-  }
-
-  public static String getSafeMessage(Throwable ex) {
-    if (ex == null || ex.getMessage() == null) {
-      return "";
+    public static String getSafeMessage(Throwable ex) {
+        if (ex == null || ex.getMessage() == null) {
+            return "";
+        }
+        return ex.getMessage();
     }
-    return ex.getMessage();
-  }
 
-  public static boolean isEqual(Object current, Class expect) {
-    return current != null && isEqual(current.getClass(), expect);
-  }
+    public static boolean isEqual(Object current, Class expect) {
+        return current != null && isEqual(current.getClass(), expect);
+    }
 
-  public static boolean isEqual(Class current, Class expect) {
-    return expect.isAssignableFrom(current);
-  }
+    public static boolean isEqual(Class current, Class expect) {
+        return expect.isAssignableFrom(current);
+    }
 }

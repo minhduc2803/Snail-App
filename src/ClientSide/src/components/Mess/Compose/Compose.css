@@ -5,6 +5,7 @@
   align-items: center;
   background: white;
   border-top: 1px solid #fafafc;
+ 
 }
 
 @supports (backdrop-filter: blur(20px)) {

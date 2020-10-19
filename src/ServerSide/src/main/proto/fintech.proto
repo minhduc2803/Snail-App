@@ -88,7 +88,7 @@ message TransferRequest {
 message TransferResponse {
   message Data {
     // After transfer succeed, return a history of that transfer
-      HistoryItem historyItem = 1;
+    HistoryItem historyItem = 1;
   }
 
   Error error = 1;

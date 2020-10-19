@@ -1,9 +1,8 @@
 .message-list-container {
   padding: 10px;
   
-  
+
 }
-.compose{
-  width:100%;
-  position: sticky;
+.message-list {
+  margin-bottom: 55px;
 }

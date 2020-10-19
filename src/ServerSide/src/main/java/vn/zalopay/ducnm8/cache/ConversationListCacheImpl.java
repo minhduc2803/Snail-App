@@ -9,9 +9,10 @@ import vn.zalopay.ducnm8.utils.AsyncHandler;
 import lombok.Builder;
 
 @Builder
-public class ConversationListCacheImpl implements ConversationListCache{
+public class ConversationListCacheImpl implements ConversationListCache {
     private final RedisCache redisCache;
     private final AsyncHandler asyncHandler;
+
     @Override
     public Future<List<ConversationMember>> set(List<ConversationMember> conversationMembers) {
         return null;

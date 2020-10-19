@@ -6,7 +6,9 @@ import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.Message;
 import com.google.protobuf.MessageOrBuilder;
 import com.google.protobuf.util.JsonFormat;
+
 import java.lang.reflect.Modifier;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -16,25 +18,25 @@ import org.apache.logging.log4j.Logger;
 public class JsonProtoUtils {
 
     private static final Logger logger =
-        LogManager.getLogger(JsonProtoUtils.class.getCanonicalName());
+      LogManager.getLogger(JsonProtoUtils.class.getCanonicalName());
 
     private static final JsonFormat.Parser PARSER = JsonFormat.parser().ignoringUnknownFields();
     private static final JsonFormat.Printer PRINTER =
-        JsonFormat.printer()
-            .includingDefaultValueFields()
-            .omittingInsignificantWhitespace()
-            .preservingProtoFieldNames();
+      JsonFormat.printer()
+        .includingDefaultValueFields()
+        .omittingInsignificantWhitespace()
+        .preservingProtoFieldNames();
     private static final Gson GSON =
-        new GsonBuilder()
-            .excludeFieldsWithModifiers(Modifier.STATIC)
-            .disableHtmlEscaping()
-            .create();
+      new GsonBuilder()
+        .excludeFieldsWithModifiers(Modifier.STATIC)
+        .disableHtmlEscaping()
+        .create();
 
     private JsonProtoUtils() {
     }
 
     public static <B extends Message.Builder, P extends Message> P parse(String json, B protoBuilder)
-        throws InvalidProtocolBufferException {
+      throws InvalidProtocolBufferException {
         PARSER.merge(json, protoBuilder);
         return (P) protoBuilder.build();
     }

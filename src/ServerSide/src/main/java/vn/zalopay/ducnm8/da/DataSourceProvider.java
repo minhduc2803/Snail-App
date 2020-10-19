@@ -6,7 +6,7 @@ import vn.zalopay.ducnm8.config.MySQLConfig;
 import javax.sql.DataSource;
 
 public interface DataSourceProvider {
-  JDBCClient getVertxDataSource(MySQLConfig config);
+    JDBCClient getVertxDataSource(MySQLConfig config);
 
-  DataSource getDataSource(MySQLConfig config);
+    DataSource getDataSource(MySQLConfig config);
 }

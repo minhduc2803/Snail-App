@@ -22,38 +22,38 @@ public class GetBalanceHandler {
     public void getBalance(BalanceRequest request, Future<BalanceResponse> balanceResponseFuture) {
 
         long id = JWTUtils.CLIENT_ID_CONTEXT_KEY.get();
-        log.info("GRPC get balance request from: {}",id);
+        log.info("GRPC get balance request from: {}", id);
         accountDA.selectBalanceById(id)
-            .setHandler(rs -> {
-                BalanceResponse response = null;
+          .setHandler(rs -> {
+              BalanceResponse response = null;
 
-                if(rs.succeeded()){
-                    Balance balance = rs.result();
-                    BalanceResponse.Data data = BalanceResponse.Data
-                            .newBuilder()
-                            .setBalance(balance.getBalance())
-                            .setLastTimeUpdateBalance(balance.getLastTimeUpdate())
-                            .build();
-                    response = BalanceResponse
-                            .newBuilder()
-                            .setData(data)
-                            .build();
-                    log.info("GRPC: getBalance succeed");
-                }else{
-                    Code code = Code.INTERNAL_SERVER_ERROR;
-                    Error error = Error
-                            .newBuilder()
-                            .setCode(code)
-                            .setMessage("grpc: get balance failed")
-                            .build();
-                    response = BalanceResponse
-                            .newBuilder()
-                            .setError(error)
-                            .build();
-                    log.error("GRPC: getBalance failed");
-                }
-                balanceResponseFuture.complete(response);
-            });
+              if (rs.succeeded()) {
+                  Balance balance = rs.result();
+                  BalanceResponse.Data data = BalanceResponse.Data
+                    .newBuilder()
+                    .setBalance(balance.getBalance())
+                    .setLastTimeUpdateBalance(balance.getLastTimeUpdate())
+                    .build();
+                  response = BalanceResponse
+                    .newBuilder()
+                    .setData(data)
+                    .build();
+                  log.info("GRPC: getBalance succeed");
+              } else {
+                  Code code = Code.INTERNAL_SERVER_ERROR;
+                  Error error = Error
+                    .newBuilder()
+                    .setCode(code)
+                    .setMessage("grpc: get balance failed")
+                    .build();
+                  response = BalanceResponse
+                    .newBuilder()
+                    .setError(error)
+                    .build();
+                  log.error("GRPC: getBalance failed");
+              }
+              balanceResponseFuture.complete(response);
+          });
 
     }
 }

@@ -9,15 +9,17 @@ import vn.zalopay.ducnm8.utils.JWTUtils;
 
 import static io.grpc.Metadata.ASCII_STRING_MARSHALLER;
 import static io.vertx.ext.sync.Sync.awaitResult;
+
 import lombok.extern.log4j.Log4j2;
 
 @Log4j2
 @Builder
 public class InterceptorHandler implements ServerInterceptor {
-    public InterceptorHandler(){}
+    public InterceptorHandler() {}
+
     @Override
     public <ReqT, RespT> ServerCall.Listener<ReqT> interceptCall(ServerCall<ReqT, RespT> serverCall,
-        Metadata metadata, ServerCallHandler<ReqT, RespT> serverCallHandler) {
+                                                                 Metadata metadata, ServerCallHandler<ReqT, RespT> serverCallHandler) {
 
         String value = metadata.get(JWTUtils.AUTHORIZATION_METADATA_KEY);
 
@@ -37,14 +39,14 @@ public class InterceptorHandler implements ServerInterceptor {
 
                 Long id = JWTUtils.authenticate(token);
                 Context ctx = Context.current()
-                        .withValue(JWTUtils.CLIENT_ID_CONTEXT_KEY, id);
+                  .withValue(JWTUtils.CLIENT_ID_CONTEXT_KEY, id);
 
                 log.info("grpc authenticate successfully");
                 return Contexts.interceptCall(ctx, serverCall, metadata, serverCallHandler);
             } catch (JwtException e) {
                 status = Status.UNAUTHENTICATED.withDescription(e.getMessage()).withCause(e);
 
-                log.warn("grpc authenticate failed ~ cause: {}",e.getMessage());
+                log.warn("grpc authenticate failed ~ cause: {}", e.getMessage());
             }
 
         }

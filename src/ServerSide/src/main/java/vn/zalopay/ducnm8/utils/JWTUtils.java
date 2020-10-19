@@ -26,21 +26,21 @@ public class JWTUtils {
 
     public static Long authenticate(String token) throws JwtException {
         String id = Jwts.parser()
-                .setSigningKey(JWT_SIGNING_KEY)
-                .parseClaimsJws(token)
-                .getBody()
-                .getSubject();
+          .setSigningKey(JWT_SIGNING_KEY)
+          .parseClaimsJws(token)
+          .getBody()
+          .getSubject();
         return Long.valueOf(id);
     }
 
-    public static String buildJWTToken(long account_id){
-        log.info("Create a new JWT token for id {}",account_id);
+    public static String buildJWTToken(long account_id) {
+        log.info("Create a new JWT token for id {}", account_id);
         return Jwts.builder()
-                .setSubject(String.valueOf(account_id))
-                .setExpiration(Date.from(Instant.ofEpochSecond(4622470422L)))
-                .signWith(
-                    SignatureAlgorithm.HS256,
-                    TextCodec.BASE64.decode(JWT_SIGNING_KEY))
-                .compact();
+          .setSubject(String.valueOf(account_id))
+          .setExpiration(Date.from(Instant.ofEpochSecond(4622470422L)))
+          .signWith(
+            SignatureAlgorithm.HS256,
+            TextCodec.BASE64.decode(JWT_SIGNING_KEY))
+          .compact();
     }
 }

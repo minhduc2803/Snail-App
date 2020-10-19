@@ -23,10 +23,10 @@ public class JWTAuthHandler {
 
         try {
             String token = request
-                .headers()
-                .get(HttpHeaders.AUTHORIZATION)
-                .substring("Bearer ".length())
-                .trim();
+              .headers()
+              .get(HttpHeaders.AUTHORIZATION)
+              .substring("Bearer ".length())
+              .trim();
 
             Long id = JWTUtils.authenticate(token);
 

@@ -18,19 +18,20 @@ public class GRPCServer {
     private final int port;
 
     @Builder
-    public GRPCServer(Vertx vertx, FintechServiceImpl fintechService, InterceptorHandler interceptorHandler, int port){
+    public GRPCServer(Vertx vertx, FintechServiceImpl fintechService, InterceptorHandler interceptorHandler, int port) {
         this.vertx = vertx;
         this.fintechService = fintechService;
         this.interceptorHandler = interceptorHandler;
         this.port = port;
     }
+
     public void start() {
         log.info("Starting GRPC Server on port {}", port);
         server = VertxServerBuilder
-                .forAddress(vertx, "0.0.0.0",port)
-                .addService(fintechService)
-                .intercept(interceptorHandler)
-                .build();
+          .forAddress(vertx, "0.0.0.0", port)
+          .addService(fintechService)
+          .intercept(interceptorHandler)
+          .build();
 
         try {
             // Start the server
@@ -38,12 +39,12 @@ public class GRPCServer {
 
             log.info("GRPC Server start successfully !, port:{}", port);
 
-        }catch(Exception e){
+        } catch (Exception e) {
             log.error("GRPC Server start fail. Reason: {}", e.getMessage());
         }
     }
 
-    public void close(){
+    public void close() {
         server.shutdown();
     }
 }

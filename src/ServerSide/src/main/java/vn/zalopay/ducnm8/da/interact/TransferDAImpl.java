@@ -11,16 +11,18 @@ import vn.zalopay.ducnm8.utils.AsyncHandler;
 import javax.sql.DataSource;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
 import lombok.extern.log4j.Log4j2;
 
 @Log4j2
-public class TransferDAImpl extends BaseTransactionDA implements TransferDA{
+public class TransferDAImpl extends BaseTransactionDA implements TransferDA {
     private final DataSource dataSource;
     private final AsyncHandler asyncHandler;
     private static final String INSERT_TRANSFER_STATEMENT =
-            "INSERT INTO transfer (`sender_id`,`receiver_id`,`amount`,`message`,`transfer_time`) VALUES (?, ?, ?, ?, ?);";
+      "INSERT INTO transfer (`sender_id`,`receiver_id`,`amount`,`message`,`transfer_time`) VALUES (?, ?, ?, ?, ?);";
     private static final String SELECT_TRANSFER_BY_ID =
-            "SELECT * FROM transfer WHERE id = ?";
+      "SELECT * FROM transfer WHERE id = ?";
+
     public TransferDAImpl(DataSource dataSource, AsyncHandler asyncHandler) {
         super();
         this.dataSource = dataSource;
@@ -33,19 +35,19 @@ public class TransferDAImpl extends BaseTransactionDA implements TransferDA{
         return connection -> {
             Future<Transfer> future = Future.future();
             asyncHandler.run(
-                    () -> {
-                        Object[] params = {transfer.getSenderId(), transfer.getReceiverId(), transfer.getAmount(), transfer.getMessage(), transfer.getTransferTime()};
-                        try {
-                            long id = executeWithParamsAndGetId(connection.unwrap(), INSERT_TRANSFER_STATEMENT, params, "insertTransfer");
-                            transfer.setId(id);
-                            future.complete(transfer);
+              () -> {
+                  Object[] params = {transfer.getSenderId(), transfer.getReceiverId(), transfer.getAmount(), transfer.getMessage(), transfer.getTransferTime()};
+                  try {
+                      long id = executeWithParamsAndGetId(connection.unwrap(), INSERT_TRANSFER_STATEMENT, params, "insertTransfer");
+                      transfer.setId(id);
+                      future.complete(transfer);
 
-                            log.info("insert a transfer successfully");
-                        } catch (Exception e) {
-                            log.error(e.getMessage());
-                            future.fail(e.getMessage());
-                        }
-                    });
+                      log.info("insert a transfer successfully");
+                  } catch (Exception e) {
+                      log.error(e.getMessage());
+                      future.fail(e.getMessage());
+                  }
+              });
             return future;
         };
     }
@@ -54,17 +56,17 @@ public class TransferDAImpl extends BaseTransactionDA implements TransferDA{
     public Future<Transfer> selectTransferById(long id) {
         Future<Transfer> future = Future.future();
         asyncHandler.run(
-                () -> {
-                    Object[] params = {id};
-                    queryEntity(
-                            "queryTransfer",
-                            future,
-                            SELECT_TRANSFER_BY_ID,
-                            params,
-                            this::mapRs2EntityTransfer,
-                            dataSource::getConnection,
-                            false);
-                });
+          () -> {
+              Object[] params = {id};
+              queryEntity(
+                "queryTransfer",
+                future,
+                SELECT_TRANSFER_BY_ID,
+                params,
+                this::mapRs2EntityTransfer,
+                dataSource::getConnection,
+                false);
+          });
 
         return future;
     }

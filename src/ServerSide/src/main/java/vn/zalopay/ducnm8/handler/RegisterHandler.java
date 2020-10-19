@@ -25,7 +25,7 @@ public class RegisterHandler extends BaseHandler {
     private final TransactionProvider transactionProvider;
 
     public RegisterHandler(
-            AccountDA accountDA, UserCache userCache, TransactionProvider transactionProvider) {
+      AccountDA accountDA, UserCache userCache, TransactionProvider transactionProvider) {
         this.userCache = userCache;
         this.accountDA = accountDA;
         this.transactionProvider = transactionProvider;
@@ -33,9 +33,6 @@ public class RegisterHandler extends BaseHandler {
 
     @Override
     public Future<BaseResponse> handle(BaseRequest baseRequest) {
-
-        Tracker.TrackerBuilder tracker =
-                Tracker.builder().metricName(METRIC).startTime(System.currentTimeMillis());
 
         Future<BaseResponse> future = Future.future();
         RegisterRequest registerRequest = JsonProtoUtils.parseGson(baseRequest.getPostData(), RegisterRequest.class);
@@ -46,7 +43,7 @@ public class RegisterHandler extends BaseHandler {
 
         if (registerRequest.getUsername() == null || registerRequest.getPassword() == null || registerRequest.getFullName() == null) {
             response.message("Lack of information")
-                    .status(HttpResponseStatus.BAD_REQUEST.code());
+              .status(HttpResponseStatus.BAD_REQUEST.code());
 
             future.complete(response.build());
 
@@ -55,36 +52,35 @@ public class RegisterHandler extends BaseHandler {
         }
 
         Account account = Account.builder()
-                .username(registerRequest.getUsername())
-                .fullName(registerRequest.getFullName())
-                .password(BCrypt.hashpw(registerRequest.getPassword(), BCrypt.gensalt(4)))
-                .balance(10000000)
-                .lastTimeUpdateBalance(Instant.now().getEpochSecond())
-                .numberNotification(0)
-                .build();
+          .username(registerRequest.getUsername())
+          .fullName(registerRequest.getFullName())
+          .password(BCrypt.hashpw(registerRequest.getPassword(), BCrypt.gensalt(4)))
+          .balance(10000000)
+          .lastTimeUpdateBalance(Instant.now().getEpochSecond())
+          .numberNotification(0)
+          .build();
 
         Transaction transaction = transactionProvider.newTransaction();
 
         transaction
-            .begin()
-            .compose(next -> transaction.execute(accountDA.insert(account)))
-            .setHandler(
-                rs -> {
+          .begin()
+          .compose(next -> transaction.execute(accountDA.insert(account)))
+          .setHandler(
+            rs -> {
 
-                    if (rs.succeeded()) {
-                        response.status(HttpResponseStatus.OK.code());
-                        log.info("Register successful");
-                    } else {
-                        response.message("Username is not available")
-                                .status(HttpResponseStatus.BAD_REQUEST.code());
-                        log.warn("Register fail ~ Cannot insert a user");
-                    }
-                    future.complete(response.build());
-                    transaction.commit();
-                    transaction.close();
+                if (rs.succeeded()) {
+                    response.status(HttpResponseStatus.OK.code());
+                    log.info("Register successful");
+                } else {
+                    response.message("Username is not available")
+                      .status(HttpResponseStatus.BAD_REQUEST.code());
+                    log.warn("Register fail ~ Cannot insert a user");
+                }
+                future.complete(response.build());
+                transaction.commit();
+                transaction.close();
 
-                    tracker.step("handle").code("SUCCESS").build().record();
-                });
+            });
 
         return future;
     }

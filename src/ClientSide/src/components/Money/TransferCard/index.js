@@ -22,6 +22,7 @@ const tailLayout = {
 const Demo = () => {
 	const users = useSelector((state) => state.listUsers);
 	const transferLoading = useSelector((state) => state.transfer.transferLoding);
+	const user = useSelector(state => state.listUsers[state.chosenIndex]);
 	const dispatch = useDispatch();
 	const listUsers = users.map((u) => (
 		<Option key={u.userId} value={`${u.userId} @${u.username} ${u.fullName}`}>
@@ -58,7 +59,7 @@ const Demo = () => {
 			>
 				<Select
 					showSearch
-					
+					defaultValue={`@${user.username}`}
 					placeholder="Select a person"
 					
 				>
@@ -80,7 +81,8 @@ const Demo = () => {
 					rules={[
 						{
 							required: true,
-							message: 'Bạn chưa nhập số tiền'
+							message: 'Bạn cần nhập vào số tiền là một số nguyên',
+							type: 'integer'
 						}
 					]}
 				>

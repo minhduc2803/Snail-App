@@ -50,41 +50,41 @@ public class WSHandler {
         log.info("Send chat from userId: {}", senderId);
         JsonObject json = new JsonObject(buffer.toString());
 
-        log.info("a json chat {}",json);
+        log.info("a json chat {}", json);
 
         try {
             Chat chat = Chat.builder()
-                    .chatType(json.getInteger("chatType"))
-                    .senderId(senderId)
-                    .receiverId(json.getInteger("receiverId"))
-                    .content(json.getString("content"))
-                    .sentTime(Instant.now().getEpochSecond())
-                    .build();
+              .chatType(json.getInteger("chatType"))
+              .senderId(senderId)
+              .receiverId(json.getInteger("receiverId"))
+              .content(json.getString("content"))
+              .sentTime(Instant.now().getEpochSecond())
+              .build();
 
-        log.info(chat.getSentTime());
-        Future<Chat> future = Future.future();
+            log.info(chat.getSentTime());
+            Future<Chat> future = Future.future();
 
-        Transaction transaction = transactionProvider.newTransaction();
+            Transaction transaction = transactionProvider.newTransaction();
 
-        transaction
-                .begin()
-                .compose(next -> transaction.execute(chatListDA.insert(chat)))
-                .setHandler(result -> {
-                    if (result.succeeded()) {
-                        log.info("insert a new chat");
-                        sendChat(chat, senderId);
-                        sendChat(chat, chat.getReceiverId());
-                        transaction
-                                .commit()
-                                .compose(next -> transaction.close())
-                                .setHandler(e -> future.complete(result.result()));
-                    } else {
-                        log.error("Error: cannot insert a new chat");
-                        future.complete(null);
-                    }
+            transaction
+              .begin()
+              .compose(next -> transaction.execute(chatListDA.insert(chat)))
+              .setHandler(result -> {
+                  if (result.succeeded()) {
+                      log.info("insert a new chat");
+                      sendChat(chat, senderId);
+                      sendChat(chat, chat.getReceiverId());
+                      transaction
+                        .commit()
+                        .compose(next -> transaction.close())
+                        .setHandler(e -> future.complete(result.result()));
+                  } else {
+                      log.error("Error: cannot insert a new chat");
+                      future.complete(null);
+                  }
 
-                });
-        }catch(Exception e){
+              });
+        } catch (Exception e) {
             log.error(e);
         }
     }
@@ -93,30 +93,30 @@ public class WSHandler {
         log.info("Send chat to accountId: {}", receiverId);
 
         WebSocketResponse webSocketResponse = WebSocketResponse.builder()
-                .responseType(1)
-                .data(chat)
-                .build();
+          .responseType(1)
+          .data(chat)
+          .build();
 
         Set<ServerWebSocket> receiveWS = clients.get(receiverId);
         if (receiveWS == null)
             return;
         receiveWS.forEach(
-                conn -> conn.writeTextMessage(JsonProtoUtils.printGson(webSocketResponse)));
+          conn -> conn.writeTextMessage(JsonProtoUtils.printGson(webSocketResponse)));
     }
 
     public void sendTransferHistory(TransferHistory transferHistory, long receiverId) {
         log.info("Send Transfer history to accountId: {}", receiverId);
 
         WebSocketResponse webSocketResponse = WebSocketResponse.builder()
-                .responseType(2)
-                .data(transferHistory)
-                .build();
+          .responseType(2)
+          .data(transferHistory)
+          .build();
 
         Set<ServerWebSocket> receiveWS = clients.get(receiverId);
         if (receiveWS == null)
             return;
         receiveWS.forEach(
-                conn -> conn.writeTextMessage(JsonProtoUtils.printGson(webSocketResponse)));
+          conn -> conn.writeTextMessage(JsonProtoUtils.printGson(webSocketResponse)));
     }
 
 }

@@ -11,40 +11,37 @@ import vn.zalopay.ducnm8.utils.Tracker;
 import io.vertx.core.Future;
 
 public class ExampleHandler extends BaseHandler {
-  private static final String METRIC = "ExampleHandler";
-  private final UserCache userCache;
-  private final AccountDA accountDA;
-  private final TransactionProvider transactionProvider;
+    private static final String METRIC = "ExampleHandler";
+    private final UserCache userCache;
+    private final AccountDA accountDA;
+    private final TransactionProvider transactionProvider;
 
-  public ExampleHandler(
-          AccountDA accountDA, UserCache userCache, TransactionProvider transactionProvider) {
-    this.userCache = userCache;
-    this.accountDA = accountDA;
-    this.transactionProvider = transactionProvider;
-  }
+    public ExampleHandler(
+      AccountDA accountDA, UserCache userCache, TransactionProvider transactionProvider) {
+        this.userCache = userCache;
+        this.accountDA = accountDA;
+        this.transactionProvider = transactionProvider;
+    }
 
-  @Override
-  public Future<BaseResponse> handle(BaseRequest baseRequest) {
+    @Override
+    public Future<BaseResponse> handle(BaseRequest baseRequest) {
 
-    Tracker.TrackerBuilder tracker =
-        Tracker.builder().metricName(METRIC).startTime(System.currentTimeMillis());
-    Future<Account> future = Future.future();
-    Account account = Account.builder().username("username").fullName("Minh Duc").password("123").build();
-    Transaction transaction = transactionProvider.newTransaction();
-    transaction
-        .begin()
-        .compose(next -> transaction.execute(accountDA.insert(account)))
-        .setHandler(
+        Future<Account> future = Future.future();
+        Account account = Account.builder().username("username").fullName("Minh Duc").password("123").build();
+        Transaction transaction = transactionProvider.newTransaction();
+        transaction
+          .begin()
+          .compose(next -> transaction.execute(accountDA.insert(account)))
+          .setHandler(
             rs -> {
-              if (rs.succeeded()) {
-                future.complete(rs.result());
-              } else {
-                future.complete(null);
-              }
-              transaction.close();
-              tracker.step("handle").code("SUCCESS").build().record();
+                if (rs.succeeded()) {
+                    future.complete(rs.result());
+                } else {
+                    future.complete(null);
+                }
+                transaction.close();
             });
 
-    return future.compose(u -> Future.succeededFuture(BaseResponse.builder().data(u).build()));
-  }
+        return future.compose(u -> Future.succeededFuture(BaseResponse.builder().data(u).build()));
+    }
 }

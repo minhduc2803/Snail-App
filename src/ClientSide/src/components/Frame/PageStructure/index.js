@@ -16,14 +16,10 @@ const Demo = () => {
 	const user = useSelector(state => state.user);
 	const dispatch = useDispatch();
 
-	
-
 	let child = <Messenger />;
   if(pageState === "WALLET"){
     child = <Wallet />;
   }
-
-  
 
 	return (
 		<Layout>
@@ -32,10 +28,10 @@ const Demo = () => {
 					overflow: 'auto',
 					height: '100vh',
 					position: 'fixed',
-					right: 0
+					left: 0
 				}}
 			>
-				<Menu theme="dark" mode="inline" defaultSelectedKeys={[ '2' ]} style={{ marginTop: 200, fontSize: 16 }}>
+				<Menu theme="dark" mode="inline" defaultSelectedKeys={[ '2' ]} style={{ marginTop: 200, fontSize: 16, textAlign: 'center' }}>
 					<Menu.Item onClick={() => dispatch({type:"GOTO_WALLET"})} key="1" icon={<DollarCircleOutlined />}>
 						Ví của tôi
 					</Menu.Item>
@@ -47,7 +43,7 @@ const Demo = () => {
 					</Menu.Item>
 				</Menu>
 
-				<div className="logo" style={{ position: 'fixed', bottom: 0, textAlign: 'center', width: 200 }}>
+				<div className="logo" style={{ position: 'fixed', bottom: 100, textAlign: 'center', width: 200 }}>
 					<Menu theme="dark" mode="inline" selectable={false} style={{ textAlign: 'center' }}>
 						<Menu.Item icon={<Avatar name={user.fullName} size="35" round={true} />} />
 						<Menu.Item style={{ color: '#feffe6', fontSize: 17 }}>{user.fullName}</Menu.Item>
@@ -63,8 +59,8 @@ const Demo = () => {
 					</Menu>
 				</div>
 			</Sider>
-			<Layout className="site-layout" style={{  marginRight: 200 }}>
-				<Content style={{margin:'0px'}} >
+			<Layout className="site-layout" style={{  marginLeft: 200, margintop:100 }}>
+				<Content style={{}} >
 					
 					{child}
 				</Content>

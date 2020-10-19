@@ -30,34 +30,34 @@ public class WebSocketServer {
     public void start() {
         log.info("Starting WebSocket Server ...");
         httpServer =
-                vertx
-                        .createHttpServer()
-                        .websocketHandler(ws -> {
-                            try {
-                                long id = JWTUtils.authenticate(getToken(ws));
-                                ws.accept();
+          vertx
+            .createHttpServer()
+            .websocketHandler(ws -> {
+                try {
+                    long id = JWTUtils.authenticate(getToken(ws));
+                    ws.accept();
 
-                                log.info("web socket connected from UserID: {}", id);
-                                wsHandler.addClient(ws, id);
+                    log.info("web socket connected from UserID: {}", id);
+                    wsHandler.addClient(ws, id);
 
-                                ws.closeHandler(event -> {
-                                    wsHandler.removeClient(ws, id);
-                                });
-                                ws.handler(buffer -> wsHandler.handle(buffer, id));
+                    ws.closeHandler(event -> {
+                        wsHandler.removeClient(ws, id);
+                    });
+                    ws.handler(buffer -> wsHandler.handle(buffer, id));
 
-                            } catch (Exception e) {
-                                ws.reject();
-                                log.info("web socket reject, cause: {}", e.getMessage());
-                            }
-                        })
-                        .listen(port,
-                                ar -> {
-                                    if (ar.succeeded()) {
-                                        log.info("WebSocket Server start successfully !, port:{}", port);
-                                    } else {
-                                        log.error("WebSocket Server start fail. Reason: {}", ar.cause().getMessage());
-                                    }
-                                });
+                } catch (Exception e) {
+                    ws.reject();
+                    log.info("web socket reject, cause: {}", e.getMessage());
+                }
+            })
+            .listen(port,
+              ar -> {
+                  if (ar.succeeded()) {
+                      log.info("WebSocket Server start successfully !, port:{}", port);
+                  } else {
+                      log.error("WebSocket Server start fail. Reason: {}", ar.cause().getMessage());
+                  }
+              });
     }
 
     public void close() {

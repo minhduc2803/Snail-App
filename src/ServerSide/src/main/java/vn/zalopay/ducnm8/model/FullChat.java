@@ -21,7 +21,7 @@ public class FullChat {
     @DBTable(columnName = "chat_type")
     int chatType;
 
-    @DBTable(columnName =  "content")
+    @DBTable(columnName = "content")
     String content;
 
     @DBTable(columnName = "sent_time")
@@ -30,7 +30,7 @@ public class FullChat {
     @DBTable(columnName = "number_unseen_chat")
     int numberUnseenChat;
 
-    @DBTable(columnName =  "conversation_title")
+    @DBTable(columnName = "conversation_title")
     String conversationTitle;
 
 }

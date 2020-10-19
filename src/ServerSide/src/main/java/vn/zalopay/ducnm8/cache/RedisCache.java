@@ -10,20 +10,20 @@ import java.io.IOException;
 
 @Getter
 public class RedisCache {
-  private RedisCache() {}
+    private RedisCache() {}
 
-  private RedissonClient redissonClient;
+    private RedissonClient redissonClient;
 
-  public static RedisCache newInstance() throws IOException {
-    Config config = Config.fromYAML(new File(System.getProperty("redis.conf")));
-    RedisCache redisCache = new RedisCache();
-    redisCache.redissonClient = Redisson.create(config);
-    return redisCache;
-  }
-
-  public void dispose() {
-    if (redissonClient != null) {
-      redissonClient.shutdown();
+    public static RedisCache newInstance() throws IOException {
+        Config config = Config.fromYAML(new File(System.getProperty("redis.conf")));
+        RedisCache redisCache = new RedisCache();
+        redisCache.redissonClient = Redisson.create(config);
+        return redisCache;
     }
-  }
+
+    public void dispose() {
+        if (redissonClient != null) {
+            redissonClient.shutdown();
+        }
+    }
 }

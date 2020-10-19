@@ -21,7 +21,7 @@ public class Chat {
     @DBTable(columnName = "chat_type")
     int chatType;
 
-    @DBTable(columnName =  "content")
+    @DBTable(columnName = "content")
     String content;
 
     @DBTable(columnName = "sent_time")

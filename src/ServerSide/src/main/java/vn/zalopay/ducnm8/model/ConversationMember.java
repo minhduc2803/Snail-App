@@ -21,7 +21,7 @@ public class ConversationMember {
     @DBTable(columnName = "number_unseen_chat")
     int numberUnseenChat;
 
-    @DBTable(columnName =  "conversation_title")
+    @DBTable(columnName = "conversation_title")
     String conversationTitle;
 
 }

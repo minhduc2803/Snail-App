@@ -14,7 +14,7 @@ import vn.zalopay.ducnm8.model.Transfer;
 
 
 @Log4j2
-public class FintechServiceImpl extends FintechServiceGrpc.FintechServiceVertxImplBase{
+public class FintechServiceImpl extends FintechServiceGrpc.FintechServiceVertxImplBase {
 
     private final GetBalanceHandler getBalanceHandler;
     private final GetHistoryHandler getHistoryHandler;
@@ -22,10 +22,10 @@ public class FintechServiceImpl extends FintechServiceGrpc.FintechServiceVertxIm
     private final GetNotificationHandler getNotificationHandler;
 
     @Builder
-    public FintechServiceImpl( GetBalanceHandler getBalanceHandler,
-             GetHistoryHandler getHistoryHandler,
-             TransferHandler transferHandler,
-             GetNotificationHandler getNotificationHandler){
+    public FintechServiceImpl(GetBalanceHandler getBalanceHandler,
+                              GetHistoryHandler getHistoryHandler,
+                              TransferHandler transferHandler,
+                              GetNotificationHandler getNotificationHandler) {
         this.getBalanceHandler = getBalanceHandler;
         this.getHistoryHandler = getHistoryHandler;
         this.transferHandler = transferHandler;
@@ -34,7 +34,7 @@ public class FintechServiceImpl extends FintechServiceGrpc.FintechServiceVertxIm
 
     @Override
     public void getBalance(BalanceRequest request, Future<BalanceResponse> response) {
-        getBalanceHandler.getBalance(request,response);
+        getBalanceHandler.getBalance(request, response);
     }
 
     @Override
@@ -44,11 +44,11 @@ public class FintechServiceImpl extends FintechServiceGrpc.FintechServiceVertxIm
 
     @Override
     public void transfer(TransferRequest request, Future<TransferResponse> response) {
-        transferHandler.transfer(request,response);
+        transferHandler.transfer(request, response);
     }
 
     @Override
     public void getNotification(NotificationRequest request, Future<NotificationResponse> response) {
-        getNotificationHandler.getNotification(request,response);
+        getNotificationHandler.getNotification(request, response);
     }
 }

@@ -30,22 +30,22 @@ public class RestfulAPI {
 
         Future<Void> future = Future.future();
         httpServer =
-            vertx
-                .createHttpServer()
-                .requestHandler(router)
-                .exceptionHandler(
-                        e -> log.error("Handle request exception {}", ExceptionUtil.getDetail(e)))
-                .listen(
-                    port,
-                    ar -> {
-                        if (ar.succeeded()) {
-                            log.info("API Server start successfully !, port:{}", port);
-                            future.complete();
-                        } else {
-                            log.error("API Server start fail. Reason: {}", ar.cause().getMessage());
-                            future.fail(ar.cause());
-                        }
-                    });
+          vertx
+            .createHttpServer()
+            .requestHandler(router)
+            .exceptionHandler(
+              e -> log.error("Handle request exception {}", ExceptionUtil.getDetail(e)))
+            .listen(
+              port,
+              ar -> {
+                  if (ar.succeeded()) {
+                      log.info("API Server start successfully !, port:{}", port);
+                      future.complete();
+                  } else {
+                      log.error("API Server start fail. Reason: {}", ar.cause().getMessage());
+                      future.fail(ar.cause());
+                  }
+              });
     }
 
     public void close() {

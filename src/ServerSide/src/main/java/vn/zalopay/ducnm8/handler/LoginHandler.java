@@ -29,6 +29,9 @@ public class LoginHandler extends BaseHandler {
     @Override
     public Future<BaseResponse> handle(BaseRequest baseRequest) {
 
+        Tracker.TrackerBuilder tracker =
+                Tracker.builder().metricName(METRIC).startTime(System.currentTimeMillis());
+
         Future<BaseResponse> future = Future.future();
 
         BaseResponse.BaseResponseBuilder response = BaseResponse.builder();
@@ -79,6 +82,7 @@ public class LoginHandler extends BaseHandler {
                         log.warn("Login failed from: {} ~ SQL query did not succeed", request.getUsername());
                     }
 
+                    tracker.step("handle").code("SUCCESS").build().record();
                     future.complete(response.build());
 
                 });

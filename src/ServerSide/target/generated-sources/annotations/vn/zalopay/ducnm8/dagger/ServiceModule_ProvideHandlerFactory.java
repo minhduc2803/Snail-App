@@ -5,8 +5,6 @@ import dagger.internal.Preconditions;
 import javax.annotation.Generated;
 import javax.inject.Provider;
 import vn.zalopay.ducnm8.handler.ChatListHandler;
-import vn.zalopay.ducnm8.handler.EchoHandler;
-import vn.zalopay.ducnm8.handler.ExampleHandler;
 import vn.zalopay.ducnm8.handler.HandlerFactory;
 import vn.zalopay.ducnm8.handler.JWTAuthHandler;
 import vn.zalopay.ducnm8.handler.LoginHandler;

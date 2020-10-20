@@ -15,6 +15,7 @@ import io.vertx.core.impl.ConcurrentHashSet;
 import io.vertx.core.json.JsonObject;
 import lombok.Builder;
 import lombok.extern.log4j.Log4j2;
+import vn.zalopay.ducnm8.utils.Tracker;
 
 import java.util.Map;
 import java.time.Instant;
@@ -23,6 +24,7 @@ import java.util.Set;
 @Log4j2
 @Builder
 public class WSHandler {
+    private final String METRIC = "WSHandler";
     private final Map<Long, Set<ServerWebSocket>> clients;
     private final ChatListDA chatListDA;
     private final ChatListCache chatListCache;
@@ -47,6 +49,10 @@ public class WSHandler {
     }
 
     public void handle(Buffer buffer, long senderId) {
+
+        Tracker.TrackerBuilder tracker =
+                Tracker.builder().metricName(METRIC).startTime(System.currentTimeMillis());
+
         log.info("Send chat from userId: {}", senderId);
         JsonObject json = new JsonObject(buffer.toString());
 
@@ -78,6 +84,8 @@ public class WSHandler {
                         .commit()
                         .compose(next -> transaction.close())
                         .setHandler(e -> future.complete(result.result()));
+
+                      tracker.step("handle").code("SUCCESS").build().record();
                   } else {
                       log.error("Error: cannot insert a new chat");
                       future.complete(null);

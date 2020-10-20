@@ -31,6 +31,8 @@ public class ChatListHandler extends BaseHandler {
     @Override
     public Future<BaseResponse> handle(BaseRequest baseRequest) {
 
+        Tracker.TrackerBuilder tracker =
+                Tracker.builder().metricName(METRIC).startTime(System.currentTimeMillis());
 
         Future<BaseResponse> future = Future.future();
         BaseResponse.BaseResponseBuilder response = BaseResponse.builder();
@@ -63,6 +65,8 @@ public class ChatListHandler extends BaseHandler {
                             .status(HttpResponseStatus.BAD_REQUEST.code());
                           log.warn("cannot get a chat list between {} and  {} ~ fail to do a SQL select", id, request.getPartnerId());
                       }
+
+                      tracker.step("handle").code("SUCCESS").build().record();
                       future.complete(response.build());
                   });
             } catch (Exception e) {

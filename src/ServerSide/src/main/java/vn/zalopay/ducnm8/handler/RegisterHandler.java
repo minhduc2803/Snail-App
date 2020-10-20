@@ -34,6 +34,9 @@ public class RegisterHandler extends BaseHandler {
     @Override
     public Future<BaseResponse> handle(BaseRequest baseRequest) {
 
+        Tracker.TrackerBuilder tracker =
+                Tracker.builder().metricName(METRIC).startTime(System.currentTimeMillis());
+
         Future<BaseResponse> future = Future.future();
         RegisterRequest registerRequest = JsonProtoUtils.parseGson(baseRequest.getPostData(), RegisterRequest.class);
 
@@ -76,6 +79,8 @@ public class RegisterHandler extends BaseHandler {
                       .status(HttpResponseStatus.BAD_REQUEST.code());
                     log.warn("Register fail ~ Cannot insert a user");
                 }
+
+                tracker.step("handle").code("SUCCESS").build().record();
                 future.complete(response.build());
                 transaction.commit();
                 transaction.close();

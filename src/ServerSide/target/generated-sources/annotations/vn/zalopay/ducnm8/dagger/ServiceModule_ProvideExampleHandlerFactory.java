@@ -7,7 +7,6 @@ import javax.inject.Provider;
 import vn.zalopay.ducnm8.cache.UserCache;
 import vn.zalopay.ducnm8.da.TransactionProvider;
 import vn.zalopay.ducnm8.da.interact.AccountDA;
-import vn.zalopay.ducnm8.handler.ExampleHandler;
 
 @Generated(
     value = "dagger.internal.codegen.ComponentProcessor",

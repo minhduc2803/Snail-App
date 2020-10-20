@@ -32,13 +32,10 @@ public class ServiceModule {
 
     @Provides
     @Singleton
-    HandlerFactory provideHandler(EchoHandler echoHandler, ExampleHandler exampleHandler,
-                                  LoginHandler loginHandler, RegisterHandler registerHandler,
+    HandlerFactory provideHandler(LoginHandler loginHandler, RegisterHandler registerHandler,
                                   ChatListHandler chatListHandler,
                                   JWTAuthHandler jwtAuthHandler, UserListHandler userListHandler) {
         return HandlerFactory.builder()
-          .echoHandler(echoHandler)
-          .exampleHandler(exampleHandler)
           .loginHandler(loginHandler)
           .registerHandler(registerHandler)
           .chatListHandler(chatListHandler)
@@ -73,12 +70,6 @@ public class ServiceModule {
     @Singleton
     ChatListCache provideChatListCache(RedisCache redisCache, AsyncHandler asyncHandler) {
         return ChatListCacheImpl.builder().redisCache(redisCache).asyncHandler(asyncHandler).build();
-    }
-
-    @Provides
-    @Singleton
-    EchoHandler provideEchoHandler() {
-        return new EchoHandler();
     }
 
     @Provides
@@ -128,13 +119,6 @@ public class ServiceModule {
     TransferHistoryDA provideTransferHistoryDA(DataSourceProvider dataSourceProvider, AsyncHandler asyncHandler) {
         return new TransferHistoryDAImpl(
           dataSourceProvider.getDataSource(serviceConfig.getMySQLConfig()), asyncHandler);
-    }
-
-    @Provides
-    @Singleton
-    ExampleHandler provideExampleHandler(
-      AccountDA accountDA, TransactionProvider transactionProvider, UserCache userCache) {
-        return new ExampleHandler(accountDA, userCache, transactionProvider);
     }
 
     @Provides

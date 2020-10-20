@@ -17,8 +17,6 @@ import vn.zalopay.ducnm8.da.interact.TransferDA;
 import vn.zalopay.ducnm8.da.interact.TransferHistoryDA;
 import vn.zalopay.ducnm8.grpc.FintechServiceImpl;
 import vn.zalopay.ducnm8.handler.ChatListHandler;
-import vn.zalopay.ducnm8.handler.EchoHandler;
-import vn.zalopay.ducnm8.handler.ExampleHandler;
 import vn.zalopay.ducnm8.handler.HandlerFactory;
 import vn.zalopay.ducnm8.handler.JWTAuthHandler;
 import vn.zalopay.ducnm8.handler.LoginHandler;

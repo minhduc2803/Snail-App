@@ -9,8 +9,6 @@ import lombok.Builder;
 
 @Builder
 public class HandlerFactory {
-    private final BaseHandler echoHandler;
-    private final BaseHandler exampleHandler;
     private final BaseHandler loginHandler;
     private final BaseHandler registerHandler;
     private final BaseHandler chatListHandler;
@@ -23,8 +21,6 @@ public class HandlerFactory {
 
         ImmutableMap<String, BaseHandler> postHandler =
           ImmutableMap.<String, BaseHandler>builder()
-            .put(APIPath.ECHO, echoHandler)
-            .put(APIPath.EXAMPLE, exampleHandler)
             .put(APIPath.LOGIN, loginHandler)
             .put(APIPath.REGISTER, registerHandler)
             .put(APIPath.LIST_CHAT, chatListHandler)

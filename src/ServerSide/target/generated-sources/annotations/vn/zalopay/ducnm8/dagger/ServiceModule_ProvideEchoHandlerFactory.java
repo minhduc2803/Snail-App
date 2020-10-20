@@ -3,7 +3,6 @@ package vn.zalopay.ducnm8.dagger;
 import dagger.internal.Factory;
 import dagger.internal.Preconditions;
 import javax.annotation.Generated;
-import vn.zalopay.ducnm8.handler.EchoHandler;
 
 @Generated(
     value = "dagger.internal.codegen.ComponentProcessor",

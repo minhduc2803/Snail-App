@@ -13,6 +13,7 @@ import vn.zalopay.ducnm8.da.interact.TransferHistoryDA;
 import vn.zalopay.ducnm8.handler.WSHandler;
 import vn.zalopay.ducnm8.model.*;
 import lombok.extern.log4j.Log4j2;
+import vn.zalopay.ducnm8.utils.JWTUtils;
 import vn.zalopay.ducnm8.utils.Tracker;
 
 import java.time.Instant;
@@ -63,7 +64,7 @@ public class TransferHandler {
         Tracker.TrackerBuilder tracker =
           Tracker.builder().metricName(METRIC).startTime(System.currentTimeMillis());
 
-        sender = transferRequest.getSenderId();
+        sender = JWTUtils.CLIENT_ID_CONTEXT_KEY.get();
         receiver = transferRequest.getReceiverId();
         amount = transferRequest.getAmount();
         message = transferRequest.getMessage();

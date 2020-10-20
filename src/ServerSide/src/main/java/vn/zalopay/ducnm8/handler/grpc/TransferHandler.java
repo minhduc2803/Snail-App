@@ -13,11 +13,14 @@ import vn.zalopay.ducnm8.da.interact.TransferHistoryDA;
 import vn.zalopay.ducnm8.handler.WSHandler;
 import vn.zalopay.ducnm8.model.*;
 import lombok.extern.log4j.Log4j2;
+import vn.zalopay.ducnm8.utils.Tracker;
 
 import java.time.Instant;
 
 @Log4j2
 public class TransferHandler {
+
+    private final String METRIC = "TransferHandler";
     private final TransferDA transferDA;
     private final AccountDA accountDA;
     private final TransferHistoryDA transferHistoryDA;
@@ -56,6 +59,9 @@ public class TransferHandler {
     }
 
     public void transfer(TransferRequest transferRequest, Future<TransferResponse> responseFuture) {
+
+        Tracker.TrackerBuilder tracker =
+          Tracker.builder().metricName(METRIC).startTime(System.currentTimeMillis());
 
         sender = transferRequest.getSenderId();
         receiver = transferRequest.getReceiverId();
@@ -101,6 +107,7 @@ public class TransferHandler {
                   log.error("GRPC: transfer failed ~ cause {}", errorString);
               }
 
+              tracker.step("transfer").code("SUCCESS").build().record();
               responseFuture.complete(response);
           });
     }

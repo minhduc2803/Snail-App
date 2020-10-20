@@ -63,7 +63,6 @@ public class EntityMapper {
             }
 
             Class<?> type = field.getType();
-            log.info(type);
             Object value;
             if (isPrimitive(type)) {
                 value = rst.getObject(column.columnName(), boxPrimitiveClass(type));

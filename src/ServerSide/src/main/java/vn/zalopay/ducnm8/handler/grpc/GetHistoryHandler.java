@@ -7,11 +7,14 @@ import vn.zalopay.ducnm8.da.interact.TransferHistoryDA;
 import vn.zalopay.ducnm8.model.TransferHistory;
 import vn.zalopay.ducnm8.utils.JWTUtils;
 import lombok.extern.log4j.Log4j2;
+import vn.zalopay.ducnm8.utils.Tracker;
 
 import java.util.ArrayList;
 
 @Log4j2
 public class GetHistoryHandler {
+
+    private static final String METRIC = "GetHistoryHandler";
 
     private final TransferHistoryDA transferHistoryDA;
 
@@ -20,6 +23,10 @@ public class GetHistoryHandler {
     }
 
     public void getHistory(HistoryRequest historyRequest, Future<HistoryResponse> responseFuture) {
+
+        Tracker.TrackerBuilder tracker =
+          Tracker.builder().metricName(METRIC).startTime(System.currentTimeMillis());
+
         long id = JWTUtils.CLIENT_ID_CONTEXT_KEY.get();
         log.info("GRPC get transfer history request from: {}", id);
         transferHistoryDA.selectTransferHistoryByAccountId(id)
@@ -34,6 +41,8 @@ public class GetHistoryHandler {
                   response = createFailedHistory();
                   log.error("GRPC: get transfer history failed");
               }
+
+              tracker.step("getHistory").code("SUCCESS").build().record();
               responseFuture.complete(response);
           });
     }

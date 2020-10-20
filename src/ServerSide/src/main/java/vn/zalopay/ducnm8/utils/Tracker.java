@@ -20,12 +20,12 @@ public class Tracker {
         METER_REGISTRY.config().commonTags("application", applicationName);
     }
 
-    private final long startTime = 0;
-    private final String metricName;
+    private long startTime = 0;
+    private String metricName;
     @Builder.Default
-    private final String step = "";
+    private String step = "";
     @Builder.Default
-    private final String code = "";
+    private String code = "";
 
     public static MeterRegistry getMeterRegistry() {
         return METER_REGISTRY;

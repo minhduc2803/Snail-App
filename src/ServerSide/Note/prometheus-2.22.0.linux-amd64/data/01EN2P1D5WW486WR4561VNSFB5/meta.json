@@ -1,0 +1,17 @@
+{
+	"ulid": "01EN2P1D5WW486WR4561VNSFB5",
+	"minTime": 1603175963273,
+	"maxTime": 1603180800000,
+	"stats": {
+		"numSamples": 1430649,
+		"numSeries": 2881,
+		"numChunks": 11614
+	},
+	"compaction": {
+		"level": 1,
+		"sources": [
+			"01EN2P1D5WW486WR4561VNSFB5"
+		]
+	},
+	"version": 1
+}

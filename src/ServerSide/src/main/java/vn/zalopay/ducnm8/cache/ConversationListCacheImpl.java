@@ -10,11 +10,11 @@ import lombok.Builder;
 
 @Builder
 public class ConversationListCacheImpl implements ConversationListCache {
-    private final RedisCache redisCache;
-    private final AsyncHandler asyncHandler;
+  private final RedisCache redisCache;
+  private final AsyncHandler asyncHandler;
 
-    @Override
-    public Future<List<ConversationMember>> set(List<ConversationMember> conversationMembers) {
-        return null;
-    }
+  @Override
+  public Future<List<ConversationMember>> set(List<ConversationMember> conversationMembers) {
+    return null;
+  }
 }

@@ -19,74 +19,67 @@ import java.time.Instant;
 
 @Log4j2
 public class RegisterHandler extends BaseHandler {
-    private static final String METRIC = "RegisterHandler";
-    private final UserCache userCache;
-    private final AccountDA accountDA;
-    private final TransactionProvider transactionProvider;
+  private static final String METRIC = "RegisterHandler";
+  private final UserCache userCache;
+  private final AccountDA accountDA;
+  private final TransactionProvider transactionProvider;
 
-    public RegisterHandler(
+  public RegisterHandler(
       AccountDA accountDA, UserCache userCache, TransactionProvider transactionProvider) {
-        this.userCache = userCache;
-        this.accountDA = accountDA;
-        this.transactionProvider = transactionProvider;
+    this.userCache = userCache;
+    this.accountDA = accountDA;
+    this.transactionProvider = transactionProvider;
+  }
+
+  @Override
+  public Future<BaseResponse> handle(BaseRequest baseRequest) {
+
+    Tracker.TrackerBuilder tracker =
+        Tracker.builder().metricName(METRIC).startTime(System.currentTimeMillis());
+
+    Future<BaseResponse> future = Future.future();
+    RegisterRequest registerRequest = JsonProtoUtils.parseGson(baseRequest.getPostData(), RegisterRequest.class);
+
+
+    BaseResponse.BaseResponseBuilder response = BaseResponse.builder();
+
+
+    if (registerRequest.getUsername() == null || registerRequest.getPassword() == null || registerRequest.getFullName() == null) {
+      response.message("Lack of information")
+          .status(HttpResponseStatus.BAD_REQUEST.code());
+
+      future.complete(response.build());
+
+      log.info("Register failed ~ Lack of information");
+      return future;
     }
 
-    @Override
-    public Future<BaseResponse> handle(BaseRequest baseRequest) {
+    Account account = Account.builder()
+        .username(registerRequest.getUsername())
+        .fullName(registerRequest.getFullName())
+        .password(BCrypt.hashpw(registerRequest.getPassword(), BCrypt.gensalt(4)))
+        .balance(10000000)
+        .lastTimeUpdateBalance(Instant.now().getEpochSecond())
+        .numberNotification(0)
+        .build();
 
-        Tracker.TrackerBuilder tracker =
-                Tracker.builder().metricName(METRIC).startTime(System.currentTimeMillis());
-
-        Future<BaseResponse> future = Future.future();
-        RegisterRequest registerRequest = JsonProtoUtils.parseGson(baseRequest.getPostData(), RegisterRequest.class);
-
-
-        BaseResponse.BaseResponseBuilder response = BaseResponse.builder();
-
-
-        if (registerRequest.getUsername() == null || registerRequest.getPassword() == null || registerRequest.getFullName() == null) {
-            response.message("Lack of information")
-              .status(HttpResponseStatus.BAD_REQUEST.code());
-
-            future.complete(response.build());
-
-            log.info("Register failed ~ Lack of information");
-            return future;
-        }
-
-        Account account = Account.builder()
-          .username(registerRequest.getUsername())
-          .fullName(registerRequest.getFullName())
-          .password(BCrypt.hashpw(registerRequest.getPassword(), BCrypt.gensalt(4)))
-          .balance(10000000)
-          .lastTimeUpdateBalance(Instant.now().getEpochSecond())
-          .numberNotification(0)
-          .build();
-
-        Transaction transaction = transactionProvider.newTransaction();
-
-        transaction
-          .begin()
-          .compose(next -> transaction.execute(accountDA.insert(account)))
-          .setHandler(
+    accountDA.insert(account)
+        .setHandler(
             rs -> {
 
-                if (rs.succeeded()) {
-                    response.status(HttpResponseStatus.OK.code());
-                    log.info("Register successful");
-                } else {
-                    response.message("Username is not available")
-                      .status(HttpResponseStatus.BAD_REQUEST.code());
-                    log.warn("Register fail ~ Cannot insert a user");
-                }
+              if (rs.succeeded()) {
+                response.status(HttpResponseStatus.OK.code());
+                log.info("Register successful");
+              } else {
+                response.message("Username is not available")
+                    .status(HttpResponseStatus.BAD_REQUEST.code());
+                log.warn("Register fail ~ Cannot insert a user");
+              }
 
-                tracker.step("handle").code("SUCCESS").build().record();
-                future.complete(response.build());
-                transaction.commit();
-                transaction.close();
-
+              tracker.step("handle").code("SUCCESS").build().record();
+              future.complete(response.build());
             });
 
-        return future;
-    }
+    return future;
+  }
 }

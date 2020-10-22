@@ -4,5 +4,5 @@ import lombok.Getter;
 
 @Getter
 public class ConversationListRequest {
-    int userId;
+  int userId;
 }

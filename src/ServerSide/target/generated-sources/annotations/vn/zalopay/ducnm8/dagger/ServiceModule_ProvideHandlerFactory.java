@@ -22,10 +22,6 @@ import vn.zalopay.ducnm8.handler.UserListHandler;
 public final class ServiceModule_ProvideHandlerFactory implements Factory<HandlerFactory> {
   private final ServiceModule module;
 
-  private final Provider<EchoHandler> echoHandlerProvider;
-
-  private final Provider<ExampleHandler> exampleHandlerProvider;
-
   private final Provider<LoginHandler> loginHandlerProvider;
 
   private final Provider<RegisterHandler> registerHandlerProvider;
@@ -37,15 +33,12 @@ public final class ServiceModule_ProvideHandlerFactory implements Factory<Handle
   private final Provider<UserListHandler> userListHandlerProvider;
 
   public ServiceModule_ProvideHandlerFactory(ServiceModule module,
-      Provider<EchoHandler> echoHandlerProvider, Provider<ExampleHandler> exampleHandlerProvider,
       Provider<LoginHandler> loginHandlerProvider,
       Provider<RegisterHandler> registerHandlerProvider,
       Provider<ChatListHandler> chatListHandlerProvider,
       Provider<JWTAuthHandler> jwtAuthHandlerProvider,
       Provider<UserListHandler> userListHandlerProvider) {
     this.module = module;
-    this.echoHandlerProvider = echoHandlerProvider;
-    this.exampleHandlerProvider = exampleHandlerProvider;
     this.loginHandlerProvider = loginHandlerProvider;
     this.registerHandlerProvider = registerHandlerProvider;
     this.chatListHandlerProvider = chatListHandlerProvider;
@@ -55,23 +48,21 @@ public final class ServiceModule_ProvideHandlerFactory implements Factory<Handle
 
   @Override
   public HandlerFactory get() {
-    return provideHandler(module, echoHandlerProvider.get(), exampleHandlerProvider.get(), loginHandlerProvider.get(), registerHandlerProvider.get(), chatListHandlerProvider.get(), jwtAuthHandlerProvider.get(), userListHandlerProvider.get());
+    return provideHandler(module, loginHandlerProvider.get(), registerHandlerProvider.get(), chatListHandlerProvider.get(), jwtAuthHandlerProvider.get(), userListHandlerProvider.get());
   }
 
   public static ServiceModule_ProvideHandlerFactory create(ServiceModule module,
-      Provider<EchoHandler> echoHandlerProvider, Provider<ExampleHandler> exampleHandlerProvider,
       Provider<LoginHandler> loginHandlerProvider,
       Provider<RegisterHandler> registerHandlerProvider,
       Provider<ChatListHandler> chatListHandlerProvider,
       Provider<JWTAuthHandler> jwtAuthHandlerProvider,
       Provider<UserListHandler> userListHandlerProvider) {
-    return new ServiceModule_ProvideHandlerFactory(module, echoHandlerProvider, exampleHandlerProvider, loginHandlerProvider, registerHandlerProvider, chatListHandlerProvider, jwtAuthHandlerProvider, userListHandlerProvider);
+    return new ServiceModule_ProvideHandlerFactory(module, loginHandlerProvider, registerHandlerProvider, chatListHandlerProvider, jwtAuthHandlerProvider, userListHandlerProvider);
   }
 
-  public static HandlerFactory provideHandler(ServiceModule instance, EchoHandler echoHandler,
-      ExampleHandler exampleHandler, LoginHandler loginHandler, RegisterHandler registerHandler,
-      ChatListHandler chatListHandler, JWTAuthHandler jwtAuthHandler,
-      UserListHandler userListHandler) {
-    return Preconditions.checkNotNull(instance.provideHandler(echoHandler, exampleHandler, loginHandler, registerHandler, chatListHandler, jwtAuthHandler, userListHandler), "Cannot return null from a non-@Nullable @Provides method");
+  public static HandlerFactory provideHandler(ServiceModule instance, LoginHandler loginHandler,
+      RegisterHandler registerHandler, ChatListHandler chatListHandler,
+      JWTAuthHandler jwtAuthHandler, UserListHandler userListHandler) {
+    return Preconditions.checkNotNull(instance.provideHandler(loginHandler, registerHandler, chatListHandler, jwtAuthHandler, userListHandler), "Cannot return null from a non-@Nullable @Provides method");
   }
 }

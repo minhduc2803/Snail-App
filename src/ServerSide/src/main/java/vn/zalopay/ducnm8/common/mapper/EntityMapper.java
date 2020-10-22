@@ -20,82 +20,83 @@ import lombok.extern.log4j.Log4j2;
  */
 @Log4j2
 public class EntityMapper {
-    private static final EntityMapper instance = new EntityMapper();
+  private static final EntityMapper instance = new EntityMapper();
 
-    private static final Map<Class, Class> primitive2Object =
+  private static final Map<Class, Class> primitive2Object =
       ImmutableMap.<Class, Class>builder()
-        .put(int.class, Integer.class)
-        .put(long.class, Long.class)
-        .put(double.class, Double.class)
-        .put(float.class, Float.class)
-        .put(boolean.class, Boolean.class)
-        .put(byte.class, Byte.class)
-        .put(char.class, Character.class)
-        .put(short.class, Short.class)
-        .put(String.class, String.class)
-        .build();
+          .put(int.class, Integer.class)
+          .put(long.class, Long.class)
+          .put(double.class, Double.class)
+          .put(float.class, Float.class)
+          .put(boolean.class, Boolean.class)
+          .put(byte.class, Byte.class)
+          .put(char.class, Character.class)
+          .put(short.class, Short.class)
+          .put(String.class, String.class)
+          .build();
 
-    private EntityMapper() {}
+  private EntityMapper() {
+  }
 
-    public static EntityMapper getInstance() {
-        return instance;
+  public static EntityMapper getInstance() {
+    return instance;
+  }
+
+  public static List<Field> getAllFields(Class<?> type) {
+    List<Field> fields = new ArrayList<>(Arrays.asList(type.getDeclaredFields()));
+
+    Class<?> supperClass = type.getSuperclass();
+    if (supperClass != null) {
+      fields.addAll(getAllFields(supperClass));
     }
 
-    public static List<Field> getAllFields(Class<?> type) {
-        List<Field> fields = new ArrayList<>(Arrays.asList(type.getDeclaredFields()));
+    return fields;
+  }
 
-        Class<?> supperClass = type.getSuperclass();
-        if (supperClass != null) {
-            fields.addAll(getAllFields(supperClass));
-        }
+  public void loadResultSetIntoObject(ResultSet rst, Object object) throws Exception {
+    Class<?> zclass = object.getClass();
 
-        return fields;
+    for (Field field : getAllFields(zclass)) {
+      field.setAccessible(true);
+      DBTable column = field.getAnnotation(DBTable.class);
+      if (column == null) {
+        continue;
+      }
+
+      Class<?> type = field.getType();
+      Object value;
+      if (isPrimitive(type)) {
+        value = rst.getObject(column.columnName(), boxPrimitiveClass(type));
+      } else if (isGrpcObject(type)) {
+        String data = rst.getString(column.columnName());
+        Class<?> barClass = Class.forName(type.getName());
+        Method newBuilderMethod = barClass.getMethod("newBuilder");
+        value = JsonProtoUtils.parse(data, (Message.Builder) newBuilderMethod.invoke(null));
+      } else {
+        String data = rst.getString(column.columnName());
+        value = JsonProtoUtils.parseGson(data, type);
+      }
+      field.set(object, value);
     }
+  }
 
-    public void loadResultSetIntoObject(ResultSet rst, Object object) throws Exception {
-        Class<?> zclass = object.getClass();
+  private boolean isPrimitive(Class<?> type) {
+    return null != primitive2Object.get(type);
+  }
 
-        for (Field field : getAllFields(zclass)) {
-            field.setAccessible(true);
-            DBTable column = field.getAnnotation(DBTable.class);
-            if (column == null) {
-                continue;
-            }
-
-            Class<?> type = field.getType();
-            Object value;
-            if (isPrimitive(type)) {
-                value = rst.getObject(column.columnName(), boxPrimitiveClass(type));
-            } else if (isGrpcObject(type)) {
-                String data = rst.getString(column.columnName());
-                Class<?> barClass = Class.forName(type.getName());
-                Method newBuilderMethod = barClass.getMethod("newBuilder");
-                value = JsonProtoUtils.parse(data, (Message.Builder) newBuilderMethod.invoke(null));
-            } else {
-                String data = rst.getString(column.columnName());
-                value = JsonProtoUtils.parseGson(data, type);
-            }
-            field.set(object, value);
-        }
+  private boolean isGrpcObject(Class<?> type) {
+    if (type.getSuperclass() == null) {
+      return false;
     }
+    return type.getSuperclass().isAssignableFrom(GeneratedMessageV3.class);
+  }
 
-    private boolean isPrimitive(Class<?> type) {
-        return null != primitive2Object.get(type);
+  private Class<?> boxPrimitiveClass(Class<?> type) {
+    Class<?> objectType = primitive2Object.get(type);
+    if (null != objectType) {
+      return objectType;
+    } else {
+      throw new IllegalArgumentException("class '" + type.getName() + "' is not a primitive");
     }
-
-    private boolean isGrpcObject(Class<?> type) {
-        if (type.getSuperclass() == null) {
-            return false;
-        }
-        return type.getSuperclass().isAssignableFrom(GeneratedMessageV3.class);
-    }
-
-    private Class<?> boxPrimitiveClass(Class<?> type) {
-        Class<?> objectType = primitive2Object.get(type);
-        if (null != objectType) {
-            return objectType;
-        } else {
-            throw new IllegalArgumentException("class '" + type.getName() + "' is not a primitive");
-        }
-    }
+  }
 }

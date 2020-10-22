@@ -6,4 +6,14 @@ package fintech;
 public interface HistoryRequestOrBuilder extends
     // @@protoc_insertion_point(interface_extends:fintech.HistoryRequest)
     com.google.protobuf.MessageOrBuilder {
+
+  /**
+   * <pre>
+   * A request from a user to get current transfer history of this own user
+   * Contain jwt token from header for authentication
+   * </pre>
+   *
+   * <code>int64 offset = 1;</code>
+   */
+  long getOffset();
 }

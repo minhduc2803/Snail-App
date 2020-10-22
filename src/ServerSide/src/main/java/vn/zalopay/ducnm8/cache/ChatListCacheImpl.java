@@ -9,11 +9,11 @@ import java.util.List;
 
 @Builder
 public class ChatListCacheImpl implements ChatListCache {
-    private final RedisCache redisCache;
-    private final AsyncHandler asyncHandler;
+  private final RedisCache redisCache;
+  private final AsyncHandler asyncHandler;
 
-    @Override
-    public Future<List<Chat>> set(List<Chat> chats) {
-        return null;
-    }
+  @Override
+  public Future<List<Chat>> set(List<Chat> chats) {
+    return null;
+  }
 }

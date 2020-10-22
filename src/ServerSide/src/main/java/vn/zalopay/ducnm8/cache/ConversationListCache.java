@@ -6,5 +6,5 @@ import io.vertx.core.Future;
 import java.util.List;
 
 public interface ConversationListCache {
-    Future<List<ConversationMember>> set(List<ConversationMember> conversationMembers);
+  Future<List<ConversationMember>> set(List<ConversationMember> conversationMembers);
 }

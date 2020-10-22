@@ -11,11 +11,11 @@ import javax.inject.Singleton;
 @Singleton
 @Component(modules = {ServiceModule.class})
 public interface ServiceComponent {
-    RestfulAPI getRestfulAPI();
+  RestfulAPI getRestfulAPI();
 
-    WebSocketServer getWebSocketServer();
+  WebSocketServer getWebSocketServer();
 
-    Vertx getVertx();
+  Vertx getVertx();
 
-    GRPCServer getGRPCServer();
+  GRPCServer getGRPCServer();
 }

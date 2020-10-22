@@ -11,9 +11,9 @@ import vn.zalopay.ducnm8.model.TransferHistory;
 @Setter
 @Getter
 public class WebSocketResponse {
-    // responseType = 1 => data = chat
-    // responseType = 2 => data = transferHistory
-    int responseType;
-    Object data;
+  // responseType = 1 => data = chat
+  // responseType = 2 => data = transferHistory
+  int responseType;
+  Object data;
 
 }

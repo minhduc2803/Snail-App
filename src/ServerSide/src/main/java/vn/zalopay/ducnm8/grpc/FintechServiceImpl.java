@@ -16,39 +16,39 @@ import vn.zalopay.ducnm8.model.Transfer;
 @Log4j2
 public class FintechServiceImpl extends FintechServiceGrpc.FintechServiceVertxImplBase {
 
-    private final GetBalanceHandler getBalanceHandler;
-    private final GetHistoryHandler getHistoryHandler;
-    private final TransferHandler transferHandler;
-    private final GetNotificationHandler getNotificationHandler;
+  private final GetBalanceHandler getBalanceHandler;
+  private final GetHistoryHandler getHistoryHandler;
+  private final TransferHandler transferHandler;
+  private final GetNotificationHandler getNotificationHandler;
 
-    @Builder
-    public FintechServiceImpl(GetBalanceHandler getBalanceHandler,
-                              GetHistoryHandler getHistoryHandler,
-                              TransferHandler transferHandler,
-                              GetNotificationHandler getNotificationHandler) {
-        this.getBalanceHandler = getBalanceHandler;
-        this.getHistoryHandler = getHistoryHandler;
-        this.transferHandler = transferHandler;
-        this.getNotificationHandler = getNotificationHandler;
-    }
+  @Builder
+  public FintechServiceImpl(GetBalanceHandler getBalanceHandler,
+                            GetHistoryHandler getHistoryHandler,
+                            TransferHandler transferHandler,
+                            GetNotificationHandler getNotificationHandler) {
+    this.getBalanceHandler = getBalanceHandler;
+    this.getHistoryHandler = getHistoryHandler;
+    this.transferHandler = transferHandler;
+    this.getNotificationHandler = getNotificationHandler;
+  }
 
-    @Override
-    public void getBalance(BalanceRequest request, Future<BalanceResponse> response) {
-        getBalanceHandler.getBalance(request, response);
-    }
+  @Override
+  public void getBalance(BalanceRequest request, Future<BalanceResponse> response) {
+    getBalanceHandler.getBalance(request, response);
+  }
 
-    @Override
-    public void getHistory(HistoryRequest request, Future<HistoryResponse> response) {
-        getHistoryHandler.getHistory(request, response);
-    }
+  @Override
+  public void getHistory(HistoryRequest request, Future<HistoryResponse> response) {
+    getHistoryHandler.getHistory(request, response);
+  }
 
-    @Override
-    public void transfer(TransferRequest request, Future<TransferResponse> response) {
-        transferHandler.transfer(request, response);
-    }
+  @Override
+  public void transfer(TransferRequest request, Future<TransferResponse> response) {
+    transferHandler.transfer(request, response);
+  }
 
-    @Override
-    public void getNotification(NotificationRequest request, Future<NotificationResponse> response) {
-        getNotificationHandler.getNotification(request, response);
-    }
+  @Override
+  public void getNotification(NotificationRequest request, Future<NotificationResponse> response) {
+    getNotificationHandler.getNotification(request, response);
+  }
 }

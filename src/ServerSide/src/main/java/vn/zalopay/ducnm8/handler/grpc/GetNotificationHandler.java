@@ -10,7 +10,7 @@ import io.vertx.core.Future;
 
 public class GetNotificationHandler {
 
-    public void getNotification(NotificationRequest helloRequest, Future<NotificationResponse> responseFuture) {
-        responseFuture.complete();
-    }
+  public void getNotification(NotificationRequest helloRequest, Future<NotificationResponse> responseFuture) {
+    responseFuture.complete();
+  }
 }

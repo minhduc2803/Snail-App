@@ -5,5 +5,5 @@ package vn.zalopay.ducnm8.da;
  */
 @FunctionalInterface
 public interface FunctionEx<T, R> {
-    R apply(T t) throws Exception;
+  R apply(T t) throws Exception;
 }

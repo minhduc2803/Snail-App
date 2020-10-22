@@ -11,17 +11,17 @@ import java.io.Serializable;
 @Getter
 @Setter
 public class MySQLConfig implements Serializable {
-    private String driver = "";
+  private String driver = "";
 
-    private transient String username = "";
-    private transient String password = "";
+  private transient String username = "";
+  private transient String password = "";
 
-    private String url = "";
-    private int poolSize = 64;
-    private int maxLifetimeMillis = 600000;
-    private boolean cachePrepStmts = true;
-    private boolean useServerPrepStmts = true;
-    private int prepStmtCacheSize = 250;
-    private int prepStmtCacheSqlLimit = 2048;
-    private boolean autoCommit = true;
+  private String url = "";
+  private int poolSize = 64;
+  private int maxLifetimeMillis = 600000;
+  private boolean cachePrepStmts = true;
+  private boolean useServerPrepStmts = true;
+  private int prepStmtCacheSize = 250;
+  private int prepStmtCacheSqlLimit = 2048;
+  private boolean autoCommit = true;
 }

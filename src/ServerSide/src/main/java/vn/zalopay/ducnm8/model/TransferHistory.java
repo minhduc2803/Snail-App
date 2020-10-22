@@ -9,37 +9,37 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class TransferHistory {
-    @DBTable(columnName = "id")
-    long id;
+  @DBTable(columnName = "id")
+  long id;
 
-    @DBTable(columnName = "transfer_id")
-    long transferId;
+  @DBTable(columnName = "transfer_id")
+  long transferId;
 
-    @DBTable(columnName = "user_id")
-    long userId;
+  @DBTable(columnName = "user_id")
+  long userId;
 
-    @DBTable(columnName = "partner_id")
-    long partnerId;
+  @DBTable(columnName = "partner_id")
+  long partnerId;
 
-    @DBTable(columnName = "transfer_type")
-    long transferType;
+  @DBTable(columnName = "transfer_type")
+  long transferType;
 
-    @DBTable(columnName = "balance")
-    long balance;
+  @DBTable(columnName = "balance")
+  long balance;
 
-    @DBTable(columnName = "amount")
-    long amount;
+  @DBTable(columnName = "amount")
+  long amount;
 
-    @DBTable(columnName = "message")
-    String message;
+  @DBTable(columnName = "message")
+  String message;
 
-    @DBTable(columnName = "transfer_time")
-    long transferTime;
+  @DBTable(columnName = "transfer_time")
+  long transferTime;
 
-    @DBTable(columnName = "user_name")
-    String username;
+  @DBTable(columnName = "user_name")
+  String username;
 
-    @DBTable(columnName = "full_name")
-    String fullName;
+  @DBTable(columnName = "full_name")
+  String fullName;
 
 }

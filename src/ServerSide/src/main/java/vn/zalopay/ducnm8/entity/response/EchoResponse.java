@@ -4,5 +4,5 @@ import lombok.Builder;
 
 @Builder
 public class EchoResponse {
-    String message;
+  String message;
 }

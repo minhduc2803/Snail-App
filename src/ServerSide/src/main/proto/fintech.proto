@@ -42,6 +42,7 @@ message BalanceResponse {
 message HistoryRequest {
   // A request from a user to get current transfer history of this own user
   // Contain jwt token from header for authentication
+  int64 offset = 1;
 }
 
 message HistoryResponse {

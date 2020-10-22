@@ -9,15 +9,15 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class User {
-    @DBTable(columnName = "id")
-    long id;
+  @DBTable(columnName = "id")
+  long id;
 
-    @DBTable(columnName = "user_name")
-    String username;
+  @DBTable(columnName = "user_name")
+  String username;
 
-    @DBTable(columnName = "full_name")
-    String fullName;
+  @DBTable(columnName = "full_name")
+  String fullName;
 
-    @DBTable(columnName = "password")
-    String password;
+  @DBTable(columnName = "password")
+  String password;
 }

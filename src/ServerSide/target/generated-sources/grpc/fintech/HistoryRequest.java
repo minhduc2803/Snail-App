@@ -4,11 +4,6 @@
 package fintech;
 
 /**
- * <pre>
- * A request from a user to get current transfer history of this own user
- * Contain jwt token from header for authentication
- * </pre>
- *
  * Protobuf type {@code fintech.HistoryRequest}
  */
 public  final class HistoryRequest extends
@@ -21,6 +16,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private HistoryRequest() {
+    offset_ = 0L;
   }
 
   @java.lang.Override
@@ -33,6 +29,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -48,6 +45,11 @@ private static final long serialVersionUID = 0L;
                 input, unknownFields, extensionRegistry, tag)) {
               done = true;
             }
+            break;
+          }
+          case 8: {
+
+            offset_ = input.readInt64();
             break;
           }
         }
@@ -74,6 +76,20 @@ private static final long serialVersionUID = 0L;
             fintech.HistoryRequest.class, fintech.HistoryRequest.Builder.class);
   }
 
+  public static final int OFFSET_FIELD_NUMBER = 1;
+  private long offset_;
+  /**
+   * <pre>
+   * A request from a user to get current transfer history of this own user
+   * Contain jwt token from header for authentication
+   * </pre>
+   *
+   * <code>int64 offset = 1;</code>
+   */
+  public long getOffset() {
+    return offset_;
+  }
+
   private byte memoizedIsInitialized = -1;
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -86,6 +102,9 @@ private static final long serialVersionUID = 0L;
 
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    if (offset_ != 0L) {
+      output.writeInt64(1, offset_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -94,6 +113,10 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
+    if (offset_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt64Size(1, offset_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -110,6 +133,8 @@ private static final long serialVersionUID = 0L;
     fintech.HistoryRequest other = (fintech.HistoryRequest) obj;
 
     boolean result = true;
+    result = result && (getOffset()
+        == other.getOffset());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -121,6 +146,9 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + OFFSET_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getOffset());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -215,11 +243,6 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * <pre>
-   * A request from a user to get current transfer history of this own user
-   * Contain jwt token from header for authentication
-   * </pre>
-   *
    * Protobuf type {@code fintech.HistoryRequest}
    */
   public static final class Builder extends
@@ -255,6 +278,8 @@ private static final long serialVersionUID = 0L;
     }
     public Builder clear() {
       super.clear();
+      offset_ = 0L;
+
       return this;
     }
 
@@ -277,6 +302,7 @@ private static final long serialVersionUID = 0L;
 
     public fintech.HistoryRequest buildPartial() {
       fintech.HistoryRequest result = new fintech.HistoryRequest(this);
+      result.offset_ = offset_;
       onBuilt();
       return result;
     }
@@ -318,6 +344,9 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(fintech.HistoryRequest other) {
       if (other == fintech.HistoryRequest.getDefaultInstance()) return this;
+      if (other.getOffset() != 0L) {
+        setOffset(other.getOffset());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -342,6 +371,47 @@ private static final long serialVersionUID = 0L;
           mergeFrom(parsedMessage);
         }
       }
+      return this;
+    }
+
+    private long offset_ ;
+    /**
+     * <pre>
+     * A request from a user to get current transfer history of this own user
+     * Contain jwt token from header for authentication
+     * </pre>
+     *
+     * <code>int64 offset = 1;</code>
+     */
+    public long getOffset() {
+      return offset_;
+    }
+    /**
+     * <pre>
+     * A request from a user to get current transfer history of this own user
+     * Contain jwt token from header for authentication
+     * </pre>
+     *
+     * <code>int64 offset = 1;</code>
+     */
+    public Builder setOffset(long value) {
+      
+      offset_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * A request from a user to get current transfer history of this own user
+     * Contain jwt token from header for authentication
+     * </pre>
+     *
+     * <code>int64 offset = 1;</code>
+     */
+    public Builder clearOffset() {
+      
+      offset_ = 0L;
+      onChanged();
       return this;
     }
     public final Builder setUnknownFields(

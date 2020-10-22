@@ -9,19 +9,19 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ConversationMember {
-    @DBTable(columnName = "id")
-    long id;
+  @DBTable(columnName = "id")
+  long id;
 
-    @DBTable(columnName = "conversation_id")
-    long conversationId;
+  @DBTable(columnName = "conversation_id")
+  long conversationId;
 
-    @DBTable(columnName = "member_id")
-    long MemberID;
+  @DBTable(columnName = "member_id")
+  long MemberID;
 
-    @DBTable(columnName = "number_unseen_chat")
-    int numberUnseenChat;
+  @DBTable(columnName = "number_unseen_chat")
+  int numberUnseenChat;
 
-    @DBTable(columnName = "conversation_title")
-    String conversationTitle;
+  @DBTable(columnName = "conversation_title")
+  String conversationTitle;
 
 }

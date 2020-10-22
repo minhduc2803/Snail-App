@@ -6,5 +6,6 @@ import lombok.Builder;
 @Getter
 @Builder
 public class ChatListRequest {
-    long partnerId;
+  long partnerId;
+  long offset;
 }

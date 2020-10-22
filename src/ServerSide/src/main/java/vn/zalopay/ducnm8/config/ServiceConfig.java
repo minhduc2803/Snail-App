@@ -6,9 +6,9 @@ import lombok.Setter;
 @Setter
 @Getter
 public class ServiceConfig {
-    private VertxConfig vertxConfig;
-    private MySQLConfig mySQLConfig;
-    int port;
-    int wsPort;
-    int grpcPort;
+  private VertxConfig vertxConfig;
+  private MySQLConfig mySQLConfig;
+  int port;
+  int wsPort;
+  int grpcPort;
 }

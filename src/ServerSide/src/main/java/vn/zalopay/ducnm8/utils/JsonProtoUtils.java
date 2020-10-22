@@ -17,49 +17,49 @@ import org.apache.logging.log4j.Logger;
  */
 public class JsonProtoUtils {
 
-    private static final Logger logger =
+  private static final Logger logger =
       LogManager.getLogger(JsonProtoUtils.class.getCanonicalName());
 
-    private static final JsonFormat.Parser PARSER = JsonFormat.parser().ignoringUnknownFields();
-    private static final JsonFormat.Printer PRINTER =
+  private static final JsonFormat.Parser PARSER = JsonFormat.parser().ignoringUnknownFields();
+  private static final JsonFormat.Printer PRINTER =
       JsonFormat.printer()
-        .includingDefaultValueFields()
-        .omittingInsignificantWhitespace()
-        .preservingProtoFieldNames();
-    private static final Gson GSON =
+          .includingDefaultValueFields()
+          .omittingInsignificantWhitespace()
+          .preservingProtoFieldNames();
+  private static final Gson GSON =
       new GsonBuilder()
-        .excludeFieldsWithModifiers(Modifier.STATIC)
-        .disableHtmlEscaping()
-        .create();
+          .excludeFieldsWithModifiers(Modifier.STATIC)
+          .disableHtmlEscaping()
+          .create();
 
-    private JsonProtoUtils() {
-    }
+  private JsonProtoUtils() {
+  }
 
-    public static <B extends Message.Builder, P extends Message> P parse(String json, B protoBuilder)
+  public static <B extends Message.Builder, P extends Message> P parse(String json, B protoBuilder)
       throws InvalidProtocolBufferException {
-        PARSER.merge(json, protoBuilder);
-        return (P) protoBuilder.build();
+    PARSER.merge(json, protoBuilder);
+    return (P) protoBuilder.build();
+  }
+
+  public static String print(MessageOrBuilder proto) {
+    if (proto == null) {
+      return "{}";
     }
 
-    public static String print(MessageOrBuilder proto) {
-        if (proto == null) {
-            return "{}";
-        }
-
-        try {
-            return PRINTER.print(proto);
-        } catch (InvalidProtocolBufferException e) {
-            logger.error("print failed cause={}", ExceptionUtil.getDetail(e));
-        }
-
-        return "{}";
+    try {
+      return PRINTER.print(proto);
+    } catch (InvalidProtocolBufferException e) {
+      logger.error("print failed cause={}", ExceptionUtil.getDetail(e));
     }
 
-    public static String printGson(Object object) {
-        return GSON.toJson(object);
-    }
+    return "{}";
+  }
 
-    public static <T> T parseGson(String json, Class<T> clazz) {
-        return GSON.fromJson(json, clazz);
-    }
+  public static String printGson(Object object) {
+    return GSON.toJson(object);
+  }
+
+  public static <T> T parseGson(String json, Class<T> clazz) {
+    return GSON.fromJson(json, clazz);
+  }
 }

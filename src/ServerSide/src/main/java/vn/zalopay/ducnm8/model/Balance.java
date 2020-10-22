@@ -9,12 +9,12 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Balance {
-    @DBTable(columnName = "balance")
-    long balance;
+  @DBTable(columnName = "balance")
+  long balance;
 
-    @DBTable(columnName = "last_time_update_balance")
-    long lastTimeUpdate;
+  @DBTable(columnName = "last_time_update_balance")
+  long lastTimeUpdate;
 
-    @DBTable(columnName = "number_notification")
-    int numberNotification;
+  @DBTable(columnName = "number_notification")
+  int numberNotification;
 }

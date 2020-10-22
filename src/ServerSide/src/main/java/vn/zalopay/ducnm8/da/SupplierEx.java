@@ -5,5 +5,5 @@ package vn.zalopay.ducnm8.da;
  */
 @FunctionalInterface
 public interface SupplierEx<T> {
-    T get() throws Exception;
+  T get() throws Exception;
 }

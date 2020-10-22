@@ -11,44 +11,44 @@ import lombok.extern.log4j.Log4j2;
 
 @Log4j2
 public class RestfulAPI {
-    private final Vertx vertx;
-    private final int port;
-    private HttpServer httpServer;
-    private final HandlerFactory handlerFactory;
+  private final Vertx vertx;
+  private final int port;
+  private HttpServer httpServer;
+  private final HandlerFactory handlerFactory;
 
-    @Builder
-    public RestfulAPI(Vertx vertx, int port, HandlerFactory handlerFactory) {
-        this.vertx = vertx;
-        this.port = port;
-        this.handlerFactory = handlerFactory;
-    }
+  @Builder
+  public RestfulAPI(Vertx vertx, int port, HandlerFactory handlerFactory) {
+    this.vertx = vertx;
+    this.port = port;
+    this.handlerFactory = handlerFactory;
+  }
 
-    public void start() {
-        log.info("Starting RestfulAPI Server ...");
+  public void start() {
+    log.info("Starting RestfulAPI Server ...");
 
-        Router router = RouterFactory.route(vertx, handlerFactory);
+    Router router = RouterFactory.route(vertx, handlerFactory);
 
-        Future<Void> future = Future.future();
-        httpServer =
-          vertx
+    Future<Void> future = Future.future();
+    httpServer =
+        vertx
             .createHttpServer()
             .requestHandler(router)
             .exceptionHandler(
-              e -> log.error("Handle request exception {}", ExceptionUtil.getDetail(e)))
+                e -> log.error("Handle request exception {}", ExceptionUtil.getDetail(e)))
             .listen(
-              port,
-              ar -> {
+                port,
+                ar -> {
                   if (ar.succeeded()) {
-                      log.info("API Server start successfully !, port:{}", port);
-                      future.complete();
+                    log.info("API Server start successfully !, port:{}", port);
+                    future.complete();
                   } else {
-                      log.error("API Server start fail. Reason: {}", ar.cause().getMessage());
-                      future.fail(ar.cause());
+                    log.error("API Server start fail. Reason: {}", ar.cause().getMessage());
+                    future.fail(ar.cause());
                   }
-              });
-    }
+                });
+  }
 
-    public void close() {
-        httpServer.close();
-    }
+  public void close() {
+    httpServer.close();
+  }
 }

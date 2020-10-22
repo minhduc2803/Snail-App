@@ -9,22 +9,22 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Transfer {
-    @DBTable(columnName = "id")
-    long id;
+  @DBTable(columnName = "id")
+  long id;
 
-    @DBTable(columnName = "sender_id")
-    long senderId;
+  @DBTable(columnName = "sender_id")
+  long senderId;
 
-    @DBTable(columnName = "receiverId")
-    long receiverId;
+  @DBTable(columnName = "receiverId")
+  long receiverId;
 
-    @DBTable(columnName = "amount")
-    long amount;
+  @DBTable(columnName = "amount")
+  long amount;
 
-    @DBTable(columnName = "message")
-    String message;
+  @DBTable(columnName = "message")
+  String message;
 
-    @DBTable(columnName = "transfer_time")
-    long transferTime;
+  @DBTable(columnName = "transfer_time")
+  long transferTime;
 
 }

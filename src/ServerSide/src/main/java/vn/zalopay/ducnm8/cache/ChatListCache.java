@@ -6,5 +6,5 @@ import io.vertx.core.Future;
 import java.util.List;
 
 public interface ChatListCache {
-    Future<List<Chat>> set(List<Chat> chats);
+  Future<List<Chat>> set(List<Chat> chats);
 }

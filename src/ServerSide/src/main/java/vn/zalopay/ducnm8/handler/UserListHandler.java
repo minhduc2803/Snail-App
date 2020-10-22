@@ -15,67 +15,67 @@ import lombok.extern.log4j.Log4j2;
 @Log4j2
 public class UserListHandler extends BaseHandler {
 
-    private static final String METRIC = "UserListHandler";
-    private final UserCache userCache;
-    private final AccountDA accountDA;
-    private final TransactionProvider transactionProvider;
+  private static final String METRIC = "UserListHandler";
+  private final UserCache userCache;
+  private final AccountDA accountDA;
+  private final TransactionProvider transactionProvider;
 
-    public UserListHandler(
+  public UserListHandler(
       AccountDA accountDA, UserCache userCache, TransactionProvider transactionProvider) {
-        this.userCache = userCache;
-        this.accountDA = accountDA;
-        this.transactionProvider = transactionProvider;
-    }
+    this.userCache = userCache;
+    this.accountDA = accountDA;
+    this.transactionProvider = transactionProvider;
+  }
 
-    @Override
-    public Future<BaseResponse> handle(BaseRequest baseRequest) {
+  @Override
+  public Future<BaseResponse> handle(BaseRequest baseRequest) {
 
-        Tracker.TrackerBuilder tracker =
-                Tracker.builder().metricName(METRIC).startTime(System.currentTimeMillis());
+    Tracker.TrackerBuilder tracker =
+        Tracker.builder().metricName(METRIC).startTime(System.currentTimeMillis());
 
-        Future<BaseResponse> future = Future.future();
+    Future<BaseResponse> future = Future.future();
 
-        BaseResponse.BaseResponseBuilder response = BaseResponse.builder();
-        try {
+    BaseResponse.BaseResponseBuilder response = BaseResponse.builder();
+    try {
 
-            log.info("get a user list");
+      log.info("get a user list");
 
-            String token = baseRequest.getHeaders().get(HttpHeaders.AUTHORIZATION).substring("Bearer ".length()).trim();
+      String token = baseRequest.getHeaders().get(HttpHeaders.AUTHORIZATION).substring("Bearer ".length()).trim();
 
-            if (token == null) {
-                response.message("JWT token is missing")
-                  .status(HttpResponseStatus.UNAUTHORIZED.code());
-                future.complete(response.build());
-                return future;
-            }
-
-            try {
-                long id = JWTUtils.authenticate(token);
-                accountDA.selectUserList(id)
-                  .setHandler(userListRes -> {
-                      if (userListRes.succeeded()) {
-                          response.data(userListRes.result())
-                            .status(HttpResponseStatus.OK.code());
-
-                      } else {
-                          response.message("Cannot get a user list")
-                            .status(HttpResponseStatus.BAD_REQUEST.code());
-                      }
-
-                      tracker.step("handle").code("SUCCESS").build().record();
-                      future.complete(response.build());
-                  });
-            } catch (Exception e) {
-                response.message("JWT token is invalid")
-                  .status(HttpResponseStatus.UNAUTHORIZED.code());
-                future.complete(response.build());
-            }
-
-        } catch (Exception e) {
-            response.message("Server has an error")
-              .status(HttpResponseStatus.INTERNAL_SERVER_ERROR.code());
-            future.complete(response.build());
-        }
+      if (token == null) {
+        response.message("JWT token is missing")
+            .status(HttpResponseStatus.UNAUTHORIZED.code());
+        future.complete(response.build());
         return future;
+      }
+
+      try {
+        long id = JWTUtils.authenticate(token);
+        accountDA.selectUserList(id)
+            .setHandler(userListRes -> {
+              if (userListRes.succeeded()) {
+                response.data(userListRes.result())
+                    .status(HttpResponseStatus.OK.code());
+
+              } else {
+                response.message("Cannot get a user list")
+                    .status(HttpResponseStatus.BAD_REQUEST.code());
+              }
+
+              tracker.step("handle").code("SUCCESS").build().record();
+              future.complete(response.build());
+            });
+      } catch (Exception e) {
+        response.message("JWT token is invalid")
+            .status(HttpResponseStatus.UNAUTHORIZED.code());
+        future.complete(response.build());
+      }
+
+    } catch (Exception e) {
+      response.message("Server has an error")
+          .status(HttpResponseStatus.INTERNAL_SERVER_ERROR.code());
+      future.complete(response.build());
     }
+    return future;
+  }
 }

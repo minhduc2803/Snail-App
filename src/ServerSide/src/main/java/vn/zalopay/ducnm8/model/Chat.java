@@ -9,22 +9,22 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Chat {
-    @DBTable(columnName = "id")
-    long id;
+  @DBTable(columnName = "id")
+  long id;
 
-    @DBTable(columnName = "sender_id")
-    long senderId;
+  @DBTable(columnName = "sender_id")
+  long senderId;
 
-    @DBTable(columnName = "receiver_id")
-    long receiverId;
+  @DBTable(columnName = "receiver_id")
+  long receiverId;
 
-    @DBTable(columnName = "chat_type")
-    int chatType;
+  @DBTable(columnName = "chat_type")
+  int chatType;
 
-    @DBTable(columnName = "content")
-    String content;
+  @DBTable(columnName = "content")
+  String content;
 
-    @DBTable(columnName = "sent_time")
-    Long sentTime;
+  @DBTable(columnName = "sent_time")
+  Long sentTime;
 
 }

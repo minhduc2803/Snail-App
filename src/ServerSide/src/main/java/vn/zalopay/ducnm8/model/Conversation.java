@@ -9,10 +9,10 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Conversation {
-    @DBTable(columnName = "id")
-    long id;
+  @DBTable(columnName = "id")
+  long id;
 
-    @DBTable(columnName = "last_time_chat")
-    long lastTimeChat;
+  @DBTable(columnName = "last_time_chat")
+  long lastTimeChat;
 
 }

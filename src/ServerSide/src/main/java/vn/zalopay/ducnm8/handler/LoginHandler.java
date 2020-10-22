@@ -19,79 +19,79 @@ import lombok.extern.log4j.Log4j2;
 @Log4j2
 public class LoginHandler extends BaseHandler {
 
-    private static final String METRIC = "LoginHandler";
-    private final AccountDA accountDA;
+  private static final String METRIC = "LoginHandler";
+  private final AccountDA accountDA;
 
-    public LoginHandler(AccountDA accountDA, UserCache userCache, TransactionProvider transactionProvider) {
-        this.accountDA = accountDA;
-    }
+  public LoginHandler(AccountDA accountDA, UserCache userCache, TransactionProvider transactionProvider) {
+    this.accountDA = accountDA;
+  }
 
-    @Override
-    public Future<BaseResponse> handle(BaseRequest baseRequest) {
+  @Override
+  public Future<BaseResponse> handle(BaseRequest baseRequest) {
 
-        Tracker.TrackerBuilder tracker =
-                Tracker.builder().metricName(METRIC).startTime(System.currentTimeMillis());
+    Tracker.TrackerBuilder tracker =
+        Tracker.builder().metricName(METRIC).startTime(System.currentTimeMillis());
 
-        Future<BaseResponse> future = Future.future();
+    Future<BaseResponse> future = Future.future();
 
-        BaseResponse.BaseResponseBuilder response = BaseResponse.builder();
-        try {
-            LoginRequest request = JsonProtoUtils.parseGson(baseRequest.getPostData(), LoginRequest.class);
+    BaseResponse.BaseResponseBuilder response = BaseResponse.builder();
+    try {
+      LoginRequest request = JsonProtoUtils.parseGson(baseRequest.getPostData(), LoginRequest.class);
 
-            log.info("Login request from : " + request.getUsername());
+      log.info("Login request from : " + request.getUsername());
 
-            if (request.getUsername() == null || request.getPassword() == null) {
+      if (request.getUsername() == null || request.getPassword() == null) {
 
-                response.message("Lack of information")
-                  .status(HttpResponseStatus.BAD_REQUEST.code());
+        response.message("Lack of information")
+            .status(HttpResponseStatus.BAD_REQUEST.code());
+        future.complete(response.build());
+
+        log.info("Login failed ~ Lack of information");
+        return future;
+      }
+      accountDA.selectUserByUsername(request.getUsername())
+          .setHandler(
+              rs -> {
+                if (rs.succeeded()) {
+                  User user = rs.result();
+                  if (user != null) {
+                    if (BCrypt.checkpw(request.getPassword(), user.getPassword())) {
+                      String token = JWTUtils.buildJWTToken(user.getId());
+                      log.info("token len: {}", token.length());
+                      response.data(LoginResponse.builder()
+                          .token(token)
+                          .userId(user.getId())
+                          .fullName(user.getFullName())
+                          .build())
+                          .status(HttpResponseStatus.OK.code());
+                      log.info("Login successfully");
+                    } else {
+                      response.message("Wrong password")
+                          .status(HttpResponseStatus.BAD_REQUEST.code());
+                      log.info("Login failed from: {} ~ wrong password", user.getUsername());
+                    }
+                  } else {
+                    response.message("User does not exist")
+                        .status(HttpResponseStatus.BAD_REQUEST.code());
+                    log.warn("Login failed from: {} ~ cannot find user with username", request.getUsername());
+                  }
+
+                } else {
+                  response.message("User does not exist")
+                      .status(HttpResponseStatus.BAD_REQUEST.code());
+                  log.warn("Login failed from: {} ~ SQL query did not succeed", request.getUsername());
+                }
+
+                tracker.step("handle").code("SUCCESS").build().record();
                 future.complete(response.build());
 
-                log.info("Login failed ~ Lack of information");
-                return future;
-            }
-            accountDA.selectUserByUsername(request.getUsername())
-              .setHandler(
-                rs -> {
-                    if (rs.succeeded()) {
-                        User user = rs.result();
-                        if (user != null) {
-                            if (BCrypt.checkpw(request.getPassword(), user.getPassword())) {
-                                String token = JWTUtils.buildJWTToken(user.getId());
-                                log.info("token len: {}", token.length());
-                                response.data(LoginResponse.builder()
-                                  .token(token)
-                                  .userId(user.getId())
-                                  .fullName(user.getFullName())
-                                  .build())
-                                  .status(HttpResponseStatus.OK.code());
-                                log.info("Login successfully");
-                            } else {
-                                response.message("Wrong password")
-                                  .status(HttpResponseStatus.BAD_REQUEST.code());
-                                log.info("Login failed from: {} ~ wrong password", user.getUsername());
-                            }
-                        } else {
-                            response.message("User does not exist")
-                              .status(HttpResponseStatus.BAD_REQUEST.code());
-                            log.warn("Login failed from: {} ~ cannot find user with username", request.getUsername());
-                        }
-
-                    } else {
-                        response.message("User does not exist")
-                          .status(HttpResponseStatus.BAD_REQUEST.code());
-                        log.warn("Login failed from: {} ~ SQL query did not succeed", request.getUsername());
-                    }
-
-                    tracker.step("handle").code("SUCCESS").build().record();
-                    future.complete(response.build());
-
-                });
-        } catch (Exception e) {
-            log.error("Login failed ~ cause is: {}", e.getMessage());
-            response.message("Server has an error")
-              .status(HttpResponseStatus.INTERNAL_SERVER_ERROR.code());
-            future.complete(response.build());
-        }
-        return future;
+              });
+    } catch (Exception e) {
+      log.error("Login failed ~ cause is: {}", e.getMessage());
+      response.message("Server has an error")
+          .status(HttpResponseStatus.INTERNAL_SERVER_ERROR.code());
+      future.complete(response.build());
     }
+    return future;
+  }
 }

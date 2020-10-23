@@ -32,7 +32,7 @@ public class AccountDAImpl extends BaseTransactionDA implements AccountDA {
   private static final String SELECT_USER_LIST =
       "SELECT * FROM account WHERE id != ?";
   private static final String SELECT_FOR_UPDATE_TWO_ACCOUNTS =
-      "SELECT * FROM account WHERE id != ? or id = ? FOR UPDATE";
+      "SELECT * FROM account WHERE id = ? or id = ? FOR UPDATE";
   private static final String SELECT_BALANCE_BY_ID =
       "SELECT balance, last_time_update_balance, number_notification FROM account WHERE id = ?";
   private static final String UPDATE_BALANCE_BY_AMOUNT =

@@ -1,7 +1,22 @@
-~/MinhDuc/module-10/SnailProject/src/ServerSide/Note/ghz --insecure \
+~/Pro/vng/module-10/BenchmarkMonitor/ghz --insecure \
+  --proto ../src/main/proto/fintech.proto \
+  --call fintech.FintechService.getBalance \
+  -n 1000 -c 50 \
+  -m '{"Authorization":"Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI5IiwiZXhwIjo0NjIyNDcwNDIyfQ.V893skuYl-2x28mLVK7VZgNunsJjZQrxHBXHMCkWYIs"}' \
+  0.0.0.0:8080
+
+~/Pro/vng/module-10/BenchmarkMonitor/ghz --insecure \
   --proto ../src/main/proto/fintech.proto \
   --call fintech.FintechService.transfer \
-  -n 100000 -c 20 \
-  -d '{"sender_id": 8, "receiver_id": 4, "amount": 10, "message":"hello", "password":"suneo" }' \
-  -m '{"Authorization":"Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1IiwiZXhwIjo0NjIyNDcwNDIyfQ.ZXtvktZytH4bK2aaokJTWyxKofpyu8hzyjL7OhljG54"}' \
-  0.0.0.0:8000
+  -n 1000 -c 20 \
+  -d '{"receiver_id": 10, "amount": 10, "message":"hello", "password":"tan" }' \
+  -m '{"Authorization":"Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI5IiwiZXhwIjo0NjIyNDcwNDIyfQ.V893skuYl-2x28mLVK7VZgNunsJjZQrxHBXHMCkWYIs"}' \
+  0.0.0.0:8080
+
+~/Pro/vng/module-10/BenchmarkMonitor/ghz --insecure \
+  --proto ../src/main/proto/fintech.proto \
+  --call fintech.FintechService.getHistory \
+  -n 1000 -c 50 \
+  -d '{"offset": 0}' \
+  -m '{"Authorization":"Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI5IiwiZXhwIjo0NjIyNDcwNDIyfQ.V893skuYl-2x28mLVK7VZgNunsJjZQrxHBXHMCkWYIs"}' \
+  0.0.0.0:8080

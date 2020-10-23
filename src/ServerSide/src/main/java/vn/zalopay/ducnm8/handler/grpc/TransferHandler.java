@@ -30,8 +30,6 @@ public class TransferHandler {
   private final TransactionProvider transactionProvider;
   private final WSHandler wsHandler;
 
-  private Transaction transaction;
-
   long sender;
   long receiver;
   long amount;
@@ -61,6 +59,7 @@ public class TransferHandler {
     this.notificationDA = notificationDA;
     this.transactionProvider = transactionProvider;
     this.wsHandler = wsHandler;
+
   }
 
   public void transfer(TransferRequest transferRequest, Future<TransferResponse> responseFuture) {
@@ -75,16 +74,16 @@ public class TransferHandler {
     password = transferRequest.getPassword();
     transferTime = Instant.now().getEpochSecond();
 
-    transaction = transactionProvider.newTransaction();
+    Transaction transaction = transactionProvider.newTransaction();
 
     checkPassword()
         .compose(next -> transaction.begin())
-        .compose(next -> getAccounts())
+        .compose(next -> getAccounts(transaction))
         .compose(next -> isEnoughMoney())
         .compose(next -> transaction.execute(accountDA.plusBalanceByAmount(sender, -amount, transferTime)))
         .compose(next -> transaction.execute(accountDA.plusBalanceByAmount(receiver, amount, transferTime)))
-        .compose(next -> getAccounts())
-        .compose(next -> insertTransferCertificate())
+        .compose(next -> getAccounts(transaction))
+        .compose(next -> insertTransferCertificate(transaction))
         .compose(next -> transaction.commit())
         .setHandler(transferAsync -> {
 
@@ -169,7 +168,7 @@ public class TransferHandler {
     return future;
   }
 
-  private Future<Void> getAccounts() {
+  private Future<Void> getAccounts(Transaction transaction) {
     Future<Void> future = Future.future();
     transaction.execute(accountDA.selectForUpdateTwoAccount(sender, receiver))
         .setHandler(rs -> {
@@ -192,7 +191,7 @@ public class TransferHandler {
     return future;
   }
 
-  private Future<Void> insertTransferCertificate() {
+  private Future<Void> insertTransferCertificate(Transaction transaction) {
     Future<Void> future = Future.future();
     Transfer transfer = Transfer.builder()
         .senderId(sender)

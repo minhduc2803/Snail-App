@@ -24,7 +24,7 @@ Kết quả chi tiết:
 
 ## 2. Get transfer history
 
-Gửi 1000 getHistory request với. Tham số concurrent = 50
+Gửi 1000 getHistory request. Tham số concurrent = 50
 
 |Tổng thời gian thực hiên| Requests/sec | p99 |
 |------------------------|--------------|-----|

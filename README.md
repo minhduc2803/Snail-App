@@ -2,20 +2,35 @@
 
 ## 1. Tổng quan
 
-*Snail Project* là một training project thuộc chương trình ZaloPay Fresher 2020 sử dụng React JS, Vert.x để xây dụng một ứng dụng chat real-time đơn giản bao gồm các chức năng cơ bản:
+*Snail Project* là một training project thuộc chương trình ZaloPay Fresher 2020 sử dụng React JS, Vert.x để xây dụng một ứng dụng chat real-time + digital wallet đơn giản bao gồm các chức năng cơ bản:
 
-- Đặng nhập / Đăng xuất (có sử dụng JWT)
-- Đăng ký tài khoản
-- Xem danh sách tất cả người dùng trong hệ thống
-- Chat 1 - 1
+- Chat:
+  - Đặng nhập / Đăng xuất (có sử dụng JWT)
+  - Đăng ký tài khoản
+  - Xem danh sách tất cả người dùng trong hệ thống
+  - Chat 1 - 1
+- Wallet:
+  - Xem số dư của tài khoản
+  - Gửi tiền cho một user trong hệ thống
+  - Xem lịch sử giao dịch
 
 Các công nghệ sử dụng:
 
 - `React`, `Redux` cho client
 - `Java Vert.x` xây dựng API cho server
 - `WebSocket` gửi nhận tin nhắn real time
-- Database dùng `MySQL`, cache dùng `Redis`
+- Database dùng `MySQL`
+- `gRPC` cho các chức năng của wallet
 
+## 2. Chi tiết
+
+- [RestAPI Sequence diagrams](docs/chatapp/Sequence-Diagram.md)
+- [RestAPI và Websocket Specifications](https://app.swaggerhub.com/apis/minhduc2803/Snail-Project/1.0.0)
+- [gRPC API Sequence diagrams](docs/paymentapp/README.md)
+- [gRPC proto file](docs/paymentapp/grpc-api/fintech.proto)
+- [Database design](images/mysql/current-fintech-diagram.png)
+- [Benchmark cho wallet](docs/paymentapp/benchmark.md)
+  
 ## 2. Hướng dẫn chạy
 
 - Client chạy trên port 3000. Có dùng `yarn` để build
@@ -23,7 +38,8 @@ Các công nghệ sử dụng:
 ```shell script
     yarn install
  ```
-  và khởi động
+
+và khởi động
 
 ```shell script
     yarn start
@@ -44,29 +60,30 @@ java -Dservice.conf=./conf/development.yaml
 -Dlog4j.configurationFile=./conf/log4j.xml
 -Dredis.conf=./conf/redis.yaml
 -cp *.jar bla.nah.example.Runner
-
 ```
+
+- Run Envoy proxy
+  
 ## 3. Demo
 
 ### 3.1 Login
 
-![](images/demo/login.png)
+![login](images/demo/login.png)
 
 ### 3.2 Register
 
-![](images/demo/register.png)
+![register](images/demo/register.png)
 
 ### 3.3 View User List
 
-![](images/demo/viewuser.png)
+![list-user](images/demo/viewuser.png)
 
 ### 3.4 Chat 1 - 1
 
-![](images/demo/chat.png)
+![chat](images/demo/chat.png)
 
-## 4. Refernces
+### 3.5 Get balance
 
-- [Sequence diagrams](docs/Sequence-Diagram.md)
-- [Database design](docs/Database-Design.md)
-- [Redis cache Specifications](docs/Redis-Cache-Specifications.md)
-- [API and Websocket Specifications](https://app.swaggerhub.com/apis/minhduc2803/Snail-Project/1.0.0)
+### 3.6 Get transfer history
+
+### 3.7 Transfer money

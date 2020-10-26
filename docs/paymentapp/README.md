@@ -39,4 +39,4 @@
 
 ## 3. Database schema
 
-![fintech diagram](../../images/mysql/fintech-diagram.png)
+![fintech diagram](../../images/mysql/current-fintech-diagram.png)

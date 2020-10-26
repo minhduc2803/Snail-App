@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import '../../Frame/PageStructure/antd.css';
 import { Form, Select, InputNumber, Button, Input } from 'antd';
 import { transfer } from '../../../redux/actions';
+import { string } from 'prop-types';
 
 const { Option } = Select;
 const formItemLayout = {
@@ -44,8 +45,11 @@ const Demo = () => {
 	};
 	const [ form ] = Form.useForm();
 	return (
-		<Form name="control-hooks" form={form} {...formItemLayout} onFinish={onFinish}>
+		<Form 
+
+		name="control-hooks" form={form} {...formItemLayout} onFinish={onFinish}>
 			<Form.Item
+				initialValue={`${user.userId} @${user.username} ${user.fullName}`}
 				name="receivers"
 				label="Người nhận"
 				rules={[
@@ -58,7 +62,7 @@ const Demo = () => {
 			>
 				<Select
 					showSearch
-					defaultValue={`@${user.username}`}
+					
 					placeholder="Select a person"
 					
 				>

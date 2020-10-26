@@ -6,12 +6,12 @@ import { Result, Button } from 'antd';
 import { CheckCircleOutlined, ExclamationCircleOutlined } from '@ant-design/icons';
 
 export default function() {
-    const transferSuccess = useSelector(state => state.transfer.transferSuccess)
+    const errorCode = useSelector(state => state.transfer.errorCode)
     const dispatch = useDispatch();
 
     let child  = <CheckCircleOutlined />;
     let notification = "Giao dịch thành công";
-    if(!transferSuccess){
+    if(errorCode !== 0){
         child  = <ExclamationCircleOutlined style={{color:"#f5222d"}}/>;
         notification = "Giao dịch thất bại";
     }

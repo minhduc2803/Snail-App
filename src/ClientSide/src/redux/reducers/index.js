@@ -10,7 +10,7 @@ const initialState = {
 		transferPopUp: false,
 		transferComplete: false,
 		transferLoding: false,
-		transferSuccess: true
+		errorCode: 0
 	},
 
 	transferHistory: []
@@ -104,7 +104,7 @@ const rootReducer = (state = initialState, action) => {
 					transferPopUp: true,
 					transferComplete: false,
 					transferLoding: false,
-					transferSuccess: true
+					errorCode: 0
 				}
 			};
 
@@ -115,18 +115,40 @@ const rootReducer = (state = initialState, action) => {
 					transferPopUp: true,
 					transferComplete: true,
 					transferLoding: false,
-					transferSuccess: true
+					errorCode: 0
 				}
 			};
 
-		case 'POP_UP_TRANSFER_COMPLETE_FAILED':
+		case 'POP_UP_TRANSFER_COMPLETE_WRONG_PASSWORD':
 			return {
 				...state,
 				transfer: {
 					transferPopUp: true,
 					transferComplete: true,
 					transferLoding: false,
-					transferSuccess: false
+					errorCode: 3
+				}
+			};
+
+		case 'POP_UP_TRANSFER_COMPLETE_NOT_ENOUGH_MONEY':
+			return {
+				...state,
+				transfer: {
+					transferPopUp: true,
+					transferComplete: true,
+					transferLoding: false,
+					errorCode: 4
+				}
+			};
+
+		case 'POP_UP_TRANSFER_COMPLETE_INTERNAL_SERVER_ERROR':
+			return {
+				...state,
+				transfer: {
+					transferPopUp: true,
+					transferComplete: true,
+					transferLoding: false,
+					errorCode: 5
 				}
 			};
 
@@ -137,7 +159,7 @@ const rootReducer = (state = initialState, action) => {
 					transferPopUp: false,
 					transferComplete: false,
 					transferLoding: false,
-					transferSuccess: true
+					errorCode: 0
 				}
 			};
 
@@ -148,7 +170,7 @@ const rootReducer = (state = initialState, action) => {
 					transferPopUp: true,
 					transferComplete: false,
 					transferLoding: true,
-					transferSuccess: true
+					errorCode: 0
 				}
 			};
 

@@ -26,6 +26,7 @@ export default function() {
           visible={transferPopUp}
           onCancel={((e) => dispatch({type: "POP_DOWN_TRANSFER"}))}
           footer={[]}
+          destroyOnClose={true}
         >
           {child}
         </Modal>

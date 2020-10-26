@@ -254,16 +254,16 @@ export function transfer(transfer_info) {
 						dispatch({ type: 'POP_UP_TRANSFER_COMPLETE_FAILED' });
 						break;
 					case 3:
-						dispatch({ type: 'POP_UP_TRANSFER_COMPLETE_FAILED' });
+						dispatch({ type: 'POP_UP_TRANSFER_COMPLETE_WRONG_PASSWORD' });
 						break;
 					case 4:
-						dispatch({ type: 'POP_UP_TRANSFER_COMPLETE_FAILED' });
+						dispatch({ type: 'POP_UP_TRANSFER_COMPLETE_NOT_ENOUGH_MONEY' });
 						break;
 					case 5:
-						dispatch({ type: 'POP_UP_TRANSFER_COMPLETE_FAILED' });
+						dispatch({ type: 'POP_UP_TRANSFER_COMPLETE_INTERNAL_SERVER_ERROR' });
 						break;
 					default:
-						dispatch({ type: 'POP_UP_TRANSFER_COMPLETE_FAILED' });
+						dispatch({ type: 'POP_UP_TRANSFER_COMPLETE_INTERNAL_SERVER_ERROR' });
 						break;
 				}
 			}

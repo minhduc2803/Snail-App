@@ -1,0 +1,1156 @@
+2020-10-26 13:53:58,849 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-10-26 13:53:59,247 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-1 - Start completed.
+2020-10-26 13:53:59,248 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-2 - Starting...
+2020-10-26 13:53:59,274 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-2 - Start completed.
+2020-10-26 13:53:59,733 INFO  org.redisson.Version Redisson 3.11.6
+2020-10-26 13:53:59,911 INFO  org.redisson.connection.pool.MasterConnectionPool 24 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-10-26 13:53:59,911 INFO  org.redisson.connection.pool.MasterPubSubConnectionPool 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-10-26 13:53:59,941 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-3 - Starting...
+2020-10-26 13:53:59,955 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-3 - Start completed.
+2020-10-26 13:54:00,051 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-4 - Starting...
+2020-10-26 13:54:00,062 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-4 - Start completed.
+2020-10-26 13:54:00,064 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-5 - Starting...
+2020-10-26 13:54:00,080 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-5 - Start completed.
+2020-10-26 13:54:00,082 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-6 - Starting...
+2020-10-26 13:54:00,093 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-6 - Start completed.
+2020-10-26 13:54:00,106 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-26 13:54:00,110 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-26 13:54:00,115 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-26 13:54:00,115 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-26 13:54:00,122 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-26 13:54:00,126 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-26 13:54:00,130 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-26 13:54:00,134 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-26 13:54:00,260 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-26 13:54:00,263 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-26 13:54:00,263 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-26 13:54:00,264 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-26 13:54:00,264 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-26 13:54:00,264 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-26 13:54:00,264 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-26 13:54:00,264 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-26 13:54:00,265 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-26 13:54:00,265 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-26 13:54:00,265 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-26 13:54:00,265 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-26 13:54:00,265 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-26 13:54:00,265 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-26 13:54:00,266 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-26 13:54:00,268 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-26 13:54:00,372 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-26 13:54:00,372 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-26 13:54:00,373 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-26 13:54:00,373 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-26 13:54:00,374 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-26 13:54:00,374 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-26 13:54:00,374 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-26 13:54:00,374 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-26 13:54:00,380 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-26 13:54:00,379 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-26 13:54:00,379 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-26 13:54:00,380 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-26 13:54:00,380 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-26 13:54:00,380 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-26 13:54:00,380 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-26 13:54:00,381 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-26 13:54:00,381 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-26 13:54:00,381 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-26 13:54:00,381 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-26 13:54:00,381 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-26 13:54:00,382 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-26 13:54:00,382 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-26 13:54:00,384 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-26 13:54:00,384 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-26 13:54:52,268 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 13:54:52,273 INFO  vn.zalopay.ducnm8.server.WebSocketServer web socket connected from UserID: 8
+2020-10-26 13:54:52,278 INFO  vn.zalopay.ducnm8.handler.grpc.GetBalanceHandler GRPC get balance request from: 8
+2020-10-26 13:54:52,279 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select balance by id: 8
+2020-10-26 13:54:52,283 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 13:54:52,285 INFO  vn.zalopay.ducnm8.handler.grpc.GetHistoryHandler GRPC get transfer history request from: 8
+2020-10-26 13:54:52,285 INFO  vn.zalopay.ducnm8.da.interact.TransferHistoryDAImpl select a list transfer history
+2020-10-26 13:54:52,359 INFO  vn.zalopay.ducnm8.handler.grpc.GetBalanceHandler GRPC: getBalance succeed
+2020-10-26 13:54:52,398 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 13:54:52,405 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 13:54:52,407 INFO  vn.zalopay.ducnm8.handler.UserListHandler get a user list
+2020-10-26 13:54:52,409 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select list user except one user by id: 8
+2020-10-26 13:54:52,582 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 13:54:52,583 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 13:54:52,583 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 13:54:52,584 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 13:54:52,584 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 13:54:52,589 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 13:54:52,594 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 8 and 5
+2020-10-26 13:54:52,594 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 8 and 4
+2020-10-26 13:54:52,594 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 8 and 5, offset = 0
+2020-10-26 13:54:52,594 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 8 and 4, offset = 0
+2020-10-26 13:54:52,596 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 8 and 7
+2020-10-26 13:54:52,596 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 8 and 7, offset = 0
+2020-10-26 13:54:52,623 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@1961400157 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@31ea07a4
+2020-10-26 13:54:52,624 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@887966060 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@71efc195
+2020-10-26 13:54:52,629 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@832610328 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@3f67585c
+2020-10-26 13:54:54,878 INFO  vn.zalopay.ducnm8.handler.grpc.GetHistoryHandler GRPC: get transfer history succeed
+2020-10-26 13:58:08,796 INFO  vn.zalopay.ducnm8.server.WebSocketServer web socket connected from UserID: 8
+2020-10-26 13:58:08,806 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 13:58:08,806 INFO  vn.zalopay.ducnm8.handler.grpc.GetBalanceHandler GRPC get balance request from: 8
+2020-10-26 13:58:08,807 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select balance by id: 8
+2020-10-26 13:58:08,812 INFO  vn.zalopay.ducnm8.handler.grpc.GetBalanceHandler GRPC: getBalance succeed
+2020-10-26 13:58:08,813 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 13:58:08,814 INFO  vn.zalopay.ducnm8.handler.grpc.GetHistoryHandler GRPC get transfer history request from: 8
+2020-10-26 13:58:08,816 INFO  vn.zalopay.ducnm8.da.interact.TransferHistoryDAImpl select a list transfer history
+2020-10-26 13:58:08,903 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 13:58:08,904 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 13:58:08,905 INFO  vn.zalopay.ducnm8.handler.UserListHandler get a user list
+2020-10-26 13:58:08,908 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select list user except one user by id: 8
+2020-10-26 13:58:08,946 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 13:58:08,948 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 13:58:08,948 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 13:58:08,948 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 13:58:08,948 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 8 and 4
+2020-10-26 13:58:08,948 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 13:58:08,948 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 13:58:08,949 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 8 and 4, offset = 0
+2020-10-26 13:58:08,949 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 8 and 5
+2020-10-26 13:58:08,949 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 8 and 5, offset = 0
+2020-10-26 13:58:08,956 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 8 and 7
+2020-10-26 13:58:08,956 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 8 and 7, offset = 0
+2020-10-26 13:58:08,963 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@641729953 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@2887ff19
+2020-10-26 13:58:08,965 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@697775876 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@2750cc46
+2020-10-26 13:58:08,968 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@1689833662 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@6a7f2259
+2020-10-26 13:58:11,927 INFO  vn.zalopay.ducnm8.handler.grpc.GetHistoryHandler GRPC: get transfer history succeed
+2020-10-26 13:59:27,976 INFO  vn.zalopay.ducnm8.server.WebSocketServer web socket connected from UserID: 8
+2020-10-26 13:59:27,976 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 13:59:27,977 INFO  vn.zalopay.ducnm8.handler.grpc.GetBalanceHandler GRPC get balance request from: 8
+2020-10-26 13:59:27,977 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select balance by id: 8
+2020-10-26 13:59:27,985 INFO  vn.zalopay.ducnm8.handler.grpc.GetBalanceHandler GRPC: getBalance succeed
+2020-10-26 13:59:27,989 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 13:59:27,990 INFO  vn.zalopay.ducnm8.handler.grpc.GetHistoryHandler GRPC get transfer history request from: 8
+2020-10-26 13:59:27,991 INFO  vn.zalopay.ducnm8.da.interact.TransferHistoryDAImpl select a list transfer history
+2020-10-26 13:59:28,092 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 13:59:28,093 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 13:59:28,093 INFO  vn.zalopay.ducnm8.handler.UserListHandler get a user list
+2020-10-26 13:59:28,094 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select list user except one user by id: 8
+2020-10-26 13:59:28,130 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 13:59:28,130 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 13:59:28,131 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 13:59:28,131 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 13:59:28,131 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 13:59:28,132 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 8 and 5
+2020-10-26 13:59:28,132 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 8 and 4
+2020-10-26 13:59:28,132 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 8 and 5, offset = 0
+2020-10-26 13:59:28,132 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 8 and 4, offset = 0
+2020-10-26 13:59:28,133 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 13:59:28,134 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 8 and 7
+2020-10-26 13:59:28,134 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 8 and 7, offset = 0
+2020-10-26 13:59:28,152 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@1866937665 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@6180d6d9
+2020-10-26 13:59:28,164 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@1512981763 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@54e9b036
+2020-10-26 13:59:28,165 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@1042295853 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@30e7c599
+2020-10-26 13:59:31,100 INFO  vn.zalopay.ducnm8.handler.grpc.GetHistoryHandler GRPC: get transfer history succeed
+2020-10-26 13:59:35,722 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 13:59:35,722 INFO  vn.zalopay.ducnm8.handler.grpc.GetBalanceHandler GRPC get balance request from: 8
+2020-10-26 13:59:35,722 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select balance by id: 8
+2020-10-26 13:59:35,723 INFO  vn.zalopay.ducnm8.server.WebSocketServer web socket connected from UserID: 8
+2020-10-26 13:59:35,726 INFO  vn.zalopay.ducnm8.handler.grpc.GetBalanceHandler GRPC: getBalance succeed
+2020-10-26 13:59:35,726 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 13:59:35,727 INFO  vn.zalopay.ducnm8.handler.grpc.GetHistoryHandler GRPC get transfer history request from: 8
+2020-10-26 13:59:35,728 INFO  vn.zalopay.ducnm8.da.interact.TransferHistoryDAImpl select a list transfer history
+2020-10-26 13:59:35,812 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 13:59:35,813 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 13:59:35,813 INFO  vn.zalopay.ducnm8.handler.UserListHandler get a user list
+2020-10-26 13:59:35,814 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select list user except one user by id: 8
+2020-10-26 13:59:35,875 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 13:59:35,876 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 13:59:35,876 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 8 and 5
+2020-10-26 13:59:35,876 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 8 and 5, offset = 0
+2020-10-26 13:59:35,878 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@2093852854 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@2b2c283a
+2020-10-26 13:59:35,882 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 13:59:35,883 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 13:59:35,886 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 13:59:35,888 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 13:59:35,890 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 8 and 7
+2020-10-26 13:59:35,890 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 8 and 7, offset = 0
+2020-10-26 13:59:35,894 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 8 and 4
+2020-10-26 13:59:35,895 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 8 and 4, offset = 0
+2020-10-26 13:59:35,897 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@995674984 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@7e5a5267
+2020-10-26 13:59:35,899 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@1255050708 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@4fee8969
+2020-10-26 13:59:38,956 INFO  vn.zalopay.ducnm8.handler.grpc.GetHistoryHandler GRPC: get transfer history succeed
+2020-10-26 14:00:27,598 INFO  vn.zalopay.ducnm8.handler.WSHandler Send chat from userId: 8
+2020-10-26 14:00:27,615 INFO  vn.zalopay.ducnm8.handler.WSHandler a json chat {"chatType":1,"senderId":8,"receiverId":7,"content":"alo"}
+2020-10-26 14:00:27,616 INFO  vn.zalopay.ducnm8.handler.WSHandler 1603695627
+2020-10-26 14:00:27,616 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl insert a new chat
+2020-10-26 14:00:27,624 INFO  vn.zalopay.ducnm8.handler.WSHandler insert a new chat
+2020-10-26 14:00:27,625 INFO  vn.zalopay.ducnm8.handler.WSHandler Send chat to accountId: 8
+2020-10-26 14:00:27,628 INFO  vn.zalopay.ducnm8.handler.WSHandler Send chat to accountId: 7
+2020-10-26 14:05:02,290 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 14:05:02,293 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select account by id 8
+2020-10-26 14:05:02,326 ERROR vn.zalopay.ducnm8.handler.grpc.TransferHandler GRPC: transfer failed ~ cause Wrong password
+2020-10-26 14:05:02,326 WARN  vn.zalopay.ducnm8.handler.grpc.TransferHandler grpc checkPassword failed ~ Wrong password id: 8
+2020-10-26 14:10:39,687 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 14:10:39,687 INFO  vn.zalopay.ducnm8.handler.grpc.GetBalanceHandler GRPC get balance request from: 8
+2020-10-26 14:10:39,688 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select balance by id: 8
+2020-10-26 14:10:39,691 INFO  vn.zalopay.ducnm8.server.WebSocketServer web socket connected from UserID: 8
+2020-10-26 14:10:39,693 INFO  vn.zalopay.ducnm8.handler.grpc.GetBalanceHandler GRPC: getBalance succeed
+2020-10-26 14:10:39,705 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 14:10:39,706 INFO  vn.zalopay.ducnm8.handler.grpc.GetHistoryHandler GRPC get transfer history request from: 8
+2020-10-26 14:10:39,706 INFO  vn.zalopay.ducnm8.da.interact.TransferHistoryDAImpl select a list transfer history
+2020-10-26 14:10:39,800 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:10:39,803 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:10:39,803 INFO  vn.zalopay.ducnm8.handler.UserListHandler get a user list
+2020-10-26 14:10:39,805 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select list user except one user by id: 8
+2020-10-26 14:10:39,903 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:10:39,904 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:10:39,905 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 8 and 4
+2020-10-26 14:10:39,908 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:10:39,909 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:10:39,909 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 8 and 7
+2020-10-26 14:10:39,910 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 8 and 7, offset = 0
+2020-10-26 14:10:39,911 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 8 and 4, offset = 0
+2020-10-26 14:10:39,913 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:10:39,914 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:10:39,917 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 8 and 5
+2020-10-26 14:10:39,918 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 8 and 5, offset = 0
+2020-10-26 14:10:39,920 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@909378092 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@73369a8e
+2020-10-26 14:10:39,920 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@244603059 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@6423932
+2020-10-26 14:10:39,930 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@1849736142 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@2b422862
+2020-10-26 14:10:42,837 INFO  vn.zalopay.ducnm8.handler.grpc.GetHistoryHandler GRPC: get transfer history succeed
+2020-10-26 14:10:56,958 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 14:10:56,958 INFO  vn.zalopay.ducnm8.handler.grpc.GetBalanceHandler GRPC get balance request from: 8
+2020-10-26 14:10:56,959 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select balance by id: 8
+2020-10-26 14:10:56,964 INFO  vn.zalopay.ducnm8.handler.grpc.GetBalanceHandler GRPC: getBalance succeed
+2020-10-26 14:10:56,965 INFO  vn.zalopay.ducnm8.server.WebSocketServer web socket connected from UserID: 8
+2020-10-26 14:10:56,970 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 14:10:56,974 INFO  vn.zalopay.ducnm8.handler.grpc.GetHistoryHandler GRPC get transfer history request from: 8
+2020-10-26 14:10:56,974 INFO  vn.zalopay.ducnm8.da.interact.TransferHistoryDAImpl select a list transfer history
+2020-10-26 14:10:57,067 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:10:57,068 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:10:57,069 INFO  vn.zalopay.ducnm8.handler.UserListHandler get a user list
+2020-10-26 14:10:57,071 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select list user except one user by id: 8
+2020-10-26 14:10:57,223 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:10:57,224 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:10:57,225 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 8 and 4
+2020-10-26 14:10:57,225 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 8 and 4, offset = 0
+2020-10-26 14:10:57,227 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@1356213875 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@15d4ba0d
+2020-10-26 14:10:57,249 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:10:57,250 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:10:57,251 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:10:57,259 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:10:57,260 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 8 and 5
+2020-10-26 14:10:57,260 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 8 and 5, offset = 0
+2020-10-26 14:10:57,260 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 8 and 7
+2020-10-26 14:10:57,260 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 8 and 7, offset = 0
+2020-10-26 14:10:57,265 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@900445566 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@31943713
+2020-10-26 14:10:57,267 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@886589277 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@71dacfa2
+2020-10-26 14:11:00,303 INFO  vn.zalopay.ducnm8.handler.grpc.GetHistoryHandler GRPC: get transfer history succeed
+2020-10-26 14:12:59,422 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 14:12:59,422 INFO  vn.zalopay.ducnm8.handler.grpc.GetBalanceHandler GRPC get balance request from: 8
+2020-10-26 14:12:59,422 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select balance by id: 8
+2020-10-26 14:12:59,424 INFO  vn.zalopay.ducnm8.handler.grpc.GetBalanceHandler GRPC: getBalance succeed
+2020-10-26 14:12:59,433 INFO  vn.zalopay.ducnm8.server.WebSocketServer web socket connected from UserID: 8
+2020-10-26 14:12:59,434 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 14:12:59,435 INFO  vn.zalopay.ducnm8.handler.grpc.GetHistoryHandler GRPC get transfer history request from: 8
+2020-10-26 14:12:59,435 INFO  vn.zalopay.ducnm8.da.interact.TransferHistoryDAImpl select a list transfer history
+2020-10-26 14:12:59,515 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:12:59,516 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:12:59,516 INFO  vn.zalopay.ducnm8.handler.UserListHandler get a user list
+2020-10-26 14:12:59,517 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select list user except one user by id: 8
+2020-10-26 14:12:59,613 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:12:59,614 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:12:59,615 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:12:59,616 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 8 and 5
+2020-10-26 14:12:59,617 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 8 and 5, offset = 0
+2020-10-26 14:12:59,622 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@1127254 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@30f31e76
+2020-10-26 14:12:59,622 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:12:59,623 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 8 and 4
+2020-10-26 14:12:59,623 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 8 and 4, offset = 0
+2020-10-26 14:12:59,628 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@848300151 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@1e75ad28
+2020-10-26 14:12:59,670 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:12:59,672 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:12:59,672 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 8 and 7
+2020-10-26 14:12:59,672 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 8 and 7, offset = 0
+2020-10-26 14:12:59,676 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@1786314772 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@5047913c
+2020-10-26 14:13:02,722 INFO  vn.zalopay.ducnm8.handler.grpc.GetHistoryHandler GRPC: get transfer history succeed
+2020-10-26 14:14:25,022 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 14:14:25,023 INFO  vn.zalopay.ducnm8.handler.grpc.GetBalanceHandler GRPC get balance request from: 8
+2020-10-26 14:14:25,023 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select balance by id: 8
+2020-10-26 14:14:25,023 INFO  vn.zalopay.ducnm8.server.WebSocketServer web socket connected from UserID: 8
+2020-10-26 14:14:25,025 INFO  vn.zalopay.ducnm8.handler.grpc.GetBalanceHandler GRPC: getBalance succeed
+2020-10-26 14:14:25,038 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 14:14:25,039 INFO  vn.zalopay.ducnm8.handler.grpc.GetHistoryHandler GRPC get transfer history request from: 8
+2020-10-26 14:14:25,039 INFO  vn.zalopay.ducnm8.da.interact.TransferHistoryDAImpl select a list transfer history
+2020-10-26 14:14:25,163 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:14:25,165 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:14:25,165 INFO  vn.zalopay.ducnm8.handler.UserListHandler get a user list
+2020-10-26 14:14:25,166 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select list user except one user by id: 8
+2020-10-26 14:14:25,305 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:14:25,306 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:14:25,306 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 8 and 5
+2020-10-26 14:14:25,307 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 8 and 5, offset = 0
+2020-10-26 14:14:25,320 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:14:25,320 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:14:25,321 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:14:25,321 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:14:25,322 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 8 and 7
+2020-10-26 14:14:25,322 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 8 and 7, offset = 0
+2020-10-26 14:14:25,330 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 8 and 4
+2020-10-26 14:14:25,330 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 8 and 4, offset = 0
+2020-10-26 14:14:25,334 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@1773860130 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@4ff188b9
+2020-10-26 14:14:25,336 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@753896253 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@428f282d
+2020-10-26 14:14:25,350 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@1734608035 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@39edf5b6
+2020-10-26 14:14:28,508 INFO  vn.zalopay.ducnm8.handler.grpc.GetHistoryHandler GRPC: get transfer history succeed
+2020-10-26 14:14:44,208 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 14:14:44,209 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select account by id 8
+2020-10-26 14:14:44,214 ERROR vn.zalopay.ducnm8.handler.grpc.TransferHandler GRPC: transfer failed ~ cause Wrong password
+2020-10-26 14:14:44,214 WARN  vn.zalopay.ducnm8.handler.grpc.TransferHandler grpc checkPassword failed ~ Wrong password id: 8
+2020-10-26 14:15:43,151 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 14:15:43,151 INFO  vn.zalopay.ducnm8.handler.grpc.GetBalanceHandler GRPC get balance request from: 8
+2020-10-26 14:15:43,152 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select balance by id: 8
+2020-10-26 14:15:43,156 INFO  vn.zalopay.ducnm8.server.WebSocketServer web socket connected from UserID: 8
+2020-10-26 14:15:43,158 INFO  vn.zalopay.ducnm8.handler.grpc.GetBalanceHandler GRPC: getBalance succeed
+2020-10-26 14:15:43,165 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 14:15:43,166 INFO  vn.zalopay.ducnm8.handler.grpc.GetHistoryHandler GRPC get transfer history request from: 8
+2020-10-26 14:15:43,166 INFO  vn.zalopay.ducnm8.da.interact.TransferHistoryDAImpl select a list transfer history
+2020-10-26 14:15:43,282 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:15:43,283 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:15:43,283 INFO  vn.zalopay.ducnm8.handler.UserListHandler get a user list
+2020-10-26 14:15:43,284 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select list user except one user by id: 8
+2020-10-26 14:15:43,451 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:15:43,452 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:15:43,453 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 8 and 4
+2020-10-26 14:15:43,453 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 8 and 4, offset = 0
+2020-10-26 14:15:43,459 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:15:43,460 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:15:43,461 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:15:43,461 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 8 and 5
+2020-10-26 14:15:43,461 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 8 and 5, offset = 0
+2020-10-26 14:15:43,461 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:15:43,462 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 8 and 7
+2020-10-26 14:15:43,462 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 8 and 7, offset = 0
+2020-10-26 14:15:43,470 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@1311032560 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@40e11ba0
+2020-10-26 14:15:43,474 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@1956036421 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@2dc07af0
+2020-10-26 14:15:43,482 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@1039856617 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@240b8c60
+2020-10-26 14:15:46,187 INFO  vn.zalopay.ducnm8.handler.grpc.GetHistoryHandler GRPC: get transfer history succeed
+2020-10-26 14:18:14,082 INFO  vn.zalopay.ducnm8.server.WebSocketServer web socket connected from UserID: 8
+2020-10-26 14:18:14,092 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 14:18:14,093 INFO  vn.zalopay.ducnm8.handler.grpc.GetBalanceHandler GRPC get balance request from: 8
+2020-10-26 14:18:14,093 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select balance by id: 8
+2020-10-26 14:18:14,095 INFO  vn.zalopay.ducnm8.handler.grpc.GetBalanceHandler GRPC: getBalance succeed
+2020-10-26 14:18:14,098 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 14:18:14,099 INFO  vn.zalopay.ducnm8.handler.grpc.GetHistoryHandler GRPC get transfer history request from: 8
+2020-10-26 14:18:14,099 INFO  vn.zalopay.ducnm8.da.interact.TransferHistoryDAImpl select a list transfer history
+2020-10-26 14:18:14,216 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:18:14,217 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:18:14,218 INFO  vn.zalopay.ducnm8.handler.UserListHandler get a user list
+2020-10-26 14:18:14,220 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select list user except one user by id: 8
+2020-10-26 14:18:14,410 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:18:14,410 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:18:14,411 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:18:14,411 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 8 and 4
+2020-10-26 14:18:14,412 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 8 and 4, offset = 0
+2020-10-26 14:18:14,413 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:18:14,422 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@1371928811 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@addc587
+2020-10-26 14:18:14,425 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:18:14,426 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:18:14,426 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 8 and 5
+2020-10-26 14:18:14,427 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 8 and 5, offset = 0
+2020-10-26 14:18:14,429 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 8 and 7
+2020-10-26 14:18:14,430 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 8 and 7, offset = 0
+2020-10-26 14:18:14,434 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@543892255 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@1bf553ba
+2020-10-26 14:18:14,434 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@1541008489 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@280d23ee
+2020-10-26 14:18:17,335 INFO  vn.zalopay.ducnm8.handler.grpc.GetHistoryHandler GRPC: get transfer history succeed
+2020-10-26 14:18:18,716 INFO  vn.zalopay.ducnm8.server.WebSocketServer web socket connected from UserID: 8
+2020-10-26 14:18:18,729 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 14:18:18,729 INFO  vn.zalopay.ducnm8.handler.grpc.GetBalanceHandler GRPC get balance request from: 8
+2020-10-26 14:18:18,729 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select balance by id: 8
+2020-10-26 14:18:18,732 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 14:18:18,732 INFO  vn.zalopay.ducnm8.handler.grpc.GetHistoryHandler GRPC get transfer history request from: 8
+2020-10-26 14:18:18,732 INFO  vn.zalopay.ducnm8.da.interact.TransferHistoryDAImpl select a list transfer history
+2020-10-26 14:18:18,733 INFO  vn.zalopay.ducnm8.handler.grpc.GetBalanceHandler GRPC: getBalance succeed
+2020-10-26 14:18:18,928 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:18:18,929 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:18:18,929 INFO  vn.zalopay.ducnm8.handler.UserListHandler get a user list
+2020-10-26 14:18:18,930 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select list user except one user by id: 8
+2020-10-26 14:18:19,104 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:18:19,105 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:18:19,106 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 8 and 4
+2020-10-26 14:18:19,106 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 8 and 4, offset = 0
+2020-10-26 14:18:19,108 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:18:19,109 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:18:19,109 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:18:19,110 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 8 and 7
+2020-10-26 14:18:19,110 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:18:19,110 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 8 and 7, offset = 0
+2020-10-26 14:18:19,110 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 8 and 5
+2020-10-26 14:18:19,110 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 8 and 5, offset = 0
+2020-10-26 14:18:19,119 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@1421633330 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@131965c1
+2020-10-26 14:18:19,127 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@1478089065 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@37b8fa5d
+2020-10-26 14:18:19,128 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@361788408 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@20c43d1
+2020-10-26 14:18:21,915 INFO  vn.zalopay.ducnm8.handler.grpc.GetHistoryHandler GRPC: get transfer history succeed
+2020-10-26 14:18:34,456 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 14:18:34,456 INFO  vn.zalopay.ducnm8.handler.grpc.GetBalanceHandler GRPC get balance request from: 8
+2020-10-26 14:18:34,456 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select balance by id: 8
+2020-10-26 14:18:34,468 INFO  vn.zalopay.ducnm8.handler.grpc.GetBalanceHandler GRPC: getBalance succeed
+2020-10-26 14:18:34,469 INFO  vn.zalopay.ducnm8.server.WebSocketServer web socket connected from UserID: 8
+2020-10-26 14:18:34,473 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 14:18:34,474 INFO  vn.zalopay.ducnm8.handler.grpc.GetHistoryHandler GRPC get transfer history request from: 8
+2020-10-26 14:18:34,474 INFO  vn.zalopay.ducnm8.da.interact.TransferHistoryDAImpl select a list transfer history
+2020-10-26 14:18:34,724 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:18:34,725 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:18:34,726 INFO  vn.zalopay.ducnm8.handler.UserListHandler get a user list
+2020-10-26 14:18:34,727 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select list user except one user by id: 8
+2020-10-26 14:18:34,871 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:18:34,872 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:18:34,873 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:18:34,885 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:18:34,890 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:18:34,890 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 8 and 7
+2020-10-26 14:18:34,890 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 8 and 7, offset = 0
+2020-10-26 14:18:34,891 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:18:34,892 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 8 and 5
+2020-10-26 14:18:34,892 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 8 and 5, offset = 0
+2020-10-26 14:18:34,893 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@1988495497 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@11d73e9e
+2020-10-26 14:18:34,894 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@922046030 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@11f530ed
+2020-10-26 14:18:34,907 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 8 and 4
+2020-10-26 14:18:34,910 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 8 and 4, offset = 0
+2020-10-26 14:18:34,916 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@1168648819 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@5514b17a
+2020-10-26 14:18:37,591 INFO  vn.zalopay.ducnm8.handler.grpc.GetHistoryHandler GRPC: get transfer history succeed
+2020-10-26 14:18:45,723 INFO  vn.zalopay.ducnm8.server.WebSocketServer web socket connected from UserID: 8
+2020-10-26 14:18:45,730 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 14:18:45,730 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 14:18:45,730 INFO  vn.zalopay.ducnm8.handler.grpc.GetBalanceHandler GRPC get balance request from: 8
+2020-10-26 14:18:45,730 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select balance by id: 8
+2020-10-26 14:18:45,730 INFO  vn.zalopay.ducnm8.handler.grpc.GetHistoryHandler GRPC get transfer history request from: 8
+2020-10-26 14:18:45,731 INFO  vn.zalopay.ducnm8.da.interact.TransferHistoryDAImpl select a list transfer history
+2020-10-26 14:18:45,732 INFO  vn.zalopay.ducnm8.handler.grpc.GetBalanceHandler GRPC: getBalance succeed
+2020-10-26 14:18:45,952 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:18:45,953 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:18:45,955 INFO  vn.zalopay.ducnm8.handler.UserListHandler get a user list
+2020-10-26 14:18:45,956 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select list user except one user by id: 8
+2020-10-26 14:18:46,049 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:18:46,051 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:18:46,052 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:18:46,052 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 8 and 4
+2020-10-26 14:18:46,052 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 8 and 4, offset = 0
+2020-10-26 14:18:46,052 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:18:46,053 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 8 and 5
+2020-10-26 14:18:46,053 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 8 and 5, offset = 0
+2020-10-26 14:18:46,054 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@64998409 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@2bf772aa
+2020-10-26 14:18:46,056 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@357285630 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@5f6c2995
+2020-10-26 14:18:46,064 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:18:46,067 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:18:46,071 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 8 and 7
+2020-10-26 14:18:46,071 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 8 and 7, offset = 0
+2020-10-26 14:18:46,073 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@697574147 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@1a3bd7f4
+2020-10-26 14:18:49,264 INFO  vn.zalopay.ducnm8.handler.grpc.GetHistoryHandler GRPC: get transfer history succeed
+2020-10-26 14:18:57,756 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 14:18:57,757 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select account by id 8
+2020-10-26 14:18:57,761 ERROR vn.zalopay.ducnm8.handler.grpc.TransferHandler GRPC: transfer failed ~ cause Wrong password
+2020-10-26 14:18:57,762 WARN  vn.zalopay.ducnm8.handler.grpc.TransferHandler grpc checkPassword failed ~ Wrong password id: 8
+2020-10-26 14:19:17,798 INFO  vn.zalopay.ducnm8.handler.LoginHandler Login request from : minhduc
+2020-10-26 14:19:17,798 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select a user by username: minhduc
+2020-10-26 14:19:17,808 INFO  vn.zalopay.ducnm8.utils.JWTUtils Create a new JWT token for id 5
+2020-10-26 14:19:17,815 INFO  vn.zalopay.ducnm8.handler.LoginHandler token len: 103
+2020-10-26 14:19:17,816 INFO  vn.zalopay.ducnm8.handler.LoginHandler Login successfully
+2020-10-26 14:19:17,873 INFO  vn.zalopay.ducnm8.server.WebSocketServer web socket connected from UserID: 5
+2020-10-26 14:19:17,878 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 14:19:17,878 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 14:19:17,879 INFO  vn.zalopay.ducnm8.handler.grpc.GetHistoryHandler GRPC get transfer history request from: 5
+2020-10-26 14:19:17,879 INFO  vn.zalopay.ducnm8.da.interact.TransferHistoryDAImpl select a list transfer history
+2020-10-26 14:19:17,881 INFO  vn.zalopay.ducnm8.handler.grpc.GetBalanceHandler GRPC get balance request from: 5
+2020-10-26 14:19:17,881 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select balance by id: 5
+2020-10-26 14:19:17,894 INFO  vn.zalopay.ducnm8.handler.grpc.GetBalanceHandler GRPC: getBalance succeed
+2020-10-26 14:19:17,898 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:19:17,902 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:19:17,903 INFO  vn.zalopay.ducnm8.handler.UserListHandler get a user list
+2020-10-26 14:19:17,903 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select list user except one user by id: 5
+2020-10-26 14:19:17,904 INFO  vn.zalopay.ducnm8.handler.grpc.GetHistoryHandler GRPC: get transfer history succeed
+2020-10-26 14:19:17,948 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:19:17,948 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:19:17,948 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:19:17,949 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:19:17,949 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:19:17,950 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 5 and 4
+2020-10-26 14:19:17,950 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 5 and 4, offset = 0
+2020-10-26 14:19:17,951 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:19:17,951 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 5 and 7
+2020-10-26 14:19:17,951 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 5 and 8
+2020-10-26 14:19:17,952 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@1166675503 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@131c036d
+2020-10-26 14:19:17,956 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 5 and 7, offset = 0
+2020-10-26 14:19:17,957 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 5 and 8, offset = 0
+2020-10-26 14:19:17,958 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@1132442364 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@788a24fe
+2020-10-26 14:19:17,958 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@1443585163 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@54eb7efc
+2020-10-26 14:19:31,291 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 14:19:31,291 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select account by id 5
+2020-10-26 14:19:31,302 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select for update. sender = 5, receiver = 4
+2020-10-26 14:19:31,309 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl update balance: (id=5,amount=-10)
+2020-10-26 14:19:31,314 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl update balance: (id=4,amount=10)
+2020-10-26 14:19:31,317 INFO  vn.zalopay.ducnm8.da.interact.TransferDAImpl insert a transfer
+2020-10-26 14:19:31,322 INFO  vn.zalopay.ducnm8.da.interact.TransferHistoryDAImpl insert a new transfer history
+2020-10-26 14:19:31,329 INFO  vn.zalopay.ducnm8.da.interact.TransferDAImpl insert a transfer successfully
+2020-10-26 14:19:31,331 INFO  vn.zalopay.ducnm8.da.interact.TransferHistoryDAImpl insert a new transfer history
+2020-10-26 14:19:31,341 INFO  vn.zalopay.ducnm8.handler.WSHandler Send Transfer history to accountId: 4
+2020-10-26 14:19:31,341 INFO  vn.zalopay.ducnm8.handler.grpc.TransferHandler GRPC: transfer succeed
+2020-10-26 14:19:56,705 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 14:19:56,706 INFO  vn.zalopay.ducnm8.handler.grpc.GetBalanceHandler GRPC get balance request from: 5
+2020-10-26 14:19:56,706 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select balance by id: 5
+2020-10-26 14:19:56,708 INFO  vn.zalopay.ducnm8.server.WebSocketServer web socket connected from UserID: 5
+2020-10-26 14:19:56,708 INFO  vn.zalopay.ducnm8.handler.grpc.GetBalanceHandler GRPC: getBalance succeed
+2020-10-26 14:19:56,726 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 14:19:56,728 INFO  vn.zalopay.ducnm8.handler.grpc.GetHistoryHandler GRPC get transfer history request from: 5
+2020-10-26 14:19:56,728 INFO  vn.zalopay.ducnm8.da.interact.TransferHistoryDAImpl select a list transfer history
+2020-10-26 14:19:56,747 INFO  vn.zalopay.ducnm8.handler.grpc.GetHistoryHandler GRPC: get transfer history succeed
+2020-10-26 14:19:56,796 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:19:56,796 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:19:56,797 INFO  vn.zalopay.ducnm8.handler.UserListHandler get a user list
+2020-10-26 14:19:56,797 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select list user except one user by id: 5
+2020-10-26 14:19:56,887 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:19:56,887 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:19:56,890 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 5 and 4
+2020-10-26 14:19:56,890 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 5 and 4, offset = 0
+2020-10-26 14:19:56,891 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@1299597439 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@2a3b2473
+2020-10-26 14:19:56,904 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:19:56,904 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:19:56,905 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 5 and 7
+2020-10-26 14:19:56,907 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 5 and 7, offset = 0
+2020-10-26 14:19:56,908 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@1740343510 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@58b29067
+2020-10-26 14:19:56,914 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:19:56,916 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:19:56,917 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 5 and 8
+2020-10-26 14:19:56,919 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 5 and 8, offset = 0
+2020-10-26 14:19:56,920 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@286052095 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@33fe4634
+2020-10-26 14:26:22,922 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 14:26:22,922 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select account by id 5
+2020-10-26 14:26:22,942 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select for update. sender = 5, receiver = 4
+2020-10-26 14:26:22,944 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl update balance: (id=5,amount=-10)
+2020-10-26 14:26:22,946 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl update balance: (id=4,amount=10)
+2020-10-26 14:26:22,948 INFO  vn.zalopay.ducnm8.da.interact.TransferDAImpl insert a transfer
+2020-10-26 14:26:22,949 INFO  vn.zalopay.ducnm8.da.interact.TransferHistoryDAImpl insert a new transfer history
+2020-10-26 14:26:22,949 INFO  vn.zalopay.ducnm8.da.interact.TransferDAImpl insert a transfer successfully
+2020-10-26 14:26:22,951 INFO  vn.zalopay.ducnm8.da.interact.TransferHistoryDAImpl insert a new transfer history
+2020-10-26 14:26:22,955 INFO  vn.zalopay.ducnm8.handler.WSHandler Send Transfer history to accountId: 4
+2020-10-26 14:26:22,955 INFO  vn.zalopay.ducnm8.handler.grpc.TransferHandler GRPC: transfer succeed
+2020-10-26 14:42:56,453 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-10-26 14:42:56,637 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-1 - Start completed.
+2020-10-26 14:42:56,641 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-2 - Starting...
+2020-10-26 14:42:56,651 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-2 - Start completed.
+2020-10-26 14:42:57,033 INFO  org.redisson.Version Redisson 3.11.6
+2020-10-26 14:42:57,160 INFO  org.redisson.connection.pool.MasterPubSubConnectionPool 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-10-26 14:42:57,160 INFO  org.redisson.connection.pool.MasterConnectionPool 24 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-10-26 14:42:57,196 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-3 - Starting...
+2020-10-26 14:42:57,208 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-3 - Start completed.
+2020-10-26 14:42:57,288 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-4 - Starting...
+2020-10-26 14:42:57,294 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-4 - Start completed.
+2020-10-26 14:42:57,296 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-5 - Starting...
+2020-10-26 14:42:57,301 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-5 - Start completed.
+2020-10-26 14:42:57,302 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-6 - Starting...
+2020-10-26 14:42:57,311 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-6 - Start completed.
+2020-10-26 14:42:57,325 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-26 14:42:57,334 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-26 14:42:57,338 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-26 14:42:57,342 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-26 14:42:57,348 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-26 14:42:57,412 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-26 14:42:57,413 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-26 14:42:57,414 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-26 14:42:57,414 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-26 14:42:57,414 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-26 14:42:57,414 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-26 14:42:57,414 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-26 14:42:57,414 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-26 14:42:57,415 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-26 14:42:57,415 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-26 14:42:57,418 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-26 14:42:57,419 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-26 14:42:57,419 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-26 14:42:57,426 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-26 14:42:57,426 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-26 14:42:57,427 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-26 14:42:57,434 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-26 14:42:57,434 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-26 14:42:57,435 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-26 14:42:57,590 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-26 14:42:57,590 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-26 14:42:57,595 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-26 14:42:57,598 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-26 14:42:57,598 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-26 14:42:57,599 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-26 14:42:57,599 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-26 14:42:57,599 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-26 14:42:57,608 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-26 14:42:57,608 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-26 14:42:57,609 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-26 14:42:57,609 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-26 14:42:57,609 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-26 14:42:57,610 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-26 14:42:57,611 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-26 14:42:57,611 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-26 14:42:57,612 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-26 14:42:57,613 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-26 14:42:57,614 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-26 14:42:57,614 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-26 14:42:57,615 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-26 14:42:57,616 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-26 14:42:57,617 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-26 14:42:57,617 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-26 14:43:00,858 INFO  vn.zalopay.ducnm8.server.WebSocketServer web socket connected from UserID: 5
+2020-10-26 14:43:00,859 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 14:43:00,869 INFO  vn.zalopay.ducnm8.handler.grpc.GetBalanceHandler GRPC get balance request from: 5
+2020-10-26 14:43:00,870 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select balance by id: 5
+2020-10-26 14:43:00,879 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 14:43:00,882 INFO  vn.zalopay.ducnm8.handler.grpc.GetHistoryHandler GRPC get transfer history request from: 5
+2020-10-26 14:43:00,883 INFO  vn.zalopay.ducnm8.da.interact.TransferHistoryDAImpl select a list transfer history
+2020-10-26 14:43:00,912 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:43:00,913 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:43:00,915 INFO  vn.zalopay.ducnm8.handler.UserListHandler get a user list
+2020-10-26 14:43:00,916 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select list user except one user by id: 5
+2020-10-26 14:43:00,980 INFO  vn.zalopay.ducnm8.handler.grpc.GetBalanceHandler GRPC: getBalance succeed
+2020-10-26 14:43:01,017 INFO  vn.zalopay.ducnm8.handler.grpc.GetHistoryHandler GRPC: get transfer history succeed
+2020-10-26 14:43:01,147 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:43:01,148 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:43:01,148 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:43:01,150 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:43:01,151 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:43:01,157 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:43:01,157 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 5 and 7
+2020-10-26 14:43:01,157 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 5 and 7, offset = 0
+2020-10-26 14:43:01,158 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 5 and 4
+2020-10-26 14:43:01,159 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 5 and 4, offset = 0
+2020-10-26 14:43:01,162 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 5 and 8
+2020-10-26 14:43:01,162 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 5 and 8, offset = 0
+2020-10-26 14:43:01,171 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@21543143 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@1e56404e
+2020-10-26 14:43:01,184 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@1462549141 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@2d490077
+2020-10-26 14:43:01,189 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@886832538 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@71d97565
+2020-10-26 14:43:12,585 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 14:43:12,587 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select account by id 5
+2020-10-26 14:43:12,619 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select for update. sender = 5, receiver = 4
+2020-10-26 14:43:12,634 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl update balance: (id=5,amount=-10)
+2020-10-26 14:43:12,648 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl update balance: (id=4,amount=10)
+2020-10-26 14:43:12,655 INFO  vn.zalopay.ducnm8.da.interact.TransferDAImpl insert a transfer
+2020-10-26 14:43:12,662 INFO  vn.zalopay.ducnm8.da.interact.TransferHistoryDAImpl insert a new transfer history
+2020-10-26 14:43:12,664 INFO  vn.zalopay.ducnm8.da.interact.TransferDAImpl insert a transfer successfully
+2020-10-26 14:43:12,666 INFO  vn.zalopay.ducnm8.da.interact.TransferHistoryDAImpl insert a new transfer history
+2020-10-26 14:43:12,689 INFO  vn.zalopay.ducnm8.handler.WSHandler Send Transfer history to accountId: 4
+2020-10-26 14:43:12,689 INFO  vn.zalopay.ducnm8.handler.grpc.TransferHandler GRPC: transfer succeed
+2020-10-26 14:45:03,450 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 14:45:03,451 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select account by id 5
+2020-10-26 14:45:03,457 ERROR vn.zalopay.ducnm8.da.BaseTransactionDA Failed execute cause= message: null
+, stackTrace: java.lang.NullPointerException
+	at vn.zalopay.ducnm8.handler.grpc.TransferHandler.lambda$transfer$12(TransferHandler.java:121)
+	at io.vertx.core.impl.FutureImpl.tryComplete(FutureImpl.java:125)
+	at io.vertx.core.impl.FutureImpl.complete(FutureImpl.java:86)
+	at vn.zalopay.ducnm8.handler.grpc.TransferHandler.lambda$checkPassword$13(TransferHandler.java:135)
+	at io.vertx.core.impl.FutureImpl.tryComplete(FutureImpl.java:125)
+	at io.vertx.core.impl.FutureImpl.complete(FutureImpl.java:86)
+	at vn.zalopay.ducnm8.da.BaseTransactionDA.queryEntity(BaseTransactionDA.java:206)
+	at vn.zalopay.ducnm8.da.interact.AccountDAImpl.lambda$selectAccountById$1(AccountDAImpl.java:82)
+	at vn.zalopay.ducnm8.utils.AsyncHandler.lambda$run$0(AsyncHandler.java:21)
+	at io.vertx.core.impl.ContextImpl.lambda$executeBlocking$2(ContextImpl.java:272)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+
+2020-10-26 14:45:03,459 ERROR vn.zalopay.ducnm8.utils.AsyncHandler Failed executeBlocking cause= message: Result is already complete: succeeded
+, stackTrace: java.lang.IllegalStateException: Result is already complete: succeeded
+	at io.vertx.core.impl.FutureImpl.fail(FutureImpl.java:101)
+	at vn.zalopay.ducnm8.da.BaseTransactionDA.queryEntity(BaseTransactionDA.java:209)
+	at vn.zalopay.ducnm8.da.interact.AccountDAImpl.lambda$selectAccountById$1(AccountDAImpl.java:82)
+	at vn.zalopay.ducnm8.utils.AsyncHandler.lambda$run$0(AsyncHandler.java:21)
+	at io.vertx.core.impl.ContextImpl.lambda$executeBlocking$2(ContextImpl.java:272)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+
+2020-10-26 14:51:29,603 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-10-26 14:51:29,773 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-1 - Start completed.
+2020-10-26 14:51:29,774 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-2 - Starting...
+2020-10-26 14:51:29,782 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-2 - Start completed.
+2020-10-26 14:51:30,145 INFO  org.redisson.Version Redisson 3.11.6
+2020-10-26 14:51:30,260 INFO  org.redisson.connection.pool.MasterPubSubConnectionPool 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-10-26 14:51:30,263 INFO  org.redisson.connection.pool.MasterConnectionPool 24 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-10-26 14:51:30,291 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-3 - Starting...
+2020-10-26 14:51:30,297 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-3 - Start completed.
+2020-10-26 14:51:30,372 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-4 - Starting...
+2020-10-26 14:51:30,378 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-4 - Start completed.
+2020-10-26 14:51:30,380 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-5 - Starting...
+2020-10-26 14:51:30,386 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-5 - Start completed.
+2020-10-26 14:51:30,387 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-6 - Starting...
+2020-10-26 14:51:30,404 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-6 - Start completed.
+2020-10-26 14:51:30,423 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-26 14:51:30,426 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-26 14:51:30,430 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-26 14:51:30,438 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-26 14:51:30,446 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-26 14:51:30,444 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-26 14:51:30,450 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-26 14:51:30,454 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-26 14:51:30,511 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-26 14:51:30,513 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-26 14:51:30,515 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-26 14:51:30,516 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-26 14:51:30,516 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-26 14:51:30,516 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-26 14:51:30,516 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-26 14:51:30,517 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-26 14:51:30,517 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-26 14:51:30,517 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-26 14:51:30,517 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-26 14:51:30,517 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-26 14:51:30,518 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-26 14:51:30,521 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-26 14:51:30,522 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-26 14:51:30,522 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-26 14:51:30,633 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-26 14:51:30,634 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-26 14:51:30,634 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-26 14:51:30,634 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-26 14:51:30,634 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-26 14:51:30,638 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-26 14:51:30,639 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-26 14:51:30,639 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-26 14:51:30,641 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-26 14:51:30,641 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-26 14:51:30,641 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-26 14:51:30,642 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-26 14:51:30,642 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-26 14:51:30,643 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-26 14:51:30,645 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-26 14:51:30,646 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-26 14:51:30,646 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-26 14:51:30,646 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-26 14:51:30,646 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-26 14:51:30,646 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-26 14:51:30,646 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-26 14:51:30,646 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-26 14:51:30,650 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-26 14:51:30,650 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-26 14:51:33,960 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:51:33,994 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 14:51:33,993 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:51:33,996 INFO  vn.zalopay.ducnm8.handler.UserListHandler get a user list
+2020-10-26 14:51:33,997 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select list user except one user by id: 5
+2020-10-26 14:51:34,023 INFO  vn.zalopay.ducnm8.handler.grpc.GetBalanceHandler GRPC get balance request from: 5
+2020-10-26 14:51:34,023 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select balance by id: 5
+2020-10-26 14:51:34,051 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 14:51:34,057 INFO  vn.zalopay.ducnm8.handler.grpc.GetHistoryHandler GRPC get transfer history request from: 5
+2020-10-26 14:51:34,057 INFO  vn.zalopay.ducnm8.da.interact.TransferHistoryDAImpl select a list transfer history
+2020-10-26 14:51:34,066 INFO  vn.zalopay.ducnm8.server.WebSocketServer web socket connected from UserID: 5
+2020-10-26 14:51:34,158 INFO  vn.zalopay.ducnm8.handler.grpc.GetBalanceHandler GRPC: getBalance succeed
+2020-10-26 14:51:34,225 INFO  vn.zalopay.ducnm8.handler.grpc.GetHistoryHandler GRPC: get transfer history succeed
+2020-10-26 14:51:34,352 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:51:34,353 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:51:34,353 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:51:34,355 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:51:34,355 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:51:34,357 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:51:34,359 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 5 and 8
+2020-10-26 14:51:34,360 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 5 and 8, offset = 0
+2020-10-26 14:51:34,360 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 5 and 4
+2020-10-26 14:51:34,360 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 5 and 4, offset = 0
+2020-10-26 14:51:34,360 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 5 and 7
+2020-10-26 14:51:34,397 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 5 and 7, offset = 0
+2020-10-26 14:51:34,413 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@955067293 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@56193cfb
+2020-10-26 14:51:34,444 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@495652880 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@7ac14c58
+2020-10-26 14:51:34,468 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@998931239 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@354d9226
+2020-10-26 14:54:52,243 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 14:54:52,250 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select account by id 5
+2020-10-26 14:54:52,274 WARN  vn.zalopay.ducnm8.handler.grpc.TransferHandler grpc checkPassword failed ~ Wrong password id: 5
+2020-10-26 14:54:52,294 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select for update. sender = 5, receiver = 4
+2020-10-26 14:54:52,303 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl update balance: (id=5,amount=-10)
+2020-10-26 14:54:52,315 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl update balance: (id=4,amount=10)
+2020-10-26 14:54:52,332 INFO  vn.zalopay.ducnm8.da.interact.TransferDAImpl insert a transfer
+2020-10-26 14:54:52,340 INFO  vn.zalopay.ducnm8.da.interact.TransferHistoryDAImpl insert a new transfer history
+2020-10-26 14:54:52,344 INFO  vn.zalopay.ducnm8.da.interact.TransferDAImpl insert a transfer successfully
+2020-10-26 14:54:52,350 INFO  vn.zalopay.ducnm8.da.interact.TransferHistoryDAImpl insert a new transfer history
+2020-10-26 14:54:52,366 INFO  vn.zalopay.ducnm8.handler.WSHandler Send Transfer history to accountId: 4
+2020-10-26 14:54:52,367 INFO  vn.zalopay.ducnm8.handler.grpc.TransferHandler GRPC: transfer succeed
+2020-10-26 14:56:34,840 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-10-26 14:56:35,030 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-1 - Start completed.
+2020-10-26 14:56:35,031 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-2 - Starting...
+2020-10-26 14:56:35,041 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-2 - Start completed.
+2020-10-26 14:56:35,445 INFO  org.redisson.Version Redisson 3.11.6
+2020-10-26 14:56:35,588 INFO  org.redisson.connection.pool.MasterPubSubConnectionPool 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-10-26 14:56:35,589 INFO  org.redisson.connection.pool.MasterConnectionPool 24 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-10-26 14:56:35,618 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-3 - Starting...
+2020-10-26 14:56:35,636 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-3 - Start completed.
+2020-10-26 14:56:35,786 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-4 - Starting...
+2020-10-26 14:56:35,807 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-4 - Start completed.
+2020-10-26 14:56:35,809 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-5 - Starting...
+2020-10-26 14:56:35,820 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-5 - Start completed.
+2020-10-26 14:56:35,821 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-6 - Starting...
+2020-10-26 14:56:35,847 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-6 - Start completed.
+2020-10-26 14:56:35,867 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-26 14:56:35,870 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-26 14:56:35,877 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-26 14:56:35,883 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-26 14:56:35,883 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-26 14:56:35,890 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-26 14:56:35,902 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-26 14:56:36,033 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-26 14:56:36,041 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-26 14:56:36,042 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-26 14:56:36,043 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-26 14:56:36,043 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-26 14:56:36,043 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-26 14:56:36,043 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-26 14:56:36,043 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-26 14:56:36,043 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-26 14:56:36,043 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-26 14:56:36,044 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-26 14:56:36,044 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-26 14:56:36,044 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-26 14:56:36,044 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-26 14:56:36,044 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-26 14:56:36,045 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-26 14:56:36,045 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-26 14:56:36,154 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-26 14:56:36,154 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-26 14:56:36,154 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-26 14:56:36,154 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-26 14:56:36,154 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-26 14:56:36,155 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-26 14:56:36,155 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-26 14:56:36,156 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-26 14:56:36,166 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-26 14:56:36,167 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-26 14:56:36,168 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-26 14:56:36,168 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-26 14:56:36,169 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-26 14:56:36,169 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-26 14:56:36,170 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-26 14:56:36,170 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-26 14:56:36,170 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-26 14:56:36,170 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-26 14:56:36,170 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-26 14:56:36,170 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-26 14:56:36,171 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-26 14:56:36,171 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-26 14:56:36,171 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-26 14:56:36,171 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-26 14:57:09,245 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 14:57:09,252 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 14:57:09,254 INFO  vn.zalopay.ducnm8.handler.grpc.GetBalanceHandler GRPC get balance request from: 5
+2020-10-26 14:57:09,254 INFO  vn.zalopay.ducnm8.handler.grpc.GetHistoryHandler GRPC get transfer history request from: 5
+2020-10-26 14:57:09,254 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select balance by id: 5
+2020-10-26 14:57:09,254 INFO  vn.zalopay.ducnm8.da.interact.TransferHistoryDAImpl select a list transfer history
+2020-10-26 14:57:09,275 INFO  vn.zalopay.ducnm8.server.WebSocketServer web socket connected from UserID: 5
+2020-10-26 14:57:09,315 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:57:09,316 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:57:09,318 INFO  vn.zalopay.ducnm8.handler.UserListHandler get a user list
+2020-10-26 14:57:09,319 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select list user except one user by id: 5
+2020-10-26 14:57:09,328 INFO  vn.zalopay.ducnm8.handler.grpc.GetBalanceHandler GRPC: getBalance succeed
+2020-10-26 14:57:09,382 INFO  vn.zalopay.ducnm8.handler.grpc.GetHistoryHandler GRPC: get transfer history succeed
+2020-10-26 14:57:09,444 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:57:09,446 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:57:09,453 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 5 and 4
+2020-10-26 14:57:09,454 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 5 and 4, offset = 0
+2020-10-26 14:57:09,457 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:57:09,458 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:57:09,459 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 5 and 7
+2020-10-26 14:57:09,459 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 5 and 7, offset = 0
+2020-10-26 14:57:09,468 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 14:57:09,470 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 14:57:09,472 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@296996613 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@6d2628ac
+2020-10-26 14:57:09,479 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 5 and 8
+2020-10-26 14:57:09,479 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 5 and 8, offset = 0
+2020-10-26 14:57:09,504 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@1492863886 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@563caee1
+2020-10-26 14:57:09,504 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@2007957070 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@79691ecb
+2020-10-26 14:57:17,041 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 14:57:17,044 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select account by id 5
+2020-10-26 14:57:17,062 WARN  vn.zalopay.ducnm8.handler.grpc.TransferHandler grpc checkPassword failed ~ Wrong password id: 5
+2020-10-26 14:57:17,066 ERROR vn.zalopay.ducnm8.handler.grpc.TransferHandler GRPC: transfer failed ~ cause Wrong password
+2020-10-26 15:05:38,513 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 15:05:38,514 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select account by id 5
+2020-10-26 15:05:38,524 ERROR vn.zalopay.ducnm8.handler.grpc.TransferHandler GRPC: transfer failed ~ cause Wrong password
+2020-10-26 15:05:38,526 WARN  vn.zalopay.ducnm8.handler.grpc.TransferHandler grpc checkPassword failed ~ Wrong password id: 5
+2020-10-26 15:22:22,877 INFO  vn.zalopay.ducnm8.server.WebSocketServer web socket connected from UserID: 5
+2020-10-26 15:22:22,879 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 15:22:22,880 INFO  vn.zalopay.ducnm8.handler.grpc.GetBalanceHandler GRPC get balance request from: 5
+2020-10-26 15:22:22,880 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select balance by id: 5
+2020-10-26 15:22:22,882 INFO  vn.zalopay.ducnm8.handler.grpc.GetBalanceHandler GRPC: getBalance succeed
+2020-10-26 15:22:22,884 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 15:22:22,885 INFO  vn.zalopay.ducnm8.handler.grpc.GetHistoryHandler GRPC get transfer history request from: 5
+2020-10-26 15:22:22,885 INFO  vn.zalopay.ducnm8.da.interact.TransferHistoryDAImpl select a list transfer history
+2020-10-26 15:22:22,908 INFO  vn.zalopay.ducnm8.handler.grpc.GetHistoryHandler GRPC: get transfer history succeed
+2020-10-26 15:22:23,077 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 15:22:23,079 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 15:22:23,080 INFO  vn.zalopay.ducnm8.handler.UserListHandler get a user list
+2020-10-26 15:22:23,081 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select list user except one user by id: 5
+2020-10-26 15:22:23,145 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 15:22:23,146 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 15:22:23,146 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 15:22:23,147 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 15:22:23,147 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 5 and 4
+2020-10-26 15:22:23,147 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 5 and 4, offset = 0
+2020-10-26 15:22:23,148 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 5 and 7
+2020-10-26 15:22:23,148 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 5 and 7, offset = 0
+2020-10-26 15:22:23,149 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@2050011358 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@74f741e8
+2020-10-26 15:22:23,149 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 15:22:23,150 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 15:22:23,152 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 5 and 8
+2020-10-26 15:22:23,152 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 5 and 8, offset = 0
+2020-10-26 15:22:23,162 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@1380695902 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@5c8c5b67
+2020-10-26 15:22:23,164 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@279921122 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@1e68ad87
+2020-10-26 15:22:39,423 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 15:22:39,424 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select account by id 5
+2020-10-26 15:22:39,431 ERROR vn.zalopay.ducnm8.handler.grpc.TransferHandler GRPC: transfer failed ~ cause Wrong password
+2020-10-26 15:22:39,432 WARN  vn.zalopay.ducnm8.handler.grpc.TransferHandler grpc checkPassword failed ~ Wrong password id: 5
+2020-10-26 15:23:11,236 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 15:23:11,236 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select account by id 5
+2020-10-26 15:23:11,253 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select for update. sender = 5, receiver = 4
+2020-10-26 15:23:11,261 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl update balance: (id=5,amount=-12)
+2020-10-26 15:23:11,270 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl update balance: (id=4,amount=12)
+2020-10-26 15:23:11,273 INFO  vn.zalopay.ducnm8.da.interact.TransferDAImpl insert a transfer
+2020-10-26 15:23:11,281 INFO  vn.zalopay.ducnm8.da.interact.TransferHistoryDAImpl insert a new transfer history
+2020-10-26 15:23:11,283 INFO  vn.zalopay.ducnm8.da.interact.TransferDAImpl insert a transfer successfully
+2020-10-26 15:23:11,284 INFO  vn.zalopay.ducnm8.da.interact.TransferHistoryDAImpl insert a new transfer history
+2020-10-26 15:23:11,297 INFO  vn.zalopay.ducnm8.handler.WSHandler Send Transfer history to accountId: 4
+2020-10-26 15:23:11,298 INFO  vn.zalopay.ducnm8.handler.grpc.TransferHandler GRPC: transfer succeed
+2020-10-26 15:23:56,283 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 15:23:56,284 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select account by id 5
+2020-10-26 15:23:56,295 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select for update. sender = 5, receiver = 4
+2020-10-26 15:23:56,296 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl update balance: (id=5,amount=-12)
+2020-10-26 15:23:56,299 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl update balance: (id=4,amount=12)
+2020-10-26 15:23:56,301 INFO  vn.zalopay.ducnm8.da.interact.TransferDAImpl insert a transfer
+2020-10-26 15:23:56,302 INFO  vn.zalopay.ducnm8.da.interact.TransferHistoryDAImpl insert a new transfer history
+2020-10-26 15:23:56,303 INFO  vn.zalopay.ducnm8.da.interact.TransferDAImpl insert a transfer successfully
+2020-10-26 15:23:56,305 INFO  vn.zalopay.ducnm8.da.interact.TransferHistoryDAImpl insert a new transfer history
+2020-10-26 15:23:56,309 INFO  vn.zalopay.ducnm8.handler.WSHandler Send Transfer history to accountId: 4
+2020-10-26 15:23:56,310 INFO  vn.zalopay.ducnm8.handler.grpc.TransferHandler GRPC: transfer succeed
+2020-10-26 15:25:11,866 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-10-26 15:25:12,026 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-1 - Start completed.
+2020-10-26 15:25:12,027 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-2 - Starting...
+2020-10-26 15:25:12,034 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-2 - Start completed.
+2020-10-26 15:25:12,389 INFO  org.redisson.Version Redisson 3.11.6
+2020-10-26 15:25:12,487 INFO  org.redisson.connection.pool.MasterPubSubConnectionPool 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-10-26 15:25:12,495 INFO  org.redisson.connection.pool.MasterConnectionPool 24 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-10-26 15:25:12,538 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-3 - Starting...
+2020-10-26 15:25:12,544 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-3 - Start completed.
+2020-10-26 15:25:12,616 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-4 - Starting...
+2020-10-26 15:25:12,622 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-4 - Start completed.
+2020-10-26 15:25:12,624 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-5 - Starting...
+2020-10-26 15:25:12,631 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-5 - Start completed.
+2020-10-26 15:25:12,633 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-6 - Starting...
+2020-10-26 15:25:12,639 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-6 - Start completed.
+2020-10-26 15:25:12,651 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-26 15:25:12,655 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-26 15:25:12,658 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-26 15:25:12,670 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-26 15:25:12,673 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-26 15:25:12,676 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-26 15:25:12,682 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-26 15:25:12,741 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-26 15:25:12,751 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-26 15:25:12,753 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-26 15:25:12,756 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-26 15:25:12,756 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-26 15:25:12,757 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-26 15:25:12,757 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-26 15:25:12,758 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-26 15:25:12,758 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-26 15:25:12,758 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-26 15:25:12,758 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-26 15:25:12,758 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-26 15:25:12,758 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-26 15:25:12,758 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-26 15:25:12,759 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-26 15:25:12,759 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-26 15:25:12,759 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-26 15:25:12,855 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-26 15:25:12,856 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-26 15:25:12,858 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-26 15:25:12,858 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-26 15:25:12,858 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-26 15:25:12,858 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-26 15:25:12,859 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-26 15:25:12,859 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-26 15:25:12,865 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-26 15:25:12,865 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-26 15:25:12,866 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-26 15:25:12,866 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-26 15:25:12,866 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-26 15:25:12,867 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-26 15:25:12,867 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-26 15:25:12,867 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-26 15:25:12,867 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-26 15:25:12,868 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-26 15:25:12,868 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-26 15:25:12,868 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-26 15:25:12,868 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-26 15:25:12,868 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-26 15:25:12,868 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-26 15:25:12,869 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-26 15:25:16,796 INFO  vn.zalopay.ducnm8.server.WebSocketServer web socket connected from UserID: 5
+2020-10-26 15:25:16,809 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 15:25:16,818 INFO  vn.zalopay.ducnm8.handler.grpc.GetBalanceHandler GRPC get balance request from: 5
+2020-10-26 15:25:16,818 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select balance by id: 5
+2020-10-26 15:25:16,837 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 15:25:16,839 INFO  vn.zalopay.ducnm8.handler.grpc.GetHistoryHandler GRPC get transfer history request from: 5
+2020-10-26 15:25:16,840 INFO  vn.zalopay.ducnm8.da.interact.TransferHistoryDAImpl select a list transfer history
+2020-10-26 15:25:16,852 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 15:25:16,854 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 15:25:16,859 INFO  vn.zalopay.ducnm8.handler.UserListHandler get a user list
+2020-10-26 15:25:16,860 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select list user except one user by id: 5
+2020-10-26 15:25:16,949 INFO  vn.zalopay.ducnm8.handler.grpc.GetBalanceHandler GRPC: getBalance succeed
+2020-10-26 15:25:16,971 INFO  vn.zalopay.ducnm8.handler.grpc.GetHistoryHandler GRPC: get transfer history succeed
+2020-10-26 15:25:17,099 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 15:25:17,102 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 15:25:17,103 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 15:25:17,104 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 15:25:17,109 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 15:25:17,109 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 5 and 4
+2020-10-26 15:25:17,109 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 5 and 4, offset = 0
+2020-10-26 15:25:17,110 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 15:25:17,113 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 5 and 8
+2020-10-26 15:25:17,114 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 5 and 7
+2020-10-26 15:25:17,114 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 5 and 8, offset = 0
+2020-10-26 15:25:17,114 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 5 and 7, offset = 0
+2020-10-26 15:25:17,133 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@143591561 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@648f7e8
+2020-10-26 15:25:17,133 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@242089725 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@63ca3907
+2020-10-26 15:25:17,137 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@1617197977 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@641027f2
+2020-10-26 15:25:23,561 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 15:25:23,566 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select account by id 5
+2020-10-26 15:25:23,602 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select for update. sender = 5, receiver = 4
+2020-10-26 15:25:23,614 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl update balance: (id=5,amount=-123)
+2020-10-26 15:25:23,621 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl update balance: (id=4,amount=123)
+2020-10-26 15:25:23,628 INFO  vn.zalopay.ducnm8.da.interact.TransferDAImpl insert a transfer
+2020-10-26 15:25:23,636 INFO  vn.zalopay.ducnm8.da.interact.TransferHistoryDAImpl insert a new transfer history
+2020-10-26 15:25:23,638 INFO  vn.zalopay.ducnm8.da.interact.TransferDAImpl insert a transfer successfully
+2020-10-26 15:25:23,641 INFO  vn.zalopay.ducnm8.da.interact.TransferHistoryDAImpl insert a new transfer history
+2020-10-26 15:25:23,662 INFO  vn.zalopay.ducnm8.handler.WSHandler Send Transfer history to accountId: 4
+2020-10-26 15:25:23,662 INFO  vn.zalopay.ducnm8.handler.grpc.TransferHandler GRPC: transfer succeed
+2020-10-26 15:25:32,062 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 15:25:32,063 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select account by id 5
+2020-10-26 15:25:32,075 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select for update. sender = 5, receiver = 4
+2020-10-26 15:25:32,077 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl update balance: (id=5,amount=-13)
+2020-10-26 15:25:32,079 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl update balance: (id=4,amount=13)
+2020-10-26 15:25:32,083 INFO  vn.zalopay.ducnm8.da.interact.TransferDAImpl insert a transfer
+2020-10-26 15:25:32,085 INFO  vn.zalopay.ducnm8.da.interact.TransferHistoryDAImpl insert a new transfer history
+2020-10-26 15:25:32,086 INFO  vn.zalopay.ducnm8.da.interact.TransferDAImpl insert a transfer successfully
+2020-10-26 15:25:32,088 INFO  vn.zalopay.ducnm8.da.interact.TransferHistoryDAImpl insert a new transfer history
+2020-10-26 15:25:32,096 INFO  vn.zalopay.ducnm8.handler.WSHandler Send Transfer history to accountId: 4
+2020-10-26 15:25:32,097 INFO  vn.zalopay.ducnm8.handler.grpc.TransferHandler GRPC: transfer succeed
+2020-10-26 15:25:39,946 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 15:25:39,947 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select account by id 5
+2020-10-26 15:25:39,954 ERROR vn.zalopay.ducnm8.handler.grpc.TransferHandler GRPC: transfer failed ~ cause Wrong password
+2020-10-26 15:25:39,955 WARN  vn.zalopay.ducnm8.handler.grpc.TransferHandler grpc checkPassword failed ~ Wrong password id: 5
+2020-10-26 15:25:53,466 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 15:25:53,467 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select account by id 5
+2020-10-26 15:25:53,472 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select for update. sender = 5, receiver = 4
+2020-10-26 15:25:53,474 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl update balance: (id=5,amount=-12)
+2020-10-26 15:25:53,475 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl update balance: (id=4,amount=12)
+2020-10-26 15:25:53,476 INFO  vn.zalopay.ducnm8.da.interact.TransferDAImpl insert a transfer
+2020-10-26 15:25:53,478 INFO  vn.zalopay.ducnm8.da.interact.TransferHistoryDAImpl insert a new transfer history
+2020-10-26 15:25:53,478 INFO  vn.zalopay.ducnm8.da.interact.TransferDAImpl insert a transfer successfully
+2020-10-26 15:25:53,486 INFO  vn.zalopay.ducnm8.da.interact.TransferHistoryDAImpl insert a new transfer history
+2020-10-26 15:25:53,491 INFO  vn.zalopay.ducnm8.handler.WSHandler Send Transfer history to accountId: 4
+2020-10-26 15:25:53,492 INFO  vn.zalopay.ducnm8.handler.grpc.TransferHandler GRPC: transfer succeed
+2020-10-26 15:29:01,658 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-10-26 15:29:01,819 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-1 - Start completed.
+2020-10-26 15:29:01,820 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-2 - Starting...
+2020-10-26 15:29:01,831 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-2 - Start completed.
+2020-10-26 15:29:02,188 INFO  org.redisson.Version Redisson 3.11.6
+2020-10-26 15:29:02,298 INFO  org.redisson.connection.pool.MasterConnectionPool 24 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-10-26 15:29:02,299 INFO  org.redisson.connection.pool.MasterPubSubConnectionPool 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-10-26 15:29:02,326 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-3 - Starting...
+2020-10-26 15:29:02,334 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-3 - Start completed.
+2020-10-26 15:29:02,411 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-4 - Starting...
+2020-10-26 15:29:02,417 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-4 - Start completed.
+2020-10-26 15:29:02,419 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-5 - Starting...
+2020-10-26 15:29:02,425 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-5 - Start completed.
+2020-10-26 15:29:02,426 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-6 - Starting...
+2020-10-26 15:29:02,434 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-6 - Start completed.
+2020-10-26 15:29:02,449 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-26 15:29:02,451 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-26 15:29:02,453 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-26 15:29:02,460 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-26 15:29:02,461 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-26 15:29:02,464 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-26 15:29:02,470 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-26 15:29:02,475 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server ...
+2020-10-26 15:29:02,580 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-26 15:29:02,583 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-26 15:29:02,584 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-26 15:29:02,585 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-26 15:29:02,585 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-26 15:29:02,585 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-26 15:29:02,586 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-26 15:29:02,586 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-26 15:29:02,586 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-26 15:29:02,586 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-26 15:29:02,585 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-26 15:29:02,586 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-26 15:29:02,586 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-26 15:29:02,587 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-26 15:29:02,587 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server ...
+2020-10-26 15:29:02,587 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-26 15:29:02,738 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-26 15:29:02,738 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-26 15:29:02,739 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-26 15:29:02,739 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-26 15:29:02,739 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-26 15:29:02,740 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-26 15:29:02,741 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-26 15:29:02,743 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-26 15:29:02,751 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-26 15:29:02,751 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-26 15:29:02,751 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-26 15:29:02,751 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-26 15:29:02,752 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-26 15:29:02,752 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-26 15:29:02,752 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-26 15:29:02,752 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-26 15:29:02,753 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-26 15:29:02,753 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-26 15:29:02,753 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-26 15:29:02,753 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-26 15:29:02,753 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-26 15:29:02,753 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-26 15:29:02,754 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-26 15:29:02,754 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-26 15:29:04,356 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 15:29:04,382 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 15:29:04,384 INFO  vn.zalopay.ducnm8.handler.UserListHandler get a user list
+2020-10-26 15:29:04,388 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select list user except one user by id: 5
+2020-10-26 15:29:04,392 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 15:29:04,405 INFO  vn.zalopay.ducnm8.handler.grpc.GetBalanceHandler GRPC get balance request from: 5
+2020-10-26 15:29:04,411 INFO  vn.zalopay.ducnm8.server.WebSocketServer web socket connected from UserID: 5
+2020-10-26 15:29:04,422 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select balance by id: 5
+2020-10-26 15:29:04,435 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 15:29:04,436 INFO  vn.zalopay.ducnm8.handler.grpc.GetHistoryHandler GRPC get transfer history request from: 5
+2020-10-26 15:29:04,436 INFO  vn.zalopay.ducnm8.da.interact.TransferHistoryDAImpl select a list transfer history
+2020-10-26 15:29:04,481 INFO  vn.zalopay.ducnm8.handler.grpc.GetBalanceHandler GRPC: getBalance succeed
+2020-10-26 15:29:04,505 INFO  vn.zalopay.ducnm8.handler.grpc.GetHistoryHandler GRPC: get transfer history succeed
+2020-10-26 15:29:04,600 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 15:29:04,601 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 15:29:04,608 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticator
+2020-10-26 15:29:04,610 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 15:29:04,610 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 15:29:04,611 INFO  vn.zalopay.ducnm8.handler.JWTAuthHandler Restful API authenticate successfully
+2020-10-26 15:29:04,615 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 5 and 4
+2020-10-26 15:29:04,615 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 5 and 4, offset = 0
+2020-10-26 15:29:04,616 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 5 and 7
+2020-10-26 15:29:04,616 INFO  vn.zalopay.ducnm8.handler.ChatListHandler get chat list between 5 and 8
+2020-10-26 15:29:04,616 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 5 and 7, offset = 0
+2020-10-26 15:29:04,617 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl select list chat between 5 and 8, offset = 0
+2020-10-26 15:29:04,670 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@333756806 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@1be4bd9a
+2020-10-26 15:29:04,685 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@2052524734 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@7490fb84
+2020-10-26 15:29:04,689 INFO  vn.zalopay.ducnm8.da.interact.ChatListDAImpl HikariProxyResultSet@688583434 wrapping com.mysql.cj.jdbc.result.ResultSetImpl@27cd185b
+2020-10-26 15:29:09,715 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 15:29:09,718 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select account by id 5
+2020-10-26 15:29:09,752 ERROR vn.zalopay.ducnm8.handler.grpc.TransferHandler GRPC: transfer failed ~ cause Wrong password
+2020-10-26 15:29:09,752 WARN  vn.zalopay.ducnm8.handler.grpc.TransferHandler grpc checkPassword failed ~ Wrong password id: 5
+2020-10-26 15:29:17,452 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 15:29:17,453 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select account by id 5
+2020-10-26 15:29:17,479 ERROR vn.zalopay.ducnm8.handler.grpc.TransferHandler GRPC: transfer failed ~ cause Wrong password
+2020-10-26 15:29:17,480 WARN  vn.zalopay.ducnm8.handler.grpc.TransferHandler grpc checkPassword failed ~ Wrong password id: 5
+2020-10-26 15:29:34,639 INFO  vn.zalopay.ducnm8.handler.grpc.InterceptorHandler grpc authenticate successfully
+2020-10-26 15:29:34,640 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select account by id 5
+2020-10-26 15:29:34,666 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl select for update. sender = 5, receiver = 4
+2020-10-26 15:29:34,675 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl update balance: (id=5,amount=-12)
+2020-10-26 15:29:34,682 INFO  vn.zalopay.ducnm8.da.interact.AccountDAImpl update balance: (id=4,amount=12)
+2020-10-26 15:29:34,685 INFO  vn.zalopay.ducnm8.da.interact.TransferDAImpl insert a transfer
+2020-10-26 15:29:34,690 INFO  vn.zalopay.ducnm8.da.interact.TransferHistoryDAImpl insert a new transfer history
+2020-10-26 15:29:34,693 INFO  vn.zalopay.ducnm8.da.interact.TransferDAImpl insert a transfer successfully
+2020-10-26 15:29:34,695 INFO  vn.zalopay.ducnm8.da.interact.TransferHistoryDAImpl insert a new transfer history
+2020-10-26 15:29:34,708 INFO  vn.zalopay.ducnm8.handler.WSHandler Send Transfer history to accountId: 4
+2020-10-26 15:29:34,709 INFO  vn.zalopay.ducnm8.handler.grpc.TransferHandler GRPC: transfer succeed

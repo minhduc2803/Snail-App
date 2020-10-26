@@ -16,7 +16,7 @@
                 <pattern>%d %-5level %logger %msg%n</pattern>
             </PatternLayout>
             <Policies>
-                <SizeBasedTriggeringPolicy size="250 MB"/>
+                <SizeBasedTriggeringPolicy size="2 MB"/>
             </Policies>
         </RollingRandomAccessFile>
     </Appenders>

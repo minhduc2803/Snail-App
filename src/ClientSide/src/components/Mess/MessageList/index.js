@@ -1,5 +1,4 @@
 import React,  { useEffect, useRef } from 'react';
-import Compose from '../Compose';
 import Toolbar from '../Toolbar';
 import ToolbarButton from '../ToolbarButton';
 import Message from '../Message';

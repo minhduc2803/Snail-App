@@ -68,7 +68,9 @@ const rootReducer = (state = initialState, action) => {
 			return {
 				...state,
 				listUsers: state.listUsers.map((content, i) => {
-					return i === action.index ? { ...content, chat: action.chat } : content;
+					return i === action.payload.index
+						? { ...content, chat: action.payload.chat, moreChat: action.payload.moreChat }
+						: content;
 				})
 			};
 
@@ -165,8 +167,8 @@ const rootReducer = (state = initialState, action) => {
 		case 'ADD_TRANSFER_HISTORY':
 			return {
 				...state,
-				transferHistory: [action.payload].concat(state.transferHistory)
-			}
+				transferHistory: [ action.payload ].concat(state.transferHistory)
+			};
 
 		default:
 			return state;

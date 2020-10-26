@@ -38,7 +38,7 @@ public class TransferDAImpl extends BaseTransactionDA implements TransferDA {
           () -> {
             Object[] params = {transfer.getSenderId(), transfer.getReceiverId(), transfer.getAmount(), transfer.getMessage(), transfer.getTransferTime()};
             try {
-              long id = executeWithParamsAndGetId(connection.unwrap(), INSERT_TRANSFER_STATEMENT, params, "insertTransfer");
+              long id = executeWithParamsAndGetId(connection.unwrap(), INSERT_TRANSFER_STATEMENT, params, "insertTransfer", true);
               transfer.setId(id);
               future.complete(transfer);
 

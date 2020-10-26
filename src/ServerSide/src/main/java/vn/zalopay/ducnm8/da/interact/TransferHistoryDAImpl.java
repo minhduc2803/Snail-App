@@ -1,18 +1,15 @@
 package vn.zalopay.ducnm8.da.interact;
 
 import io.vertx.core.Future;
-import org.apache.logging.log4j.Logger;
 import vn.zalopay.ducnm8.common.mapper.EntityMapper;
 import vn.zalopay.ducnm8.da.BaseTransactionDA;
 import vn.zalopay.ducnm8.da.Executable;
 import vn.zalopay.ducnm8.model.TransferHistory;
 import vn.zalopay.ducnm8.utils.AsyncHandler;
-import vn.zalopay.ducnm8.utils.JsonProtoUtils;
 import lombok.extern.log4j.Log4j2;
 
 import javax.sql.DataSource;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 @Log4j2
@@ -41,7 +38,7 @@ public class TransferHistoryDAImpl extends BaseTransactionDA implements Transfer
   }
 
   @Override
-  public Executable<TransferHistory> insert(TransferHistory transferHistory) {
+  public Executable<TransferHistory> insertInsideTransaction(TransferHistory transferHistory) {
     log.info("insert a new transfer history");
     return connection -> {
       Future<TransferHistory> future = Future.future();
@@ -49,7 +46,7 @@ public class TransferHistoryDAImpl extends BaseTransactionDA implements Transfer
           () -> {
             Object[] params = {transferHistory.getTransferId(), transferHistory.getUserId(), transferHistory.getPartnerId(), transferHistory.getTransferType(), transferHistory.getBalance()};
             try {
-              long id = executeWithParamsAndGetId(connection.unwrap(), INSERT_TRANSFER_HISTORY_STATEMENT, params, "insertTransferHistory");
+              long id = executeWithParamsAndGetId(connection.unwrap(), INSERT_TRANSFER_HISTORY_STATEMENT, params, "insertTransferHistory",true);
               transferHistory.setId(id);
               future.complete(transferHistory);
 
@@ -71,7 +68,7 @@ public class TransferHistoryDAImpl extends BaseTransactionDA implements Transfer
         () -> {
           Object[] params = {transferHistory.getTransferId(), transferHistory.getUserId(), transferHistory.getPartnerId(), transferHistory.getTransferType(), transferHistory.getBalance()};
           try {
-            long id = executeWithParamsAndGetId(dataSource.getConnection(), INSERT_TRANSFER_HISTORY_STATEMENT, params, "insertTransferHistory");
+            long id = executeWithParamsAndGetId(dataSource::getConnection, INSERT_TRANSFER_HISTORY_STATEMENT, params, "insertTransferHistory");
             transferHistory.setId(id);
             future.complete(transferHistory);
 

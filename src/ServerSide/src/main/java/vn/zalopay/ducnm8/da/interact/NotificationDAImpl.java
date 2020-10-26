@@ -35,15 +35,15 @@ public class NotificationDAImpl extends BaseTransactionDA implements Notificatio
   }
 
   @Override
-  public Executable<Notification> insert(Notification notification) {
+  public Future<Notification> insert(Notification notification) {
     log.info("insert a new notification for user_id {}", notification.getUserId());
-    return connection -> {
+
       Future<Notification> future = Future.future();
       asyncHandler.run(
           () -> {
             Object[] params = {notification.getNotificationType(), notification.getUserId(), notification.getPartnerId(), notification.getAmount(), notification.getMessage(), notification.isSeen()};
             try {
-              long id = executeWithParamsAndGetId(connection.unwrap(), INSERT_NOTIFICATION_STATEMENT, params, "insertNotification");
+              long id = executeWithParamsAndGetId(dataSource::getConnection, INSERT_NOTIFICATION_STATEMENT, params, "insertNotification");
               notification.setId(id);
               future.complete(notification);
             } catch (Exception e) {
@@ -53,7 +53,6 @@ public class NotificationDAImpl extends BaseTransactionDA implements Notificatio
             }
           });
       return future;
-    };
   }
 
   @Override
@@ -65,7 +64,7 @@ public class NotificationDAImpl extends BaseTransactionDA implements Notificatio
           () -> {
             Object[] params = {id};
             try {
-              executeWithParamsAndGetId(connection.unwrap(), UPDATE_SEEN_A_NOTIFICATION, params, "updateNotification");
+              executeWithParamsAndGetId(connection.unwrap(), UPDATE_SEEN_A_NOTIFICATION, params, "updateNotification", false);
               Notification notification = Notification.builder().id(id).build();
               future.complete(notification);
             } catch (Exception e) {

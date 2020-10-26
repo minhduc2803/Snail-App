@@ -33,6 +33,8 @@ public class AccountDAImpl extends BaseTransactionDA implements AccountDA {
       "SELECT * FROM account WHERE id != ?";
   private static final String SELECT_FOR_UPDATE_TWO_ACCOUNTS =
       "SELECT * FROM account WHERE id = ? or id = ? FOR UPDATE";
+  private static final String SELECT_TWO_ACCOUNT =
+      "SELECT * FROM account WHERE id = ? or id = ?";
   private static final String SELECT_BALANCE_BY_ID =
       "SELECT balance, last_time_update_balance, number_notification FROM account WHERE id = ?";
   private static final String UPDATE_BALANCE_BY_AMOUNT =
@@ -59,7 +61,7 @@ public class AccountDAImpl extends BaseTransactionDA implements AccountDA {
           Object[] params = {account.getUsername(), account.getFullName(), account.getPassword(),
               account.getBalance(), account.getLastTimeUpdateBalance(), account.getNumberNotification()};
           try {
-            long id = executeWithParamsAndGetId(dataSource.getConnection(), INSERT_USER_STATEMENT, params, "insertUser");
+            long id = executeWithParamsAndGetId(dataSource::getConnection, INSERT_USER_STATEMENT, params, "insertUser");
             account.setId(id);
             future.complete(account);
           } catch (Exception e) {
@@ -91,19 +93,19 @@ public class AccountDAImpl extends BaseTransactionDA implements AccountDA {
   }
 
   @Override
-  public Executable<Account> selectAccountInsideTransaction(long id) {
+  public Executable<ArrayList<Account>> selectTwoAccountsInsideTransaction(long sender, long receiver) {
     log.info("Select account by id inside transaction");
     return connection -> {
-      Future<Account> future = Future.future();
+      Future<ArrayList<Account>> future = Future.future();
       asyncHandler.run(
           () -> {
-            Object[] params = {id};
+            Object[] params = {sender, receiver};
             queryEntity(
                 "queryUser",
                 future,
-                SELECT_ACCOUNT_BY_ID,
+                SELECT_TWO_ACCOUNT,
                 params,
-                this::mapRs2EntityAccount,
+                this::mapRs2EntityAccountList,
                 (Connection) connection.unwrap(),
                 true);
           });
@@ -161,7 +163,7 @@ public class AccountDAImpl extends BaseTransactionDA implements AccountDA {
           () -> {
             Object[] params = {amount, lastTimeUpdate, id};
             try {
-              executeWithParamsAndGetId(connection.unwrap(), UPDATE_BALANCE_BY_AMOUNT, params, "updateBalance");
+              executeWithParamsAndGetId(connection.unwrap(), UPDATE_BALANCE_BY_AMOUNT, params, "updateBalance", true);
               Account account = Account.builder().id(id).build();
               future.complete(account);
             } catch (Exception e) {
@@ -181,7 +183,7 @@ public class AccountDAImpl extends BaseTransactionDA implements AccountDA {
           () -> {
             Object[] params = {number, id};
             try {
-              executeWithParamsAndGetId(connection.unwrap(), UPDATE_NUMBER_NOTIFICATION, params, "updateNumberNotification");
+              executeWithParamsAndGetId(connection.unwrap(), UPDATE_NUMBER_NOTIFICATION, params, "updateNumberNotification", false);
               Account account = Account.builder().id(id).build();
               future.complete(account);
             } catch (Exception e) {

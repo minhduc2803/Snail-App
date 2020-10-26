@@ -26,7 +26,7 @@ public class ChatListDAImpl extends BaseTransactionDA implements ChatListDA {
       "SELECT * FROM chat\n" +
           "WHERE (sender_id = ? and receiver_id = ?) or (receiver_id = ? and sender_id = ?)\n" +
           "ORDER BY id DESC\n" +
-          "LIMIT ?, 5";
+          "LIMIT ?, 30";
 
   public ChatListDAImpl(DataSource dataSource, AsyncHandler asyncHandler) {
     super();
@@ -37,14 +37,13 @@ public class ChatListDAImpl extends BaseTransactionDA implements ChatListDA {
   @Override
   public Future<Chat> insert(Chat chat) {
     log.info("insert a new chat");
-
-
+    
     Future<Chat> future = Future.future();
     asyncHandler.run(
         () -> {
           Object[] params = {chat.getSenderId(), chat.getReceiverId(), chat.getChatType(), chat.getContent(), chat.getSentTime()};
           try {
-            long id = executeWithParamsAndGetId(dataSource.getConnection(), INSERT_CHAT_STATEMENT, params, "insertChat");
+            long id = executeWithParamsAndGetId(dataSource::getConnection, INSERT_CHAT_STATEMENT, params, "insertChat");
             chat.setId(id);
             future.complete(chat);
           } catch (Exception e) {

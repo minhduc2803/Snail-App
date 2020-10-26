@@ -37,7 +37,6 @@ public class TransferHandler {
   String password;
   long transferTime = Instant.now().getEpochSecond();
 
-  String errorString = "";
   Account senderAccount = null;
   Account receiverAccount = null;
   long transferId;
@@ -78,28 +77,30 @@ public class TransferHandler {
 
     checkPassword()
         .compose(next -> transaction.begin())
-        .compose(next -> getAccounts(transaction))
+        .compose(next -> getAccountsForUpdate(transaction))
         .compose(next -> isEnoughMoney())
         .compose(next -> transaction.execute(accountDA.plusBalanceByAmount(sender, -amount, transferTime)))
         .compose(next -> transaction.execute(accountDA.plusBalanceByAmount(receiver, amount, transferTime)))
-        .compose(next -> getAccounts(transaction))
         .compose(next -> insertTransferCertificate(transaction))
+        .compose(next -> createTransferHistory())
+        .compose(next -> transaction.execute(transferHistoryDA.insertInsideTransaction(historyForSenderDatabase)))
+        .compose(next -> transaction.execute(transferHistoryDA.insertInsideTransaction(historyForReceiverClient)))
         .compose(next -> transaction.commit())
+        .compose(next -> transaction.close())
         .setHandler(transferAsync -> {
 
-          TransferResponse response = null;
           if (transferAsync.succeeded()) {
-            transaction.close();
-
-            response = createTransferResponse(true);
+            TransferResponse response = createTransferResponse(true);
 
             responseFuture.complete(response);
             tracker.step("transfer").code("SUCCESS").build().record();
             wsHandler.sendTransferHistory(historyForReceiverClient, receiver);
 
-            transferHistoryDA.insert(historyForSenderDatabase);
-            transferHistoryDA.insert(historyForReceiverClient);
-            notificationDA.insert(createNotification());
+//            createTransferHistory();
+//
+//            transferHistoryDA.insertOutSideTransaction(historyForSenderDatabase);
+//            transferHistoryDA.insertOutSideTransaction(historyForReceiverClient);
+//            notificationDA.insert(createNotification());
 
             log.info("GRPC: transfer succeed");
 
@@ -107,7 +108,7 @@ public class TransferHandler {
             transaction
                 .rollback()
                 .compose(next -> transaction.close());
-            response = createTransferResponse(false);
+            TransferResponse response = createTransferResponse(false);
 
             responseFuture.complete(response);
             tracker.step("transfer").code("SUCCESS").build().record();
@@ -146,23 +147,37 @@ public class TransferHandler {
 
   private Future<Void> isEnoughMoney() {
     Future<Void> future = Future.future();
-    accountDA.selectBalanceById(sender)
-        .setHandler(balance -> {
-          if (balance.succeeded()) {
-            if (balance.result().getBalance() >= amount)
-              future.complete();
-            else {
-              future.fail("Not enough money");
-              errorMessageForClient = "NOT_ENOUGH_MONEY";
-              errorCodeForClient = Code.NOT_ENOUGH_MONEY;
+    if (senderAccount.getBalance() >= amount)
+      future.complete();
+    else {
+      future.fail("Not enough money");
+      errorMessageForClient = "NOT_ENOUGH_MONEY";
+      errorCodeForClient = Code.NOT_ENOUGH_MONEY;
 
-              log.info("grpc transfer isEnoughMoney failed ~ Not enough money");
+      log.info("grpc transfer isEnoughMoney failed ~ Not enough money");
+    }
+    return future;
+  }
+
+  private Future<Void> getAccountsForUpdate(Transaction transaction) {
+    Future<Void> future = Future.future();
+    transaction.execute(accountDA.selectForUpdateTwoAccount(sender, receiver))
+        .setHandler(rs -> {
+          if (rs.succeeded() && rs.result().size() == 2) {
+            ArrayList<Account> listAccount = rs.result();
+            senderAccount = listAccount.get(0);
+            receiverAccount = listAccount.get(1);
+            if (sender != senderAccount.getId()) {
+              senderAccount = listAccount.get(1);
+              receiverAccount = listAccount.get(0);
             }
+            senderAccount.setBalance(senderAccount.getBalance()-amount);
+            receiverAccount.setBalance(receiverAccount.getBalance()+amount);
+            future.complete();
+
           } else {
-            future.fail("Cannot get a balance");
-            errorMessageForClient = "INTERNAL_SERVER_ERROR";
-            errorCodeForClient = Code.INTERNAL_SERVER_ERROR;
-            log.error("grpc transfer inEnoughMoney failed ~ Cannot get a balance");
+            future.fail("grpc transfer: Cannot getAccount inside transaction");
+            log.error("grpc transfer: cannot getAccount inside transaction");
           }
         });
     return future;
@@ -170,7 +185,7 @@ public class TransferHandler {
 
   private Future<Void> getAccounts(Transaction transaction) {
     Future<Void> future = Future.future();
-    transaction.execute(accountDA.selectForUpdateTwoAccount(sender, receiver))
+    transaction.execute(accountDA.selectTwoAccountsInsideTransaction(sender, receiver))
         .setHandler(rs -> {
           if (rs.succeeded() && rs.result().size() == 2) {
             ArrayList<Account> listAccount = rs.result();
@@ -214,14 +229,14 @@ public class TransferHandler {
     return future;
   }
 
-  private void createTransferHistory() {
+  private Future<Void> createTransferHistory() {
 
     historyForSenderDatabase = TransferHistory.builder()
         .transferId(transferId)
         .userId(sender)
         .partnerId(receiver)
         .transferType(0)
-        .balance(senderAccount.getBalance())
+        .balance(senderAccount.getBalance()-amount)
         .build();
 
     historyForReceiverClient = TransferHistory.builder()
@@ -229,13 +244,14 @@ public class TransferHandler {
         .userId(receiver)
         .partnerId(sender)
         .transferType(1)
-        .balance(receiverAccount.getBalance())
+        .balance(receiverAccount.getBalance()+amount)
         .amount(amount)
         .message(message)
         .transferTime(transferTime)
         .username(senderAccount.getUsername())
         .fullName(senderAccount.getFullName())
         .build();
+    return Future.succeededFuture();
   }
 
   private Notification createNotification() {

@@ -41,7 +41,3 @@
 
 }
 
-::-webkit-scrollbar {
-  width: 5px;
-  background: black; /* make scrollbar transparent */
-}

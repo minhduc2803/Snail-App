@@ -50,22 +50,13 @@ export function asyncSetupWebSocket(user) {
 			console.log('Receive a mess');
 			const data = JSON.parse(evt.data);
 			console.log();
-			if (data.responseType == 1) dispatch({ type: 'CHAT', chat: data.data });
+			if (data.responseType === 1) dispatch({ type: 'CHAT', chat: data.data });
 			else {
 				const balance = {
 					balance: data.data.balance,
 					lastTimeUpdate: data.data.transferTime
 				};
-				const transferHistory = {
-					partnerId: data.data.partnerId,
-					transferType: data.data.transferType,
-					amount: data.data.amount,
-					message: data.data.message,
-					balance: data.data.balance,
-					transferTime: data.data.transferTime,
-					username: data.data.username,
-					fullName: data.data.fullName
-				};
+		
 				dispatch({ type: 'GET_BALANCE', payload: balance });
 				dispatch({ type: 'ADD_TRANSFER_HISTORY', payload: data.data });
 			}
@@ -186,9 +177,17 @@ export function asyncLoadUsers() {
 
 export function asyncLoadChat(chosenIndex, content) {
 	return (dispatch, getState) => {
+		let offset = 0;
+		if(getState().listUsers[chosenIndex] !== undefined &&
+		getState().listUsers[chosenIndex].chat !== undefined){
+			offset = getState().listUsers[chosenIndex].chat.length;
+		}
+
 		let data = {
-			partnerId: content.userId
+			partnerId: content.userId,
+			offset: offset
 		};
+
 		data = JSON.stringify(data);
 		return axios({
 			method: 'post',
@@ -203,7 +202,16 @@ export function asyncLoadChat(chosenIndex, content) {
 			.then((result) => {
 				if (result.status !== 200) alert(result.data.message);
 				else {
-					dispatch({ type: 'LOAD_CHAT', chat: result.data.data, index: chosenIndex });
+					let currentChat = [];
+					if(offset !== 0){
+						currentChat = getState().listUsers[chosenIndex].chat;
+					}
+
+					dispatch({ type: 'LOAD_CHAT', payload: {
+						chat: result.data.data.reverse().concat(currentChat), 
+						index: chosenIndex,
+						moreChat: (result.data.data.length !== 0)
+					}});
 				}
 			})
 			.catch((error) => {
@@ -221,7 +229,7 @@ export function transfer(transfer_info) {
 		const metadata = { Authorization: 'Bearer ' + getState().user.token };
 
 		grpc.transfer(metadata, transfer_info, (err, response) => {
-			if (response == null) {
+			if (response === null) {
 				dispatch({ type: 'POP_UP_TRANSFER_COMPLETE_FAILED' });
 			} else {
 				response = response.toObject();

@@ -3,7 +3,6 @@ import Avatar from 'react-avatar';
 import { useSelector, useDispatch } from 'react-redux';
 import '../../Frame/PageStructure/antd.css';
 import { Form, Select, InputNumber, Button, Input } from 'antd';
-import { UploadOutlined, InboxOutlined } from '@ant-design/icons';
 import { transfer } from '../../../redux/actions';
 
 const { Option } = Select;

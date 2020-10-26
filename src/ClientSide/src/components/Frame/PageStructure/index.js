@@ -9,7 +9,7 @@ import Wallet from '../../Money/Wallet';
 import { logout } from '../../../redux/actions';
 
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Content, Sider } = Layout;
 
 const Demo = () => {
 	const pageState = useSelector( state => state.page);

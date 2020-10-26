@@ -7,8 +7,9 @@ import * as serviceWorker from './serviceWorker';
 
 import {Provider} from 'react-redux'
 import store from './redux/store'
+import { init } from './redux/actions'
 
-
+store.dispatch(init())
 
 ReactDOM.render(
     <Provider store={store}>

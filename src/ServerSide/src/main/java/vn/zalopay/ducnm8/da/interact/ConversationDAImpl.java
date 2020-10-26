@@ -32,7 +32,7 @@ public class ConversationDAImpl extends BaseTransactionDA implements Conversatio
           () -> {
             Object[] params = {conversation.getId(), conversation.getLastTimeChat()};
             try {
-              long id = executeWithParamsAndGetId(connection.unwrap(), INSERT_CONVERSATION_STATEMENT, params, "insertChat");
+              long id = executeWithParamsAndGetId(connection.unwrap(), INSERT_CONVERSATION_STATEMENT, params, "insertChat", false);
               conversation.setId(id);
               future.complete(conversation);
             } catch (Exception e) {

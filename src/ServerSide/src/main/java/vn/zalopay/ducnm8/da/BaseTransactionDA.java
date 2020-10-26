@@ -27,7 +27,7 @@ public class BaseTransactionDA extends BaseDA {
   }
 
   protected Long executeWithParamsAndGetId(
-      Connection connection, String stm, Object[] params, String method)
+      Connection connection, String stm, Object[] params, String method, boolean isTransaction)
       throws Exception {
 
     PreparedStatement preparedStatement = null;
@@ -53,10 +53,52 @@ public class BaseTransactionDA extends BaseDA {
         }
       }
     } finally {
-      closeResource(LOGGER, preparedStatement);
+      if (!isTransaction) {
+        closeResource(LOGGER, preparedStatement, connection);
+      } else {
+        closeResource(LOGGER, preparedStatement);
+      }
     }
   }
 
+  protected Long executeWithParamsAndGetId(
+      SupplierEx<Connection> connectionSupplier, String stm, Object[] params, String method)
+      throws Exception {
+
+    Connection connection = null;
+    PreparedStatement preparedStatement = null;
+
+    try {
+      connection = connectionSupplier.get();
+      if (connection == null) {
+        throw EXCEPTION_CONNECTION_NULL;
+      }
+
+      preparedStatement = connection.prepareStatement(stm, Statement.RETURN_GENERATED_KEYS);
+      preparedStatement.setQueryTimeout(statementTimeoutSec);
+
+      setParamsFromArray(preparedStatement, params);
+      int affectedRow = preparedStatement.executeUpdate();
+
+      if (1 != affectedRow) {
+
+        String reason =
+            String.format(
+                "%s wrong effected row expected=1, actual=%d, query=%s, params=%s",
+                method, affectedRow, stm, JsonProtoUtils.printGson(params));
+        throw new SQLException(reason);
+      } else {
+        try (ResultSet generatedKeys = preparedStatement.getGeneratedKeys()) {
+
+          return generatedKeys.next() ? generatedKeys.getLong(1) : 0L;
+
+        }
+      }
+    } finally {
+
+      closeResource(LOGGER, preparedStatement, connection);
+    }
+  }
 
   protected int executeWithParams(Connection connection, String stm, Object[] params, String method)
       throws SQLException {
@@ -194,11 +236,11 @@ public class BaseTransactionDA extends BaseDA {
       preparedStatement.setQueryTimeout(statementTimeoutSec);
       setParamsFromArray(preparedStatement, params);
       resultSet = preparedStatement.executeQuery();
-
       T data = mapper.apply(resultSet);
+
       result.complete(data);
     } catch (Exception e) {
-      LOGGER.error("Failed execute cause={}", ExceptionUtil.getDetail(e));
+      LOGGER.error("Failed execute cause={}", e.getMessage());
       result.fail(e);
     } finally {
       if (!isTransaction) {

@@ -14,7 +14,7 @@ public interface AccountDA {
 
   Future<Account> selectAccountById(long id);
 
-  Executable<Account> selectAccountInsideTransaction(long id);
+  Executable<ArrayList<Account>> selectTwoAccountsInsideTransaction(long sender, long receiver);
 
   Future<User> selectUserByUsername(String Username);
 

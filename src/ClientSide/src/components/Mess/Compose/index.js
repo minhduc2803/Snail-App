@@ -1,6 +1,6 @@
 import React from 'react';
 import './Compose.css';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import Modal from '../../Money/Modal';
 import { SendOutlined } from '@ant-design/icons';
 import { Button } from 'antd';
@@ -20,7 +20,7 @@ export default function Compose(props) {
 	}
 
 	function handleSubmit() {
-		if (message.current.value == null || message.current.value == '') return;
+		if (message.current.value === null || message.current.value === '') return;
 		const chat = {
 			chatType: 1,
 			senderId: user.userId,

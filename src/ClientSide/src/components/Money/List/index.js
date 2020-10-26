@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import Avatar from 'react-avatar';
-import { List, message, Spin } from 'antd';
+import { List, Button } from 'antd';
 import '../../Frame/PageStructure/antd.css';
 
 export default function() {
@@ -14,7 +14,7 @@ export default function() {
 				<List.Item.Meta
 					avatar={<Avatar name={history.fullName} size="35" round={true} />}
 					title={
-						<div>{`${history.transferType == 0
+						<div>{`${history.transferType === 0
 							? 'Chuyển tiền tới'
 							: 'Nhận tiền từ'} ${history.fullName}`}</div>
 					}
@@ -22,16 +22,33 @@ export default function() {
 				/>
 				<div className="historyContent">
 					<div className="historyMessage">{history.message}</div>
-					<div>{`${history.transferType == 0 ? '-' : '+'} ${`${history.amount.toLocaleString()}`} VND`}</div>
+					<div>{`${history.transferType === 0 ? '-' : '+'} ${`${history.amount.toLocaleString()}`} VND`}</div>
 				</div>
 			</List.Item>
 		);
 	});
 
+
+	const loadMore = (
+		<div
+          style={{
+            textAlign: 'center',
+            marginTop: 12,
+            height: 32,
+            lineHeight: '32px',
+          }}
+        >
+          <Button >loading more</Button>
+        </div>
+	)
+
 	return (
 		<div className="containList">
 			<div className="list-scrollable">
-				<List>{renderItem}</List>
+				<List
+				itemLayout="horizontal"
+				loadMore={loadMore}
+				>{renderItem}</List>
 			</div>
 		</div>
 	);

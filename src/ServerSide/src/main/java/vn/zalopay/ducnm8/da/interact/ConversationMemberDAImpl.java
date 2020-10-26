@@ -39,7 +39,7 @@ public class ConversationMemberDAImpl extends BaseTransactionDA implements Conve
           () -> {
             Object[] params = {conversationMember.getConversationId()};
             try {
-              long id = executeWithParamsAndGetId(connection.unwrap(), INSERT_CONVERSATION_MEMBER, params, "insertConversationMember");
+              long id = executeWithParamsAndGetId(connection.unwrap(), INSERT_CONVERSATION_MEMBER, params, "insertConversationMember", false);
               conversationMember.setId(id);
               future.complete(conversationMember);
             } catch (Exception e) {

@@ -13,7 +13,8 @@ const initialState = {
 		errorCode: 0
 	},
 
-	transferHistory: []
+	transferHistory: [],
+	isHistoryEmpty: false
 };
 const rootReducer = (state = initialState, action) => {
 	switch (action.type) {
@@ -192,6 +193,11 @@ const rootReducer = (state = initialState, action) => {
 				transferHistory: [ action.payload ].concat(state.transferHistory)
 			};
 
+		case 'DONE_GET_TRANSFER_HISTORY':
+			return {
+				...state,
+				isHistoryEmpty: true
+			};
 		default:
 			return state;
 	}

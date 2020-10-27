@@ -202,13 +202,9 @@ export function asyncLoadChat(chosenIndex, content) {
 			.then((result) => {
 				if (result.status !== 200) alert(result.data.message);
 				else {
-					let currentChat = [];
-					if(offset !== 0){
-						currentChat = getState().listUsers[chosenIndex].chat;
-					}
-
+					
 					dispatch({ type: 'LOAD_CHAT', payload: {
-						chat: result.data.data.reverse().concat(currentChat), 
+						chat: result.data.data, 
 						index: chosenIndex,
 						moreChat: (result.data.data.length !== 0)
 					}});
@@ -298,6 +294,7 @@ export function getHistory() {
 	return (dispatch, getState) => {
 		const metadata = { Authorization: 'Bearer ' + getState().user.token };
 		const offset = getState().transferHistory.length;
+		const currentHistory = getState().transferHistory;
 		grpc.getHistory(metadata, offset, (err, response) => {
 			//console.log(response.toObject());
 			// const history = {
@@ -309,11 +306,21 @@ export function getHistory() {
 			//     username: response.getData.getUsername(),
 			//     fullName: response.getData.getFullName()
 			// };
-			if (response != null)
+			if (response != null){
+				let history = response.toObject().data.historyItemsList;
 				dispatch({
 					type: 'GET_TRANSFER_HISTORY',
-					payload: response.toObject().data.historyItemsList.reverse()
+					payload: currentHistory.concat(history)
 				});
+				if(history.length < 30){
+					dispatch({
+						type: 'DONE_GET_TRANSFER_HISTORY',
+					});
+				}
+				
+			}
+			
+				
 		});
 	};
 }

@@ -6,7 +6,6 @@ import javax.annotation.Generated;
 import javax.inject.Provider;
 import vn.zalopay.ducnm8.da.TransactionProvider;
 import vn.zalopay.ducnm8.da.interact.AccountDA;
-import vn.zalopay.ducnm8.da.interact.NotificationDA;
 import vn.zalopay.ducnm8.da.interact.TransferDA;
 import vn.zalopay.ducnm8.da.interact.TransferHistoryDA;
 import vn.zalopay.ducnm8.handler.WSHandler;
@@ -29,8 +28,6 @@ public final class ServiceModule_ProvideTransferHandlerFactory implements Factor
 
   private final Provider<TransferHistoryDA> transferHistoryDAProvider;
 
-  private final Provider<NotificationDA> notificationDAProvider;
-
   private final Provider<TransactionProvider> transactionProvider;
 
   private final Provider<WSHandler> wsHandlerProvider;
@@ -38,33 +35,30 @@ public final class ServiceModule_ProvideTransferHandlerFactory implements Factor
   public ServiceModule_ProvideTransferHandlerFactory(ServiceModule module,
       Provider<TransferDA> transferDAProvider, Provider<AccountDA> accountDAProvider,
       Provider<TransferHistoryDA> transferHistoryDAProvider,
-      Provider<NotificationDA> notificationDAProvider,
       Provider<TransactionProvider> transactionProvider, Provider<WSHandler> wsHandlerProvider) {
     this.module = module;
     this.transferDAProvider = transferDAProvider;
     this.accountDAProvider = accountDAProvider;
     this.transferHistoryDAProvider = transferHistoryDAProvider;
-    this.notificationDAProvider = notificationDAProvider;
     this.transactionProvider = transactionProvider;
     this.wsHandlerProvider = wsHandlerProvider;
   }
 
   @Override
   public TransferHandler get() {
-    return provideTransferHandler(module, transferDAProvider.get(), accountDAProvider.get(), transferHistoryDAProvider.get(), notificationDAProvider.get(), transactionProvider.get(), wsHandlerProvider.get());
+    return provideTransferHandler(module, transferDAProvider.get(), accountDAProvider.get(), transferHistoryDAProvider.get(), transactionProvider.get(), wsHandlerProvider.get());
   }
 
   public static ServiceModule_ProvideTransferHandlerFactory create(ServiceModule module,
       Provider<TransferDA> transferDAProvider, Provider<AccountDA> accountDAProvider,
       Provider<TransferHistoryDA> transferHistoryDAProvider,
-      Provider<NotificationDA> notificationDAProvider,
       Provider<TransactionProvider> transactionProvider, Provider<WSHandler> wsHandlerProvider) {
-    return new ServiceModule_ProvideTransferHandlerFactory(module, transferDAProvider, accountDAProvider, transferHistoryDAProvider, notificationDAProvider, transactionProvider, wsHandlerProvider);
+    return new ServiceModule_ProvideTransferHandlerFactory(module, transferDAProvider, accountDAProvider, transferHistoryDAProvider, transactionProvider, wsHandlerProvider);
   }
 
   public static TransferHandler provideTransferHandler(ServiceModule instance,
       TransferDA transferDA, AccountDA accountDA, TransferHistoryDA transferHistoryDA,
-      NotificationDA notificationDA, TransactionProvider transactionProvider, WSHandler wsHandler) {
-    return Preconditions.checkNotNull(instance.provideTransferHandler(transferDA, accountDA, transferHistoryDA, notificationDA, transactionProvider, wsHandler), "Cannot return null from a non-@Nullable @Provides method");
+      TransactionProvider transactionProvider, WSHandler wsHandler) {
+    return Preconditions.checkNotNull(instance.provideTransferHandler(transferDA, accountDA, transferHistoryDA, transactionProvider, wsHandler), "Cannot return null from a non-@Nullable @Provides method");
   }
 }

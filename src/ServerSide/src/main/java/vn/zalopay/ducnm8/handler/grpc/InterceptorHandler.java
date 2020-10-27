@@ -42,7 +42,7 @@ public class InterceptorHandler implements ServerInterceptor {
         Context ctx = Context.current()
             .withValue(JWTUtils.CLIENT_ID_CONTEXT_KEY, id);
 
-        log.info("grpc authenticate successfully");
+        log.info("grpc authenticate successfully, senderId = {}", id);
         return Contexts.interceptCall(ctx, serverCall, metadata, serverCallHandler);
       } catch (JwtException e) {
         status = Status.UNAUTHENTICATED.withDescription(e.getMessage()).withCause(e);

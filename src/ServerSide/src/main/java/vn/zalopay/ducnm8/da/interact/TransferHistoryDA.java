@@ -9,7 +9,5 @@ import java.util.ArrayList;
 public interface TransferHistoryDA {
   Executable<TransferHistory> insertInsideTransaction(TransferHistory transferHistory);
 
-  Future<TransferHistory> insertOutSideTransaction(TransferHistory transferHistory);
-
   Future<ArrayList<TransferHistory>> getTransferHistoryByAccountId(long id, long offset);
 }

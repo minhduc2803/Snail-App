@@ -24,9 +24,7 @@ public class ChatListDAImpl extends BaseTransactionDA implements ChatListDA {
       "INSERT INTO chat (`sender_id`, `receiver_id`, `chat_type`, `content`, `sent_time`) VALUES (?, ?, ?, ?, ?);";
   private static final String LIST_CHAT_BETWEEN_TWO_USERS =
       "SELECT * FROM chat\n" +
-          "WHERE (sender_id = ? and receiver_id = ?) or (receiver_id = ? and sender_id = ?)\n" +
-          "ORDER BY id DESC\n" +
-          "LIMIT ?, 30";
+          "WHERE (sender_id = ? and receiver_id = ?) or (receiver_id = ? and sender_id = ?);";
 
   public ChatListDAImpl(DataSource dataSource, AsyncHandler asyncHandler) {
     super();
@@ -36,8 +34,8 @@ public class ChatListDAImpl extends BaseTransactionDA implements ChatListDA {
 
   @Override
   public Future<Chat> insert(Chat chat) {
-    log.info("insert a new chat");
-    
+    log.info("insert a new chat, senderId = {} receiverId {}", chat.getSenderId(), chat.getReceiverId());
+
     Future<Chat> future = Future.future();
     asyncHandler.run(
         () -> {
@@ -47,7 +45,7 @@ public class ChatListDAImpl extends BaseTransactionDA implements ChatListDA {
             chat.setId(id);
             future.complete(chat);
           } catch (Exception e) {
-            log.error("insert new chat failed ~ cause: {}", e.getMessage());
+            log.error("insert new chat failed, senderId = {} receiverId = {} ~ cause: {}", chat.getSenderId(), chat.getReceiverId(), e.getMessage());
             future.fail("insert new chat failed");
           }
         });
@@ -61,7 +59,7 @@ public class ChatListDAImpl extends BaseTransactionDA implements ChatListDA {
     Future<List<Chat>> future = Future.future();
     asyncHandler.run(
         () -> {
-          Object[] params = {senderId, receiverId, senderId, receiverId, offset};
+          Object[] params = {senderId, receiverId, senderId, receiverId};
           queryEntity(
               "queryListChat",
               future,

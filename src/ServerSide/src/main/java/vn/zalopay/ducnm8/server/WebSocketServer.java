@@ -28,7 +28,7 @@ public class WebSocketServer {
   }
 
   public void start() {
-    log.info("Starting WebSocket Server ...");
+    log.info("Starting WebSocket Server on port:{}", port);
     httpServer =
         vertx
             .createHttpServer()
@@ -37,7 +37,7 @@ public class WebSocketServer {
                 long id = JWTUtils.authenticate(getToken(ws));
                 ws.accept();
 
-                log.info("web socket connected from UserID: {}", id);
+                log.info("web socket connected from userId: {}", id);
                 wsHandler.addClient(ws, id);
 
                 ws.closeHandler(event -> {

@@ -17,7 +17,7 @@ import vn.zalopay.ducnm8.utils.JWTUtils;
 public class JWTAuthHandler {
 
   public void handle(RoutingContext rc) {
-    log.info("Restful API authenticator");
+
     HttpServerRequest request = rc.request();
     HttpServerResponse response = rc.response();
 
@@ -30,7 +30,7 @@ public class JWTAuthHandler {
 
       Long id = JWTUtils.authenticate(token);
 
-      log.info("Restful API authenticate successfully");
+      log.info("Restful API authenticate successfully, id = {}", id);
       rc.next();
     } catch (Exception e) {
       log.info("Authorization failed ~ cause: {}", e.getMessage());

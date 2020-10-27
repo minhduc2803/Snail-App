@@ -84,8 +84,9 @@ const Demo = () => {
 					rules={[
 						{
 							required: true,
-							message: 'Bạn cần nhập vào số tiền là một số nguyên',
-							type: 'integer'
+							message: 'Bạn cần nhập vào số tiền là một số nguyên dương',
+							type: 'integer',
+							min: 1
 						}
 					]}
 				>

@@ -1,12 +1,14 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import Avatar from 'react-avatar';
 import { List, Button } from 'antd';
+import { getHistory } from '../../../redux/actions';
 import '../../Frame/PageStructure/antd.css';
 
 export default function() {
 	const transferHistory = useSelector((state) => state.transferHistory);
-
+	const isHistoryEmpty = useSelector((state) => state.isHistoryEmpty);
+	const dispatch = useDispatch();
 	const renderItem = transferHistory.map((history, index) => {
 		let dateTime = new Date(history.transferTime * 1000).toLocaleString();
 		return (
@@ -28,7 +30,10 @@ export default function() {
 		);
 	});
 
-
+	let loadButton = <Button onClick={() => dispatch(getHistory())}>loading more</Button>
+	if(isHistoryEmpty){
+		loadButton = <div ></div>
+	}
 	const loadMore = (
 		<div
           style={{
@@ -38,7 +43,7 @@ export default function() {
             lineHeight: '32px',
           }}
         >
-          <Button >loading more</Button>
+          {loadButton}
         </div>
 	)
 

@@ -30,7 +30,7 @@ public class GetHistoryHandler {
     long id = JWTUtils.CLIENT_ID_CONTEXT_KEY.get();
     long offset = historyRequest.getOffset();
 
-    log.info("GRPC get transfer history request from: {}", id);
+    log.info("GRPC get transfer history request senderId = {}", id);
     transferHistoryDA.getTransferHistoryByAccountId(id, offset)
         .setHandler(rs -> {
           HistoryResponse response = null;
@@ -38,10 +38,10 @@ public class GetHistoryHandler {
           if (rs.succeeded()) {
             ArrayList<TransferHistory> history = rs.result();
             response = createSuccessHistory(history);
-            log.info("GRPC: get transfer history succeed");
+            log.info("GRPC: get transfer history succeed, senderId = {}", id);
           } else {
             response = createFailedHistory();
-            log.error("GRPC: get transfer history failed");
+            log.error("GRPC: get transfer history failed, senderId = {}",id);
           }
 
           tracker.step("getHistory").code("SUCCESS").build().record();

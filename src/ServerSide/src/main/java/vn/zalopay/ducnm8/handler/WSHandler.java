@@ -53,42 +53,41 @@ public class WSHandler {
     Tracker.TrackerBuilder tracker =
         Tracker.builder().metricName(METRIC).startTime(System.currentTimeMillis());
 
-    log.info("Send chat from userId: {}", senderId);
     JsonObject json = new JsonObject(buffer.toString());
 
-    log.info("a json chat {}", json);
-
     try {
+      long receiverId = json.getInteger("receiverId");
       Chat chat = Chat.builder()
           .chatType(json.getInteger("chatType"))
           .senderId(senderId)
-          .receiverId(json.getInteger("receiverId"))
+          .receiverId(receiverId)
           .content(json.getString("content"))
           .sentTime(Instant.now().getEpochSecond())
           .build();
 
-      log.info(chat.getSentTime());
+
+      log.info("Send chat from senderId = {} to receiverId = {}", senderId, receiverId);
 
       chatListDA.insert(chat)
           .setHandler(result -> {
             if (result.succeeded()) {
-              log.info("insert a new chat");
+              log.info("insert a new chat, senderId = {} receiverId = {}", senderId, receiverId);
               sendChat(chat, senderId);
               sendChat(chat, chat.getReceiverId());
 
               tracker.step("handle").code("SUCCESS").build().record();
             } else {
-              log.error("Error: cannot insert a new chat");
+              log.error("Error: cannot insert a new chat, senderId = {} receiverId = {}", senderId, receiverId);
             }
 
           });
     } catch (Exception e) {
-      log.error(e);
+      log.error("Error occurs when Send chat ~ cause = ", e.getMessage());
     }
   }
 
   private void sendChat(Chat chat, long receiverId) {
-    log.info("Send chat to accountId: {}", receiverId);
+    log.info("Send chat to accountId: {}, senderId = {} receiverId = {}", receiverId, chat.getSenderId(), chat.getReceiverId());
 
     WebSocketResponse webSocketResponse = WebSocketResponse.builder()
         .responseType(1)
@@ -103,7 +102,7 @@ public class WSHandler {
   }
 
   public void sendTransferHistory(TransferHistory transferHistory, long receiverId) {
-    log.info("Send Transfer history to accountId: {}", receiverId);
+    log.info("Send Transfer history to accountId: {}, userId = {} parnerId = {}", receiverId, transferHistory.getUserId(), transferHistory.getPartnerId());
 
     WebSocketResponse webSocketResponse = WebSocketResponse.builder()
         .responseType(2)

@@ -33,6 +33,8 @@ public class AccountDAImpl extends BaseTransactionDA implements AccountDA {
       "SELECT * FROM account WHERE id != ?";
   private static final String SELECT_FOR_UPDATE_TWO_ACCOUNTS =
       "SELECT * FROM account WHERE id = ? or id = ? FOR UPDATE";
+  private static final String SELECT_ACCOUNT_FOR_UPDATE =
+      "SELECT * FROM account WHERE id = ? FOR UPDATE";
   private static final String SELECT_TWO_ACCOUNT =
       "SELECT * FROM account WHERE id = ? or id = ?";
   private static final String SELECT_BALANCE_BY_ID =
@@ -53,7 +55,7 @@ public class AccountDAImpl extends BaseTransactionDA implements AccountDA {
 
   @Override
   public Future<Account> insert(Account account) {
-    log.info("insert a user");
+    log.info("insert a user, username = {}", account.getUsername());
 
     Future<Account> future = Future.future();
     asyncHandler.run(
@@ -74,7 +76,7 @@ public class AccountDAImpl extends BaseTransactionDA implements AccountDA {
 
   @Override
   public Future<Account> selectAccountById(long id) {
-    log.info("select account by id {}", id);
+    log.info("select account by id, accountId = {}", id);
     Future<Account> future = Future.future();
     asyncHandler.run(
         () -> {
@@ -91,28 +93,6 @@ public class AccountDAImpl extends BaseTransactionDA implements AccountDA {
 
     return future;
   }
-
-  @Override
-  public Executable<ArrayList<Account>> selectTwoAccountsInsideTransaction(long sender, long receiver) {
-    log.info("Select account by id inside transaction");
-    return connection -> {
-      Future<ArrayList<Account>> future = Future.future();
-      asyncHandler.run(
-          () -> {
-            Object[] params = {sender, receiver};
-            queryEntity(
-                "queryUser",
-                future,
-                SELECT_TWO_ACCOUNT,
-                params,
-                this::mapRs2EntityAccountList,
-                (Connection) connection.unwrap(),
-                true);
-          });
-      return future;
-    };
-  }
-
 
   @Override
   public Future<User> selectUserByUsername(String Username) {
@@ -175,26 +155,6 @@ public class AccountDAImpl extends BaseTransactionDA implements AccountDA {
   }
 
   @Override
-  public Executable<Account> updateNumberNotification(long id, int number) {
-    log.info("update number notifications: account_id={}, number={}", id, number);
-    return connection -> {
-      Future<Account> future = Future.future();
-      asyncHandler.run(
-          () -> {
-            Object[] params = {number, id};
-            try {
-              executeWithParamsAndGetId(connection.unwrap(), UPDATE_NUMBER_NOTIFICATION, params, "updateNumberNotification", false);
-              Account account = Account.builder().id(id).build();
-              future.complete(account);
-            } catch (Exception e) {
-              future.fail(e);
-            }
-          });
-      return future;
-    };
-  }
-
-  @Override
   public Future<ArrayList<UserWithoutPassword>> selectUserList(long id) {
     log.info("select list user except one user by id: {}", id);
     Future<ArrayList<UserWithoutPassword>> future = Future.future();
@@ -216,7 +176,7 @@ public class AccountDAImpl extends BaseTransactionDA implements AccountDA {
 
   @Override
   public Executable<ArrayList<Account>> selectForUpdateTwoAccount(long sender, long receiver) {
-    log.info("select for update. sender = {}, receiver = {}", sender, receiver);
+    log.info("select account for update. sender = {}, receiver = {}", sender, receiver);
     return connection -> {
       Future<ArrayList<Account>> future = Future.future();
       asyncHandler.run(
@@ -231,6 +191,28 @@ public class AccountDAImpl extends BaseTransactionDA implements AccountDA {
                 (Connection) connection.unwrap(),
                 true);
           });
+      return future;
+    };
+  }
+
+  @Override
+  public Executable<Account> selectAccountForUpdate(long id) {
+    log.info("select account for update, accountId = {}", id);
+    return connection -> {
+      Future<Account> future = Future.future();
+      asyncHandler.run(
+          () -> {
+            Object[] params = {id};
+            queryEntity(
+                "queryAccount",
+                future,
+                SELECT_ACCOUNT_FOR_UPDATE,
+                params,
+                this::mapRs2EntityAccount,
+                dataSource::getConnection,
+                false);
+          });
+
       return future;
     };
   }

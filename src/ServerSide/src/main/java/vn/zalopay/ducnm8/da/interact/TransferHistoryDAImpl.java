@@ -39,20 +39,20 @@ public class TransferHistoryDAImpl extends BaseTransactionDA implements Transfer
 
   @Override
   public Executable<TransferHistory> insertInsideTransaction(TransferHistory transferHistory) {
-    log.info("insert a new transfer history");
+    log.info("insert a new transfer history, userId = {} partnerId = {}", transferHistory.getUserId(), transferHistory.getPartnerId());
     return connection -> {
       Future<TransferHistory> future = Future.future();
       asyncHandler.run(
           () -> {
             Object[] params = {transferHistory.getTransferId(), transferHistory.getUserId(), transferHistory.getPartnerId(), transferHistory.getTransferType(), transferHistory.getBalance()};
             try {
-              long id = executeWithParamsAndGetId(connection.unwrap(), INSERT_TRANSFER_HISTORY_STATEMENT, params, "insertTransferHistory",true);
+              long id = executeWithParamsAndGetId(connection.unwrap(), INSERT_TRANSFER_HISTORY_STATEMENT, params, "insertTransferHistory", true);
               transferHistory.setId(id);
               future.complete(transferHistory);
 
             } catch (Exception e) {
               future.fail(e.getMessage());
-              String reason = String.format("cannot insert a transfer history ~ cause: %s", e.getMessage());
+              String reason = String.format("cannot insert a transfer history, userId = {} partnerId = {}~ cause: %s", transferHistory.getUserId(), transferHistory.getPartnerId(), e.getMessage());
               log.error(reason);
             }
           });
@@ -61,29 +61,8 @@ public class TransferHistoryDAImpl extends BaseTransactionDA implements Transfer
   }
 
   @Override
-  public Future<TransferHistory> insertOutSideTransaction(TransferHistory transferHistory) {
-    log.info("insert a new transfer history");
-    Future<TransferHistory> future = Future.future();
-    asyncHandler.run(
-        () -> {
-          Object[] params = {transferHistory.getTransferId(), transferHistory.getUserId(), transferHistory.getPartnerId(), transferHistory.getTransferType(), transferHistory.getBalance()};
-          try {
-            long id = executeWithParamsAndGetId(dataSource::getConnection, INSERT_TRANSFER_HISTORY_STATEMENT, params, "insertTransferHistory");
-            transferHistory.setId(id);
-            future.complete(transferHistory);
-
-          } catch (Exception e) {
-            future.fail(e.getMessage());
-            String reason = String.format("cannot insert a transfer history ~ cause: %s", e.getMessage());
-            log.error(reason);
-          }
-        });
-    return future;
-  }
-
-  @Override
   public Future<ArrayList<TransferHistory>> getTransferHistoryByAccountId(long id, long offset) {
-    log.info("select a list transfer history");
+    log.info("select a list transfer history, accountId = {} offset = {}", id, offset);
     Future<ArrayList<TransferHistory>> future = Future.future();
     asyncHandler.run(
         () -> {

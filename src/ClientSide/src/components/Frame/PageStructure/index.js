@@ -31,22 +31,20 @@ const Demo = () => {
 					left: 0
 				}}
 			>
-				<Menu theme="dark" mode="inline" defaultSelectedKeys={[ '2' ]} style={{ marginTop: 200, fontSize: 16, textAlign: 'center' }}>
-					<Menu.Item onClick={() => dispatch({type:"GOTO_WALLET"})} key="1" icon={<DollarCircleOutlined />}>
+				
+				<Menu theme="dark" mode="inline" defaultSelectedKeys={[ '2' ]} style={{ marginTop: 200, fontSize: 16 }}>
+					<Menu.Item onClick={() => dispatch({type:"GOTO_WALLET"})} key="1" icon={<DollarCircleOutlined style={{ marginLeft: 25}}/>} >
 						Ví của tôi
 					</Menu.Item>
-					<Menu.Item onClick={() => dispatch({type:"GOTO_MESSENGER"})} key="2" icon={<MessageOutlined />}>
+					<Menu.Item onClick={() => dispatch({type:"GOTO_MESSENGER"})} key="2" icon={<MessageOutlined style={{ marginLeft: 25}}/>} >
 						Trò chuyện
-					</Menu.Item>
-					<Menu.Item key="3" icon={<ContactsOutlined />}>
-						Mọi người
 					</Menu.Item>
 				</Menu>
 
-				<div className="logo" style={{ position: 'fixed', bottom: 100, textAlign: 'center', width: 200 }}>
-					<Menu theme="dark" mode="inline" selectable={false} style={{ textAlign: 'center' }}>
-						<Menu.Item icon={<Avatar name={user.fullName} size="35" round={true} />} />
-						<Menu.Item style={{ color: '#feffe6', fontSize: 17 }}>{user.fullName}</Menu.Item>
+				<div className="logo" style={{ position: 'fixed', bottom: 200, textAlign: 'center'}}>
+					<Menu theme="dark" mode="inline" selectable={false} style={{ textAlign: 'center', width: 200, position: 'relative' }}>
+						<Menu.Item style={{ height: 100 }} icon={<Avatar name={user.fullName} size="100" round={true} />} />
+						<Menu.Item style={{ color: '#feffe6', fontSize: 17, height: 'auto'}}>{user.fullName}</Menu.Item>
 
 						<Menu.Item icon={<LogoutOutlined />}>
 							<Popconfirm 

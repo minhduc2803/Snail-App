@@ -32,7 +32,7 @@ public class ConversationMemberDAImpl extends BaseTransactionDA implements Conve
 
   @Override
   public Executable<ConversationMember> insert(ConversationMember conversationMember) {
-    log.info("MYSQL: INSERTING A NEW CHAT MEMBER");
+    log.info("insert a new chat member, conversationId = {} accountId = {}", conversationMember.getConversationId(), conversationMember.getMemberID());
     return connection -> {
       Future<ConversationMember> future = Future.future();
       asyncHandler.run(
@@ -52,7 +52,7 @@ public class ConversationMemberDAImpl extends BaseTransactionDA implements Conve
 
   @Override
   public Future<List<ConversationMember>> listMember(long conversation_id) {
-    log.info("select list member of a conversation: {}", conversation_id);
+    log.info("select list member of a conversation, id = {}", conversation_id);
     Future<List<ConversationMember>> future = Future.future();
     asyncHandler.run(
         () -> {

@@ -14,17 +14,16 @@ public interface AccountDA {
 
   Future<Account> selectAccountById(long id);
 
-  Executable<ArrayList<Account>> selectTwoAccountsInsideTransaction(long sender, long receiver);
-
   Future<User> selectUserByUsername(String Username);
 
   Future<ArrayList<UserWithoutPassword>> selectUserList(long id);
 
   Executable<ArrayList<Account>> selectForUpdateTwoAccount(long sender, long receiver);
 
+  Executable<Account> selectAccountForUpdate(long id);
+
   Future<Balance> selectBalanceById(long id);
 
   Executable<Account> plusBalanceByAmount(long id, long amount, long lastTimeUpdate);
 
-  Executable<Account> updateNumberNotification(long id, int number);
 }

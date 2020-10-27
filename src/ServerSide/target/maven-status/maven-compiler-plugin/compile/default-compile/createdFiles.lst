@@ -181,6 +181,7 @@ fintech/TransferRequest$1.class
 vn/zalopay/ducnm8/entity/response/WebSocketResponse$WebSocketResponseBuilder.class
 vn/zalopay/ducnm8/dagger/ServiceModule_ProvideVertxFactory.class
 vn/zalopay/ducnm8/da/interact/TransferHistoryDAImpl.class
+vn/zalopay/ducnm8/handler/grpc/_TransferHandler.class
 vn/zalopay/ducnm8/utils/AsyncHandler$AsyncHandlerBuilder.class
 vn/zalopay/ducnm8/handler/HandlerFactory$HandlerFactoryBuilder.class
 vn/zalopay/ducnm8/dagger/ServiceModule$ServiceModuleBuilder.class

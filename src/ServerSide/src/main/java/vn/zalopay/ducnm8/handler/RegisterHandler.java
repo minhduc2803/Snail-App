@@ -54,6 +54,8 @@ public class RegisterHandler extends BaseHandler {
       return future;
     }
 
+    log.info("Register begin, username = {}", registerRequest.getUsername());
+
     Account account = Account.builder()
         .username(registerRequest.getUsername())
         .fullName(registerRequest.getFullName())
@@ -69,11 +71,11 @@ public class RegisterHandler extends BaseHandler {
 
               if (rs.succeeded()) {
                 response.status(HttpResponseStatus.OK.code());
-                log.info("Register successful");
+                log.info("Register successful, username = {}", registerRequest.getUsername());
               } else {
                 response.message("Username is not available")
                     .status(HttpResponseStatus.BAD_REQUEST.code());
-                log.warn("Register fail ~ Cannot insert a user");
+                log.warn("Register fail ~ Cannot insert a user, username = {}", registerRequest.getUsername());
               }
 
               tracker.step("handle").code("SUCCESS").build().record();

@@ -38,7 +38,7 @@ public class UserListHandler extends BaseHandler {
     BaseResponse.BaseResponseBuilder response = BaseResponse.builder();
     try {
 
-      log.info("get a user list");
+
 
       String token = baseRequest.getHeaders().get(HttpHeaders.AUTHORIZATION).substring("Bearer ".length()).trim();
 
@@ -51,6 +51,9 @@ public class UserListHandler extends BaseHandler {
 
       try {
         long id = JWTUtils.authenticate(token);
+
+        log.info("get a user list, userId = {}", id);
+
         accountDA.selectUserList(id)
             .setHandler(userListRes -> {
               if (userListRes.succeeded()) {
@@ -60,6 +63,8 @@ public class UserListHandler extends BaseHandler {
               } else {
                 response.message("Cannot get a user list")
                     .status(HttpResponseStatus.BAD_REQUEST.code());
+
+                log.warn("cannot get a user list, userId = {}", id);
               }
 
               tracker.step("handle").code("SUCCESS").build().record();
@@ -69,12 +74,16 @@ public class UserListHandler extends BaseHandler {
         response.message("JWT token is invalid")
             .status(HttpResponseStatus.UNAUTHORIZED.code());
         future.complete(response.build());
+
+        log.info("cannot get a user list ~ JWT token is invalid");
       }
 
     } catch (Exception e) {
       response.message("Server has an error")
           .status(HttpResponseStatus.INTERNAL_SERVER_ERROR.code());
       future.complete(response.build());
+
+      log.error("cannot get a user list ~ Internal server error");
     }
     return future;
   }

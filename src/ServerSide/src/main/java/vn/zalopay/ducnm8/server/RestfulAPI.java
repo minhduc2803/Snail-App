@@ -24,7 +24,7 @@ public class RestfulAPI {
   }
 
   public void start() {
-    log.info("Starting RestfulAPI Server ...");
+    log.info("Starting RestfulAPI Server on port:{}", port);
 
     Router router = RouterFactory.route(vertx, handlerFactory);
 

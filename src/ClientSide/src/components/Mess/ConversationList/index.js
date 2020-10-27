@@ -24,7 +24,6 @@ export default function ConversationList(props) {
             <ToolbarButton key="add" icon="ion-ios-add-circle-outline" />
           ]}
         />
-        <ConversationSearch />
         {
           usersKey.map(index =>
             <ConversationListItem

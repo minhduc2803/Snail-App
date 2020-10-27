@@ -38,7 +38,6 @@ public class LoginHandler extends BaseHandler {
     try {
       LoginRequest request = JsonProtoUtils.parseGson(baseRequest.getPostData(), LoginRequest.class);
 
-      log.info("Login request from : " + request.getUsername());
 
       if (request.getUsername() == null || request.getPassword() == null) {
 
@@ -49,6 +48,9 @@ public class LoginHandler extends BaseHandler {
         log.info("Login failed ~ Lack of information");
         return future;
       }
+
+      log.info("Login request from : {}", request.getUsername());
+
       accountDA.selectUserByUsername(request.getUsername())
           .setHandler(
               rs -> {
@@ -57,14 +59,13 @@ public class LoginHandler extends BaseHandler {
                   if (user != null) {
                     if (BCrypt.checkpw(request.getPassword(), user.getPassword())) {
                       String token = JWTUtils.buildJWTToken(user.getId());
-                      log.info("token len: {}", token.length());
                       response.data(LoginResponse.builder()
                           .token(token)
                           .userId(user.getId())
                           .fullName(user.getFullName())
                           .build())
                           .status(HttpResponseStatus.OK.code());
-                      log.info("Login successfully");
+                      log.info("Login successfully, username = {} id = {}", request.getUsername(), user.getId());
                     } else {
                       response.message("Wrong password")
                           .status(HttpResponseStatus.BAD_REQUEST.code());

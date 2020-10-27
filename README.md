@@ -31,7 +31,7 @@ Các công nghệ sử dụng:
 - [Database design](images/mysql/current-fintech-diagram.png)
 - [Benchmark cho wallet](docs/paymentapp/benchmark.md)
   
-## 2. Hướng dẫn chạy
+## 4. Hướng dẫn chạy
 
 - Client chạy trên port 3000. Có dùng `yarn` để build
   
@@ -64,7 +64,7 @@ java -Dservice.conf=./conf/development.yaml
 
 - Run Envoy proxy
   
-## 3. Demo
+## 4. Demo
 
 ### 3.1 Login
 

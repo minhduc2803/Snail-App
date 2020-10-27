@@ -36,28 +36,28 @@ public class NotificationDAImpl extends BaseTransactionDA implements Notificatio
 
   @Override
   public Future<Notification> insert(Notification notification) {
-    log.info("insert a new notification for user_id {}", notification.getUserId());
+    log.info("insert a new notification for accountId {}", notification.getUserId());
 
-      Future<Notification> future = Future.future();
-      asyncHandler.run(
-          () -> {
-            Object[] params = {notification.getNotificationType(), notification.getUserId(), notification.getPartnerId(), notification.getAmount(), notification.getMessage(), notification.isSeen()};
-            try {
-              long id = executeWithParamsAndGetId(dataSource::getConnection, INSERT_NOTIFICATION_STATEMENT, params, "insertNotification");
-              notification.setId(id);
-              future.complete(notification);
-            } catch (Exception e) {
-              future.fail(e);
-              String reason = String.format("cannot insert a notification ~ cause: %s", e.getMessage());
-              log.error(reason);
-            }
-          });
-      return future;
+    Future<Notification> future = Future.future();
+    asyncHandler.run(
+        () -> {
+          Object[] params = {notification.getNotificationType(), notification.getUserId(), notification.getPartnerId(), notification.getAmount(), notification.getMessage(), notification.isSeen()};
+          try {
+            long id = executeWithParamsAndGetId(dataSource::getConnection, INSERT_NOTIFICATION_STATEMENT, params, "insertNotification");
+            notification.setId(id);
+            future.complete(notification);
+          } catch (Exception e) {
+            String reason = String.format("cannot insert a notification ~ cause: %s", e.getMessage());
+            future.fail(reason);
+            log.error("cannot insert a notification, accountId = {} ~ cause: {}", notification.getUserId(), e.getMessage());
+          }
+        });
+    return future;
   }
 
   @Override
   public Executable<Notification> updateSeenNotificationById(long id) {
-    log.info("update seen a notification: id={}", id);
+    log.info("update seen a notification: AccountId={}", id);
     return connection -> {
       Future<Notification> future = Future.future();
       asyncHandler.run(
@@ -77,7 +77,7 @@ public class NotificationDAImpl extends BaseTransactionDA implements Notificatio
 
   @Override
   public Future<ArrayList<Notification>> selectNotificationByAccountId(long id) {
-    log.info("select a list notifications");
+    log.info("select a list notifications, accountId = {}", id);
     Future<ArrayList<Notification>> future = Future.future();
     asyncHandler.run(
         () -> {

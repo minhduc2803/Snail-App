@@ -17,6 +17,7 @@
 }
 
 .compose-input {
+  text-indent:10px;
   margin-left:10px;
   flex: 1;
   border: none;

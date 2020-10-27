@@ -32,11 +32,11 @@ export default function Compose(props) {
 	}
 	return (
 		<div className="compose-container">
-			<input
+			<input 
 				type="text"
 				ref={message}
 				className="compose-input"
-				placeholder="&nbsp;Type a message, @name"
+				placeholder="Type a message, @name"
 				onKeyPress={(event) => {
 					handleEnter(event);
 				}}

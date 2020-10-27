@@ -16,21 +16,6 @@ public class GetBalanceHandler {
 
   private static final String METRIC = "GetBalanceHandler";
 
-  private static final Code code = Code.INTERNAL_SERVER_ERROR;
-  private static final Error error = Error
-      .newBuilder()
-      .setCode(code)
-      .setMessage("grpc: get balance failed")
-      .build();
-  private final BalanceResponse failedResponse = BalanceResponse
-      .newBuilder()
-      .setError(error)
-      .build();
-  private static final BalanceResponse.Builder balanceBuilder = BalanceResponse
-      .newBuilder();
-  private static final BalanceResponse.Data.Builder dataBuilder = BalanceResponse.Data
-      .newBuilder();
-
   private final AccountDA accountDA;
 
   public GetBalanceHandler(AccountDA accountDA) {
@@ -50,25 +35,32 @@ public class GetBalanceHandler {
 
           if (rs.succeeded()) {
             Balance balance = rs.result();
-            dataBuilder
+            BalanceResponse.Data data = BalanceResponse.Data
+                .newBuilder()
                 .setBalance(balance.getBalance())
                 .setLastTimeUpdateBalance(balance.getLastTimeUpdate())
                 .build();
-            response = balanceBuilder
-                .setData(dataBuilder)
+            response = BalanceResponse
+                .newBuilder()
+                .setData(data)
                 .build();
-
-
-            log.info("GRPC: getBalance succeed");
+            log.info("GRPC: getBalance succeed senderId = {}", id);
           } else {
-
-            response = failedResponse;
-            log.error("GRPC: getBalance failed");
+            Code code = Code.INTERNAL_SERVER_ERROR;
+            Error error = Error
+                .newBuilder()
+                .setCode(code)
+                .setMessage("grpc: get balance failed")
+                .build();
+            response = BalanceResponse
+                .newBuilder()
+                .setError(error)
+                .build();
+            log.error("GRPC: getBalance failed senderId = {}", id);
           }
 
-          balanceResponseFuture.complete(response);
           tracker.step("getBalance").code("SUCCESS").build().record();
-
+          balanceResponseFuture.complete(response);
         });
 
   }

@@ -7,7 +7,6 @@ import javax.inject.Provider;
 import vn.zalopay.ducnm8.grpc.FintechServiceImpl;
 import vn.zalopay.ducnm8.handler.grpc.GetBalanceHandler;
 import vn.zalopay.ducnm8.handler.grpc.GetHistoryHandler;
-import vn.zalopay.ducnm8.handler.grpc.GetNotificationHandler;
 import vn.zalopay.ducnm8.handler.grpc.TransferHandler;
 
 @Generated(
@@ -27,36 +26,31 @@ public final class ServiceModule_ProvideFintechServiceImplFactory implements Fac
 
   private final Provider<TransferHandler> transferHandlerProvider;
 
-  private final Provider<GetNotificationHandler> getNotificationHandlerProvider;
-
   public ServiceModule_ProvideFintechServiceImplFactory(ServiceModule module,
       Provider<GetBalanceHandler> getBalanceHandlerProvider,
       Provider<GetHistoryHandler> getHistoryHandlerProvider,
-      Provider<TransferHandler> transferHandlerProvider,
-      Provider<GetNotificationHandler> getNotificationHandlerProvider) {
+      Provider<TransferHandler> transferHandlerProvider) {
     this.module = module;
     this.getBalanceHandlerProvider = getBalanceHandlerProvider;
     this.getHistoryHandlerProvider = getHistoryHandlerProvider;
     this.transferHandlerProvider = transferHandlerProvider;
-    this.getNotificationHandlerProvider = getNotificationHandlerProvider;
   }
 
   @Override
   public FintechServiceImpl get() {
-    return provideFintechServiceImpl(module, getBalanceHandlerProvider.get(), getHistoryHandlerProvider.get(), transferHandlerProvider.get(), getNotificationHandlerProvider.get());
+    return provideFintechServiceImpl(module, getBalanceHandlerProvider.get(), getHistoryHandlerProvider.get(), transferHandlerProvider.get());
   }
 
   public static ServiceModule_ProvideFintechServiceImplFactory create(ServiceModule module,
       Provider<GetBalanceHandler> getBalanceHandlerProvider,
       Provider<GetHistoryHandler> getHistoryHandlerProvider,
-      Provider<TransferHandler> transferHandlerProvider,
-      Provider<GetNotificationHandler> getNotificationHandlerProvider) {
-    return new ServiceModule_ProvideFintechServiceImplFactory(module, getBalanceHandlerProvider, getHistoryHandlerProvider, transferHandlerProvider, getNotificationHandlerProvider);
+      Provider<TransferHandler> transferHandlerProvider) {
+    return new ServiceModule_ProvideFintechServiceImplFactory(module, getBalanceHandlerProvider, getHistoryHandlerProvider, transferHandlerProvider);
   }
 
   public static FintechServiceImpl provideFintechServiceImpl(ServiceModule instance,
       GetBalanceHandler getBalanceHandler, GetHistoryHandler getHistoryHandler,
-      TransferHandler transferHandler, GetNotificationHandler getNotificationHandler) {
-    return Preconditions.checkNotNull(instance.provideFintechServiceImpl(getBalanceHandler, getHistoryHandler, transferHandler, getNotificationHandler), "Cannot return null from a non-@Nullable @Provides method");
+      TransferHandler transferHandler) {
+    return Preconditions.checkNotNull(instance.provideFintechServiceImpl(getBalanceHandler, getHistoryHandler, transferHandler), "Cannot return null from a non-@Nullable @Provides method");
   }
 }

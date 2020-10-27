@@ -42,6 +42,7 @@ message BalanceResponse {
 message HistoryRequest {
   // A request from a user to get current transfer history of this own user
   // Contain jwt token from header for authentication
+  int64 offset = 1;
 }
 
 message HistoryResponse {
@@ -88,49 +89,11 @@ message TransferRequest {
 message TransferResponse {
   message Data {
     // After transfer succeed, return a history of that transfer
-      HistoryItem historyItem = 1;
+    HistoryItem historyItem = 1;
   }
 
   Error error = 1;
   Data data = 2;
-}
-
-message NotificationRequest {
-  // A request from a user to get current transfer notifications of this own user
-  // Contain jwt token from header for authentication
-}
-
-message NotificationResponse {
-  message Data {
-    // Contain a list of transfer notifications of a user
-    // Need jwt token authentication to call
-    // user_id is taken from jwt token
-    repeated NotificationItem notification_items = 1;
-  }
-
-  Error error = 1;
-  Data data = 2;
-}
-
-message NotificationItem {
-  // A Notification of a user
-  // Has a mode variable
-  // if mode = 1 => A Notification about A partner sent money to this user
-  // if mode = 2 => A partner reminded this user about transfering money
-  int64 notification_id = 1; // Every notification has a id
-  int32 notification_type = 2;
-  int64 partner_id = 3;
-  int64 amount = 4;
-  string message = 5; // A message goes with a notification
-  enum Seen {
-    // A notification can be read already or not
-    // if UnRead = TRUE => notification is not read yet
-    // if UnRead = FALSE => notification is read already
-    TRUE = 0;
-    FALSE = 1;
-  }
-
-  Seen seen = 6; // default: a notification is read already
 }
 
 service FintechService {
@@ -146,7 +109,4 @@ service FintechService {
 
   }
 
-  rpc getNotification(NotificationRequest) returns(NotificationResponse) {
-
-  }
 }

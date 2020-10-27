@@ -297,8 +297,8 @@ export function getBalance() {
 export function getHistory() {
 	return (dispatch, getState) => {
 		const metadata = { Authorization: 'Bearer ' + getState().user.token };
-
-		grpc.getHistory(metadata, (err, response) => {
+		const offset = getState().transferHistory.length;
+		grpc.getHistory(metadata, offset, (err, response) => {
 			//console.log(response.toObject());
 			// const history = {
 			//     partnerId: response.getData.getPartnerId(),

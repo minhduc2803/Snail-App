@@ -25,7 +25,6 @@ import vn.zalopay.ducnm8.handler.UserListHandler;
 import vn.zalopay.ducnm8.handler.WSHandler;
 import vn.zalopay.ducnm8.handler.grpc.GetBalanceHandler;
 import vn.zalopay.ducnm8.handler.grpc.GetHistoryHandler;
-import vn.zalopay.ducnm8.handler.grpc.GetNotificationHandler;
 import vn.zalopay.ducnm8.handler.grpc.InterceptorHandler;
 import vn.zalopay.ducnm8.handler.grpc.TransferHandler;
 import vn.zalopay.ducnm8.server.GRPCServer;
@@ -90,8 +89,6 @@ public final class DaggerServiceComponent implements ServiceComponent {
 
   private Provider<TransferHandler> provideTransferHandlerProvider;
 
-  private Provider<GetNotificationHandler> provideGetNotificationHandlerProvider;
-
   private Provider<FintechServiceImpl> provideFintechServiceImplProvider;
 
   private Provider<InterceptorHandler> provideInterceptorHandlerProvider;
@@ -133,8 +130,7 @@ public final class DaggerServiceComponent implements ServiceComponent {
     this.provideTransferDAProvider = DoubleCheck.provider(ServiceModule_ProvideTransferDAFactory.create(serviceModuleParam, provideDataSourceProvider, ProvideAsyncHandlerProvider));
     this.provideNotificationDAProvider = DoubleCheck.provider(ServiceModule_ProvideNotificationDAFactory.create(serviceModuleParam, provideDataSourceProvider, ProvideAsyncHandlerProvider));
     this.provideTransferHandlerProvider = DoubleCheck.provider(ServiceModule_ProvideTransferHandlerFactory.create(serviceModuleParam, provideTransferDAProvider, provideAccountDAProvider, provideTransferHistoryDAProvider, provideNotificationDAProvider, provideTransactionProvider, provideWSHandlerProvider));
-    this.provideGetNotificationHandlerProvider = DoubleCheck.provider(ServiceModule_ProvideGetNotificationHandlerFactory.create(serviceModuleParam));
-    this.provideFintechServiceImplProvider = DoubleCheck.provider(ServiceModule_ProvideFintechServiceImplFactory.create(serviceModuleParam, provideGetBalanceHandlerProvider, provideGetHistoryHandlerProvider, provideTransferHandlerProvider, provideGetNotificationHandlerProvider));
+    this.provideFintechServiceImplProvider = DoubleCheck.provider(ServiceModule_ProvideFintechServiceImplFactory.create(serviceModuleParam, provideGetBalanceHandlerProvider, provideGetHistoryHandlerProvider, provideTransferHandlerProvider));
     this.provideInterceptorHandlerProvider = DoubleCheck.provider(ServiceModule_ProvideInterceptorHandlerFactory.create(serviceModuleParam));
     this.provideGRPCServerProvider = DoubleCheck.provider(ServiceModule_ProvideGRPCServerFactory.create(serviceModuleParam, provideVertxProvider, provideFintechServiceImplProvider, provideInterceptorHandlerProvider));
   }

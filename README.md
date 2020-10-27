@@ -82,8 +82,6 @@ java -Dservice.conf=./conf/development.yaml
 
 ![chat](images/demo/chat.png)
 
-### 3.5 Get balance
+### 3.5 Xem balance và transfer history
 
-### 3.6 Get transfer history
-
-### 3.7 Transfer money
+### 3.6 Giao diện chuyển tiền

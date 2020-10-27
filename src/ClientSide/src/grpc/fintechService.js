@@ -13,8 +13,9 @@ export default {
         client.getBalance(request, metadata, callback);
     },
 
-    getHistory: (metadata, callback) => {
+    getHistory: (metadata, offset, callback) => {
         const request = new HistoryRequest();
+        request.setOffset(offset);
         client.getHistory(request, metadata, callback);
     },
 
@@ -26,10 +27,5 @@ export default {
         request.setMessage(transfer_info.message);
         request.setPassword(transfer_info.password);
         client.transfer(request, metadata, callback);
-    },
-
-    getNotification: (metadata, callback) => {
-        const request = new NotificationRequest();
-        client.getNotification(request, metadata, callback);
     },
 };

@@ -230,14 +230,12 @@ public class ServiceModule {
   FintechServiceImpl provideFintechServiceImpl(
       GetBalanceHandler getBalanceHandler,
       GetHistoryHandler getHistoryHandler,
-      TransferHandler transferHandler,
-      GetNotificationHandler getNotificationHandler
+      TransferHandler transferHandler
   ) {
     return FintechServiceImpl.builder()
         .getBalanceHandler(getBalanceHandler)
         .getHistoryHandler(getHistoryHandler)
         .transferHandler(transferHandler)
-        .getNotificationHandler(getNotificationHandler)
         .build();
   }
 
@@ -265,13 +263,6 @@ public class ServiceModule {
   ) {
     return new TransferHandler(transferDA, accountDA, transferHistoryDA, notificationDA, transactionProvider, wsHandler);
   }
-
-  @Provides
-  @Singleton
-  GetNotificationHandler provideGetNotificationHandler() {
-    return new GetNotificationHandler();
-  }
-
 
   @Provides
   @Singleton

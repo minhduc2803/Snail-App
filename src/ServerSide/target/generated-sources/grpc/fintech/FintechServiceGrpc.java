@@ -137,33 +137,6 @@ public final class FintechServiceGrpc {
      return getTransferMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<fintech.NotificationRequest,
-      fintech.NotificationResponse> getGetNotificationMethod;
-
-  public static io.grpc.MethodDescriptor<fintech.NotificationRequest,
-      fintech.NotificationResponse> getGetNotificationMethod() {
-    io.grpc.MethodDescriptor<fintech.NotificationRequest, fintech.NotificationResponse> getGetNotificationMethod;
-    if ((getGetNotificationMethod = FintechServiceGrpc.getGetNotificationMethod) == null) {
-      synchronized (FintechServiceGrpc.class) {
-        if ((getGetNotificationMethod = FintechServiceGrpc.getGetNotificationMethod) == null) {
-          FintechServiceGrpc.getGetNotificationMethod = getGetNotificationMethod = 
-              io.grpc.MethodDescriptor.<fintech.NotificationRequest, fintech.NotificationResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "fintech.FintechService", "getNotification"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  fintech.NotificationRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  fintech.NotificationResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new FintechServiceMethodDescriptorSupplier("getNotification"))
-                  .build();
-          }
-        }
-     }
-     return getGetNotificationMethod;
-  }
-
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -219,13 +192,6 @@ public final class FintechServiceGrpc {
       asyncUnimplementedUnaryCall(getTransferMethod(), responseObserver);
     }
 
-    /**
-     */
-    public void getNotification(fintech.NotificationRequest request,
-        io.grpc.stub.StreamObserver<fintech.NotificationResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetNotificationMethod(), responseObserver);
-    }
-
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -249,13 +215,6 @@ public final class FintechServiceGrpc {
                 fintech.TransferRequest,
                 fintech.TransferResponse>(
                   this, METHODID_TRANSFER)))
-          .addMethod(
-            getGetNotificationMethod(),
-            asyncUnaryCall(
-              new MethodHandlers<
-                fintech.NotificationRequest,
-                fintech.NotificationResponse>(
-                  this, METHODID_GET_NOTIFICATION)))
           .build();
     }
   }
@@ -301,14 +260,6 @@ public final class FintechServiceGrpc {
       asyncUnaryCall(
           getChannel().newCall(getTransferMethod(), getCallOptions()), request, responseObserver);
     }
-
-    /**
-     */
-    public void getNotification(fintech.NotificationRequest request,
-        io.grpc.stub.StreamObserver<fintech.NotificationResponse> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getGetNotificationMethod(), getCallOptions()), request, responseObserver);
-    }
   }
 
   /**
@@ -348,13 +299,6 @@ public final class FintechServiceGrpc {
     public fintech.TransferResponse transfer(fintech.TransferRequest request) {
       return blockingUnaryCall(
           getChannel(), getTransferMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
-    public fintech.NotificationResponse getNotification(fintech.NotificationRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getGetNotificationMethod(), getCallOptions(), request);
     }
   }
 
@@ -399,14 +343,6 @@ public final class FintechServiceGrpc {
       return futureUnaryCall(
           getChannel().newCall(getTransferMethod(), getCallOptions()), request);
     }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<fintech.NotificationResponse> getNotification(
-        fintech.NotificationRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getGetNotificationMethod(), getCallOptions()), request);
-    }
   }
 
   /**
@@ -434,13 +370,6 @@ public final class FintechServiceGrpc {
       asyncUnimplementedUnaryCall(getTransferMethod(), FintechServiceGrpc.toObserver(response.completer()));
     }
 
-    /**
-     */
-    public void getNotification(fintech.NotificationRequest request,
-        io.vertx.core.Future<fintech.NotificationResponse> response) {
-      asyncUnimplementedUnaryCall(getGetNotificationMethod(), FintechServiceGrpc.toObserver(response.completer()));
-    }
-
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -464,13 +393,6 @@ public final class FintechServiceGrpc {
                 fintech.TransferRequest,
                 fintech.TransferResponse>(
                   this, METHODID_TRANSFER)))
-          .addMethod(
-            getGetNotificationMethod(),
-            asyncUnaryCall(
-              new VertxMethodHandlers<
-                fintech.NotificationRequest,
-                fintech.NotificationResponse>(
-                  this, METHODID_GET_NOTIFICATION)))
           .build();
     }
   }
@@ -516,20 +438,11 @@ public final class FintechServiceGrpc {
       asyncUnaryCall(
           getChannel().newCall(getTransferMethod(), getCallOptions()), request, FintechServiceGrpc.toObserver(response));
     }
-
-    /**
-     */
-    public void getNotification(fintech.NotificationRequest request,
-        io.vertx.core.Handler<io.vertx.core.AsyncResult<fintech.NotificationResponse>> response) {
-      asyncUnaryCall(
-          getChannel().newCall(getGetNotificationMethod(), getCallOptions()), request, FintechServiceGrpc.toObserver(response));
-    }
   }
 
   private static final int METHODID_GET_BALANCE = 0;
   private static final int METHODID_GET_HISTORY = 1;
   private static final int METHODID_TRANSFER = 2;
-  private static final int METHODID_GET_NOTIFICATION = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -559,10 +472,6 @@ public final class FintechServiceGrpc {
         case METHODID_TRANSFER:
           serviceImpl.transfer((fintech.TransferRequest) request,
               (io.grpc.stub.StreamObserver<fintech.TransferResponse>) responseObserver);
-          break;
-        case METHODID_GET_NOTIFICATION:
-          serviceImpl.getNotification((fintech.NotificationRequest) request,
-              (io.grpc.stub.StreamObserver<fintech.NotificationResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -624,17 +533,6 @@ public final class FintechServiceGrpc {
               (io.vertx.core.Future<fintech.TransferResponse>) io.vertx.core.Future.<fintech.TransferResponse>future().setHandler(ar -> {
                 if (ar.succeeded()) {
                   ((io.grpc.stub.StreamObserver<fintech.TransferResponse>) responseObserver).onNext(ar.result());
-                  responseObserver.onCompleted();
-                } else {
-                  responseObserver.onError(ar.cause());
-                }
-              }));
-          break;
-        case METHODID_GET_NOTIFICATION:
-          serviceImpl.getNotification((fintech.NotificationRequest) request,
-              (io.vertx.core.Future<fintech.NotificationResponse>) io.vertx.core.Future.<fintech.NotificationResponse>future().setHandler(ar -> {
-                if (ar.succeeded()) {
-                  ((io.grpc.stub.StreamObserver<fintech.NotificationResponse>) responseObserver).onNext(ar.result());
                   responseObserver.onCompleted();
                 } else {
                   responseObserver.onError(ar.cause());
@@ -705,7 +603,6 @@ public final class FintechServiceGrpc {
               .addMethod(getGetBalanceMethod())
               .addMethod(getGetHistoryMethod())
               .addMethod(getTransferMethod())
-              .addMethod(getGetNotificationMethod())
               .build();
         }
       }

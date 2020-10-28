@@ -1,18 +1,17 @@
 syntax = "proto3";
+
 option java_multiple_files = true;
-
-package snailproject.proto;
-option java_package = "vn.zalopay.migrator.ping";
-
-import "google/api/annotations.proto";
-import "common/error.proto";
+option java_package = "fintech";
+option java_outer_classname = "FinTechProto";
+package fintech;
 
 enum Code {
   SUCCESS = 0;
-  INCORRECT_PASSWORD = 1;
-  UNAUTHORIZED = 2;
-  NOT_ENOUGH_MONEY = 3;
-  INTERNAL_SERVER_ERROR = 4;
+  UNAUTHORIZED = 1;
+  BAD_REQUEST = 2;
+  INCORRECT_PASSWORD = 3;
+  NOT_ENOUGH_MONEY = 4;
+  INTERNAL_SERVER_ERROR = 5;
 }
 
 message Error {
@@ -22,7 +21,7 @@ message Error {
   map<string, string> extra = 3;
 }
 
-message BalanceRequest { 
+message BalanceRequest {
   // A request from a user to get current balance of this own user
   // Contain jwt token from header for authentication
 }
@@ -40,9 +39,10 @@ message BalanceResponse {
   Data data = 2;
 }
 
-message HistoryRequest { 
+message HistoryRequest {
   // A request from a user to get current transfer history of this own user
   // Contain jwt token from header for authentication
+  int64 offset = 1;
 }
 
 message HistoryResponse {
@@ -59,95 +59,61 @@ message HistoryResponse {
 
 message HistoryItem {
   // Information of a user transfer money with it's partner
-  // This hisotry has an enum TransferType
+  // This history has an enum TransferType
   // If TransferType = SEND => user send money to partner
   // If TransferType = RECEIVE => user receive money from partner
-  int64 history_id = 1; // Every transfer history has a id
-  int64 partner_id = 2; 
-  string partner_username = 3;
-  string partner_fullname = 4; 
-  int64 amount = 5; 
-  string message = 6; // The message goes with a transfer
-  int64 timestamp = 7; // The time when the transfer executed
-  int64 balance = 8; // The balance of user after transfer
+  int64 partner_id = 1;
   enum TransferType {
     SEND = 0;
     RECEIVE = 1;
   }
-  TransferType transfer_type = 9;
+  TransferType transfer_type = 2;
+
+  int64 amount = 3;
+  string message = 4; // The message goes with a transaction
+  int64 balance = 5; // The balance after transfer
+  int64 transfer_time = 6; // The time when the transfer executed
+  string username = 7;
+  string full_name = 8;
 }
 
-message TransferRequest { 
+message TransferRequest {
   // A transfer request from user
-  // Contain password in header for authorization
   int64 sender_id = 1;
   int64 receiver_id = 2;
   int64 amount = 3;
+  string message = 4;
+  string password = 5;
 }
 
 message TransferResponse {
   message Data {
     // After transfer succeed, return a history of that transfer
-    // Need password from request header for authorization
-    HistoryItem history_item = 1;
+    HistoryItem historyItem = 1;
   }
 
   Error error = 1;
   Data data = 2;
-}
-
-message NotificationRequest {
-  // A request from a user to get current transfer notifications of this own user
-  // Contain jwt token from header for authentication
-}
-
-message NotificationResponse {
-  message Data {
-    // Contain a list of transfer notifications of a user
-    // Need jwt token authentication to call
-    // user_id is taken from jwt token
-    repeated NotificationItem notification_items = 1;
-  }
-
-  Error error = 1;
-  Data data = 2;
-}
-
-message NotificationItem {
-  // A Notification of a user
-  // Has a mode variable
-  // if mode = 1 => A Notification about A partner sent money to this user
-  // if mode = 2 => A partner reminded this user about transfering money
-  int64 notification_id = 1; // Every notification has a id
-  int32 mode = 2; 
-  int64 partner_id = 3;
-  int64 amount = 4;
-  string message = 5; // A message goes with a notification
-  enum UnRead {
-    // A notification can be read already or not
-    // if UnRead = TRUE => notification is not read yet
-    // if UnRead = FALSE => notification is read already
-    TRUE = 0;
-    FALSE = 1;
-  }
-
-  UnRead unread = 6 [default = FALSE]; // default: a notification is read already
 }
 
 service FintechService {
   rpc getBalance(BalanceRequest) returns(BalanceResponse) {
-    
+    // get balance of an account with account id
+    // Authentication with JWT token
+
   }
 
-  rpc getHitory(HistoryRequest) returns(HistoryResponse) {
-    
+  rpc getHistory(HistoryRequest) returns(HistoryResponse) {
+    // get transfer history of an account with account id
+    // Authentication with JWT token
+
   }
 
   rpc transfer(TransferRequest) returns(TransferResponse) {
+    // transfer money from one account to another account
+    // Authentication with JWT token
+    // Authorization with password
 
   }
 
-  rpc getNotification(NotificationRequest) returns(NotificationResponse) {
-
-  }
 }

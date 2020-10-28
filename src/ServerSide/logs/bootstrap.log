@@ -139,3 +139,64 @@
 2020-10-28 02:35:27,127 INFO  vn.zalopay.ducnm8.handler.WSHandler insert a new chat, senderId = 4 receiverId = 7
 2020-10-28 02:35:27,127 INFO  vn.zalopay.ducnm8.handler.WSHandler Send chat to accountId: 4, senderId = 4 receiverId = 7
 2020-10-28 02:35:27,128 INFO  vn.zalopay.ducnm8.handler.WSHandler Send chat to accountId: 7, senderId = 4 receiverId = 7
+2020-10-28 11:16:42,859 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-1 - Starting...
+2020-10-28 11:16:43,012 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-1 - Start completed.
+2020-10-28 11:16:43,013 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-2 - Starting...
+2020-10-28 11:16:43,018 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-2 - Start completed.
+2020-10-28 11:16:43,330 INFO  org.redisson.Version Redisson 3.11.6
+2020-10-28 11:16:43,404 INFO  org.redisson.connection.pool.MasterConnectionPool 24 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-10-28 11:16:43,407 INFO  org.redisson.connection.pool.MasterPubSubConnectionPool 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2020-10-28 11:16:43,436 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-3 - Starting...
+2020-10-28 11:16:43,441 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-3 - Start completed.
+2020-10-28 11:16:43,447 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-4 - Starting...
+2020-10-28 11:16:43,451 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-4 - Start completed.
+2020-10-28 11:16:43,453 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-5 - Starting...
+2020-10-28 11:16:43,458 INFO  com.zaxxer.hikari.HikariDataSource HikariPool-5 - Start completed.
+2020-10-28 11:16:43,465 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server on port:8055
+2020-10-28 11:16:43,465 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server on port:8055
+2020-10-28 11:16:43,466 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server on port:8055
+2020-10-28 11:16:43,465 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server on port:8055
+2020-10-28 11:16:43,466 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server on port:8055
+2020-10-28 11:16:43,465 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server on port:8055
+2020-10-28 11:16:43,466 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server on port:8055
+2020-10-28 11:16:43,466 INFO  vn.zalopay.ducnm8.server.RestfulAPI Starting RestfulAPI Server on port:8055
+2020-10-28 11:16:43,499 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server on port:9009
+2020-10-28 11:16:43,500 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server on port:9009
+2020-10-28 11:16:43,500 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server on port:9009
+2020-10-28 11:16:43,500 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server on port:9009
+2020-10-28 11:16:43,500 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server on port:9009
+2020-10-28 11:16:43,500 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server on port:9009
+2020-10-28 11:16:43,500 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server on port:9009
+2020-10-28 11:16:43,501 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-28 11:16:43,501 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-28 11:16:43,501 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-28 11:16:43,501 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-28 11:16:43,502 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-28 11:16:43,503 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-28 11:16:43,503 INFO  vn.zalopay.ducnm8.server.WebSocketServer Starting WebSocket Server on port:9009
+2020-10-28 11:16:43,503 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-28 11:16:43,503 INFO  vn.zalopay.ducnm8.server.GRPCServer Starting GRPC Server on port 8000
+2020-10-28 11:16:43,726 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-28 11:16:43,726 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-28 11:16:43,727 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-28 11:16:43,727 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-28 11:16:43,726 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-28 11:16:43,728 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-28 11:16:43,726 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-28 11:16:43,730 INFO  vn.zalopay.ducnm8.server.GRPCServer GRPC Server start successfully !, port:8000
+2020-10-28 11:16:43,732 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-28 11:16:43,732 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-28 11:16:43,732 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-28 11:16:43,732 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-28 11:16:43,733 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-28 11:16:43,732 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-28 11:16:43,733 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-28 11:16:43,732 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-28 11:16:43,733 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-28 11:16:43,733 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-28 11:16:43,733 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-28 11:16:43,733 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-28 11:16:43,734 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-28 11:16:43,734 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009
+2020-10-28 11:16:43,734 INFO  vn.zalopay.ducnm8.server.RestfulAPI API Server start successfully !, port:8055
+2020-10-28 11:16:43,734 INFO  vn.zalopay.ducnm8.server.WebSocketServer WebSocket Server start successfully !, port:9009

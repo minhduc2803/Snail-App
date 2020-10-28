@@ -31,7 +31,7 @@ Các công nghệ sử dụng:
 - [Database design](images/mysql/current-fintech-diagram.png)
 - [Benchmark cho wallet](docs/paymentapp/benchmark.md)
   
-## 4. Hướng dẫn chạy
+## 3. Hướng dẫn chạy
 
 - Client chạy trên port 3000. Có dùng `yarn` để build
   

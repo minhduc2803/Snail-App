@@ -37,7 +37,7 @@ Các công nghệ sử dụng:
   
 ```shell script
     yarn install
- ```
+```
 
 và khởi động
 
@@ -45,15 +45,15 @@ và khởi động
     yarn start
 ```
 
-- Vert.x server có API chạy trên port 8055 và WebSocket chạy trên port 9009. Dùng `maven` để build và run.
+- Vert.x server có API chạy trên port 8055, WebSocket chạy trên port 9009, gRPC chạy trên port 8000, Prometheus chạy trên port 8054. Dùng `maven` để build và run.
 
-- Build server
+Build server
   
 ```shell script
 mvn clean install
 ```
 
-- Run server
+Run server
   
 ```shell script
 java -Dservice.conf=./conf/development.yaml
@@ -62,7 +62,11 @@ java -Dservice.conf=./conf/development.yaml
 -cp *.jar bla.nah.example.Runner
 ```
 
-- Run Envoy proxy
+- Envoy proxy chuyển tiếp gói tin gRPC từ port 8080 tới port 8000 của server
+
+```shell script
+docker-compose up -d
+```
   
 ## 4. Demo
 
@@ -84,4 +88,22 @@ java -Dservice.conf=./conf/development.yaml
 
 ### 3.5 Xem balance và transfer history
 
+![transfer-history](images/demo/transfer_history.png)
+
 ### 3.6 Giao diện chuyển tiền
+
+- Chuyển tiền
+
+![transfer](images/demo/transfer.png)
+
+- Chuyển tiền thành công
+
+![transfer-success](images/demo/transfer_success.png)
+
+- Chuyển tiền thất bại
+
+![transfer-failed](images/demo/transfer_failed.png)
+
+### 3.7 Log out
+
+![logout](images/demo/logout.png)
